@@ -25,17 +25,17 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       <div className="mb-8">
         <Link 
           href="/blog" 
-          className="inline-flex items-center text-blue-600 hover:text-blue-700 mb-6"
+          className="inline-flex items-center text-blue-400 hover:text-blue-300 mb-6 transition-colors"
         >
           <ArrowLeft className="mr-2" size={16} />
           Back to Blog
         </Link>
         
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">
+        <h1 className="text-4xl md:text-5xl font-bold text-zinc-100 mb-6 leading-tight">
           {post.title}
         </h1>
         
-        <div className="flex items-center space-x-6 text-gray-500 mb-6">
+        <div className="flex items-center space-x-6 text-zinc-400 mb-6">
           <div className="flex items-center space-x-2">
             <Calendar size={18} />
             <span>{format(new Date(post.date), 'MMMM dd, yyyy')}</span>
@@ -54,7 +54,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             {post.tags.map((tag) => (
               <span 
                 key={tag} 
-                className="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full"
+                className="px-3 py-1 bg-blue-500/10 text-blue-400 text-sm rounded-full border border-blue-500/20"
               >
                 {tag}
               </span>
@@ -64,7 +64,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       </div>
       
       <div 
-        className="prose prose-lg max-w-none"
+        className="prose prose-lg max-w-none prose-headings:text-zinc-100 prose-p:text-zinc-300 prose-a:text-blue-400 prose-a:no-underline hover:prose-a:underline prose-strong:text-zinc-100 prose-code:bg-zinc-800 prose-code:text-zinc-100 prose-pre:bg-zinc-800 prose-pre:text-zinc-100 prose-blockquote:border-zinc-600 prose-blockquote:text-zinc-400"
         dangerouslySetInnerHTML={{ __html: post.content }}
       />
     </article>

@@ -7,10 +7,10 @@ export default function BlogPage() {
   return (
     <div className="space-y-8">
       <div className="text-center">
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">
+        <h1 className="text-4xl font-bold text-zinc-100 mb-4">
           Blog Posts
         </h1>
-        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+        <p className="text-lg text-zinc-300 max-w-2xl mx-auto">
           Thoughts, tutorials, and insights about web development, programming, and technology.
         </p>
       </div>
@@ -21,8 +21,8 @@ export default function BlogPage() {
             <PostCard key={post.slug} post={post} />
           ))
         ) : (
-          <div className="text-center py-12">
-            <p className="text-gray-500 text-lg">
+          <div className="text-center py-12 bg-zinc-800/50 rounded-lg border border-zinc-700/50">
+            <p className="text-zinc-300 text-lg">
               No blog posts yet. Check back soon for new content!
             </p>
           </div>

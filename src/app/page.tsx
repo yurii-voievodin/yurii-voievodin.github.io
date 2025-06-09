@@ -6,10 +6,10 @@ export default function Home() {
     <div className="space-y-12">
       {/* Hero Section */}
       <section className="text-center py-20">
-        <h1 className="text-5xl font-bold text-gray-900 mb-6">
+        <h1 className="text-5xl font-bold text-zinc-100 mb-6">
           Welcome to My Personal Blog
         </h1>
-        <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+        <p className="text-xl text-zinc-300 max-w-3xl mx-auto mb-8">
           I&apos;m a software developer passionate about web technologies, sharing insights,
           experiences, and technical knowledge through my blog. Explore my thoughts on 
           programming, technology trends, and personal projects.
@@ -17,7 +17,7 @@ export default function Home() {
         <div className="flex gap-4 justify-center">
           <Link 
             href="/blog" 
-            className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+            className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-500 transition-colors shadow-lg hover:shadow-blue-500/20"
           >
             <FileText className="mr-2" size={20} />
             Read My Blog
@@ -25,7 +25,7 @@ export default function Home() {
           </Link>
           <Link 
             href="/cv" 
-            className="inline-flex items-center px-6 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors"
+            className="inline-flex items-center px-6 py-3 bg-zinc-800 text-zinc-100 rounded-lg hover:bg-zinc-700 transition-colors border border-zinc-700"
           >
             <User className="mr-2" size={20} />
             View My CV
@@ -34,9 +34,9 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section className="bg-white rounded-lg p-8 shadow-sm">
-        <h2 className="text-3xl font-bold text-gray-900 mb-6">About Me</h2>
-        <div className="prose prose-lg max-w-none text-gray-600">
+      <section className="bg-zinc-800/50 rounded-lg p-8 shadow-lg border border-zinc-700/50">
+        <h2 className="text-3xl font-bold text-zinc-100 mb-6">About Me</h2>
+        <div className="prose prose-lg max-w-none text-zinc-300">
           <p>
             I&apos;m a passionate software developer with expertise in modern web technologies.
             I love building scalable applications, exploring new frameworks, and sharing 
@@ -57,34 +57,34 @@ export default function Home() {
 
       {/* Quick Links */}
       <section className="grid md:grid-cols-2 gap-8">
-        <div className="bg-white p-6 rounded-lg shadow-sm">
-          <h3 className="text-xl font-semibold text-gray-900 mb-3">
+        <div className="bg-zinc-800/50 p-6 rounded-lg shadow-lg border border-zinc-700/50">
+          <h3 className="text-xl font-semibold text-zinc-100 mb-3">
             Latest from the Blog
           </h3>
-          <p className="text-gray-600 mb-4">
+          <p className="text-zinc-300 mb-4">
             Discover my latest thoughts on web development, programming best practices, 
             and technology trends.
           </p>
           <Link 
             href="/blog" 
-            className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium"
+            className="inline-flex items-center text-blue-400 hover:text-blue-300 font-medium transition-colors"
           >
             Explore all posts
             <ArrowRight className="ml-1" size={16} />
           </Link>
         </div>
         
-        <div className="bg-white p-6 rounded-lg shadow-sm">
-          <h3 className="text-xl font-semibold text-gray-900 mb-3">
+        <div className="bg-zinc-800/50 p-6 rounded-lg shadow-lg border border-zinc-700/50">
+          <h3 className="text-xl font-semibold text-zinc-100 mb-3">
             Professional Background
           </h3>
-          <p className="text-gray-600 mb-4">
+          <p className="text-zinc-300 mb-4">
             Learn more about my professional experience, skills, and educational background 
             in software development.
           </p>
           <Link 
             href="/cv" 
-            className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium"
+            className="inline-flex items-center text-blue-400 hover:text-blue-300 font-medium transition-colors"
           >
             View my CV
             <ArrowRight className="ml-1" size={16} />
