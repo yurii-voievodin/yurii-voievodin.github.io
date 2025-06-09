@@ -1,5 +1,5 @@
 import { cvData } from '@/lib/cv-data';
-import { MapPin, Mail, Phone, Download } from 'lucide-react';
+import { MapPin, Mail, Download } from 'lucide-react';
 import { siteConfig } from '@/lib/config';
 
 export default function CVPage() {

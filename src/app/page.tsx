@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowRight, FileText, User } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 export default function Home() {
   return (
