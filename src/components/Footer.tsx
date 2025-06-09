@@ -1,5 +1,6 @@
 import { Github, Linkedin, Twitter, Mail } from 'lucide-react';
 import Link from 'next/link';
+import { siteConfig } from '@/lib/config';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -18,14 +19,14 @@ export default function Footer() {
             </p>
             <div className="flex space-x-4">
               <a 
-                href="mailto:your.email@example.com" 
+                href={siteConfig.social.email} 
                 className="text-zinc-400 hover:text-zinc-100 transition-colors"
                 aria-label="Email"
               >
                 <Mail size={20} />
               </a>
               <a 
-                href="https://github.com/yourusername" 
+                href={siteConfig.social.github} 
                 className="text-zinc-400 hover:text-zinc-100 transition-colors"
                 aria-label="GitHub"
                 target="_blank"
@@ -34,22 +35,13 @@ export default function Footer() {
                 <Github size={20} />
               </a>
               <a 
-                href="https://linkedin.com/in/yourusername" 
+                href={siteConfig.social.linkedin} 
                 className="text-zinc-400 hover:text-zinc-100 transition-colors"
                 aria-label="LinkedIn"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <Linkedin size={20} />
-              </a>
-              <a 
-                href="https://twitter.com/yourusername" 
-                className="text-zinc-400 hover:text-zinc-100 transition-colors"
-                aria-label="Twitter"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Twitter size={20} />
               </a>
             </div>
           </div>
@@ -60,40 +52,19 @@ export default function Footer() {
             </h3>
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <Link 
-                  href="/" 
-                  className="text-zinc-300 hover:text-zinc-100 transition-colors block mb-2"
-                >
-                  Home
-                </Link>
-                <Link 
-                  href="/blog" 
-                  className="text-zinc-300 hover:text-zinc-100 transition-colors block mb-2"
-                >
-                  Blog
-                </Link>
-                <Link 
-                  href="/cv" 
-                  className="text-zinc-300 hover:text-zinc-100 transition-colors block mb-2"
-                >
-                  CV
-                </Link>
+                {siteConfig.navigation.map((item) => (
+                  <Link 
+                    key={item.name}
+                    href={item.href} 
+                    className="text-zinc-300 hover:text-zinc-100 transition-colors block mb-2"
+                  >
+                    {item.name}
+                  </Link>
+                ))}
               </div>
               <div>
                 <a 
-                  href="#" 
-                  className="text-zinc-300 hover:text-zinc-100 transition-colors block mb-2"
-                >
-                  RSS Feed
-                </a>
-                <a 
-                  href="#" 
-                  className="text-zinc-300 hover:text-zinc-100 transition-colors block mb-2"
-                >
-                  Sitemap
-                </a>
-                <a 
-                  href="#" 
+                  href={siteConfig.social.email} 
                   className="text-zinc-300 hover:text-zinc-100 transition-colors block mb-2"
                 >
                   Contact
@@ -105,7 +76,7 @@ export default function Footer() {
         
         <div className="border-t border-zinc-800 mt-8 pt-8 text-center">
           <p className="text-zinc-400">
-            © {currentYear} Your Name. Built with ❤️ using Next.js, TypeScript, and Tailwind CSS.
+            © {currentYear} {siteConfig.name}. Built with ❤️ using Next.js, TypeScript, and Tailwind CSS.
           </p>
         </div>
       </div>

@@ -1,5 +1,6 @@
 import { cvData } from '@/lib/cv-data';
 import { MapPin, Mail, Phone, Download } from 'lucide-react';
+import { siteConfig } from '@/lib/config';
 
 export default function CVPage() {
   return (
@@ -9,24 +10,20 @@ export default function CVPage() {
         <div className="flex justify-between items-start">
           <div>
             <h1 className="text-4xl font-bold text-zinc-100 mb-2">
-              Your Full Name
+              {siteConfig.author.name}
             </h1>
             <p className="text-xl text-zinc-300 mb-4">
-              Senior Software Developer
+              {siteConfig.author.title}
             </p>
             
             <div className="flex flex-wrap gap-4 text-zinc-300">
               <div className="flex items-center space-x-2">
                 <Mail size={16} />
-                <span>your.email@example.com</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Phone size={16} />
-                <span>+1 (555) 123-4567</span>
+                <span>{siteConfig.author.email}</span>
               </div>
               <div className="flex items-center space-x-2">
                 <MapPin size={16} />
-                <span>Your City, Country</span>
+                <span>{siteConfig.author.location}</span>
               </div>
             </div>
           </div>
