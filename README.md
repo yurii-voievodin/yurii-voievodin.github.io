@@ -1,36 +1,142 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Personal Blog & CV - Next.js Static Site
+
+A modern personal blog and CV website built with Next.js, TypeScript, and Tailwind CSS, designed to be exported as a static site for easy deployment.
+
+## Features
+
+- 📝 **Blog System**: Markdown-based blog posts with frontmatter support
+- 📄 **CV/Resume Section**: Professional experience and skills showcase
+- 🎨 **Modern Design**: Clean, responsive design with Tailwind CSS
+- ⚡ **Static Export**: Generates static HTML files for fast loading
+- 🔍 **SEO Optimized**: Proper meta tags and semantic HTML
+- 📱 **Mobile Responsive**: Works perfectly on all devices
+- ⚙️ **TypeScript**: Full type safety and better developer experience
+
+## Project Structure
+
+```
+next-blog/
+├── src/
+│   ├── app/                 # Next.js app directory
+│   │   ├── blog/           # Blog pages
+│   │   ├── cv/             # CV page
+│   │   └── layout.tsx      # Root layout
+│   ├── components/         # React components
+│   ├── lib/               # Utility functions
+│   └── types/             # TypeScript types
+├── posts/                 # Markdown blog posts
+├── public/               # Static assets
+└── package.json
+```
 
 ## Getting Started
 
-First, run the development server:
+### Development
 
+1. Install dependencies:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Run the development server:
+```bash
+npm run dev
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Open [http://localhost:3000](http://localhost:3000) to view the site
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Building for Production
 
-## Learn More
+1. Build the project:
+```bash
+npm run build
+```
 
-To learn more about Next.js, take a look at the following resources:
+2. The static files will be generated in the `out` directory
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Adding Blog Posts
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Create a new `.md` file in the `posts/` directory
+2. Add frontmatter at the top:
 
-## Deploy on Vercel
+```markdown
+---
+title: "Your Post Title"
+date: "2024-06-09"
+excerpt: "A brief description of your post"
+tags: ["tag1", "tag2"]
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# Your Post Content
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Write your blog post content here using Markdown.
+```
+
+3. The post will automatically appear on the blog page
+
+## Customizing Your CV
+
+Edit the file `src/lib/cv-data.ts` to update your professional information:
+
+- Experience
+- Education
+- Skills
+- Contact information
+
+## Customization
+
+### Personal Information
+
+1. Update navigation title in `src/components/Navigation.tsx`
+2. Modify hero section in `src/app/page.tsx`
+3. Update CV details in `src/lib/cv-data.ts`
+4. Replace placeholder content throughout the site
+
+### Styling
+
+- Tailwind CSS classes can be modified in components
+- Global styles in `src/app/globals.css`
+- Tailwind config in `tailwind.config.js`
+
+## Deployment
+
+### Static Hosting (Recommended)
+
+1. Build the static site:
+```bash
+npm run build
+```
+
+2. Deploy the `out` folder to any static hosting service:
+   - **Netlify**: Drag and drop the `out` folder
+   - **Vercel**: Connect your GitHub repo
+   - **GitHub Pages**: Upload to your repository
+   - **AWS S3**: Upload files to an S3 bucket
+
+### Vercel (Easiest)
+
+1. Push your code to GitHub
+2. Connect your repository to Vercel
+3. Deploy automatically with each push
+
+## Technologies Used
+
+- **Next.js 15**: React framework with App Router
+- **TypeScript**: Type-safe JavaScript
+- **Tailwind CSS**: Utility-first CSS framework
+- **Markdown**: Content management for blog posts
+- **Gray Matter**: Frontmatter parsing
+- **Remark**: Markdown processing
+- **Lucide React**: Beautiful icons
+- **Date-fns**: Date formatting
+
+## Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production and export static files
+- `npm run start` - Start production server (not needed for static export)
+- `npm run lint` - Run ESLint
+
+## License
+
+This project is open source and available under the [MIT License](LICENSE).
