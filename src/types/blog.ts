@@ -19,5 +19,11 @@ export interface CVItem {
   period?: string;
   description?: string;
   skills?: string[];
+  htmlContent?: string;
+}
+
+export interface HTMLCVSection {
+  title: string;
+  htmlContent: string;
 }
 
