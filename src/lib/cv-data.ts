@@ -1,4 +1,4 @@
-import { CVSection, HTMLCVSection } from '@/types/blog';
+import { CVSection } from '@/types/blog';
 
 // HTML content for experience section
 export const experienceHTML = `
@@ -55,7 +55,7 @@ export const experienceHTML = `
             <p class="text-zinc-300 text-sm mt-2 pl-4 border-l-2 border-blue-500/30">
                 Main responsibility here is to support the 
                 <a href="https://apps.apple.com/app/coachnow-coaching-platform/id596598472" rel="nofollow" target="_blank" class="text-blue-400 hover:text-blue-300 ml-1">CoachNow app</a> 
-                (iOS and iPadOS) and add new features. It's an app with a long history (8+ years) and mixed codebase 
+                (iOS and iPadOS) and add new features. It&apos;s an app with a long history (8+ years) and mixed codebase 
                 (<code class="bg-zinc-700 px-1 rounded text-xs">Objective-C</code> and <code class="bg-zinc-700 px-1 rounded text-xs">Swift</code>) 
                 with a lot of dependencies.
             </p>

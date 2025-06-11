@@ -42,7 +42,7 @@ export default function CVPage() {
     Professional Summary
     </h2>
     <p className="text-zinc-300 leading-relaxed">
-    Experienced software developer with 10+ years of expertise in web and mobile apps development, and with a bachelor's degree in Computer Science. 
+    Experienced software developer with 10+ years of expertise in web and mobile apps development, and with a bachelor&apos;s degree in Computer Science. 
     Proficient in Swift programming language, modern iOS frameworks, and agile methodologies. 
     Passionate about creating user-friendly applications and delivering high-quality solutions.
     </p>
