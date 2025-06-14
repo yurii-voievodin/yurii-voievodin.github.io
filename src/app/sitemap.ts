@@ -5,7 +5,7 @@ export const dynamic = 'force-static'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const posts = getSortedPostsData()
-  const baseUrl = 'https://yourdomain.com' // Replace with your actual domain
+  const baseUrl = 'https://yurii-voievodin.github.io' // Updated to GitHub Pages domain
 
   const staticPages = [
     {
@@ -18,6 +18,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/blog`,
       lastModified: new Date(),
       changeFrequency: 'weekly' as const,
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/timeline`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
       priority: 0.8,
     },
     {

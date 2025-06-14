@@ -2,7 +2,7 @@ export const siteConfig = {
   name: "Yurii Voievodin",
   title: "Yurii Voievodin - Software Developer",
   description: "A personal blog and CV website built with Next.js",
-  url: "https://yourdomain.com", // Replace with your actual domain
+  url: "https://yurii-voievodin.github.io", // Updated to GitHub Pages domain
   author: {
     name: "Yurii Voievodin",
     email: "voevodin.yura@icloud.com",

@@ -8,7 +8,7 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://yourdomain.com/sitemap.xml', // Replace with your actual domain
+    sitemap: 'https://yurii-voievodin.github.io/sitemap.xml', // Updated to GitHub Pages domain
   }
 }
 
