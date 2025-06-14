@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Home, User, FileText } from 'lucide-react';
+import { Home, User, FileText, Clock } from 'lucide-react';
 import { siteConfig } from '@/lib/config';
 
 export default function Navigation() {
@@ -15,7 +15,13 @@ export default function Navigation() {
           
           <div className="flex items-center space-x-8">
             {siteConfig.navigation.map((item) => {
-              const icon = item.name === 'Home' ? Home : item.name === 'Blog' ? FileText : User;
+              let icon;
+              if (item.name === 'Home') icon = Home;
+              else if (item.name === 'Blog') icon = FileText;
+              else if (item.name === 'Timeline') icon = Clock;
+              else if (item.name === 'CV') icon = User;
+              else icon = Home; // fallback
+              
               const IconComponent = icon;
               
               return (
