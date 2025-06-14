@@ -1,19 +1,15 @@
 {
-    "timeline":
-    [
+    "timeline": [
         {
             "date": "March 2024",
             "title": "Home office desk setup 2024",
             "description": "[Ivano-Frankivsk, Ukraine](https://en.wikipedia.org/wiki/Ivano-Frankivsk)",
-            "data":
-            {
-                "image":
-                {
+            "data": {
+                "image": {
                     "path": "timeline/home_office_2024.jpg",
                     "id": "home_office_2024"
                 },
-                "symbol":
-                {
+                "symbol": {
                     "icon": "bi-house",
                     "color": "green"
                 }
@@ -24,10 +20,8 @@
             "title": "",
             "description": "",
             "comment": "**24 February 2022**russia launched a [full-scale invasion of Ukraine](https://en.wikipedia.org/wiki/2022_Russian_invasion_of_Ukraine)",
-            "data":
-            {
-                "symbol":
-                {
+            "data": {
+                "symbol": {
                     "icon": "bi-heartbreak",
                     "color": "red"
                 }
@@ -36,11 +30,9 @@
         {
             "date": "16 February 2022",
             "title": "",
-            "description": "Started working at the [VistaCreate](https://create.vista.com) company<br /><br />*Role and responsibilities:*<ul><li>Make completely new app **Home** screen</li><li>Write **unit tests** for cover app business logic</li><li>Build an app with a **modular architecture**</li><li>Work with analytics services **Firebase**, **AppsFlyer**, **Iterable**</li><li>Implement **A/B tests**</li></ul>",
-            "data":
-            {
-                "symbol":
-                {
+            "description": "Started working at the [VistaCreate](https://create.vista.com) company\n\n*Role and responsibilities:*- Make completely new app **Home** screen- Write **unit tests** for cover app business logic- Build an app with a **modular architecture**- Work with analytics services **Firebase**, **AppsFlyer**, **Iterable**Implement **A/B tests**",
+            "data": {
+                "symbol": {
                     "icon": "bi-keyboard",
                     "color": "cornflowerblue"
                 }
@@ -49,11 +41,9 @@
         {
             "date": "January 2022",
             "title": "",
-            "description": "Finished working at the [Clowder](https://www.clowder.com/) company<br /><br />*Role and responsibilities:*<ul><li>Create clones (copies) of the **Core** product</li><li>Add customizations to the clones and enable/disable product modules</li><li>Integrate user profile with custom fields to the clones of the **Core** product</li><li>Work with Git by `GitFlow` methodology, resolve merge conflicts</li><li>Support existing apps and update to the latest **Core** version</li><li>Create proposals and make changes in the **Core** product</li></ul>",
-            "data":
-            {
-                "symbol":
-                {
+            "description": "Finished working at the [Clowder](https://www.clowder.com/) company\n\n*Role and responsibilities:*- Create clones (copies) of the **Core** product- Add customizations to the clones and enable/disable product modules- Integrate user profile with custom fields to the clones of the **Core** product- Work with Git by `GitFlow` methodology, resolve merge conflicts- Support existing apps and update to the latest **Core** versionCreate proposals and make changes in the **Core** product",
+            "data": {
+                "symbol": {
                     "icon": "bi-flower2",
                     "color": "cornflowerblue"
                 }
@@ -63,15 +53,12 @@
             "date": "March 2021",
             "title": "Home office setup 2021, MacBook Air M1 is 🔥",
             "description": "[Sumy, Ukraine](https://en.wikipedia.org/wiki/Sumy)",
-            "data":
-            {
-                "image":
-                {
+            "data": {
+                "image": {
                     "path": "timeline/home_office_2021.jpeg",
                     "id": "home_office_2021"
                 },
-                "symbol":
-                {
+                "symbol": {
                     "icon": "bi-house",
                     "color": "indigo"
                 }
@@ -80,11 +67,9 @@
         {
             "date": "10 February 2021",
             "title": "",
-            "description": "Started working at the [CoachNow](https://coachnow.io) company. It's a part-time fully remote job.<br /><br /> *Main responsibility* here is to support the [CoachNow app](https://apps.apple.com/app/coachnow-coaching-platform/id596598472) (**iOS** and **iPadOS**) and add new features. It's an app with a long history (**8+ years**) and mixed codebase (`Objective-C` and `Swift`) with a lot of dependencies.",
-            "data":
-            {
-                "symbol":
-                {
+            "description": "Started working at the [CoachNow](https://coachnow.io) company. It's a part-time fully remote job.\n\n *Main responsibility* here is to support the [CoachNow app](https://apps.apple.com/app/coachnow-coaching-platform/id596598472) (**iOS** and **iPadOS**) and add new features. It's an app with a long history (**8+ years**) and mixed codebase (`Objective-C` and `Swift`) with a lot of dependencies.",
+            "data": {
+                "symbol": {
                     "icon": "bi-keyboard",
                     "color": "gray"
                 }
@@ -94,16 +79,14 @@
             "date": "",
             "title": "",
             "description": "",
-            "comment": "**October 2020**<br />Apple unleashes M1 💻"
+            "comment": "**October 2020**\nApple unleashes M1 💻"
         },
         {
             "date": "16 March 2020",
             "title": "",
-            "description": "Started working as an **iOS Developer** at the [Clowder](https://www.clowder.com/) company. First fully remote job. <br /> *My mission* here is to support **50+ iOS apps**.",
-            "data":
-            {
-                "symbol":
-                {
+            "description": "Started working as an **iOS Developer** at the [Clowder](https://www.clowder.com/) company. First fully remote job. \n *My mission* here is to support **50+ iOS apps**.",
+            "data": {
+                "symbol": {
                     "icon": "bi-flower2",
                     "color": "cornflowerblue"
                 }
@@ -112,16 +95,13 @@
         {
             "date": "March 2020",
             "title": "",
-            "description": "Finished working at the App Dev Academy.<br />Worked there for more than **4 years** as Software Developer, participated in development, publication, and support of **10+ iOS apps** and one macOS app. <br /><br />*Role and responsibilities:*<ul><li>Create apps from scratch and design apps architecture</li><li>Create user interface with **Storyboards** and **XIB** files</li><li>Use `UIKit` and create **custom UI** components</li><li>Design a database architecture and use `CoreData` framework</li><li>Write code on `Swift` programming language</li><li>Implement networking layer - **REST API**</li><li>Integrate third-party dependencies (**Firebase**, **Crashlytics**, etc.)</li></ul>",
-            "data":
-            {
-                "image":
-                {
+            "description": "Finished working at the App Dev Academy.\nWorked there for more than **4 years** as Software Developer, participated in development, publication, and support of **10+ iOS apps** and one macOS app. \n\n*Role and responsibilities:*- Create apps from scratch and design apps architecture- Create user interface with **Storyboards** and **XIB** files- Use `UIKit` and create **custom UI** components- Design a database architecture and use `CoreData` framework- Write code on `Swift` programming language- Implement networking layer - **REST API**Integrate third-party dependencies (**Firebase**, **Crashlytics**, etc.)",
+            "data": {
+                "image": {
                     "path": "timeline/office.jpeg",
                     "id": "office"
                 },
-                "symbol":
-                {
+                "symbol": {
                     "icon": "bi-circle",
                     "color": "gray"
                 }
@@ -136,16 +116,13 @@
         {
             "date": "July 2019",
             "title": "Eve",
-            "description": "My daughter was born <br /> It's an incredible feeling to be a father",
-            "data":
-            {
-                "image":
-                {
+            "description": "My daughter was born \n It's an incredible feeling to be a father",
+            "data": {
+                "image": {
                     "path": "timeline/eve2.jpeg",
                     "id": "eve"
                 },
-                "symbol":
-                {
+                "symbol": {
                     "icon": "bi-heart",
                     "color": "red"
                 }
@@ -154,16 +131,13 @@
         {
             "date": "June 2019",
             "title": "",
-            "description": "Started working on the - *\"Look Up\"* <br /> Native **iOS app**, written in `Swift`.  Used **API** on remote server for receive a list of products and perform search by query or filters.",
-            "data":
-            {
-                "image":
-                {
+            "description": "Started working on the - *\"Look Up\"* \n Native **iOS app**, written in `Swift`.  Used **API** on remote server for receive a list of products and perform search by query or filters.",
+            "data": {
+                "image": {
                     "path": "timeline/lookup.jpeg",
                     "id": "lookup"
                 },
-                "symbol":
-                {
+                "symbol": {
                     "icon": "bi-phone",
                     "color": "cornflowerblue"
                 }
@@ -172,16 +146,13 @@
         {
             "date": "24 December 2018",
             "title": "My University",
-            "description": "Started a new personal project - [My University](https://my-university.com.ua/) web service and API on `Rails` framework.<br />In this day, I made my first commit 🎉 <br /><br />*Technical info:* <br />- iOS app written in `Swift` <br />-  User interface created with Storyboards and **SwiftUI** <br />- **MVC** architecture (with Dependency Injection) <br />- URLSession for network requests to **REST API** <br />- `CoreData` as offline storage <br /> - [Ruby On Rails](https://rubyonrails.org) for backend",
-            "data":
-            {
-                "image":
-                {
+            "description": "Started a new personal project - [My University](https://my-university.com.ua/) web service and API on `Rails` framework.\nIn this day, I made my first commit 🎉 \n\n*Technical info:* \n- iOS app written in `Swift` \n-  User interface created with Storyboards and **SwiftUI** \n- **MVC** architecture (with Dependency Injection) \n- URLSession for network requests to **REST API** \n- `CoreData` as offline storage \n - [Ruby On Rails](https://rubyonrails.org) for backend",
+            "data": {
+                "image": {
                     "path": "timeline/my_university_landing.png",
                     "id": "my_university_landing"
                 },
-                "symbol":
-                {
+                "symbol": {
                     "icon": "bi-terminal",
                     "color": "purple"
                 }
@@ -190,16 +161,13 @@
         {
             "date": "March 2017",
             "title": "",
-            "description": "Started working on the **iOS app** - [PROVEIT](https://apps.apple.com/app/proveit-real-money-games/id1219398758)<br />TechCrunch about PROVEIT - [Bet money on yourself with Proveit, the 1-vs-1 trivia app](https://techcrunch.com/2018/06/18/proveit-trivia) <br /><br />*Technical info:* <br /> - Written in `Swift` <br /> - Cocoapods as dependency manager <br /> - **MVC** architecture <br /> - User interface created with **Storyboards** and **XIB** files <br /> - Apple Pay and Push Notifications integration <br /> - Third-party integrations: **Firebase**, **Crashlytics** <br /><br /> *Role and responsibilities:* <br /> - Design app architecture and create app from scratch <br /> - Implement networking layer - **REST API** <br /> - Implement **custom UI**",
-            "data":
-            {
-                "image":
-                {
+            "description": "Started working on the **iOS app** - [PROVEIT](https://apps.apple.com/app/proveit-real-money-games/id1219398758)\nTechCrunch about PROVEIT - [Bet money on yourself with Proveit, the 1-vs-1 trivia app](https://techcrunch.com/2018/06/18/proveit-trivia) \n\n*Technical info:* \n - Written in `Swift` \n - Cocoapods as dependency manager \n - **MVC** architecture \n - User interface created with **Storyboards** and **XIB** files \n - Apple Pay and Push Notifications integration \n - Third-party integrations: **Firebase**, **Crashlytics** \n\n *Role and responsibilities:* \n - Design app architecture and create app from scratch \n - Implement networking layer - **REST API** \n - Implement **custom UI**",
+            "data": {
+                "image": {
                     "path": "timeline/proveit.jpeg",
                     "id": "proveit"
                 },
-                "symbol":
-                {
+                "symbol": {
                     "icon": "bi-phone",
                     "color": "cornflowerblue"
                 }
@@ -209,21 +177,18 @@
             "date": "",
             "title": "",
             "description": "",
-            "comment": "**July 2016 - February 2017** <br /> Some other small apps for iOS"
+            "comment": "**July 2016 - February 2017** \n Some other small apps for iOS"
         },
         {
             "date": "July 2016",
             "title": "",
-            "description": "Started working on a new **iOS app** - [Chronograph](https://apps.apple.com/app/chronograph/id1281918814)<br /> In-house application (App Dev Academy) with time tracking and task management. <br /><br />*My role:*<br />- Design an architecture and create an app from scratch<br />- Design a database architecture and use `CoreData` framework <br />- Implement custom layout of the \"timer\" and \"clock\"<br />- **iPad version** of the app <br />- **Shared codebase** between iOS and macOS versions of the app <br />- Integration of **Analytics** and **In-App purchases**",
-            "data":
-            {
-                "image":
-                {
+            "description": "Started working on a new **iOS app** - [Chronograph](https://apps.apple.com/app/chronograph/id1281918814)\n In-house application (App Dev Academy) with time tracking and task management. \n\n*My role:*\n- Design an architecture and create an app from scratch\n- Design a database architecture and use `CoreData` framework \n- Implement custom layout of the \"timer\" and \"clock\"\n- **iPad version** of the app \n- **Shared codebase** between iOS and macOS versions of the app \n- Integration of **Analytics** and **In-App purchases**",
+            "data": {
+                "image": {
                     "path": "timeline/chronograph_ios_collage.jpeg",
                     "id": "chronograph_ios_collage"
                 },
-                "symbol":
-                {
+                "symbol": {
                     "icon": "bi-phone",
                     "color": "cornflowerblue"
                 }
@@ -232,11 +197,9 @@
         {
             "date": "June 2016",
             "title": "Cashbox",
-            "description": "*The main challenges:* <br />- Implement sync with **remove API** and store data on the device using `CoreData` <br />- Implement UI with charts and **iPad support**",
-            "data":
-            {
-                "symbol":
-                {
+            "description": "*The main challenges:* \n- Implement sync with **remove API** and store data on the device using `CoreData` \n- Implement UI with charts and **iPad support**",
+            "data": {
+                "symbol": {
                     "icon": "bi-phone",
                     "color": "cornflowerblue"
                 }
@@ -245,16 +208,13 @@
         {
             "date": "March 2016",
             "title": "",
-            "description": "Started working on a new **macOS app** - [Chronograph](https://apps.apple.com/ua/app/chronograph-my-productivity/id1316023026?mt=12) <br /> In-house application (App Dev Academy) with time tracker that allows you to work by *“Pomodoro technique”* and plan your tasks. <br /><br /> *Role and responsibilities:* <br />- Design an architecture and create an app from scratch <br />- Design a database architecture and use `CoreData` framework<br />- Implement background sync with a remote server via the **REST API** <br />- `Swift` codebase and third-party dependencies <br />- Implement *\"statistics screen\"* on the `SwiftUI` <br />- Integration of **Analytics** and **In-App purchases**",
-            "data":
-            {
-                "image":
-                {
+            "description": "Started working on a new **macOS app** - [Chronograph](https://apps.apple.com/ua/app/chronograph-my-productivity/id1316023026?mt=12) \n In-house application (App Dev Academy) with time tracker that allows you to work by *“Pomodoro technique”* and plan your tasks. \n\n *Role and responsibilities:* \n- Design an architecture and create an app from scratch \n- Design a database architecture and use `CoreData` framework\n- Implement background sync with a remote server via the **REST API** \n- `Swift` codebase and third-party dependencies \n- Implement *\"statistics screen\"* on the `SwiftUI` \n- Integration of **Analytics** and **In-App purchases**",
+            "data": {
+                "image": {
                     "path": "timeline/chronograph_old.jpeg",
                     "id": "chronograph_old"
                 },
-                "symbol":
-                {
+                "symbol": {
                     "icon": "bi-window",
                     "color": "teal"
                 }
@@ -264,10 +224,8 @@
             "date": "January 2016",
             "title": "",
             "description": "Started working with App Dev Academy, a small company of people from *Sumy, Ukraine*.",
-            "data":
-            {
-                "symbol":
-                {
+            "data": {
+                "symbol": {
                     "icon": "bi-circle",
                     "color": "gray"
                 }
@@ -276,16 +234,13 @@
         {
             "date": "January 2016",
             "title": "",
-            "description": "Started working on the [SumDU](https://apps.apple.com/ua/app/id698235283) <br /> This is the first **iOS app**, published in the App Store, that I'm working on. <br /> Souce code on GitHub - [sumdu-ios](https://github.com/appdev-academy/sumdu-ios) <br /><br /> For me, the *main challenge* here was to implement a **custom navigation bar** with nice and **smooth animation**. And implement a custom layout for the **iPad version** of the app.",
-            "data":
-            {
-                "image":
-                {
+            "description": "Started working on the [SumDU](https://apps.apple.com/ua/app/id698235283) \n This is the first **iOS app**, published in the App Store, that I'm working on. \n Souce code on GitHub - [sumdu-ios](https://github.com/appdev-academy/sumdu-ios) \n\n For me, the *main challenge* here was to implement a **custom navigation bar** with nice and **smooth animation**. And implement a custom layout for the **iPad version** of the app.",
+            "data": {
+                "image": {
                     "path": "timeline/sumdu.png",
                     "id": "sumdu"
                 },
-                "symbol":
-                {
+                "symbol": {
                     "icon": "bi-phone",
                     "color": "cornflowerblue"
                 }
@@ -294,16 +249,13 @@
         {
             "date": "January 2016",
             "title": "",
-            "description": "Finished working at [bvblogic](https://bvblogic.com), **3 years and 7 months** <br/ >I build websites on `PHP` programming language, using frameworks such as `Laravel`, `Kohana`, `Codeigniter`, `Yii`. Also, I used `CSS3`, `HTML5`, `jQuery`, and `Bootstrap` for the frontend. <br /> First experience of building and supporting commercial projects.",
-            "data":
-            {
-                "image":
-                {
+            "description": "Finished working at [bvblogic](https://bvblogic.com), **3 years and 7 months** \nI build websites on `PHP` programming language, using frameworks such as `Laravel`, `Kohana`, `Codeigniter`, `Yii`. Also, I used `CSS3`, `HTML5`, `jQuery`, and `Bootstrap` for the frontend. \n First experience of building and supporting commercial projects.",
+            "data": {
+                "image": {
                     "path": "timeline/bvblogic.jpeg",
                     "id": "bvblogic"
                 },
-                "symbol":
-                {
+                "symbol": {
                     "icon": "bi-at",
                     "color": "red"
                 }
@@ -319,11 +271,9 @@
             "date": "",
             "title": "",
             "description": "",
-            "comment": "**20 February 2014**<br /> russia began its annexation of Crimea",
-            "data":
-            {
-                "symbol":
-                {
+            "comment": "**20 February 2014**\n russia began its annexation of Crimea",
+            "data": {
+                "symbol": {
                     "icon": "bi-heartbreak",
                     "color": "red"
                 }
@@ -332,16 +282,13 @@
         {
             "date": "December 2013",
             "title": "",
-            "description": "I bought my first MacBook! 🎉 <br /> It's a *13 inch MacBook Pro* with Mac OS Mavericks on the board. It was a really HUGE event for me.",
-            "data":
-            {
-                "image":
-                {
+            "description": "I bought my first MacBook! 🎉 \n It's a *13 inch MacBook Pro* with Mac OS Mavericks on the board. It was a really HUGE event for me.",
+            "data": {
+                "image": {
                     "path": "timeline/macbook_2013.jpeg",
                     "id": "macbook_2013"
                 },
-                "symbol":
-                {
+                "symbol": {
                     "icon": "bi-apple",
                     "color": "teal"
                 }
@@ -350,11 +297,9 @@
         {
             "date": "July 2013",
             "title": "",
-            "description": "I bought my first iPhone! <br /> It was a used *iPhone 3GS* in white color",
-            "data":
-            {
-                "symbol":
-                {
+            "description": "I bought my first iPhone! \n It was a used *iPhone 3GS* in white color",
+            "data": {
+                "symbol": {
                     "icon": "bi-apple",
                     "color": "gray"
                 }
@@ -364,10 +309,8 @@
             "date": "July 2012",
             "title": "",
             "description": "Started working as a **Web Developer** at [bvblogic](https://bvblogic.com)",
-            "data":
-            {
-                "symbol":
-                {
+            "data": {
+                "symbol": {
                     "icon": "bi-at",
                     "color": "red"
                 }
@@ -377,10 +320,8 @@
             "date": "2012",
             "title": "Bachelor of Computer Science",
             "description": "Received a bachelor's degree at *Sumy State University*",
-            "data":
-            {
-                "symbol":
-                {
+            "data": {
+                "symbol": {
                     "icon": "bi-check-circle",
                     "color": "teal"
                 }
@@ -390,10 +331,8 @@
             "date": "2011 - 2012",
             "title": "Senior Laboratory",
             "description": "I worked as a **Java developer** at *\"Laboratory of distance learning\"* at *Sumy State University*. I made simple training apps for students on `Java` and an internal framework. Also, I converted  Microsoft Word documents to `HTML` pages as part of my job there.",
-            "data":
-            {
-                "symbol":
-                {
+            "data": {
+                "symbol": {
                     "icon": "bi-keyboard",
                     "color": "gray"
                 }
@@ -403,10 +342,8 @@
             "date": "September 2009",
             "title": "Faculty of Electronics and Information Technology",
             "description": "Started studying *\"Computer Science\"* at [Sumy State University](https://int.sumdu.edu.ua/en/)",
-            "data":
-            {
-                "symbol":
-                {
+            "data": {
+                "symbol": {
                     "icon": "bi-cpu",
                     "color": "gray"
                 }
@@ -416,15 +353,12 @@
             "date": "July 2009",
             "title": "Junior Specialist",
             "description": "Finished studying at technical college in *Konotop* by specialty *\"Service of computer and intelligent systems and networks\"*",
-            "data":
-            {
-                "image":
-                {
+            "data": {
+                "image": {
                     "path": "timeline/college.jpeg",
                     "id": "college"
                 },
-                "symbol":
-                {
+                "symbol": {
                     "icon": "bi-check-circle",
                     "color": "teal"
                 }
@@ -434,11 +368,9 @@
             "date": "",
             "title": "",
             "description": "",
-            "comment": "June 29, 2007 <br /> first iPhone released",
-            "data":
-            {
-                "symbol":
-                {
+            "comment": "June 29, 2007 \n first iPhone released",
+            "data": {
+                "symbol": {
                     "icon": "bi-phone",
                     "color": "cornflowerblue"
                 }
@@ -448,10 +380,8 @@
             "date": "2007 - 2008",
             "title": "Laboratory Technician",
             "description": "At college, my job was to configure, maintain and update PCs on **Windows 98** and **XP**. Also, I helped students to make their homework done.",
-            "data":
-            {
-                "symbol":
-                {
+            "data": {
+                "symbol": {
                     "icon": "bi-keyboard",
                     "color": "gray"
                 }
@@ -461,10 +391,8 @@
             "date": "2005",
             "title": "Faculty of Electronics and Information Systems",
             "description": "I begin studying at technician college in *Konotop city, Ukraine*",
-            "data":
-            {
-                "symbol":
-                {
+            "data": {
+                "symbol": {
                     "icon": "bi-cpu",
                     "color": "gray"
                 }
@@ -474,10 +402,8 @@
             "date": "2004",
             "title": "Intel 486 Notebook",
             "description": "With **MS-DOS** operating system and **Norton Commander**. It was already old and outdated at that time. I still have this notebook somewhere.",
-            "data":
-            {
-                "symbol":
-                {
+            "data": {
+                "symbol": {
                     "icon": "bi-laptop",
                     "color": "gray"
                 }
