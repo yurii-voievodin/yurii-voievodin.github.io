@@ -4,31 +4,31 @@ import { siteConfig } from '@/lib/config';
 
 export default function CVPage() {
   return (
-    <div className="max-w-4xl mx-auto">
+    <div className="max-w-4xl mx-auto px-4">
     {/* Header */}
-    <header className="bg-zinc-800/50 rounded-lg shadow-lg border border-zinc-700/50 p-8 mb-8">
-    <div className="flex justify-between items-start">
-    <div>
-    <h1 className="text-4xl font-bold text-zinc-100 mb-2">
+    <header className="bg-zinc-800/50 rounded-lg shadow-lg border border-zinc-700/50 p-6 md:p-8 mb-8">
+    <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-6">
+    <div className="flex-1">
+    <h1 className="text-3xl md:text-4xl font-bold text-zinc-100 mb-2">
     {siteConfig.author.name}
     </h1>
-    <p className="text-xl text-zinc-300 mb-4">
+    <p className="text-lg md:text-xl text-zinc-300 mb-4">
     {siteConfig.author.title}
     </p>
     
-    <div className="flex flex-wrap gap-4 text-zinc-300">
+    <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3 sm:gap-4 text-zinc-300">
     <div className="flex items-center space-x-2">
     <Mail size={16} />
-    <span>{siteConfig.author.email}</span>
+    <span className="text-sm sm:text-base">{siteConfig.author.email}</span>
     </div>
     <div className="flex items-center space-x-2">
     <MapPin size={16} />
-    <span>{siteConfig.author.location}</span>
+    <span className="text-sm sm:text-base">{siteConfig.author.location}</span>
     </div>
     </div>
     </div>
     
-    <a href="/Yurii_Voievodin_CV.pdf" target='blank' className="flex items-center space-x-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-500 transition-colors shadow-lg hover:shadow-blue-500/20 cursor-pointer">
+    <a href="/Yurii_Voievodin_CV.pdf" target='blank' className="flex items-center justify-center space-x-2 px-4 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-500 transition-colors shadow-lg hover:shadow-blue-500/20 cursor-pointer w-full md:w-auto">
     <Download size={16} />
     <span>Download PDF</span>
     </a>
@@ -37,7 +37,7 @@ export default function CVPage() {
     </header>
     
     {/* Professional Summary */}
-    <section className="bg-zinc-800/50 rounded-lg shadow-lg border border-zinc-700/50 p-8 mb-8">
+    <section className="bg-zinc-800/50 rounded-lg shadow-lg border border-zinc-700/50 p-6 md:p-8 mb-8">
     <h2 className="text-2xl font-bold text-zinc-100 mb-4">
     Professional Summary
     </h2>
@@ -49,7 +49,7 @@ export default function CVPage() {
     </section>
     
     {/* Experience Section with HTML */}
-    <section className="bg-zinc-800/50 rounded-lg shadow-lg border border-zinc-700/50 p-8 mb-8">
+    <section className="bg-zinc-800/50 rounded-lg shadow-lg border border-zinc-700/50 p-6 md:p-8 mb-8">
     <div 
     className="prose prose-lg max-w-none prose-headings:text-zinc-100 prose-p:text-zinc-300 prose-a:text-blue-400 prose-a:no-underline hover:prose-a:underline prose-strong:text-zinc-100 prose-code:bg-zinc-700 prose-code:text-zinc-100 prose-pre:bg-zinc-800 prose-pre:text-zinc-100 prose-blockquote:border-zinc-600 prose-blockquote:text-zinc-400 prose-li:text-zinc-300"
     dangerouslySetInnerHTML={{ __html: experienceHTML }}
@@ -58,14 +58,14 @@ export default function CVPage() {
     
     {/* CV Sections */}
     {cvData.map((section, index) => (
-      <section key={index} className="bg-zinc-800/50 rounded-lg shadow-lg border border-zinc-700/50 p-8 mb-8">
+      <section key={index} className="bg-zinc-800/50 rounded-lg shadow-lg border border-zinc-700/50 p-6 md:p-8 mb-8">
       <h2 className="text-2xl font-bold text-zinc-100 mb-6">
       {section.title}
       </h2>
       
       <div className="space-y-6">
       {section.items.map((item, itemIndex) => (
-        <div key={itemIndex} className="border-l-2 border-blue-500/30 pl-6">
+        <div key={itemIndex} className="border-l-2 border-blue-500/30 pl-4 md:pl-6">
         <h3 className="text-lg font-semibold text-zinc-100">
         {item.title}
         </h3>
