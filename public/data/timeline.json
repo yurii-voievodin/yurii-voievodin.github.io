@@ -2,7 +2,7 @@
     "timeline": [
         {
             "date": "March 2024",
-            "title": "Home office desk setup 2024",
+            "title": "Home office desk setup",
             "description": "[Ivano-Frankivsk, Ukraine](https://en.wikipedia.org/wiki/Ivano-Frankivsk)",
             "data": {
                 "image": {
@@ -16,10 +16,10 @@
             }
         },
         {
-            "date": "",
+            "date": "24 February 2022",
             "title": "",
-            "description": "",
-            "comment": "**24 February 2022**russia launched a [full-scale invasion of Ukraine](https://en.wikipedia.org/wiki/2022_Russian_invasion_of_Ukraine)",
+            "description": "russia launched a [full-scale invasion of Ukraine](https://en.wikipedia.org/wiki/2022_Russian_invasion_of_Ukraine)",
+            "comment": "",
             "data": {
                 "symbol": {
                     "icon": "bi-heartbreak",
@@ -30,7 +30,7 @@
         {
             "date": "16 February 2022",
             "title": "",
-            "description": "Started working at the [VistaCreate](https://create.vista.com) company\n\n*Role and responsibilities:*- Make completely new app **Home** screen- Write **unit tests** for cover app business logic- Build an app with a **modular architecture**- Work with analytics services **Firebase**, **AppsFlyer**, **Iterable**Implement **A/B tests**",
+            "description": "Started working at the [VistaCreate](https://create.vista.com) company\n\n*Role and responsibilities:*\n\nMake completely new app **Home** screen\n\nWrite **unit tests** for cover app business logic\n\nBuild an app with a **modular architecture**\n\nWork with analytics services **Firebase**, **AppsFlyer**, **Iterable**\n\nImplement **A/B tests**",
             "data": {
                 "symbol": {
                     "icon": "bi-keyboard",
@@ -41,7 +41,7 @@
         {
             "date": "January 2022",
             "title": "",
-            "description": "Finished working at the [Clowder](https://www.clowder.com/) company\n\n*Role and responsibilities:*- Create clones (copies) of the **Core** product- Add customizations to the clones and enable/disable product modules- Integrate user profile with custom fields to the clones of the **Core** product- Work with Git by `GitFlow` methodology, resolve merge conflicts- Support existing apps and update to the latest **Core** versionCreate proposals and make changes in the **Core** product",
+            "description": "Finished working at the [Clowder](https://www.clowder.com/) company\n\n*Role and responsibilities:*\n\nCreate clones (copies) of the **Core** product\n\nAdd customizations to the clones and enable/disable product modules\n\nIntegrate user profile with custom fields to the clones of the **Core** product\n\nWork with Git by `GitFlow` methodology, resolve merge conflicts\n\nSupport existing apps and update to the latest **Core** version\n\nCreate proposals and make changes in the **Core** product",
             "data": {
                 "symbol": {
                     "icon": "bi-flower2",
@@ -79,7 +79,7 @@
             "date": "",
             "title": "",
             "description": "",
-            "comment": "**October 2020**\nApple unleashes M1 💻"
+            "comment": "**October 2020**\n\nApple unleashes M1 💻"
         },
         {
             "date": "16 March 2020",
@@ -95,10 +95,10 @@
         {
             "date": "March 2020",
             "title": "",
-            "description": "Finished working at the App Dev Academy.\nWorked there for more than **4 years** as Software Developer, participated in development, publication, and support of **10+ iOS apps** and one macOS app. \n\n*Role and responsibilities:*- Create apps from scratch and design apps architecture- Create user interface with **Storyboards** and **XIB** files- Use `UIKit` and create **custom UI** components- Design a database architecture and use `CoreData` framework- Write code on `Swift` programming language- Implement networking layer - **REST API**Integrate third-party dependencies (**Firebase**, **Crashlytics**, etc.)",
+            "description": "Finished working at the App Dev Academy.\nWorked there for more than **4 years** as Software Developer, participated in development, publication, and support of **10+ iOS apps** and one macOS app. \n\n*Role and responsibilities:*\n\nCreate apps from scratch and design apps architecture\n\nCreate user interface with **Storyboards** and **XIB** files\n\nUse `UIKit` and create **custom UI** components\n\nDesign a database architecture and use `CoreData` framework\n\nWrite code on `Swift` programming language\n\nImplement networking layer \n\n**REST API**Integrate third-party dependencies (**Firebase**, **Crashlytics**, etc.)",
             "data": {
                 "image": {
-                    "path": "timeline/office.jpeg",
+                    "path": "timeline/office.jpg",
                     "id": "office"
                 },
                 "symbol": {
@@ -111,12 +111,12 @@
             "date": "",
             "title": "",
             "description": "",
-            "comment": "2020 - Coronavirus 🦠"
+            "comment": "**2020** \n\nCoronavirus 🦠"
         },
         {
             "date": "July 2019",
             "title": "Eve",
-            "description": "My daughter was born \n It's an incredible feeling to be a father",
+            "description": "My daughter was born \n\n It's an incredible feeling to be a father",
             "data": {
                 "image": {
                     "path": "timeline/eve2.jpeg",
@@ -131,10 +131,10 @@
         {
             "date": "June 2019",
             "title": "",
-            "description": "Started working on the - *\"Look Up\"* \n Native **iOS app**, written in `Swift`.  Used **API** on remote server for receive a list of products and perform search by query or filters.",
+            "description": "Started working on the *\"Look Up\"* Native **iOS app**, written in `Swift`.  Used **API** on remote server for receive a list of products and perform search by query or filters.",
             "data": {
                 "image": {
-                    "path": "timeline/lookup.jpeg",
+                    "path": "timeline/lookup.jpg",
                     "id": "lookup"
                 },
                 "symbol": {
@@ -146,7 +146,7 @@
         {
             "date": "24 December 2018",
             "title": "My University",
-            "description": "Started a new personal project - [My University](https://my-university.com.ua/) web service and API on `Rails` framework.\nIn this day, I made my first commit 🎉 \n\n*Technical info:* \n- iOS app written in `Swift` \n-  User interface created with Storyboards and **SwiftUI** \n- **MVC** architecture (with Dependency Injection) \n- URLSession for network requests to **REST API** \n- `CoreData` as offline storage \n - [Ruby On Rails](https://rubyonrails.org) for backend",
+            "description": "Started a new personal project \n\n[My University](https://github.com/university-my/ios) web service and API on `Rails` framework.\nIn this day, I made my first commit 🎉 \n\n*Technical info:* \n\n\niOS app written in `Swift` \n\n\n User interface created with Storyboards and **SwiftUI** \n\n\n**MVC** architecture (with Dependency Injection) \n\n\nURLSession for network requests to **REST API** \n\n\n`CoreData` as offline storage \n \n\n[Ruby On Rails](https://rubyonrails.org) for backend",
             "data": {
                 "image": {
                     "path": "timeline/my_university_landing.png",
@@ -161,10 +161,10 @@
         {
             "date": "March 2017",
             "title": "",
-            "description": "Started working on the **iOS app** - [PROVEIT](https://apps.apple.com/app/proveit-real-money-games/id1219398758)\nTechCrunch about PROVEIT - [Bet money on yourself with Proveit, the 1-vs-1 trivia app](https://techcrunch.com/2018/06/18/proveit-trivia) \n\n*Technical info:* \n - Written in `Swift` \n - Cocoapods as dependency manager \n - **MVC** architecture \n - User interface created with **Storyboards** and **XIB** files \n - Apple Pay and Push Notifications integration \n - Third-party integrations: **Firebase**, **Crashlytics** \n\n *Role and responsibilities:* \n - Design app architecture and create app from scratch \n - Implement networking layer - **REST API** \n - Implement **custom UI**",
+            "description": "Started working on the **iOS app** [PROVEIT](https://apps.apple.com/app/proveit-real-money-games/id1219398758)\n\nTechCrunch about PROVEIT - [Bet money on yourself with Proveit, the 1-vs-1 trivia app](https://techcrunch.com/2018/06/18/proveit-trivia) \n\n*Technical info:* \n \n\nWritten in `Swift` \n \n\nCocoapods as dependency manager \n \n\n**MVC** architecture \n \n\nUser interface created with **Storyboards** and **XIB** files \n \n\nApple Pay and Push Notifications integration \n \n\nThird-party integrations: **Firebase**, **Crashlytics** \n\n *Role and responsibilities:* \n \n\nDesign app architecture and create app from scratch \n \n\nImplement networking layer \n\n**REST API** \n \n\nImplement **custom UI**",
             "data": {
                 "image": {
-                    "path": "timeline/proveit.jpeg",
+                    "path": "timeline/proveit.jpg",
                     "id": "proveit"
                 },
                 "symbol": {
@@ -174,18 +174,18 @@
             }
         },
         {
-            "date": "",
+            "date": "July 2016 - February 2017",
             "title": "",
-            "description": "",
-            "comment": "**July 2016 - February 2017** \n Some other small apps for iOS"
+            "description": "Some other small apps for iOS",
+            "comment": ""
         },
         {
             "date": "July 2016",
             "title": "",
-            "description": "Started working on a new **iOS app** - [Chronograph](https://apps.apple.com/app/chronograph/id1281918814)\n In-house application (App Dev Academy) with time tracking and task management. \n\n*My role:*\n- Design an architecture and create an app from scratch\n- Design a database architecture and use `CoreData` framework \n- Implement custom layout of the \"timer\" and \"clock\"\n- **iPad version** of the app \n- **Shared codebase** between iOS and macOS versions of the app \n- Integration of **Analytics** and **In-App purchases**",
+            "description": "Started working on a new **iOS app** \n\n[Chronograph](https://apps.apple.com/app/chronograph/id1281918814)\n In-house application (App Dev Academy) with time tracking and task management. \n\n*My role:*\n\n\nDesign an architecture and create an app from scratch\n\n\nDesign a database architecture and use `CoreData` framework \n\n\nImplement custom layout of the \"timer\" and \"clock\"\n\n\n**iPad version** of the app \n\n\n**Shared codebase** between iOS and macOS versions of the app \n\n\nIntegration of **Analytics** and **In-App purchases**",
             "data": {
                 "image": {
-                    "path": "timeline/chronograph_ios_collage.jpeg",
+                    "path": "timeline/chronograph_ios_collage.jpg",
                     "id": "chronograph_ios_collage"
                 },
                 "symbol": {
@@ -197,7 +197,7 @@
         {
             "date": "June 2016",
             "title": "Cashbox",
-            "description": "*The main challenges:* \n- Implement sync with **remove API** and store data on the device using `CoreData` \n- Implement UI with charts and **iPad support**",
+            "description": "*The main challenges:* \n\n\nImplement sync with **remove API** and store data on the device using `CoreData` \n\n\nImplement UI with charts and **iPad support**",
             "data": {
                 "symbol": {
                     "icon": "bi-phone",
@@ -208,10 +208,10 @@
         {
             "date": "March 2016",
             "title": "",
-            "description": "Started working on a new **macOS app** - [Chronograph](https://apps.apple.com/ua/app/chronograph-my-productivity/id1316023026?mt=12) \n In-house application (App Dev Academy) with time tracker that allows you to work by *“Pomodoro technique”* and plan your tasks. \n\n *Role and responsibilities:* \n- Design an architecture and create an app from scratch \n- Design a database architecture and use `CoreData` framework\n- Implement background sync with a remote server via the **REST API** \n- `Swift` codebase and third-party dependencies \n- Implement *\"statistics screen\"* on the `SwiftUI` \n- Integration of **Analytics** and **In-App purchases**",
+            "description": "Started working on a new **macOS app** \n\n[Chronograph](https://apps.apple.com/ua/app/chronograph-my-productivity/id1316023026?mt=12) \n In-house application (App Dev Academy) with time tracker that allows you to work by *“Pomodoro technique”* and plan your tasks. \n\n *Role and responsibilities:* \n\n\nDesign an architecture and create an app from scratch \n\n\nDesign a database architecture and use `CoreData` framework\n\n\nImplement background sync with a remote server via the **REST API** \n\n\n`Swift` codebase and third-party dependencies \n\n\nImplement *\"statistics screen\"* on the `SwiftUI` \n\n\nIntegration of **Analytics** and **In-App purchases**",
             "data": {
                 "image": {
-                    "path": "timeline/chronograph_old.jpeg",
+                    "path": "timeline/chronograph_old.jpg",
                     "id": "chronograph_old"
                 },
                 "symbol": {
@@ -234,7 +234,7 @@
         {
             "date": "January 2016",
             "title": "",
-            "description": "Started working on the [SumDU](https://apps.apple.com/ua/app/id698235283) \n This is the first **iOS app**, published in the App Store, that I'm working on. \n Souce code on GitHub - [sumdu-ios](https://github.com/appdev-academy/sumdu-ios) \n\n For me, the *main challenge* here was to implement a **custom navigation bar** with nice and **smooth animation**. And implement a custom layout for the **iPad version** of the app.",
+            "description": "Started working on the [SumDU](https://apps.apple.com/ua/app/id698235283) \n This is the first **iOS app**, published in the App Store, that I'm working on. \n Souce code on GitHub \n\n[sumdu-ios](https://github.com/appdev-academy/sumdu-ios) \n\n For me, the *main challenge* here was to implement a **custom navigation bar** with nice and **smooth animation**. And implement a custom layout for the **iPad version** of the app.",
             "data": {
                 "image": {
                     "path": "timeline/sumdu.png",
@@ -252,7 +252,7 @@
             "description": "Finished working at [bvblogic](https://bvblogic.com), **3 years and 7 months** \nI build websites on `PHP` programming language, using frameworks such as `Laravel`, `Kohana`, `Codeigniter`, `Yii`. Also, I used `CSS3`, `HTML5`, `jQuery`, and `Bootstrap` for the frontend. \n First experience of building and supporting commercial projects.",
             "data": {
                 "image": {
-                    "path": "timeline/bvblogic.jpeg",
+                    "path": "timeline/bvblogic.jpg",
                     "id": "bvblogic"
                 },
                 "symbol": {
@@ -262,16 +262,16 @@
             }
         },
         {
-            "date": "",
+            "date": "June 2014",
             "title": "",
-            "description": "",
-            "comment": "June 2014 - Apple has announced the `Swift` programming language"
+            "description": "Apple has announced the `Swift` programming language",
+            "comment": ""
         },
         {
-            "date": "",
+            "date": "20 February 2014",
             "title": "",
-            "description": "",
-            "comment": "**20 February 2014**\n russia began its annexation of Crimea",
+            "description": "russia began its annexation of Crimea",
+            "comment": "",
             "data": {
                 "symbol": {
                     "icon": "bi-heartbreak",
@@ -365,10 +365,10 @@
             }
         },
         {
-            "date": "",
+            "date": "June 29, 2007",
             "title": "",
-            "description": "",
-            "comment": "June 29, 2007 \n first iPhone released",
+            "description": "first iPhone released",
+            "comment": "",
             "data": {
                 "symbol": {
                     "icon": "bi-phone",
@@ -377,7 +377,7 @@
             }
         },
         {
-            "date": "2007 - 2008",
+            "date": "2007 \n\n2008",
             "title": "Laboratory Technician",
             "description": "At college, my job was to configure, maintain and update PCs on **Windows 98** and **XP**. Also, I helped students to make their homework done.",
             "data": {
