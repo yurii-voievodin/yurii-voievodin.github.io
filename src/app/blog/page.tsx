@@ -8,10 +8,10 @@ export default function BlogPage() {
     <div className="space-y-8">
       <div className="text-center">
         <h1 className="text-4xl font-bold text-zinc-100 mb-4">
-          Blog Posts
+          Posts
         </h1>
         <p className="text-lg text-zinc-300 max-w-2xl mx-auto">
-          Thoughts, tutorials, and insights about web development, programming, and technology.
+          Thoughts and insights about development, programming, and technology.
         </p>
       </div>
 
