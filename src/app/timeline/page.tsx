@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 import * as icons from "lucide-react";
 import ReactMarkdown from "react-markdown";
+import { LucideIcon } from "lucide-react";
 
 const iconMap: Record<string, keyof typeof icons> = {
     "bi-phone": "Phone",
@@ -11,7 +12,6 @@ const iconMap: Record<string, keyof typeof icons> = {
     "bi-house": "Home",
     "bi-shield": "Shield",
     "bi-terminal": "Terminal",
-    "bi-window": "Window",
     "bi-check-circle": "CheckCircle",
     "bi-cpu": "Cpu",
     "bi-laptop": "Laptop",
@@ -22,9 +22,9 @@ const iconMap: Record<string, keyof typeof icons> = {
 };
 
 function getIcon(iconKey: string, color?: string) {
-    const LucideIcon = icons[iconMap[iconKey] || "Circle"];
-    return LucideIcon ? (
-        <LucideIcon className="w-6 h-6 mb-2" color={color || "gray"} />
+    const IconComponent = icons[iconMap[iconKey] || "Circle"] as LucideIcon;
+    return IconComponent ? (
+        <IconComponent className="w-6 h-6 mb-2" color={color || "gray"} />
     ) : null;
 }
 
@@ -55,7 +55,9 @@ export default async function TimelinePage() {
             )}
             <div className="flex-1">
             {event.comment ? (
-                <p dangerouslySetInnerHTML={{ __html: event.comment }} />
+                <div className="prose prose-invert max-w-none">
+                    <ReactMarkdown>{event.comment}</ReactMarkdown>
+                </div>
             ) : (
                 <>
                 <div className="text-sm text-gray-500">{event.date}</div>
