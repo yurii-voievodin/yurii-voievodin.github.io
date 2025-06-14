@@ -24,7 +24,7 @@ const iconMap: Record<string, keyof typeof icons> = {
 function getIcon(iconKey: string, color?: string) {
     const IconComponent = icons[iconMap[iconKey] || "Circle"] as LucideIcon;
     return IconComponent ? (
-        <IconComponent className="w-6 h-6 mb-2" color={color || "gray"} />
+        <IconComponent className="w-6 h-6" color={color || "gray"} />
     ) : null;
 }
 
@@ -45,44 +45,62 @@ export default async function TimelinePage() {
     const timeline: TimelineItem[] = JSON.parse(file).timeline;
     
     return (
-        <div className="container mx-auto py-4 space-y-6">
-        {timeline.map((event, i) => (
-            <div key={i} className="bg-zinc-800/50 rounded-lg p-8 shadow-lg border border-zinc-700/50">
-            {event.data?.symbol?.icon && (
-                <div className="shrink-0">
-                {getIcon(event.data.symbol.icon, event.data.symbol.color)}
+        <div className="container mx-auto py-8 px-4">
+            <div className="relative">
+                {/* Vertical timeline line */}
+                <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-zinc-600"></div>
+                
+                <div className="space-y-8">
+                    {timeline.map((event, i) => (
+                        <div key={i} className="relative flex items-start">
+                            {/* Icon container with background */}
+                            <div className="relative z-10 flex items-center justify-center w-16 h-16 bg-zinc-800 border-2 border-zinc-600 rounded-full mr-6">
+                                {event.data?.symbol?.icon ? (
+                                    getIcon(event.data.symbol.icon, event.data.symbol.color)
+                                ) : (
+                                    <div className="w-3 h-3 bg-zinc-500 rounded-full"></div>
+                                )}
+                            </div>
+                            
+                            {/* Content */}
+                            <div className="flex-1 bg-zinc-800/50 rounded-lg p-6 shadow-lg border border-zinc-700/50">
+                                {event.comment ? (
+                                    <div className="prose prose-invert max-w-none [&_a]:text-blue-400 [&_a]:underline [&_a]:decoration-blue-400/50 [&_a:hover]:text-blue-300 [&_a:hover]:decoration-blue-300">
+                                        <ReactMarkdown>{event.comment}</ReactMarkdown>
+                                    </div>
+                                ) : (
+                                    <>
+                                        {event.date && (
+                                            <div className="text-sm text-zinc-400 mb-2 font-medium">
+                                                {event.date}
+                                            </div>
+                                        )}
+                                        {event.title && (
+                                            <div className="prose prose-invert max-w-none mb-3 [&_a]:text-blue-400 [&_a]:underline [&_a]:decoration-blue-400/50 [&_a:hover]:text-blue-300 [&_a:hover]:decoration-blue-300">
+                                                <ReactMarkdown>{event.title}</ReactMarkdown>
+                                            </div>
+                                        )}
+                                        {event.description && (
+                                            <div className="prose prose-invert max-w-none [&_a]:text-blue-400 [&_a]:underline [&_a]:decoration-blue-400/50 [&_a:hover]:text-blue-300 [&_a:hover]:decoration-blue-300">
+                                                <ReactMarkdown>{event.description}</ReactMarkdown>
+                                            </div>
+                                        )}
+                                        {event.data?.image && (
+                                            <div className="mt-4">
+                                                <img
+                                                    src={`/${event.data.image.path}`}
+                                                    alt=""
+                                                    className="rounded-lg max-w-xs shadow-md"
+                                                />
+                                            </div>
+                                        )}
+                                    </>
+                                )}
+                            </div>
+                        </div>
+                    ))}
                 </div>
-            )}
-            <div className="flex-1">
-            {event.comment ? (
-                <div className="prose prose-invert max-w-none">
-                    <ReactMarkdown>{event.comment}</ReactMarkdown>
-                </div>
-            ) : (
-                <>
-                <div className="text-sm text-gray-500">{event.date}</div>
-                {event.title && (
-                    <div className="prose prose-invert max-w-none">
-                    <ReactMarkdown>{event.title}</ReactMarkdown>
-                    </div>
-                )}
-                {event.description && (
-                    <div className="prose prose-invert max-w-none">
-                    <ReactMarkdown>{event.description}</ReactMarkdown>
-                    </div>
-                )}
-                {event.data?.image && (
-                    <img
-                    src={`/${event.data.image.path}`}
-                    alt=""
-                    className="mt-2 rounded max-w-xs"
-                    />
-                )}
-                </>
-            )}
             </div>
-            </div>
-        ))}
         </div>
     );
 }
