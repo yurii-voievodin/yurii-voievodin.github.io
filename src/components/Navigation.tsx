@@ -5,6 +5,11 @@ import { Home, User, FileText, Clock } from 'lucide-react';
 import { siteConfig } from '@/lib/config';
 
 export default function Navigation() {
+  // Filter navigation items to exclude Blog and Timeline from header
+  const headerNavigation = siteConfig.navigation.filter(
+    item => item.name !== 'Blog' && item.name !== 'Timeline'
+  );
+
   return (
     <nav className="bg-zinc-900 border-b border-zinc-800">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -14,7 +19,7 @@ export default function Navigation() {
           </Link>
           
           <div className="flex items-center space-x-8">
-            {siteConfig.navigation.map((item) => {
+            {headerNavigation.map((item) => {
               let icon;
               if (item.name === 'Home') icon = Home;
               else if (item.name === 'Blog') icon = FileText;
