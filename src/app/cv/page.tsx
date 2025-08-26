@@ -43,8 +43,7 @@ export default function CVPage() {
     </h2>
     <p className="text-zinc-300 leading-relaxed">
     Experienced software developer with 10+ years of expertise in web and mobile apps development, and with a bachelor&apos;s degree in Computer Science. 
-    Proficient in Swift programming language, modern iOS frameworks, and agile methodologies. 
-    Passionate about creating user-friendly applications and delivering high-quality solutions.
+    Proficient in Swift programming language, modern iOS frameworks, and agile methodologies.
     </p>
     </section>
     
@@ -96,11 +95,11 @@ export default function CVPage() {
         )}
         
         {item.skills && item.skills.length > 0 && (
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2 pt-2">
           {item.skills.map((skill) => (
             <span 
             key={skill} 
-            className="px-2 py-1 bg-blue-500/10 text-blue-400 text-xs rounded-full border border-blue-500/20"
+            className="px-3 py-1.5 bg-blue-500/10 text-blue-400 text-sm rounded-full border border-blue-500/20"
             >
             {skill}
             </span>

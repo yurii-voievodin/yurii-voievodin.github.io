@@ -5,15 +5,15 @@ export const siteConfig = {
   url: "https://yurii-voievodin.github.io", // Updated to GitHub Pages domain
   author: {
     name: "Yurii Voievodin",
-    email: "voevodin.yura@icloud.com",
-    title: "Senior Software Developer",
-    location: "Kraków, Poland",
+    email: "yurii.voievodin@icloud.com",
+    title: "Software Developer",
+    location: "Poland",
     phone: "",
   },
   social: {
     github: "https://github.com/yurii-voievodin",
     linkedin: "https://www.linkedin.com/in/yurivoevodin",
-    email: "mailto:voevodin.yura@icloud.com",
+    email: "mailto:yurii.voievodin@icloud.com",
   },
   navigation: [
     { name: "Home", href: "/" },

@@ -9,9 +9,9 @@ export const experienceHTML = `
         <h3 class="text-lg font-semibold text-zinc-100">Lead iOS Engineer</h3>
         <p class="text-blue-400 font-medium mb-1"><a href="https://www.vistaprint.com" rel="nofollow" target="_blank" class="text-blue-400 hover:text-blue-300">VistaPrint</a> 
                 + <a href="https://create.vista.com" rel="nofollow" target="_blank" class="text-blue-400 hover:text-blue-300">VistaCreate</a></p>
-        <p class="text-zinc-400 text-sm mb-2">2022 - now</p>
+        <p class="text-zinc-400 mb-2">2022 - now</p>
         <p class="text-zinc-400 italic mb-2">Role and responsibilities:</p>
-            <ul class="text-zinc-300 space-y-1 text-sm">
+            <ul class="text-zinc-300 space-y-1">
                 <li>• Make completely new app Home screen</li>
                 <li>• Write unit tests for cover app business logic</li>
                 <li>• Build an app with a modular architecture</li>
@@ -22,9 +22,9 @@ export const experienceHTML = `
     <div class="border-l-2 border-blue-500/30 pl-6">
         <h3 class="text-lg font-semibold text-zinc-100">Software Engineer (iOS, Swift)</h3>
         <p class="text-blue-400 font-medium mb-1"><a href="https://www.clowder.com" rel="nofollow" target="_blank" class="text-blue-400 hover:text-blue-300">Clowder</a></p>
-        <p class="text-zinc-400 text-sm mb-2">2020 - 2022</p>
+        <p class="text-zinc-400 mb-2">2020 - 2022</p>
         <p class="text-zinc-400 italic mb-2">Role and responsibilities:</p>
-            <ul class="text-zinc-300 space-y-1 text-sm">
+            <ul class="text-zinc-300 space-y-1">
                 <li>• Create clones (copies) of the <span class="font-bold">Core</span> product</li>
                 <li>• Add customizations to the clones and enable/disable product modules</li>
                 <li>• Integrate user profile with custom fields to the clones of the <span class="font-bold">Core</span> product</li>
@@ -37,8 +37,8 @@ export const experienceHTML = `
         <h3 class="text-lg font-semibold text-zinc-100">iOS Developer</h3>
         <p class="text-blue-400 font-medium mb-1"><a href="https://coachnow.io" rel="nofollow" target="_blank" class="text-blue-400 hover:text-blue-300">CoachNow</a> 
                 (part time)</p>
-        <p class="text-zinc-400 text-sm mb-2">2020 - 2021</p>
-        <p class="text-zinc-300 text-sm mt-2 mb-2">
+        <p class="text-zinc-400 mb-2">2020 - 2021</p>
+        <p class="text-zinc-300 mt-2 mb-2">
                 Main responsibility here is to support the 
                 <a href="https://apps.apple.com/app/coachnow-coaching-platform/id596598472" rel="nofollow" target="_blank" class="text-blue-400 hover:text-blue-300 ml-1">CoachNow app</a> 
                 (iOS and iPadOS) and add new features. It&apos;s an app with a long history (8+ years) and mixed codebase 
@@ -46,7 +46,7 @@ export const experienceHTML = `
                 with a lot of dependencies.
             </p>
             <p class="text-zinc-400 italic mb-2">Role and responsibilities:</p>
-                <ul class="text-zinc-300 space-y-1 text-sm">
+                <ul class="text-zinc-300 space-y-1">
                     <li>• Rewrite code from <code class="bg-zinc-700 px-1 rounded text-xs">Objective-C</code> to <code class="bg-zinc-700 px-1 rounded text-xs">Swift</code></li>
                     <li>• Make code reviews</li>
                     <li>• Publish new versions of the app to the <span class="font-bold">TestFlight</span> for internal testing</li>
@@ -59,10 +59,10 @@ export const experienceHTML = `
     <div class="border-l-2 border-blue-500/30 pl-6">
         <h3 class="text-lg font-semibold text-zinc-100">iOS, iPadOS and macOS Apps Developer</h3>
         <p class="text-blue-400 font-medium mb-1"><a href="https://www.appdev.academy" rel="nofollow" target="_blank" class="text-blue-400 hover:text-blue-300">App Dev Academy</a></p>
-        <p class="text-zinc-400 text-sm mb-2">2016 - 2020</p>
-        <p class="text-zinc-300 text-sm mt-2">I have participated in development, publication and support of <span class="font-bold">10+ iOS apps</span> and one macOS app.</p>
+        <p class="text-zinc-400 mb-2">2016 - 2020</p>
+        <p class="text-zinc-300 mt-2">I have participated in development, publication and support of <span class="font-bold">10+ iOS apps</span> and one macOS app.</p>
         <p class="text-zinc-400 italic mb-2 pt-2">Role and responsibilities:</p>
-            <ul class="text-zinc-300 space-y-1 text-sm">
+            <ul class="text-zinc-300 space-y-1">
                 <li>• Create apps from scratch and design apps architecture</li>
                 <li>• Create user interface with <span class="font-bold">Storyboards</span> and <span class="font-bold">XIB</span> files</li>
                 <li>• Use <code class="bg-zinc-700 px-1 rounded text-xs">UIKit</code> and create <span class="font-bold">custom UI</span> components</li>
@@ -76,8 +76,8 @@ export const experienceHTML = `
     <div class="border-l-2 border-blue-500/30 pl-6">
         <h3 class="text-lg font-semibold text-zinc-100">PHP Developer</h3>
         <p class="text-blue-400 font-medium mb-1"><a href="https://bvblogic.com" rel="nofollow" target="_blank" class="text-blue-400 hover:text-blue-300">bvblogic</a></p>
-        <p class="text-zinc-400 text-sm mb-2">2012 - 2016</p>
-        <p class="text-zinc-300 text-sm mt-2">
+        <p class="text-zinc-400 mb-2">2012 - 2016</p>
+        <p class="text-zinc-300 mt-2">
             I build websites on <code class="bg-zinc-700 px-1 rounded text-xs">PHP</code> programming language, using frameworks such as 
             <code class="bg-zinc-700 px-1 rounded text-xs">Laravel</code>, <code class="bg-zinc-700 px-1 rounded text-xs">Kohana</code>, 
             <code class="bg-zinc-700 px-1 rounded text-xs">Codeigniter</code>, <code class="bg-zinc-700 px-1 rounded text-xs">Yii</code>. 
@@ -89,15 +89,15 @@ export const experienceHTML = `
     <div class="border-l-2 border-blue-500/30 pl-6">
         <h3 class="text-lg font-semibold text-zinc-100">Senior Laboratory</h3>
         <p class="text-blue-400 font-medium mb-1"><a href="https://dl.sumdu.edu.ua/en" rel="nofollow" target="_blank" class="text-blue-400 hover:text-blue-300">Laboratory of distance learning</a> 
-                at <a href="https://sumdu.edu.ua/int/en" rel="nofollow" target="_blank" class="text-blue-400 hover:text-blue-300">Sumy State University</a></p>
-        <p class="text-zinc-400 text-sm mb-2">2012 - 2013</p>
-        <p class="text-zinc-300 text-sm mt-2">I worked on simple training apps for students on <code class="bg-zinc-700 px-1 rounded text-xs">Java</code> and an internal framework.  Also convert Microsoft Word documents to <code class="bg-zinc-700 px-1 rounded text-xs">HTML</code> pages as part of my job there.</p>
+                at <a href="https://int.sumdu.edu.ua/en/" rel="nofollow" target="_blank" class="text-blue-400 hover:text-blue-300">Sumy State University</a></p>
+        <p class="text-zinc-400 mb-2">2012 - 2013</p>
+        <p class="text-zinc-300 mt-2">I worked on simple training apps for students on <code class="bg-zinc-700 px-1 rounded text-xs">Java</code> and an internal framework.  Also convert Microsoft Word documents to <code class="bg-zinc-700 px-1 rounded text-xs">HTML</code> pages as part of my job there.</p>
     </div>
     <div class="border-l-2 border-blue-500/30 pl-6">
         <h3 class="text-lg font-semibold text-zinc-100">Laboratory Technician</h3>
         <p class="text-blue-400 font-medium mb-1"><a href="https://kpt.sumdu.edu.ua" rel="nofollow" target="_blank" class="text-blue-400 hover:text-blue-300">Polytechnic College of Konotop Institute of the SSU</a></p>
-        <p class="text-zinc-400 text-sm mb-2">2007 - 2008</p>
-        <p class="text-zinc-300 text-sm mt-2">At college, my job was to configure, maintain and update PCs on Windows 98 and XP. Also, I helped students to make homework done.</p>
+        <p class="text-zinc-400 mb-2">2007 - 2008</p>
+        <p class="text-zinc-300 mt-2">At college, my job was to configure, maintain and update PCs on Windows 98 and XP. Also, I helped students to make homework done.</p>
     </div>
 </div>
 `;

@@ -3,6 +3,7 @@ import path from "path";
 import * as icons from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import { LucideIcon } from "lucide-react";
+import TimelineHighlighter from '@/components/TimelineHighlighter';
 
 const iconMap: Record<string, keyof typeof icons> = {
     "bi-phone": "Phone",
@@ -39,6 +40,12 @@ type TimelineItem = {
     };
 };
 
+function createIdFromDate(date?: string): string {
+    if (!date) return '';
+    // Remove spaces, commas, and other special characters, convert to lowercase
+    return date.replace(/[\s,.-]/g, '').toLowerCase();
+}
+
 export default async function TimelinePage() {
     const filePath = path.join(process.cwd(), "public/data/timeline.json");
     const file = fs.readFileSync(filePath, "utf-8");
@@ -46,6 +53,9 @@ export default async function TimelinePage() {
     
     return (
         <div className="container mx-auto py-8 px-4">
+            {/* Mount the client highlighter early in the tree */}
+            <TimelineHighlighter />
+            
             <div className="relative">
                 {/* Vertical timeline line */}
                 <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-zinc-600"></div>
@@ -63,7 +73,7 @@ export default async function TimelinePage() {
                             </div>
                             
                             {/* Content */}
-                            <div className="flex-1 bg-zinc-800/50 rounded-lg p-6 shadow-lg border border-zinc-700/50">
+                            <div id={createIdFromDate(event.date)} className="flex-1 bg-zinc-800/50 rounded-lg p-6 shadow-lg border border-zinc-700/50">
                                 {event.comment ? (
                                     <div className="prose prose-invert max-w-none [&_a]:text-blue-400 [&_a]:underline [&_a]:decoration-blue-400/50 [&_a:hover]:text-blue-300 [&_a:hover]:decoration-blue-300">
                                         <ReactMarkdown>{event.comment}</ReactMarkdown>
