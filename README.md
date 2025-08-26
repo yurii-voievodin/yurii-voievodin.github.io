@@ -108,16 +108,8 @@ npm run build
 ```
 
 2. Deploy the `out` folder to any static hosting service:
-   - **Netlify**: Drag and drop the `out` folder
-   - **Vercel**: Connect your GitHub repo
    - **GitHub Pages**: Upload to your repository
-   - **AWS S3**: Upload files to an S3 bucket
 
-### Vercel (Easiest)
-
-1. Push your code to GitHub
-2. Connect your repository to Vercel
-3. Deploy automatically with each push
 
 ## Technologies Used
 
