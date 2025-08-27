@@ -1,6 +1,6 @@
 ---
 title: "Land Rover Discovery Sport 2017"
-date: "2021-03-06"
+date: "2025-02-02"
 excerpt: "A collection of my photos with Land Rover in different locations"
 tags: ["Land Rover"]
 ---

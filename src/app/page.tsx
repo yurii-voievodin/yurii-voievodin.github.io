@@ -35,23 +35,6 @@ export default function Home() {
       <section className="grid md:grid-cols-2 gap-8">
         <div className="bg-zinc-800/50 p-6 rounded-lg shadow-lg border border-zinc-700/50">
           <h3 className="text-xl font-semibold text-zinc-100 mb-3">
-            Latest from the Blog
-          </h3>
-          <p className="text-zinc-300 mb-4">
-            Discover my latest thoughts on software development, programming
-            best practices, and technology trends.
-          </p>
-          <Link
-            href="/blog"
-            className="inline-flex items-center text-blue-400 hover:text-blue-300 font-medium transition-colors"
-          >
-            Explore all posts
-            <ArrowRight className="ml-1" size={16} />
-          </Link>
-        </div>
-
-        <div className="bg-zinc-800/50 p-6 rounded-lg shadow-lg border border-zinc-700/50">
-          <h3 className="text-xl font-semibold text-zinc-100 mb-3">
             Professional Background
           </h3>
           <p className="text-zinc-300 mb-4">
@@ -63,6 +46,23 @@ export default function Home() {
             className="inline-flex items-center text-blue-400 hover:text-blue-300 font-medium transition-colors"
           >
             View my CV
+            <ArrowRight className="ml-1" size={16} />
+          </Link>
+        </div>
+
+        <div className="bg-zinc-800/50 p-6 rounded-lg shadow-lg border border-zinc-700/50">
+          <h3 className="text-xl font-semibold text-zinc-100 mb-3">
+            Latest from the Blog
+          </h3>
+          <p className="text-zinc-300 mb-4">
+            Discover my latest thoughts on software development, programming
+            best practices, and technology trends.
+          </p>
+          <Link
+            href="/blog"
+            className="inline-flex items-center text-blue-400 hover:text-blue-300 font-medium transition-colors"
+          >
+            Explore all posts
             <ArrowRight className="ml-1" size={16} />
           </Link>
         </div>

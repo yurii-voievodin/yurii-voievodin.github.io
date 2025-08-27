@@ -33,8 +33,8 @@
             "description": "Started working at the [VistaCreate](https://create.vista.com) company\n\n*Role and responsibilities:*\n\n- Make completely new app **Home** screen\n- Write **unit tests** for cover app business logic\n- Build an app with a **modular architecture**\n- Work with analytics services **Firebase**, **AppsFlyer**, **Iterable**\n- Implement **A/B tests**",
             "data": {
                 "symbol": {
-                    "icon": "Keyboard",
-                    "color": "cornflowerblue"
+                    "icon": "Brush",
+                    "color": "pink"
                 }
             }
         },
@@ -60,7 +60,7 @@
                 },
                 "symbol": {
                     "icon": "Home",
-                    "color": "indigo"
+                    "color": "purple"
                 }
             }
         },
@@ -70,16 +70,22 @@
             "description": "Started working at the [CoachNow](https://coachnow.io) company. It's a part-time fully remote job.\n\n *Main responsibility* here is to support the [CoachNow app](https://apps.apple.com/app/coachnow-coaching-platform/id596598472) (**iOS** and **iPadOS**) and add new features. It's an app with a long history (**8+ years**) and mixed codebase (`Objective-C` and `Swift`) with a lot of dependencies.",
             "data": {
                 "symbol": {
-                    "icon": "Keyboard",
-                    "color": "gray"
+                    "icon": "Volleyball",
+                    "color": "orange"
                 }
             }
         },
         {
-            "date": "",
+            "date": "October 2020",
             "title": "",
-            "description": "",
-            "comment": "**October 2020**\n\nApple unleashes M1 💻"
+            "description": "Apple unleashes M1 💻",
+            "comment": "",
+            "data": {
+                "symbol": {
+                    "icon": "Cpu",
+                    "color": "white"
+                }
+            }
         },
         {
             "date": "16 March 2020",
@@ -102,16 +108,22 @@
                     "id": "office"
                 },
                 "symbol": {
-                    "icon": "Circle",
-                    "color": "gray"
+                    "icon": "Rocket",
+                    "color": "white"
                 }
             }
         },
         {
-            "date": "",
+            "date": "2020",
             "title": "",
-            "description": "",
-            "comment": "**2020** \n\nCoronavirus 🦠"
+            "description": "Coronavirus 🦠",
+            "comment": "",
+            "data": {
+                "symbol": {
+                    "icon": "Microscope",
+                    "color": "green"
+                }
+            }
         },
         {
             "date": "July 2019",
@@ -145,8 +157,8 @@
         },
         {
             "date": "24 December 2018",
-            "title": "My University",
-            "description": "Started a new personal project \n\n[My University](https://github.com/university-my/ios) web service and API on `Rails` framework.\nIn this day, I made my first commit 🎉 \n\n*Technical info:* \n\n\niOS app written in `Swift` \n\n\n User interface created with Storyboards and **SwiftUI** \n\n\n**MVC** architecture (with Dependency Injection) \n\n\nURLSession for network requests to **REST API** \n\n\n`CoreData` as offline storage \n \n\n[Ruby On Rails](https://rubyonrails.org) for backend",
+            "title": "",
+            "description": "Started a new personal project \n\n[My University](https://github.com/university-my/ios) web service and API on `Rails` framework.\nIn this day, I made my first commit 🎉 \n\n*Technical info:* \n\n\n- iOS app written in `Swift` \n\n- User interface created with Storyboards and **SwiftUI** \n\n- **MVC** architecture (with Dependency Injection) \n\n- URLSession for network requests to **REST API** \n\n- `CoreData` as offline storage \n\n- [Ruby On Rails](https://rubyonrails.org) for backend",
             "data": {
                 "image": {
                     "path": "timeline/my_university_landing.png",
@@ -154,14 +166,14 @@
                 },
                 "symbol": {
                     "icon": "Terminal",
-                    "color": "purple"
+                    "color": "white"
                 }
             }
         },
         {
             "date": "March 2017",
             "title": "",
-            "description": "Started working on the **iOS app** [PROVEIT](https://apps.apple.com/app/proveit-real-money-games/id1219398758)\n\nTechCrunch about PROVEIT - [Bet money on yourself with Proveit, the 1-vs-1 trivia app](https://techcrunch.com/2018/06/18/proveit-trivia) \n\n*Technical info:* \n \n\nWritten in `Swift` \n \n\nCocoapods as dependency manager \n \n\n**MVC** architecture \n \n\nUser interface created with **Storyboards** and **XIB** files \n \n\nApple Pay and Push Notifications integration \n \n\nThird-party integrations: **Firebase**, **Crashlytics** \n\n *Role and responsibilities:* \n \n\nDesign app architecture and create app from scratch \n \n\nImplement networking layer \n\n**REST API** \n \n\nImplement **custom UI**",
+            "description": "Started working on the **iOS app** [PROVEIT](https://apps.apple.com/app/proveit-real-money-games/id1219398758)\n\nTechCrunch about PROVEIT - [Bet money on yourself with Proveit, the 1-vs-1 trivia app](https://techcrunch.com/2018/06/18/proveit-trivia) \n\n*Technical info:* \n\n- Written in `Swift` \n\n- Cocoapods as dependency manager \n\n- **MVC** architecture \n\n- User interface created with **Storyboards** and **XIB** files \n\n- Apple Pay and Push Notifications integration \n\n- Third-party integrations: **Firebase**, **Crashlytics** \n\n *Role and responsibilities:* \n\n- Design app architecture and create app from scratch \n\n- Implement networking layer **REST API** \n\n- Implement **custom UI**",
             "data": {
                 "image": {
                     "path": "timeline/proveit.jpg",
@@ -177,12 +189,18 @@
             "date": "July 2016 - February 2017",
             "title": "",
             "description": "Some other small apps for iOS",
-            "comment": ""
+            "comment": "",
+            "data": {
+                "symbol": {
+                    "icon": "Keyboard",
+                    "color": "cornflowerblue"
+                }
+            }
         },
         {
             "date": "July 2016",
             "title": "",
-            "description": "Started working on a new **iOS app** \n\n[Chronograph](https://apps.apple.com/app/chronograph/id1281918814)\n In-house application (App Dev Academy) with time tracking and task management. \n\n*My role:*\n\n\nDesign an architecture and create an app from scratch\n\n\nDesign a database architecture and use `CoreData` framework \n\n\nImplement custom layout of the \"timer\" and \"clock\"\n\n\n**iPad version** of the app \n\n\n**Shared codebase** between iOS and macOS versions of the app \n\n\nIntegration of **Analytics** and **In-App purchases**",
+            "description": "Started working on a new **iOS app** \n\n[Chronograph](https://apps.apple.com/app/chronograph/id1281918814)\n In-house application (App Dev Academy) with time tracking and task management. \n\n*My role:*\n\n- Design an architecture and create an app from scratch\n\n- Design a database architecture and use `CoreData` framework \n\n- Implement custom layout of the \"timer\" and \"clock\"\n\n- **iPad version** of the app \n\n- **Shared codebase** between iOS and macOS versions of the app \n\n- Integration of **Analytics** and **In-App purchases**",
             "data": {
                 "image": {
                     "path": "timeline/chronograph_ios_collage.jpg",
@@ -197,18 +215,18 @@
         {
             "date": "June 2016",
             "title": "Cashbox",
-            "description": "*The main challenges:* \n\n\nImplement sync with **remove API** and store data on the device using `CoreData` \n\n\nImplement UI with charts and **iPad support**",
+            "description": "*The main challenges:* \n\n- Implement sync with **remove API** and store data on the device using `CoreData` \n\n- Implement UI with charts and **iPad support**",
             "data": {
                 "symbol": {
-                    "icon": "Smartphone",
-                    "color": "cornflowerblue"
+                    "icon": "Coins",
+                    "color": "green"
                 }
             }
         },
         {
             "date": "March 2016",
             "title": "",
-            "description": "Started working on a new **macOS app** \n\n[Chronograph](https://apps.apple.com/ua/app/chronograph-my-productivity/id1316023026?mt=12) \n In-house application (App Dev Academy) with time tracker that allows you to work by *“Pomodoro technique”* and plan your tasks. \n\n *Role and responsibilities:* \n\n\nDesign an architecture and create an app from scratch \n\n\nDesign a database architecture and use `CoreData` framework\n\n\nImplement background sync with a remote server via the **REST API** \n\n\n`Swift` codebase and third-party dependencies \n\n\nImplement *\"statistics screen\"* on the `SwiftUI` \n\n\nIntegration of **Analytics** and **In-App purchases**",
+            "description": "Started working on a new **macOS app** \n\n[Chronograph](https://apps.apple.com/ua/app/chronograph-my-productivity/id1316023026?mt=12) \n In-house application (App Dev Academy) with time tracker that allows you to work by *“Pomodoro technique”* and plan your tasks. \n\n *Role and responsibilities:* \n\n- Design an architecture and create an app from scratch \n\n- Design a database architecture and use `CoreData` framework\n\n- Implement background sync with a remote server via the **REST API** \n\n- `Swift` codebase and third-party dependencies \n\n- Implement *\"statistics screen\"* on the `SwiftUI` \n\n- Integration of **Analytics** and **In-App purchases**",
             "data": {
                 "image": {
                     "path": "timeline/chronograph_old.jpg",
@@ -254,7 +272,13 @@
             "date": "June 2014",
             "title": "",
             "description": "Apple has announced the [Swift](https://www.swift.org) programming language",
-            "comment": ""
+            "comment": "",
+            "data": {
+                "symbol": {
+                    "icon": "Bird",
+                    "color": "orange"
+                }
+            }
         },
         {
             "date": "20 February 2014",
@@ -279,7 +303,7 @@
                 },
                 "symbol": {
                     "icon": "Apple",
-                    "color": "teal"
+                    "color": "white"
                 }
             }
         },
@@ -290,7 +314,7 @@
             "data": {
                 "symbol": {
                     "icon": "Apple",
-                    "color": "gray"
+                    "color": "white"
                 }
             }
         },
