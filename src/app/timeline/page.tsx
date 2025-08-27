@@ -91,7 +91,7 @@ export default async function TimelinePage() {
                                             </div>
                                         )}
                                         {event.description && (
-                                            <div className="prose prose-invert max-w-none text-zinc-400 [&_a]:text-blue-400 [&_a]:underline [&_a]:decoration-blue-400/50 [&_a:hover]:text-blue-300 [&_a:hover]:decoration-blue-300 [&_ul]:list-disc [&_ul]:ps-5 [&_ul]:space-y-1 [&_li]:text-zinc-400">
+                                            <div className="prose prose-invert max-w-none [&_a]:text-blue-400 [&_a]:underline [&_a]:decoration-blue-400/50 [&_a:hover]:text-blue-300 [&_a:hover]:decoration-blue-300 [&_ul]:list-disc [&_ul]:ps-5 [&_ul]:space-y-1 [&_li]:text-zinc-300">
                                                 <ReactMarkdown>{event.description}</ReactMarkdown>
                                             </div>
                                         )}

@@ -20,7 +20,7 @@ export const experienceHTML = `
             </ul>
     </div>
     <div class="border-l-2 border-blue-500/30 pl-6">
-        <h3 class="text-lg font-semibold text-zinc-100">Software Engineer (iOS, Swift)</h3>
+        <h3 class="text-lg font-semibold text-zinc-100"><a href="/timeline/#january2022" class="text-zinc-100 hover:text-blue-300 hover:underline">Software Engineer (iOS, Swift)</a></h3>
         <p class="text-blue-400 font-medium mb-1"><a href="https://www.clowder.com" rel="nofollow" target="_blank" class="text-blue-400 hover:text-blue-300">Clowder</a></p>
         <p class="text-zinc-400 mb-2">2020 - 2022</p>
         <p class="text-zinc-400 italic mb-2">Role and responsibilities:</p>
@@ -34,7 +34,7 @@ export const experienceHTML = `
             </ul>
     </div>
     <div class="border-l-2 border-blue-500/30 pl-6">
-        <h3 class="text-lg font-semibold text-zinc-100">iOS Developer</h3>
+        <h3 class="text-lg font-semibold text-zinc-100"><a href="/timeline/#10february2021" class="text-zinc-100 hover:text-blue-300 hover:underline">iOS Developer</a></h3>
         <p class="text-blue-400 font-medium mb-1"><a href="https://coachnow.io" rel="nofollow" target="_blank" class="text-blue-400 hover:text-blue-300">CoachNow</a> 
                 (part time)</p>
         <p class="text-zinc-400 mb-2">2020 - 2021</p>
@@ -57,7 +57,7 @@ export const experienceHTML = `
                 </ul>
     </div>
     <div class="border-l-2 border-blue-500/30 pl-6">
-        <h3 class="text-lg font-semibold text-zinc-100">iOS, iPadOS and macOS Apps Developer</h3>
+        <h3 class="text-lg font-semibold text-zinc-100"><a href="/timeline/#march2020" class="text-zinc-100 hover:text-blue-300 hover:underline">iOS, iPadOS and macOS Apps Developer</a></h3>
         <p class="text-blue-400 font-medium mb-1"><a href="https://www.appdev.academy" rel="nofollow" target="_blank" class="text-blue-400 hover:text-blue-300">App Dev Academy</a></p>
         <p class="text-zinc-400 mb-2">2016 - 2020</p>
         <p class="text-zinc-300 mt-2">I have participated in development, publication and support of <span class="font-bold">10+ iOS apps</span> and one macOS app.</p>
@@ -74,7 +74,8 @@ export const experienceHTML = `
     </div>
     <hr class="border-zinc-700 my-8">
     <div class="border-l-2 border-blue-500/30 pl-6">
-        <h3 class="text-lg font-semibold text-zinc-100">PHP Developer</h3>
+
+        <h3 class="text-lg font-semibold text-zinc-100"><a href="/timeline/#january2016" class="text-zinc-100 hover:text-blue-300 hover:underline">PHP Developer</a></h3>
         <p class="text-blue-400 font-medium mb-1"><a href="https://bvblogic.com" rel="nofollow" target="_blank" class="text-blue-400 hover:text-blue-300">bvblogic</a></p>
         <p class="text-zinc-400 mb-2">2012 - 2016</p>
         <p class="text-zinc-300 mt-2">
@@ -87,14 +88,14 @@ export const experienceHTML = `
         </p>
     </div>
     <div class="border-l-2 border-blue-500/30 pl-6">
-        <h3 class="text-lg font-semibold text-zinc-100">Senior Laboratory</h3>
+        <h3 class="text-lg font-semibold text-zinc-100"><a href="/timeline/#20112012" class="text-zinc-100 hover:text-blue-300 hover:underline">Senior Laboratory</a></h3>
         <p class="text-blue-400 font-medium mb-1"><a href="https://dl.sumdu.edu.ua/en" rel="nofollow" target="_blank" class="text-blue-400 hover:text-blue-300">Laboratory of distance learning</a> 
                 at <a href="https://int.sumdu.edu.ua/en/" rel="nofollow" target="_blank" class="text-blue-400 hover:text-blue-300">Sumy State University</a></p>
         <p class="text-zinc-400 mb-2">2012 - 2013</p>
         <p class="text-zinc-300 mt-2">I worked on simple training apps for students on <code class="bg-zinc-700 px-1 rounded text-xs">Java</code> and an internal framework.  Also convert Microsoft Word documents to <code class="bg-zinc-700 px-1 rounded text-xs">HTML</code> pages as part of my job there.</p>
     </div>
     <div class="border-l-2 border-blue-500/30 pl-6">
-        <h3 class="text-lg font-semibold text-zinc-100">Laboratory Technician</h3>
+        <h3 class="text-lg font-semibold text-zinc-100"><a href="/timeline/#20072008" class="text-zinc-100 hover:text-blue-300 hover:underline">Laboratory Technician</a></h3>
         <p class="text-blue-400 font-medium mb-1"><a href="https://kpt.sumdu.edu.ua" rel="nofollow" target="_blank" class="text-blue-400 hover:text-blue-300">Polytechnic College of Konotop Institute of the SSU</a></p>
         <p class="text-zinc-400 mb-2">2007 - 2008</p>
         <p class="text-zinc-300 mt-2">At college, my job was to configure, maintain and update PCs on Windows 98 and XP. Also, I helped students to make homework done.</p>

@@ -41,7 +41,7 @@
         {
             "date": "January 2022",
             "title": "",
-            "description": "Finished working at the [Clowder](https://www.clowder.com/) company\n\n*Role and responsibilities:*\n\nCreate clones (copies) of the **Core** product\n\nAdd customizations to the clones and enable/disable product modules\n\nIntegrate user profile with custom fields to the clones of the **Core** product\n\nWork with Git by `GitFlow` methodology, resolve merge conflicts\n\nSupport existing apps and update to the latest **Core** version\n\nCreate proposals and make changes in the **Core** product",
+            "description": "Finished working at the [Clowder](https://www.clowder.com/) company\n\n*Role and responsibilities:*\n\n- Create clones (copies) of the **Core** product\n\n- Add customizations to the clones and enable/disable product modules\n\n- Integrate user profile with custom fields to the clones of the **Core** product\n\n- Work with Git by `GitFlow` methodology, resolve merge conflicts\n\n- Support existing apps and update to the latest **Core** version\n\n- Create proposals and make changes in the **Core** product",
             "data": {
                 "symbol": {
                     "icon": "bi-flower2",
@@ -95,7 +95,7 @@
         {
             "date": "March 2020",
             "title": "",
-            "description": "Finished working at the App Dev Academy.\nWorked there for more than **4 years** as Software Developer, participated in development, publication, and support of **10+ iOS apps** and one macOS app. \n\n*Role and responsibilities:*\n\nCreate apps from scratch and design apps architecture\n\nCreate user interface with **Storyboards** and **XIB** files\n\nUse `UIKit` and create **custom UI** components\n\nDesign a database architecture and use `CoreData` framework\n\nWrite code on `Swift` programming language\n\nImplement networking layer \n\n**REST API**Integrate third-party dependencies (**Firebase**, **Crashlytics**, etc.)",
+            "description": "Finished working at the App Dev Academy.\nWorked there for more than **4 years** as Software Developer, participated in development, publication, and support of **10+ iOS apps** and one macOS app. \n\n*Role and responsibilities:*\n\n- Create apps from scratch and design apps architecture\n\n- Create user interface with **Storyboards** and **XIB** files\n\n- Use `UIKit` and create **custom UI** components\n\n- Design a database architecture and use `CoreData` framework\n\n- Write code on `Swift` programming language\n\n- Implement networking layer \n\n- **REST API** Integrate third-party dependencies (**Firebase**, **Crashlytics**, etc.)",
             "data": {
                 "image": {
                     "path": "timeline/office.jpg",
@@ -223,16 +223,20 @@
         {
             "date": "January 2016",
             "title": "",
-            "description": "Started working with App Dev Academy, a small company of people from *Sumy, Ukraine*.",
+            "description": "Finished working at [bvblogic](https://bvblogic.com), **3 years and 7 months** \nI build websites on `PHP` programming language, using frameworks such as `Laravel`, `Kohana`, `Codeigniter`, `Yii`. Also, I used `CSS3`, `HTML5`, `jQuery`, and `Bootstrap` for the frontend. \n First experience of building and supporting commercial projects.",
             "data": {
+                "image": {
+                    "path": "timeline/bvblogic.jpg",
+                    "id": "bvblogic"
+                },
                 "symbol": {
-                    "icon": "bi-circle",
-                    "color": "gray"
+                    "icon": "bi-at",
+                    "color": "red"
                 }
             }
         },
         {
-            "date": "January 2016",
+            "date": "November 2015",
             "title": "",
             "description": "Started working on the [SumDU](https://apps.apple.com/ua/app/id698235283) \n This is the first **iOS app**, published in the App Store, that I'm working on. \n Souce code on GitHub \n\n[sumdu-ios](https://github.com/appdev-academy/sumdu-ios) \n\n For me, the *main challenge* here was to implement a **custom navigation bar** with nice and **smooth animation**. And implement a custom layout for the **iPad version** of the app.",
             "data": {
@@ -247,24 +251,9 @@
             }
         },
         {
-            "date": "January 2016",
-            "title": "",
-            "description": "Finished working at [bvblogic](https://bvblogic.com), **3 years and 7 months** \nI build websites on `PHP` programming language, using frameworks such as `Laravel`, `Kohana`, `Codeigniter`, `Yii`. Also, I used `CSS3`, `HTML5`, `jQuery`, and `Bootstrap` for the frontend. \n First experience of building and supporting commercial projects.",
-            "data": {
-                "image": {
-                    "path": "timeline/bvblogic.jpg",
-                    "id": "bvblogic"
-                },
-                "symbol": {
-                    "icon": "bi-at",
-                    "color": "red"
-                }
-            }
-        },
-        {
             "date": "June 2014",
             "title": "",
-            "description": "Apple has announced the `Swift` programming language",
+            "description": "Apple has announced the [Swift](https://www.swift.org) programming language",
             "comment": ""
         },
         {
@@ -377,7 +366,7 @@
             }
         },
         {
-            "date": "2007 \n\n2008",
+            "date": "2007-2008",
             "title": "Laboratory Technician",
             "description": "At college, my job was to configure, maintain and update PCs on **Windows 98** and **XP**. Also, I helped students to make their homework done.",
             "data": {
