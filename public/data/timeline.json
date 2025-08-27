@@ -11,7 +11,7 @@
                 },
                 "symbol": {
                     "icon": "bi-house",
-                    "color": "green"
+                "color": "purple"
                 }
             }
         },
@@ -30,7 +30,7 @@
         {
             "date": "16 February 2022",
             "title": "",
-            "description": "Started working at the [VistaCreate](https://create.vista.com) company\n\n*Role and responsibilities:*\n\nMake completely new app **Home** screen\n\nWrite **unit tests** for cover app business logic\n\nBuild an app with a **modular architecture**\n\nWork with analytics services **Firebase**, **AppsFlyer**, **Iterable**\n\nImplement **A/B tests**",
+            "description": "Started working at the [VistaCreate](https://create.vista.com) company\n\n*Role and responsibilities:*\n\n- Make completely new app **Home** screen\n- Write **unit tests** for cover app business logic\n- Build an app with a **modular architecture**\n- Work with analytics services **Firebase**, **AppsFlyer**, **Iterable**\n- Implement **A/B tests**",
             "data": {
                 "symbol": {
                     "icon": "bi-keyboard",

@@ -6,7 +6,7 @@ export const experienceHTML = `
 
 <div class="space-y-6">
     <div class="border-l-2 border-blue-500/30 pl-6">
-        <h3 class="text-lg font-semibold text-zinc-100">Lead iOS Engineer</h3>
+        <h3 class="text-lg font-semibold text-zinc-100"><a href="/timeline/#16february2022" class="text-zinc-100 hover:text-blue-300 hover:underline">Lead iOS Engineer</a></h3>
         <p class="text-blue-400 font-medium mb-1"><a href="https://www.vistaprint.com" rel="nofollow" target="_blank" class="text-blue-400 hover:text-blue-300">VistaPrint</a> 
                 + <a href="https://create.vista.com" rel="nofollow" target="_blank" class="text-blue-400 hover:text-blue-300">VistaCreate</a></p>
         <p class="text-zinc-400 mb-2">2022 - now</p>
