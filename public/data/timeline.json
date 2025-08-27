@@ -10,7 +10,7 @@
                     "id": "home_office_2024"
                 },
                 "symbol": {
-                    "icon": "bi-house",
+                    "icon": "Home",
                 "color": "purple"
                 }
             }
@@ -22,7 +22,7 @@
             "comment": "",
             "data": {
                 "symbol": {
-                    "icon": "bi-heartbreak",
+                    "icon": "HeartCrack",
                     "color": "red"
                 }
             }
@@ -33,7 +33,7 @@
             "description": "Started working at the [VistaCreate](https://create.vista.com) company\n\n*Role and responsibilities:*\n\n- Make completely new app **Home** screen\n- Write **unit tests** for cover app business logic\n- Build an app with a **modular architecture**\n- Work with analytics services **Firebase**, **AppsFlyer**, **Iterable**\n- Implement **A/B tests**",
             "data": {
                 "symbol": {
-                    "icon": "bi-keyboard",
+                    "icon": "Keyboard",
                     "color": "cornflowerblue"
                 }
             }
@@ -44,7 +44,7 @@
             "description": "Finished working at the [Clowder](https://www.clowder.com/) company\n\n*Role and responsibilities:*\n\n- Create clones (copies) of the **Core** product\n\n- Add customizations to the clones and enable/disable product modules\n\n- Integrate user profile with custom fields to the clones of the **Core** product\n\n- Work with Git by `GitFlow` methodology, resolve merge conflicts\n\n- Support existing apps and update to the latest **Core** version\n\n- Create proposals and make changes in the **Core** product",
             "data": {
                 "symbol": {
-                    "icon": "bi-flower2",
+                    "icon": "Flower",
                     "color": "cornflowerblue"
                 }
             }
@@ -59,7 +59,7 @@
                     "id": "home_office_2021"
                 },
                 "symbol": {
-                    "icon": "bi-house",
+                    "icon": "Home",
                     "color": "indigo"
                 }
             }
@@ -70,7 +70,7 @@
             "description": "Started working at the [CoachNow](https://coachnow.io) company. It's a part-time fully remote job.\n\n *Main responsibility* here is to support the [CoachNow app](https://apps.apple.com/app/coachnow-coaching-platform/id596598472) (**iOS** and **iPadOS**) and add new features. It's an app with a long history (**8+ years**) and mixed codebase (`Objective-C` and `Swift`) with a lot of dependencies.",
             "data": {
                 "symbol": {
-                    "icon": "bi-keyboard",
+                    "icon": "Keyboard",
                     "color": "gray"
                 }
             }
@@ -87,7 +87,7 @@
             "description": "Started working as an **iOS Developer** at the [Clowder](https://www.clowder.com/) company. First fully remote job. \n *My mission* here is to support **50+ iOS apps**.",
             "data": {
                 "symbol": {
-                    "icon": "bi-flower2",
+                    "icon": "Flower",
                     "color": "cornflowerblue"
                 }
             }
@@ -102,7 +102,7 @@
                     "id": "office"
                 },
                 "symbol": {
-                    "icon": "bi-circle",
+                    "icon": "Circle",
                     "color": "gray"
                 }
             }
@@ -123,7 +123,7 @@
                     "id": "eve"
                 },
                 "symbol": {
-                    "icon": "bi-heart",
+                    "icon": "Heart",
                     "color": "red"
                 }
             }
@@ -138,7 +138,7 @@
                     "id": "lookup"
                 },
                 "symbol": {
-                    "icon": "bi-phone",
+                    "icon": "Smartphone",
                     "color": "cornflowerblue"
                 }
             }
@@ -153,7 +153,7 @@
                     "id": "my_university_landing"
                 },
                 "symbol": {
-                    "icon": "bi-terminal",
+                    "icon": "Terminal",
                     "color": "purple"
                 }
             }
@@ -168,7 +168,7 @@
                     "id": "proveit"
                 },
                 "symbol": {
-                    "icon": "bi-phone",
+                    "icon": "Smartphone",
                     "color": "cornflowerblue"
                 }
             }
@@ -189,7 +189,7 @@
                     "id": "chronograph_ios_collage"
                 },
                 "symbol": {
-                    "icon": "bi-phone",
+                    "icon": "Smartphone",
                     "color": "cornflowerblue"
                 }
             }
@@ -200,7 +200,7 @@
             "description": "*The main challenges:* \n\n\nImplement sync with **remove API** and store data on the device using `CoreData` \n\n\nImplement UI with charts and **iPad support**",
             "data": {
                 "symbol": {
-                    "icon": "bi-phone",
+                    "icon": "Smartphone",
                     "color": "cornflowerblue"
                 }
             }
@@ -215,7 +215,7 @@
                     "id": "chronograph_old"
                 },
                 "symbol": {
-                    "icon": "bi-window",
+                    "icon": "Monitor",
                     "color": "teal"
                 }
             }
@@ -230,7 +230,7 @@
                     "id": "bvblogic"
                 },
                 "symbol": {
-                    "icon": "bi-at",
+                    "icon": "AtSign",
                     "color": "red"
                 }
             }
@@ -245,7 +245,7 @@
                     "id": "sumdu"
                 },
                 "symbol": {
-                    "icon": "bi-phone",
+                    "icon": "Smartphone",
                     "color": "cornflowerblue"
                 }
             }
@@ -263,7 +263,7 @@
             "comment": "",
             "data": {
                 "symbol": {
-                    "icon": "bi-heartbreak",
+                    "icon": "HeartCrack",
                     "color": "red"
                 }
             }
@@ -278,7 +278,7 @@
                     "id": "macbook_2013"
                 },
                 "symbol": {
-                    "icon": "bi-apple",
+                    "icon": "Apple",
                     "color": "teal"
                 }
             }
@@ -289,7 +289,7 @@
             "description": "I bought my first iPhone! \n It was a used *iPhone 3GS* in white color",
             "data": {
                 "symbol": {
-                    "icon": "bi-apple",
+                    "icon": "Apple",
                     "color": "gray"
                 }
             }
@@ -300,7 +300,7 @@
             "description": "Started working as a **Web Developer** at [bvblogic](https://bvblogic.com)",
             "data": {
                 "symbol": {
-                    "icon": "bi-at",
+                    "icon": "AtSign",
                     "color": "red"
                 }
             }
@@ -311,7 +311,7 @@
             "description": "Received a bachelor's degree at *Sumy State University*",
             "data": {
                 "symbol": {
-                    "icon": "bi-check-circle",
+                    "icon": "CheckCircle",
                     "color": "teal"
                 }
             }
@@ -322,7 +322,7 @@
             "description": "I worked as a **Java developer** at *\"Laboratory of distance learning\"* at *Sumy State University*. I made simple training apps for students on `Java` and an internal framework. Also, I converted  Microsoft Word documents to `HTML` pages as part of my job there.",
             "data": {
                 "symbol": {
-                    "icon": "bi-keyboard",
+                    "icon": "Keyboard",
                     "color": "gray"
                 }
             }
@@ -333,7 +333,7 @@
             "description": "Started studying *\"Computer Science\"* at [Sumy State University](https://int.sumdu.edu.ua/en/)",
             "data": {
                 "symbol": {
-                    "icon": "bi-cpu",
+                    "icon": "Cpu",
                     "color": "gray"
                 }
             }
@@ -348,7 +348,7 @@
                     "id": "college"
                 },
                 "symbol": {
-                    "icon": "bi-check-circle",
+                    "icon": "CheckCircle",
                     "color": "teal"
                 }
             }
@@ -360,7 +360,7 @@
             "comment": "",
             "data": {
                 "symbol": {
-                    "icon": "bi-phone",
+                    "icon": "Smartphone",
                     "color": "cornflowerblue"
                 }
             }
@@ -371,7 +371,7 @@
             "description": "At college, my job was to configure, maintain and update PCs on **Windows 98** and **XP**. Also, I helped students to make their homework done.",
             "data": {
                 "symbol": {
-                    "icon": "bi-keyboard",
+                    "icon": "Keyboard",
                     "color": "gray"
                 }
             }
@@ -382,7 +382,7 @@
             "description": "I begin studying at technician college in *Konotop city, Ukraine*",
             "data": {
                 "symbol": {
-                    "icon": "bi-cpu",
+                    "icon": "Cpu",
                     "color": "gray"
                 }
             }
@@ -393,7 +393,7 @@
             "description": "With **MS-DOS** operating system and **Norton Commander**. It was already old and outdated at that time. I still have this notebook somewhere.",
             "data": {
                 "symbol": {
-                    "icon": "bi-laptop",
+                    "icon": "Laptop",
                     "color": "gray"
                 }
             }

@@ -5,28 +5,13 @@ import ReactMarkdown from "react-markdown";
 import { LucideIcon } from "lucide-react";
 import TimelineHighlighter from '@/components/TimelineHighlighter';
 
-const iconMap: Record<string, keyof typeof icons> = {
-    "bi-phone": "Phone",
-    "bi-heart": "Heart",
-    "bi-heartbreak": "HeartCrack",
-    "bi-keyboard": "Keyboard",
-    "bi-house": "Home",
-    "bi-shield": "Shield",
-    "bi-terminal": "Terminal",
-    "bi-check-circle": "CheckCircle",
-    "bi-cpu": "Cpu",
-    "bi-laptop": "Laptop",
-    "bi-at": "AtSign",
-    "bi-circle": "Circle",
-    "bi-flower2": "Flower",
-    "bi-apple": "Apple",
-};
-
 function getIcon(iconKey: string, color?: string) {
-    const IconComponent = icons[iconMap[iconKey] || "Circle"] as LucideIcon;
+    const IconComponent = icons[iconKey as keyof typeof icons] as LucideIcon;
     return IconComponent ? (
-        <IconComponent className="w-6 h-6" color={color || "gray"} />
-    ) : null;
+        <IconComponent className="w-4 h-4" color={color || "gray"} />
+    ) : (
+        <icons.Circle className="w-4 h-4" color={color || "gray"} />
+    );
 }
 
 type TimelineItem = {
@@ -58,17 +43,17 @@ export default async function TimelinePage() {
             
             <div className="relative">
                 {/* Vertical timeline line */}
-                <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-zinc-600"></div>
+                <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-zinc-600"></div>
                 
                 <div className="space-y-8">
                     {timeline.map((event, i) => (
                         <div key={i} className="relative flex items-start">
                             {/* Icon container with background */}
-                            <div className="relative z-10 flex items-center justify-center w-16 h-16 bg-zinc-800 border-2 border-zinc-600 rounded-full mr-6">
+                            <div className="relative z-10 flex items-center justify-center w-12 h-12 bg-zinc-800 border-2 border-zinc-600 rounded-full mr-4">
                                 {event.data?.symbol?.icon ? (
                                     getIcon(event.data.symbol.icon, event.data.symbol.color)
                                 ) : (
-                                    <div className="w-3 h-3 bg-zinc-500 rounded-full"></div>
+                                    <div className="w-2 h-2 bg-zinc-500 rounded-full"></div>
                                 )}
                             </div>
                             
