@@ -3,6 +3,7 @@ import path from "path";
 import * as icons from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import { LucideIcon } from "lucide-react";
+import Image from "next/image";
 import TimelineHighlighter from '@/components/TimelineHighlighter';
 
 function getIcon(iconKey: string, color?: string) {
@@ -82,10 +83,14 @@ export default async function TimelinePage() {
                                         )}
                                         {event.data?.image && (
                                             <div className="mt-4">
-                                                <img
+                                                <Image
                                                     src={`/${event.data.image.path}`}
                                                     alt=""
-                                                    className="rounded-lg max-w-xs shadow-md"
+                                                    width={320}
+                                                    height={240}
+                                                    className="rounded-lg w-full max-w-full sm:max-w-sm md:max-w-md shadow-md"
+                                                    sizes="(max-width: 640px) 100vw, (max-width: 768px) 384px, 448px"
+                                                    priority={false}
                                                 />
                                             </div>
                                         )}

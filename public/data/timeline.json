@@ -6,7 +6,7 @@
             "description": "[Ivano-Frankivsk, Ukraine](https://en.wikipedia.org/wiki/Ivano-Frankivsk)",
             "data": {
                 "image": {
-                    "path": "timeline/home_office_2024.jpg",
+                    "path": "timeline/home_office_2024.gif",
                     "id": "home_office_2024"
                 },
                 "symbol": {
@@ -55,7 +55,7 @@
             "description": "[Sumy, Ukraine](https://en.wikipedia.org/wiki/Sumy)",
             "data": {
                 "image": {
-                    "path": "timeline/home_office_2021.jpeg",
+                    "path": "timeline/home_office_2021.jpg",
                     "id": "home_office_2021"
                 },
                 "symbol": {
@@ -131,7 +131,7 @@
             "description": "My daughter was born \n\n It's an incredible feeling to be a father",
             "data": {
                 "image": {
-                    "path": "timeline/eve2.jpeg",
+                    "path": "timeline/eve.jpeg",
                     "id": "eve"
                 },
                 "symbol": {
@@ -298,7 +298,7 @@
             "description": "I bought my first MacBook! 🎉 \n It's a *13 inch MacBook Pro* with Mac OS Mavericks on the board. It was a really HUGE event for me.",
             "data": {
                 "image": {
-                    "path": "timeline/macbook_2013.jpeg",
+                    "path": "timeline/macbook_2013.jpg",
                     "id": "macbook_2013"
                 },
                 "symbol": {
