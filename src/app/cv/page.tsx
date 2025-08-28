@@ -48,7 +48,7 @@ export default function CVPage() {
     </section>
     
     {/* Experience Section with HTML */}
-    <section className="bg-zinc-800/50 rounded-lg shadow-lg border border-zinc-700/50 p-6 md:p-8 mb-8">
+    <section className="bg-zinc-800/50 rounded-lg shadow-lg border border-zinc-700/50 p-4 md:p-8 mb-8">
     <div 
     className="prose prose-lg max-w-none prose-headings:text-zinc-100 prose-p:text-zinc-300 prose-a:text-blue-400 prose-a:no-underline hover:prose-a:underline prose-strong:text-zinc-100 prose-code:bg-zinc-700 prose-code:text-zinc-100 prose-pre:bg-zinc-800 prose-pre:text-zinc-100 prose-blockquote:border-zinc-600 prose-blockquote:text-zinc-400 prose-li:text-zinc-300"
     dangerouslySetInnerHTML={{ __html: experienceHTML }}
@@ -57,14 +57,14 @@ export default function CVPage() {
     
     {/* CV Sections */}
     {cvData.map((section, index) => (
-      <section key={index} className="bg-zinc-800/50 rounded-lg shadow-lg border border-zinc-700/50 p-6 md:p-8 mb-8">
+      <section key={index} className="bg-zinc-800/50 rounded-lg shadow-lg border border-zinc-700/50 p-4 md:p-8 mb-8">
       <h2 className="text-2xl font-bold text-zinc-100 mb-6">
       {section.title}
       </h2>
       
       <div className="space-y-6">
       {section.items.map((item, itemIndex) => (
-        <div key={itemIndex} className="border-l-2 border-blue-500/30 pl-4 md:pl-6">
+        <div key={itemIndex} className="border-l-2 border-blue-500/30 pl-4 md:pl-4">
         <h3 className="text-lg font-semibold text-zinc-100">
         {item.title}
         </h3>
