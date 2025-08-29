@@ -46,26 +46,26 @@ export default function DetailModal({ isOpen, onClose, detailPage }: DetailModal
     }
 
     return (
-        <div className="fixed inset-0 z-50 flex items-center justify-center">
-            {/* Backdrop */}
+        <div className="fixed inset-0 z-50">
+            {/* Half-Transparent Blurred Backdrop */}
             <div 
-                className="absolute inset-0 bg-black/80 backdrop-blur-sm"
+                className="absolute inset-0 bg-black/50 backdrop-blur-md"
                 onClick={onClose}
             />
             
-            {/* Modal Content */}
-            <div className="relative w-full h-full max-w-7xl max-h-[95vh] m-4 rounded-2xl shadow-2xl overflow-hidden">
+            {/* Modal Content - Internal scroll with right-side scrollbar */}
+            <div className="relative w-full h-full">
                 {/* Close Button */}
                 <button
                     onClick={onClose}
-                    className="absolute top-6 right-6 z-20 p-3 bg-black/20 hover:bg-black/40 rounded-full transition-all duration-200 backdrop-blur-sm border border-white/20"
+                    className="absolute top-6 right-6 z-20 p-3 bg-black/40 hover:bg-black/60 rounded-full transition-all duration-200 backdrop-blur-md border-2 border-white/30 shadow-lg"
                     aria-label="Close modal"
                 >
-                    <X className="w-6 h-6 text-white" />
+                    <X className="w-6 h-6 text-white drop-shadow-sm" />
                 </button>
                 
-                {/* Detail Page Component */}
-                <div className="w-full h-full overflow-auto">
+                {/* Detail Page Component - Internal scroll positioned to right edge */}
+                <div className="w-full h-full overflow-auto modal-scroll">
                     <DetailComponent />
                 </div>
             </div>
