@@ -32,19 +32,17 @@ export default function TimelineHighlighter() {
       }
     };
 
-    // Initial highlight on mount (covers direct loads with a hash)
-    applyHighlight();
+    // Listen for timeline data load event
+    const onTimelineLoaded = () => applyHighlight();
+    window.addEventListener('timelineLoaded', onTimelineLoaded);
 
     // Listen for hash changes during client-side navigation
     const onHashChange = () => applyHighlight();
     window.addEventListener('hashchange', onHashChange);
 
-    // In case the DOM is not ready at the exact mount tick, re-try next frame
-    const raf = requestAnimationFrame(() => applyHighlight());
-
     return () => {
+      window.removeEventListener('timelineLoaded', onTimelineLoaded);
       window.removeEventListener('hashchange', onHashChange);
-      cancelAnimationFrame(raf);
       removeHighlight();
     };
   }, []);

@@ -33,14 +33,33 @@ body {
 .timeline-highlight::before {
   content: "";
   position: absolute;
-  inset: 0;
-  padding: 2px; /* thin border */
-  border-radius: inherit;
-  background: linear-gradient(135deg, #22d3ee, #a78bfa, #f472b6);
+  inset: -3px; /* expand beyond container for better visibility */
+  padding: 3px; /* thicker border */
+  border-radius: 0.75rem; /* slightly larger radius */
+  background: linear-gradient(135deg, #22d3ee, #a78bfa, #f472b6, #22d3ee);
   -webkit-mask:
     linear-gradient(#000 0 0) content-box,
     linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   pointer-events: none;
+  z-index: -1; /* place behind content but visible */
+}
+
+/* Fallback for browsers that don't support mask-composite */
+.timeline-highlight::after {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: 0.75rem;
+  background: linear-gradient(135deg, #22d3ee, #a78bfa, #f472b6, #22d3ee);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Hide the fallback if mask is supported */
+@supports (mask-composite: exclude) or (-webkit-mask-composite: xor) {
+  .timeline-highlight::after {
+    display: none;
+  }
 }
