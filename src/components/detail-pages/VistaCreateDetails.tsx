@@ -1,5 +1,7 @@
 'use client';
 
+import Image from 'next/image';
+
 export default function VistaCreateDetails() {
     return (
         <div className="min-h-screen p-5">
@@ -30,22 +32,72 @@ export default function VistaCreateDetails() {
                             Key Achievements
                         </h2>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 mt-6">
+                            {/* Featured Home Screen Redesign Card */}
+                            <div className="bg-gradient-to-br from-zinc-700/80 to-zinc-800/80 p-6 rounded-2xl shadow-lg border border-zinc-600/30 hover:transform hover:-translate-y-2 transition-all duration-300 hover:shadow-xl">
+                                <h3 className="text-xl font-semibold mb-3 text-zinc-100">
+                                    🏠 Home Screen Redesign
+                                </h3>
+                                <p className="text-zinc-300 opacity-90 leading-relaxed mb-4">
+                                    Completely redesigned and built the new Home screen from scratch, improving user engagement and providing a more intuitive creative workflow.
+                                </p>
+                                <div className="flex justify-center">
+                                    <div className="relative w-40">
+                                        <Image
+                                            src="/detail-pages/VistaCreateDetails/VistaCreate Home Screen.png"
+                                            alt="VistaCreate Home Screen Redesign"
+                                            width={200}
+                                            height={433}
+                                            className="rounded-xl shadow-lg border border-zinc-600/50"
+                                            priority
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            {/* Testing Excellence Card */}
+                            <div className="bg-gradient-to-br from-zinc-700/80 to-zinc-800/80 p-6 rounded-2xl shadow-lg border border-zinc-600/30 hover:transform hover:-translate-y-2 transition-all duration-300 hover:shadow-xl">
+                                <h3 className="text-xl font-semibold mb-3 text-zinc-100">
+                                    🧪 Testing Excellence
+                                </h3>
+                                <p className="text-zinc-300 opacity-90 leading-relaxed mb-4">
+                                    Implemented comprehensive unit testing suite to cover critical app business logic, ensuring reliability and reducing production bugs.
+                                </p>
+                                <div className="flex justify-center">
+                                    <div className="relative w-40">
+                                        <Image
+                                            src="/detail-pages/VistaCreateDetails/VistaCreate Testing.png"
+                                            alt="VistaCreate Testing Suite"
+                                            width={200}
+                                            height={300}
+                                            className="rounded-xl shadow-lg border border-zinc-600/50"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            {/* Modular Architecture Card */}
+                            <div className="bg-gradient-to-br from-zinc-700/80 to-zinc-800/80 p-6 rounded-2xl shadow-lg border border-zinc-600/30 hover:transform hover:-translate-y-2 transition-all duration-300 hover:shadow-xl">
+                                <h3 className="text-xl font-semibold mb-3 text-zinc-100">
+                                    🏗️ Modular Architecture
+                                </h3>
+                                <p className="text-zinc-300 opacity-90 leading-relaxed mb-4">
+                                    Built the app with clean, modular architecture principles, making the codebase more maintainable and scalable for the growing team.
+                                </p>
+                                <div className="flex justify-center">
+                                    <div className="relative w-40">
+                                        <Image
+                                            src="/detail-pages/VistaCreateDetails/VistaCreate Modules.png"
+                                            alt="VistaCreate Modular Architecture"
+                                            width={200}
+                                            height={300}
+                                            className="rounded-xl shadow-lg border border-zinc-600/50"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            {/* Remaining Achievement Cards */}
                             {[
-                                {
-                                    icon: "🏠",
-                                    title: "Home Screen Redesign",
-                                    description: "Completely redesigned and built the new Home screen from scratch, improving user engagement and providing a more intuitive creative workflow."
-                                },
-                                {
-                                    icon: "🧪", 
-                                    title: "Testing Excellence",
-                                    description: "Implemented comprehensive unit testing suite to cover critical app business logic, ensuring reliability and reducing production bugs."
-                                },
-                                {
-                                    icon: "🏗️",
-                                    title: "Modular Architecture", 
-                                    description: "Built the app with clean, modular architecture principles, making the codebase more maintainable and scalable for the growing team."
-                                },
                                 {
                                     icon: "📊",
                                     title: "Analytics Integration",

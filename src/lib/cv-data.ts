@@ -12,10 +12,9 @@ export const experienceHTML = `
         <p class="text-zinc-400 mb-2">2022 - now</p>
         <p class="text-zinc-400 italic mb-2">Role and responsibilities:</p>
             <ul class="text-zinc-300 space-y-1">
-                <li>• Make completely new app Home screen</li>
-                <li>• Write unit tests for cover app business logic</li>
-                <li>• Build an app with a modular architecture</li>
-                <li>• Work with analytics services <span class="font-bold">Firebase, AppsFlyer, Iterable</span></li>
+                <li>• Cover app business logic with unit tests</li>
+                <li>• Implement modular architecture in iOS app</li>
+                <li>• Integrate analytics services <span class="font-bold">Firebase, AppsFlyer, Iterable</span></li>
                 <li>• Implement <span class="font-bold">A/B tests</span></li>
             </ul>
     </div>
