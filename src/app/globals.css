@@ -89,3 +89,26 @@ body {
   background: rgba(156, 163, 175, 0.7);
   background-clip: content-box;
 }
+
+/* Modal slide animation classes */
+.modal-slide-enter {
+  transform: translateY(100%);
+  opacity: 0;
+}
+
+.modal-slide-enter-active {
+  transform: translateY(0);
+  opacity: 1;
+  transition: transform 300ms ease-out, opacity 300ms ease-out;
+}
+
+.modal-slide-exit {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.modal-slide-exit-active {
+  transform: translateY(100%);
+  opacity: 0.8;
+  transition: transform 300ms ease-in, opacity 300ms ease-in;
+}
