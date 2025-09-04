@@ -52,21 +52,6 @@
             }
         },
         {
-            "date": "March 2021",
-            "title": "Home office setup 2021, MacBook Air M1 is 🔥",
-            "description": "[Sumy, Ukraine](https://en.wikipedia.org/wiki/Sumy)",
-            "data": {
-                "image": {
-                    "path": "timeline/home_office_2021.jpg",
-                    "id": "home_office_2021"
-                },
-                "symbol": {
-                    "icon": "Home",
-                    "color": "purple"
-                }
-            }
-        },
-        {
             "date": "10 February 2021",
             "title": "",
             "description": "Started working at the [CoachNow](https://coachnow.io) company. It's a part-time fully remote job.\n\n *Main responsibility* here is to support the [CoachNow app](https://apps.apple.com/app/coachnow-coaching-platform/id596598472) (**iOS** and **iPadOS**) and add new features. It's an app with a long history (**8+ years**) and mixed codebase (`Objective-C` and `Swift`) with a lot of dependencies.",
