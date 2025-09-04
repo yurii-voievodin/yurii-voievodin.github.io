@@ -3,6 +3,7 @@
 import { X } from 'lucide-react';
 import { useEffect, useState, useCallback, useRef } from 'react';
 import VistaCreateDetails from './detail-pages/VistaCreateDetails';
+import WorkingPlacesDetails from './detail-pages/WorkingPlacesDetails';
 
 interface DetailModalProps {
     isOpen: boolean;
@@ -13,6 +14,7 @@ interface DetailModalProps {
 // Component mapping for different detail pages
 const DetailPageComponents = {
     'vistacreate-details': VistaCreateDetails,
+    'working-places-details': WorkingPlacesDetails,
     // Add more detail page components here as needed
 } as const;
 

@@ -12,7 +12,8 @@
                 "symbol": {
                     "icon": "Home",
                 "color": "purple"
-                }
+                },
+                "detailPage": "working-places-details"
             }
         },
         {
