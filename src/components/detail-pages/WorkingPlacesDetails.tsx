@@ -13,7 +13,7 @@ export default function WorkingPlacesDetails() {
                 </div>
 
                 {/* Content */}
-                <div className="p-10 text-zinc-100">
+                <div className="p-5 md:p-10 text-zinc-100">
                     {/* About Section */}
                     <div className="mb-10">
                         <h2 className="text-2xl font-bold text-cyan-400 mb-5 border-b-3 border-cyan-500 pb-1 inline-block">

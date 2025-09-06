@@ -1,9 +1,24 @@
-import { Github, Linkedin, Mail } from 'lucide-react';
+import { Github, Linkedin, Mail, Home, Newspaper, Clock, FileText } from 'lucide-react';
 import Link from 'next/link';
 import { siteConfig } from '@/lib/config';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  
+  const getIconForNav = (name: string) => {
+    switch (name) {
+      case 'Home':
+        return <Home size={16} className="mr-2" />;
+      case 'Blog':
+        return <Newspaper size={16} className="mr-2" />;
+      case 'Timeline':
+        return <Clock size={16} className="mr-2" />;
+      case 'CV':
+        return <FileText size={16} className="mr-2" />;
+      default:
+        return null;
+    }
+  };
   
   return (
     <footer className="bg-zinc-900 border-t border-zinc-800 mt-20">
@@ -56,19 +71,12 @@ export default function Footer() {
                   <Link 
                     key={item.name}
                     href={item.href} 
-                    className="text-zinc-300 hover:text-zinc-100 transition-colors block mb-2"
+                    className="text-zinc-300 hover:text-zinc-100 transition-colors flex items-center mb-2"
                   >
+                    {getIconForNav(item.name)}
                     {item.name}
                   </Link>
                 ))}
-              </div>
-              <div>
-                <a 
-                  href={siteConfig.social.email} 
-                  className="text-zinc-300 hover:text-zinc-100 transition-colors block mb-2"
-                >
-                  Contact
-                </a>
               </div>
             </div>
           </div>

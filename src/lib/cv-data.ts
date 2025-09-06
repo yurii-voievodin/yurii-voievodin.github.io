@@ -75,7 +75,7 @@ export const experienceHTML = `
     <div class="border-l-2 border-blue-500/30 pl-4">
 
         <h3 class="text-lg font-semibold text-zinc-100"><a href="/timeline/#january2016" class="text-zinc-100 hover:text-blue-300 hover:underline">PHP Developer</a></h3>
-        <p class="text-blue-400 font-medium mb-1"><a href="https://bvblogic.com" rel="nofollow" target="_blank" class="text-blue-400 hover:text-blue-300">bvblogic</a></p>
+        <p class="text-blue-400 font-medium mb-1"><a href="https://soloway.tech" rel="nofollow" target="_blank" class="text-blue-400 hover:text-blue-300">bvblogic</a></p>
         <p class="text-zinc-400 mb-2">2012 - 2016</p>
         <p class="text-zinc-300 mt-2">
             I build websites on <code class="bg-zinc-700 px-1 rounded text-xs">PHP</code> programming language, using frameworks such as 

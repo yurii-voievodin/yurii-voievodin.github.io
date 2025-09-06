@@ -94,7 +94,7 @@ export default function TimelinePage() {
                                         {/* Text Container - 90% width */}
                                         <div className="w-[90%]">
                                             {event.comment ? (
-                                                <div className="prose prose-invert max-w-none [&_a]:text-blue-400 [&_a]:underline [&_a]:decoration-blue-400/50 [&_a:hover]:text-blue-300 [&_a:hover]:decoration-blue-300">
+                                                <div className="prose prose-invert max-w-none [&_a]:bg-gradient-to-r [&_a]:from-violet-400 [&_a]:to-purple-400 [&_a]:bg-clip-text [&_a]:text-transparent [&_a]:underline [&_a]:decoration-violet-400/50 [&_a:hover]:from-violet-300 [&_a:hover]:to-purple-300 [&_a:hover]:decoration-violet-300">
                                                     <ReactMarkdown>{event.comment}</ReactMarkdown>
                                                 </div>
                                             ) : (
@@ -105,12 +105,12 @@ export default function TimelinePage() {
                                                         </div>
                                                     )}
                                                     {event.title && (
-                                                        <div className="prose prose-invert max-w-none mb-3 [&_a]:text-blue-400 [&_a]:underline [&_a]:decoration-blue-400/50 [&_a:hover]:text-blue-300 [&_a:hover]:decoration-blue-300">
+                                                        <div className="prose prose-invert max-w-none mb-3 [&_a]:bg-gradient-to-r [&_a]:from-violet-400 [&_a]:to-purple-400 [&_a]:bg-clip-text [&_a]:text-transparent [&_a]:underline [&_a]:decoration-violet-400/50 [&_a:hover]:from-violet-300 [&_a:hover]:to-purple-300 [&_a:hover]:decoration-violet-300">
                                                             <ReactMarkdown>{event.title}</ReactMarkdown>
                                                         </div>
                                                     )}
                                                     {event.description && (
-                                                        <div className="prose prose-invert max-w-none [&_a]:text-blue-400 [&_a]:underline [&_a]:decoration-blue-400/50 [&_a:hover]:text-blue-300 [&_a:hover]:decoration-blue-300 [&_ul]:list-disc [&_ul]:ps-5 [&_ul]:space-y-1 [&_li]:text-zinc-300">
+                                                        <div className="prose prose-invert max-w-none [&_a]:bg-gradient-to-r [&_a]:from-violet-400 [&_a]:to-purple-400 [&_a]:bg-clip-text [&_a]:text-transparent [&_a]:underline [&_a]:decoration-violet-400/50 [&_a:hover]:from-violet-300 [&_a:hover]:to-purple-300 [&_a:hover]:decoration-violet-300 [&_ul]:list-disc [&_ul]:ps-5 [&_ul]:space-y-1 [&_li]:text-zinc-300">
                                                             <ReactMarkdown>{event.description}</ReactMarkdown>
                                                         </div>
                                                     )}
@@ -146,7 +146,7 @@ export default function TimelinePage() {
                                     /* Full width layout when no button */
                                     <div className="w-full">
                                         {event.comment ? (
-                                            <div className="prose prose-invert max-w-none [&_a]:text-blue-400 [&_a]:underline [&_a]:decoration-blue-400/50 [&_a:hover]:text-blue-300 [&_a:hover]:decoration-blue-300">
+                                            <div className="prose prose-invert max-w-none [&_a]:bg-gradient-to-r [&_a]:from-violet-400 [&_a]:to-purple-400 [&_a]:bg-clip-text [&_a]:text-transparent [&_a]:underline [&_a]:decoration-violet-400/50 [&_a:hover]:from-violet-300 [&_a:hover]:to-purple-300 [&_a:hover]:decoration-violet-300">
                                                 <ReactMarkdown>{event.comment}</ReactMarkdown>
                                             </div>
                                         ) : (
@@ -157,12 +157,12 @@ export default function TimelinePage() {
                                                     </div>
                                                 )}
                                                 {event.title && (
-                                                    <div className="prose prose-invert max-w-none mb-3 [&_a]:text-blue-400 [&_a]:underline [&_a]:decoration-blue-400/50 [&_a:hover]:text-blue-300 [&_a:hover]:decoration-blue-300">
+                                                    <div className="prose prose-invert max-w-none mb-3 [&_a]:bg-gradient-to-r [&_a]:from-violet-400 [&_a]:to-purple-400 [&_a]:bg-clip-text [&_a]:text-transparent [&_a]:underline [&_a]:decoration-violet-400/50 [&_a:hover]:from-violet-300 [&_a:hover]:to-purple-300 [&_a:hover]:decoration-violet-300">
                                                         <ReactMarkdown>{event.title}</ReactMarkdown>
                                                     </div>
                                                 )}
                                                 {event.description && (
-                                                    <div className="prose prose-invert max-w-none [&_a]:text-blue-400 [&_a]:underline [&_a]:decoration-blue-400/50 [&_a:hover]:text-blue-300 [&_a:hover]:decoration-blue-300 [&_ul]:list-disc [&_ul]:ps-5 [&_ul]:space-y-1 [&_li]:text-zinc-300">
+                                                    <div className="prose prose-invert max-w-none [&_a]:bg-gradient-to-r [&_a]:from-violet-400 [&_a]:to-purple-400 [&_a]:bg-clip-text [&_a]:text-transparent [&_a]:underline [&_a]:decoration-violet-400/50 [&_a:hover]:from-violet-300 [&_a:hover]:to-purple-300 [&_a:hover]:decoration-violet-300 [&_ul]:list-disc [&_ul]:ps-5 [&_ul]:space-y-1 [&_li]:text-zinc-300">
                                                         <ReactMarkdown>{event.description}</ReactMarkdown>
                                                     </div>
                                                 )}
