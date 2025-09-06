@@ -17,6 +17,7 @@ export const siteConfig = {
   },
   navigation: [
     { name: "Home", href: "/" },
+    { name: "Personal", href: "/personal" },
     { name: "Blog", href: "/blog" },
     { name: "Timeline", href: "/timeline" },
     { name: "CV", href: "/cv" },

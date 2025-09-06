@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Home, User, FileText, Clock } from 'lucide-react';
+import { Home, User, FileText, Clock, Heart } from 'lucide-react';
 import { siteConfig } from '@/lib/config';
 
 export default function Navigation() {
@@ -22,6 +22,7 @@ export default function Navigation() {
             {headerNavigation.map((item) => {
               let icon;
               if (item.name === 'Home') icon = Home;
+              else if (item.name === 'Personal') icon = Heart;
               else if (item.name === 'Blog') icon = FileText;
               else if (item.name === 'Timeline') icon = Clock;
               else if (item.name === 'CV') icon = User;
