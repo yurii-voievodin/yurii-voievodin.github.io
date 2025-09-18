@@ -1,6 +1,6 @@
 'use client';
 
-import { Calendar, Clock, ArrowLeft, Zap, CarFront, Bot, Mic, Rocket, Battery } from 'lucide-react';
+import { Calendar, Clock, ArrowLeft, Zap, CarFront, Bot, Mic, Rocket } from 'lucide-react';
 import { format } from 'date-fns';
 import Link from 'next/link';
 import { Post } from '@/types/blog';
@@ -97,7 +97,7 @@ export default function FutureTechPost({ post }: FutureTechPostProps) {
               Привіт із майбутнього!
             </h1>
             <p className="text-xl md:text-2xl opacity-90 max-w-4xl mx-auto leading-relaxed">
-              Замислимося над недалеким майбутнім нашої цивілізації та уявимо які нові технології можуть з'явитися через 50 років
+              Замислимося над недалеким майбутнім нашої цивілізації та уявимо які нові технології можуть з&apos;явитися через 50 років
             </p>
             
             <div className="flex items-center justify-center space-x-6 text-violet-200 mt-8">
@@ -122,7 +122,7 @@ export default function FutureTechPost({ post }: FutureTechPostProps) {
             {/* Introduction */}
             <div className="bg-zinc-800/50 rounded-2xl p-8 shadow-lg border border-zinc-700/50">
               <p className="text-lg text-zinc-300 leading-relaxed">
-                Пропоную замислитися над недалеким майбутнім нашої цивілізації та уявити які нові технології, пристрої та професії можуть з'явитися через 50 років. А також які з теперішніх речей стануть застарілими та вийдуть із використання.
+                Пропоную замислитися над недалеким майбутнім нашої цивілізації та уявити які нові технології, пристрої та професії можуть з&apos;явитися через 50 років. А також які з теперішніх речей стануть застарілими та вийдуть із використання.
               </p>
             </div>
 

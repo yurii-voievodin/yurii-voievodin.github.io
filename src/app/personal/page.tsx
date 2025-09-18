@@ -2,19 +2,14 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
-import { 
-  Camera, 
-  Film, 
-  BookOpen, 
-  Gamepad2, 
-  ExternalLink, 
-  Maximize2, 
-  X, 
+import {
+  Camera,
+  Maximize2,
+  X,
   ArrowLeft,
   ArrowRight
 } from 'lucide-react';
-import { personalPhotos, movies, books, games } from '@/lib/personal-data';
+import { personalPhotos, movies, games } from '@/lib/personal-data';
 
 export default function PersonalPage() {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);

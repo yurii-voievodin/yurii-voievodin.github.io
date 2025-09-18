@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Briefcase, Newspaper } from "lucide-react";
 
 export default function Home() {
@@ -7,15 +8,17 @@ export default function Home() {
       {/* About Section */}
       <section className="bg-zinc-800/50 rounded-lg p-8 shadow-lg border border-zinc-700/50">
         <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6">
-          <img
+          <Image
             src="/yurii_voievodin.png"
             alt="A photo of me"
+            width={128}
+            height={128}
             className="w-32 h-32 rounded-full object-cover border-4 border-zinc-700"
           />
           <div className="prose prose-lg max-w-none text-zinc-300">
             <p>Passionate software developer with many years of programming experience. I enjoy building applications and exploring new frameworks.</p>
             <p>This blog serves as a platform where I document my journey as a software developer and share personal insights.</p>
-            <p>When I'm not coding, I enjoy driving a car, treveling and watching movies. I also enjoy playing video games and running.</p>
+            <p>When I&apos;m not coding, I enjoy driving a car, treveling and watching movies. I also enjoy playing video games and running.</p>
           </div>
         </div>
       </section>
