@@ -24,15 +24,8 @@ export default function PostCard({ post }: PostCardProps) {
         <div className="flex items-center space-x-4">
           <div className="flex items-center space-x-1">
             <Calendar size={16} />
-            <span>{format(new Date(post.date), 'MMM dd, yyyy')}</span>
+            <span>{format(new Date(post.date), 'MMM, yyyy')}</span>
           </div>
-          
-          {post.readTime && (
-            <div className="flex items-center space-x-1">
-              <Clock size={16} />
-              <span>{post.readTime}</span>
-            </div>
-          )}
         </div>
         
         {post.tags && post.tags.length > 0 && (

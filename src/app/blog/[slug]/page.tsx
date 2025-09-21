@@ -62,13 +62,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             <Calendar size={18} />
             <span>{format(new Date(post.date), 'MMMM dd, yyyy')}</span>
           </div>
-          
-          {post.readTime && (
-            <div className="flex items-center space-x-2">
-              <Clock size={18} />
-              <span>{post.readTime}</span>
-            </div>
-          )}
         </div>
         
         {post.tags && post.tags.length > 0 && (

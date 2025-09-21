@@ -5,7 +5,6 @@ export interface Post {
   excerpt: string;
   content: string;
   tags?: string[];
-  readTime?: string;
 }
 
 export interface CVSection {
