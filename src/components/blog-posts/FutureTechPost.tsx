@@ -1,6 +1,6 @@
 'use client';
 
-import { Calendar, Clock, ArrowLeft, Zap, CarFront, Bot, Mic, Rocket } from 'lucide-react';
+import { Calendar, ArrowLeft, Zap, CarFront, Bot, Mic, Rocket } from 'lucide-react';
 import { format } from 'date-fns';
 import Link from 'next/link';
 import { Post } from '@/types/blog';
@@ -105,13 +105,6 @@ export default function FutureTechPost({ post }: FutureTechPostProps) {
                 <Calendar size={18} />
                 <span>{format(new Date(post.date), 'MMMM dd, yyyy')}</span>
               </div>
-              
-              {post.readTime && (
-                <div className="flex items-center space-x-2">
-                  <Clock size={18} />
-                  <span>{post.readTime}</span>
-                </div>
-              )}
             </div>
           </div>
         </div>

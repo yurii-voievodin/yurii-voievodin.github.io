@@ -1,5 +1,5 @@
 import { getAllPostSlugs, getPostData } from '@/lib/blog';
-import { Calendar, Clock, ArrowLeft } from 'lucide-react';
+import { Calendar, ArrowLeft } from 'lucide-react';
 import { format } from 'date-fns';
 import Link from 'next/link';
 import FutureTechPost from '@/components/blog-posts/FutureTechPost';

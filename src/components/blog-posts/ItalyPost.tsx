@@ -1,6 +1,6 @@
 'use client';
 
-import { Calendar, Clock, ArrowLeft, Camera, Image as ImageIcon, Maximize2, X } from 'lucide-react';
+import { Calendar, ArrowLeft, Camera, Image as ImageIcon, Maximize2, X } from 'lucide-react';
 import { format } from 'date-fns';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -168,7 +168,7 @@ export default function ItalyPost({ post }: ItalyPostProps) {
             La Bella Italia
           </h3>
           <p className="text-zinc-300 leading-relaxed mb-6">
-            Italy's unparalleled blend of history, art, culture, and natural beauty creates an experience like no other.
+            Italy&apos;s unparalleled blend of history, art, culture, and natural beauty creates an experience like no other.
             From the ancient Colosseum to Renaissance churches, from sun-drenched coastlines to charming hilltop towns,
             this Mediterranean jewel offers endless inspiration. These photographs capture the essence of Italian life -
             the passion, the artistry, the warmth of its people, and the timeless beauty that has captivated visitors

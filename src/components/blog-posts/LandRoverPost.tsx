@@ -1,6 +1,6 @@
 'use client';
 
-import { Calendar, Clock, ArrowLeft, Camera, Image as ImageIcon, Maximize2, X } from 'lucide-react';
+import { Calendar, ArrowLeft, Camera, Image as ImageIcon, Maximize2, X } from 'lucide-react';
 import { format } from 'date-fns';
 import Link from 'next/link';
 import Image from 'next/image';

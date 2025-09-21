@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Calendar, Clock } from 'lucide-react';
+import { Calendar } from 'lucide-react';
 import { Post } from '@/types/blog';
 import { format } from 'date-fns';
 

@@ -1,6 +1,6 @@
 'use client';
 
-import { Calendar, Clock, ArrowLeft, Camera, Image as ImageIcon, Maximize2, X } from 'lucide-react';
+import { Calendar, ArrowLeft, Camera, Image as ImageIcon, Maximize2, X } from 'lucide-react';
 import { format } from 'date-fns';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -117,7 +117,7 @@ export default function NorwayPost({ post }: NorwayPostProps) {
           <p className="text-lg text-zinc-300 leading-relaxed">
             This collection captures the breathtaking beauty of Norway during my 2025 adventure.
             From dramatic fjords to snow-capped mountains, each photograph tells a story of exploration
-            and wonder in one of the world's most spectacular countries. Experience the raw natural beauty,
+            and wonder in one of the world&apos;s most spectacular countries. Experience the raw natural beauty,
             unique Nordic culture, and unforgettable moments from this incredible journey.
           </p>
         </div>
@@ -168,7 +168,7 @@ export default function NorwayPost({ post }: NorwayPostProps) {
             Land of the Midnight Sun
           </h3>
           <p className="text-zinc-300 leading-relaxed mb-6">
-            Norway's diverse landscapes offer some of the most stunning natural scenery on Earth.
+            Norway&apos;s diverse landscapes offer some of the most stunning natural scenery on Earth.
             From the dramatic coastlines of the fjords to the pristine wilderness of the interior,
             this Nordic country showcases nature at its most magnificent. These photographs capture
             the essence of Norwegian beauty - the interplay of light and shadow, the grandeur of
