@@ -18,80 +18,76 @@ export interface Book {
 }
 
 export const personalPhotos: PersonalPhoto[] = [
-  { name: "/personal/photos/10.jpeg", alt: "Особисте фото 1" },
-  { name: "/personal/photos/11.jpeg", alt: "Особисте фото 2" },
-  { name: "/personal/photos/3.jpeg", alt: "Особисте фото 3" },
-  { name: "/personal/photos/7.jpeg", alt: "Особисте фото 4" },
-  { name: "/personal/photos/2.jpeg", alt: "Особисте фото 5" },
-  { name: "/personal/photos/1.jpeg", alt: "Особисте фото 6" },
-  { name: "/personal/photos/8.jpeg", alt: "Особисте фото 7" },
-  { name: "/personal/photos/9.jpeg", alt: "Особисте фото 8" },
+  { name: "/personal/photos/10.jpeg", alt: "Somewhere in the sands near Kyiv Sea, Vyshgorod" },
+  { name: "/personal/photos/11.jpeg", alt: "On top of Hoverla" },
+  { name: "/personal/photos/3.jpeg", alt: "Before descending from the mountain in Dragobrat" },
+  { name: "/personal/photos/7.jpeg", alt: "Photo session with Eva, 5 years old" },
+  { name: "/personal/photos/2.jpeg", alt: "Dragobrat, off the slopes" },
+  { name: "/personal/photos/1.jpeg", alt: "Small houses on the mountain top" },
+  { name: "/personal/photos/8.jpeg", alt: "Eva" },
+  { name: "/personal/photos/9.jpeg", alt: "Lake in Sumy" },
 ];
 
 export const movies: MediaItem[] = [
   {
-    name: "Вторгнення",
-    url: "https://uk.wikipedia.org/wiki/Вторгнення_(телесеріал,_2021)",
-    image: "/personal/movies/Invasion.jpeg",
-    alt: "Постер серіалу Вторгнення"
-  },
-  {
-    name: "Фінч",
-    url: "https://uk.wikipedia.org/wiki/Фінч_(фільм)",
-    image: "/personal/movies/Finch.jpeg",
-    alt: "Постер фільму Фінч"
-  },
-  {
-    name: "Фундація",
+    name: "Foundation",
     url: "https://uk.wikipedia.org/wiki/Фундація_(телесеріал)",
     image: "/personal/movies/foundation.jpeg",
-    alt: "Постер серіалу Фундація"
+    alt: "Foundation series poster"
   },
   {
-    name: "Бачити",
-    url: "https://uk.wikipedia.org/wiki/Бачити_(телесеріал)",
-    image: "/personal/movies/see.jpg",
-    alt: "Постер серіалу Бачити"
-  },
-  {
-    name: "Ранкове шоу",
-    url: "https://uk.wikipedia.org/wiki/Ранкове_шоу_(телесеріал)",
-    image: "/personal/movies/ms.png",
-    alt: "Постер серіалу Ранкове шоу"
-  },
-  {
-    name: "Дюна",
+    name: "Dune",
     url: "https://uk.wikipedia.org/wiki/Дюна_(фільм,_2021)",
     image: "/personal/movies/dune.jpg",
-    alt: "Постер фільму Дюна"
+    alt: "Dune movie poster"
   },
   {
-    name: "Любов, смерть і роботи",
+    name: "Love, Death & Robots",
     url: "https://uk.wikipedia.org/wiki/Любов,_смерть_і_роботи",
     image: "/personal/movies/ldr.jpg",
-    alt: "Постер серіалу Любов, смерть і роботи"
-  }
+    alt: "Love, Death & Robots series poster"
+  },
+
+  {
+    name: "Finch",
+    url: "https://uk.wikipedia.org/wiki/Фінч_(фільм)",
+    image: "/personal/movies/Finch.jpeg",
+    alt: "Finch movie poster"
+  },
+
+  {
+    name: "See",
+    url: "https://uk.wikipedia.org/wiki/Бачити_(телесеріал)",
+    image: "/personal/movies/see.jpg",
+    alt: "See series poster"
+  },
+  {
+    name: "The Morning Show",
+    url: "https://uk.wikipedia.org/wiki/Ранкове_шоу_(телесеріал)",
+    image: "/personal/movies/ms.png",
+    alt: "The Morning Show series poster"
+  },
 ];
 
 export const books: Book[] = [
   {
-    name: "Колонія - Нові Темні Віки",
+    name: "Colony - New Dark Ages",
     url: "https://darkages.maxkidruk.com"
   },
   {
-    name: "Фундація",
+    name: "Foundation",
     url: "https://uk.wikipedia.org/wiki/Фундація_(цикл_творів)"
   },
   {
-    name: "Всесвіт Дюни",
+    name: "Dune Universe",
     url: "https://uk.wikipedia.org/wiki/Дюна_(франшиза)"
   },
   {
-    name: "Першому гравцеві приготуватися",
+    name: "Ready Player One",
     url: "https://uk.wikipedia.org/wiki/Першому_гравцеві_приготуватися"
   },
   {
-    name: "Інноватори",
+    name: "The Innovators",
     url: "https://uk.wikipedia.org/wiki/Інноватори_(книга)"
   }
 ];
@@ -101,30 +97,30 @@ export const games: MediaItem[] = [
     name: "Battlefield V",
     url: "https://uk.wikipedia.org/wiki/Battlefield_V",
     image: "/personal/games/b5.jpg",
-    alt: "Обкладинка гри Battlefield V"
+    alt: "Battlefield V game cover"
   },
   {
     name: "Heroes of the Storm",
     url: "https://uk.wikipedia.org/wiki/Heroes_of_the_Storm",
     image: "/personal/games/heroes_of_the_storm.jpg",
-    alt: "Обкладинка гри Heroes of the Storm"
+    alt: "Heroes of the Storm game cover"
   },
   {
     name: "Heartstone",
     url: "https://playhearthstone.com/en-us",
     image: "/personal/games/heartstone.jpg",
-    alt: "Обкладинка гри Heartstone"
+    alt: "Heartstone game cover"
   },
   {
     name: "Lineage 2",
     url: "https://uk.wikipedia.org/wiki/Lineage_II",
     image: "/personal/games/l2.jpg",
-    alt: "Обкладинка гри Lineage 2"
+    alt: "Lineage 2 game cover"
   },
   {
     name: "Diablo 2",
     url: "https://uk.wikipedia.org/wiki/Diablo_II",
     image: "/personal/games/d2.jpg",
-    alt: "Обкладинка гри Diablo 2"
+    alt: "Diablo 2 game cover"
   }
 ];

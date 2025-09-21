@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, Home, Newspaper, Clock, FileText } from 'lucide-react';
+import { Github, Linkedin, Mail, Home, Newspaper, Clock, FileText, Heart } from 'lucide-react';
 import Link from 'next/link';
 import { siteConfig } from '@/lib/config';
 
@@ -15,6 +15,9 @@ export default function Footer() {
         return <Clock size={16} className="mr-2" />;
       case 'CV':
         return <FileText size={16} className="mr-2" />;
+      case 'Personal':
+        return <Heart size={16} className="mr-2" />;
+        
       default:
         return null;
     }

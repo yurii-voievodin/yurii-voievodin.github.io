@@ -7,7 +7,7 @@ import { siteConfig } from '@/lib/config';
 export default function Navigation() {
   // Filter navigation items to exclude Blog and Timeline from header
   const headerNavigation = siteConfig.navigation.filter(
-    item => item.name !== 'Blog' && item.name !== 'Timeline'
+    item => item.name !== 'Blog' && item.name !== 'Timeline' && item.name !== 'Personal'
   );
 
   return (

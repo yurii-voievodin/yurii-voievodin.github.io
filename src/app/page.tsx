@@ -18,7 +18,7 @@ export default function Home() {
           <div className="prose prose-lg max-w-none text-zinc-300">
             <p>Passionate software developer with many years of programming experience. I enjoy building applications and exploring new frameworks.</p>
             <p>This blog serves as a platform where I document my journey as a software developer and share personal insights.</p>
-            <p>When I&apos;m not coding, I enjoy driving a car, treveling and watching movies. I also enjoy playing video games and running.</p>
+            <p>When I&apos;m not coding, I enjoy driving a car, traveling and watching movies. I also enjoy playing video games and running.</p>
           </div>
         </div>
       </section>
