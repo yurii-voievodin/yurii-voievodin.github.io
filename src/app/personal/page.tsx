@@ -106,7 +106,7 @@ export default function PersonalPage() {
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {movies.map((movie, index) => (
+            {movies.map((movie) => (
               <a
                 key={movie.name}
                 href={movie.url}
@@ -151,7 +151,7 @@ export default function PersonalPage() {
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {games.map((game, index) => (
+            {games.map((game) => (
               <a
                 key={game.name}
                 href={game.url}

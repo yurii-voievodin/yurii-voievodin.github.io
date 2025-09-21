@@ -6,6 +6,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Post } from '@/types/blog';
 import { useState } from 'react';
+import { landRoverPhotos } from '@/lib/land-rover-data';
 
 interface LandRoverPostProps {
   post: Post;
@@ -15,12 +16,7 @@ export default function LandRoverPost({ post }: LandRoverPostProps) {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
   const [imageLoading, setImageLoading] = useState<{ [key: number]: boolean }>({});
 
-  const images = Array.from({ length: 14 }, (_, i) => ({
-    id: i + 1,
-    src: `/land_rover/${i + 1}.jpeg`,
-    alt: `Land Rover Discovery Sport 2017 - Photo ${i + 1}`,
-    description: `Adventure photo ${i + 1} taken in various locations during 2024-2025`
-  }));
+  const images = landRoverPhotos;
 
   const handleImageLoad = (imageId: number) => {
     setImageLoading(prev => ({ ...prev, [imageId]: false }));
@@ -170,15 +166,6 @@ export default function LandRoverPost({ post }: LandRoverPostProps) {
                       <Maximize2 className="text-white" size={20} />
                     </button>
                   </div>
-                </div>
-                
-                <div className="p-4">
-                  <h3 className="text-sm font-medium text-zinc-300 mb-1">
-                    Photo {image.id}
-                  </h3>
-                  <p className="text-xs text-zinc-500">
-                    Adventure Collection 2024-2025
-                  </p>
                 </div>
               </div>
             ))}
