@@ -29,7 +29,7 @@ export function getSortedPostsData(): Post[] {
       excerpt: matterResult.data.excerpt || '',
       content: matterResult.content,
       tags: matterResult.data.tags || [],
-      readTime: calculateReadTime(matterResult.content)
+      featuredImage: matterResult.data.featuredImage
     } as Post;
   });
 
@@ -75,14 +75,8 @@ export async function getPostData(slug: string): Promise<Post> {
     excerpt: matterResult.data.excerpt || '',
     content: contentHtml,
     tags: matterResult.data.tags || [],
-    readTime: calculateReadTime(matterResult.content)
+    featuredImage: matterResult.data.featuredImage
   };
 }
 
-function calculateReadTime(content: string): string {
-  const wordsPerMinute = 200;
-  const words = content.split(' ').length;
-  const minutes = Math.ceil(words / wordsPerMinute);
-  return `${minutes} min read`;
-}
 

@@ -2,6 +2,7 @@
 title: "Land Rover Discovery Sport 2017"
 date: "2025-02-02"
 excerpt: "A collection of my photos with Land Rover in different locations"
+featuredImage: "/land_rover/10.jpeg"
 ---
 
 # A collection of my photos with Land Rover in different locations.

@@ -5,6 +5,7 @@ export interface Post {
   excerpt: string;
   content: string;
   tags?: string[];
+  featuredImage?: string;
 }
 
 export interface CVSection {
