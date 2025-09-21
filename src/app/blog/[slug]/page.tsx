@@ -4,6 +4,7 @@ import { format } from 'date-fns';
 import Link from 'next/link';
 import FutureTechPost from '@/components/blog-posts/FutureTechPost';
 import LandRoverPost from '@/components/blog-posts/LandRoverPost';
+import NorwayPost from '@/components/blog-posts/NorwayPost';
 
 interface BlogPostPageProps {
   params: Promise<{
@@ -26,9 +27,13 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   if (slug === 'feature') {
     return <FutureTechPost post={post} />;
   }
-  
+
   if (slug === 'land_rover') {
     return <LandRoverPost post={post} />;
+  }
+
+  if (slug === 'norway-2025') {
+    return <NorwayPost post={post} />;
   }
 
   // Default blog post layout with updated styling
