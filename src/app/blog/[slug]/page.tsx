@@ -6,6 +6,7 @@ import FutureTechPost from '@/components/blog-posts/FutureTechPost';
 import LandRoverPost from '@/components/blog-posts/LandRoverPost';
 import NorwayPost from '@/components/blog-posts/NorwayPost';
 import ItalyPost from '@/components/blog-posts/ItalyPost';
+import AustriaPost from '@/components/blog-posts/AustriaPost';
 
 interface BlogPostPageProps {
   params: Promise<{
@@ -39,6 +40,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   if (slug === 'italy-2025') {
     return <ItalyPost post={post} />;
+  }
+
+  if (slug === 'austria-2025') {
+    return <AustriaPost post={post} />;
   }
 
   // Default blog post layout with updated styling
