@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Briefcase, Newspaper } from "lucide-react";
+import { ArrowRight, Briefcase } from "lucide-react";
 
 export default function Home() {
   return (
@@ -32,23 +32,6 @@ export default function Home() {
           </h3>
           <p className="text-zinc-300 mb-4">Learn more about my professional experience, skills, and educational background in software development.</p>
           <Link href="/cv" className="inline-flex items-center bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent hover:from-violet-300 hover:to-purple-300 font-medium transition-all">View my CV<ArrowRight className="ml-1 text-violet-400 hover:text-violet-300 transition-colors" size={16} /></Link>
-        </div>
-
-        <div className="bg-zinc-800/50 p-6 rounded-lg shadow-lg border border-zinc-700/50">
-          <h3 className="text-xl font-semibold text-zinc-100 mb-3 flex items-center">
-            <Newspaper className="mr-2" size={20} />
-            Latest from the Blog
-          </h3>
-          <p className="text-zinc-300 mb-4">
-            Explore my travel adventures, road trip experiences, and stories from around the world.
-          </p>
-          <Link
-            href="/blog"
-            className="inline-flex items-center bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent hover:from-violet-300 hover:to-purple-300 font-medium transition-all"
-          >
-            Explore all posts
-            <ArrowRight className="ml-1 text-violet-400 hover:text-violet-300 transition-colors" size={16} />
-          </Link>
         </div>
       </section>
     </div>
