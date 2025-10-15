@@ -1,5 +1,23 @@
 import { getSortedPostsData } from '@/lib/blog';
 import PostCard from '@/components/PostCard';
+import type { Metadata } from 'next';
+import { siteConfig } from '@/lib/config';
+
+export const metadata: Metadata = {
+  title: "Travel Blog - Yurii Voievodin",
+  description: "Stories and adventures from my travels around the world. Exploring new places, capturing memories, and sharing experiences.",
+  openGraph: {
+    title: "Travel Blog - Yurii Voievodin",
+    description: "Stories and adventures from my travels around the world. Exploring new places, capturing memories, and sharing experiences.",
+    url: `${siteConfig.url}/blog`,
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Travel Blog - Yurii Voievodin",
+    description: "Stories and adventures from my travels around the world. Exploring new places, capturing memories, and sharing experiences.",
+  },
+};
 
 export default function BlogPage() {
   const posts = getSortedPostsData();

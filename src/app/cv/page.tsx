@@ -1,6 +1,23 @@
 import { cvData, experienceHTML } from '@/lib/cv-data';
 import { MapPin, Mail, Download } from 'lucide-react';
 import { siteConfig } from '@/lib/config';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "CV - Yurii Voievodin",
+  description: "Experienced software developer with 10+ years of expertise in web and mobile apps development. Proficient in Swift, modern iOS frameworks, and agile methodologies.",
+  openGraph: {
+    title: "CV - Yurii Voievodin",
+    description: "Experienced software developer with 10+ years of expertise in web and mobile apps development. Proficient in Swift, modern iOS frameworks, and agile methodologies.",
+    url: `${siteConfig.url}/cv`,
+    type: "profile",
+  },
+  twitter: {
+    card: "summary",
+    title: "CV - Yurii Voievodin",
+    description: "Experienced software developer with 10+ years of expertise in web and mobile apps development. Proficient in Swift, modern iOS frameworks, and agile methodologies.",
+  },
+};
 
 export default function CVPage() {
   return (

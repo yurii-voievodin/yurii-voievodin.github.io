@@ -7,11 +7,45 @@ import LandRoverPost from '@/components/blog-posts/LandRoverPost';
 import NorwayPost from '@/components/blog-posts/NorwayPost';
 import ItalyPost from '@/components/blog-posts/ItalyPost';
 import AustriaPost from '@/components/blog-posts/AustriaPost';
+import type { Metadata } from 'next';
+import { siteConfig } from '@/lib/config';
 
 interface BlogPostPageProps {
   params: Promise<{
     slug: string;
   }>;
+}
+
+export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const post = await getPostData(slug);
+
+  const description = post.excerpt || `Read ${post.title} on Yurii Voievodin's travel blog`;
+  const imageUrl = post.featuredImage
+    ? `${siteConfig.url}${post.featuredImage}`
+    : undefined;
+
+  return {
+    title: `${post.title} - Yurii Voievodin`,
+    description,
+    keywords: post.tags?.join(', '),
+    openGraph: {
+      title: post.title,
+      description,
+      url: `${siteConfig.url}/blog/${slug}`,
+      type: 'article',
+      publishedTime: post.date,
+      authors: [siteConfig.author.name],
+      tags: post.tags,
+      images: imageUrl ? [{ url: imageUrl }] : [],
+    },
+    twitter: {
+      card: imageUrl ? 'summary_large_image' : 'summary',
+      title: post.title,
+      description,
+      images: imageUrl ? [imageUrl] : [],
+    },
+  };
 }
 
 export async function generateStaticParams() {

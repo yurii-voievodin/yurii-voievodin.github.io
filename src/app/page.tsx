@@ -1,6 +1,24 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Briefcase } from "lucide-react";
+import type { Metadata } from "next";
+import { siteConfig } from "@/lib/config";
+
+export const metadata: Metadata = {
+  title: "Home - Yurii Voievodin",
+  description: "Passionate software developer with many years of programming experience. Building applications, exploring new frameworks, and sharing insights from my journey as a developer.",
+  openGraph: {
+    title: "Home - Yurii Voievodin",
+    description: "Passionate software developer with many years of programming experience. Building applications, exploring new frameworks, and sharing insights from my journey as a developer.",
+    url: siteConfig.url,
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Home - Yurii Voievodin",
+    description: "Passionate software developer with many years of programming experience. Building applications, exploring new frameworks, and sharing insights from my journey as a developer.",
+  },
+};
 
 export default function Home() {
   return (
