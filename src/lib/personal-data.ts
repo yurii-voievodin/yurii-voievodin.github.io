@@ -94,6 +94,18 @@ export const books: Book[] = [
 
 export const games: MediaItem[] = [
   {
+    name: "No Man's Sky",
+    url: "https://uk.wikipedia.org/wiki/No_Man%27s_Sky",
+    image: "/personal/games/nms.jpg",
+    alt: "No Man's Sky game cover"
+  },
+  {
+    name: "Heartstone",
+    url: "https://playhearthstone.com/en-us",
+    image: "/personal/games/heartstone.jpg",
+    alt: "Heartstone game cover"
+  },
+  {
     name: "Battlefield V",
     url: "https://uk.wikipedia.org/wiki/Battlefield_V",
     image: "/personal/games/b5.jpg",
@@ -104,12 +116,6 @@ export const games: MediaItem[] = [
     url: "https://uk.wikipedia.org/wiki/Heroes_of_the_Storm",
     image: "/personal/games/heroes_of_the_storm.jpg",
     alt: "Heroes of the Storm game cover"
-  },
-  {
-    name: "Heartstone",
-    url: "https://playhearthstone.com/en-us",
-    image: "/personal/games/heartstone.jpg",
-    alt: "Heartstone game cover"
   },
   {
     name: "Lineage 2",
