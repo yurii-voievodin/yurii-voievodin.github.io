@@ -40,8 +40,7 @@ export default function Home() {
             Latest from the Blog
           </h3>
           <p className="text-zinc-300 mb-4">
-            Discover my latest thoughts on software development, programming
-            best practices, and technology trends.
+            Explore my travel adventures, road trip experiences, and stories from around the world.
           </p>
           <Link
             href="/blog"

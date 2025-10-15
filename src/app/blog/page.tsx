@@ -11,7 +11,7 @@ export default function BlogPage() {
           Posts
         </h1>
         <p className="text-lg text-zinc-300 max-w-2xl mx-auto">
-          Thoughts and insights about development, programming, and technology.
+          Stories and adventures from my travels around the world.
         </p>
       </div>
 

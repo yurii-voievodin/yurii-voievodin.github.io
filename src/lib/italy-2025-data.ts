@@ -10,60 +10,60 @@ export const italyPhotos: ItalyPhoto[] = [
     id: 1,
     src: "/italy-2025/IMG_3330.jpeg",
     alt: "Italy 2025 Trip - Photo 1",
-    description: "Italian architecture and cultural heritage"
+    description: ""
   },
   {
     id: 2,
     src: "/italy-2025/IMG_3381.jpeg",
     alt: "Italy 2025 Trip - Photo 2",
-    description: "Historic Italian landmarks"
+    description: ""
   },
   {
     id: 3,
     src: "/italy-2025/IMG_3420.jpeg",
     alt: "Italy 2025 Trip - Photo 3",
-    description: "Mediterranean landscapes of Italy"
+    description: ""
   },
   {
     id: 4,
     src: "/italy-2025/IMG_3424.jpeg",
     alt: "Italy 2025 Trip - Photo 4",
-    description: "Italian countryside and culture"
+    description: ""
   },
   {
     id: 5,
     src: "/italy-2025/IMG_3452.jpeg",
     alt: "Italy 2025 Trip - Photo 5",
-    description: "Renaissance art and architecture"
+    description: ""
   },
   {
     id: 6,
     src: "/italy-2025/IMG_3732.jpeg",
     alt: "Italy 2025 Trip - Photo 6",
-    description: "Italian urban landscapes"
+    description: ""
   },
   {
     id: 7,
     src: "/italy-2025/IMG_5133_SnapseedCopy.jpeg",
     alt: "Italy 2025 Trip - Photo 7",
-    description: "Scenic Italian vistas"
+    description: ""
   },
   {
     id: 8,
     src: "/italy-2025/IMG_5202.jpeg",
     alt: "Italy 2025 Trip - Photo 8",
-    description: "Italian adventure moments"
+    description: ""
   },
   {
     id: 9,
     src: "/italy-2025/IMG_5236.jpeg",
     alt: "Italy 2025 Trip - Photo 9",
-    description: "Italian travel memories"
+    description: ""
   },
   {
     id: 10,
     src: "/italy-2025/IMG_5357.jpeg",
     alt: "Italy 2025 Trip - Photo 10",
-    description: "Italy 2025 expedition highlights"
+    description: ""
   }
 ];

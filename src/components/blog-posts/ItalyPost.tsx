@@ -111,17 +111,6 @@ export default function ItalyPost({ post }: ItalyPostProps) {
           </div>
         </div>
 
-        {/* Introduction */}
-        {/*<div className="bg-zinc-800/50 rounded-2xl p-8 shadow-lg border border-zinc-700/50 mb-12">
-          <h2 className="text-2xl font-bold text-zinc-100 mb-4">About This Journey</h2>
-          <p className="text-lg text-zinc-300 leading-relaxed">
-            This collection captures the timeless beauty and rich cultural heritage of Italy during my 2025 adventure.
-            From ancient Roman architecture to Renaissance masterpieces, from rolling Tuscan hills to bustling piazzas,
-            each photograph tells a story of art, history, and the Italian way of life. Experience the warmth of
-            Mediterranean culture and the grandeur of one of the world's most culturally significant countries.
-          </p>
-        </div>*/}
-
         {/* Photo Gallery */}
         <div className="mb-12">
 
@@ -160,23 +149,6 @@ export default function ItalyPost({ post }: ItalyPostProps) {
               </div>
             ))}
           </div>
-        </div>
-
-        {/* Additional Info */}
-        <div className="bg-gradient-to-r from-orange-600/10 to-red-600/10 rounded-2xl p-8 border border-orange-500/20">
-          <h3 className="text-2xl font-bold text-zinc-100 mb-4">
-            La Bella Italia
-          </h3>
-          <p className="text-zinc-300 leading-relaxed mb-6">
-            Italy&apos;s unparalleled blend of history, art, culture, and natural beauty creates an experience like no other.
-            From the ancient Colosseum to Renaissance churches, from sun-drenched coastlines to charming hilltop towns,
-            this Mediterranean jewel offers endless inspiration. These photographs capture the essence of Italian life -
-            the passion, the artistry, the warmth of its people, and the timeless beauty that has captivated visitors
-            for centuries.
-          </p>
-          <p className="text-zinc-400 text-sm">
-            Photography captured during the 2025 Italy expedition.
-          </p>
         </div>
 
         {/* Footer CTA */}

@@ -115,10 +115,7 @@ export default function NorwayPost({ post }: NorwayPostProps) {
         <div className="bg-zinc-800/50 rounded-2xl p-8 shadow-lg border border-zinc-700/50 mb-12">
           <h2 className="text-2xl font-bold text-zinc-100 mb-4">About This Journey</h2>
           <p className="text-lg text-zinc-300 leading-relaxed">
-            This collection captures the breathtaking beauty of Norway during my 2025 adventure.
-            From dramatic fjords to snow-capped mountains, each photograph tells a story of exploration
-            and wonder in one of the world&apos;s most spectacular countries. Experience the raw natural beauty,
-            unique Nordic culture, and unforgettable moments from this incredible journey.
+            This collection captures the breathtaking beauty of Norway during my 2025 adventure. From dramatic fjords to mountains, each photograph tells a story of exploration and wonder. It&apos;s the most impressive country and nature I&apos;ve ever seen so far.
           </p>
         </div>
 
@@ -160,23 +157,6 @@ export default function NorwayPost({ post }: NorwayPostProps) {
               </div>
             ))}
           </div>
-        </div>
-
-        {/* Additional Info */}
-        <div className="bg-gradient-to-r from-blue-600/10 to-indigo-600/10 rounded-2xl p-8 border border-blue-500/20">
-          <h3 className="text-2xl font-bold text-zinc-100 mb-4">
-            Land of the Midnight Sun
-          </h3>
-          <p className="text-zinc-300 leading-relaxed mb-6">
-            Norway&apos;s diverse landscapes offer some of the most stunning natural scenery on Earth.
-            From the dramatic coastlines of the fjords to the pristine wilderness of the interior,
-            this Nordic country showcases nature at its most magnificent. These photographs capture
-            the essence of Norwegian beauty - the interplay of light and shadow, the grandeur of
-            untouched wilderness, and the unique character that makes Norway truly special.
-          </p>
-          <p className="text-zinc-400 text-sm">
-            Photography captured during the 2025 Norway expedition.
-          </p>
         </div>
 
         {/* Footer CTA */}
