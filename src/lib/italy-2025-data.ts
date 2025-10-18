@@ -1,9 +1,22 @@
+import { Post } from '@/types/blog';
+import ItalyPost from '@/components/blog-posts/ItalyPost';
+
 export interface ItalyPhoto {
   id: number;
   src: string;
   alt: string;
   description: string;
 }
+
+export const italyPostMetadata: Post = {
+  slug: 'italy-2025',
+  title: 'Italy 2025 Adventure',
+  date: '2025-07-14',
+  excerpt: 'A cultural and visual journey through the heart of Italy',
+  tags: ['travel', 'photography', 'italy', 'adventure', 'culture'],
+  featuredImage: '/italy-2025/IMG_5133_SnapseedCopy.jpeg',
+  component: ItalyPost,
+};
 
 export const italyPhotos: ItalyPhoto[] = [
   {

@@ -1,9 +1,12 @@
+import { ComponentType } from 'react';
+
 export interface Post {
   slug: string;
   title: string;
   date: string;
   excerpt: string;
-  content: string;
+  content?: string; // Optional for component-based posts
+  component?: ComponentType<{ post: Post }>; // Optional component for specialized posts
   tags?: string[];
   featuredImage?: string;
 }

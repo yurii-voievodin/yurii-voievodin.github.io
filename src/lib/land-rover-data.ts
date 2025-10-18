@@ -1,9 +1,22 @@
+import { Post } from '@/types/blog';
+import LandRoverPost from '@/components/blog-posts/LandRoverPost';
+
 export interface LandRoverPhoto {
   id: number;
   src: string;
   alt: string;
   description: string;
 }
+
+export const landRoverPostMetadata: Post = {
+  slug: 'land_rover',
+  title: 'Land Rover Discovery Sport 2017',
+  date: '2025-02-02',
+  excerpt: 'A collection of my photos with Land Rover in different locations',
+  tags: ['automotive', 'photography', 'ukraine', 'travel'],
+  featuredImage: '/land_rover/10.jpeg',
+  component: LandRoverPost,
+};
 
 export const landRoverPhotos: LandRoverPhoto[] = [
   {
