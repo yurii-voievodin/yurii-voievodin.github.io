@@ -18,14 +18,16 @@ export interface Book {
 }
 
 export const personalPhotos: PersonalPhoto[] = [
-  { name: "/personal/photos/10.jpeg", alt: "Somewhere in the sands near Kyiv Sea, Vyshgorod" },
+  { name: "/personal/photos/IMG_7111.jpeg", alt: "Norway" },
+  { name: "/personal/photos/IMG_5427.jpeg", alt: "Norway" },
+  { name: "/personal/photos/IMG_5358.jpeg", alt: "Como" },
   { name: "/personal/photos/11.jpeg", alt: "On top of Hoverla" },
+  { name: "/personal/photos/IMG_2306.jpeg", alt: "Home" },
+  { name: "/personal/photos/DSC00292.jpeg", alt: "Love" },
+  { name: "/personal/photos/DSC00273.jpeg", alt: "Together" },
   { name: "/personal/photos/3.jpeg", alt: "Before descending from the mountain in Dragobrat" },
-  { name: "/personal/photos/7.jpeg", alt: "Photo session with Eva, 5 years old" },
-  { name: "/personal/photos/2.jpeg", alt: "Dragobrat, off the slopes" },
-  { name: "/personal/photos/1.jpeg", alt: "Small houses on the mountain top" },
-  { name: "/personal/photos/8.jpeg", alt: "Eva" },
-  { name: "/personal/photos/9.jpeg", alt: "Lake in Sumy" },
+  { name: "/personal/photos/IMG_4239.jpeg", alt: "Eve" },
+  
 ];
 
 export const movies: MediaItem[] = [
