@@ -30,10 +30,22 @@ export const personalPhotos: PersonalPhoto[] = [
 
 export const movies: MediaItem[] = [
   {
+    name: "Alien: Earth",
+    url: "https://www.imdb.com/title/tt13623632",
+    image: "/personal/movies/alien-earth.png",
+    alt: "Alien: Earth series poster"
+  },
+  {
     name: "Foundation",
     url: "https://uk.wikipedia.org/wiki/Фундація_(телесеріал)",
     image: "/personal/movies/foundation.jpeg",
     alt: "Foundation series poster"
+  },
+  {
+    name: "For All Mankind",
+    url: "https://www.imdb.com/title/tt7772588/",
+    image: "/personal/movies/for-all-mankind.png",
+    alt: "For All Mankind series poster"
   },
   {
     name: "Dune",
@@ -47,25 +59,23 @@ export const movies: MediaItem[] = [
     image: "/personal/movies/ldr.jpg",
     alt: "Love, Death & Robots series poster"
   },
-
   {
-    name: "Finch",
-    url: "https://uk.wikipedia.org/wiki/Фінч_(фільм)",
-    image: "/personal/movies/Finch.jpeg",
-    alt: "Finch movie poster"
-  },
-
-  {
-    name: "See",
-    url: "https://uk.wikipedia.org/wiki/Бачити_(телесеріал)",
-    image: "/personal/movies/see.jpg",
-    alt: "See series poster"
+    name: "Ghost in the Shell",
+    url: "https://www.imdb.com/title/tt0113568/",
+    image: "/personal/movies/ghost-in-the-shell.png",
+    alt: "Ghost in the Shell movie poster"
   },
   {
-    name: "The Morning Show",
-    url: "https://uk.wikipedia.org/wiki/Ранкове_шоу_(телесеріал)",
-    image: "/personal/movies/ms.png",
-    alt: "The Morning Show series poster"
+    name: "Aliens",
+    url: "https://www.imdb.com/title/tt0090605/",
+    image: "/personal/movies/aliens.png",
+    alt: "Aliens movie poster"
+  },
+  {
+    name: "Back to the Future",
+    url: "https://www.imdb.com/title/tt0088763/",
+    image: "/personal/movies/back-to-the-future.png",
+    alt: "Back to the Future movie poster"
   },
 ];
 
