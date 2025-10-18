@@ -59,59 +59,120 @@ export default function CVPage() {
     Proficient in Swift programming language, modern iOS frameworks, and agile methodologies.</p>
     <p className="text-violet-300 leading-relaxed">Using AI-based development tools and implementing AI/ML features in production applications.</p>
     </section>
-    
-    {/* Experience Section with HTML */}
-    <section className="bg-zinc-800/50 rounded-lg shadow-lg border border-zinc-700/50 p-4 md:p-8 mb-8">
-    <div 
-    className="prose prose-lg max-w-none prose-headings:text-zinc-100 prose-p:text-zinc-300 prose-a:bg-gradient-to-r prose-a:from-violet-400 prose-a:to-purple-400 prose-a:bg-clip-text prose-a:text-transparent prose-a:no-underline hover:prose-a:underline prose-strong:text-zinc-100 prose-code:bg-zinc-700 prose-code:text-zinc-100 prose-pre:bg-zinc-800 prose-pre:text-zinc-100 prose-blockquote:border-zinc-600 prose-blockquote:text-zinc-400 prose-li:text-zinc-300"
-    dangerouslySetInnerHTML={{ __html: experienceHTML }}
-    />
-    </section>
-    
-    {/* CV Sections */}
-    {cvData.map((section, index) => (
+
+    {/* Skills Section */}
+    {cvData
+      .filter(section => section.title === "Skills")
+      .map((section, index) => (
       <section key={index} className="bg-zinc-800/50 rounded-lg shadow-lg border border-zinc-700/50 p-4 md:p-8 mb-8">
       <h2 className="text-2xl font-bold text-zinc-100 mb-6">
       {section.title}
       </h2>
-      
+
       <div className="space-y-6">
       {section.items.map((item, itemIndex) => (
         <div key={itemIndex} className="border-l-2 border-blue-500/30 pl-4 md:pl-4">
         <h3 className="text-lg font-semibold text-zinc-100">
         {item.title}
         </h3>
-        
+
         {item.subtitle && (
           <p className="text-blue-400 font-medium mb-1">
           {item.subtitle}
           </p>
         )}
-        
+
         {item.period && (
           <p className="text-zinc-400 text-sm mb-2">
           {item.period}
           </p>
         )}
-        
+
         {item.description && (
           <p className="text-zinc-300 mb-3">
           {item.description}
           </p>
         )}
-        
+
         {item.htmlContent && (
-          <div 
+          <div
           className="prose prose-sm max-w-none prose-headings:text-zinc-100 prose-p:text-zinc-300 prose-a:text-blue-400 prose-a:no-underline hover:prose-a:underline prose-strong:text-zinc-100 prose-code:bg-zinc-700 prose-code:text-zinc-100 prose-pre:bg-zinc-800 prose-pre:text-zinc-100 prose-blockquote:border-zinc-600 prose-blockquote:text-zinc-400 prose-li:text-zinc-300"
           dangerouslySetInnerHTML={{ __html: item.htmlContent }}
           />
         )}
-        
+
         {item.skills && item.skills.length > 0 && (
           <div className="flex flex-wrap gap-2 pt-2">
           {item.skills.map((skill) => (
-            <span 
-            key={skill} 
+            <span
+            key={skill}
+            className="px-3 py-1.5 bg-blue-500/10 text-blue-400 text-sm rounded-full border border-blue-500/20"
+            >
+            {skill}
+            </span>
+          ))}
+          </div>
+        )}
+        </div>
+      ))}
+      </div>
+      </section>
+    ))}
+
+    {/* Experience Section with HTML */}
+    <section className="bg-zinc-800/50 rounded-lg shadow-lg border border-zinc-700/50 p-4 md:p-8 mb-8">
+    <div
+    className="prose prose-lg max-w-none prose-headings:text-zinc-100 prose-p:text-zinc-300 prose-a:bg-gradient-to-r prose-a:from-violet-400 prose-a:to-purple-400 prose-a:bg-clip-text prose-a:text-transparent prose-a:no-underline hover:prose-a:underline prose-strong:text-zinc-100 prose-code:bg-zinc-700 prose-code:text-zinc-100 prose-pre:bg-zinc-800 prose-pre:text-zinc-100 prose-blockquote:border-zinc-600 prose-blockquote:text-zinc-400 prose-li:text-zinc-300"
+    dangerouslySetInnerHTML={{ __html: experienceHTML }}
+    />
+    </section>
+
+    {/* Other CV Sections (Education, etc.) */}
+    {cvData
+      .filter(section => section.title !== "Skills")
+      .map((section, index) => (
+      <section key={index} className="bg-zinc-800/50 rounded-lg shadow-lg border border-zinc-700/50 p-4 md:p-8 mb-8">
+      <h2 className="text-2xl font-bold text-zinc-100 mb-6">
+      {section.title}
+      </h2>
+
+      <div className="space-y-6">
+      {section.items.map((item, itemIndex) => (
+        <div key={itemIndex} className="border-l-2 border-blue-500/30 pl-4 md:pl-4">
+        <h3 className="text-lg font-semibold text-zinc-100">
+        {item.title}
+        </h3>
+
+        {item.subtitle && (
+          <p className="text-blue-400 font-medium mb-1">
+          {item.subtitle}
+          </p>
+        )}
+
+        {item.period && (
+          <p className="text-zinc-400 text-sm mb-2">
+          {item.period}
+          </p>
+        )}
+
+        {item.description && (
+          <p className="text-zinc-300 mb-3">
+          {item.description}
+          </p>
+        )}
+
+        {item.htmlContent && (
+          <div
+          className="prose prose-sm max-w-none prose-headings:text-zinc-100 prose-p:text-zinc-300 prose-a:text-blue-400 prose-a:no-underline hover:prose-a:underline prose-strong:text-zinc-100 prose-code:bg-zinc-700 prose-code:text-zinc-100 prose-pre:bg-zinc-800 prose-pre:text-zinc-100 prose-blockquote:border-zinc-600 prose-blockquote:text-zinc-400 prose-li:text-zinc-300"
+          dangerouslySetInnerHTML={{ __html: item.htmlContent }}
+          />
+        )}
+
+        {item.skills && item.skills.length > 0 && (
+          <div className="flex flex-wrap gap-2 pt-2">
+          {item.skills.map((skill) => (
+            <span
+            key={skill}
             className="px-3 py-1.5 bg-blue-500/10 text-blue-400 text-sm rounded-full border border-blue-500/20"
             >
             {skill}
