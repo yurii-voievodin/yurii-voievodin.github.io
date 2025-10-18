@@ -2,15 +2,21 @@
 
 A modern personal blog and CV website built with Next.js, TypeScript, and Tailwind CSS, designed to be exported as a static site for easy deployment.
 
+## Screenshots
+
+![Blog Listing Page](public/Screenshot%202025-10-18%20at%2018.31.27.png)
+*Blog listing page showing travel adventures and tech articles*
+
 ## Features
 
-- 📝 **Blog System**: Markdown-based blog posts with frontmatter support
+- 📝 **Blog System**: TypeScript-based blog architecture with custom React components for rich content
 - 📄 **CV/Resume Section**: Professional experience and skills showcase
 - 🎨 **Modern Design**: Clean, responsive design with Tailwind CSS
 - ⚡ **Static Export**: Generates static HTML files for fast loading
 - 🔍 **SEO Optimized**: Proper meta tags and semantic HTML
 - 📱 **Mobile Responsive**: Works perfectly on all devices
 - ⚙️ **TypeScript**: Full type safety and better developer experience
+- 🎯 **Component-Based Posts**: Each post can have a specialized React component for custom layouts
 
 ## Project Structure
 
@@ -21,11 +27,14 @@ next-blog/
 │   │   ├── blog/           # Blog pages
 │   │   ├── cv/             # CV page
 │   │   └── layout.tsx      # Root layout
-│   ├── components/         # React components
-│   ├── lib/               # Utility functions
+│   ├── components/
+│   │   └── blog-posts/    # Custom blog post components
+│   ├── lib/
+│   │   ├── *-data.ts      # Blog post metadata and data
+│   │   ├── posts-registry.ts  # Central post registry
+│   │   └── blog.ts        # Blog utility functions
 │   └── types/             # TypeScript types
-├── posts/                 # Markdown blog posts
-├── public/               # Static assets
+├── public/               # Static assets (images, etc.)
 └── package.json
 ```
 
@@ -56,23 +65,67 @@ npm run build
 
 ## Adding Blog Posts
 
-1. Create a new `.md` file in the `posts/` directory
-2. Add frontmatter at the top:
+The blog uses a TypeScript-based architecture where each post consists of:
 
-```markdown
----
-title: "Your Post Title"
-date: "2024-06-09"
-excerpt: "A brief description of your post"
-tags: ["tag1", "tag2"]
----
+### 1. Create a Data File
 
-# Your Post Content
+Create a new data file in `src/lib/` (e.g., `my-post-data.ts`):
 
-Write your blog post content here using Markdown.
+```typescript
+import { Post } from '@/types/blog';
+import MyPost from '@/components/blog-posts/MyPost';
+
+export const myPostMetadata: Post = {
+  slug: 'my-post',
+  title: 'My Post Title',
+  date: '2024-06-09',
+  excerpt: 'A brief description of your post',
+  tags: ['tag1', 'tag2'],
+  featuredImage: '/images/my-post-cover.jpg',
+  component: MyPost,
+};
+
+// Optional: Add any additional data structures your post needs
+export const myPostData = [
+  // Your custom data here
+];
 ```
 
-3. The post will automatically appear on the blog page
+### 2. Create a Component (Optional)
+
+For custom layouts, create a component in `src/components/blog-posts/MyPost.tsx`:
+
+```typescript
+import { Post } from '@/types/blog';
+
+interface MyPostProps {
+  post: Post;
+}
+
+export default function MyPost({ post }: MyPostProps) {
+  return (
+    <div>
+      <h1>{post.title}</h1>
+      {/* Your custom layout here */}
+    </div>
+  );
+}
+```
+
+### 3. Register the Post
+
+Add your post to `src/lib/posts-registry.ts`:
+
+```typescript
+import { myPostMetadata } from './my-post-data';
+
+export const allPosts: Post[] = [
+  myPostMetadata,
+  // ... other posts
+];
+```
+
+Your post will now appear on the blog page!
 
 ## Customizing Your CV
 
@@ -114,13 +167,12 @@ npm run build
 ## Technologies Used
 
 - **Next.js 15**: React framework with App Router
-- **TypeScript**: Type-safe JavaScript
+- **TypeScript**: Type-safe JavaScript for blog data and components
 - **Tailwind CSS**: Utility-first CSS framework
-- **Markdown**: Content management for blog posts
-- **Gray Matter**: Frontmatter parsing
-- **Remark**: Markdown processing
+- **React Components**: Custom blog post layouts with full flexibility
 - **Lucide React**: Beautiful icons
 - **Date-fns**: Date formatting
+- **Static Site Generation**: Pre-rendered pages for optimal performance
 
 ## Scripts
 
