@@ -1,5 +1,5 @@
 import { cvData, experienceHTML } from '@/lib/cv-data';
-import { MapPin, Mail, Download } from 'lucide-react';
+import { Mail, Download } from 'lucide-react';
 import { siteConfig } from '@/lib/config';
 import type { Metadata } from 'next';
 
