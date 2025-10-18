@@ -38,10 +38,6 @@ export default function CVPage() {
     <Mail size={16} />
     <span className="text-sm sm:text-base">{siteConfig.author.email}</span>
     </div>
-    <div className="flex items-center space-x-2">
-    <MapPin size={16} />
-    <span className="text-sm sm:text-base">{siteConfig.author.location}</span>
-    </div>
     </div>
     </div>
     
