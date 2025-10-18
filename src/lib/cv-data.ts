@@ -125,6 +125,10 @@ export const cvData: CVSection[] = [
         title: "Skills",
         items: [
             {
+                title: "AI & Machine Learning",
+                skills: ["Claude Code", "ChatGPT", "Codex", "CoreML", "Foundation Models", "ML Kit", "On-device AI", "Cloud-based AI Services"]
+            },
+            {
                 title: "Programming Languages",
                 skills: ["Swift", "Objective-C", "JavaScript", "Ruby", "PHP", "Python"]
             },
