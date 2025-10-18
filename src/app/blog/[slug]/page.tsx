@@ -7,6 +7,7 @@ import LandRoverPost from '@/components/blog-posts/LandRoverPost';
 import NorwayPost from '@/components/blog-posts/NorwayPost';
 import ItalyPost from '@/components/blog-posts/ItalyPost';
 import AustriaPost from '@/components/blog-posts/AustriaPost';
+import FirstAndSecondCarPost from '@/components/blog-posts/FirstAndSecondCarPost';
 import type { Metadata } from 'next';
 import { siteConfig } from '@/lib/config';
 
@@ -78,6 +79,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   if (slug === 'austria-2025') {
     return <AustriaPost post={post} />;
+  }
+
+  if (slug === 'first-and-second-car') {
+    return <FirstAndSecondCarPost post={post} />;
   }
 
   // Default blog post layout with updated styling
