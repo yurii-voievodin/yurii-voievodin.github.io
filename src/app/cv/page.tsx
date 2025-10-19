@@ -57,7 +57,7 @@ export default function CVPage() {
     <p className="text-zinc-300 leading-relaxed">
     Experienced software developer with 10+ years of expertise in web and mobile apps development, and with a bachelor&apos;s degree in Computer Science.
     Proficient in Swift programming language, modern iOS frameworks, and agile methodologies.</p>
-    <p className="text-violet-300 leading-relaxed">Using AI-based development tools and implementing AI/ML features in production applications.</p>
+    <p className="text-violet-300 leading-relaxed">I&apos;m using AI-based development tools and implementing AI/ML features in production applications.</p>
     </section>
 
     {/* Skills Section */}

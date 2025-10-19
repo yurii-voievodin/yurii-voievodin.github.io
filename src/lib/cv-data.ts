@@ -51,7 +51,6 @@ export const experienceHTML = `
                     <li>• Publish new versions of the app to the <span class="font-bold">TestFlight</span> for internal testing</li>
                     <li>• Publish new releases of the app to the <span class="font-bold">App Store</span></li>
                     <li>• Implement screen recording with <code class="bg-zinc-700 px-1 rounded text-xs">ReplayKit</code> framework</li>
-                    <li>• Implement "pinned posts" feature</li>
                     <li>• Make improvement and fixes</li>
                 </ul>
     </div>

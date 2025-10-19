@@ -6,17 +6,11 @@ export default function VistaCreateDetails() {
     return (
         <div className="min-h-screen p-5">
             <div className="max-w-4xl mx-auto bg-zinc-800/90 backdrop-blur-sm rounded-3xl shadow-2xl overflow-hidden border border-zinc-700/50">
-                {/* Header with gradient */}
-                <div className="bg-gradient-to-r from-purple-600 to-pink-600 text-white p-10 text-center">
-                    <h1 className="text-4xl font-bold mb-3">🎨 VistaCreate Journey</h1>
-                    <p className="text-xl opacity-90">February 16, 2022 - Present</p>
-                </div>
-
                 {/* Content */}
                 <div className="p-5 md:p-10 text-zinc-100">
                     {/* About Section */}
                     <div className="mb-10">
-                        <h2 className="text-2xl font-bold text-pink-400 mb-5 border-b-3 border-pink-500 pb-1 inline-block">
+                        <h2 className="text-2xl font-bold text-pink-400 mb-5 inline-block">
                             About the Role
                         </h2>
                         <p className="text-zinc-300 leading-relaxed">
@@ -26,10 +20,10 @@ export default function VistaCreateDetails() {
 
                     {/* Key Achievements */}
                     <div className="mb-10">
-                        <h2 className="text-2xl font-bold text-pink-400 mb-5 border-b-3 border-pink-500 pb-1 inline-block">
+                        <h2 className="text-2xl font-bold text-pink-400 mb-2 inline-block">
                             Key Achievements
                         </h2>
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 mt-6">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 mt-2">
                             {/* Featured Home Screen Redesign Card */}
                             <div className="bg-gradient-to-br from-zinc-700/80 to-zinc-800/80 p-6 rounded-2xl shadow-lg border border-zinc-600/30 hover:transform hover:-translate-y-2 transition-all duration-300 hover:shadow-xl">
                                 <h3 className="text-xl font-semibold mb-3 text-zinc-100">
@@ -47,27 +41,6 @@ export default function VistaCreateDetails() {
                                             height={433}
                                             className="rounded-xl shadow-lg border border-zinc-600/50"
                                             priority
-                                        />
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            {/* Testing Excellence Card */}
-                            <div className="bg-gradient-to-br from-zinc-700/80 to-zinc-800/80 p-6 rounded-2xl shadow-lg border border-zinc-600/30 hover:transform hover:-translate-y-2 transition-all duration-300 hover:shadow-xl">
-                                <h3 className="text-xl font-semibold mb-3 text-zinc-100">
-                                    🧪 Testing
-                                </h3>
-                                <p className="text-zinc-300 opacity-90 leading-relaxed mb-4">
-                                    We’ve implemented unit testing to cover the app’s business logic, ensuring its reliability and reducing the likelihood of production bugs.
-                                </p>
-                                <div className="flex justify-center">
-                                    <div className="relative w-60">
-                                        <Image
-                                            src="/detail-pages/VistaCreateDetails/VistaCreate Testing.png"
-                                            alt="VistaCreate Testing Suite"
-                                            width={300}
-                                            height={300}
-                                            className="rounded-xl shadow-lg border border-zinc-600/50"
                                         />
                                     </div>
                                 </div>
@@ -97,15 +70,15 @@ export default function VistaCreateDetails() {
                             {/* Remaining Achievement Cards */}
                             {[
                                 {
+                                    icon: "🔬",
+                                    title: "A/B Testing",
+                                    description: "Use Firebase A/B testing framework to enable data-driven decisions and optimize user experience through iterative improvements."
+                                },
+                                {
                                     icon: "📊",
                                     title: "Analytics Integration",
                                     description: "Use analytics services such as Firebase, AppsFlyer, and Iterable to track user behavior and automate marketing efforts."
                                 },
-                                {
-                                    icon: "🔬",
-                                    title: "A/B Testing",
-                                    description: "Use Firebase A/B testing framework to enable data-driven decisions and optimize user experience through iterative improvements."
-                                }
                             ].map((achievement, index) => (
                                 <div 
                                     key={index}
@@ -119,15 +92,36 @@ export default function VistaCreateDetails() {
                                     </p>
                                 </div>
                             ))}
+
+                            {/* Testing Excellence Card */}
+                            <div className="bg-gradient-to-br from-zinc-700/80 to-zinc-800/80 p-6 rounded-2xl shadow-lg border border-zinc-600/30 hover:transform hover:-translate-y-2 transition-all duration-300 hover:shadow-xl">
+                                <h3 className="text-xl font-semibold mb-3 text-zinc-100">
+                                    🧪 Testing
+                                </h3>
+                                <p className="text-zinc-300 opacity-90 leading-relaxed mb-4">
+                                    We’ve implemented unit testing to cover the app’s business logic, ensuring its reliability and reducing the likelihood of production bugs.
+                                </p>
+                                <div className="flex justify-center">
+                                    <div className="relative w-60">
+                                        <Image
+                                            src="/detail-pages/VistaCreateDetails/VistaCreate Testing.png"
+                                            alt="VistaCreate Testing Suite"
+                                            width={300}
+                                            height={300}
+                                            className="rounded-xl shadow-lg border border-zinc-600/50"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
                     {/* Technical Highlights */}
                     <div className="mb-10">
-                        <h2 className="text-2xl font-bold text-pink-400 mb-5 border-b-3 border-pink-500 pb-1 inline-block">
+                        <h2 className="text-2xl font-bold text-pink-400 mb-2 inline-block">
                             Technical Highlights
                         </h2>
-                        <div className="flex flex-wrap gap-3 mt-4">
+                        <div className="flex flex-wrap gap-2 mt-2">
                                 {['Swift', 'UIKit', 'Core Data', 'Firebase', 'AppsFlyer', 'Iterable', 'XCTest', 'MVVM', 'Combine'].map((tech) => (
                                     <span 
                                         key={tech}
@@ -141,7 +135,7 @@ export default function VistaCreateDetails() {
 
                     {/* Impact & Growth */}
                     <div className="mb-6">
-                        <h2 className="text-2xl font-bold text-pink-400 mb-5 border-b-3 border-pink-500 pb-1 inline-block">
+                        <h2 className="text-2xl font-bold text-pink-400 mb-2 inline-block">
                             Impact & Growth
                         </h2>
                         <p className="text-zinc-300 mb-6 leading-relaxed">

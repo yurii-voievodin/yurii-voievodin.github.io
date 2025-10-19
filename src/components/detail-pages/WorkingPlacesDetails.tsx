@@ -6,27 +6,17 @@ export default function WorkingPlacesDetails() {
     return (
         <div className="min-h-screen p-5">
             <div className="max-w-4xl mx-auto bg-zinc-800/90 backdrop-blur-sm rounded-3xl shadow-2xl overflow-hidden border border-zinc-700/50">
-                {/* Header with gradient */}
-                <div className="bg-gradient-to-r from-teal-600 to-cyan-600 text-white p-10 text-center">
-                    <h1 className="text-4xl font-bold mb-3">🏠 Working Spaces Journey</h1>
-                    <p className="text-xl opacity-90">From First Computer to Modern Home Office</p>
-                </div>
 
                 {/* Content */}
                 <div className="p-5 md:p-10 text-zinc-100">
                     {/* About Section */}
                     <div className="mb-10">
-                        <h2 className="text-2xl font-bold text-cyan-400 mb-5 border-b-3 border-cyan-500 pb-1 inline-block">
-                            My Development Environment Evolution
-                        </h2>
-                        <p className="text-zinc-300 leading-relaxed">
-                            Throughout my software development journey, my working environment has evolved - from shared office spaces to a fully remote home office setup. Each workspace represents a different chapter in my career, with unique equipment, locations, and memories.
-                        </p>
+                        <p className="text-zinc-300 leading-relaxed">Each workspace represents a different chapter in my career, with unique equipment, locations, and memories.</p>
                     </div>
 
                     {/* Current Setup */}
                     <div className="mb-10">
-                        <h2 className="text-2xl font-bold text-cyan-400 mb-5 border-b-3 border-cyan-500 pb-1 inline-block">
+                        <h2 className="text-2xl font-bold text-violet-400 mb-5 inline-block">
                             Current Setup (2023-2025)
                         </h2>
                         <div className="bg-gradient-to-br from-zinc-700/80 to-zinc-800/80 p-6 rounded-2xl shadow-lg border border-zinc-600/30">
@@ -35,9 +25,7 @@ export default function WorkingPlacesDetails() {
                                     <h3 className="text-xl font-semibold mb-3 text-zinc-100">
                                         🏡 Home Office - Ivano-Frankivsk, Ukraine
                                     </h3>
-                                    <p className="text-zinc-300 opacity-90 leading-relaxed mb-4">
-                                        My current fully remote workspace designed for maximum productivity. Features a clean, minimalist setup with ergonomic peripherals, and optimized lighting for long development sessions.
-                                    </p>
+                                    <p className="text-zinc-300 opacity-90 leading-relaxed mb-4">Clean, minimalist setup optimized lighting for long development sessions.</p>
                                     <div className="flex flex-wrap gap-2 mb-4">
                                         {['MacBook Pro', 'External Monitor', 'Magic Keyboard', 'Magic Trackpad', 'Studio Lighting'].map((item) => (
                                             <span 
@@ -67,9 +55,6 @@ export default function WorkingPlacesDetails() {
 
                     {/* Previous Remote Setup */}
                     <div className="mb-10">
-                        <h2 className="text-2xl font-bold text-cyan-400 mb-5 border-b-3 border-cyan-500 pb-1 inline-block">
-                            Remote Work Evolution (2021)
-                        </h2>
                         <div className="bg-gradient-to-br from-zinc-700/80 to-zinc-800/80 p-6 rounded-2xl shadow-lg border border-zinc-600/30">
                             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
                                 <div className="order-2 lg:order-1 flex justify-center">
@@ -105,11 +90,45 @@ export default function WorkingPlacesDetails() {
                         </div>
                     </div>
 
+                    {/* Workspace Evolution Timeline */}
+                    <div className="mb-10">
+                        <div className="space-y-8">
+
+                            {/* 2017 Setup */}
+                            <div className="bg-gradient-to-r from-zinc-800/80 to-zinc-700/80 p-6 rounded-2xl border border-zinc-600/30">
+                                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-center">
+                                    <div className="order-2 lg:order-1 flex justify-center">
+                                        <div className="relative max-w-xs">
+                                            <Image
+                                                src="/detail-pages/WorkingPacesDetails/sumy_2017.jpeg"
+                                                alt="Sumy Workspace 2017"
+                                                width={250}
+                                                height={200}
+                                                className="rounded-xl shadow-lg border border-zinc-600/50 hover:scale-105 transition-transform duration-300"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div className="lg:col-span-2 order-1 lg:order-2">
+                                        <div className="flex items-center gap-3 mb-3">
+                                            <span className="bg-cyan-600 text-white px-3 py-1 rounded-full text-sm font-medium">2017</span>
+                                            <h3 className="text-xl font-semibold text-zinc-100">
+                                                💻 Home Workspace
+                                            </h3>
+                                        </div>
+                                        <p className="text-zinc-300 opacity-90 leading-relaxed mb-3">
+                                            Home office setup during my App Dev Academy years.
+                                        </p>
+                                        <div className="text-sm text-cyan-300">
+                                            📍 Sumy, Ukraine
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     {/* Historic Workplaces */}
                     <div className="mb-10">
-                        <h2 className="text-2xl font-bold text-cyan-400 mb-5 border-b-3 border-cyan-500 pb-1 inline-block">
-                            Historic Workplaces
-                        </h2>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             {/* App Dev Academy Office */}
                             <div className="bg-gradient-to-br from-zinc-700/80 to-zinc-800/80 p-6 rounded-2xl shadow-lg border border-zinc-600/30">
@@ -159,72 +178,7 @@ export default function WorkingPlacesDetails() {
 
                     {/* Workspace Evolution Timeline */}
                     <div className="mb-10">
-                        <h2 className="text-2xl font-bold text-cyan-400 mb-5 border-b-3 border-cyan-500 pb-1 inline-block">
-                            Workspace Evolution Timeline
-                        </h2>
                         <div className="space-y-8">
-                            {/* 2018 Setup */}
-                            <div className="bg-gradient-to-r from-zinc-800/80 to-zinc-700/80 p-6 rounded-2xl border border-zinc-600/30">
-                                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-center">
-                                    <div className="lg:col-span-2">
-                                        <div className="flex items-center gap-3 mb-3">
-                                            <span className="bg-teal-600 text-white px-3 py-1 rounded-full text-sm font-medium">2018</span>
-                                            <h3 className="text-xl font-semibold text-zinc-100">
-                                                🏡 Pre-Remote Work Optimization
-                                            </h3>
-                                        </div>
-                                        <p className="text-zinc-300 opacity-90 leading-relaxed mb-3">
-                                            Final optimization of my home workspace before transitioning to fully remote work. This setup balanced comfort and productivity, preparing for the remote work era that would come with the pandemic.
-                                        </p>
-                                        <div className="text-sm text-cyan-300">
-                                            📍 Sumy, Ukraine • Hybrid work transition period
-                                        </div>
-                                    </div>
-                                    <div className="flex justify-center">
-                                        <div className="relative max-w-xs">
-                                            <Image
-                                                src="/detail-pages/WorkingPacesDetails/sumy_2018.jpeg"
-                                                alt="Sumy Workspace 2018"
-                                                width={250}
-                                                height={200}
-                                                className="rounded-xl shadow-lg border border-zinc-600/50 hover:scale-105 transition-transform duration-300"
-                                            />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* 2017 Setup */}
-                            <div className="bg-gradient-to-r from-zinc-800/80 to-zinc-700/80 p-6 rounded-2xl border border-zinc-600/30">
-                                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-center">
-                                    <div className="order-2 lg:order-1 flex justify-center">
-                                        <div className="relative max-w-xs">
-                                            <Image
-                                                src="/detail-pages/WorkingPacesDetails/sumy_2017.jpeg"
-                                                alt="Sumy Workspace 2017"
-                                                width={250}
-                                                height={200}
-                                                className="rounded-xl shadow-lg border border-zinc-600/50 hover:scale-105 transition-transform duration-300"
-                                            />
-                                        </div>
-                                    </div>
-                                    <div className="lg:col-span-2 order-1 lg:order-2">
-                                        <div className="flex items-center gap-3 mb-3">
-                                            <span className="bg-cyan-600 text-white px-3 py-1 rounded-full text-sm font-medium">2017</span>
-                                            <h3 className="text-xl font-semibold text-zinc-100">
-                                                💻 Mid-Career Workspace Improvements
-                                            </h3>
-                                        </div>
-                                        <p className="text-zinc-300 opacity-90 leading-relaxed mb-3">
-                                            Home office setup during my peak App Dev Academy years. This period focused on creating a more professional home environment alongside office work.
-                                        </p>
-                                        <div className="text-sm text-cyan-300">
-                                            📍 Sumy, Ukraine • Active iOS development period
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
                             {/* 2014 Apartments Setup */}
                             <div className="bg-gradient-to-r from-zinc-800/80 to-zinc-700/80 p-6 rounded-2xl border border-zinc-600/30">
                                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-center">
@@ -260,9 +214,6 @@ export default function WorkingPlacesDetails() {
 
                     {/* Equipment Milestones */}
                     <div className="mb-10">
-                        <h2 className="text-2xl font-bold text-cyan-400 mb-5 border-b-3 border-cyan-500 pb-1 inline-block">
-                            Equipment Milestones
-                        </h2>
                         <div className="space-y-6">
                             {/* First MacBook */}
                             <div className="bg-gradient-to-r from-zinc-800/80 to-zinc-700/80 p-6 rounded-2xl border border-zinc-600/30">
@@ -274,9 +225,6 @@ export default function WorkingPlacesDetails() {
                                         <p className="text-zinc-300 opacity-90 leading-relaxed mb-3">
                                             Purchasing my first MacBook Pro 13 with macOS Mavericks was a pivotal moment in my career. This machine opened the door to iOS development and marked my transition from web to mobile development.
                                         </p>
-                                        <div className="text-sm text-cyan-300">
-                                            💡 This purchase completely changed my career trajectory towards iOS development
-                                        </div>
                                     </div>
                                     <div className="flex justify-center">
                                         <div className="relative max-w-xs">
@@ -316,9 +264,6 @@ export default function WorkingPlacesDetails() {
 
                     {/* Workspace Philosophy */}
                     <div className="mb-6">
-                        <h2 className="text-2xl font-bold text-cyan-400 mb-5 border-b-3 border-cyan-500 pb-1 inline-block">
-                            Workspace Philosophy
-                        </h2>
                         <p className="text-zinc-300 mb-6 leading-relaxed">
                             My approach to workspace design has evolved from simply having a place to code to creating environments that inspire creativity and maintain focus. Each setup reflects the technology and work culture of its era - from shared office spaces to the flexibility of remote work.
                         </p>
