@@ -202,7 +202,7 @@ export default function ProjectsPage() {
                                         <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
                                             <li>iOS app written in <code className="bg-zinc-900 px-2 py-1 rounded">Swift</code></li>
                                             <li>User interface created with Storyboards and <strong>SwiftUI</strong></li>
-                                            <li><strong>MVC</strong> architecture (with Dependency Injection)</li>
+                                            <li><strong>MVC</strong> architecture (with Dependency Injection) and <strong>MVVM</strong> architecture</li>
                                             <li>URLSession for network requests to <strong>REST API</strong></li>
                                             <li><code className="bg-zinc-900 px-2 py-1 rounded">CoreData</code> as offline storage</li>
                                             <li><a href="https://rubyonrails.org" className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent underline decoration-violet-400/50 hover:decoration-violet-300/50">Ruby On Rails</a> for backend</li>
