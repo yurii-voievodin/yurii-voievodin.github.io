@@ -1,8 +1,24 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, Plus } from 'lucide-react';
+import { useState } from 'react';
+import DetailModal from '@/components/DetailModal';
 
 export default function ProjectsPage() {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [selectedDetailPage, setSelectedDetailPage] = useState<string>('');
+
+    const handleDetailClick = (detailPage: string) => {
+        setSelectedDetailPage(detailPage);
+        setIsModalOpen(true);
+    };
+
+    const handleCloseModal = () => {
+        setIsModalOpen(false);
+        setSelectedDetailPage('');
+    };
 
     return (
         <div className="min-h-screen p-5">
@@ -28,6 +44,104 @@ export default function ProjectsPage() {
 
                 {/* Projects Grid */}
                 <div className="space-y-8">
+                    {/* VistaCreate */}
+                    <div className="bg-zinc-800/90 backdrop-blur-sm rounded-3xl shadow-2xl overflow-hidden border border-zinc-700/50 hover:border-zinc-600/70 transition-all duration-300">
+                        <div className="p-6 md:p-10 text-zinc-100">
+                            <div className="mb-6">
+                                <div className="inline-block bg-pink-600/20 text-pink-300 px-4 py-2 rounded-full text-sm font-medium border border-pink-500/30 mb-4">
+                                    February 2022 - February 2024
+                                </div>
+                            </div>
+                            <div className="flex gap-0">
+                                {/* Text Container - 90% width */}
+                                <div className="w-[90%]">
+                                    <div className="space-y-3">
+                                        <p className="text-zinc-300">
+                                            Worked on <strong>iOS app</strong> at <a href="https://create.vista.com" className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent underline decoration-violet-400/50 hover:decoration-violet-300/50">VistaCreate</a>
+                                        </p>
+                                        <p className="text-zinc-300 font-semibold">Role and responsibilities:</p>
+                                        <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
+                                            <li>Built completely new <strong>Home</strong> screen</li>
+                                            <li>Wrote <strong>unit tests</strong> to cover app business logic</li>
+                                            <li>Built app with <strong>modular architecture</strong></li>
+                                            <li>Work with analytics services: <strong>Firebase</strong>, <strong>AppsFlyer</strong>, <strong>Iterable</strong></li>
+                                            <li>Implemented <strong>A/B tests</strong></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                {/* Button Container - 10% width */}
+                                <div className="w-[10%] flex items-end justify-center pl-4">
+                                    <button
+                                        onClick={() => handleDetailClick('vistacreate-details')}
+                                        className="p-3 bg-zinc-700/50 hover:bg-zinc-600/70 border-2 border-zinc-500/50 hover:border-zinc-400/70 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105 group"
+                                        aria-label="View details"
+                                    >
+                                        <Plus className="w-5 h-5 text-zinc-300 group-hover:text-white transition-colors" />
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* CoachNow */}
+                    <div className="bg-zinc-800/90 backdrop-blur-sm rounded-3xl shadow-2xl overflow-hidden border border-zinc-700/50 hover:border-zinc-600/70 transition-all duration-300">
+                        <div className="p-6 md:p-10 text-zinc-100">
+                            <div className="mb-6">
+                                <div className="inline-block bg-orange-600/20 text-orange-300 px-4 py-2 rounded-full text-sm font-medium border border-orange-500/30 mb-4">
+                                    February 2021 - Present
+                                </div>
+                            </div>
+                            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+                                <div className="lg:col-span-2">
+                                    <div className="space-y-3">
+                                        <p className="text-zinc-300">
+                                            Part-time fully remote work on <strong>iOS and iPadOS app</strong> at <a href="https://coachnow.io" className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent underline decoration-violet-400/50 hover:decoration-violet-300/50">CoachNow</a>
+                                        </p>
+                                        <p className="text-zinc-300">
+                                            <a href="https://apps.apple.com/app/coachnow-coaching-platform/id596598472" className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent underline decoration-violet-400/50 hover:decoration-violet-300/50">CoachNow app</a> with a long history (8+ years) and mixed codebase of <code className="bg-zinc-900 px-2 py-1 rounded">Objective-C</code> and <code className="bg-zinc-900 px-2 py-1 rounded">Swift</code> with lots of dependencies.
+                                        </p>
+                                        <p className="text-zinc-300 font-semibold">Main responsibility:</p>
+                                        <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
+                                            <li>Support the CoachNow app and add new features</li>
+                                            <li>Maintain legacy code and manage dependencies</li>
+                                            <li>Work with mixed <code className="bg-zinc-900 px-2 py-1 rounded">Objective-C</code> and <code className="bg-zinc-900 px-2 py-1 rounded">Swift</code> codebase</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Clowder */}
+                    <div className="bg-zinc-800/90 backdrop-blur-sm rounded-3xl shadow-2xl overflow-hidden border border-zinc-700/50 hover:border-zinc-600/70 transition-all duration-300">
+                        <div className="p-6 md:p-10 text-zinc-100">
+                            <div className="mb-6">
+                                <div className="inline-block bg-blue-600/20 text-blue-300 px-4 py-2 rounded-full text-sm font-medium border border-blue-500/30 mb-4">
+                                    March 2020 - January 2022
+                                </div>
+                            </div>
+                            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+                                <div className="lg:col-span-2">
+                                    <div className="space-y-3">
+                                        <p className="text-zinc-300">
+                                            Supported 50+ <strong>iOS apps</strong> at <a href="https://www.clowder.com/" className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent underline decoration-violet-400/50 hover:decoration-violet-300/50">Clowder</a>. First fully remote job.
+                                        </p>
+                                        <p className="text-zinc-300 font-semibold">Role and responsibilities:</p>
+                                        <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
+                                            <li>Create clones (copies) of the <strong>Core</strong> product</li>
+                                            <li>Add customizations to the clones and enable/disable product modules</li>
+                                            <li>Integrate user profile with custom fields to clones</li>
+                                            <li>Work with Git by <strong>GitFlow</strong> methodology, resolve merge conflicts</li>
+                                            <li>Support existing apps and update to the latest <strong>Core</strong> version</li>
+                                            <li>Create proposals and make changes in the <strong>Core</strong> product</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     {/* Look Up */}
                     <div className="bg-zinc-800/90 backdrop-blur-sm rounded-3xl shadow-2xl overflow-hidden border border-zinc-700/50 hover:border-zinc-600/70 transition-all duration-300">
                         <div className="p-6 md:p-10 text-zinc-100">
@@ -288,6 +402,13 @@ export default function ProjectsPage() {
                     </div>
                 </div>
             </div>
+
+            {/* Detail Modal */}
+            <DetailModal
+                isOpen={isModalOpen}
+                onClose={handleCloseModal}
+                detailPage={selectedDetailPage}
+            />
         </div>
     );
 }
