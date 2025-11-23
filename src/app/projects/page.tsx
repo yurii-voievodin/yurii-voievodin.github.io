@@ -47,17 +47,23 @@ export default function ProjectsPage() {
                     {/* VistaCreate */}
                     <div className="bg-zinc-800/90 backdrop-blur-sm rounded-3xl shadow-2xl overflow-hidden border border-zinc-700/50 hover:border-zinc-600/70 transition-all duration-300">
                         <div className="p-6 md:p-10 text-zinc-100">
-                            <div className="mb-6">
-                                <div className="inline-block bg-pink-600/20 text-pink-300 px-4 py-2 rounded-full text-sm font-medium border border-pink-500/30 mb-4">
-                                    February 2022 - February 2024
+                            <div className="mb-6 flex items-center justify-between">
+                                <div className="inline-block bg-pink-600/20 text-pink-300 px-4 py-2 rounded-full text-sm font-medium border border-pink-500/30">
+                                    February 2022 - August 2023
                                 </div>
+                                <button
+                                    onClick={() => handleDetailClick('vistacreate-details')}
+                                    className="p-3 bg-zinc-700/50 hover:bg-zinc-600/70 border-2 border-zinc-500/50 hover:border-zinc-400/70 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105 group"
+                                    aria-label="View details"
+                                >
+                                    <Plus className="w-5 h-5 text-zinc-300 group-hover:text-white transition-colors" />
+                                </button>
                             </div>
-                            <div className="flex gap-0">
-                                {/* Text Container - 90% width */}
-                                <div className="w-[90%]">
+                            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+                                <div className="lg:col-span-2">
                                     <div className="space-y-3">
                                         <p className="text-zinc-300">
-                                            Worked on <strong>iOS app</strong> at <a href="https://create.vista.com" className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent underline decoration-violet-400/50 hover:decoration-violet-300/50">VistaCreate</a>
+                                            Worked on <strong>iOS app</strong> at <a target="_blank" href="https://create.vista.com" className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent underline decoration-violet-400/50 hover:decoration-violet-300/50">VistaCreate</a>
                                         </p>
                                         <p className="text-zinc-300 font-semibold">Role and responsibilities:</p>
                                         <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
@@ -69,44 +75,16 @@ export default function ProjectsPage() {
                                         </ul>
                                     </div>
                                 </div>
-
-                                {/* Button Container - 10% width */}
-                                <div className="w-[10%] flex items-end justify-center pl-4">
-                                    <button
-                                        onClick={() => handleDetailClick('vistacreate-details')}
-                                        className="p-3 bg-zinc-700/50 hover:bg-zinc-600/70 border-2 border-zinc-500/50 hover:border-zinc-400/70 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105 group"
-                                        aria-label="View details"
-                                    >
-                                        <Plus className="w-5 h-5 text-zinc-300 group-hover:text-white transition-colors" />
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* CoachNow */}
-                    <div className="bg-zinc-800/90 backdrop-blur-sm rounded-3xl shadow-2xl overflow-hidden border border-zinc-700/50 hover:border-zinc-600/70 transition-all duration-300">
-                        <div className="p-6 md:p-10 text-zinc-100">
-                            <div className="mb-6">
-                                <div className="inline-block bg-orange-600/20 text-orange-300 px-4 py-2 rounded-full text-sm font-medium border border-orange-500/30 mb-4">
-                                    February 2021 - Present
-                                </div>
-                            </div>
-                            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
-                                <div className="lg:col-span-2">
-                                    <div className="space-y-3">
-                                        <p className="text-zinc-300">
-                                            Part-time fully remote work on <strong>iOS and iPadOS app</strong> at <a href="https://coachnow.io" className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent underline decoration-violet-400/50 hover:decoration-violet-300/50">CoachNow</a>
-                                        </p>
-                                        <p className="text-zinc-300">
-                                            <a href="https://apps.apple.com/app/coachnow-coaching-platform/id596598472" className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent underline decoration-violet-400/50 hover:decoration-violet-300/50">CoachNow app</a> with a long history (8+ years) and mixed codebase of <code className="bg-zinc-900 px-2 py-1 rounded">Objective-C</code> and <code className="bg-zinc-900 px-2 py-1 rounded">Swift</code> with lots of dependencies.
-                                        </p>
-                                        <p className="text-zinc-300 font-semibold">Main responsibility:</p>
-                                        <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
-                                            <li>Support the CoachNow app and add new features</li>
-                                            <li>Maintain legacy code and manage dependencies</li>
-                                            <li>Work with mixed <code className="bg-zinc-900 px-2 py-1 rounded">Objective-C</code> and <code className="bg-zinc-900 px-2 py-1 rounded">Swift</code> codebase</li>
-                                        </ul>
+                                <div className="flex justify-center lg:justify-end">
+                                    <div className="relative w-full max-w-sm">
+                                        <Image
+                                            src="/detail-pages/VistaCreateDetails/VistaCreate Home Screen.png"
+                                            alt="VistaCreate Home Screen"
+                                            width={350}
+                                            height={280}
+                                            className="rounded-2xl shadow-lg w-full h-auto"
+                                            priority={false}
+                                        />
                                     </div>
                                 </div>
                             </div>
@@ -135,6 +113,35 @@ export default function ProjectsPage() {
                                             <li>Work with Git by <strong>GitFlow</strong> methodology, resolve merge conflicts</li>
                                             <li>Support existing apps and update to the latest <strong>Core</strong> version</li>
                                             <li>Create proposals and make changes in the <strong>Core</strong> product</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* CoachNow */}
+                    <div className="bg-zinc-800/90 backdrop-blur-sm rounded-3xl shadow-2xl overflow-hidden border border-zinc-700/50 hover:border-zinc-600/70 transition-all duration-300">
+                        <div className="p-6 md:p-10 text-zinc-100">
+                            <div className="mb-6">
+                                <div className="inline-block bg-orange-600/20 text-orange-300 px-4 py-2 rounded-full text-sm font-medium border border-orange-500/30 mb-4">
+                                    February 2021
+                                </div>
+                            </div>
+                            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+                                <div className="lg:col-span-2">
+                                    <div className="space-y-3">
+                                        <p className="text-zinc-300">
+                                            Part-time fully remote work on <strong>iOS and iPadOS app</strong> at <a href="https://coachnow.io" className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent underline decoration-violet-400/50 hover:decoration-violet-300/50">CoachNow</a>
+                                        </p>
+                                        <p className="text-zinc-300">
+                                            <a href="https://apps.apple.com/app/coachnow-coaching-platform/id596598472" className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent underline decoration-violet-400/50 hover:decoration-violet-300/50">CoachNow app</a> with a long history (8+ years) and mixed codebase of <code className="bg-zinc-900 px-2 py-1 rounded">Objective-C</code> and <code className="bg-zinc-900 px-2 py-1 rounded">Swift</code> with lots of dependencies.
+                                        </p>
+                                        <p className="text-zinc-300 font-semibold">Main responsibility:</p>
+                                        <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
+                                            <li>Support the CoachNow app and add new features</li>
+                                            <li>Maintain legacy code and manage dependencies</li>
+                                            <li>Work with mixed <code className="bg-zinc-900 px-2 py-1 rounded">Objective-C</code> and <code className="bg-zinc-900 px-2 py-1 rounded">Swift</code> codebase</li>
                                         </ul>
                                     </div>
                                 </div>
