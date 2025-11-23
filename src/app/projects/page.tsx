@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import ReactMarkdown from 'react-markdown';
 import { ArrowLeft } from 'lucide-react';
 
 export default function ProjectsPage() {
@@ -39,9 +38,9 @@ export default function ProjectsPage() {
                             </div>
                             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
                                 <div className="lg:col-span-2">
-                                    <div className="prose prose-invert max-w-none prose-p:text-zinc-300 prose-h2:text-zinc-100 prose-h3:text-zinc-100 prose-strong:text-zinc-100 prose-a:bg-gradient-to-r prose-a:from-violet-400 prose-a:to-purple-400 prose-a:bg-clip-text prose-a:text-transparent prose-a:underline prose-a:decoration-violet-400/50 hover:prose-a:decoration-violet-300/50 [&_ul]:list-disc [&_ul]:ps-5 [&_ul]:space-y-1 [&_li]:text-zinc-300">
-                                        <ReactMarkdown>Started working on the *"Look Up"* Native **iOS app**, written in `Swift`.  Used **API** on remote server for receive a list of products and perform search by query or filters.</ReactMarkdown>
-                                    </div>
+                                    <p className="text-zinc-300">
+                                        Started working on the <em>"Look Up"</em> Native <strong>iOS app</strong>, written in <code className="bg-zinc-900 px-2 py-1 rounded">Swift</code>. Used <strong>API</strong> on remote server for receive a list of products and perform search by query or filters.
+                                    </p>
                                 </div>
                                 <div className="flex justify-center lg:justify-end">
                                     <div className="relative w-full max-w-sm">
@@ -69,8 +68,24 @@ export default function ProjectsPage() {
                             </div>
                             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
                                 <div className="lg:col-span-2">
-                                    <div className="prose prose-invert max-w-none prose-p:text-zinc-300 prose-h2:text-zinc-100 prose-h3:text-zinc-100 prose-strong:text-zinc-100 prose-a:bg-gradient-to-r prose-a:from-violet-400 prose-a:to-purple-400 prose-a:bg-clip-text prose-a:text-transparent prose-a:underline prose-a:decoration-violet-400/50 hover:prose-a:decoration-violet-300/50 [&_ul]:list-disc [&_ul]:ps-5 [&_ul]:space-y-1 [&_li]:text-zinc-300">
-                                        <ReactMarkdown>Started a new personal project \n\n[My University](https://github.com/university-my/ios) web service and API on `Rails` framework.\nIn this day, I made my first commit 🎉 \n\n*Technical info:* \n\n\n- iOS app written in `Swift` \n\n- User interface created with Storyboards and **SwiftUI** \n\n- **MVC** architecture (with Dependency Injection) \n\n- URLSession for network requests to **REST API** \n\n- `CoreData` as offline storage \n\n- [Ruby On Rails](https://rubyonrails.org) for backend</ReactMarkdown>
+                                    <div className="space-y-3">
+                                        <p className="text-zinc-300">
+                                            Started a new personal project
+                                        </p>
+                                        <p className="text-zinc-300">
+                                            <a href="https://github.com/university-my/ios" className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent underline decoration-violet-400/50 hover:decoration-violet-300/50">My University</a> web service and API on <code className="bg-zinc-900 px-2 py-1 rounded">Rails</code> framework.
+                                            <br />
+                                            In this day, I made my first commit 🎉
+                                        </p>
+                                        <p className="text-zinc-300 font-semibold">Technical info:</p>
+                                        <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
+                                            <li>iOS app written in <code className="bg-zinc-900 px-2 py-1 rounded">Swift</code></li>
+                                            <li>User interface created with Storyboards and <strong>SwiftUI</strong></li>
+                                            <li><strong>MVC</strong> architecture (with Dependency Injection)</li>
+                                            <li>URLSession for network requests to <strong>REST API</strong></li>
+                                            <li><code className="bg-zinc-900 px-2 py-1 rounded">CoreData</code> as offline storage</li>
+                                            <li><a href="https://rubyonrails.org" className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent underline decoration-violet-400/50 hover:decoration-violet-300/50">Ruby On Rails</a> for backend</li>
+                                        </ul>
                                     </div>
                                 </div>
                                 <div className="flex justify-center lg:justify-end">
@@ -99,8 +114,28 @@ export default function ProjectsPage() {
                             </div>
                             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
                                 <div className="lg:col-span-2">
-                                    <div className="prose prose-invert max-w-none prose-p:text-zinc-300 prose-h2:text-zinc-100 prose-h3:text-zinc-100 prose-strong:text-zinc-100 prose-a:bg-gradient-to-r prose-a:from-violet-400 prose-a:to-purple-400 prose-a:bg-clip-text prose-a:text-transparent prose-a:underline prose-a:decoration-violet-400/50 hover:prose-a:decoration-violet-300/50 [&_ul]:list-disc [&_ul]:ps-5 [&_ul]:space-y-1 [&_li]:text-zinc-300">
-                                        <ReactMarkdown>Started working on the **iOS app** [PROVEIT](https://apps.apple.com/app/proveit-real-money-games/id1219398758)\n\nTechCrunch about PROVEIT - [Bet money on yourself with Proveit, the 1-vs-1 trivia app](https://techcrunch.com/2018/06/18/proveit-trivia) \n\n*Technical info:* \n\n- Written in `Swift` \n\n- Cocoapods as dependency manager \n\n- **MVC** architecture \n\n- User interface created with **Storyboards** and **XIB** files \n\n- Apple Pay and Push Notifications integration \n\n- Third-party integrations: **Firebase**, **Crashlytics** \n\n *Role and responsibilities:* \n\n- Design app architecture and create app from scratch \n\n- Implement networking layer **REST API** \n\n- Implement **custom UI**</ReactMarkdown>
+                                    <div className="space-y-3">
+                                        <p className="text-zinc-300">
+                                            Started working on the <strong>iOS app</strong> <a href="https://apps.apple.com/app/proveit-real-money-games/id1219398758" className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent underline decoration-violet-400/50 hover:decoration-violet-300/50">PROVEIT</a>
+                                        </p>
+                                        <p className="text-zinc-300">
+                                            TechCrunch about PROVEIT - <a href="https://techcrunch.com/2018/06/18/proveit-trivia" className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent underline decoration-violet-400/50 hover:decoration-violet-300/50">Bet money on yourself with Proveit, the 1-vs-1 trivia app</a>
+                                        </p>
+                                        <p className="text-zinc-300 font-semibold">Technical info:</p>
+                                        <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
+                                            <li>Written in <code className="bg-zinc-900 px-2 py-1 rounded">Swift</code></li>
+                                            <li>Cocoapods as dependency manager</li>
+                                            <li><strong>MVC</strong> architecture</li>
+                                            <li>User interface created with <strong>Storyboards</strong> and <strong>XIB</strong> files</li>
+                                            <li>Apple Pay and Push Notifications integration</li>
+                                            <li>Third-party integrations: <strong>Firebase</strong>, <strong>Crashlytics</strong></li>
+                                        </ul>
+                                        <p className="text-zinc-300 font-semibold">Role and responsibilities:</p>
+                                        <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
+                                            <li>Design app architecture and create app from scratch</li>
+                                            <li>Implement networking layer <strong>REST API</strong></li>
+                                            <li>Implement <strong>custom UI</strong></li>
+                                        </ul>
                                     </div>
                                 </div>
                                 <div className="flex justify-center lg:justify-end">
@@ -129,8 +164,24 @@ export default function ProjectsPage() {
                             </div>
                             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
                                 <div className="lg:col-span-2">
-                                    <div className="prose prose-invert max-w-none prose-p:text-zinc-300 prose-h2:text-zinc-100 prose-h3:text-zinc-100 prose-strong:text-zinc-100 prose-a:bg-gradient-to-r prose-a:from-violet-400 prose-a:to-purple-400 prose-a:bg-clip-text prose-a:text-transparent prose-a:underline prose-a:decoration-violet-400/50 hover:prose-a:decoration-violet-300/50 [&_ul]:list-disc [&_ul]:ps-5 [&_ul]:space-y-1 [&_li]:text-zinc-300">
-                                        <ReactMarkdown>Started working on a new **iOS app** \n\n[Chronograph](https://apps.apple.com/app/chronograph/id1281918814)\n In-house application (App Dev Academy) with time tracking and task management. \n\n*My role:*\n\n- Design an architecture and create an app from scratch\n\n- Design a database architecture and use `CoreData` framework \n\n- Implement custom layout of the "timer" and "clock"\n\n- **iPad version** of the app \n\n- **Shared codebase** between iOS and macOS versions of the app \n\n- Integration of **Analytics** and **In-App purchases**</ReactMarkdown>
+                                    <div className="space-y-3">
+                                        <p className="text-zinc-300">
+                                            Started working on a new <strong>iOS app</strong>
+                                        </p>
+                                        <p className="text-zinc-300">
+                                            <a href="https://apps.apple.com/app/chronograph/id1281918814" className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent underline decoration-violet-400/50 hover:decoration-violet-300/50">Chronograph</a>
+                                            <br />
+                                            In-house application (App Dev Academy) with time tracking and task management.
+                                        </p>
+                                        <p className="text-zinc-300 font-semibold">My role:</p>
+                                        <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
+                                            <li>Design an architecture and create an app from scratch</li>
+                                            <li>Design a database architecture and use <code className="bg-zinc-900 px-2 py-1 rounded">CoreData</code> framework</li>
+                                            <li>Implement custom layout of the "timer" and "clock"</li>
+                                            <li><strong>iPad version</strong> of the app</li>
+                                            <li><strong>Shared codebase</strong> between iOS and macOS versions of the app</li>
+                                            <li>Integration of <strong>Analytics</strong> and <strong>In-App purchases</strong></li>
+                                        </ul>
                                     </div>
                                 </div>
                                 <div className="flex justify-center lg:justify-end">
@@ -159,8 +210,24 @@ export default function ProjectsPage() {
                             </div>
                             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
                                 <div className="lg:col-span-2">
-                                    <div className="prose prose-invert max-w-none prose-p:text-zinc-300 prose-h2:text-zinc-100 prose-h3:text-zinc-100 prose-strong:text-zinc-100 prose-a:bg-gradient-to-r prose-a:from-violet-400 prose-a:to-purple-400 prose-a:bg-clip-text prose-a:text-transparent prose-a:underline prose-a:decoration-violet-400/50 hover:prose-a:decoration-violet-300/50 [&_ul]:list-disc [&_ul]:ps-5 [&_ul]:space-y-1 [&_li]:text-zinc-300">
-                                        <ReactMarkdown>Started working on a new **macOS app** \n\n[Chronograph](https://apps.apple.com/ua/app/chronograph-my-productivity/id1316023026?mt=12) \n In-house application (App Dev Academy) with time tracker that allows you to work by *"Pomodoro technique"* and plan your tasks. \n\n *Role and responsibilities:* \n\n- Design an architecture and create an app from scratch \n\n- Design a database architecture and use `CoreData` framework\n\n- Implement background sync with a remote server via the **REST API** \n\n- `Swift` codebase and third-party dependencies \n\n- Implement *"statistics screen"* on the `SwiftUI` \n\n- Integration of **Analytics** and **In-App purchases**</ReactMarkdown>
+                                    <div className="space-y-3">
+                                        <p className="text-zinc-300">
+                                            Started working on a new <strong>macOS app</strong>
+                                        </p>
+                                        <p className="text-zinc-300">
+                                            <a href="https://apps.apple.com/ua/app/chronograph-my-productivity/id1316023026?mt=12" className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent underline decoration-violet-400/50 hover:decoration-violet-300/50">Chronograph</a>
+                                            <br />
+                                            In-house application (App Dev Academy) with time tracker that allows you to work by <em>"Pomodoro technique"</em> and plan your tasks.
+                                        </p>
+                                        <p className="text-zinc-300 font-semibold">Role and responsibilities:</p>
+                                        <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
+                                            <li>Design an architecture and create an app from scratch</li>
+                                            <li>Design a database architecture and use <code className="bg-zinc-900 px-2 py-1 rounded">CoreData</code> framework</li>
+                                            <li>Implement background sync with a remote server via the <strong>REST API</strong></li>
+                                            <li><code className="bg-zinc-900 px-2 py-1 rounded">Swift</code> codebase and third-party dependencies</li>
+                                            <li>Implement <em>"statistics screen"</em> on the <code className="bg-zinc-900 px-2 py-1 rounded">SwiftUI</code></li>
+                                            <li>Integration of <strong>Analytics</strong> and <strong>In-App purchases</strong></li>
+                                        </ul>
                                     </div>
                                 </div>
                                 <div className="flex justify-center lg:justify-end">
@@ -189,8 +256,19 @@ export default function ProjectsPage() {
                             </div>
                             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
                                 <div className="lg:col-span-2">
-                                    <div className="prose prose-invert max-w-none prose-p:text-zinc-300 prose-h2:text-zinc-100 prose-h3:text-zinc-100 prose-strong:text-zinc-100 prose-a:bg-gradient-to-r prose-a:from-violet-400 prose-a:to-purple-400 prose-a:bg-clip-text prose-a:text-transparent prose-a:underline prose-a:decoration-violet-400/50 hover:prose-a:decoration-violet-300/50 [&_ul]:list-disc [&_ul]:ps-5 [&_ul]:space-y-1 [&_li]:text-zinc-300">
-                                        <ReactMarkdown>Started working on the [SumDU](https://apps.apple.com/ua/app/id698235283) \n This is the first **iOS app**, published in the App Store, that I'm working on. \n Souce code on GitHub \n\n[sumdu-ios](https://github.com/appdev-academy/sumdu-ios) \n\n For me, the *main challenge* here was to implement a **custom navigation bar** with nice and **smooth animation**. And implement a custom layout for the **iPad version** of the app.</ReactMarkdown>
+                                    <div className="space-y-3">
+                                        <p className="text-zinc-300">
+                                            Started working on the <a href="https://apps.apple.com/ua/app/id698235283" className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent underline decoration-violet-400/50 hover:decoration-violet-300/50">SumDU</a>
+                                        </p>
+                                        <p className="text-zinc-300">
+                                            This is the first <strong>iOS app</strong>, published in the App Store, that I'm working on.
+                                        </p>
+                                        <p className="text-zinc-300">
+                                            Source code on GitHub: <a href="https://github.com/appdev-academy/sumdu-ios" className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent underline decoration-violet-400/50 hover:decoration-violet-300/50">sumdu-ios</a>
+                                        </p>
+                                        <p className="text-zinc-300">
+                                            For me, the <em>main challenge</em> here was to implement a <strong>custom navigation bar</strong> with nice and <strong>smooth animation</strong>. And implement a custom layout for the <strong>iPad version</strong> of the app.
+                                        </p>
                                     </div>
                                 </div>
                                 <div className="flex justify-center lg:justify-end">
