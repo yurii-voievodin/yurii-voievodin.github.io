@@ -41,11 +41,16 @@ export default function CVPage() {
     </div>
     </div>
     
-    <a href="/Yurii_Voievodin_CV.pdf" target='blank' className="flex items-center justify-center space-x-2 px-4 py-3 bg-gradient-to-r from-violet-600 to-purple-600 text-white rounded-lg hover:from-violet-500 hover:to-purple-500 transition-all shadow-lg hover:shadow-violet-500/20 cursor-pointer w-full md:w-auto">
+    <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
+    <a href="/Yurii_Voievodin_CV.pdf" target='blank' className="flex items-center justify-center space-x-2 px-4 py-3 bg-gradient-to-r from-violet-600 to-purple-600 text-white rounded-lg hover:from-violet-500 hover:to-purple-500 transition-all shadow-lg hover:shadow-violet-500/20 cursor-pointer flex-1 sm:flex-none">
     <Download size={16} />
     <span>Download PDF</span>
     </a>
-    
+    <a href="/projects" className="flex items-center justify-center space-x-2 px-4 py-3 bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-lg hover:from-blue-500 hover:to-cyan-500 transition-all shadow-lg hover:shadow-blue-500/20 cursor-pointer flex-1 sm:flex-none">
+    <span>View Projects</span>
+    </a>
+    </div>
+
     </div>
     </header>
     
