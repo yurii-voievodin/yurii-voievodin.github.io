@@ -128,51 +128,6 @@
             }
         },
         {
-            "date": "June 2019",
-            "title": "",
-            "description": "Started working on the *\"Look Up\"* Native **iOS app**, written in `Swift`.  Used **API** on remote server for receive a list of products and perform search by query or filters.",
-            "data": {
-                "image": {
-                    "path": "timeline/lookup.jpg",
-                    "id": "lookup"
-                },
-                "symbol": {
-                    "icon": "Smartphone",
-                    "color": "cornflowerblue"
-                }
-            }
-        },
-        {
-            "date": "24 December 2018",
-            "title": "",
-            "description": "Started a new personal project \n\n[My University](https://github.com/university-my/ios) web service and API on `Rails` framework.\nIn this day, I made my first commit 🎉 \n\n*Technical info:* \n\n\n- iOS app written in `Swift` \n\n- User interface created with Storyboards and **SwiftUI** \n\n- **MVC** architecture (with Dependency Injection) \n\n- URLSession for network requests to **REST API** \n\n- `CoreData` as offline storage \n\n- [Ruby On Rails](https://rubyonrails.org) for backend",
-            "data": {
-                "image": {
-                    "path": "timeline/my_university_landing.png",
-                    "id": "my_university_landing"
-                },
-                "symbol": {
-                    "icon": "Terminal",
-                    "color": "white"
-                }
-            }
-        },
-        {
-            "date": "March 2017",
-            "title": "",
-            "description": "Started working on the **iOS app** [PROVEIT](https://apps.apple.com/app/proveit-real-money-games/id1219398758)\n\nTechCrunch about PROVEIT - [Bet money on yourself with Proveit, the 1-vs-1 trivia app](https://techcrunch.com/2018/06/18/proveit-trivia) \n\n*Technical info:* \n\n- Written in `Swift` \n\n- Cocoapods as dependency manager \n\n- **MVC** architecture \n\n- User interface created with **Storyboards** and **XIB** files \n\n- Apple Pay and Push Notifications integration \n\n- Third-party integrations: **Firebase**, **Crashlytics** \n\n *Role and responsibilities:* \n\n- Design app architecture and create app from scratch \n\n- Implement networking layer **REST API** \n\n- Implement **custom UI**",
-            "data": {
-                "image": {
-                    "path": "timeline/proveit.jpg",
-                    "id": "proveit"
-                },
-                "symbol": {
-                    "icon": "Smartphone",
-                    "color": "cornflowerblue"
-                }
-            }
-        },
-        {
             "date": "July 2016 - February 2017",
             "title": "",
             "description": "Some other small apps for iOS",
@@ -181,47 +136,6 @@
                 "symbol": {
                     "icon": "Keyboard",
                     "color": "cornflowerblue"
-                }
-            }
-        },
-        {
-            "date": "July 2016",
-            "title": "",
-            "description": "Started working on a new **iOS app** \n\n[Chronograph](https://apps.apple.com/app/chronograph/id1281918814)\n In-house application (App Dev Academy) with time tracking and task management. \n\n*My role:*\n\n- Design an architecture and create an app from scratch\n\n- Design a database architecture and use `CoreData` framework \n\n- Implement custom layout of the \"timer\" and \"clock\"\n\n- **iPad version** of the app \n\n- **Shared codebase** between iOS and macOS versions of the app \n\n- Integration of **Analytics** and **In-App purchases**",
-            "data": {
-                "image": {
-                    "path": "timeline/chronograph_ios_collage.jpg",
-                    "id": "chronograph_ios_collage"
-                },
-                "symbol": {
-                    "icon": "Smartphone",
-                    "color": "cornflowerblue"
-                }
-            }
-        },
-        {
-            "date": "June 2016",
-            "title": "Cashbox",
-            "description": "*The main challenges:* \n\n- Implement sync with **remove API** and store data on the device using `CoreData` \n\n- Implement UI with charts and **iPad support**",
-            "data": {
-                "symbol": {
-                    "icon": "Coins",
-                    "color": "green"
-                }
-            }
-        },
-        {
-            "date": "March 2016",
-            "title": "",
-            "description": "Started working on a new **macOS app** \n\n[Chronograph](https://apps.apple.com/ua/app/chronograph-my-productivity/id1316023026?mt=12) \n In-house application (App Dev Academy) with time tracker that allows you to work by *“Pomodoro technique”* and plan your tasks. \n\n *Role and responsibilities:* \n\n- Design an architecture and create an app from scratch \n\n- Design a database architecture and use `CoreData` framework\n\n- Implement background sync with a remote server via the **REST API** \n\n- `Swift` codebase and third-party dependencies \n\n- Implement *\"statistics screen\"* on the `SwiftUI` \n\n- Integration of **Analytics** and **In-App purchases**",
-            "data": {
-                "image": {
-                    "path": "timeline/chronograph_old.jpg",
-                    "id": "chronograph_old"
-                },
-                "symbol": {
-                    "icon": "Monitor",
-                    "color": "teal"
                 }
             }
         },
@@ -237,21 +151,6 @@
                 "symbol": {
                     "icon": "AtSign",
                     "color": "red"
-                }
-            }
-        },
-        {
-            "date": "November 2015",
-            "title": "",
-            "description": "Started working on the [SumDU](https://apps.apple.com/ua/app/id698235283) \n This is the first **iOS app**, published in the App Store, that I'm working on. \n Souce code on GitHub \n\n[sumdu-ios](https://github.com/appdev-academy/sumdu-ios) \n\n For me, the *main challenge* here was to implement a **custom navigation bar** with nice and **smooth animation**. And implement a custom layout for the **iPad version** of the app.",
-            "data": {
-                "image": {
-                    "path": "timeline/sumdu.png",
-                    "id": "sumdu"
-                },
-                "symbol": {
-                    "icon": "Smartphone",
-                    "color": "cornflowerblue"
                 }
             }
         },

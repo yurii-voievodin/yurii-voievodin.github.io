@@ -61,17 +61,6 @@
             }
         },
         {
-            "date": "June 2016",
-            "title": "Cashbox",
-            "description": "*The main challenges:* \n\n- Implement sync with **remove API** and store data on the device using `CoreData` \n\n- Implement UI with charts and **iPad support**",
-            "data": {
-                "symbol": {
-                    "icon": "Coins",
-                    "color": "green"
-                }
-            }
-        },
-        {
             "date": "March 2016",
             "title": "Chronograph macOS",
             "description": "Started working on a new **macOS app** \n\n[Chronograph](https://apps.apple.com/ua/app/chronograph-my-productivity/id1316023026?mt=12) \n In-house application (App Dev Academy) with time tracker that allows you to work by *\"Pomodoro technique\"* and plan your tasks. \n\n *Role and responsibilities:* \n\n- Design an architecture and create an app from scratch \n\n- Design a database architecture and use `CoreData` framework\n\n- Implement background sync with a remote server via the **REST API** \n\n- `Swift` codebase and third-party dependencies \n\n- Implement *\"statistics screen\"* on the `SwiftUI` \n\n- Integration of **Analytics** and **In-App purchases**",
