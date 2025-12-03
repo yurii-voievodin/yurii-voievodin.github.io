@@ -146,11 +146,11 @@ export default function CVPage() {
           </p>
           <p className="text-zinc-400 mb-2">2022 - now</p>
           <p className="text-zinc-400 italic mb-2">Role and responsibilities:</p>
-          <ul className="text-zinc-300 space-y-1">
-            <li>• Cover app business logic with unit tests</li>
-            <li>• Implement modular architecture in iOS app</li>
-            <li>• Integrate analytics services <span className="font-bold">Firebase, AppsFlyer, Iterable</span></li>
-            <li>• Implement <span className="font-bold">A/B tests</span></li>
+          <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
+            <li>Cover app business logic with unit tests</li>
+            <li>Implement modular architecture in iOS app</li>
+            <li>Integrate analytics services <span className="font-bold">Firebase, AppsFlyer, Iterable</span></li>
+            <li>Implement <span className="font-bold">A/B tests</span></li>
           </ul>
         </div>
 
@@ -167,13 +167,13 @@ export default function CVPage() {
           </p>
           <p className="text-zinc-400 mb-2">2020 - 2022</p>
           <p className="text-zinc-400 italic mb-2">Role and responsibilities:</p>
-          <ul className="text-zinc-300 space-y-1">
-            <li>• Create clones (copies) of the <span className="font-bold">Core</span> product</li>
-            <li>• Add customizations to the clones and enable/disable product modules</li>
-            <li>• Integrate user profile with custom fields to the clones of the <span className="font-bold">Core</span> product</li>
-            <li>• Work with Git by <code className="bg-zinc-700 px-1 rounded text-xs">GitFlow</code> methodology, resolve merge conflicts</li>
-            <li>• Support existing apps and update to the latest version of the <span className="font-bold">Core</span> product</li>
-            <li>• Create proposals and make changes in the <span className="font-bold">Core</span></li>
+          <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
+            <li>Create clones (copies) of the <span className="font-bold">Core</span> product</li>
+            <li>Add customizations to the clones and enable/disable product modules</li>
+            <li>Integrate user profile with custom fields to the clones of the <span className="font-bold">Core</span> product</li>
+            <li>Work with Git by <code className="bg-zinc-700 px-1 rounded text-xs">GitFlow</code> methodology, resolve merge conflicts</li>
+            <li>Support existing apps and update to the latest version of the <span className="font-bold">Core</span> product</li>
+            <li>Create proposals and make changes in the <span className="font-bold">Core</span></li>
           </ul>
         </div>
 
@@ -202,13 +202,13 @@ export default function CVPage() {
             {') with a lot of dependencies.'}
           </p>
           <p className="text-zinc-400 italic mb-2">Role and responsibilities:</p>
-          <ul className="text-zinc-300 space-y-1">
-            <li>• Rewrite code from <code className="bg-zinc-700 px-1 rounded text-xs">Objective-C</code> to <code className="bg-zinc-700 px-1 rounded text-xs">Swift</code></li>
-            <li>• Make code reviews</li>
-            <li>• Publish new versions of the app to the <span className="font-bold">TestFlight</span> for internal testing</li>
-            <li>• Publish new releases of the app to the <span className="font-bold">App Store</span></li>
-            <li>• Implement screen recording with <code className="bg-zinc-700 px-1 rounded text-xs">ReplayKit</code> framework</li>
-            <li>• Make improvement and fixes</li>
+          <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
+            <li>Rewrite code from <code className="bg-zinc-700 px-1 rounded text-xs">Objective-C</code> to <code className="bg-zinc-700 px-1 rounded text-xs">Swift</code></li>
+            <li>Make code reviews</li>
+            <li>Publish new versions of the app to the <span className="font-bold">TestFlight</span> for internal testing</li>
+            <li>Publish new releases of the app to the <span className="font-bold">App Store</span></li>
+            <li>Implement screen recording with <code className="bg-zinc-700 px-1 rounded text-xs">ReplayKit</code> framework</li>
+            <li>Make improvement and fixes</li>
           </ul>
         </div>
 
@@ -226,14 +226,14 @@ export default function CVPage() {
           <p className="text-zinc-400 mb-2">2016 - 2020</p>
           <p className="text-zinc-300 mt-2">I have participated in development, publication and support of <span className="font-bold">10+ iOS apps</span> and one macOS app.</p>
           <p className="text-zinc-400 italic mb-2 pt-2">Role and responsibilities:</p>
-          <ul className="text-zinc-300 space-y-1">
-            <li>• Create apps from scratch and design apps architecture</li>
-            <li>• Create user interface with <span className="font-bold">Storyboards</span> and <span className="font-bold">XIB</span> files</li>
-            <li>• Use <code className="bg-zinc-700 px-1 rounded text-xs">UIKit</code> and create <span className="font-bold">custom UI</span> components</li>
-            <li>• Design a database architecture and use <code className="bg-zinc-700 px-1 rounded text-xs">Core Data</code> framework</li>
-            <li>• Write code on <code className="bg-zinc-700 px-1 rounded text-xs">Swift</code> programming language</li>
-            <li>• Implement networking layer - <span className="font-bold">REST API</span></li>
-            <li>• Integrate third-party dependencies</li>
+          <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
+            <li>Create apps from scratch and design apps architecture</li>
+            <li>Create user interface with <span className="font-bold">Storyboards</span> and <span className="font-bold">XIB</span> files</li>
+            <li>Use <code className="bg-zinc-700 px-1 rounded text-xs">UIKit</code> and create <span className="font-bold">custom UI</span> components</li>
+            <li>Design a database architecture and use <code className="bg-zinc-700 px-1 rounded text-xs">Core Data</code> framework</li>
+            <li>Write code on <code className="bg-zinc-700 px-1 rounded text-xs">Swift</code> programming language</li>
+            <li>Implement networking layer - <span className="font-bold">REST API</span></li>
+            <li>Integrate third-party dependencies</li>
           </ul>
         </div>
 
