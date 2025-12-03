@@ -61,7 +61,7 @@ export default function ProjectsPage() {
                                     <Plus className="w-5 h-5 text-zinc-300 group-hover:text-white transition-colors" />
                                 </button>
                             </div>
-                            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+                            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
                                 <div className="lg:col-span-2">
                                     <div className="space-y-3">
                                         <p className="text-zinc-300">
@@ -70,10 +70,10 @@ export default function ProjectsPage() {
                                         <p className="text-zinc-300 font-semibold">Role and responsibilities:</p>
                                         <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
                                             <li>Wrote <strong>unit tests</strong> using <GradientLink href="https://developer.apple.com/documentation/xctest" target="_blank">XCTest</GradientLink> framework to cover app business logic</li>
-                                            <li>Built app with <strong>modular architecture</strong></li>
-                                            <li>Work with analytics services: <strong>Firebase</strong>, <strong>AppsFlyer</strong>, <strong>Iterable</strong></li>
-                                            <li>Implemented <strong>A/B tests</strong></li>
-                                            <li>Built completely new <strong>Home</strong> screen</li>
+                                            <li>Built an app with <strong>modular architecture</strong> with <GradientLink href="https://guides.cocoapods.org/making/private-cocoapods.html" target="_blank">Private Pods</GradientLink> and <GradientLink href="https://guides.cocoapods.org/making/development-cocoapods.html" target="_blank">Development Pods</GradientLink></li>
+                                            <li>Implement logging of analytics events with <strong>Firebase</strong>, <strong>AppsFlyer</strong>, <strong>Iterable</strong></li>
+                                            <li>Implemented <strong>A/B tests</strong> using <GradientLink href="https://firebase.google.com/docs/ab-testing/" target="_blank">Firebase</GradientLink></li>
+                                            <li>Built completely new Home screen with caching and data loading with <strong>Swift Concurency</strong></li>
                                         </ul>
                                     </div>
                                 </div>
