@@ -5,6 +5,8 @@ import Link from 'next/link';
 import { ArrowLeft, Plus } from 'lucide-react';
 import { useState } from 'react';
 import DetailModal from '@/components/DetailModal';
+import GradientLink from '@/components/GradientLink';
+import CodeTag from '@/components/CodeTag';
 
 export default function ProjectsPage() {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -63,15 +65,15 @@ export default function ProjectsPage() {
                                 <div className="lg:col-span-2">
                                     <div className="space-y-3">
                                         <p className="text-zinc-300">
-                                            Worked on <strong>iOS app</strong> at <a target="_blank" href="https://create.vista.com" className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent underline decoration-violet-400/50 hover:decoration-violet-300/50">VistaCreate</a>
+                                            Worked on <strong>iOS app</strong> at <GradientLink href="https://create.vista.com" target="_blank">VistaCreate</GradientLink>
                                         </p>
                                         <p className="text-zinc-300 font-semibold">Role and responsibilities:</p>
                                         <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
-                                            <li>Built completely new <strong>Home</strong> screen</li>
-                                            <li>Wrote <strong>unit tests</strong> to cover app business logic</li>
+                                            <li>Wrote <strong>unit tests</strong> using <GradientLink href="https://developer.apple.com/documentation/xctest" target="_blank">XCTest</GradientLink> framework to cover app business logic</li>
                                             <li>Built app with <strong>modular architecture</strong></li>
                                             <li>Work with analytics services: <strong>Firebase</strong>, <strong>AppsFlyer</strong>, <strong>Iterable</strong></li>
                                             <li>Implemented <strong>A/B tests</strong></li>
+                                            <li>Built completely new <strong>Home</strong> screen</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -103,7 +105,7 @@ export default function ProjectsPage() {
                                 <div className="lg:col-span-2">
                                     <div className="space-y-3">
                                         <p className="text-zinc-300">
-                                            Supported 50+ <strong>iOS apps</strong> at <a href="https://www.clowder.com/" className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent underline decoration-violet-400/50 hover:decoration-violet-300/50">Clowder</a>. First fully remote job.
+                                            Supported 50+ <strong>iOS apps</strong> at <GradientLink href="https://www.clowder.com/">Clowder</GradientLink>. First fully remote job.
                                         </p>
                                         <p className="text-zinc-300 font-semibold">Role and responsibilities:</p>
                                         <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
@@ -132,16 +134,16 @@ export default function ProjectsPage() {
                                 <div className="lg:col-span-2">
                                     <div className="space-y-3">
                                         <p className="text-zinc-300">
-                                            Part-time fully remote work on <strong>iOS and iPadOS app</strong> at <a href="https://coachnow.io" className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent underline decoration-violet-400/50 hover:decoration-violet-300/50">CoachNow</a>
+                                            Part-time fully remote work on <strong>iOS and iPadOS app</strong> at <GradientLink href="https://coachnow.io">CoachNow</GradientLink>
                                         </p>
                                         <p className="text-zinc-300">
-                                            <a href="https://apps.apple.com/app/coachnow-coaching-platform/id596598472" className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent underline decoration-violet-400/50 hover:decoration-violet-300/50">CoachNow app</a> with a long history (8+ years) and mixed codebase of <code className="bg-zinc-900 px-2 py-1 rounded">Objective-C</code> and <code className="bg-zinc-900 px-2 py-1 rounded">Swift</code> with lots of dependencies.
+                                            <GradientLink href="https://apps.apple.com/app/coachnow-coaching-platform/id596598472">CoachNow app</GradientLink> with a long history (8+ years) and mixed codebase of <CodeTag>Objective-C</CodeTag> and <CodeTag>Swift</CodeTag> with lots of dependencies.
                                         </p>
                                         <p className="text-zinc-300 font-semibold">Main responsibility:</p>
                                         <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
                                             <li>Support the CoachNow app and add new features</li>
                                             <li>Maintain legacy code and manage dependencies</li>
-                                            <li>Work with mixed <code className="bg-zinc-900 px-2 py-1 rounded">Objective-C</code> and <code className="bg-zinc-900 px-2 py-1 rounded">Swift</code> codebase</li>
+                                            <li>Work with mixed <CodeTag>Objective-C</CodeTag> and <CodeTag>Swift</CodeTag> codebase</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -160,7 +162,7 @@ export default function ProjectsPage() {
                             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
                                 <div className="lg:col-span-2">
                                     <p className="text-zinc-300">
-                                        Started working on the <em>"Look Up"</em> Native <strong>iOS app</strong>, written in <code className="bg-zinc-900 px-2 py-1 rounded">Swift</code>. Used <strong>API</strong> on remote server for receive a list of products and perform search by query or filters.
+                                        Started working on the <em>"Look Up"</em> Native <strong>iOS app</strong>, written in <CodeTag>Swift</CodeTag>. Used <strong>API</strong> on remote server for receive a list of products and perform search by query or filters.
                                     </p>
                                 </div>
                                 <div className="flex justify-center lg:justify-end">
@@ -194,18 +196,18 @@ export default function ProjectsPage() {
                                             Started a new personal project
                                         </p>
                                         <p className="text-zinc-300">
-                                            <a href="https://github.com/university-my/ios" className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent underline decoration-violet-400/50 hover:decoration-violet-300/50">My University</a> web service and API on <code className="bg-zinc-900 px-2 py-1 rounded">Rails</code> framework.
+                                            <GradientLink href="https://github.com/university-my/ios">My University</GradientLink> web service and API on <CodeTag>Rails</CodeTag> framework.
                                             <br />
                                             In this day, I made my first commit 🎉
                                         </p>
                                         <p className="text-zinc-300 font-semibold">Technical info:</p>
                                         <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
-                                            <li>iOS app written in <code className="bg-zinc-900 px-2 py-1 rounded">Swift</code></li>
+                                            <li>iOS app written in <CodeTag>Swift</CodeTag></li>
                                             <li>User interface created with Storyboards and <strong>SwiftUI</strong></li>
                                             <li><strong>MVC</strong> architecture (with Dependency Injection) and <strong>MVVM</strong> architecture</li>
                                             <li>URLSession for network requests to <strong>REST API</strong></li>
-                                            <li><code className="bg-zinc-900 px-2 py-1 rounded">CoreData</code> as offline storage</li>
-                                            <li><a href="https://rubyonrails.org" className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent underline decoration-violet-400/50 hover:decoration-violet-300/50">Ruby On Rails</a> for backend</li>
+                                            <li><CodeTag>CoreData</CodeTag> as offline storage</li>
+                                            <li><GradientLink href="https://rubyonrails.org">Ruby On Rails</GradientLink> for backend</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -237,14 +239,14 @@ export default function ProjectsPage() {
                                 <div className="lg:col-span-2">
                                     <div className="space-y-3">
                                         <p className="text-zinc-300">
-                                            Started working on the <strong>iOS app</strong> <a href="https://apps.apple.com/app/proveit-real-money-games/id1219398758" className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent underline decoration-violet-400/50 hover:decoration-violet-300/50">PROVEIT</a>
+                                            Started working on the <strong>iOS app</strong> <GradientLink href="https://apps.apple.com/app/proveit-real-money-games/id1219398758">PROVEIT</GradientLink>
                                         </p>
                                         <p className="text-zinc-300">
-                                            TechCrunch about PROVEIT - <a href="https://techcrunch.com/2018/06/18/proveit-trivia" className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent underline decoration-violet-400/50 hover:decoration-violet-300/50">Bet money on yourself with Proveit, the 1-vs-1 trivia app</a>
+                                            TechCrunch about PROVEIT - <GradientLink href="https://techcrunch.com/2018/06/18/proveit-trivia">Bet money on yourself with Proveit, the 1-vs-1 trivia app</GradientLink>
                                         </p>
                                         <p className="text-zinc-300 font-semibold">Technical info:</p>
                                         <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
-                                            <li>Written in <code className="bg-zinc-900 px-2 py-1 rounded">Swift</code></li>
+                                            <li>Written in <CodeTag>Swift</CodeTag></li>
                                             <li>Cocoapods as dependency manager</li>
                                             <li><strong>MVC</strong> architecture</li>
                                             <li>User interface created with <strong>Storyboards</strong> and <strong>XIB</strong> files</li>
@@ -290,14 +292,14 @@ export default function ProjectsPage() {
                                             Started working on a new <strong>iOS app</strong>
                                         </p>
                                         <p className="text-zinc-300">
-                                            <a href="https://apps.apple.com/app/chronograph/id1281918814" className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent underline decoration-violet-400/50 hover:decoration-violet-300/50">Chronograph</a>
+                                            <GradientLink href="https://apps.apple.com/app/chronograph/id1281918814">Chronograph</GradientLink>
                                             <br />
                                             In-house application (App Dev Academy) with time tracking and task management.
                                         </p>
                                         <p className="text-zinc-300 font-semibold">My role:</p>
                                         <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
                                             <li>Design an architecture and create an app from scratch</li>
-                                            <li>Design a database architecture and use <code className="bg-zinc-900 px-2 py-1 rounded">CoreData</code> framework</li>
+                                            <li>Design a database architecture and use <CodeTag>CoreData</CodeTag> framework</li>
                                             <li>Implement custom layout of the "timer" and "clock"</li>
                                             <li><strong>iPad version</strong> of the app</li>
                                             <li><strong>Shared codebase</strong> between iOS and macOS versions of the app</li>
@@ -336,17 +338,17 @@ export default function ProjectsPage() {
                                             Started working on a new <strong>macOS app</strong>
                                         </p>
                                         <p className="text-zinc-300">
-                                            <a href="https://apps.apple.com/ua/app/chronograph-my-productivity/id1316023026?mt=12" className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent underline decoration-violet-400/50 hover:decoration-violet-300/50">Chronograph</a>
+                                            <GradientLink href="https://apps.apple.com/ua/app/chronograph-my-productivity/id1316023026?mt=12">Chronograph</GradientLink>
                                             <br />
                                             In-house application (App Dev Academy) with time tracker that allows you to work by <em>"Pomodoro technique"</em> and plan your tasks.
                                         </p>
                                         <p className="text-zinc-300 font-semibold">Role and responsibilities:</p>
                                         <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
                                             <li>Design an architecture and create an app from scratch</li>
-                                            <li>Design a database architecture and use <code className="bg-zinc-900 px-2 py-1 rounded">CoreData</code> framework</li>
+                                            <li>Design a database architecture and use <CodeTag>CoreData</CodeTag> framework</li>
                                             <li>Implement background sync with a remote server via the <strong>REST API</strong></li>
-                                            <li><code className="bg-zinc-900 px-2 py-1 rounded">Swift</code> codebase and third-party dependencies</li>
-                                            <li>Implement <em>"statistics screen"</em> on the <code className="bg-zinc-900 px-2 py-1 rounded">SwiftUI</code></li>
+                                            <li><CodeTag>Swift</CodeTag> codebase and third-party dependencies</li>
+                                            <li>Implement <em>"statistics screen"</em> on the <CodeTag>SwiftUI</CodeTag></li>
                                             <li>Integration of <strong>Analytics</strong> and <strong>In-App purchases</strong></li>
                                         </ul>
                                     </div>
@@ -379,13 +381,13 @@ export default function ProjectsPage() {
                                 <div className="lg:col-span-2">
                                     <div className="space-y-3">
                                         <p className="text-zinc-300">
-                                            Started working on the <a href="https://apps.apple.com/ua/app/id698235283" className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent underline decoration-violet-400/50 hover:decoration-violet-300/50">SumDU</a>
+                                            Started working on the <GradientLink href="https://apps.apple.com/ua/app/id698235283">SumDU</GradientLink>
                                         </p>
                                         <p className="text-zinc-300">
                                             This is the first <strong>iOS app</strong>, published in the App Store, that I'm working on.
                                         </p>
                                         <p className="text-zinc-300">
-                                            Source code on GitHub: <a href="https://github.com/appdev-academy/sumdu-ios" className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent underline decoration-violet-400/50 hover:decoration-violet-300/50">sumdu-ios</a>
+                                            Source code on GitHub: <GradientLink href="https://github.com/appdev-academy/sumdu-ios">sumdu-ios</GradientLink>
                                         </p>
                                         <p className="text-zinc-300">
                                             For me, the <em>main challenge</em> here was to implement a <strong>custom navigation bar</strong> with nice and <strong>smooth animation</strong>. And implement a custom layout for the <strong>iPad version</strong> of the app.
