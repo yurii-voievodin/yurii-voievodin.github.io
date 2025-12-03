@@ -64,10 +64,7 @@ export default function ProjectsPage() {
                             <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
                                 <div className="lg:col-span-2">
                                     <div className="space-y-3">
-                                        <p className="text-zinc-300">
-                                            Worked on <strong>iOS app</strong> at <GradientLink href="https://create.vista.com" target="_blank">VistaCreate</GradientLink>
-                                        </p>
-                                        <p className="text-zinc-300 font-semibold">Role and responsibilities:</p>
+                                        <p className="text-zinc-300"><GradientLink href="https://create.vista.com" target="_blank">VistaCreate</GradientLink> <strong>iOS app</strong>, my role and responsibilities:</p>
                                         <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
                                             <li>Wrote <strong>unit tests</strong> using <GradientLink href="https://developer.apple.com/documentation/xctest" target="_blank">XCTest</GradientLink> framework to cover app business logic</li>
                                             <li>Built an app with <strong>modular architecture</strong> with <GradientLink href="https://guides.cocoapods.org/making/private-cocoapods.html" target="_blank">Private Pods</GradientLink> and <GradientLink href="https://guides.cocoapods.org/making/development-cocoapods.html" target="_blank">Development Pods</GradientLink></li>
