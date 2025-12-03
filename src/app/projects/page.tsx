@@ -7,10 +7,21 @@ import { useState } from 'react';
 import DetailModal from '@/components/DetailModal';
 import GradientLink from '@/components/GradientLink';
 import CodeTag from '@/components/CodeTag';
+import PhotoCarousel from '@/components/PhotoCarousel';
 
 export default function ProjectsPage() {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedDetailPage, setSelectedDetailPage] = useState<string>('');
+
+    // VistaCreate images for carousel
+    const vistaCreateImages = [
+        { src: '/projects/VistaCreate/vc-home.png', alt: 'VistaCreate Home Screen' },
+        { src: '/projects/VistaCreate/vc-slider.png', alt: 'VistaCreate Slider' },
+        { src: '/projects/VistaCreate/vc-onboarding.png', alt: 'VistaCreate Onboarding' },
+        { src: '/projects/VistaCreate/vc-paywall-1.png', alt: 'VistaCreate Paywall 1' },
+        { src: '/projects/VistaCreate/vc-paywall-2.png', alt: 'VistaCreate Paywall 2' },
+        { src: '/projects/VistaCreate/vc-export.png', alt: 'VistaCreate Export' },
+    ];
 
     const handleDetailClick = (detailPage: string) => {
         setSelectedDetailPage(detailPage);
@@ -75,15 +86,8 @@ export default function ProjectsPage() {
                                     </div>
                                 </div>
                                 <div className="flex justify-center lg:justify-end">
-                                    <div className="relative w-full max-w-sm">
-                                        <Image
-                                            src="/detail-pages/VistaCreateDetails/VistaCreate Home Screen.png"
-                                            alt="VistaCreate Home Screen"
-                                            width={350}
-                                            height={280}
-                                            className="rounded-2xl shadow-lg w-full h-auto"
-                                            priority={false}
-                                        />
+                                    <div className="w-full max-w-sm">
+                                        <PhotoCarousel images={vistaCreateImages} />
                                     </div>
                                 </div>
                             </div>
