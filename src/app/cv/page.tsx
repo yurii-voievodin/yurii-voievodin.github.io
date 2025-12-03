@@ -144,7 +144,7 @@ export default function CVPage() {
               VistaCreate
             </a>
           </p>
-          <p className="text-zinc-400 mb-2">2022 - now</p>
+          <p className="text-zinc-400 mb-2">2022 - 2025</p>
           <p className="text-zinc-400 italic mb-2">Role and responsibilities:</p>
           <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
             <li>Cover app business logic with unit tests</li>

@@ -23,6 +23,13 @@ export default function ProjectsPage() {
         { src: '/projects/VistaCreate/vc-paywall-2.png', alt: 'VistaCreate Paywall 2' },
     ];
 
+    // Clowder images for carousel
+    const clowderImages = [
+        { src: '/projects/Clowder/clowder-chat.jpg', alt: 'Clowder Chat' },
+        { src: '/projects/Clowder/clowder-news.jpg', alt: 'Clowder News Feed' },
+        { src: '/projects/Clowder/clowder-profile.jpg', alt: 'Clowder User Profile' },
+    ];
+
     const handleDetailClick = (detailPage: string) => {
         setSelectedDetailPage(detailPage);
         setIsModalOpen(true);
@@ -98,13 +105,12 @@ export default function ProjectsPage() {
                                     March 2020 - January 2022
                                 </div>
                             </div>
-                            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+                            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
                                 <div className="lg:col-span-2">
                                     <div className="space-y-3">
                                         <p className="text-zinc-300">
-                                            Supported 50+ <strong>iOS apps</strong> at <GradientLink href="https://www.clowder.com/">Clowder</GradientLink>. First fully remote job.
+                                            Supported 50+ <strong>iOS apps</strong> at <GradientLink href="https://www.clowder.com/">Clowder</GradientLink>, my role and responsibilities:
                                         </p>
-                                        <p className="text-zinc-300 font-semibold">Role and responsibilities:</p>
                                         <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
                                             <li>Create clones (copies) of the <strong>Core</strong> product</li>
                                             <li>Add customizations to the clones and enable/disable product modules</li>
@@ -113,6 +119,11 @@ export default function ProjectsPage() {
                                             <li>Support existing apps and update to the latest <strong>Core</strong> version</li>
                                             <li>Create proposals and make changes in the <strong>Core</strong> product</li>
                                         </ul>
+                                    </div>
+                                </div>
+                                <div className="flex justify-center lg:justify-end">
+                                    <div className="w-full max-w-sm">
+                                        <PhotoCarousel images={clowderImages} />
                                     </div>
                                 </div>
                             </div>
