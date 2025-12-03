@@ -18,9 +18,9 @@ export default function ProjectsPage() {
         { src: '/projects/VistaCreate/vc-home.png', alt: 'VistaCreate Home Screen' },
         { src: '/projects/VistaCreate/vc-slider.png', alt: 'VistaCreate Slider' },
         { src: '/projects/VistaCreate/vc-onboarding.png', alt: 'VistaCreate Onboarding' },
+        { src: '/projects/VistaCreate/vc-export.png', alt: 'VistaCreate Export' },
         { src: '/projects/VistaCreate/vc-paywall-1.png', alt: 'VistaCreate Paywall 1' },
         { src: '/projects/VistaCreate/vc-paywall-2.png', alt: 'VistaCreate Paywall 2' },
-        { src: '/projects/VistaCreate/vc-export.png', alt: 'VistaCreate Export' },
     ];
 
     const handleDetailClick = (detailPage: string) => {
@@ -64,13 +64,6 @@ export default function ProjectsPage() {
                                 <div className="inline-block bg-pink-600/20 text-pink-300 px-4 py-2 rounded-full text-sm font-medium border border-pink-500/30">
                                     February 2022 - August 2023
                                 </div>
-                                <button
-                                    onClick={() => handleDetailClick('vistacreate-details')}
-                                    className="p-3 bg-zinc-700/50 hover:bg-zinc-600/70 border-2 border-zinc-500/50 hover:border-zinc-400/70 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105 group"
-                                    aria-label="View details"
-                                >
-                                    <Plus className="w-5 h-5 text-zinc-300 group-hover:text-white transition-colors" />
-                                </button>
                             </div>
                             <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
                                 <div className="lg:col-span-2">
@@ -81,7 +74,10 @@ export default function ProjectsPage() {
                                             <li>Built an app with <strong>modular architecture</strong> with <GradientLink href="https://guides.cocoapods.org/making/private-cocoapods.html" target="_blank">Private Pods</GradientLink> and <GradientLink href="https://guides.cocoapods.org/making/development-cocoapods.html" target="_blank">Development Pods</GradientLink></li>
                                             <li>Implement logging of analytics events with <strong>Firebase</strong>, <strong>AppsFlyer</strong>, <strong>Iterable</strong></li>
                                             <li>Implemented <strong>A/B tests</strong> using <GradientLink href="https://firebase.google.com/docs/ab-testing/" target="_blank">Firebase</GradientLink></li>
-                                            <li>Built completely new Home screen with caching and data loading with <strong>Swift Concurency</strong></li>
+                                            <li>Built new Home screen with caching and data loading with <CodeTag>Swift Concurency</CodeTag></li>
+                                            <li>Build <strong>Onboarding</strong> screens with pagination and a paywall</li>
+                                            <li>Create a <CodeTag>SwiftUI</CodeTag> slider component that used to control removal or restoring a photos background</li>
+                                            <li>Implemnent UI and logic of desing export in diffrent formats</li>
                                         </ul>
                                     </div>
                                 </div>
