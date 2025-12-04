@@ -30,6 +30,13 @@ export default function ProjectsPage() {
         { src: '/projects/Clowder/clowder-profile.jpg', alt: 'Clowder User Profile' },
     ];
 
+    // VistaPrint images for carousel
+    const vistaPrintImages = [
+        { src: '/projects/VistaPrint/vp-product.png', alt: 'VistaPrint Product Page' },
+        { src: '/projects/VistaPrint/vp-editor.png', alt: 'VistaPrint Design Editor' },
+        { src: '/projects/VistaPrint/vp-account.png', alt: 'VistaPrint Account Screen' },
+    ];
+
     const handleDetailClick = (detailPage: string) => {
         setSelectedDetailPage(detailPage);
         setIsModalOpen(true);
@@ -64,6 +71,61 @@ export default function ProjectsPage() {
 
                 {/* Projects Grid */}
                 <div className="space-y-8">
+                    {/* VistaPrint */}
+                    <div className="bg-zinc-800/90 backdrop-blur-sm rounded-3xl shadow-2xl overflow-hidden border border-zinc-700/50 hover:border-zinc-600/70 transition-all duration-300">
+                        <div className="p-6 md:p-10 text-zinc-100">
+                            <div className="mb-6 flex items-center justify-between">
+                                <div className="inline-block bg-violet-600/20 text-violet-300 px-4 py-2 rounded-full text-sm font-medium border border-violet-500/30">
+                                    August 2023 - December 2025
+                                </div>
+                            </div>
+                            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
+                                <div className="lg:col-span-2">
+                                    <div className="space-y-3">
+                                        <p className="text-zinc-300"><GradientLink href="https://www.vistaprint.com" target="_blank">VistaPrint</GradientLink> <strong>iOS app</strong>, my role and responsibilities:</p>
+
+                                        <p className="text-zinc-300 font-semibold">Infrastructure & Quality</p>
+                                        <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
+                                            <li>Comprehensive unit test coverage for core modules</li>
+                                            <li>Localization support with string catalogs</li>
+                                            <li>Logging system for analytics and debugging</li>
+                                            <li>Fastlane setup for build automation</li>
+                                        </ul>
+
+                                        <p className="text-zinc-300 font-semibold">Product Display & Selection</p>
+                                        <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
+                                            <li>Product page with preview images, pricing, and discount information</li>
+                                            <li>Color selection interface with scrollable swatches and visual feedback</li>
+                                            <li>Product options and variations (size, quantity, material)</li>
+                                            <li>Stock availability filtering</li>
+                                        </ul>
+
+                                        <p className="text-zinc-300 font-semibold">Design Editor - Image Capabilities</p>
+                                        <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
+                                            <li>Image replacement with automatic size adjustment and cropping</li>
+                                            <li>Color adjustment tools (hue, saturation, lightness sliders)</li>
+                                            <li>Image filters and color extraction features</li>
+                                        </ul>
+
+                                        <p className="text-zinc-300 font-semibold">Account Management</p>
+                                        <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
+                                            <li>Account screen with user settings</li>
+                                            <li>Web view integration for account-related pages</li>
+                                            <li>Links to cart, orders, and support resources</li>
+                                        </ul>
+
+
+                                    </div>
+                                </div>
+                                <div className="flex justify-center lg:justify-end">
+                                    <div className="w-full max-w-sm">
+                                        <PhotoCarousel images={vistaPrintImages} />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     {/* VistaCreate */}
                     <div className="bg-zinc-800/90 backdrop-blur-sm rounded-3xl shadow-2xl overflow-hidden border border-zinc-700/50 hover:border-zinc-600/70 transition-all duration-300">
                         <div className="p-6 md:p-10 text-zinc-100">
