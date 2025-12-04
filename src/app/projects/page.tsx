@@ -37,6 +37,55 @@ export default function ProjectsPage() {
         { src: '/projects/VistaPrint/vp-account.png', alt: 'VistaPrint Account Screen' },
     ];
 
+    // Look Up images for carousel
+    const lookUpImages = [
+        { src: '/projects/LookUp/lk-search-results.png', alt: 'Look Up Search Results' },
+        { src: '/projects/LookUp/lk-menu.png', alt: 'Look Up Menu' },
+        { src: '/projects/LookUp/lk-cart.png', alt: 'Look Up Cart' },
+        { src: '/projects/LookUp/lk-login.png', alt: 'Look Up Login' },
+    ];
+
+    // My University images for carousel
+    const myUniversityImages = [
+        { src: '/projects/MyUniversity/my.png', alt: 'My University Home' },
+        { src: '/projects/MyUniversity/my-sumdu.png', alt: 'My University SumDU' },
+        { src: '/projects/MyUniversity/my-page.png', alt: 'My University Page' },
+        { src: '/projects/MyUniversity/my-abour.png', alt: 'My University About' },
+    ];
+
+    // Proveit images for carousel
+    const proveitImages = [
+        { src: '/projects/Proveit/Arcade 1.png', alt: 'Proveit Arcade 1' },
+        { src: '/projects/Proveit/Arcade 2.png', alt: 'Proveit Arcade 2' },
+        { src: '/projects/Proveit/Arcade 3.png', alt: 'Proveit Arcade 3' },
+        { src: '/projects/Proveit/Arcade 4.png', alt: 'Proveit Arcade 4' },
+    ];
+
+    // Chronograph iOS images for carousel
+    const chronographiOSImages = [
+        { src: '/projects/Chronograph-iOS/ch-timer.png', alt: 'Chronograph Timer' },
+        { src: '/projects/Chronograph-iOS/ch-pomodoro.png', alt: 'Chronograph Pomodoro' },
+        { src: '/projects/Chronograph-iOS/ch-tasks.png', alt: 'Chronograph Tasks' },
+        { src: '/projects/Chronograph-iOS/ch-stats.png', alt: 'Chronograph Statistics' },
+        { src: '/projects/Chronograph-iOS/ch-settings.png', alt: 'Chronograph Settings' },
+    ];
+
+    // Chronograph macOS images for carousel
+    const chronographMacOSImages = [
+        { src: '/projects/Chronograph-macOS/ch-timer.png', alt: 'Chronograph Timer' },
+        { src: '/projects/Chronograph-macOS/ch-pomodoro.png', alt: 'Chronograph Pomodoro' },
+        { src: '/projects/Chronograph-macOS/ch-tasks.png', alt: 'Chronograph Tasks' },
+        { src: '/projects/Chronograph-macOS/ch-stats.png', alt: 'Chronograph Statistics' },
+        { src: '/projects/Chronograph-macOS/ch-settings.png', alt: 'Chronograph Settings' },
+    ];
+
+    // SumDU images for carousel
+    const sumduImages = [
+        { src: '/projects/SumDU/sumdu-day.png', alt: 'SumDU Day Schedule' },
+        { src: '/projects/SumDU/sumdu-recent.png', alt: 'SumDU Recent' },
+        { src: '/projects/SumDU/sumdu-search.png', alt: 'SumDU Search' },
+    ];
+
     const handleDetailClick = (detailPage: string) => {
         setSelectedDetailPage(detailPage);
         setIsModalOpen(true);
@@ -229,22 +278,15 @@ export default function ProjectsPage() {
                                     June 2019
                                 </div>
                             </div>
-                            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+                            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
                                 <div className="lg:col-span-2">
                                     <p className="text-zinc-300">
                                         Started working on the <em>"Look Up"</em> Native <strong>iOS app</strong>, written in <CodeTag>Swift</CodeTag>. Used <strong>API</strong> on remote server for receive a list of products and perform search by query or filters.
                                     </p>
                                 </div>
                                 <div className="flex justify-center lg:justify-end">
-                                    <div className="relative w-full max-w-sm">
-                                        <Image
-                                            src="/timeline/lookup.jpg"
-                                            alt="lookup"
-                                            width={350}
-                                            height={280}
-                                            className="rounded-2xl shadow-lg border border-zinc-600/50 w-full h-auto"
-                                            priority={false}
-                                        />
+                                    <div className="w-full max-w-sm">
+                                        <PhotoCarousel images={lookUpImages} />
                                     </div>
                                 </div>
                             </div>
@@ -259,7 +301,7 @@ export default function ProjectsPage() {
                                     24 December 2018
                                 </div>
                             </div>
-                            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+                            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
                                 <div className="lg:col-span-2">
                                     <div className="space-y-3">
                                         <p className="text-zinc-300">
@@ -282,15 +324,8 @@ export default function ProjectsPage() {
                                     </div>
                                 </div>
                                 <div className="flex justify-center lg:justify-end">
-                                    <div className="relative w-full max-w-sm">
-                                        <Image
-                                            src="/timeline/my_university_landing.png"
-                                            alt="my_university_landing"
-                                            width={350}
-                                            height={280}
-                                            className="rounded-2xl shadow-lg border border-zinc-600/50 w-full h-auto"
-                                            priority={false}
-                                        />
+                                    <div className="w-full max-w-sm">
+                                        <PhotoCarousel images={myUniversityImages} />
                                     </div>
                                 </div>
                             </div>
@@ -305,7 +340,7 @@ export default function ProjectsPage() {
                                     March 2017
                                 </div>
                             </div>
-                            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+                            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
                                 <div className="lg:col-span-2">
                                     <div className="space-y-3">
                                         <p className="text-zinc-300">
@@ -332,15 +367,8 @@ export default function ProjectsPage() {
                                     </div>
                                 </div>
                                 <div className="flex justify-center lg:justify-end">
-                                    <div className="relative w-full max-w-sm">
-                                        <Image
-                                            src="/timeline/proveit.jpg"
-                                            alt="proveit"
-                                            width={350}
-                                            height={280}
-                                            className="rounded-2xl shadow-lg border border-zinc-600/50 w-full h-auto"
-                                            priority={false}
-                                        />
+                                    <div className="w-full max-w-sm">
+                                        <PhotoCarousel images={proveitImages} />
                                     </div>
                                 </div>
                             </div>
@@ -355,7 +383,7 @@ export default function ProjectsPage() {
                                     July 2016
                                 </div>
                             </div>
-                            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+                            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
                                 <div className="lg:col-span-2">
                                     <div className="space-y-3">
                                         <p className="text-zinc-300">
@@ -378,15 +406,8 @@ export default function ProjectsPage() {
                                     </div>
                                 </div>
                                 <div className="flex justify-center lg:justify-end">
-                                    <div className="relative w-full max-w-sm">
-                                        <Image
-                                            src="/timeline/chronograph_ios_collage.jpg"
-                                            alt="chronograph_ios_collage"
-                                            width={350}
-                                            height={280}
-                                            className="rounded-2xl shadow-lg border border-zinc-600/50 w-full h-auto"
-                                            priority={false}
-                                        />
+                                    <div className="w-full max-w-sm">
+                                        <PhotoCarousel images={chronographiOSImages} />
                                     </div>
                                 </div>
                             </div>
@@ -401,7 +422,7 @@ export default function ProjectsPage() {
                                     March 2016
                                 </div>
                             </div>
-                            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+                            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
                                 <div className="lg:col-span-2">
                                     <div className="space-y-3">
                                         <p className="text-zinc-300">
@@ -424,15 +445,8 @@ export default function ProjectsPage() {
                                     </div>
                                 </div>
                                 <div className="flex justify-center lg:justify-end">
-                                    <div className="relative w-full max-w-sm">
-                                        <Image
-                                            src="/timeline/chronograph_old.jpg"
-                                            alt="chronograph_old"
-                                            width={350}
-                                            height={280}
-                                            className="rounded-2xl shadow-lg border border-zinc-600/50 w-full h-auto"
-                                            priority={false}
-                                        />
+                                    <div className="w-full max-w-sm">
+                                        <PhotoCarousel images={chronographMacOSImages} />
                                     </div>
                                 </div>
                             </div>
@@ -447,11 +461,11 @@ export default function ProjectsPage() {
                                     November 2015
                                 </div>
                             </div>
-                            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+                            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
                                 <div className="lg:col-span-2">
                                     <div className="space-y-3">
                                         <p className="text-zinc-300">
-                                            Started working on the <GradientLink href="https://apps.apple.com/ua/app/id698235283">SumDU</GradientLink>
+                                           When I worked with <GradientLink href="https://www.appdev.academy">App Dev Academy</GradientLink> I took my part in <GradientLink href="https://apps.apple.com/ua/app/id698235283">SumDU</GradientLink> iOS app
                                         </p>
                                         <p className="text-zinc-300">
                                             This is the first <strong>iOS app</strong>, published in the App Store, that I'm working on.
@@ -465,15 +479,8 @@ export default function ProjectsPage() {
                                     </div>
                                 </div>
                                 <div className="flex justify-center lg:justify-end">
-                                    <div className="relative w-full max-w-sm">
-                                        <Image
-                                            src="/timeline/sumdu.png"
-                                            alt="sumdu"
-                                            width={350}
-                                            height={280}
-                                            className="rounded-2xl shadow-lg border border-zinc-600/50 w-full h-auto"
-                                            priority={false}
-                                        />
+                                    <div className="w-full max-w-sm">
+                                        <PhotoCarousel images={sumduImages} />
                                     </div>
                                 </div>
                             </div>
