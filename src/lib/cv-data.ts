@@ -6,28 +6,24 @@ export const cvData: CVSection[] = [
         title: "Skills",
         items: [
             {
-                title: "AI & Machine Learning",
-                skills: ["Claude Code", "Codex", "CoreML", "Foundation Models", "ML Kit", "On-device AI", "Cloud-based AI Services"]
+                title: "Core iOS",
+                skills: ["Swift", "UIKit", "SwiftUI", "Auto Layout", "Core Data", "SwiftData"]
+            },
+            {
+                title: "Architecture & Tooling",
+                skills: ["Modular architecture", "CI/CD", "GitFlow", "Unit Testing", "SPM", "CocoaPods"]
+            },
+            {
+                title: "Monetization & Analytics",
+                skills: ["In-App Purchases", "RevenueCat", "Firebase", "AppsFlyer", "Iterable", "A/B Testing"]
+            },
+            {
+                title: "AI/ML",
+                skills: ["CoreML", "Foundation Models", "ML Kit", "Cloud AI APIs", "AI-assisted development tools"]
             },
             {
                 title: "Programming Languages",
-                skills: ["Swift", "Objective-C", "JavaScript", "Ruby", "PHP", "Python"]
-            },
-            {
-                title: "Mobile Development",
-                skills: ["UIKit", "SwiftUI", "Xcode", "Storyboards", "Auto Layout", "Core Data", "Swift Data", "CocoaPods", "Swift Package Manager", "Firebase", "In-App Purchase", "TestFlight", "App Store Connect"]
-            },
-            {
-                title: "Frontend",
-                skills: ["HTML", "CSS", "Bootsprap CSS"]
-            },
-            {
-                title: "Backend",
-                skills: ["Ruby on Rails", "Laravel", "PostgreSQL", "SQLite", "REST API"]
-            },
-            {
-                title: "Tools & Others",
-                skills: ["Git", "GitFlow", "CI/CD", "OOP", "MVC", "Swift Concurrency"]
+                skills: ["Swift", "Objective-C", "JavaScript", "Ruby", "PHP", "Python", "Shell script"]
             }
         ]
     }
