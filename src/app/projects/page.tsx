@@ -45,6 +45,14 @@ export default function ProjectsPage() {
         { src: '/projects/LookUp/lk-login.png', alt: 'Look Up Login' },
     ];
 
+    // Solitaire images for carousel
+    const solitaireImages = [
+        { src: '/projects/Solitaire/solitaire-1.png', alt: 'Solitaire Game' },
+        { src: '/projects/Solitaire/solitaire-2.png', alt: 'Solitaire Gameplay' },
+        { src: '/projects/Solitaire/solitaire-3.png', alt: 'Solitaire Menu' },
+        { src: '/projects/Solitaire/solitaire-4.png', alt: 'Solitaire Screen' },
+    ];
+
     // My University images for carousel
     const myUniversityImages = [
         { src: '/projects/MyUniversity/my.png', alt: 'My University Home' },
@@ -59,6 +67,8 @@ export default function ProjectsPage() {
         { src: '/projects/Proveit/Arcade 2.png', alt: 'Proveit Arcade 2' },
         { src: '/projects/Proveit/Arcade 3.png', alt: 'Proveit Arcade 3' },
         { src: '/projects/Proveit/Arcade 4.png', alt: 'Proveit Arcade 4' },
+        { src: '/projects/Proveit/Arcade 5.png', alt: 'Proveit Arcade 5' },
+        { src: '/projects/Proveit/Arcade 6.png', alt: 'Proveit Arcade 6' },
     ];
 
     // Chronograph iOS images for carousel
@@ -73,10 +83,7 @@ export default function ProjectsPage() {
     // Chronograph macOS images for carousel
     const chronographMacOSImages = [
         { src: '/projects/Chronograph-macOS/ch-timer.png', alt: 'Chronograph Timer' },
-        { src: '/projects/Chronograph-macOS/ch-pomodoro.png', alt: 'Chronograph Pomodoro' },
-        { src: '/projects/Chronograph-macOS/ch-tasks.png', alt: 'Chronograph Tasks' },
-        { src: '/projects/Chronograph-macOS/ch-stats.png', alt: 'Chronograph Statistics' },
-        { src: '/projects/Chronograph-macOS/ch-settings.png', alt: 'Chronograph Settings' },
+        { src: '/projects/Chronograph-macOS/ch-pomodoro.png', alt: 'Chronograph Pomodoro' }
     ];
 
     // SumDU images for carousel
@@ -114,7 +121,7 @@ export default function ProjectsPage() {
                         Projects
                     </h1>
                     <p className="text-lg text-zinc-300 leading-relaxed">
-                        A collection of iOS, macOS, and web applications I've developed throughout my career. Each project represents different technologies, challenges, and learning experiences.
+                        Collection of iOS, macOS, and web applications I've developed throughout my career. Each project represents different technologies, challenges, and learning experiences.
                     </p>
                 </div>
 
@@ -192,9 +199,9 @@ export default function ProjectsPage() {
                                             <li>Built an app with <strong>modular architecture</strong> with <GradientLink href="https://guides.cocoapods.org/making/private-cocoapods.html" target="_blank">Private Pods</GradientLink> and <GradientLink href="https://guides.cocoapods.org/making/development-cocoapods.html" target="_blank">Development Pods</GradientLink></li>
                                             <li>Implement logging of analytics events with <strong>Firebase</strong>, <strong>AppsFlyer</strong>, <strong>Iterable</strong></li>
                                             <li>Implemented <strong>A/B tests</strong> using <GradientLink href="https://firebase.google.com/docs/ab-testing/" target="_blank">Firebase</GradientLink></li>
-                                            <li>Built new Home screen with caching and data loading with <CodeTag>Swift Concurency</CodeTag></li>
+                                            <li>Built new Home screen with caching and data loading with Swift Concurency</li>
                                             <li>Build <strong>Onboarding</strong> screens with pagination and a paywall</li>
-                                            <li>Create a <CodeTag>SwiftUI</CodeTag> slider component that used to control removal or restoring a photos background</li>
+                                            <li>Create a SwiftUI slider component that used to control removal or restoring a photos background</li>
                                             <li>Implemnent UI and logic of desing export in diffrent formats</li>
                                         </ul>
                                     </div>
@@ -232,11 +239,6 @@ export default function ProjectsPage() {
                                         </ul>
                                     </div>
                                 </div>
-                                <div className="flex justify-center lg:justify-end">
-                                    <div className="w-full max-w-sm">
-                                        <PhotoCarousel images={clowderImages} />
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -256,14 +258,55 @@ export default function ProjectsPage() {
                                             Part-time fully remote work on <strong>iOS and iPadOS app</strong> at <GradientLink href="https://coachnow.io">CoachNow</GradientLink>
                                         </p>
                                         <p className="text-zinc-300">
-                                            <GradientLink href="https://apps.apple.com/app/coachnow-coaching-platform/id596598472">CoachNow app</GradientLink> with a long history (8+ years) and mixed codebase of <CodeTag>Objective-C</CodeTag> and <CodeTag>Swift</CodeTag> with lots of dependencies.
+                                            <GradientLink href="https://apps.apple.com/app/coachnow-coaching-platform/id596598472">CoachNow app</GradientLink> with a long history (8+ years) and mixed codebase of Objective-C and Swift with lots of dependencies.
                                         </p>
                                         <p className="text-zinc-300 font-semibold">Main responsibility:</p>
                                         <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
                                             <li>Support the CoachNow app and add new features</li>
                                             <li>Maintain legacy code and manage dependencies</li>
-                                            <li>Work with mixed <CodeTag>Objective-C</CodeTag> and <CodeTag>Swift</CodeTag> codebase</li>
+                                            <li>Work with mixed Objective-C and Swift codebase</li>
                                         </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Solitaire */}
+                    <div className="bg-zinc-800/90 backdrop-blur-sm rounded-3xl shadow-2xl overflow-hidden border border-zinc-700/50 hover:border-zinc-600/70 transition-all duration-300">
+                        <div className="p-6 md:p-10 text-zinc-100">
+                            <div className="mb-6">
+                                <div className="inline-block bg-green-600/20 text-green-300 px-4 py-2 rounded-full text-sm font-medium border border-green-500/30 mb-4">
+                                    November 2019
+                                </div>
+                            </div>
+                            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
+                                <div className="lg:col-span-2">
+                                    <div className="space-y-3">
+                                        <p className="text-zinc-300">
+                                            Started working on <GradientLink href="https://apps.apple.com/us/app/id1457988491">Solitaire (Classic)</GradientLink> <strong>iOS app</strong> and <strong>iOS SDK</strong>
+                                        </p>
+                                        <p className="text-zinc-300">
+                                            Classic solitaire game with multiplayer and challenges.
+                                        </p>
+                                        <p className="text-zinc-300 font-semibold">Technical info:</p>
+                                        <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
+                                            <li>Written in <strong>Swift</strong></li>
+                                            <li><strong>UIKit</strong> and custom UI components</li>
+                                            <li><strong>iOS SDK</strong> for integrating different types of games with multiplayer features</li>
+                                            <li>Apple Pay and Push Notifications integration</li>
+                                        </ul>
+                                        <p className="text-zinc-300 font-semibold">Role and responsibilities:</p>
+                                        <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
+                                            <li>Design iOS app architecture and create app from scratch</li>
+                                            <li>Implement networking layer - <strong>REST API</strong></li>
+                                            <li>Make pull requests and code reviews</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div className="flex justify-center lg:justify-end">
+                                    <div className="w-full max-w-sm">
+                                        <PhotoCarousel images={solitaireImages} />
                                     </div>
                                 </div>
                             </div>
@@ -281,7 +324,7 @@ export default function ProjectsPage() {
                             <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
                                 <div className="lg:col-span-2">
                                     <p className="text-zinc-300">
-                                        Started working on the <em>"Look Up"</em> Native <strong>iOS app</strong>, written in <CodeTag>Swift</CodeTag>. Used <strong>API</strong> on remote server for receive a list of products and perform search by query or filters.
+                                        Started working on the <em>"Look Up"</em> Native <strong>iOS app</strong>, written in Swift. Used <strong>API</strong> on remote server for receive a list of products and perform search by query or filters.
                                     </p>
                                 </div>
                                 <div className="flex justify-center lg:justify-end">
@@ -308,17 +351,17 @@ export default function ProjectsPage() {
                                             Started a new personal project
                                         </p>
                                         <p className="text-zinc-300">
-                                            <GradientLink href="https://github.com/university-my/ios">My University</GradientLink> web service and API on <CodeTag>Rails</CodeTag> framework.
+                                            <GradientLink href="https://github.com/university-my/ios">My University</GradientLink> web service and API on Rails framework.
                                             <br />
                                             In this day, I made my first commit 🎉
                                         </p>
                                         <p className="text-zinc-300 font-semibold">Technical info:</p>
                                         <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
-                                            <li>iOS app written in <CodeTag>Swift</CodeTag></li>
+                                            <li>iOS app written in Swift</li>
                                             <li>User interface created with Storyboards and <strong>SwiftUI</strong></li>
                                             <li><strong>MVC</strong> architecture (with Dependency Injection) and <strong>MVVM</strong> architecture</li>
                                             <li>URLSession for network requests to <strong>REST API</strong></li>
-                                            <li><CodeTag>CoreData</CodeTag> as offline storage</li>
+                                            <li>CoreData as offline storage</li>
                                             <li><GradientLink href="https://rubyonrails.org">Ruby On Rails</GradientLink> for backend</li>
                                         </ul>
                                     </div>
@@ -351,7 +394,7 @@ export default function ProjectsPage() {
                                         </p>
                                         <p className="text-zinc-300 font-semibold">Technical info:</p>
                                         <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
-                                            <li>Written in <CodeTag>Swift</CodeTag></li>
+                                            <li>Written in Swift</li>
                                             <li>Cocoapods as dependency manager</li>
                                             <li><strong>MVC</strong> architecture</li>
                                             <li>User interface created with <strong>Storyboards</strong> and <strong>XIB</strong> files</li>
@@ -397,7 +440,7 @@ export default function ProjectsPage() {
                                         <p className="text-zinc-300 font-semibold">My role:</p>
                                         <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
                                             <li>Design an architecture and create an app from scratch</li>
-                                            <li>Design a database architecture and use <CodeTag>CoreData</CodeTag> framework</li>
+                                            <li>Design a database architecture and use CoreData framework</li>
                                             <li>Implement custom layout of the "timer" and "clock"</li>
                                             <li><strong>iPad version</strong> of the app</li>
                                             <li><strong>Shared codebase</strong> between iOS and macOS versions of the app</li>
@@ -436,10 +479,10 @@ export default function ProjectsPage() {
                                         <p className="text-zinc-300 font-semibold">Role and responsibilities:</p>
                                         <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
                                             <li>Design an architecture and create an app from scratch</li>
-                                            <li>Design a database architecture and use <CodeTag>CoreData</CodeTag> framework</li>
+                                            <li>Design a database architecture and use CoreData framework</li>
                                             <li>Implement background sync with a remote server via the <strong>REST API</strong></li>
-                                            <li><CodeTag>Swift</CodeTag> codebase and third-party dependencies</li>
-                                            <li>Implement <em>"statistics screen"</em> on the <CodeTag>SwiftUI</CodeTag></li>
+                                            <li>Swift codebase and third-party dependencies</li>
+                                            <li>Implement <em>"statistics screen"</em> on the SwiftUI</li>
                                             <li>Integration of <strong>Analytics</strong> and <strong>In-App purchases</strong></li>
                                         </ul>
                                     </div>

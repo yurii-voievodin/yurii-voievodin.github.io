@@ -32,6 +32,12 @@ export const personalPhotos: PersonalPhoto[] = [
 
 export const movies: MediaItem[] = [
   {
+    name: "Stranger Things",
+    url: "https://www.imdb.com/title/tt4574334/",
+    image: "/personal/movies/stranger-things.jpg",
+    alt: "Stranger Things series poster"
+  },
+  {
     name: "Alien: Earth",
     url: "https://www.imdb.com/title/tt13623632",
     image: "/personal/movies/alien-earth.png",
@@ -78,7 +84,7 @@ export const movies: MediaItem[] = [
     url: "https://www.imdb.com/title/tt0088763/",
     image: "/personal/movies/back-to-the-future.png",
     alt: "Back to the Future movie poster"
-  },
+  }
 ];
 
 export const books: Book[] = [
