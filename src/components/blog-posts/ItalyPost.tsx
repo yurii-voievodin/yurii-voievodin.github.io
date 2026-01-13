@@ -78,7 +78,7 @@ export default function ItalyPost({ post }: ItalyPostProps) {
           {/* Content */}
           <div className="relative p-8 md:p-12 text-center text-white">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight drop-shadow-lg">
-              Italy 2025 Adventure
+              Italy 2025
             </h1>
             <p className="text-xl md:text-2xl opacity-90 max-w-4xl mx-auto leading-relaxed drop-shadow-md">
               A cultural and visual journey through the heart of Italy

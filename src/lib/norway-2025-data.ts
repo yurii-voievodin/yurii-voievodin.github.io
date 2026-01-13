@@ -10,7 +10,7 @@ export interface NorwayPhoto {
 
 export const norwayPostMetadata: Post = {
   slug: 'norway-2025',
-  title: 'Norway 2025 Adventure',
+  title: 'Norway 2025',
   date: '2025-09-20',
   excerpt: 'A photographic journey through the stunning landscapes of Norway',
   tags: ['travel', 'photography', 'norway', 'adventure'],

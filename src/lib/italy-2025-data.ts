@@ -10,7 +10,7 @@ export interface ItalyPhoto {
 
 export const italyPostMetadata: Post = {
   slug: 'italy-2025',
-  title: 'Italy 2025 Adventure',
+  title: 'Italy 2025',
   date: '2025-07-14',
   excerpt: 'A cultural and visual journey through the heart of Italy',
   tags: ['travel', 'photography', 'italy', 'adventure', 'culture'],

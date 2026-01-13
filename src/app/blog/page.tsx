@@ -25,9 +25,6 @@ export default function BlogPage() {
   return (
     <div className="space-y-8">
       <div className="text-center">
-        <h1 className="text-4xl font-bold text-zinc-100 mb-4">
-          Posts
-        </h1>
         <p className="text-lg text-zinc-300 max-w-2xl mx-auto">
           Stories and adventures from my travels around the world.
         </p>

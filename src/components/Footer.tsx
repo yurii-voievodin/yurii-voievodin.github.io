@@ -9,7 +9,7 @@ export default function Footer() {
     switch (name) {
       case 'Home':
         return <Home size={16} className="mr-2" />;
-      case 'Timeline':
+      case 'Blog':
         return <Clock size={16} className="mr-2" />;
       case 'CV':
         return <FileText size={16} className="mr-2" />;

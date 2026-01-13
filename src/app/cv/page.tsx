@@ -219,9 +219,7 @@ retention)</li>
             </a>
           </h3>
           <p className="text-blue-400 font-medium mb-1">
-            <a href="https://dl.sumdu.edu.ua/en" rel="nofollow" target="_blank" className="text-blue-400 hover:text-blue-300">
-              Laboratory of distance learning
-            </a>
+            Laboratory of distance learning
             {' at '}
             <a href="https://int.sumdu.edu.ua/en/" rel="nofollow" target="_blank" className="text-blue-400 hover:text-blue-300">
               Sumy State University
@@ -240,7 +238,7 @@ retention)</li>
             </a>
           </h3>
           <p className="text-blue-400 font-medium mb-1">
-            <a href="https://kpt.sumdu.edu.ua" rel="nofollow" target="_blank" className="text-blue-400 hover:text-blue-300">
+            <a href="https://kfk.sumdu.edu.ua" rel="nofollow" target="_blank" className="text-blue-400 hover:text-blue-300">
               Polytechnic College of Konotop Institute of the SSU
             </a> <span className="text-zinc-400 mb-2">• 2007 - 2008</span>
           </p>

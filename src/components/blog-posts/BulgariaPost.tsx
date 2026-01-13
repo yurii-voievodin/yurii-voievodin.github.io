@@ -65,7 +65,7 @@ export default function BulgariaPost({ post }: BulgariaPostProps) {
           {/* Background Image */}
           <div className="absolute inset-0">
             <Image
-              src="/bulgaria-2025-2026/IMG_7862.jpeg"
+              src="/bulgaria-2025-2026/IMG_7922.jpeg"
               alt="Bulgaria landscape"
               fill
               className="object-cover"
@@ -81,7 +81,7 @@ export default function BulgariaPost({ post }: BulgariaPostProps) {
               Bulgaria Winter Trip
             </h1>
             <p className="text-xl md:text-2xl opacity-90 max-w-4xl mx-auto leading-relaxed drop-shadow-md">
-              A winter adventure through Bulgaria&apos;s beautiful landscapes
+              Winter adventure on the Black Sea
             </p>
 
             <div className="flex items-center justify-center space-x-6 text-white/90 mt-8 drop-shadow-md">

@@ -12,9 +12,9 @@ export const bulgariaPostMetadata: Post = {
   slug: 'bulgaria-2025-2026',
   title: 'Bulgaria Winter Trip',
   date: '2025-12-20',
-  excerpt: 'A winter adventure through Bulgaria\'s beautiful landscapes',
+  excerpt: 'Winter adventure on the Black Sea',
   tags: ['travel', 'photography', 'bulgaria', 'winter'],
-  featuredImage: '/bulgaria-2025-2026/IMG_7862.jpeg',
+  featuredImage: '/bulgaria-2025-2026/IMG_7922.jpeg',
   component: BulgariaPost,
 };
 
@@ -26,22 +26,17 @@ export const bulgariaPhotos: BulgariaPhoto[] = [
     description: "Bulgaria - Winter landscapes"
   },
   {
-    id: 2,
-    src: "/bulgaria-2025-2026/IMG_7916.jpeg",
+    id: 7,
+    src: "/bulgaria-2025-2026/IMG_9832.jpeg",
     alt: "Bulgaria Winter Trip",
-    description: "Bulgaria - Winter scenery"
+    description: "Bulgaria - Winter experience"
   },
+  
   {
     id: 3,
     src: "/bulgaria-2025-2026/IMG_7922.jpeg",
     alt: "Bulgaria Winter Trip",
     description: "Bulgaria - Winter views"
-  },
-  {
-    id: 4,
-    src: "/bulgaria-2025-2026/IMG_7929.jpeg",
-    alt: "Bulgaria Winter Trip",
-    description: "Bulgaria - Winter adventure"
   },
   {
     id: 5,
@@ -50,16 +45,22 @@ export const bulgariaPhotos: BulgariaPhoto[] = [
     description: "Bulgaria - Winter moments"
   },
   {
+    id: 4,
+    src: "/bulgaria-2025-2026/IMG_7929.jpeg",
+    alt: "Bulgaria Winter Trip",
+    description: "Bulgaria - Winter adventure"
+  },
+  {
     id: 6,
     src: "/bulgaria-2025-2026/IMG_7998.jpeg",
     alt: "Bulgaria Winter Trip",
     description: "Bulgaria - Winter memories"
   },
   {
-    id: 7,
-    src: "/bulgaria-2025-2026/IMG_9832.jpeg",
+    id: 2,
+    src: "/bulgaria-2025-2026/IMG_7916.jpeg",
     alt: "Bulgaria Winter Trip",
-    description: "Bulgaria - Winter experience"
+    description: "Bulgaria - Winter scenery"
   },
   {
     id: 8,

@@ -10,11 +10,11 @@ export interface AustriaPhoto {
 
 export const austriaPostMetadata: Post = {
   slug: 'austria-2025',
-  title: 'Austria 2025 Adventure',
+  title: 'Austria 2025',
   date: '2025-10-11',
   excerpt: 'A journey through Austria\'s Alpine landscapes and historic Vienna',
   tags: ['travel', 'photography', 'austria', 'adventure', 'alps'],
-  featuredImage: '/austria-2025/IMG_6391.jpeg',
+  featuredImage: '/austria-2025/IMG_6445.jpeg',
   component: AustriaPost,
 };
 

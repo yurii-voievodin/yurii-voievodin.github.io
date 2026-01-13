@@ -78,7 +78,7 @@ export default function NorwayPost({ post }: NorwayPostProps) {
           {/* Content */}
           <div className="relative p-8 md:p-12 text-center text-white">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight drop-shadow-lg">
-              Norway 2025 Adventure
+              Norway 2025
             </h1>
             <p className="text-xl md:text-2xl opacity-90 max-w-4xl mx-auto leading-relaxed drop-shadow-md">
               A photographic journey through the stunning landscapes of Norway

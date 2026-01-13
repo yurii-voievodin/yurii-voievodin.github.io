@@ -65,7 +65,7 @@ export default function AustriaPost({ post }: AustriaPostProps) {
           {/* Background Image */}
           <div className="absolute inset-0">
             <Image
-              src="/austria-2025/IMG_6391.jpeg"
+              src="/austria-2025/IMG_6445.jpeg"
               alt="Austria landscape"
               fill
               className="object-cover"
@@ -78,7 +78,7 @@ export default function AustriaPost({ post }: AustriaPostProps) {
           {/* Content */}
           <div className="relative p-8 md:p-12 text-center text-white">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight drop-shadow-lg">
-              Austria 2025 Adventure
+              Austria 2025
             </h1>
             <p className="text-xl md:text-2xl opacity-90 max-w-4xl mx-auto leading-relaxed drop-shadow-md">
               A journey through Austria&apos;s Alpine landscapes and historic Vienna
