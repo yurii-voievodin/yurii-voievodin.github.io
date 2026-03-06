@@ -26,12 +26,6 @@ export const austriaPhotos: AustriaPhoto[] = [
     description: "Semmering - A picturesque mountain pass and resort area in Lower Austria"
   },
   {
-    id: 2,
-    src: "/austria-2025/IMG_6298.jpeg",
-    alt: "Austria 2025 Trip - Semmering",
-    description: "Semmering - Historic alpine resort town known for its stunning mountain vistas"
-  },
-  {
     id: 3,
     src: "/austria-2025/IMG_6391.jpeg",
     alt: "Austria 2025 Trip - Reichenau an der Rax",

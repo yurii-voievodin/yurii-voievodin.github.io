@@ -1,19 +1,15 @@
 import { Post } from '@/types/blog';
 import { austriaPostMetadata } from './austria-2025-data';
-import { bulgariaPostMetadata } from './bulgaria-2025-2026-data';
 import { italyPostMetadata } from './italy-2025-data';
 import { norwayPostMetadata } from './norway-2025-data';
-import { firstAndSecondCarPostMetadata } from './first-and-second-car-data';
 import { landRoverPostMetadata } from './land-rover-data';
 import { featurePostMetadata } from './feature-data';
 
 // Central registry of all blog posts
 export const allPosts: Post[] = [
-  bulgariaPostMetadata,
   austriaPostMetadata,
   italyPostMetadata,
   norwayPostMetadata,
-  firstAndSecondCarPostMetadata,
   landRoverPostMetadata,
   featurePostMetadata,
 ];
