@@ -241,7 +241,8 @@ export default function ProjectsPage() {
                                         <li>S3 artifact storage with CloudFront invalidation on deploy</li>
                                     </ul>
 
-                                    <p className="text-zinc-300 font-semibold">My role:</p>
+                                    <hr className="border-zinc-700/50" />
+                                    <p className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent font-semibold">My role:</p>
                                     <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
                                         <li>Product page — preview images, pricing, discounts, color swatches, size/quantity/material variations</li>
                                         <li>Design editor image capabilities — replacement, cropping, hue/saturation/lightness sliders, filters, color extraction</li>
@@ -267,20 +268,46 @@ export default function ProjectsPage() {
                                 </div>
                             </div>
                             <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
-                                <div className="lg:col-span-2">
-                                    <div className="space-y-3">
-                                        <p className="text-zinc-300"><GradientLink href="https://create.vista.com" target="_blank">VistaCreate</GradientLink> <strong>iOS app</strong>, my role and responsibilities:</p>
-                                        <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
-                                            <li>Wrote <strong>unit tests</strong> using <GradientLink href="https://developer.apple.com/documentation/xctest" target="_blank">XCTest</GradientLink> framework to cover app business logic</li>
-                                            <li>Built an app with <strong>modular architecture</strong> with <GradientLink href="https://guides.cocoapods.org/making/private-cocoapods.html" target="_blank">Private Pods</GradientLink> and <GradientLink href="https://guides.cocoapods.org/making/development-cocoapods.html" target="_blank">Development Pods</GradientLink></li>
-                                            <li>Implement logging of analytics events with <strong>Firebase</strong>, <strong>AppsFlyer</strong>, <strong>Iterable</strong></li>
-                                            <li>Implemented <strong>A/B tests</strong> using <GradientLink href="https://firebase.google.com/docs/ab-testing/" target="_blank">Firebase</GradientLink></li>
-                                            <li>Built new Home screen with caching and data loading with Swift Concurency</li>
-                                            <li>Build <strong>Onboarding</strong> screens with pagination and a paywall</li>
-                                            <li>Create a SwiftUI slider component that used to control removal or restoring a photos background</li>
-                                            <li>Implemnent UI and logic of desing export in diffrent formats</li>
-                                        </ul>
-                                    </div>
+                                <div className="lg:col-span-2 space-y-3">
+                                    <p className="text-zinc-300">
+                                        <GradientLink href="https://create.vista.com" target="_blank">VistaCreate</GradientLink> — professional design and creative content creation iOS app. Users work with thousands of templates, add images, text, shapes and audio, and export designs in multiple formats.
+                                    </p>
+
+                                    <p className="text-zinc-300 font-semibold">Technical info:</p>
+                                    <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
+                                        <li>Written in <strong>Swift</strong>, UIKit-based with SwiftUI components; <strong>Metal</strong> for graphics rendering</li>
+                                        <li><strong>MVP/VIPER hybrid</strong> — Router-based navigation, Presenter classes for business logic, ViewControllers as the view layer</li>
+                                        <li><strong>21 development CocoaPods modules</strong> — HomeModule, OnboardingModule, BillingService, CremUI, Music.TrimmablePlayer, BlackBox, and more (177 pods total)</li>
+                                        <li><strong>Moya + Alamofire</strong> networking with custom Networking module and APICache for response caching</li>
+                                        <li><strong>CoreData</strong> for local persistence with custom context management and undo/redo support</li>
+                                        <li>Full-featured design editor — layers, text, SVG rendering, filters, transparency, color editing, background removal</li>
+                                        <li>Audio editing via <strong>AVFoundation</strong> with custom <CodeTag>TrimmablePlayer</CodeTag> and histogram visualization</li>
+                                        <li><strong>StoreKit</strong> + custom BillingService module for subscriptions and in-app purchases</li>
+                                        <li><strong>Firebase</strong> — Analytics, Crashlytics, RemoteConfig, A/B testing, DynamicLinks, Push Notifications</li>
+                                        <li><strong>AppsFlyer</strong> for attribution, <strong>Iterable</strong> for marketing automation, <strong>Facebook SDK</strong> for social</li>
+                                        <li><strong>Auth0</strong> for authentication, <strong>R.swift</strong> for type-safe resources</li>
+                                        <li><strong>Lokalise</strong> localization with 25 languages supported</li>
+                                        <li>Deployment target: <strong>iOS 15.0+</strong>, iPhone and iPad supported</li>
+                                    </ul>
+
+                                    <p className="text-zinc-300 font-semibold">CI/CD & Workflow:</p>
+                                    <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
+                                        <li><strong>GitLab CI</strong> with Development and Full test plans, JUnit reporting, IPA builds uploaded to S3 via CloudFront</li>
+                                        <li><strong>Fastlane</strong> for TestFlight releases, version management, dSYM uploads, and Lokalise sync</li>
+                                    </ul>
+
+                                    <hr className="border-zinc-700/50" />
+                                    <p className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent font-semibold">My role:</p>
+                                    <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
+                                        <li>Unit tests with <strong>XCTest</strong> to cover app business logic</li>
+                                        <li>Modular architecture using <strong>Private Pods</strong> and <strong>Development Pods</strong></li>
+                                        <li>Analytics event logging — <strong>Firebase</strong>, <strong>AppsFlyer</strong>, <strong>Iterable</strong></li>
+                                        <li><strong>A/B tests</strong> via Firebase for onboarding and retention experiments</li>
+                                        <li>Home screen with caching and data loading via <strong>Swift Concurrency</strong></li>
+                                        <li>Onboarding screens with pagination and paywall</li>
+                                        <li>SwiftUI slider component for background removal/restoration</li>
+                                        <li>Design export UI and logic across multiple formats</li>
+                                    </ul>
                                 </div>
                                 <div className="flex justify-center lg:justify-end">
                                     <div className="w-full max-w-sm">
@@ -300,19 +327,46 @@ export default function ProjectsPage() {
                                 </div>
                             </div>
                             <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
-                                <div className="lg:col-span-2">
-                                    <div className="space-y-3">
-                                        <p className="text-zinc-300">
-                                            Supported 50+ <strong>iOS apps</strong> at <GradientLink href="https://www.clowder.com/">Clowder</GradientLink>, my role and responsibilities:
-                                        </p>
-                                        <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
-                                            <li>Create clones (copies) of the <strong>Core</strong> product</li>
-                                            <li>Add customizations to the clones and enable/disable product modules</li>
-                                            <li>Integrate user profile with custom fields to clones</li>
-                                            <li>Work with Git by <strong>GitFlow</strong> methodology, resolve merge conflicts</li>
-                                            <li>Support existing apps and update to the latest <strong>Core</strong> version</li>
-                                            <li>Create proposals and make changes in the <strong>Core</strong> product</li>
-                                        </ul>
+                                <div className="lg:col-span-2 space-y-3">
+                                    <p className="text-zinc-300">
+                                        <GradientLink href="https://www.clowder.com/" target="_blank">Clowder</GradientLink> — white-label community and event management platform. The Core iOS app is cloned and customized for 50+ organizations, providing event management, community forums, real-time chat, news feeds, resource libraries, and QR-based networking.
+                                    </p>
+
+                                    <p className="text-zinc-300 font-semibold">Technical info:</p>
+                                    <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
+                                        <li>Written in <strong>Swift</strong>, UIKit-based architecture</li>
+                                        <li><strong>MVVM + Interactor</strong> — Interactors handle business logic, DataProviders fetch and cache, ViewControllers as the view layer</li>
+                                        <li><strong>16 internal frameworks</strong> — CLFoundation, CLBackend, CLServices, CLUIKit, CLAnalytics, CLAdvertisement, CLQRCodeSharing, CLPayments, and more</li>
+                                        <li><strong>Alamofire 5</strong> + proprietary <CodeTag>PXRESTRequest</CodeTag> for REST API abstraction; <strong>PromiseKit</strong> for async operations</li>
+                                        <li>Proprietary <CodeTag>PXChat</CodeTag> + <strong>Chatto</strong> for real-time messaging</li>
+                                        <li><strong>Kingfisher</strong> for image caching, <strong>Eureka</strong> for form building</li>
+                                        <li>Push notifications via proprietary <CodeTag>PXPush</CodeTag> and <strong>AppCenter</strong> for crash reporting</li>
+                                        <li><strong>Amplitude</strong> for analytics, <strong>KeychainAccess</strong> for secure credential storage</li>
+                                        <li>QR code generation and scanning for digital membership cards</li>
+                                        <li>Calendar integration, location-based "near me" discovery, rich HTML rendering via <strong>DTCoreText</strong></li>
+                                        <li><strong>SwiftGen</strong> for type-safe resources, <strong>Sourcery</strong> for code generation, <strong>SwiftLint</strong> + <strong>SwiftFormat</strong> for code quality</li>
+                                        <li>Deployment target: <strong>iOS 13.0+</strong>, iPhone and iPad supported</li>
+                                    </ul>
+
+                                    <p className="text-zinc-300 font-semibold">CI/CD & Workflow:</p>
+                                    <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
+                                        <li><strong>GitLab CI</strong> — SwiftLint gate, IPA build, AppCenter for QA, TestFlight for staging, App Store for production</li>
+                                        <li><strong>Fastlane</strong> for build automation, versioning, and TestFlight distribution; <strong>YouTrack</strong> integration for automatic issue status updates</li>
+                                        <li><strong>GitFlow</strong> branching — develop, feature, release, hotfix, and deploy branches</li>
+                                    </ul>
+
+                                    <hr className="border-zinc-700/50" />
+                                    <p className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent font-semibold">My role:</p>
+                                    <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
+                                        <li>Create clones of the Core product and customize them per client (enable/disable modules, custom fields, branding)</li>
+                                        <li>Support 50+ existing apps and update them to the latest Core version</li>
+                                        <li>Propose and implement changes to the Core product</li>
+                                        <li>Resolve merge conflicts and maintain GitFlow discipline across a large multi-repo setup</li>
+                                    </ul>
+                                </div>
+                                <div className="flex justify-center lg:justify-end">
+                                    <div className="w-full max-w-sm">
+                                        <PhotoCarousel images={clowderImages} />
                                     </div>
                                 </div>
                             </div>
@@ -327,22 +381,36 @@ export default function ProjectsPage() {
                                     February 2021
                                 </div>
                             </div>
-                            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
-                                <div className="lg:col-span-2">
-                                    <div className="space-y-3">
-                                        <p className="text-zinc-300">
-                                            Part-time fully remote work on <strong>iOS and iPadOS app</strong> at <GradientLink href="https://coachnow.io">CoachNow</GradientLink>
-                                        </p>
-                                        <p className="text-zinc-300">
-                                            <GradientLink href="https://apps.apple.com/app/coachnow-coaching-platform/id596598472">CoachNow app</GradientLink> with a long history (8+ years) and mixed codebase of Objective-C and Swift with lots of dependencies.
-                                        </p>
-                                        <p className="text-zinc-300 font-semibold">Main responsibility:</p>
-                                        <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
-                                            <li>Support the CoachNow app and add new features</li>
-                                            <li>Maintain legacy code and manage dependencies</li>
-                                            <li>Work with mixed Objective-C and Swift codebase</li>
-                                        </ul>
-                                    </div>
+                            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
+                                <div className="lg:col-span-2 space-y-3">
+                                    <p className="text-zinc-300">
+                                        <GradientLink href="https://apps.apple.com/app/coachnow-coaching-platform/id596598472" target="_blank">CoachNow</GradientLink> — coaching and training management platform for coaches and athletes. Users share training posts, videos, and media in dedicated training spaces, communicate through comments and replies, and manage athlete connections.
+                                    </p>
+
+                                    <p className="text-zinc-300 font-semibold">Technical info:</p>
+                                    <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
+                                        <li><strong>Objective-C + Swift</strong> hybrid codebase (~688 source files) — legacy Objective-C foundation with Swift components added incrementally</li>
+                                        <li><strong>MVC with Service Layer</strong> — manager/helper classes (<CodeTag>EDFNetworkClient</CodeTag>, <CodeTag>EDFSyncManager</CodeTag>, <CodeTag>EDFAccountUpdater</CodeTag>) handle business logic alongside UIViewControllers</li>
+                                        <li><strong>RestKit</strong> for REST API communication with automatic Core Data object mapping and bi-directional sync</li>
+                                        <li><strong>CoreData</strong> (SQLite) for offline-first persistence with migration manager and RestKit integration</li>
+                                        <li>Video capture via custom <strong>NextLevel</strong> framework, video trimming (<strong>PryntTrimmerView</strong>), playback, and batch export to <strong>AWS S3</strong></li>
+                                        <li><strong>Stripe</strong> for payment processing and subscription management</li>
+                                        <li><strong>Firebase</strong> Crashlytics + Performance; <strong>Segment</strong> + <strong>AppsFlyer</strong> for analytics</li>
+                                        <li><strong>Intercom</strong> for in-app customer support messaging</li>
+                                        <li><strong>Facebook SDK</strong> for social login, <strong>OTP</strong> phone verification, <strong>OAuth2</strong> token-based auth</li>
+                                        <li><strong>PureLayout</strong> for programmatic Auto Layout, <strong>SDWebImage</strong> for image caching</li>
+                                        <li>Deployment target: <strong>iOS 12.0+</strong>, iPhone and iPad supported</li>
+                                    </ul>
+
+                                    <hr className="border-zinc-700/50" />
+                                    <p className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent font-semibold">My role:</p>
+                                    <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
+                                        <li>Support the app and add new features to the mixed Objective-C / Swift codebase</li>
+                                        <li>Rewrite legacy <strong>Objective-C</strong> code to <strong>Swift</strong></li>
+                                        <li>Make code reviews and publish releases to TestFlight and the App Store</li>
+                                        <li>Implement screen recording with <strong>ReplayKit</strong> framework</li>
+                                        <li>Maintain dependencies and manage the CocoaPods setup</li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -513,7 +581,8 @@ export default function ProjectsPage() {
                                             <br />
                                             In-house application (App Dev Academy) with time tracking and task management.
                                         </p>
-                                        <p className="text-zinc-300 font-semibold">My role:</p>
+                                        <hr className="border-zinc-700/50" />
+                                    <p className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent font-semibold">My role:</p>
                                         <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
                                             <li>Design an architecture and create an app from scratch</li>
                                             <li>Design a database architecture and use CoreData framework</li>
