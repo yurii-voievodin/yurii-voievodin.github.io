@@ -4,7 +4,7 @@ import { siteConfig } from '@/lib/config';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
-  
+
   const getIconForNav = (name: string) => {
     switch (name) {
       case 'Home':
@@ -20,7 +20,7 @@ export default function Footer() {
         return null;
     }
   };
-  
+
   return (
     <footer className="bg-zinc-900 border-t border-zinc-800 mt-20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -30,19 +30,19 @@ export default function Footer() {
               Get in Touch
             </h3>
             <p className="text-zinc-300 mb-4">
-              I&apos;m always interested in discussing new opportunities, 
+              I&apos;m always interested in discussing new opportunities,
               collaborating on projects, or just having a conversation about technology.
             </p>
             <div className="flex space-x-4">
               <a 
-                href={siteConfig.social.email} 
+                href={siteConfig.social.email}
                 className="text-zinc-400 hover:text-zinc-100 transition-colors"
                 aria-label="Email"
               >
                 <Mail size={20} />
               </a>
               <a 
-                href={siteConfig.social.github} 
+                href={siteConfig.social.github}
                 className="text-zinc-400 hover:text-zinc-100 transition-colors"
                 aria-label="GitHub"
                 target="_blank"
@@ -51,7 +51,7 @@ export default function Footer() {
                 <Github size={20} />
               </a>
               <a 
-                href={siteConfig.social.linkedin} 
+                href={siteConfig.social.linkedin}
                 className="text-zinc-400 hover:text-zinc-100 transition-colors"
                 aria-label="LinkedIn"
                 target="_blank"
@@ -61,7 +61,7 @@ export default function Footer() {
               </a>
             </div>
           </div>
-          
+
           <div>
             <h3 className="text-lg font-semibold text-zinc-100 mb-4">
               Quick Links
@@ -82,10 +82,10 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        
+
         <div className="border-t border-zinc-800 mt-8 pt-8 text-center">
           <p className="text-zinc-400">
-            © {currentYear} {siteConfig.name}. Built with ❤️ using Next.js, TypeScript, and Tailwind CSS.
+            © {currentYear} {siteConfig.name}
           </p>
         </div>
       </div>
