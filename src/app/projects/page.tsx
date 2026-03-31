@@ -179,12 +179,27 @@ export default function ProjectsPage() {
                                 <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
                                     <li>UI implemented directly from <strong>Figma</strong> designs using <strong>MCP</strong> and <strong>Claude Code</strong> — designs translated to production SwiftUI/UIKit code</li>
                                 </ul>
+
+                                <div className="flex flex-wrap gap-3 pt-2">
+                                    <GradientLink href="https://apps.apple.com/us/app/documents-file-manager-hooh/id6751770725" target="_blank">App Store</GradientLink>
+                                    <GradientLink href="https://hooh.com" target="_blank">hooh.com</GradientLink>
+                                </div>
                             </div>
                             <div className="flex justify-center lg:justify-end">
                                 <div className="w-full max-w-sm">
                                     <PhotoCarousel images={hoohImages} />
                                 </div>
                             </div>
+                            </div>
+
+                            <div className="mt-6">
+                                <Image
+                                    src="/projects/Hooh/hooh-appstore.png"
+                                    alt="Hooh on the App Store"
+                                    width={1280}
+                                    height={800}
+                                    className="w-full rounded-2xl"
+                                />
                             </div>
                         </div>
                     </div>
@@ -198,42 +213,41 @@ export default function ProjectsPage() {
                                 </div>
                             </div>
                             <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
-                                <div className="lg:col-span-2">
-                                    <div className="space-y-3">
-                                        <p className="text-zinc-300"><GradientLink href="https://www.vistaprint.com" target="_blank">VistaPrint</GradientLink> <strong>iOS app</strong>, my role and responsibilities:</p>
+                                <div className="lg:col-span-2 space-y-3">
+                                    <p className="text-zinc-300">
+                                        <GradientLink href="https://www.vistaprint.com" target="_blank">VistaPrint</GradientLink> — e-commerce iOS app for ordering custom printed products. Users browse a product catalog, customize designs in an integrated editor, and place orders with Braintree and PayPal payments.
+                                    </p>
 
-                                        <p className="text-zinc-300 font-semibold">Infrastructure & Quality</p>
-                                        <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
-                                            <li>Comprehensive unit test coverage for core modules</li>
-                                            <li>Localization support with string catalogs</li>
-                                            <li>Logging system for analytics and debugging</li>
-                                            <li>Fastlane setup for build automation</li>
-                                        </ul>
+                                    <p className="text-zinc-300 font-semibold">Technical info:</p>
+                                    <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
+                                        <li>Written in <strong>Swift</strong>, UIKit-based with SwiftUI components</li>
+                                        <li><strong>MVP + DataProvider</strong> architecture — presenters manage business logic, typed data providers handle fetching and caching</li>
+                                        <li><strong>37 local CocoaPods modules</strong> for feature isolation (Editor, Gallery, ProductPage, VistaCart, Storage, Networking, etc.)</li>
+                                        <li><strong>Moya + Alamofire</strong> networking with custom <CodeTag>NetworkingProvider</CodeTag> and response caching layer</li>
+                                        <li><strong>CoreData</strong> + custom Storage module with <strong>EasyMapping</strong> for data persistence</li>
+                                        <li>Advanced design editor — SVG rendering, background removal, image filters, color extraction, interactive zoom and transform gestures</li>
+                                        <li><strong>Braintree</strong> + <strong>PayPal</strong> for payments, cart and checkout flow</li>
+                                        <li><strong>Auth0</strong> (AppAuth) for authentication</li>
+                                        <li><strong>Firebase</strong> Remote Config + A/B testing, <strong>Segment</strong> for analytics</li>
+                                        <li><strong>SDWebImage</strong> for image loading/caching, <strong>SkeletonView</strong> for loading states</li>
+                                        <li><strong>SwiftLint</strong> with custom rule configuration across all modules</li>
+                                        <li>Deployment target: <strong>iOS 18.0+</strong></li>
+                                    </ul>
 
-                                        <p className="text-zinc-300 font-semibold">Product Display & Selection</p>
-                                        <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
-                                            <li>Product page with preview images, pricing, and discount information</li>
-                                            <li>Color selection interface with scrollable swatches and visual feedback</li>
-                                            <li>Product options and variations (size, quantity, material)</li>
-                                            <li>Stock availability filtering</li>
-                                        </ul>
+                                    <p className="text-zinc-300 font-semibold">CI/CD & Workflow:</p>
+                                    <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
+                                        <li><strong>GitLab CI</strong> with parallel test stages — unit tests, snapshot tests, UI tests, smoke tests, and full test suite on release branches</li>
+                                        <li><strong>Fastlane</strong> for build automation, versioning, TestFlight distribution, and Slack notifications</li>
+                                        <li>S3 artifact storage with CloudFront invalidation on deploy</li>
+                                    </ul>
 
-                                        <p className="text-zinc-300 font-semibold">Design Editor - Image Capabilities</p>
-                                        <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
-                                            <li>Image replacement with automatic size adjustment and cropping</li>
-                                            <li>Color adjustment tools (hue, saturation, lightness sliders)</li>
-                                            <li>Image filters and color extraction features</li>
-                                        </ul>
-
-                                        <p className="text-zinc-300 font-semibold">Account Management</p>
-                                        <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
-                                            <li>Account screen with user settings</li>
-                                            <li>Web view integration for account-related pages</li>
-                                            <li>Links to cart, orders, and support resources</li>
-                                        </ul>
-
-
-                                    </div>
+                                    <p className="text-zinc-300 font-semibold">My role:</p>
+                                    <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
+                                        <li>Product page — preview images, pricing, discounts, color swatches, size/quantity/material variations</li>
+                                        <li>Design editor image capabilities — replacement, cropping, hue/saturation/lightness sliders, filters, color extraction</li>
+                                        <li>Account screen with web view integration and links to cart, orders, support</li>
+                                        <li>Unit test coverage for core modules, localization with string catalogs, logging system</li>
+                                    </ul>
                                 </div>
                                 <div className="flex justify-center lg:justify-end">
                                     <div className="w-full max-w-sm">
