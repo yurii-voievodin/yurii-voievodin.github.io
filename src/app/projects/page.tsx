@@ -13,6 +13,18 @@ export default function ProjectsPage() {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedDetailPage, setSelectedDetailPage] = useState<string>('');
 
+    // Hooh images for carousel
+    const hoohImages = [
+        { src: '/projects/Hooh/hooh-home.png', alt: 'Hooh Home' },
+        { src: '/projects/Hooh/hooh-paywall.png', alt: 'Hooh Paywall' },
+        { src: '/projects/Hooh/hooh-upload-merge.png', alt: 'Hooh Upload & Merge' },
+        { src: '/projects/Hooh/hooh-pdf-viewer.png', alt: 'Hooh PDF Viewer' },
+        { src: '/projects/Hooh/hooh-chat.png', alt: 'Hooh AI Chat' },
+        { src: '/projects/Hooh/hooh-documents.png', alt: 'Hooh Documents' },
+        { src: '/projects/Hooh/hooh-account.png', alt: 'Hooh Account' },
+        { src: '/projects/Hooh/hooh-security.png', alt: 'Hooh Security' },
+    ];
+
     // VistaCreate images for carousel
     const vistaCreateImages = [
         { src: '/projects/VistaCreate/vc-home.png', alt: 'VistaCreate Home Screen' },
@@ -127,6 +139,56 @@ export default function ProjectsPage() {
 
                 {/* Projects Grid */}
                 <div className="space-y-8">
+                    {/* Hooh */}
+                    <div className="bg-zinc-800/90 backdrop-blur-sm rounded-3xl shadow-2xl overflow-hidden border border-zinc-700/50 hover:border-zinc-600/70 transition-all duration-300">
+                        <div className="p-6 md:p-10 text-zinc-100">
+                            <div className="mb-6 flex items-center justify-between">
+                                <div className="inline-block bg-cyan-600/20 text-cyan-300 px-4 py-2 rounded-full text-sm font-medium border border-cyan-500/30">
+                                    2025 - 2026
+                                </div>
+                            </div>
+                            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
+                            <div className="lg:col-span-2 space-y-3">
+                                <p className="text-zinc-300">
+                                    <strong>Hooh</strong> — AI-powered document management iOS app. Users can upload documents and interact with them through a real-time AI chat interface for analysis, summarization, and Q&A.
+                                </p>
+
+                                <p className="text-zinc-300 font-semibold">Technical info:</p>
+                                <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
+                                    <li>Written in <strong>Swift</strong>, UIKit-based architecture with SwiftUI components</li>
+                                    <li><strong>MVP + Combine</strong> — presenters expose <CodeTag>@Published</CodeTag> state, views observe via Combine</li>
+                                    <li>Real-time streaming chat via custom <strong>SSEClient</strong> (Server-Sent Events) using <CodeTag>AsyncThrowingStream</CodeTag></li>
+                                    <li><strong>Moya + Alamofire</strong> networking with token refresh middleware and plugin-based interceptors</li>
+                                    <li><strong>CoreData</strong> for local persistence, document versioning, and search filters</li>
+                                    <li><strong>PDFKit</strong> and custom PDF editor Swift Package — annotations, form filling, signatures, page management</li>
+                                    <li>Voice input via <strong>AVAudioEngine</strong> with <strong>Deepgram API</strong> for speech-to-text transcription</li>
+                                    <li><strong>RevenueCat</strong> + <strong>StoreKit</strong> for subscriptions, paywalls, and upload quota enforcement</li>
+                                    <li><strong>Auth0</strong> (OAuth 2.0) for authentication</li>
+                                    <li>Analytics: <strong>PostHog</strong> (feature flags, session replay), <strong>AppsFlyer</strong> (attribution), <strong>TikTok Business SDK</strong></li>
+                                    <li>Localization via <strong>Lokalise</strong> with <CodeTag>.xcstrings</CodeTag> string catalogs</li>
+                                    <li>Deployment target: <strong>iOS 17.6+</strong></li>
+                                </ul>
+
+                                <p className="text-zinc-300 font-semibold">CI/CD & Workflow:</p>
+                                <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
+                                    <li><strong>Xcode Cloud</strong> for continuous integration and delivery — separate workflows for <CodeTag>Development</CodeTag>, <CodeTag>Staging</CodeTag>, and <CodeTag>Production</CodeTag> targets</li>
+                                    <li>Code reviews and pull requests via <strong>GitHub</strong></li>
+                                </ul>
+
+                                <p className="text-zinc-300 font-semibold">AI-assisted development:</p>
+                                <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
+                                    <li>UI implemented directly from <strong>Figma</strong> designs using <strong>MCP</strong> and <strong>Claude Code</strong> — designs translated to production SwiftUI/UIKit code</li>
+                                </ul>
+                            </div>
+                            <div className="flex justify-center lg:justify-end">
+                                <div className="w-full max-w-sm">
+                                    <PhotoCarousel images={hoohImages} />
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
                     {/* VistaPrint */}
                     <div className="bg-zinc-800/90 backdrop-blur-sm rounded-3xl shadow-2xl overflow-hidden border border-zinc-700/50 hover:border-zinc-600/70 transition-all duration-300">
                         <div className="p-6 md:p-10 text-zinc-100">
