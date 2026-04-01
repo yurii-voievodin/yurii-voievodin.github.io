@@ -23,31 +23,31 @@ export default function CVPage() {
   return (
     <div className="max-w-4xl mx-auto px-4">
     {/* Header */}
-    <header className="bg-zinc-800/50 rounded-lg shadow-lg border border-zinc-700/50 p-6 md:p-8 mb-8">
+    <header className="mb-12">
     <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-6">
     <div className="flex-1">
-    <h1 className="text-3xl md:text-4xl font-bold text-zinc-100 mb-2">
+    <h1 className="text-4xl md:text-5xl font-bold text-zinc-100 mb-4">
     {siteConfig.author.name}
     </h1>
 
     <div className="flex flex-col gap-2 text-zinc-300">
-    <a href={`mailto:${siteConfig.author.email}`} className="flex items-center space-x-2 hover:text-blue-400 transition-colors">
+    <a href={`mailto:${siteConfig.author.email}`} className="flex items-center space-x-2 hover:text-violet-400 transition-colors">
     <Mail size={16} />
     <span className="text-sm sm:text-base">{siteConfig.author.email}</span>
     </a>
-    <a href="https://github.com/yurii-voievodin" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 hover:text-blue-400 transition-colors">
+    <a href="https://github.com/yurii-voievodin" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 hover:text-violet-400 transition-colors">
     <Github size={16} />
     <span className="text-sm sm:text-base">yura-voevodin</span>
     </a>
-    <a href="https://www.linkedin.com/in/yurivoevodin" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 hover:text-blue-400 transition-colors">
+    <a href="https://www.linkedin.com/in/yurivoevodin" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 hover:text-violet-400 transition-colors">
     <Linkedin size={16} />
     <span className="text-sm sm:text-base">yurivoevodin</span>
     </a>
-    <a href="https://telegram.me/yurii_voievodin" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 hover:text-blue-400 transition-colors">
+    <a href="https://telegram.me/yurii_voievodin" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 hover:text-violet-400 transition-colors">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
     <span className="text-sm sm:text-base">yurii_voievodin</span>
     </a>
-    <a href="tel:+359877185470" className="flex items-center space-x-2 hover:text-blue-400 transition-colors">
+    <a href="tel:+359877185470" className="flex items-center space-x-2 hover:text-violet-400 transition-colors">
     <Phone size={16} />
     <span className="text-sm sm:text-base">+359 87 7185470</span>
     </a>
@@ -59,7 +59,7 @@ export default function CVPage() {
     <Download size={16} />
     <span>Download PDF</span>
     </a>
-    <a href="/projects" className="flex items-center justify-center space-x-2 px-4 py-3 bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-lg hover:from-blue-500 hover:to-cyan-500 transition-all shadow-lg hover:shadow-blue-500/20 cursor-pointer flex-1 sm:flex-none">
+    <a href="/projects" className="flex items-center justify-center space-x-2 px-4 py-3 bg-zinc-700/60 text-zinc-200 rounded-lg border border-zinc-600/50 hover:bg-zinc-700 hover:border-zinc-500/50 transition-all cursor-pointer flex-1 sm:flex-none">
     <span>View Projects</span>
     </a>
     </div>
@@ -68,7 +68,7 @@ export default function CVPage() {
     </header>
 
     {/* Professional Summary */}
-    <section className="bg-zinc-800/50 rounded-lg shadow-lg border border-zinc-700/50 p-6 md:p-8 mb-8">
+    <section className="md:bg-zinc-800/50 md:rounded-lg md:shadow-lg md:border md:border-zinc-700/50 px-0 py-4 md:p-8 mb-4 md:mb-8 border-b border-zinc-700/30 md:border-b-0 pb-6 md:pb-8">
     <h2 className="text-2xl font-bold text-zinc-100 mb-4">
     Professional Summary
     </h2>
@@ -87,16 +87,16 @@ methodologies. Proven experience leading technical initiatives in large commerci
     </section>
 
     {/* Experience Section */}
-    <section className="bg-zinc-800/50 rounded-lg shadow-lg border border-zinc-700/50 p-4 md:p-8 mb-8">
+    <section className="md:bg-zinc-800/50 md:rounded-lg md:shadow-lg md:border md:border-zinc-700/50 px-0 py-4 md:p-8 mb-4 md:mb-8 border-b border-zinc-700/30 md:border-b-0 pb-6 md:pb-8">
       <h2 className="text-2xl font-bold text-zinc-100 mb-6">Experience</h2>
 
       <div className="space-y-6">
-        <div className="border-l-2 border-blue-500/30 pl-4">
+        <div className="pl-0">
           <h3 className="text-lg font-semibold text-zinc-100">
             iOS Developer
           </h3>
-          <p className="text-blue-400 font-medium mb-1">
-            <a href="https://hooh.com" rel="nofollow" target="_blank" className="text-blue-400 hover:text-blue-300">
+          <p className="text-violet-400 font-medium mb-1">
+            <a href="https://hooh.com" rel="nofollow" target="_blank" className="text-violet-400 hover:text-violet-300">
               Hooh
             </a> <span className="text-zinc-400 mb-2">• 2025 - 2026</span>
           </p>
@@ -113,18 +113,18 @@ methodologies. Proven experience leading technical initiatives in large commerci
           </ul>
         </div>
 
-        <div className="border-l-2 border-blue-500/30 pl-4">
+        <div className="pl-0">
           <h3 className="text-lg font-semibold text-zinc-100">
-            <a href="/timeline/#16february2022" className="text-zinc-100 hover:text-blue-300 hover:underline">
+            <a href="/timeline/#16february2022" className="text-zinc-100 hover:text-violet-300 hover:underline">
               Lead iOS Engineer
             </a>
           </h3>
-          <p className="text-blue-400 font-medium mb-1">
-            <a href="https://www.vistaprint.com" rel="nofollow" target="_blank" className="text-blue-400 hover:text-blue-300">
+          <p className="text-violet-400 font-medium mb-1">
+            <a href="https://www.vistaprint.com" rel="nofollow" target="_blank" className="text-violet-400 hover:text-violet-300">
               VistaPrint
             </a>
             {' + '}
-            <a href="https://create.vista.com" rel="nofollow" target="_blank" className="text-blue-400 hover:text-blue-300">
+            <a href="https://create.vista.com" rel="nofollow" target="_blank" className="text-violet-400 hover:text-violet-300">
               VistaCreate
             </a> <span className="text-zinc-400 mb-2">• 2022 - 2025</span>
           </p>
@@ -138,14 +138,14 @@ methodologies. Proven experience leading technical initiatives in large commerci
           </ul>
         </div>
 
-        <div className="border-l-2 border-blue-500/30 pl-4">
+        <div className="pl-0">
           <h3 className="text-lg font-semibold text-zinc-100">
-            <a href="/timeline/#january2022" className="text-zinc-100 hover:text-blue-300 hover:underline">
+            <a href="/timeline/#january2022" className="text-zinc-100 hover:text-violet-300 hover:underline">
               Software Engineer (iOS, Swift)
             </a>
           </h3>
-          <p className="text-blue-400 font-medium mb-1">
-            <a href="https://www.clowder.com" rel="nofollow" target="_blank" className="text-blue-400 hover:text-blue-300">
+          <p className="text-violet-400 font-medium mb-1">
+            <a href="https://www.clowder.com" rel="nofollow" target="_blank" className="text-violet-400 hover:text-violet-300">
               Clowder
             </a> <span className="text-zinc-400 mb-2">• 2020 - 2022</span>
           </p>
@@ -159,14 +159,14 @@ methodologies. Proven experience leading technical initiatives in large commerci
           </ul>
         </div>
 
-        <div className="border-l-2 border-blue-500/30 pl-4">
+        <div className="pl-0">
           <h3 className="text-lg font-semibold text-zinc-100">
-            <a href="/timeline/#10february2021" className="text-zinc-100 hover:text-blue-300 hover:underline">
+            <a href="/timeline/#10february2021" className="text-zinc-100 hover:text-violet-300 hover:underline">
               iOS Developer
             </a>
           </h3>
-          <p className="text-blue-400 font-medium mb-1">
-            <a href="https://coachnow.io" rel="nofollow" target="_blank" className="text-blue-400 hover:text-blue-300">
+          <p className="text-violet-400 font-medium mb-1">
+            <a href="https://coachnow.io" rel="nofollow" target="_blank" className="text-violet-400 hover:text-violet-300">
               CoachNow
             </a>
             {' (part time)'} <span className="text-zinc-400 mb-2">• 2020 - 2021</span>
@@ -179,14 +179,14 @@ methodologies. Proven experience leading technical initiatives in large commerci
           </ul>
         </div>
 
-        <div className="border-l-2 border-blue-500/30 pl-4">
+        <div className="pl-0">
           <h3 className="text-lg font-semibold text-zinc-100">
-            <a href="/timeline/#march2020" className="text-zinc-100 hover:text-blue-300 hover:underline">
+            <a href="/timeline/#march2020" className="text-zinc-100 hover:text-violet-300 hover:underline">
               iOS, iPadOS and macOS Apps Developer
             </a>
           </h3>
-          <p className="text-blue-400 font-medium mb-1">
-            <a href="https://www.appdev.academy" rel="nofollow" target="_blank" className="text-blue-400 hover:text-blue-300">
+          <p className="text-violet-400 font-medium mb-1">
+            <a href="https://www.appdev.academy" rel="nofollow" target="_blank" className="text-violet-400 hover:text-violet-300">
               App Dev Academy
             </a> <span className="text-zinc-400 mb-2">• 2016 - 2020</span>
           </p>
@@ -204,14 +204,14 @@ methodologies. Proven experience leading technical initiatives in large commerci
 
         <hr className="border-zinc-700 my-8" />
 
-        <div className="border-l-2 border-blue-500/30 pl-4">
+        <div className="pl-0">
           <h3 className="text-lg font-semibold text-zinc-100">
-            <a href="/timeline/#january2016" className="text-zinc-100 hover:text-blue-300 hover:underline">
+            <a href="/timeline/#january2016" className="text-zinc-100 hover:text-violet-300 hover:underline">
               PHP Developer
             </a>
           </h3>
-          <p className="text-blue-400 font-medium mb-1">
-            <a href="https://soloway.tech" rel="nofollow" target="_blank" className="text-blue-400 hover:text-blue-300">
+          <p className="text-violet-400 font-medium mb-1">
+            <a href="https://soloway.tech" rel="nofollow" target="_blank" className="text-violet-400 hover:text-violet-300">
               bvblogic
             </a> <span className="text-zinc-400 mb-2">• 2012 - 2016</span>
           </p>
@@ -225,16 +225,16 @@ methodologies. Proven experience leading technical initiatives in large commerci
           </p>
         </div>
 
-        <div className="border-l-2 border-blue-500/30 pl-4">
+        <div className="pl-0">
           <h3 className="text-lg font-semibold text-zinc-100">
-            <a href="/timeline/#20112012" className="text-zinc-100 hover:text-blue-300 hover:underline">
+            <a href="/timeline/#20112012" className="text-zinc-100 hover:text-violet-300 hover:underline">
               Senior Laboratory
             </a>
           </h3>
-          <p className="text-blue-400 font-medium mb-1">
+          <p className="text-violet-400 font-medium mb-1">
             Laboratory of distance learning
             {' at '}
-            <a href="https://int.sumdu.edu.ua/en/" rel="nofollow" target="_blank" className="text-blue-400 hover:text-blue-300">
+            <a href="https://int.sumdu.edu.ua/en/" rel="nofollow" target="_blank" className="text-violet-400 hover:text-violet-300">
               Sumy State University
             </a> <span className="text-zinc-400 mb-2">• 2012 - 2013</span>
           </p>
@@ -244,14 +244,14 @@ methodologies. Proven experience leading technical initiatives in large commerci
           </p>
         </div>
 
-        <div className="border-l-2 border-blue-500/30 pl-4">
+        <div className="pl-0">
           <h3 className="text-lg font-semibold text-zinc-100">
-            <a href="/timeline/#20072008" className="text-zinc-100 hover:text-blue-300 hover:underline">
+            <a href="/timeline/#20072008" className="text-zinc-100 hover:text-violet-300 hover:underline">
               Laboratory Technician
             </a>
           </h3>
-          <p className="text-blue-400 font-medium mb-1">
-            <a href="https://kfk.sumdu.edu.ua" rel="nofollow" target="_blank" className="text-blue-400 hover:text-blue-300">
+          <p className="text-violet-400 font-medium mb-1">
+            <a href="https://kfk.sumdu.edu.ua" rel="nofollow" target="_blank" className="text-violet-400 hover:text-violet-300">
               Polytechnic College of Konotop Institute of the SSU
             </a> <span className="text-zinc-400 mb-2">• 2007 - 2008</span>
           </p>
@@ -264,20 +264,20 @@ methodologies. Proven experience leading technical initiatives in large commerci
     {cvData
       .filter(section => section.title === "Skills")
       .map((section, index) => (
-      <section key={index} className="bg-zinc-800/50 rounded-lg shadow-lg border border-zinc-700/50 p-4 md:p-8 mb-8">
+      <section key={index} className="md:bg-zinc-800/50 md:rounded-lg md:shadow-lg md:border md:border-zinc-700/50 px-0 py-4 md:p-8 mb-4 md:mb-8 border-b border-zinc-700/30 md:border-b-0 pb-6 md:pb-8">
       <h2 className="text-2xl font-bold text-zinc-100 mb-6">
       {section.title}
       </h2>
 
       <div className="space-y-6">
       {section.items.map((item, itemIndex) => (
-        <div key={itemIndex} className="border-l-2 border-blue-500/30 pl-4 md:pl-4">
+        <div key={itemIndex} className="pl-0">
         <h3 className="text-lg font-semibold text-zinc-100">
         {item.title}
         </h3>
 
         {item.subtitle && (
-          <p className="text-blue-400 font-medium mb-1">
+          <p className="text-violet-400 font-medium mb-1">
           {item.subtitle}
           </p>
         )}
@@ -290,7 +290,7 @@ methodologies. Proven experience leading technical initiatives in large commerci
 
         {item.htmlContent && (
           <div
-          className="prose prose-sm max-w-none prose-headings:text-zinc-100 prose-p:text-zinc-300 prose-a:text-blue-400 prose-a:no-underline hover:prose-a:underline prose-strong:text-zinc-100 prose-code:bg-zinc-700 prose-code:text-zinc-100 prose-pre:bg-zinc-800 prose-pre:text-zinc-100 prose-blockquote:border-zinc-600 prose-blockquote:text-zinc-400 prose-li:text-zinc-300"
+          className="prose prose-sm max-w-none prose-headings:text-zinc-100 prose-p:text-zinc-300 prose-a:text-violet-400 prose-a:no-underline hover:prose-a:underline prose-strong:text-zinc-100 prose-code:bg-zinc-700 prose-code:text-zinc-100 prose-pre:bg-zinc-800 prose-pre:text-zinc-100 prose-blockquote:border-zinc-600 prose-blockquote:text-zinc-400 prose-li:text-zinc-300"
           dangerouslySetInnerHTML={{ __html: item.htmlContent }}
           />
         )}
@@ -300,7 +300,7 @@ methodologies. Proven experience leading technical initiatives in large commerci
           {item.skills.map((skill) => (
             <span
             key={skill}
-            className="px-3 py-1.5 bg-blue-500/10 text-blue-400 text-sm rounded-full border border-blue-500/20"
+            className="px-3 py-1.5 bg-zinc-700/50 text-zinc-300 text-sm rounded-full border border-zinc-600/30"
             >
             {skill}
             </span>
@@ -314,17 +314,17 @@ methodologies. Proven experience leading technical initiatives in large commerci
     ))}
 
     {/* Education Section */}
-    <section className="bg-zinc-800/50 rounded-lg shadow-lg border border-zinc-700/50 p-4 md:p-8 mb-8">
+    <section className="md:bg-zinc-800/50 md:rounded-lg md:shadow-lg md:border md:border-zinc-700/50 px-0 py-4 md:p-8 mb-4 md:mb-8 border-b border-zinc-700/30 md:border-b-0 pb-6 md:pb-8">
       <h2 className="text-2xl font-bold text-zinc-100 mb-6">
         Education
       </h2>
 
       <div className="space-y-6">
-        <div className="border-l-2 border-blue-500/30 pl-4 md:pl-4">
+        <div className="pl-0">
           <h3 className="text-lg font-semibold text-zinc-100">
             Bachelor of Computer Science
           </h3>
-          <p className="text-blue-400 font-medium mb-1">
+          <p className="text-violet-400 font-medium mb-1">
             Sumy State University <span className="text-zinc-400 mb-2">• 2009 - 2012</span>
           </p>
           <p className="text-zinc-300 mb-3">
@@ -332,11 +332,11 @@ methodologies. Proven experience leading technical initiatives in large commerci
           </p>
         </div>
 
-        <div className="border-l-2 border-blue-500/30 pl-4 md:pl-4">
+        <div className="pl-0">
           <h3 className="text-lg font-semibold text-zinc-100">
             Junior Specialist
           </h3>
-          <p className="text-blue-400 font-medium mb-1">
+          <p className="text-violet-400 font-medium mb-1">
             Polytechnic College of Konotop Institute of the Sumy State University <span className="text-zinc-400 mb-2">• 2007 - 2008</span>
           </p>
           <p className="text-zinc-300 mb-3">

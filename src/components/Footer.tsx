@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, Home, Clock, FileText, Heart } from 'lucide-react';
+import { Github, Linkedin, Mail, Home, Clock, FileText, Heart, Shield, MessageCircleQuestion } from 'lucide-react';
 import Link from 'next/link';
 import { siteConfig } from '@/lib/config';
 
@@ -15,7 +15,10 @@ export default function Footer() {
         return <FileText size={16} className="mr-2" />;
       case 'Personal':
         return <Heart size={16} className="mr-2" />;
-
+      case 'Security':
+        return <Shield size={16} className="mr-2" />;
+      case 'Q&A':
+        return <MessageCircleQuestion size={16} className="mr-2" />;
       default:
         return null;
     }
