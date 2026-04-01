@@ -198,7 +198,7 @@ export default function ProjectsPage() {
                                     <li><strong>Auth0</strong> (OAuth 2.0) for authentication</li>
                                     <li>Analytics: <strong>PostHog</strong> (feature flags, session replay), <strong>AppsFlyer</strong> (attribution), <strong>TikTok Business SDK</strong></li>
                                     <li>Localization via <strong>Lokalise</strong> with <CodeTag>.xcstrings</CodeTag> string catalogs</li>
-                                    <li>Deployment target: <strong>iOS 17.6+</strong></li>
+                                    <li>Deployment target: <strong>iOS 18.0+</strong></li>
                                 </ul>
 
                                 <p className="text-zinc-300 font-semibold">CI/CD & Workflow:</p>

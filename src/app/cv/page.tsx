@@ -29,7 +29,7 @@ export default function CVPage() {
     <h1 className="text-3xl md:text-4xl font-bold text-zinc-100 mb-2">
     {siteConfig.author.name}
     </h1>
-    
+
     <div className="flex flex-col gap-2 text-zinc-300">
     <a href={`mailto:${siteConfig.author.email}`} className="flex items-center space-x-2 hover:text-blue-400 transition-colors">
     <Mail size={16} />
@@ -53,7 +53,7 @@ export default function CVPage() {
     </a>
     </div>
     </div>
-    
+
     <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
     <a href="/Yurii_Voievodin_CV.pdf" target='blank' className="flex items-center justify-center space-x-2 px-4 py-3 bg-gradient-to-r from-violet-600 to-purple-600 text-white rounded-lg hover:from-violet-500 hover:to-purple-500 transition-all shadow-lg hover:shadow-violet-500/20 cursor-pointer flex-1 sm:flex-none">
     <Download size={16} />
@@ -66,7 +66,7 @@ export default function CVPage() {
 
     </div>
     </header>
-    
+
     {/* Professional Summary */}
     <section className="bg-zinc-800/50 rounded-lg shadow-lg border border-zinc-700/50 p-6 md:p-8 mb-8">
     <h2 className="text-2xl font-bold text-zinc-100 mb-4">
@@ -93,6 +93,28 @@ methodologies. Proven experience leading technical initiatives in large commerci
       <div className="space-y-6">
         <div className="border-l-2 border-blue-500/30 pl-4">
           <h3 className="text-lg font-semibold text-zinc-100">
+            iOS Developer
+          </h3>
+          <p className="text-blue-400 font-medium mb-1">
+            <a href="https://hooh.com" rel="nofollow" target="_blank" className="text-blue-400 hover:text-blue-300">
+              Hooh
+            </a> <span className="text-zinc-400 mb-2">• 2025 - 2026</span>
+          </p>
+          <p className="text-zinc-300 mt-2 mb-2">
+            AI-powered document management iOS app where users upload documents and interact with them through real-time AI chat for analysis, summarization, and Q&A.
+          </p>
+          <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
+            <li>Built iOS app with <code className="bg-zinc-700 px-1 rounded text-xs">Swift</code>, <code className="bg-zinc-700 px-1 rounded text-xs">UIKit</code> and <code className="bg-zinc-700 px-1 rounded text-xs">SwiftUI</code></li>
+            <li>Implemented real-time AI chat</li>
+            <li>Set up subscriptions and paywalls with <code className="bg-zinc-700 px-1 rounded text-xs">RevenueCat</code></li>
+            <li>Implemented Auth0 OAuth 2.0 authentication and <code className="bg-zinc-700 px-1 rounded text-xs">CoreData</code> persistence</li>
+            <li>Integrated analytics: PostHog (feature flags, session replay), AppsFlyer, TikTok Business SDK</li>
+            <li>Set up Xcode Cloud CI/CD with Development, Staging, and Production targets</li>
+          </ul>
+        </div>
+
+        <div className="border-l-2 border-blue-500/30 pl-4">
+          <h3 className="text-lg font-semibold text-zinc-100">
             <a href="/timeline/#16february2022" className="text-zinc-100 hover:text-blue-300 hover:underline">
               Lead iOS Engineer
             </a>
@@ -107,12 +129,12 @@ methodologies. Proven experience leading technical initiatives in large commerci
             </a> <span className="text-zinc-400 mb-2">• 2022 - 2025</span>
           </p>
           <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
-            <li>Increased unit test coverage, improving regression stability and release confidence</li>
-            <li>Implement modular architecture in iOS app</li>
-            <li>Integrate analytics services Firebase, AppsFlyer, Iterable</li>
-            <li>Implemented A/B testing experiments that improved key conversion metrics (e.g. onboarding /
-retention)</li>
-            <li>Collaborated with product, design, and analytics teams on feature planning</li>
+            <li>Implemented modular architecture with <code className="bg-zinc-700 px-1 rounded text-xs">CocoaPods</code> modules for feature isolation</li>
+            <li>Built A/B testing experiments via <code className="bg-zinc-700 px-1 rounded text-xs">Firebase</code> that improved onboarding and retention metrics</li>
+            <li>Integrated analytics: <code className="bg-zinc-700 px-1 rounded text-xs">Firebase</code>, <code className="bg-zinc-700 px-1 rounded text-xs">AppsFlyer</code>, <code className="bg-zinc-700 px-1 rounded text-xs">Iterable</code>, <code className="bg-zinc-700 px-1 rounded text-xs">Segment</code></li>
+            <li>Developed product page UI, design editor image capabilities (cropping, filters, color extraction)</li>
+            <li>Increased unit test coverage with <code className="bg-zinc-700 px-1 rounded text-xs">XCTest</code> across core business logic modules</li>
+            <li>Built onboarding screens with pagination and paywall using <code className="bg-zinc-700 px-1 rounded text-xs">SwiftUI</code> components</li>
           </ul>
         </div>
 
@@ -128,12 +150,12 @@ retention)</li>
             </a> <span className="text-zinc-400 mb-2">• 2020 - 2022</span>
           </p>
           <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
-            <li>Create clones (copies) of the Core product</li>
-            <li>Add customizations to the clones and enable/disable product modules</li>
-            <li>Integrate user profile with custom fields to the clones of the Core product</li>
-            <li>Work with Git by <code className="bg-zinc-700 px-1 rounded text-xs">GitFlow</code> methodology, resolve merge conflicts</li>
-            <li>Support existing apps and update to the latest version of the Core product</li>
-            <li>Create proposals and make changes in the Core</li>
+            <li>Customized and deployed iOS apps for 50+ organizations from a shared Core product</li>
+            <li>Worked with MVVM + Interactor architecture across 16 internal frameworks</li>
+            <li>Enabled/disabled product modules and configured custom fields per client</li>
+            <li>Maintained <code className="bg-zinc-700 px-1 rounded text-xs">GitFlow</code> discipline across a large multi-repo setup, resolving merge conflicts</li>
+            <li>Proposed and implemented changes to the Core product</li>
+            <li>Managed CI/CD pipeline with <code className="bg-zinc-700 px-1 rounded text-xs">GitLab CI</code>, <code className="bg-zinc-700 px-1 rounded text-xs">Fastlane</code>, and <code className="bg-zinc-700 px-1 rounded text-xs">AppCenter</code> distribution</li>
           </ul>
         </div>
 
@@ -149,24 +171,11 @@ retention)</li>
             </a>
             {' (part time)'} <span className="text-zinc-400 mb-2">• 2020 - 2021</span>
           </p>
-          <p className="text-zinc-300 mt-2 mb-2">
-            Main responsibility here is to support the{' '}
-            <a href="https://apps.apple.com/app/coachnow-coaching-platform/id596598472" rel="nofollow" target="_blank" className="text-blue-400 hover:text-blue-300">
-              CoachNow app
-            </a>
-            {' (iOS and iPadOS) and add new features. It\'s an app with a long history (8+ years) and mixed codebase ('}
-            <code className="bg-zinc-700 px-1 rounded text-xs">Objective-C</code>
-            {' and '}
-            <code className="bg-zinc-700 px-1 rounded text-xs">Swift</code>
-            {') with a lot of dependencies.'}
-          </p>
           <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
-            <li>Rewrite code from <code className="bg-zinc-700 px-1 rounded text-xs">Objective-C</code> to <code className="bg-zinc-700 px-1 rounded text-xs">Swift</code></li>
-            <li>Make code reviews</li>
-            <li>Publish new versions of the app to the TestFlight for internal testing</li>
-            <li>Publish new releases of the app to the App Store</li>
-            <li>Implement screen recording with <code className="bg-zinc-700 px-1 rounded text-xs">ReplayKit</code> framework</li>
-            <li>Make improvement and fixes</li>
+            <li>Supported and extended a legacy <code className="bg-zinc-700 px-1 rounded text-xs">Objective-C</code> + <code className="bg-zinc-700 px-1 rounded text-xs">Swift</code> hybrid codebase (~688 source files)</li>
+            <li>Rewrote legacy <code className="bg-zinc-700 px-1 rounded text-xs">Objective-C</code> code to <code className="bg-zinc-700 px-1 rounded text-xs">Swift</code> incrementally</li>
+            <li>Implemented screen recording with <code className="bg-zinc-700 px-1 rounded text-xs">ReplayKit</code> framework</li>
+            <li>Conducted code reviews and managed TestFlight / App Store releases</li>
           </ul>
         </div>
 
