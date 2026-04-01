@@ -735,7 +735,7 @@ export default function ProjectsPage() {
                             <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
                                 <div className="lg:col-span-2 space-y-3">
                                     <p className="text-zinc-300">
-                                        <GradientLink href="https://github.com/university-my/ios">My University</GradientLink> — personal project for browsing university schedules. Students and teachers search for groups, teachers, or classrooms and view class schedules with favorites, sharing, and offline support. Backend powered by <GradientLink href="https://rubyonrails.org">Ruby on Rails</GradientLink>.
+                                        <GradientLink href="https://github.com/university-my/ios">My University</GradientLink> — personal project for browsing university schedules. Students and teachers search for groups, teachers, or classrooms and view class schedules with favorites, sharing, and offline support.
                                     </p>
 
                                     <p className="text-zinc-300 font-semibold">Technical info:</p>
@@ -756,6 +756,47 @@ export default function ProjectsPage() {
                                         <PhotoCarousel images={myUniversityImages} />
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* My University Server */}
+                    <div className="bg-zinc-800/90 backdrop-blur-sm rounded-3xl shadow-2xl overflow-hidden border border-zinc-700/50 hover:border-zinc-600/70 transition-all duration-300">
+                        <div className="p-6 md:p-10 text-zinc-100">
+                            <div className="mb-6">
+                                <div className="inline-block bg-violet-600/20 text-violet-300 px-4 py-2 rounded-full text-sm font-medium border border-violet-500/30 mb-4">
+                                    24 December 2018
+                                </div>
+                            </div>
+                            <div className="grid grid-cols-1 gap-4 items-start">
+                                <div className="space-y-3">
+                                    <p className="text-zinc-300">
+                                        <GradientLink href="https://github.com/university-my/server-rails">My University Server</GradientLink> — backend for the My University iOS app powered by <GradientLink href="https://rubyonrails.org">Ruby on Rails</GradientLink>. Aggregates class schedules from 34+ Ukrainian universities via university-specific import services, exposes a REST API for the mobile app, and provides an admin dashboard for data management.
+                                    </p>
+
+                                    <p className="text-zinc-300 font-semibold">Technical info:</p>
+                                    <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
+                                        <li><strong>Ruby on Rails 7.0</strong> with <strong>Ruby 3.1</strong>, MVC architecture (~256 Ruby source files)</li>
+                                        <li><strong>PostgreSQL</strong> database with 10+ models — <CodeTag>University</CodeTag>, <CodeTag>Teacher</CodeTag>, <CodeTag>Group</CodeTag>, <CodeTag>Lesson</CodeTag>, <CodeTag>Auditorium</CodeTag>, <CodeTag>Discipline</CodeTag>, <CodeTag>Building</CodeTag>, <CodeTag>Department</CodeTag>, <CodeTag>Faculty</CodeTag>, <CodeTag>Speciality</CodeTag></li>
+                                        <li><strong>REST API</strong> (<CodeTag>/api/v1/</CodeTag>) with <strong>JBuilder</strong> JSON responses — endpoints for universities, teachers, groups, auditoriums, buildings, and lessons</li>
+                                        <li><strong>37 service classes</strong> for university-specific schedule import and parsing from external APIs</li>
+                                        <li><strong>37 background jobs</strong> with <strong>Whenever</strong> cron scheduling for automated data imports</li>
+                                        <li><strong>ActiveAdmin</strong> dashboard with role-based access control (admin, reader, editor)</li>
+                                        <li><strong>Devise</strong> for authentication, <strong>Pundit</strong> for authorization policies</li>
+                                        <li><strong>Ahoy</strong> for event tracking and analytics, <strong>Blazer</strong> for SQL query dashboard</li>
+                                        <li><strong>FriendlyID</strong> for SEO-friendly URL slugs, <strong>Sitemap Generator</strong> for XML sitemaps</li>
+                                        <li><strong>Hotwire</strong> (Turbo + Stimulus) for frontend, <strong>Import Maps</strong> for JavaScript</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div className="mt-6">
+                                <Image
+                                    src="/projects/MyUniversity/landing.png"
+                                    alt="My University landing page"
+                                    width={1280}
+                                    height={800}
+                                    className="w-full rounded-2xl"
+                                />
                             </div>
                         </div>
                     </div>
