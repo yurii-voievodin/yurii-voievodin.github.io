@@ -172,8 +172,8 @@ export default function ProjectsPage() {
 
                 {activeTab === 'commercial' && (<>
                     {/* Hooh */}
-                    <div className="bg-zinc-800/90 backdrop-blur-sm rounded-3xl shadow-2xl overflow-hidden border border-zinc-700/50 hover:border-zinc-600/70 transition-all duration-300">
-                        <div className="p-6 md:p-10 text-zinc-100">
+                    <div className="md:bg-zinc-800/90 md:backdrop-blur-sm md:rounded-3xl md:shadow-2xl md:overflow-hidden md:border md:border-zinc-700/50 md:hover:border-zinc-600/70 transition-all duration-300">
+                        <div className="px-0 py-4 md:p-10 text-zinc-100">
                             <div className="mb-6 flex items-center justify-between">
                                 <div className="inline-block bg-cyan-600/20 text-cyan-300 px-4 py-2 rounded-full text-sm font-medium border border-cyan-500/30">
                                     2025 - 2026
@@ -236,9 +236,11 @@ export default function ProjectsPage() {
                         </div>
                     </div>
 
+                    <hr className="md:hidden border-violet-500/30 my-2" />
+
                     {/* VistaPrint */}
-                    <div className="bg-zinc-800/90 backdrop-blur-sm rounded-3xl shadow-2xl overflow-hidden border border-zinc-700/50 hover:border-zinc-600/70 transition-all duration-300">
-                        <div className="p-6 md:p-10 text-zinc-100">
+                    <div className="md:bg-zinc-800/90 md:backdrop-blur-sm md:rounded-3xl md:shadow-2xl md:overflow-hidden md:border md:border-zinc-700/50 md:hover:border-zinc-600/70 transition-all duration-300">
+                        <div className="px-0 py-4 md:p-10 text-zinc-100">
                             <div className="mb-6 flex items-center justify-between">
                                 <div className="inline-block bg-violet-600/20 text-violet-300 px-4 py-2 rounded-full text-sm font-medium border border-violet-500/30">
                                     August 2023 - December 2025
@@ -291,9 +293,11 @@ export default function ProjectsPage() {
                         </div>
                     </div>
 
+                    <hr className="md:hidden border-violet-500/30 my-2" />
+
                     {/* VistaCreate */}
-                    <div className="bg-zinc-800/90 backdrop-blur-sm rounded-3xl shadow-2xl overflow-hidden border border-zinc-700/50 hover:border-zinc-600/70 transition-all duration-300">
-                        <div className="p-6 md:p-10 text-zinc-100">
+                    <div className="md:bg-zinc-800/90 md:backdrop-blur-sm md:rounded-3xl md:shadow-2xl md:overflow-hidden md:border md:border-zinc-700/50 md:hover:border-zinc-600/70 transition-all duration-300">
+                        <div className="px-0 py-4 md:p-10 text-zinc-100">
                             <div className="mb-6 flex items-center justify-between">
                                 <div className="inline-block bg-pink-600/20 text-pink-300 px-4 py-2 rounded-full text-sm font-medium border border-pink-500/30">
                                     February 2022 - August 2023
@@ -350,9 +354,11 @@ export default function ProjectsPage() {
                         </div>
                     </div>
 
+                    <hr className="md:hidden border-violet-500/30 my-2" />
+
                     {/* Clowder */}
-                    <div className="bg-zinc-800/90 backdrop-blur-sm rounded-3xl shadow-2xl overflow-hidden border border-zinc-700/50 hover:border-zinc-600/70 transition-all duration-300">
-                        <div className="p-6 md:p-10 text-zinc-100">
+                    <div className="md:bg-zinc-800/90 md:backdrop-blur-sm md:rounded-3xl md:shadow-2xl md:overflow-hidden md:border md:border-zinc-700/50 md:hover:border-zinc-600/70 transition-all duration-300">
+                        <div className="px-0 py-4 md:p-10 text-zinc-100">
                             <div className="mb-6">
                                 <div className="inline-block bg-blue-600/20 text-blue-300 px-4 py-2 rounded-full text-sm font-medium border border-blue-500/30 mb-4">
                                     March 2020 - January 2022
@@ -405,9 +411,11 @@ export default function ProjectsPage() {
                         </div>
                     </div>
 
+                    <hr className="md:hidden border-violet-500/30 my-2" />
+
                     {/* CoachNow */}
-                    <div className="bg-zinc-800/90 backdrop-blur-sm rounded-3xl shadow-2xl overflow-hidden border border-zinc-700/50 hover:border-zinc-600/70 transition-all duration-300">
-                        <div className="p-6 md:p-10 text-zinc-100">
+                    <div className="md:bg-zinc-800/90 md:backdrop-blur-sm md:rounded-3xl md:shadow-2xl md:overflow-hidden md:border md:border-zinc-700/50 md:hover:border-zinc-600/70 transition-all duration-300">
+                        <div className="px-0 py-4 md:p-10 text-zinc-100">
                             <div className="mb-6">
                                 <div className="inline-block bg-orange-600/20 text-orange-300 px-4 py-2 rounded-full text-sm font-medium border border-orange-500/30 mb-4">
                                     February 2021
@@ -453,9 +461,11 @@ export default function ProjectsPage() {
                         </div>
                     </div>
 
+                    <hr className="md:hidden border-violet-500/30 my-2" />
+
                     {/* Solitaire */}
-                    <div className="bg-zinc-800/90 backdrop-blur-sm rounded-3xl shadow-2xl overflow-hidden border border-zinc-700/50 hover:border-zinc-600/70 transition-all duration-300">
-                        <div className="p-6 md:p-10 text-zinc-100">
+                    <div className="md:bg-zinc-800/90 md:backdrop-blur-sm md:rounded-3xl md:shadow-2xl md:overflow-hidden md:border md:border-zinc-700/50 md:hover:border-zinc-600/70 transition-all duration-300">
+                        <div className="px-0 py-4 md:p-10 text-zinc-100">
                             <div className="mb-6">
                                 <div className="inline-block bg-green-600/20 text-green-300 px-4 py-2 rounded-full text-sm font-medium border border-green-500/30 mb-4">
                                     November 2019
@@ -500,9 +510,11 @@ export default function ProjectsPage() {
                         </div>
                     </div>
 
+                    <hr className="md:hidden border-violet-500/30 my-2" />
+
                     {/* Look Up */}
-                    <div className="bg-zinc-800/90 backdrop-blur-sm rounded-3xl shadow-2xl overflow-hidden border border-zinc-700/50 hover:border-zinc-600/70 transition-all duration-300">
-                        <div className="p-6 md:p-10 text-zinc-100">
+                    <div className="md:bg-zinc-800/90 md:backdrop-blur-sm md:rounded-3xl md:shadow-2xl md:overflow-hidden md:border md:border-zinc-700/50 md:hover:border-zinc-600/70 transition-all duration-300">
+                        <div className="px-0 py-4 md:p-10 text-zinc-100">
                             <div className="mb-6">
                                 <div className="inline-block bg-violet-600/20 text-violet-300 px-4 py-2 rounded-full text-sm font-medium border border-violet-500/30 mb-4">
                                     June 2019
@@ -537,9 +549,11 @@ export default function ProjectsPage() {
                         </div>
                     </div>
 
+                    <hr className="md:hidden border-violet-500/30 my-2" />
+
                     {/* PROVEIT */}
-                    <div className="bg-zinc-800/90 backdrop-blur-sm rounded-3xl shadow-2xl overflow-hidden border border-zinc-700/50 hover:border-zinc-600/70 transition-all duration-300">
-                        <div className="p-6 md:p-10 text-zinc-100">
+                    <div className="md:bg-zinc-800/90 md:backdrop-blur-sm md:rounded-3xl md:shadow-2xl md:overflow-hidden md:border md:border-zinc-700/50 md:hover:border-zinc-600/70 transition-all duration-300">
+                        <div className="px-0 py-4 md:p-10 text-zinc-100">
                             <div className="mb-6">
                                 <div className="inline-block bg-violet-600/20 text-violet-300 px-4 py-2 rounded-full text-sm font-medium border border-violet-500/30 mb-4">
                                     March 2017
@@ -584,9 +598,11 @@ export default function ProjectsPage() {
                         </div>
                     </div>
 
+                    <hr className="md:hidden border-violet-500/30 my-2" />
+
                     {/* Chronograph iOS */}
-                    <div className="bg-zinc-800/90 backdrop-blur-sm rounded-3xl shadow-2xl overflow-hidden border border-zinc-700/50 hover:border-zinc-600/70 transition-all duration-300">
-                        <div className="p-6 md:p-10 text-zinc-100">
+                    <div className="md:bg-zinc-800/90 md:backdrop-blur-sm md:rounded-3xl md:shadow-2xl md:overflow-hidden md:border md:border-zinc-700/50 md:hover:border-zinc-600/70 transition-all duration-300">
+                        <div className="px-0 py-4 md:p-10 text-zinc-100">
                             <div className="mb-6">
                                 <div className="inline-block bg-violet-600/20 text-violet-300 px-4 py-2 rounded-full text-sm font-medium border border-violet-500/30 mb-4">
                                     July 2016
@@ -632,9 +648,11 @@ export default function ProjectsPage() {
                         </div>
                     </div>
 
+                    <hr className="md:hidden border-violet-500/30 my-2" />
+
                     {/* Chronograph macOS */}
-                    <div className="bg-zinc-800/90 backdrop-blur-sm rounded-3xl shadow-2xl overflow-hidden border border-zinc-700/50 hover:border-zinc-600/70 transition-all duration-300">
-                        <div className="p-6 md:p-10 text-zinc-100">
+                    <div className="md:bg-zinc-800/90 md:backdrop-blur-sm md:rounded-3xl md:shadow-2xl md:overflow-hidden md:border md:border-zinc-700/50 md:hover:border-zinc-600/70 transition-all duration-300">
+                        <div className="px-0 py-4 md:p-10 text-zinc-100">
                             <div className="mb-6">
                                 <div className="inline-block bg-violet-600/20 text-violet-300 px-4 py-2 rounded-full text-sm font-medium border border-violet-500/30 mb-4">
                                     March 2016
@@ -676,9 +694,11 @@ export default function ProjectsPage() {
                         </div>
                     </div>
 
+                    <hr className="md:hidden border-violet-500/30 my-2" />
+
                     {/* SumDU */}
-                    <div className="bg-zinc-800/90 backdrop-blur-sm rounded-3xl shadow-2xl overflow-hidden border border-zinc-700/50 hover:border-zinc-600/70 transition-all duration-300">
-                        <div className="p-6 md:p-10 text-zinc-100">
+                    <div className="md:bg-zinc-800/90 md:backdrop-blur-sm md:rounded-3xl md:shadow-2xl md:overflow-hidden md:border md:border-zinc-700/50 md:hover:border-zinc-600/70 transition-all duration-300">
+                        <div className="px-0 py-4 md:p-10 text-zinc-100">
                             <div className="mb-6">
                                 <div className="inline-block bg-violet-600/20 text-violet-300 px-4 py-2 rounded-full text-sm font-medium border border-violet-500/30 mb-4">
                                     November 2015
@@ -725,8 +745,8 @@ export default function ProjectsPage() {
 
                 {activeTab === 'personal' && (<>
                     {/* My University */}
-                    <div className="bg-zinc-800/90 backdrop-blur-sm rounded-3xl shadow-2xl overflow-hidden border border-zinc-700/50 hover:border-zinc-600/70 transition-all duration-300">
-                        <div className="p-6 md:p-10 text-zinc-100">
+                    <div className="md:bg-zinc-800/90 md:backdrop-blur-sm md:rounded-3xl md:shadow-2xl md:overflow-hidden md:border md:border-zinc-700/50 md:hover:border-zinc-600/70 transition-all duration-300">
+                        <div className="px-0 py-4 md:p-10 text-zinc-100">
                             <div className="mb-6">
                                 <div className="inline-block bg-violet-600/20 text-violet-300 px-4 py-2 rounded-full text-sm font-medium border border-violet-500/30 mb-4">
                                     24 December 2018
@@ -760,9 +780,11 @@ export default function ProjectsPage() {
                         </div>
                     </div>
 
+                    <hr className="md:hidden border-violet-500/30 my-2" />
+
                     {/* My University Server */}
-                    <div className="bg-zinc-800/90 backdrop-blur-sm rounded-3xl shadow-2xl overflow-hidden border border-zinc-700/50 hover:border-zinc-600/70 transition-all duration-300">
-                        <div className="p-6 md:p-10 text-zinc-100">
+                    <div className="md:bg-zinc-800/90 md:backdrop-blur-sm md:rounded-3xl md:shadow-2xl md:overflow-hidden md:border md:border-zinc-700/50 md:hover:border-zinc-600/70 transition-all duration-300">
+                        <div className="px-0 py-4 md:p-10 text-zinc-100">
                             <div className="mb-6">
                                 <div className="inline-block bg-violet-600/20 text-violet-300 px-4 py-2 rounded-full text-sm font-medium border border-violet-500/30 mb-4">
                                     24 December 2018
