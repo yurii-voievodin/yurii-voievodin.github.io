@@ -12,6 +12,7 @@ import PhotoCarousel from '@/components/PhotoCarousel';
 export default function ProjectsPage() {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedDetailPage, setSelectedDetailPage] = useState<string>('');
+    const [activeTab, setActiveTab] = useState<'commercial' | 'personal'>('commercial');
 
     // Hooh images for carousel
     const hoohImages = [
@@ -55,6 +56,11 @@ export default function ProjectsPage() {
         { src: '/projects/LookUp/lk-menu.png', alt: 'Look Up Menu' },
         { src: '/projects/LookUp/lk-cart.png', alt: 'Look Up Cart' },
         { src: '/projects/LookUp/lk-login.png', alt: 'Look Up Login' },
+    ];
+
+    // CoachNow images for carousel
+    const coachNowImages = [
+        { src: '/projects/CoachNow/coachnow.png', alt: 'CoachNow Video Playback' },
     ];
 
     // Solitaire images for carousel
@@ -137,8 +143,34 @@ export default function ProjectsPage() {
                     </p>
                 </div>
 
+                {/* Tabs */}
+                <div className="flex gap-2 mb-8">
+                    <button
+                        onClick={() => setActiveTab('commercial')}
+                        className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
+                            activeTab === 'commercial'
+                                ? 'bg-violet-600/30 text-violet-300 border border-violet-500/50'
+                                : 'bg-zinc-800/60 text-zinc-400 border border-zinc-700/50 hover:text-zinc-300 hover:border-zinc-600/50'
+                        }`}
+                    >
+                        Commercial
+                    </button>
+                    <button
+                        onClick={() => setActiveTab('personal')}
+                        className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
+                            activeTab === 'personal'
+                                ? 'bg-violet-600/30 text-violet-300 border border-violet-500/50'
+                                : 'bg-zinc-800/60 text-zinc-400 border border-zinc-700/50 hover:text-zinc-300 hover:border-zinc-600/50'
+                        }`}
+                    >
+                        Personal
+                    </button>
+                </div>
+
                 {/* Projects Grid */}
                 <div className="space-y-8">
+
+                {activeTab === 'commercial' && (<>
                     {/* Hooh */}
                     <div className="bg-zinc-800/90 backdrop-blur-sm rounded-3xl shadow-2xl overflow-hidden border border-zinc-700/50 hover:border-zinc-600/70 transition-all duration-300">
                         <div className="p-6 md:p-10 text-zinc-100">
@@ -412,6 +444,11 @@ export default function ProjectsPage() {
                                         <li>Maintain dependencies and manage the CocoaPods setup</li>
                                     </ul>
                                 </div>
+                                <div className="flex justify-center lg:justify-end">
+                                    <div className="w-full max-w-sm">
+                                        <PhotoCarousel images={coachNowImages} />
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -425,28 +462,34 @@ export default function ProjectsPage() {
                                 </div>
                             </div>
                             <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
-                                <div className="lg:col-span-2">
-                                    <div className="space-y-3">
-                                        <p className="text-zinc-300">
-                                            Started working on <GradientLink href="https://apps.apple.com/us/app/id1457988491">Solitaire (Classic)</GradientLink> <strong>iOS app</strong> and <strong>iOS SDK</strong>
-                                        </p>
-                                        <p className="text-zinc-300">
-                                            Classic solitaire game with multiplayer and challenges.
-                                        </p>
-                                        <p className="text-zinc-300 font-semibold">Technical info:</p>
-                                        <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
-                                            <li>Written in <strong>Swift</strong></li>
-                                            <li><strong>UIKit</strong> and custom UI components</li>
-                                            <li><strong>iOS SDK</strong> for integrating different types of games with multiplayer features</li>
-                                            <li>Apple Pay and Push Notifications integration</li>
-                                        </ul>
-                                        <p className="text-zinc-300 font-semibold">Role and responsibilities:</p>
-                                        <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
-                                            <li>Design iOS app architecture and create app from scratch</li>
-                                            <li>Implement networking layer - <strong>REST API</strong></li>
-                                            <li>Make pull requests and code reviews</li>
-                                        </ul>
-                                    </div>
+                                <div className="lg:col-span-2 space-y-3">
+                                    <p className="text-zinc-300">
+                                        <GradientLink href="https://apps.apple.com/us/app/id1457988491" target="_blank">Solitaire (Classic)</GradientLink> — competitive solitaire card game where users play for cash prizes through tournaments, head-to-head matches, and daily challenges, powered by the PROVEIT platform.
+                                    </p>
+
+                                    <p className="text-zinc-300 font-semibold">Technical info:</p>
+                                    <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
+                                        <li>Written in <strong>Swift</strong>, Storyboard-based UIKit architecture (~343 source files)</li>
+                                        <li><strong>MVC/MVVM hybrid</strong> — struct-based models, custom <CodeTag>ViewController</CodeTag> base class, singleton managers (<CodeTag>Store</CodeTag>, <CodeTag>CurrentGame</CodeTag>, <CodeTag>UserData</CodeTag>)</li>
+                                        <li>Custom game engine — <strong>CALayer</strong>-based card rendering, undo/redo with move history, score calculation with time bonuses, game state snapshots</li>
+                                        <li><strong>ProveItSDK</strong> — internal SDK namespace abstracting tournament system, multiplayer matchmaking, leaderboards, and real-money transactions</li>
+                                        <li><strong>4 build targets</strong> — localhost, sandbox, staging, production — each with its own Info.plist configuration</li>
+                                        <li><strong>Alamofire</strong> networking with AES-encrypted JSON API communication via custom <CodeTag>Decrypter</CodeTag> layer</li>
+                                        <li><strong>In-App Purchases</strong> (StoreKit) + <strong>Google AdMob</strong> for monetization</li>
+                                        <li><strong>SwiftLocation</strong> for state-based gameplay compliance and location verification</li>
+                                        <li>Analytics: <strong>Firebase</strong>, <strong>Mixpanel</strong>, <strong>AppsFlyer</strong>; crash reporting via <strong>Fabric/Crashlytics</strong></li>
+                                        <li><strong>Facebook SDK</strong> for social login; <strong>RNCryptor</strong> (AES) + <strong>SAMKeychain</strong> for secure storage</li>
+                                        <li>Push notifications, jailbreak detection, device fingerprinting</li>
+                                        <li>Deployment target: <strong>iOS 10.0+</strong>, iPhone and iPad supported</li>
+                                    </ul>
+
+                                    <hr className="border-zinc-700/50" />
+                                    <p className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent font-semibold">My role:</p>
+                                    <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
+                                        <li>Design app architecture and build from scratch</li>
+                                        <li>Implement the networking layer with REST API and encrypted communication</li>
+                                        <li>Pull requests and code reviews</li>
+                                    </ul>
                                 </div>
                                 <div className="flex justify-center lg:justify-end">
                                     <div className="w-full max-w-sm">
@@ -466,53 +509,28 @@ export default function ProjectsPage() {
                                 </div>
                             </div>
                             <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
-                                <div className="lg:col-span-2">
+                                <div className="lg:col-span-2 space-y-3">
                                     <p className="text-zinc-300">
-                                        Started working on the <em>"Look Up"</em> Native <strong>iOS app</strong>, written in Swift. Used <strong>API</strong> on remote server for receive a list of products and perform search by query or filters.
+                                        <strong>Look Up</strong> — iOS shopping assistant for searching products, comparing prices across stores, tracking receipts, and managing shared shopping lists. Built for the Saudi market (SAR pricing).
                                     </p>
+
+                                    <p className="text-zinc-300 font-semibold">Technical info:</p>
+                                    <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
+                                        <li>Written in <strong>Swift</strong>, Storyboard-based UIKit (13 storyboards, 177 source files)</li>
+                                        <li><strong>MVC + DataSource pattern</strong> — explicit DataSource classes for collection/table views, singleton Managers for shared state</li>
+                                        <li>Multi-window architecture — separate windows for left menu and right filter panel with animated transitions</li>
+                                        <li><strong>Alamofire</strong> + <strong>AlamofireImage</strong> for networking and image caching; token-based auth via <CodeTag>X-Device-Token</CodeTag> stored in <strong>Keychain</strong></li>
+                                        <li><strong>Marshal</strong> for bidirectional JSON ↔ Swift struct serialization</li>
+                                        <li>Receipt management — local JPEG storage (UUID-named), pending/processed state tracking, image upload pipeline</li>
+                                        <li><strong>CoreLocation</strong> for store-based proximity filtering</li>
+                                        <li>Phone number verification login flow, shopping list sharing via unique identifiers</li>
+                                        <li>Two build targets — localhost and production with conditional API endpoints</li>
+                                        <li>Deployment target: <strong>iOS 13.1+</strong>, iPhone and iPad supported</li>
+                                    </ul>
                                 </div>
                                 <div className="flex justify-center lg:justify-end">
                                     <div className="w-full max-w-sm">
                                         <PhotoCarousel images={lookUpImages} />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* My University */}
-                    <div className="bg-zinc-800/90 backdrop-blur-sm rounded-3xl shadow-2xl overflow-hidden border border-zinc-700/50 hover:border-zinc-600/70 transition-all duration-300">
-                        <div className="p-6 md:p-10 text-zinc-100">
-                            <div className="mb-6">
-                                <div className="inline-block bg-violet-600/20 text-violet-300 px-4 py-2 rounded-full text-sm font-medium border border-violet-500/30 mb-4">
-                                    24 December 2018
-                                </div>
-                            </div>
-                            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
-                                <div className="lg:col-span-2">
-                                    <div className="space-y-3">
-                                        <p className="text-zinc-300">
-                                            Started a new personal project
-                                        </p>
-                                        <p className="text-zinc-300">
-                                            <GradientLink href="https://github.com/university-my/ios">My University</GradientLink> web service and API on Rails framework.
-                                            <br />
-                                            In this day, I made my first commit 🎉
-                                        </p>
-                                        <p className="text-zinc-300 font-semibold">Technical info:</p>
-                                        <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
-                                            <li>iOS app written in Swift</li>
-                                            <li>User interface created with Storyboards and <strong>SwiftUI</strong></li>
-                                            <li><strong>MVC</strong> architecture (with Dependency Injection) and <strong>MVVM</strong> architecture</li>
-                                            <li>URLSession for network requests to <strong>REST API</strong></li>
-                                            <li>CoreData as offline storage</li>
-                                            <li><GradientLink href="https://rubyonrails.org">Ruby On Rails</GradientLink> for backend</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div className="flex justify-center lg:justify-end">
-                                    <div className="w-full max-w-sm">
-                                        <PhotoCarousel images={myUniversityImages} />
                                     </div>
                                 </div>
                             </div>
@@ -528,30 +546,34 @@ export default function ProjectsPage() {
                                 </div>
                             </div>
                             <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
-                                <div className="lg:col-span-2">
-                                    <div className="space-y-3">
-                                        <p className="text-zinc-300">
-                                            Started working on the <strong>iOS app</strong> <GradientLink href="https://apps.apple.com/app/proveit-real-money-games/id1219398758">PROVEIT</GradientLink>
-                                        </p>
-                                        <p className="text-zinc-300">
-                                            TechCrunch about PROVEIT - <GradientLink href="https://techcrunch.com/2018/06/18/proveit-trivia">Bet money on yourself with Proveit, the 1-vs-1 trivia app</GradientLink>
-                                        </p>
-                                        <p className="text-zinc-300 font-semibold">Technical info:</p>
-                                        <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
-                                            <li>Written in Swift</li>
-                                            <li>Cocoapods as dependency manager</li>
-                                            <li><strong>MVC</strong> architecture</li>
-                                            <li>User interface created with <strong>Storyboards</strong> and <strong>XIB</strong> files</li>
-                                            <li>Apple Pay and Push Notifications integration</li>
-                                            <li>Third-party integrations: <strong>Firebase</strong>, <strong>Crashlytics</strong></li>
-                                        </ul>
-                                        <p className="text-zinc-300 font-semibold">Role and responsibilities:</p>
-                                        <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
-                                            <li>Design app architecture and create app from scratch</li>
-                                            <li>Implement networking layer <strong>REST API</strong></li>
-                                            <li>Implement <strong>custom UI</strong></li>
-                                        </ul>
-                                    </div>
+                                <div className="lg:col-span-2 space-y-3">
+                                    <p className="text-zinc-300">
+                                        <GradientLink href="https://apps.apple.com/app/proveit-real-money-games/id1219398758">PROVEIT</GradientLink> — real-money gaming platform where users compete in trivia, head-to-head challenges, daily tournaments, and 8 skill-based arcade games (Solitaire, Tetris, Flappy Bird, Connect Dots, and more) for cash prizes. Featured in <GradientLink href="https://techcrunch.com/2018/06/18/proveit-trivia">TechCrunch</GradientLink>.
+                                    </p>
+
+                                    <p className="text-zinc-300 font-semibold">Technical info:</p>
+                                    <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
+                                        <li>Written in <strong>Swift</strong>, Storyboard/XIB-based UIKit architecture (~624 source files)</li>
+                                        <li><strong>MVC</strong> with singleton managers (<CodeTag>UserManager</CodeTag>, <CodeTag>GameManager</CodeTag>, <CodeTag>TournamentManager</CodeTag>) and struct-based models via <strong>Marshal</strong> JSON serialization</li>
+                                        <li><strong>8 arcade games</strong> — SpriteKit-based engines (Second Side RPG with physics, Smashy Bricks, Solitaire, Tetris, Block Star, Connect Dots, Flappy Bird, Number Tile)</li>
+                                        <li><strong>Alamofire</strong> networking with <strong>RNCryptor</strong> AES-encrypted request/response layer, <CodeTag>Router</CodeTag> enum pattern with 100+ API endpoints</li>
+                                        <li><strong>4 build configurations</strong> — localhost, sandbox, staging, production — each with own API endpoints, security keys, and feature flags</li>
+                                        <li><strong>In-App Purchases</strong> (StoreKit) with server-side receipt validation and duplicate order detection</li>
+                                        <li><strong>Facebook SDK</strong> for social login; <strong>SAMKeychain</strong> for secure token storage</li>
+                                        <li>Location-based compliance for state-level gambling restrictions</li>
+                                        <li>Analytics: <strong>Firebase</strong>, <strong>Mixpanel</strong>, <strong>AppsFlyer</strong>; crash reporting via <strong>Fabric/Crashlytics</strong></li>
+                                        <li>Apple Pay, Push Notifications, victory video recording</li>
+                                    </ul>
+
+                                    <hr className="border-zinc-700/50" />
+                                    <p className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent font-semibold">My role:</p>
+                                    <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
+                                        <li>Design app architecture and build from scratch</li>
+                                        <li>Implement the networking layer with REST API and AES-encrypted communication</li>
+                                        <li>Build 8 arcade game integrations with tournament and matchmaking systems</li>
+                                        <li>Implement real-money transaction flow with In-App Purchases and withdrawals</li>
+                                        <li>Pull requests and code reviews</li>
+                                    </ul>
                                 </div>
                                 <div className="flex justify-center lg:justify-end">
                                     <div className="w-full max-w-sm">
@@ -571,27 +593,35 @@ export default function ProjectsPage() {
                                 </div>
                             </div>
                             <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
-                                <div className="lg:col-span-2">
-                                    <div className="space-y-3">
-                                        <p className="text-zinc-300">
-                                            Started working on a new <strong>iOS app</strong>
-                                        </p>
-                                        <p className="text-zinc-300">
-                                            <GradientLink href="https://apps.apple.com/app/chronograph/id1281918814">Chronograph</GradientLink>
-                                            <br />
-                                            In-house application (App Dev Academy) with time tracking and task management.
-                                        </p>
-                                        <hr className="border-zinc-700/50" />
+                                <div className="lg:col-span-2 space-y-3">
+                                    <p className="text-zinc-300">
+                                        <GradientLink href="https://apps.apple.com/app/chronograph/id1281918814">Chronograph</GradientLink> — in-house Pomodoro timer and task management app (App Dev Academy) that tracks work intervals with configurable work/break cycles, manages tasks with due dates, and syncs data across devices. Shares codebase with the macOS version.
+                                    </p>
+
+                                    <p className="text-zinc-300 font-semibold">Technical info:</p>
+                                    <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
+                                        <li>Written in <strong>Swift</strong>, Storyboard-based UIKit architecture (~164 shared + platform-specific source files)</li>
+                                        <li>Custom generic <CodeTag>StateMachine&lt;T&gt;</CodeTag> for timer state transitions — Pomodoro cycles (work → short break → long break) with <CodeTag>willChangeState</CodeTag>/<CodeTag>didChangeState</CodeTag> callbacks</li>
+                                        <li><strong>Core Data</strong> persistence — <CodeTag>Task</CodeTag> and <CodeTag>Interval</CodeTag> entities with soft deletion and local change tracking for sync</li>
+                                        <li><strong>Alamofire</strong> networking with Router enum pattern — API clients for auth, tasks, intervals, users, and subscriptions</li>
+                                        <li><strong>SynchronizationManager</strong> — bi-directional sync with backend, queued export/import, periodic background sync with concurrency guards</li>
+                                        <li><strong>Facebook SDK</strong> + email/password auth; <strong>SAMKeychain</strong> for token storage</li>
+                                        <li><strong>Charts</strong> library for statistics visualization; <strong>Firebase</strong> analytics; <strong>Fabric/Crashlytics</strong></li>
+                                        <li><strong>In-App Subscriptions</strong> (StoreKit) with server-side receipt validation</li>
+                                        <li>Local notifications with smart scheduling — generates future notification chains based on current Pomodoro state</li>
+                                        <li>Universal app: <strong>iPhone + iPad</strong> support, deployment target <strong>iOS 10.0+</strong></li>
+                                    </ul>
+
+                                    <hr className="border-zinc-700/50" />
                                     <p className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent font-semibold">My role:</p>
-                                        <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
-                                            <li>Design an architecture and create an app from scratch</li>
-                                            <li>Design a database architecture and use CoreData framework</li>
-                                            <li>Implement custom layout of the "timer" and "clock"</li>
-                                            <li><strong>iPad version</strong> of the app</li>
-                                            <li><strong>Shared codebase</strong> between iOS and macOS versions of the app</li>
-                                            <li>Integration of <strong>Analytics</strong> and <strong>In-App purchases</strong></li>
-                                        </ul>
-                                    </div>
+                                    <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
+                                        <li>Design app architecture and build from scratch</li>
+                                        <li>Design Core Data schema and implement bi-directional sync with REST API</li>
+                                        <li>Build custom analog/digital clock and timer UI components</li>
+                                        <li>Implement shared codebase between iOS and macOS versions</li>
+                                        <li>iPad version of the app</li>
+                                        <li>Integration of analytics and In-App Subscriptions</li>
+                                    </ul>
                                 </div>
                                 <div className="flex justify-center lg:justify-end">
                                     <div className="w-full max-w-sm">
@@ -611,26 +641,31 @@ export default function ProjectsPage() {
                                 </div>
                             </div>
                             <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
-                                <div className="lg:col-span-2">
-                                    <div className="space-y-3">
-                                        <p className="text-zinc-300">
-                                            Started working on a new <strong>macOS app</strong>
-                                        </p>
-                                        <p className="text-zinc-300">
-                                            <GradientLink href="https://apps.apple.com/ua/app/chronograph-my-productivity/id1316023026?mt=12">Chronograph</GradientLink>
-                                            <br />
-                                            In-house application (App Dev Academy) with time tracker that allows you to work by <em>"Pomodoro technique"</em> and plan your tasks.
-                                        </p>
-                                        <p className="text-zinc-300 font-semibold">Role and responsibilities:</p>
-                                        <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
-                                            <li>Design an architecture and create an app from scratch</li>
-                                            <li>Design a database architecture and use CoreData framework</li>
-                                            <li>Implement background sync with a remote server via the <strong>REST API</strong></li>
-                                            <li>Swift codebase and third-party dependencies</li>
-                                            <li>Implement <em>"statistics screen"</em> on the SwiftUI</li>
-                                            <li>Integration of <strong>Analytics</strong> and <strong>In-App purchases</strong></li>
-                                        </ul>
-                                    </div>
+                                <div className="lg:col-span-2 space-y-3">
+                                    <p className="text-zinc-300">
+                                        <GradientLink href="https://apps.apple.com/ua/app/chronograph-my-productivity/id1316023026?mt=12">Chronograph</GradientLink> — macOS counterpart of the iOS Pomodoro timer app (App Dev Academy). Native Cocoa/AppKit interface with window-based navigation, custom analog and digital clock views, and shared business logic with the iOS version.
+                                    </p>
+
+                                    <p className="text-zinc-300 font-semibold">Technical info:</p>
+                                    <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
+                                        <li>Written in <strong>Swift</strong>, Cocoa/AppKit with <CodeTag>NSWindowController</CodeTag>-based navigation and Storyboards</li>
+                                        <li><strong>Shared codebase</strong> with iOS — all models, networking, Core Data, state machines, managers, and helpers via <code>#if os(macOS)</code> guards</li>
+                                        <li>Custom <CodeTag>MacAnalogClockView</CodeTag> and <CodeTag>MacDigitalClockView</CodeTag> — native AppKit timer rendering</li>
+                                        <li>Statistics screen built with <strong>SwiftUI</strong> — embedded in the Cocoa app</li>
+                                        <li>Same <strong>Core Data</strong> schema and <strong>SynchronizationManager</strong> as iOS for cross-device sync</li>
+                                        <li><strong>In-App Subscriptions</strong> (StoreKit) + <strong>Firebase</strong> analytics + <strong>Crashlytics</strong></li>
+                                        <li>Deployment target: <strong>macOS 10.14+</strong></li>
+                                    </ul>
+
+                                    <hr className="border-zinc-700/50" />
+                                    <p className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent font-semibold">My role:</p>
+                                    <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
+                                        <li>Design app architecture and build from scratch</li>
+                                        <li>Design Core Data schema and implement background sync with REST API</li>
+                                        <li>Implement statistics screen in SwiftUI</li>
+                                        <li>Manage shared Swift codebase and third-party dependencies across platforms</li>
+                                        <li>Integration of analytics and In-App Subscriptions</li>
+                                    </ul>
                                 </div>
                                 <div className="flex justify-center lg:justify-end">
                                     <div className="w-full max-w-sm">
@@ -650,21 +685,33 @@ export default function ProjectsPage() {
                                 </div>
                             </div>
                             <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
-                                <div className="lg:col-span-2">
-                                    <div className="space-y-3">
-                                        <p className="text-zinc-300">
-                                           When I worked with <GradientLink href="https://www.appdev.academy">App Dev Academy</GradientLink> I took my part in <GradientLink href="https://apps.apple.com/ua/app/id698235283">SumDU</GradientLink> iOS app
-                                        </p>
-                                        <p className="text-zinc-300">
-                                            This is the first <strong>iOS app</strong>, published in the App Store, that I'm working on.
-                                        </p>
-                                        <p className="text-zinc-300">
-                                            Source code on GitHub: <GradientLink href="https://github.com/appdev-academy/sumdu-ios">sumdu-ios</GradientLink>
-                                        </p>
-                                        <p className="text-zinc-300">
-                                            For me, the <em>main challenge</em> here was to implement a <strong>custom navigation bar</strong> with nice and <strong>smooth animation</strong>. And implement a custom layout for the <strong>iPad version</strong> of the app.
-                                        </p>
-                                    </div>
+                                <div className="lg:col-span-2 space-y-3">
+                                    <p className="text-zinc-300">
+                                        <GradientLink href="https://apps.apple.com/ua/app/id698235283">SumDU</GradientLink> — schedule viewer for Sumy State University (<GradientLink href="https://www.appdev.academy">App Dev Academy</GradientLink>). Students and teachers search for groups, teachers, or auditoriums and view class schedules with calendar export. My first iOS app published in the App Store.
+                                    </p>
+                                    <p className="text-zinc-300">
+                                        Source code on GitHub: <GradientLink href="https://github.com/appdev-academy/sumdu-ios">sumdu-ios</GradientLink>
+                                    </p>
+
+                                    <p className="text-zinc-300 font-semibold">Technical info:</p>
+                                    <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
+                                        <li>Written in <strong>Swift</strong>, fully programmatic UI — no Storyboards/XIBs, all layouts via <strong>Cartography</strong> DSL (~26 source files)</li>
+                                        <li><strong>MVC</strong> architecture with delegate protocols for decoupled communication (<CodeTag>ParserScheduleDelegate</CodeTag>, <CodeTag>ParserDataListDelegate</CodeTag>)</li>
+                                        <li><strong>Alamofire</strong> networking + <strong>Fuzi</strong> HTML parsing — scrapes university website to extract groups, teachers, and auditoriums from HTML select dropdowns</li>
+                                        <li><strong>SwiftyJSON</strong> for schedule API responses; 30-day rolling window for schedule queries</li>
+                                        <li><strong>NSCoding</strong> persistence via <CodeTag>NSKeyedArchiver</CodeTag> — offline caching of schedules, search history, and directory data in UserDefaults</li>
+                                        <li>Adaptive UI: <strong>UINavigationController</strong> on iPhone, <strong>UISplitViewController</strong> on iPad with orientation support</li>
+                                        <li>Localization: English, Ukrainian, Russian</li>
+                                        <li>Calendar export via <strong>iCal</strong> format</li>
+                                    </ul>
+
+                                    <hr className="border-zinc-700/50" />
+                                    <p className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent font-semibold">My role:</p>
+                                    <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
+                                        <li>Implement custom navigation bar with smooth animations</li>
+                                        <li>Build adaptive layout for iPad with UISplitViewController</li>
+                                        <li>Implement search with alphabetical sections and real-time filtering</li>
+                                    </ul>
                                 </div>
                                 <div className="flex justify-center lg:justify-end">
                                     <div className="w-full max-w-sm">
@@ -674,6 +721,46 @@ export default function ProjectsPage() {
                             </div>
                         </div>
                     </div>
+                </>)}
+
+                {activeTab === 'personal' && (<>
+                    {/* My University */}
+                    <div className="bg-zinc-800/90 backdrop-blur-sm rounded-3xl shadow-2xl overflow-hidden border border-zinc-700/50 hover:border-zinc-600/70 transition-all duration-300">
+                        <div className="p-6 md:p-10 text-zinc-100">
+                            <div className="mb-6">
+                                <div className="inline-block bg-violet-600/20 text-violet-300 px-4 py-2 rounded-full text-sm font-medium border border-violet-500/30 mb-4">
+                                    24 December 2018
+                                </div>
+                            </div>
+                            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
+                                <div className="lg:col-span-2 space-y-3">
+                                    <p className="text-zinc-300">
+                                        <GradientLink href="https://github.com/university-my/ios">My University</GradientLink> — personal project for browsing university schedules. Students and teachers search for groups, teachers, or classrooms and view class schedules with favorites, sharing, and offline support. Backend powered by <GradientLink href="https://rubyonrails.org">Ruby on Rails</GradientLink>.
+                                    </p>
+
+                                    <p className="text-zinc-300 font-semibold">Technical info:</p>
+                                    <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
+                                        <li>Written in <strong>Swift</strong>, UIKit with 13 Storyboards and <strong>SwiftUI</strong> integration via <CodeTag>UIHostingController</CodeTag> (~131 source files)</li>
+                                        <li><strong>MVC hybrid</strong> with dedicated <strong>DataControllers</strong>, <strong>LogicControllers</strong>, and <strong>DataSources</strong> — protocol-driven design with <CodeTag>ModelProtocol</CodeTag>, <CodeTag>EntityRepresentable</CodeTag>, and <CodeTag>CoreDataEntityProtocol</CodeTag> abstractions</li>
+                                        <li><strong>URLSession</strong> networking — custom generic <CodeTag>{'NetworkClient<Model>'}</CodeTag> with <strong>Combine</strong>, JSON decoding, and Result-based error handling</li>
+                                        <li><strong>CoreData</strong> persistence — 5 entities (<CodeTag>UniversityEntity</CodeTag>, <CodeTag>GroupEntity</CodeTag>, <CodeTag>TeacherEntity</CodeTag>, <CodeTag>ClassroomEntity</CodeTag>, <CodeTag>RecordEntity</CodeTag>) with uniqueness constraints and fetch indexes</li>
+                                        <li><strong>Zero third-party dependencies</strong> — built entirely with native iOS frameworks</li>
+                                        <li><strong>MetricKit</strong> for crash and performance diagnostics monitoring</li>
+                                        <li>Localization: <strong>English</strong> and <strong>Ukrainian</strong> with localized storyboards and string files</li>
+                                        <li>Favorites, search, share URLs, date/time schedule filtering, and "What's New" feature</li>
+                                        <li>Deployment target: <strong>iOS 16.0+</strong></li>
+                                    </ul>
+                                </div>
+                                <div className="flex justify-center lg:justify-end">
+                                    <div className="w-full max-w-sm">
+                                        <PhotoCarousel images={myUniversityImages} />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </>)}
+
                 </div>
             </div>
 
