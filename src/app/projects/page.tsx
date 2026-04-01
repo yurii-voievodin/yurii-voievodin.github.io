@@ -111,6 +111,16 @@ export default function ProjectsPage() {
         { src: '/projects/SumDU/sumdu-search.png', alt: 'SumDU Search' },
     ];
 
+    const DomainTags = ({ tags }: { tags: string[] }) => (
+        <div className="flex flex-wrap gap-1.5">
+            {tags.map((tag) => (
+                <span key={tag} className="bg-violet-500/10 text-violet-300 border border-violet-500/20 px-2.5 py-0.5 text-xs rounded-full">
+                    {tag}
+                </span>
+            ))}
+        </div>
+    );
+
     const handleDetailClick = (detailPage: string) => {
         setSelectedDetailPage(detailPage);
         setIsModalOpen(true);
@@ -174,17 +184,17 @@ export default function ProjectsPage() {
                     {/* Hooh */}
                     <div className="md:bg-zinc-800/90 md:backdrop-blur-sm md:rounded-3xl md:shadow-2xl md:overflow-hidden md:border md:border-zinc-700/50 md:hover:border-zinc-600/70 transition-all duration-300">
                         <div className="px-0 py-4 md:p-10 text-zinc-100">
-                            <div className="mb-6 flex items-center justify-between">
-                                <div className="inline-block bg-cyan-600/20 text-cyan-300 px-4 py-2 rounded-full text-sm font-medium border border-cyan-500/30">
+                            <div className="mb-6 flex items-center gap-3 flex-wrap">
+                                <div className="text-sm text-zinc-500 font-medium">
                                     2025 - 2026
                                 </div>
+                                <DomainTags tags={['AI', 'Productivity']} />
                             </div>
                             <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
                             <div className="lg:col-span-2 space-y-3">
                                 <p className="text-zinc-300">
                                     <strong>Hooh</strong> — AI-powered document management iOS app. Users can upload documents and interact with them through a real-time AI chat interface for analysis, summarization, and Q&A.
                                 </p>
-
                                 <p className="text-zinc-300 font-semibold">Technical info:</p>
                                 <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
                                     <li>Written in <strong>Swift</strong>, UIKit-based architecture with SwiftUI components</li>
@@ -241,17 +251,17 @@ export default function ProjectsPage() {
                     {/* VistaPrint */}
                     <div className="md:bg-zinc-800/90 md:backdrop-blur-sm md:rounded-3xl md:shadow-2xl md:overflow-hidden md:border md:border-zinc-700/50 md:hover:border-zinc-600/70 transition-all duration-300">
                         <div className="px-0 py-4 md:p-10 text-zinc-100">
-                            <div className="mb-6 flex items-center justify-between">
-                                <div className="inline-block bg-violet-600/20 text-violet-300 px-4 py-2 rounded-full text-sm font-medium border border-violet-500/30">
+                            <div className="mb-6 flex items-center gap-3 flex-wrap">
+                                <div className="text-sm text-zinc-500 font-medium">
                                     August 2023 - December 2025
                                 </div>
+                                <DomainTags tags={['E-commerce', 'Shopping']} />
                             </div>
                             <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
                                 <div className="lg:col-span-2 space-y-3">
                                     <p className="text-zinc-300">
                                         <GradientLink href="https://www.vistaprint.com" target="_blank">VistaPrint</GradientLink> — e-commerce iOS app for ordering custom printed products. Users browse a product catalog, customize designs in an integrated editor, and place orders with Braintree and PayPal payments.
                                     </p>
-
                                     <p className="text-zinc-300 font-semibold">Technical info:</p>
                                     <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
                                         <li>Written in <strong>Swift</strong>, UIKit-based with SwiftUI components</li>
@@ -298,17 +308,17 @@ export default function ProjectsPage() {
                     {/* VistaCreate */}
                     <div className="md:bg-zinc-800/90 md:backdrop-blur-sm md:rounded-3xl md:shadow-2xl md:overflow-hidden md:border md:border-zinc-700/50 md:hover:border-zinc-600/70 transition-all duration-300">
                         <div className="px-0 py-4 md:p-10 text-zinc-100">
-                            <div className="mb-6 flex items-center justify-between">
-                                <div className="inline-block bg-pink-600/20 text-pink-300 px-4 py-2 rounded-full text-sm font-medium border border-pink-500/30">
+                            <div className="mb-6 flex items-center gap-3 flex-wrap">
+                                <div className="text-sm text-zinc-500 font-medium">
                                     February 2022 - August 2023
                                 </div>
+                                <DomainTags tags={['Design Tools']} />
                             </div>
                             <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
                                 <div className="lg:col-span-2 space-y-3">
                                     <p className="text-zinc-300">
                                         <GradientLink href="https://create.vista.com" target="_blank">VistaCreate</GradientLink> — professional design and creative content creation iOS app. Users work with thousands of templates, add images, text, shapes and audio, and export designs in multiple formats.
                                     </p>
-
                                     <p className="text-zinc-300 font-semibold">Technical info:</p>
                                     <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
                                         <li>Written in <strong>Swift</strong>, UIKit-based with SwiftUI components; <strong>Metal</strong> for graphics rendering</li>
@@ -359,17 +369,17 @@ export default function ProjectsPage() {
                     {/* Clowder */}
                     <div className="md:bg-zinc-800/90 md:backdrop-blur-sm md:rounded-3xl md:shadow-2xl md:overflow-hidden md:border md:border-zinc-700/50 md:hover:border-zinc-600/70 transition-all duration-300">
                         <div className="px-0 py-4 md:p-10 text-zinc-100">
-                            <div className="mb-6">
-                                <div className="inline-block bg-blue-600/20 text-blue-300 px-4 py-2 rounded-full text-sm font-medium border border-blue-500/30 mb-4">
+                            <div className="mb-6 flex items-center gap-3 flex-wrap">
+                                <div className="text-sm text-zinc-500 font-medium">
                                     March 2020 - January 2022
                                 </div>
+                                <DomainTags tags={['Social']} />
                             </div>
                             <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
                                 <div className="lg:col-span-2 space-y-3">
                                     <p className="text-zinc-300">
                                         <GradientLink href="https://www.clowder.com/" target="_blank">Clowder</GradientLink> — white-label community and event management platform. The Core iOS app is cloned and customized for 50+ organizations, providing event management, community forums, real-time chat, news feeds, resource libraries, and QR-based networking.
                                     </p>
-
                                     <p className="text-zinc-300 font-semibold">Technical info:</p>
                                     <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
                                         <li>Written in <strong>Swift</strong>, UIKit-based architecture</li>
@@ -416,17 +426,17 @@ export default function ProjectsPage() {
                     {/* CoachNow */}
                     <div className="md:bg-zinc-800/90 md:backdrop-blur-sm md:rounded-3xl md:shadow-2xl md:overflow-hidden md:border md:border-zinc-700/50 md:hover:border-zinc-600/70 transition-all duration-300">
                         <div className="px-0 py-4 md:p-10 text-zinc-100">
-                            <div className="mb-6">
-                                <div className="inline-block bg-orange-600/20 text-orange-300 px-4 py-2 rounded-full text-sm font-medium border border-orange-500/30 mb-4">
+                            <div className="mb-6 flex items-center gap-3 flex-wrap">
+                                <div className="text-sm text-zinc-500 font-medium">
                                     February 2021
                                 </div>
+                                <DomainTags tags={['Sports', 'Video']} />
                             </div>
                             <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
                                 <div className="lg:col-span-2 space-y-3">
                                     <p className="text-zinc-300">
                                         <GradientLink href="https://apps.apple.com/app/coachnow-coaching-platform/id596598472" target="_blank">CoachNow</GradientLink> — coaching and training management platform for coaches and athletes. Users share training posts, videos, and media in dedicated training spaces, communicate through comments and replies, and manage athlete connections.
                                     </p>
-
                                     <p className="text-zinc-300 font-semibold">Technical info:</p>
                                     <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
                                         <li><strong>Objective-C + Swift</strong> hybrid codebase (~688 source files) — legacy Objective-C foundation with Swift components added incrementally</li>
@@ -466,17 +476,17 @@ export default function ProjectsPage() {
                     {/* Solitaire */}
                     <div className="md:bg-zinc-800/90 md:backdrop-blur-sm md:rounded-3xl md:shadow-2xl md:overflow-hidden md:border md:border-zinc-700/50 md:hover:border-zinc-600/70 transition-all duration-300">
                         <div className="px-0 py-4 md:p-10 text-zinc-100">
-                            <div className="mb-6">
-                                <div className="inline-block bg-green-600/20 text-green-300 px-4 py-2 rounded-full text-sm font-medium border border-green-500/30 mb-4">
+                            <div className="mb-6 flex items-center gap-3 flex-wrap">
+                                <div className="text-sm text-zinc-500 font-medium">
                                     November 2019
                                 </div>
+                                <DomainTags tags={['Game']} />
                             </div>
                             <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
                                 <div className="lg:col-span-2 space-y-3">
                                     <p className="text-zinc-300">
                                         <GradientLink href="https://apps.apple.com/us/app/id1457988491" target="_blank">Solitaire (Classic)</GradientLink> — competitive solitaire card game where users play for cash prizes through tournaments, head-to-head matches, and daily challenges, powered by the PROVEIT platform.
                                     </p>
-
                                     <p className="text-zinc-300 font-semibold">Technical info:</p>
                                     <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
                                         <li>Written in <strong>Swift</strong>, Storyboard-based UIKit architecture (~343 source files)</li>
@@ -515,17 +525,17 @@ export default function ProjectsPage() {
                     {/* Look Up */}
                     <div className="md:bg-zinc-800/90 md:backdrop-blur-sm md:rounded-3xl md:shadow-2xl md:overflow-hidden md:border md:border-zinc-700/50 md:hover:border-zinc-600/70 transition-all duration-300">
                         <div className="px-0 py-4 md:p-10 text-zinc-100">
-                            <div className="mb-6">
-                                <div className="inline-block bg-violet-600/20 text-violet-300 px-4 py-2 rounded-full text-sm font-medium border border-violet-500/30 mb-4">
+                            <div className="mb-6 flex items-center gap-3 flex-wrap">
+                                <div className="text-sm text-zinc-500 font-medium">
                                     June 2019
                                 </div>
+                                <DomainTags tags={['Shopping']} />
                             </div>
                             <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
                                 <div className="lg:col-span-2 space-y-3">
                                     <p className="text-zinc-300">
                                         <strong>Look Up</strong> — iOS shopping assistant for searching products, comparing prices across stores, tracking receipts, and managing shared shopping lists. Built for the Saudi market (SAR pricing).
                                     </p>
-
                                     <p className="text-zinc-300 font-semibold">Technical info:</p>
                                     <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
                                         <li>Written in <strong>Swift</strong>, Storyboard-based UIKit (13 storyboards, 177 source files)</li>
@@ -554,17 +564,17 @@ export default function ProjectsPage() {
                     {/* PROVEIT */}
                     <div className="md:bg-zinc-800/90 md:backdrop-blur-sm md:rounded-3xl md:shadow-2xl md:overflow-hidden md:border md:border-zinc-700/50 md:hover:border-zinc-600/70 transition-all duration-300">
                         <div className="px-0 py-4 md:p-10 text-zinc-100">
-                            <div className="mb-6">
-                                <div className="inline-block bg-violet-600/20 text-violet-300 px-4 py-2 rounded-full text-sm font-medium border border-violet-500/30 mb-4">
+                            <div className="mb-6 flex items-center gap-3 flex-wrap">
+                                <div className="text-sm text-zinc-500 font-medium">
                                     March 2017
                                 </div>
+                                <DomainTags tags={['Gaming']} />
                             </div>
                             <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
                                 <div className="lg:col-span-2 space-y-3">
                                     <p className="text-zinc-300">
                                         <GradientLink href="https://apps.apple.com/app/proveit-real-money-games/id1219398758">PROVEIT</GradientLink> — real-money gaming platform where users compete in trivia, head-to-head challenges, daily tournaments, and 8 skill-based arcade games (Solitaire, Tetris, Flappy Bird, Connect Dots, and more) for cash prizes. Featured in <GradientLink href="https://techcrunch.com/2018/06/18/proveit-trivia">TechCrunch</GradientLink>.
                                     </p>
-
                                     <p className="text-zinc-300 font-semibold">Technical info:</p>
                                     <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
                                         <li>Written in <strong>Swift</strong>, Storyboard/XIB-based UIKit architecture (~624 source files)</li>
@@ -603,17 +613,17 @@ export default function ProjectsPage() {
                     {/* Chronograph iOS */}
                     <div className="md:bg-zinc-800/90 md:backdrop-blur-sm md:rounded-3xl md:shadow-2xl md:overflow-hidden md:border md:border-zinc-700/50 md:hover:border-zinc-600/70 transition-all duration-300">
                         <div className="px-0 py-4 md:p-10 text-zinc-100">
-                            <div className="mb-6">
-                                <div className="inline-block bg-violet-600/20 text-violet-300 px-4 py-2 rounded-full text-sm font-medium border border-violet-500/30 mb-4">
+                            <div className="mb-6 flex items-center gap-3 flex-wrap">
+                                <div className="text-sm text-zinc-500 font-medium">
                                     July 2016
                                 </div>
+                                <DomainTags tags={['Productivity']} />
                             </div>
                             <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
                                 <div className="lg:col-span-2 space-y-3">
                                     <p className="text-zinc-300">
                                         <GradientLink href="https://apps.apple.com/app/chronograph/id1281918814">Chronograph</GradientLink> — in-house Pomodoro timer and task management app (App Dev Academy) that tracks work intervals with configurable work/break cycles, manages tasks with due dates, and syncs data across devices. Shares codebase with the macOS version.
                                     </p>
-
                                     <p className="text-zinc-300 font-semibold">Technical info:</p>
                                     <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
                                         <li>Written in <strong>Swift</strong>, Storyboard-based UIKit architecture (~164 shared + platform-specific source files)</li>
@@ -653,17 +663,17 @@ export default function ProjectsPage() {
                     {/* Chronograph macOS */}
                     <div className="md:bg-zinc-800/90 md:backdrop-blur-sm md:rounded-3xl md:shadow-2xl md:overflow-hidden md:border md:border-zinc-700/50 md:hover:border-zinc-600/70 transition-all duration-300">
                         <div className="px-0 py-4 md:p-10 text-zinc-100">
-                            <div className="mb-6">
-                                <div className="inline-block bg-violet-600/20 text-violet-300 px-4 py-2 rounded-full text-sm font-medium border border-violet-500/30 mb-4">
+                            <div className="mb-6 flex items-center gap-3 flex-wrap">
+                                <div className="text-sm text-zinc-500 font-medium">
                                     March 2016
                                 </div>
+                                <DomainTags tags={['Productivity']} />
                             </div>
                             <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
                                 <div className="lg:col-span-2 space-y-3">
                                     <p className="text-zinc-300">
                                         <GradientLink href="https://apps.apple.com/ua/app/chronograph-my-productivity/id1316023026?mt=12">Chronograph</GradientLink> — macOS counterpart of the iOS Pomodoro timer app (App Dev Academy). Native Cocoa/AppKit interface with window-based navigation, custom analog and digital clock views, and shared business logic with the iOS version.
                                     </p>
-
                                     <p className="text-zinc-300 font-semibold">Technical info:</p>
                                     <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
                                         <li>Written in <strong>Swift</strong>, Cocoa/AppKit with <CodeTag>NSWindowController</CodeTag>-based navigation and Storyboards</li>
@@ -699,10 +709,11 @@ export default function ProjectsPage() {
                     {/* SumDU */}
                     <div className="md:bg-zinc-800/90 md:backdrop-blur-sm md:rounded-3xl md:shadow-2xl md:overflow-hidden md:border md:border-zinc-700/50 md:hover:border-zinc-600/70 transition-all duration-300">
                         <div className="px-0 py-4 md:p-10 text-zinc-100">
-                            <div className="mb-6">
-                                <div className="inline-block bg-violet-600/20 text-violet-300 px-4 py-2 rounded-full text-sm font-medium border border-violet-500/30 mb-4">
+                            <div className="mb-6 flex items-center gap-3 flex-wrap">
+                                <div className="text-sm text-zinc-500 font-medium">
                                     November 2015
                                 </div>
+                                <DomainTags tags={['Productivity']} />
                             </div>
                             <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
                                 <div className="lg:col-span-2 space-y-3">
@@ -747,10 +758,11 @@ export default function ProjectsPage() {
                     {/* My University */}
                     <div className="md:bg-zinc-800/90 md:backdrop-blur-sm md:rounded-3xl md:shadow-2xl md:overflow-hidden md:border md:border-zinc-700/50 md:hover:border-zinc-600/70 transition-all duration-300">
                         <div className="px-0 py-4 md:p-10 text-zinc-100">
-                            <div className="mb-6">
-                                <div className="inline-block bg-violet-600/20 text-violet-300 px-4 py-2 rounded-full text-sm font-medium border border-violet-500/30 mb-4">
+                            <div className="mb-6 flex items-center gap-3 flex-wrap">
+                                <div className="text-sm text-zinc-500 font-medium">
                                     24 December 2018
                                 </div>
+                                <DomainTags tags={['Productivity']} />
                             </div>
                             <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
                                 <div className="lg:col-span-2 space-y-3">
@@ -785,10 +797,11 @@ export default function ProjectsPage() {
                     {/* My University Server */}
                     <div className="md:bg-zinc-800/90 md:backdrop-blur-sm md:rounded-3xl md:shadow-2xl md:overflow-hidden md:border md:border-zinc-700/50 md:hover:border-zinc-600/70 transition-all duration-300">
                         <div className="px-0 py-4 md:p-10 text-zinc-100">
-                            <div className="mb-6">
-                                <div className="inline-block bg-violet-600/20 text-violet-300 px-4 py-2 rounded-full text-sm font-medium border border-violet-500/30 mb-4">
+                            <div className="mb-6 flex items-center gap-3 flex-wrap">
+                                <div className="text-sm text-zinc-500 font-medium">
                                     24 December 2018
                                 </div>
+                                <DomainTags tags={['Backend']} />
                             </div>
                             <div className="grid grid-cols-1 gap-4 items-start">
                                 <div className="space-y-3">
