@@ -1,9 +1,15 @@
+'use client';
+
+import { useState } from 'react';
 import Image from 'next/image';
 import GradientLink from '@/components/GradientLink';
 import CodeTag from '@/components/CodeTag';
 import ProjectCard from '@/components/projects/ProjectCard';
 
+type PlatformFilter = 'all' | 'ios' | 'macos';
+
 export default function CommercialProjects() {
+    const [platform, setPlatform] = useState<PlatformFilter>('all');
     // Hooh images for carousel
     const hoohImages = [
         { src: '/projects/Hooh/hooh-home.png', alt: 'Hooh Home' },
@@ -93,9 +99,28 @@ export default function CommercialProjects() {
         { src: '/projects/SumDU/sumdu-search.png', alt: 'SumDU Search' },
     ];
 
+    const show = (p: 'ios' | 'macos') => platform === 'all' || platform === p;
+
     return (
         <>
+            <div className="flex gap-2 mb-6">
+                {(['all', 'ios', 'macos'] as const).map((f) => (
+                    <button
+                        key={f}
+                        onClick={() => setPlatform(f)}
+                        className={`px-4 py-1.5 rounded-full text-xs font-medium transition-all duration-300 ${
+                            platform === f
+                                ? 'bg-cyan-600/30 text-cyan-300 border border-cyan-500/50'
+                                : 'bg-zinc-800/60 text-zinc-400 border border-zinc-700/50 hover:text-zinc-300 hover:border-zinc-600/50'
+                        }`}
+                    >
+                        {f === 'all' ? 'All' : f === 'ios' ? 'iOS' : 'macOS'}
+                    </button>
+                ))}
+            </div>
+
                     {/* Hooh */}
+                    {show('ios') && (
                     <ProjectCard
                         date="2025 - 2026"
                         tags={['AI', 'Productivity']}
@@ -147,8 +172,10 @@ export default function CommercialProjects() {
                                     <GradientLink href="https://hooh.com" target="_blank">hooh.com</GradientLink>
                                 </div>
                     </ProjectCard>
+                    )}
 
                     {/* VistaPrint */}
+                    {show('ios') && (
                     <ProjectCard date="August 2023 - December 2025" tags={['E-commerce', 'Shopping']} images={vistaPrintImages}>
                                     <p className="text-zinc-300">
                                         <GradientLink href="https://www.vistaprint.com" target="_blank">VistaPrint</GradientLink> — e-commerce iOS app for ordering custom printed products. Users browse a product catalog, customize designs in an integrated editor, and place orders with Braintree and PayPal payments.
@@ -185,8 +212,10 @@ export default function CommercialProjects() {
                                         <li>Unit test coverage for core modules, localization with string catalogs, logging system</li>
                                     </ul>
                     </ProjectCard>
+                    )}
 
                     {/* VistaCreate */}
+                    {show('ios') && (
                     <ProjectCard date="February 2022 - August 2023" tags={['Design Tools']} images={vistaCreateImages}>
                                     <p className="text-zinc-300">
                                         <GradientLink href="https://create.vista.com" target="_blank">VistaCreate</GradientLink> — professional design and creative content creation iOS app. Users work with thousands of templates, add images, text, shapes and audio, and export designs in multiple formats.
@@ -227,8 +256,10 @@ export default function CommercialProjects() {
                                         <li>Design export UI and logic across multiple formats</li>
                                     </ul>
                     </ProjectCard>
+                    )}
 
                     {/* Clowder */}
+                    {show('ios') && (
                     <ProjectCard date="March 2020 - January 2022" tags={['Social']} images={clowderImages}>
                                     <p className="text-zinc-300">
                                         <GradientLink href="https://www.clowder.com/" target="_blank">Clowder</GradientLink> — white-label community and event management platform. The Core iOS app is cloned and customized for 50+ organizations, providing event management, community forums, real-time chat, news feeds, resource libraries, and QR-based networking.
@@ -265,8 +296,10 @@ export default function CommercialProjects() {
                                         <li>Resolve merge conflicts and maintain GitFlow discipline across a large multi-repo setup</li>
                                     </ul>
                     </ProjectCard>
+                    )}
 
                     {/* CoachNow */}
+                    {show('ios') && (
                     <ProjectCard date="February 2021" tags={['Sports', 'Video']} images={coachNowImages}>
                                     <p className="text-zinc-300">
                                         <GradientLink href="https://apps.apple.com/app/coachnow-coaching-platform/id596598472" target="_blank">CoachNow</GradientLink> — coaching and training management platform for coaches and athletes. Users share training posts, videos, and media in dedicated training spaces, communicate through comments and replies, and manage athlete connections.
@@ -296,8 +329,10 @@ export default function CommercialProjects() {
                                         <li>Maintain dependencies and manage the CocoaPods setup</li>
                                     </ul>
                     </ProjectCard>
+                    )}
 
                     {/* Solitaire */}
+                    {show('ios') && (
                     <ProjectCard date="November 2019" tags={['Game']} images={solitaireImages}>
                                     <p className="text-zinc-300">
                                         <GradientLink href="https://apps.apple.com/us/app/id1457988491" target="_blank">Solitaire (Classic)</GradientLink> — competitive solitaire card game where users play for cash prizes through tournaments, head-to-head matches, and daily challenges, powered by the PROVEIT platform.
@@ -326,8 +361,10 @@ export default function CommercialProjects() {
                                         <li>Pull requests and code reviews</li>
                                     </ul>
                     </ProjectCard>
+                    )}
 
                     {/* Look Up */}
+                    {show('ios') && (
                     <ProjectCard date="June 2019" tags={['Shopping']} images={lookUpImages}>
                                     <p className="text-zinc-300">
                                         <strong>Look Up</strong> — iOS shopping assistant for searching products, comparing prices across stores, tracking receipts, and managing shared shopping lists. Built for the Saudi market (SAR pricing).
@@ -346,8 +383,10 @@ export default function CommercialProjects() {
                                         <li>Deployment target: <strong>iOS 13.1+</strong>, iPhone and iPad supported</li>
                                     </ul>
                     </ProjectCard>
+                    )}
 
                     {/* PROVEIT */}
+                    {show('ios') && (
                     <ProjectCard date="March 2017" tags={['Gaming']} images={proveitImages}>
                                     <p className="text-zinc-300">
                                         <GradientLink href="https://apps.apple.com/app/proveit-real-money-games/id1219398758">PROVEIT</GradientLink> — real-money gaming platform where users compete in trivia, head-to-head challenges, daily tournaments, and 8 skill-based arcade games (Solitaire, Tetris, Flappy Bird, Connect Dots, and more) for cash prizes. Featured in <GradientLink href="https://techcrunch.com/2018/06/18/proveit-trivia">TechCrunch</GradientLink>.
@@ -376,8 +415,10 @@ export default function CommercialProjects() {
                                         <li>Pull requests and code reviews</li>
                                     </ul>
                     </ProjectCard>
+                    )}
 
                     {/* Chronograph iOS */}
+                    {show('ios') && (
                     <ProjectCard date="July 2016" tags={['Productivity']} images={chronographiOSImages}>
                                     <p className="text-zinc-300">
                                         <GradientLink href="https://apps.apple.com/app/chronograph/id1281918814">Chronograph</GradientLink> — in-house Pomodoro timer and task management app (App Dev Academy) that tracks work intervals with configurable work/break cycles, manages tasks with due dates, and syncs data across devices. Shares codebase with the macOS version.
@@ -407,8 +448,10 @@ export default function CommercialProjects() {
                                         <li>Integration of analytics and In-App Subscriptions</li>
                                     </ul>
                     </ProjectCard>
+                    )}
 
                     {/* Chronograph macOS */}
+                    {show('macos') && (
                     <ProjectCard date="March 2016" tags={['Productivity']} images={chronographMacOSImages}>
                                     <p className="text-zinc-300">
                                         <GradientLink href="https://apps.apple.com/ua/app/chronograph-my-productivity/id1316023026?mt=12">Chronograph</GradientLink> — macOS counterpart of the iOS Pomodoro timer app (App Dev Academy). Native Cocoa/AppKit interface with window-based navigation, custom analog and digital clock views, and shared business logic with the iOS version.
@@ -434,8 +477,10 @@ export default function CommercialProjects() {
                                         <li>Integration of analytics and In-App Subscriptions</li>
                                     </ul>
                     </ProjectCard>
+                    )}
 
                     {/* SumDU */}
+                    {show('ios') && (
                     <ProjectCard date="November 2015" tags={['Productivity']} images={sumduImages} showSeparator={false}>
                                     <p className="text-zinc-300">
                                         <GradientLink href="https://apps.apple.com/ua/app/id698235283">SumDU</GradientLink> — schedule viewer for Sumy State University (<GradientLink href="https://www.appdev.academy">App Dev Academy</GradientLink>). Students and teachers search for groups, teachers, or auditoriums and view class schedules with calendar export. My first iOS app published in the App Store.
@@ -464,6 +509,7 @@ export default function CommercialProjects() {
                                         <li>Implement search with alphabetical sections and real-time filtering</li>
                                     </ul>
                     </ProjectCard>
+                    )}
         </>
     );
 }
