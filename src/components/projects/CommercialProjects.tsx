@@ -1,8 +1,7 @@
 import Image from 'next/image';
 import GradientLink from '@/components/GradientLink';
 import CodeTag from '@/components/CodeTag';
-import PhotoCarousel from '@/components/PhotoCarousel';
-import DomainTags from '@/components/projects/DomainTags';
+import ProjectCard from '@/components/projects/ProjectCard';
 
 export default function CommercialProjects() {
     // Hooh images for carousel
@@ -97,16 +96,22 @@ export default function CommercialProjects() {
     return (
         <>
                     {/* Hooh */}
-                    <div className="md:bg-zinc-800/90 md:backdrop-blur-sm md:rounded-3xl md:shadow-2xl md:overflow-hidden md:border md:border-zinc-700/50 md:hover:border-zinc-600/70 transition-all duration-300">
-                        <div className="px-0 py-4 md:p-10 text-zinc-100">
-                            <div className="mb-6 flex items-center gap-3 flex-wrap">
-                                <div className="text-sm text-zinc-500 font-medium">
-                                    2025 - 2026
-                                </div>
-                                <DomainTags tags={['AI', 'Productivity']} />
+                    <ProjectCard
+                        date="2025 - 2026"
+                        tags={['AI', 'Productivity']}
+                        images={hoohImages}
+                        footer={
+                            <div className="mt-6">
+                                <Image
+                                    src="/projects/Hooh/hooh-appstore.png"
+                                    alt="Hooh on the App Store"
+                                    width={1280}
+                                    height={800}
+                                    className="w-full rounded-2xl"
+                                />
                             </div>
-                            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
-                            <div className="lg:col-span-2 space-y-3">
+                        }
+                    >
                                 <p className="text-zinc-300">
                                     <strong>Hooh</strong> — AI-powered document management iOS app. Users can upload documents and interact with them through a real-time AI chat interface for analysis, summarization, and Q&A.
                                 </p>
@@ -141,39 +146,10 @@ export default function CommercialProjects() {
                                     <GradientLink href="https://apps.apple.com/us/app/documents-file-manager-hooh/id6751770725" target="_blank">App Store</GradientLink>
                                     <GradientLink href="https://hooh.com" target="_blank">hooh.com</GradientLink>
                                 </div>
-                            </div>
-                            <div className="flex justify-center lg:justify-end">
-                                <div className="w-full max-w-sm">
-                                    <PhotoCarousel images={hoohImages} />
-                                </div>
-                            </div>
-                            </div>
-
-                            <div className="mt-6">
-                                <Image
-                                    src="/projects/Hooh/hooh-appstore.png"
-                                    alt="Hooh on the App Store"
-                                    width={1280}
-                                    height={800}
-                                    className="w-full rounded-2xl"
-                                />
-                            </div>
-                        </div>
-                    </div>
-
-                    <hr className="md:hidden border-violet-500/30 my-2" />
+                    </ProjectCard>
 
                     {/* VistaPrint */}
-                    <div className="md:bg-zinc-800/90 md:backdrop-blur-sm md:rounded-3xl md:shadow-2xl md:overflow-hidden md:border md:border-zinc-700/50 md:hover:border-zinc-600/70 transition-all duration-300">
-                        <div className="px-0 py-4 md:p-10 text-zinc-100">
-                            <div className="mb-6 flex items-center gap-3 flex-wrap">
-                                <div className="text-sm text-zinc-500 font-medium">
-                                    August 2023 - December 2025
-                                </div>
-                                <DomainTags tags={['E-commerce', 'Shopping']} />
-                            </div>
-                            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
-                                <div className="lg:col-span-2 space-y-3">
+                    <ProjectCard date="August 2023 - December 2025" tags={['E-commerce', 'Shopping']} images={vistaPrintImages}>
                                     <p className="text-zinc-300">
                                         <GradientLink href="https://www.vistaprint.com" target="_blank">VistaPrint</GradientLink> — e-commerce iOS app for ordering custom printed products. Users browse a product catalog, customize designs in an integrated editor, and place orders with Braintree and PayPal payments.
                                     </p>
@@ -208,29 +184,10 @@ export default function CommercialProjects() {
                                         <li>Account screen with web view integration and links to cart, orders, support</li>
                                         <li>Unit test coverage for core modules, localization with string catalogs, logging system</li>
                                     </ul>
-                                </div>
-                                <div className="flex justify-center lg:justify-end">
-                                    <div className="w-full max-w-sm">
-                                        <PhotoCarousel images={vistaPrintImages} />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <hr className="md:hidden border-violet-500/30 my-2" />
+                    </ProjectCard>
 
                     {/* VistaCreate */}
-                    <div className="md:bg-zinc-800/90 md:backdrop-blur-sm md:rounded-3xl md:shadow-2xl md:overflow-hidden md:border md:border-zinc-700/50 md:hover:border-zinc-600/70 transition-all duration-300">
-                        <div className="px-0 py-4 md:p-10 text-zinc-100">
-                            <div className="mb-6 flex items-center gap-3 flex-wrap">
-                                <div className="text-sm text-zinc-500 font-medium">
-                                    February 2022 - August 2023
-                                </div>
-                                <DomainTags tags={['Design Tools']} />
-                            </div>
-                            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
-                                <div className="lg:col-span-2 space-y-3">
+                    <ProjectCard date="February 2022 - August 2023" tags={['Design Tools']} images={vistaCreateImages}>
                                     <p className="text-zinc-300">
                                         <GradientLink href="https://create.vista.com" target="_blank">VistaCreate</GradientLink> — professional design and creative content creation iOS app. Users work with thousands of templates, add images, text, shapes and audio, and export designs in multiple formats.
                                     </p>
@@ -269,29 +226,10 @@ export default function CommercialProjects() {
                                         <li>SwiftUI slider component for background removal/restoration</li>
                                         <li>Design export UI and logic across multiple formats</li>
                                     </ul>
-                                </div>
-                                <div className="flex justify-center lg:justify-end">
-                                    <div className="w-full max-w-sm">
-                                        <PhotoCarousel images={vistaCreateImages} />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <hr className="md:hidden border-violet-500/30 my-2" />
+                    </ProjectCard>
 
                     {/* Clowder */}
-                    <div className="md:bg-zinc-800/90 md:backdrop-blur-sm md:rounded-3xl md:shadow-2xl md:overflow-hidden md:border md:border-zinc-700/50 md:hover:border-zinc-600/70 transition-all duration-300">
-                        <div className="px-0 py-4 md:p-10 text-zinc-100">
-                            <div className="mb-6 flex items-center gap-3 flex-wrap">
-                                <div className="text-sm text-zinc-500 font-medium">
-                                    March 2020 - January 2022
-                                </div>
-                                <DomainTags tags={['Social']} />
-                            </div>
-                            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
-                                <div className="lg:col-span-2 space-y-3">
+                    <ProjectCard date="March 2020 - January 2022" tags={['Social']} images={clowderImages}>
                                     <p className="text-zinc-300">
                                         <GradientLink href="https://www.clowder.com/" target="_blank">Clowder</GradientLink> — white-label community and event management platform. The Core iOS app is cloned and customized for 50+ organizations, providing event management, community forums, real-time chat, news feeds, resource libraries, and QR-based networking.
                                     </p>
@@ -326,29 +264,10 @@ export default function CommercialProjects() {
                                         <li>Propose and implement changes to the Core product</li>
                                         <li>Resolve merge conflicts and maintain GitFlow discipline across a large multi-repo setup</li>
                                     </ul>
-                                </div>
-                                <div className="flex justify-center lg:justify-end">
-                                    <div className="w-full max-w-sm">
-                                        <PhotoCarousel images={clowderImages} />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <hr className="md:hidden border-violet-500/30 my-2" />
+                    </ProjectCard>
 
                     {/* CoachNow */}
-                    <div className="md:bg-zinc-800/90 md:backdrop-blur-sm md:rounded-3xl md:shadow-2xl md:overflow-hidden md:border md:border-zinc-700/50 md:hover:border-zinc-600/70 transition-all duration-300">
-                        <div className="px-0 py-4 md:p-10 text-zinc-100">
-                            <div className="mb-6 flex items-center gap-3 flex-wrap">
-                                <div className="text-sm text-zinc-500 font-medium">
-                                    February 2021
-                                </div>
-                                <DomainTags tags={['Sports', 'Video']} />
-                            </div>
-                            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
-                                <div className="lg:col-span-2 space-y-3">
+                    <ProjectCard date="February 2021" tags={['Sports', 'Video']} images={coachNowImages}>
                                     <p className="text-zinc-300">
                                         <GradientLink href="https://apps.apple.com/app/coachnow-coaching-platform/id596598472" target="_blank">CoachNow</GradientLink> — coaching and training management platform for coaches and athletes. Users share training posts, videos, and media in dedicated training spaces, communicate through comments and replies, and manage athlete connections.
                                     </p>
@@ -376,29 +295,10 @@ export default function CommercialProjects() {
                                         <li>Implement screen recording with <strong>ReplayKit</strong> framework</li>
                                         <li>Maintain dependencies and manage the CocoaPods setup</li>
                                     </ul>
-                                </div>
-                                <div className="flex justify-center lg:justify-end">
-                                    <div className="w-full max-w-sm">
-                                        <PhotoCarousel images={coachNowImages} />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <hr className="md:hidden border-violet-500/30 my-2" />
+                    </ProjectCard>
 
                     {/* Solitaire */}
-                    <div className="md:bg-zinc-800/90 md:backdrop-blur-sm md:rounded-3xl md:shadow-2xl md:overflow-hidden md:border md:border-zinc-700/50 md:hover:border-zinc-600/70 transition-all duration-300">
-                        <div className="px-0 py-4 md:p-10 text-zinc-100">
-                            <div className="mb-6 flex items-center gap-3 flex-wrap">
-                                <div className="text-sm text-zinc-500 font-medium">
-                                    November 2019
-                                </div>
-                                <DomainTags tags={['Game']} />
-                            </div>
-                            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
-                                <div className="lg:col-span-2 space-y-3">
+                    <ProjectCard date="November 2019" tags={['Game']} images={solitaireImages}>
                                     <p className="text-zinc-300">
                                         <GradientLink href="https://apps.apple.com/us/app/id1457988491" target="_blank">Solitaire (Classic)</GradientLink> — competitive solitaire card game where users play for cash prizes through tournaments, head-to-head matches, and daily challenges, powered by the PROVEIT platform.
                                     </p>
@@ -425,29 +325,10 @@ export default function CommercialProjects() {
                                         <li>Implement the networking layer with REST API and encrypted communication</li>
                                         <li>Pull requests and code reviews</li>
                                     </ul>
-                                </div>
-                                <div className="flex justify-center lg:justify-end">
-                                    <div className="w-full max-w-sm">
-                                        <PhotoCarousel images={solitaireImages} />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <hr className="md:hidden border-violet-500/30 my-2" />
+                    </ProjectCard>
 
                     {/* Look Up */}
-                    <div className="md:bg-zinc-800/90 md:backdrop-blur-sm md:rounded-3xl md:shadow-2xl md:overflow-hidden md:border md:border-zinc-700/50 md:hover:border-zinc-600/70 transition-all duration-300">
-                        <div className="px-0 py-4 md:p-10 text-zinc-100">
-                            <div className="mb-6 flex items-center gap-3 flex-wrap">
-                                <div className="text-sm text-zinc-500 font-medium">
-                                    June 2019
-                                </div>
-                                <DomainTags tags={['Shopping']} />
-                            </div>
-                            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
-                                <div className="lg:col-span-2 space-y-3">
+                    <ProjectCard date="June 2019" tags={['Shopping']} images={lookUpImages}>
                                     <p className="text-zinc-300">
                                         <strong>Look Up</strong> — iOS shopping assistant for searching products, comparing prices across stores, tracking receipts, and managing shared shopping lists. Built for the Saudi market (SAR pricing).
                                     </p>
@@ -464,29 +345,10 @@ export default function CommercialProjects() {
                                         <li>Two build targets — localhost and production with conditional API endpoints</li>
                                         <li>Deployment target: <strong>iOS 13.1+</strong>, iPhone and iPad supported</li>
                                     </ul>
-                                </div>
-                                <div className="flex justify-center lg:justify-end">
-                                    <div className="w-full max-w-sm">
-                                        <PhotoCarousel images={lookUpImages} />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <hr className="md:hidden border-violet-500/30 my-2" />
+                    </ProjectCard>
 
                     {/* PROVEIT */}
-                    <div className="md:bg-zinc-800/90 md:backdrop-blur-sm md:rounded-3xl md:shadow-2xl md:overflow-hidden md:border md:border-zinc-700/50 md:hover:border-zinc-600/70 transition-all duration-300">
-                        <div className="px-0 py-4 md:p-10 text-zinc-100">
-                            <div className="mb-6 flex items-center gap-3 flex-wrap">
-                                <div className="text-sm text-zinc-500 font-medium">
-                                    March 2017
-                                </div>
-                                <DomainTags tags={['Gaming']} />
-                            </div>
-                            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
-                                <div className="lg:col-span-2 space-y-3">
+                    <ProjectCard date="March 2017" tags={['Gaming']} images={proveitImages}>
                                     <p className="text-zinc-300">
                                         <GradientLink href="https://apps.apple.com/app/proveit-real-money-games/id1219398758">PROVEIT</GradientLink> — real-money gaming platform where users compete in trivia, head-to-head challenges, daily tournaments, and 8 skill-based arcade games (Solitaire, Tetris, Flappy Bird, Connect Dots, and more) for cash prizes. Featured in <GradientLink href="https://techcrunch.com/2018/06/18/proveit-trivia">TechCrunch</GradientLink>.
                                     </p>
@@ -513,29 +375,10 @@ export default function CommercialProjects() {
                                         <li>Implement real-money transaction flow with In-App Purchases and withdrawals</li>
                                         <li>Pull requests and code reviews</li>
                                     </ul>
-                                </div>
-                                <div className="flex justify-center lg:justify-end">
-                                    <div className="w-full max-w-sm">
-                                        <PhotoCarousel images={proveitImages} />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <hr className="md:hidden border-violet-500/30 my-2" />
+                    </ProjectCard>
 
                     {/* Chronograph iOS */}
-                    <div className="md:bg-zinc-800/90 md:backdrop-blur-sm md:rounded-3xl md:shadow-2xl md:overflow-hidden md:border md:border-zinc-700/50 md:hover:border-zinc-600/70 transition-all duration-300">
-                        <div className="px-0 py-4 md:p-10 text-zinc-100">
-                            <div className="mb-6 flex items-center gap-3 flex-wrap">
-                                <div className="text-sm text-zinc-500 font-medium">
-                                    July 2016
-                                </div>
-                                <DomainTags tags={['Productivity']} />
-                            </div>
-                            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
-                                <div className="lg:col-span-2 space-y-3">
+                    <ProjectCard date="July 2016" tags={['Productivity']} images={chronographiOSImages}>
                                     <p className="text-zinc-300">
                                         <GradientLink href="https://apps.apple.com/app/chronograph/id1281918814">Chronograph</GradientLink> — in-house Pomodoro timer and task management app (App Dev Academy) that tracks work intervals with configurable work/break cycles, manages tasks with due dates, and syncs data across devices. Shares codebase with the macOS version.
                                     </p>
@@ -563,29 +406,10 @@ export default function CommercialProjects() {
                                         <li>iPad version of the app</li>
                                         <li>Integration of analytics and In-App Subscriptions</li>
                                     </ul>
-                                </div>
-                                <div className="flex justify-center lg:justify-end">
-                                    <div className="w-full max-w-sm">
-                                        <PhotoCarousel images={chronographiOSImages} />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <hr className="md:hidden border-violet-500/30 my-2" />
+                    </ProjectCard>
 
                     {/* Chronograph macOS */}
-                    <div className="md:bg-zinc-800/90 md:backdrop-blur-sm md:rounded-3xl md:shadow-2xl md:overflow-hidden md:border md:border-zinc-700/50 md:hover:border-zinc-600/70 transition-all duration-300">
-                        <div className="px-0 py-4 md:p-10 text-zinc-100">
-                            <div className="mb-6 flex items-center gap-3 flex-wrap">
-                                <div className="text-sm text-zinc-500 font-medium">
-                                    March 2016
-                                </div>
-                                <DomainTags tags={['Productivity']} />
-                            </div>
-                            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
-                                <div className="lg:col-span-2 space-y-3">
+                    <ProjectCard date="March 2016" tags={['Productivity']} images={chronographMacOSImages}>
                                     <p className="text-zinc-300">
                                         <GradientLink href="https://apps.apple.com/ua/app/chronograph-my-productivity/id1316023026?mt=12">Chronograph</GradientLink> — macOS counterpart of the iOS Pomodoro timer app (App Dev Academy). Native Cocoa/AppKit interface with window-based navigation, custom analog and digital clock views, and shared business logic with the iOS version.
                                     </p>
@@ -609,29 +433,10 @@ export default function CommercialProjects() {
                                         <li>Manage shared Swift codebase and third-party dependencies across platforms</li>
                                         <li>Integration of analytics and In-App Subscriptions</li>
                                     </ul>
-                                </div>
-                                <div className="flex justify-center lg:justify-end">
-                                    <div className="w-full max-w-sm">
-                                        <PhotoCarousel images={chronographMacOSImages} />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <hr className="md:hidden border-violet-500/30 my-2" />
+                    </ProjectCard>
 
                     {/* SumDU */}
-                    <div className="md:bg-zinc-800/90 md:backdrop-blur-sm md:rounded-3xl md:shadow-2xl md:overflow-hidden md:border md:border-zinc-700/50 md:hover:border-zinc-600/70 transition-all duration-300">
-                        <div className="px-0 py-4 md:p-10 text-zinc-100">
-                            <div className="mb-6 flex items-center gap-3 flex-wrap">
-                                <div className="text-sm text-zinc-500 font-medium">
-                                    November 2015
-                                </div>
-                                <DomainTags tags={['Productivity']} />
-                            </div>
-                            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
-                                <div className="lg:col-span-2 space-y-3">
+                    <ProjectCard date="November 2015" tags={['Productivity']} images={sumduImages} showSeparator={false}>
                                     <p className="text-zinc-300">
                                         <GradientLink href="https://apps.apple.com/ua/app/id698235283">SumDU</GradientLink> — schedule viewer for Sumy State University (<GradientLink href="https://www.appdev.academy">App Dev Academy</GradientLink>). Students and teachers search for groups, teachers, or auditoriums and view class schedules with calendar export. My first iOS app published in the App Store.
                                     </p>
@@ -658,15 +463,7 @@ export default function CommercialProjects() {
                                         <li>Build adaptive layout for iPad with UISplitViewController</li>
                                         <li>Implement search with alphabetical sections and real-time filtering</li>
                                     </ul>
-                                </div>
-                                <div className="flex justify-center lg:justify-end">
-                                    <div className="w-full max-w-sm">
-                                        <PhotoCarousel images={sumduImages} />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    </ProjectCard>
         </>
     );
 }
