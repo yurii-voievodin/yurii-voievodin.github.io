@@ -37,7 +37,7 @@ export default function CVPage() {
     </a>
     <a href="https://github.com/yurii-voievodin" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 hover:text-violet-400 transition-colors">
     <Github size={16} />
-    <span className="text-sm sm:text-base">yura-voevodin</span>
+    <span className="text-sm sm:text-base">yurii-voievodin</span>
     </a>
     <a href="https://www.linkedin.com/in/yurivoevodin" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 hover:text-violet-400 transition-colors">
     <Linkedin size={16} />
