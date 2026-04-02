@@ -28,6 +28,7 @@ export default function BlogPage() {
         <p className="text-lg text-zinc-300 max-w-2xl mx-auto">
           Stories and adventures from my travels around the world.
         </p>
+        <div className="mt-3 mx-auto w-16 h-0.5 bg-gradient-to-r from-violet-500 to-purple-500 rounded-full" />
       </div>
 
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-1">

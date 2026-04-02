@@ -63,7 +63,7 @@ export default function SecurityPage() {
                         Security & Privacy
                     </h1>
                     <p className="text-lg text-zinc-300 leading-relaxed">
-                        Throughout 10+ years of iOS and macOS development, I have implemented security and privacy measures across multiple commercial applications handling sensitive user data, financial transactions, and real-money operations. Below is a summary of the techniques and technologies I have applied.
+                        Throughout my iOS and macOS apps development, I have implemented security and privacy measures across multiple commercial applications handling sensitive user data, financial transactions, and real-money operations.
                     </p>
                 </div>
 

@@ -218,15 +218,6 @@ export default function QAPage() {
                     Back to CV
                 </Link>
 
-                <div className="mb-12">
-                    <h1 className="text-4xl md:text-5xl font-bold text-zinc-100 mb-4">
-                        Interview Q&A
-                    </h1>
-                    <p className="text-lg text-zinc-300 leading-relaxed">
-                        Common technical interview questions answered with practical experience from 10+ years of iOS and macOS development. Tap any question to expand the answer.
-                    </p>
-                </div>
-
                 <div className="space-y-10">
                     <QASection title="Architecture & UI" items={architectureQA} />
                     <QASection title="Networking & Data Sync" items={networkingQA} />
