@@ -1,12 +1,14 @@
 'use client';
 
-import { Calendar, ArrowLeft, Camera, Image as ImageIcon, Maximize2, X } from 'lucide-react';
+import { Calendar, ArrowLeft, Camera } from 'lucide-react';
 import { format } from 'date-fns';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Post, Photo } from '@/types/blog';
 import { ReactNode } from 'react';
 import { useLightbox } from '@/hooks/useLightbox';
+import Lightbox from '@/components/Lightbox';
+import ImageCard from '@/components/ImageCard';
 
 interface PhotoGalleryPostProps {
   post: Post;
@@ -116,36 +118,16 @@ export default function PhotoGalleryPost({
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {photos.map((image, index) => (
-              <div
+              <ImageCard
                 key={image.id}
-                className="group relative bg-zinc-800/50 rounded-2xl overflow-hidden shadow-lg border border-zinc-700/50 hover:transition-all duration-300"
-              >
-                <div className="relative aspect-[4/3] overflow-hidden">
-                  {isLoading(image.id) && (
-                    <div className="absolute inset-0 bg-zinc-700/50 animate-pulse flex items-center justify-center">
-                      <ImageIcon className="text-zinc-500" size={24} />
-                    </div>
-                  )}
-                  <Image
-                    src={image.src}
-                    alt={image.alt}
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-700"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
-                    onLoad={() => handleImageLoad(image.id)}
-                    onError={() => handleImageError(image.id)}
-                  />
-
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center">
-                    <button
-                      onClick={() => openLightbox(index)}
-                      className="opacity-0 group-hover:opacity-100 transform scale-75 group-hover:scale-100 transition-all duration-300 bg-white/20 backdrop-blur-sm rounded-full p-3 hover:bg-white/30"
-                    >
-                      <Maximize2 className="text-white" size={20} />
-                    </button>
-                  </div>
-                </div>
-              </div>
+                src={image.src}
+                alt={image.alt}
+                isLoading={isLoading(image.id)}
+                onLoad={() => handleImageLoad(image.id)}
+                onError={() => handleImageError(image.id)}
+                onClick={() => openLightbox(index)}
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
+              />
             ))}
           </div>
         </div>
@@ -153,52 +135,15 @@ export default function PhotoGalleryPost({
         {afterGallery}
       </div>
 
-      {/* Lightbox Modal */}
       {selectedImage !== null && (
-        <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4">
-          <div className="relative max-w-6xl max-h-full">
-            <button
-              onClick={closeLightbox}
-              className="absolute -top-12 right-0 text-white hover:text-zinc-300 z-10"
-            >
-              <X size={32} />
-            </button>
-
-            <button
-              onClick={prevImage}
-              className="absolute left-4 top-1/2 -translate-y-1/2 text-white hover:text-zinc-300 bg-black/50 rounded-full p-2 backdrop-blur-sm z-10"
-            >
-              <ArrowLeft size={24} />
-            </button>
-
-            <button
-              onClick={nextImage}
-              className="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:text-zinc-300 bg-black/50 rounded-full p-2 backdrop-blur-sm z-10"
-            >
-              <ArrowLeft size={24} className="rotate-180" />
-            </button>
-
-            <div className="relative max-h-[80vh] max-w-[90vw]">
-              <Image
-                src={photos[selectedImage].src}
-                alt={photos[selectedImage].alt}
-                width={1200}
-                height={800}
-                className="object-contain max-h-[80vh] w-auto"
-                priority
-              />
-            </div>
-
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
-              <h3 className="text-white font-medium mb-1">
-                Photo {selectedImage + 1} of {photos.length}
-              </h3>
-              <p className="text-zinc-300 text-sm">
-                {photos[selectedImage].description}
-              </p>
-            </div>
-          </div>
-        </div>
+        <Lightbox
+          images={photos}
+          selectedIndex={selectedImage}
+          caption={photos[selectedImage].description}
+          onClose={closeLightbox}
+          onNext={nextImage}
+          onPrev={prevImage}
+        />
       )}
     </div>
   );

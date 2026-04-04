@@ -1,17 +1,24 @@
 'use client';
 
-import Image from 'next/image';
 import {
   Camera,
-  Maximize2,
-  X,
-  ArrowLeft,
-  ArrowRight,
   Film,
   Gamepad2
 } from 'lucide-react';
 import { personalPhotos, movies, games } from '@/lib/personal-data';
 import { useLightbox } from '@/hooks/useLightbox';
+import Lightbox from '@/components/Lightbox';
+import ImageCard from '@/components/ImageCard';
+
+function TitleOverlay({ name }: { name: string }) {
+  return (
+    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+      <div className="absolute bottom-0 left-0 right-0 p-4">
+        <h3 className="text-white font-medium text-lg">{name}</h3>
+      </div>
+    </div>
+  );
+}
 
 export default function PersonalPage() {
   const {
@@ -43,37 +50,17 @@ export default function PersonalPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {personalPhotos.map((photo, index) => (
-              <div
+              <ImageCard
                 key={photo.name}
-                className="group relative bg-zinc-800/50 rounded-2xl overflow-hidden shadow-lg border border-zinc-700/50 hover:border-violet-500/30 transition-all duration-300"
-              >
-                <div className="relative aspect-[4/3] overflow-hidden">
-                  {isLoading(photo.name) && (
-                    <div className="absolute inset-0 bg-zinc-700/50 animate-pulse flex items-center justify-center">
-                      <Camera className="text-zinc-500" size={24} />
-                    </div>
-                  )}
-                  <Image
-                    src={photo.name}
-                    alt={photo.alt}
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-700"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    onLoad={() => handleImageLoad(photo.name)}
-                    onError={() => handleImageError(photo.name)}
-                  />
-
-                  {/* Overlay */}
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center">
-                    <button
-                      onClick={() => openLightbox(index)}
-                      className="opacity-0 group-hover:opacity-100 transform scale-75 group-hover:scale-100 transition-all duration-300 bg-white/20 backdrop-blur-sm rounded-full p-3 hover:bg-white/30"
-                    >
-                      <Maximize2 className="text-white" size={20} />
-                    </button>
-                  </div>
-                </div>
-              </div>
+                src={photo.name}
+                alt={photo.alt}
+                isLoading={isLoading(photo.name)}
+                onLoad={() => handleImageLoad(photo.name)}
+                onError={() => handleImageError(photo.name)}
+                onClick={() => openLightbox(index)}
+                loadingIcon={<Camera className="text-zinc-500" size={24} />}
+                className="hover:border-violet-500/30"
+              />
             ))}
           </div>
         </section>
@@ -87,41 +74,21 @@ export default function PersonalPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {movies.map((movie) => (
-              <a
+              <ImageCard
                 key={movie.name}
+                src={movie.image}
+                alt={movie.alt}
                 href={movie.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group relative bg-zinc-800/50 rounded-2xl overflow-hidden shadow-lg border border-zinc-700/50 hover:border-violet-500/30 transition-all duration-300"
-              >
-                <div className="relative aspect-[4/3] overflow-hidden">
-                  {isLoading(movie.name) && (
-                    <div className="absolute inset-0 bg-zinc-700/50 animate-pulse flex items-center justify-center">
-                      <Film className="text-zinc-500" size={24} />
-                    </div>
-                  )}
-                  <Image
-                    src={movie.image}
-                    alt={movie.alt}
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-700"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    onLoad={() => handleImageLoad(movie.name)}
-                    onError={() => handleImageError(movie.name)}
-                  />
-
-                  {/* Overlay with name */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="absolute bottom-0 left-0 right-0 p-4">
-                      <h3 className="text-white font-medium text-lg">{movie.name}</h3>
-                    </div>
-                  </div>
-                </div>
-              </a>
+                isLoading={isLoading(movie.name)}
+                onLoad={() => handleImageLoad(movie.name)}
+                onError={() => handleImageError(movie.name)}
+                loadingIcon={<Film className="text-zinc-500" size={24} />}
+                overlay={<TitleOverlay name={movie.name} />}
+                className="hover:border-violet-500/30"
+              />
             ))}
           </div>
         </section>
-
 
         {/* Games Section */}
         <section className="mb-20">
@@ -132,92 +99,32 @@ export default function PersonalPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {games.map((game) => (
-              <a
+              <ImageCard
                 key={game.name}
+                src={game.image}
+                alt={game.alt}
                 href={game.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group relative bg-zinc-800/50 rounded-2xl overflow-hidden shadow-lg border border-zinc-700/50 hover:border-violet-500/30 transition-all duration-300"
-              >
-                <div className="relative aspect-[4/3] overflow-hidden">
-                  {isLoading(game.name) && (
-                    <div className="absolute inset-0 bg-zinc-700/50 animate-pulse flex items-center justify-center">
-                      <Gamepad2 className="text-zinc-500" size={24} />
-                    </div>
-                  )}
-                  <Image
-                    src={game.image}
-                    alt={game.alt}
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-700"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    onLoad={() => handleImageLoad(game.name)}
-                    onError={() => handleImageError(game.name)}
-                  />
-
-                  {/* Overlay with name */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="absolute bottom-0 left-0 right-0 p-4">
-                      <h3 className="text-white font-medium text-lg">{game.name}</h3>
-                    </div>
-                  </div>
-                </div>
-              </a>
+                isLoading={isLoading(game.name)}
+                onLoad={() => handleImageLoad(game.name)}
+                onError={() => handleImageError(game.name)}
+                loadingIcon={<Gamepad2 className="text-zinc-500" size={24} />}
+                overlay={<TitleOverlay name={game.name} />}
+                className="hover:border-violet-500/30"
+              />
             ))}
           </div>
         </section>
       </div>
 
-      {/* Lightbox Modal */}
       {selectedImage !== null && (
-        <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4">
-          <div className="relative max-w-6xl max-h-full">
-            {/* Close Button */}
-            <button
-              onClick={closeLightbox}
-              className="absolute -top-12 right-0 text-white hover:text-zinc-300 z-10"
-            >
-              <X size={32} />
-            </button>
-
-            {/* Navigation Buttons */}
-            <button
-              onClick={prevImage}
-              className="absolute left-4 top-1/2 -translate-y-1/2 text-white hover:text-zinc-300 bg-black/50 rounded-full p-2 backdrop-blur-sm z-10"
-            >
-              <ArrowLeft size={24} />
-            </button>
-
-            <button
-              onClick={nextImage}
-              className="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:text-zinc-300 bg-black/50 rounded-full p-2 backdrop-blur-sm z-10"
-            >
-              <ArrowRight size={24} />
-            </button>
-
-            {/* Image */}
-            <div className="relative max-h-[80vh] max-w-[90vw]">
-              <Image
-                src={personalPhotos[selectedImage].name}
-                alt={personalPhotos[selectedImage].alt}
-                width={1200}
-                height={800}
-                className="object-contain max-h-[80vh] w-auto"
-                priority
-              />
-            </div>
-
-            {/* Caption */}
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
-              <h3 className="text-white font-medium mb-1">
-                Photo {selectedImage + 1} of {personalPhotos.length}
-              </h3>
-              <p className="text-zinc-300 text-sm">
-                {personalPhotos[selectedImage].alt}
-              </p>
-            </div>
-          </div>
-        </div>
+        <Lightbox
+          images={personalPhotos.map(p => ({ src: p.name, alt: p.alt }))}
+          selectedIndex={selectedImage}
+          caption={personalPhotos[selectedImage].alt}
+          onClose={closeLightbox}
+          onNext={nextImage}
+          onPrev={prevImage}
+        />
       )}
     </div>
   );
