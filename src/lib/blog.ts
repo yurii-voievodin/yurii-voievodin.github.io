@@ -1,25 +1,12 @@
 import { Post } from '@/types/blog';
-import { allPosts, getPostBySlug } from './posts-registry';
+import { allPosts, getPostBySlug, getAllPostSlugs as getPostSlugs } from './posts-registry';
 
 export function getSortedPostsData(): Post[] {
-  // Sort posts by date (newest first)
-  return [...allPosts].sort((a, b) => {
-    if (a.date < b.date) {
-      return 1;
-    } else {
-      return -1;
-    }
-  });
+  return [...allPosts].sort((a, b) => (a.date < b.date ? 1 : -1));
 }
 
 export function getAllPostSlugs() {
-  return allPosts.map((post) => {
-    return {
-      params: {
-        slug: post.slug
-      }
-    };
-  });
+  return getPostSlugs().map(slug => ({ params: { slug } }));
 }
 
 export function getPostData(slug: string): Post {
@@ -31,5 +18,4 @@ export function getPostData(slug: string): Post {
 
   return post;
 }
-
 

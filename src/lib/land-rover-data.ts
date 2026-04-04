@@ -1,12 +1,5 @@
-import { Post } from '@/types/blog';
+import { Post, Photo } from '@/types/blog';
 import LandRoverPost from '@/components/blog-posts/LandRoverPost';
-
-export interface LandRoverPhoto {
-  id: number;
-  src: string;
-  alt: string;
-  description: string;
-}
 
 export const landRoverPostMetadata: Post = {
   slug: 'land_rover',
@@ -18,7 +11,7 @@ export const landRoverPostMetadata: Post = {
   component: LandRoverPost,
 };
 
-export const landRoverPhotos: LandRoverPhoto[] = [
+export const landRoverPhotos: Photo[] = [
   {
     id: 1,
     src: "/land_rover/1.jpeg",

@@ -11,22 +11,10 @@ export interface Post {
   featuredImage?: string;
 }
 
-export interface CVSection {
-  title: string;
-  items: CVItem[];
-}
-
-export interface CVItem {
-  title: string;
-  subtitle?: string;
-  period?: string;
-  description?: string;
-  skills?: string[];
-  htmlContent?: string;
-}
-
-export interface HTMLCVSection {
-  title: string;
-  htmlContent: string;
+export interface Photo {
+  id: number;
+  src: string;
+  alt: string;
+  description: string;
 }
 

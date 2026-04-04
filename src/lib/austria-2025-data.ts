@@ -1,12 +1,5 @@
-import { Post } from '@/types/blog';
+import { Post, Photo } from '@/types/blog';
 import AustriaPost from '@/components/blog-posts/AustriaPost';
-
-export interface AustriaPhoto {
-  id: number;
-  src: string;
-  alt: string;
-  description: string;
-}
 
 export const austriaPostMetadata: Post = {
   slug: 'austria-2025',
@@ -18,7 +11,7 @@ export const austriaPostMetadata: Post = {
   component: AustriaPost,
 };
 
-export const austriaPhotos: AustriaPhoto[] = [
+export const austriaPhotos: Photo[] = [
   {
     id: 1,
     src: "/austria-2025/IMG_6233.jpeg",

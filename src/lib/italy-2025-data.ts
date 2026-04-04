@@ -1,12 +1,5 @@
-import { Post } from '@/types/blog';
+import { Post, Photo } from '@/types/blog';
 import ItalyPost from '@/components/blog-posts/ItalyPost';
-
-export interface ItalyPhoto {
-  id: number;
-  src: string;
-  alt: string;
-  description: string;
-}
 
 export const italyPostMetadata: Post = {
   slug: 'italy-2025',
@@ -18,7 +11,7 @@ export const italyPostMetadata: Post = {
   component: ItalyPost,
 };
 
-export const italyPhotos: ItalyPhoto[] = [
+export const italyPhotos: Photo[] = [
   {
     id: 1,
     src: "/italy-2025/IMG_3330.jpeg",

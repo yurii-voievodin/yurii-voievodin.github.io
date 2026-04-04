@@ -1,4 +1,3 @@
-import { cvData } from '@/lib/cv-data';
 import { Mail, Download, Github, Linkedin, Phone } from 'lucide-react';
 import { siteConfig } from '@/lib/config';
 import type { Metadata } from 'next';
@@ -261,57 +260,32 @@ methodologies. Proven experience leading technical initiatives in large commerci
     </section>
 
     {/* Skills Section */}
-    {cvData
-      .filter(section => section.title === "Skills")
-      .map((section, index) => (
-      <section key={index} className="md:bg-zinc-800/50 md:rounded-lg md:shadow-lg md:border md:border-zinc-700/50 px-0 py-4 md:p-8 mb-4 md:mb-8 border-b border-zinc-700/30 md:border-b-0 pb-6 md:pb-8">
-      <h2 className="text-2xl font-bold text-zinc-100 mb-6">
-      {section.title}
-      </h2>
-
+    <section className="md:bg-zinc-800/50 md:rounded-lg md:shadow-lg md:border md:border-zinc-700/50 px-0 py-4 md:p-8 mb-4 md:mb-8 border-b border-zinc-700/30 md:border-b-0 pb-6 md:pb-8">
+      <h2 className="text-2xl font-bold text-zinc-100 mb-6">Skills</h2>
       <div className="space-y-6">
-      {section.items.map((item, itemIndex) => (
-        <div key={itemIndex} className="pl-0">
-        <h3 className="text-lg font-semibold text-zinc-100">
-        {item.title}
-        </h3>
-
-        {item.subtitle && (
-          <p className="text-violet-400 font-medium mb-1">
-          {item.subtitle}
-          </p>
-        )}
-
-        {item.description && (
-          <p className="text-zinc-300 mb-3">
-          {item.description}
-          </p>
-        )}
-
-        {item.htmlContent && (
-          <div
-          className="prose prose-sm max-w-none prose-headings:text-zinc-100 prose-p:text-zinc-300 prose-a:text-violet-400 prose-a:no-underline hover:prose-a:underline prose-strong:text-zinc-100 prose-code:bg-zinc-700 prose-code:text-zinc-100 prose-pre:bg-zinc-800 prose-pre:text-zinc-100 prose-blockquote:border-zinc-600 prose-blockquote:text-zinc-400 prose-li:text-zinc-300"
-          dangerouslySetInnerHTML={{ __html: item.htmlContent }}
-          />
-        )}
-
-        {item.skills && item.skills.length > 0 && (
-          <div className="flex flex-wrap gap-2 pt-2">
-          {item.skills.map((skill) => (
-            <span
-            key={skill}
-            className="px-3 py-1.5 bg-zinc-700/50 text-zinc-300 text-sm rounded-full border border-zinc-600/30"
-            >
-            {skill}
-            </span>
-          ))}
+        {[
+          { title: "Core iOS", skills: ["Swift", "UIKit", "SwiftUI", "Auto Layout", "Core Data", "SwiftData"] },
+          { title: "Architecture & Tooling", skills: ["Modular architecture", "CI/CD", "GitFlow", "Unit Testing", "SPM", "CocoaPods"] },
+          { title: "Monetization & Analytics", skills: ["In-App Purchases", "RevenueCat", "Firebase", "AppsFlyer", "Iterable", "A/B Testing"] },
+          { title: "AI/ML", skills: ["CoreML", "Foundation Models", "ML Kit", "Cloud AI APIs", "AI-assisted development tools"] },
+          { title: "Programming Languages", skills: ["Swift", "Objective-C", "JavaScript", "Ruby", "PHP", "Python", "Shell script"] },
+        ].map((item) => (
+          <div key={item.title} className="pl-0">
+            <h3 className="text-lg font-semibold text-zinc-100">{item.title}</h3>
+            <div className="flex flex-wrap gap-2 pt-2">
+              {item.skills.map((skill) => (
+                <span
+                  key={skill}
+                  className="px-3 py-1.5 bg-zinc-700/50 text-zinc-300 text-sm rounded-full border border-zinc-600/30"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
           </div>
-        )}
-        </div>
-      ))}
+        ))}
       </div>
-      </section>
-    ))}
+    </section>
 
     {/* Education Section */}
     <section className="md:bg-zinc-800/50 md:rounded-lg md:shadow-lg md:border md:border-zinc-700/50 px-0 py-4 md:p-8 mb-4 md:mb-8 border-b border-zinc-700/30 md:border-b-0 pb-6 md:pb-8">

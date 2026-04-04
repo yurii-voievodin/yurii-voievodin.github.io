@@ -1,49 +1,29 @@
 'use client';
 
-import { useState } from 'react';
 import Image from 'next/image';
-import { 
-  Camera, 
-  Maximize2, 
-  X, 
+import {
+  Camera,
+  Maximize2,
+  X,
   ArrowLeft,
   ArrowRight,
   Film,
   Gamepad2
 } from 'lucide-react';
 import { personalPhotos, movies, games } from '@/lib/personal-data';
+import { useLightbox } from '@/hooks/useLightbox';
 
 export default function PersonalPage() {
-  const [selectedImage, setSelectedImage] = useState<number | null>(null);
-  const [imageLoading, setImageLoading] = useState<{ [key: string]: boolean }>({});
-
-  const handleImageLoad = (imageName: string) => {
-    setImageLoading(prev => ({ ...prev, [imageName]: false }));
-  };
-
-  const handleImageError = (imageName: string) => {
-    setImageLoading(prev => ({ ...prev, [imageName]: false }));
-  };
-
-  const openLightbox = (index: number) => {
-    setSelectedImage(index);
-  };
-
-  const closeLightbox = () => {
-    setSelectedImage(null);
-  };
-
-  const nextImage = () => {
-    if (selectedImage !== null) {
-      setSelectedImage((selectedImage + 1) % personalPhotos.length);
-    }
-  };
-
-  const prevImage = () => {
-    if (selectedImage !== null) {
-      setSelectedImage(selectedImage === 0 ? personalPhotos.length - 1 : selectedImage - 1);
-    }
-  };
+  const {
+    selectedImage,
+    isLoading,
+    handleImageLoad,
+    handleImageError,
+    openLightbox,
+    closeLightbox,
+    nextImage,
+    prevImage,
+  } = useLightbox(personalPhotos.length);
 
   return (
     <div className="min-h-screen">
@@ -60,15 +40,15 @@ export default function PersonalPage() {
             <Camera className="mr-3 text-violet-400" size={32} />
             Some of my favorite photos
           </h2>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {personalPhotos.map((photo, index) => (
-              <div 
+              <div
                 key={photo.name}
                 className="group relative bg-zinc-800/50 rounded-2xl overflow-hidden shadow-lg border border-zinc-700/50 hover:border-violet-500/30 transition-all duration-300"
               >
                 <div className="relative aspect-[4/3] overflow-hidden">
-                  {imageLoading[photo.name] !== false && (
+                  {isLoading(photo.name) && (
                     <div className="absolute inset-0 bg-zinc-700/50 animate-pulse flex items-center justify-center">
                       <Camera className="text-zinc-500" size={24} />
                     </div>
@@ -82,7 +62,7 @@ export default function PersonalPage() {
                     onLoad={() => handleImageLoad(photo.name)}
                     onError={() => handleImageError(photo.name)}
                   />
-                  
+
                   {/* Overlay */}
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center">
                     <button
@@ -104,7 +84,7 @@ export default function PersonalPage() {
             <Film className="mr-3 text-violet-400" size={32} />
             Favorite movies and series
           </h2>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {movies.map((movie) => (
               <a
@@ -115,7 +95,7 @@ export default function PersonalPage() {
                 className="group relative bg-zinc-800/50 rounded-2xl overflow-hidden shadow-lg border border-zinc-700/50 hover:border-violet-500/30 transition-all duration-300"
               >
                 <div className="relative aspect-[4/3] overflow-hidden">
-                  {imageLoading[movie.name] !== false && (
+                  {isLoading(movie.name) && (
                     <div className="absolute inset-0 bg-zinc-700/50 animate-pulse flex items-center justify-center">
                       <Film className="text-zinc-500" size={24} />
                     </div>
@@ -129,7 +109,7 @@ export default function PersonalPage() {
                     onLoad={() => handleImageLoad(movie.name)}
                     onError={() => handleImageError(movie.name)}
                   />
-                  
+
                   {/* Overlay with name */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div className="absolute bottom-0 left-0 right-0 p-4">
@@ -149,7 +129,7 @@ export default function PersonalPage() {
             <Gamepad2 className="mr-3 text-violet-400" size={32} />
             Favorite games
           </h2>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {games.map((game) => (
               <a
@@ -160,7 +140,7 @@ export default function PersonalPage() {
                 className="group relative bg-zinc-800/50 rounded-2xl overflow-hidden shadow-lg border border-zinc-700/50 hover:border-violet-500/30 transition-all duration-300"
               >
                 <div className="relative aspect-[4/3] overflow-hidden">
-                  {imageLoading[game.name] !== false && (
+                  {isLoading(game.name) && (
                     <div className="absolute inset-0 bg-zinc-700/50 animate-pulse flex items-center justify-center">
                       <Gamepad2 className="text-zinc-500" size={24} />
                     </div>
@@ -174,7 +154,7 @@ export default function PersonalPage() {
                     onLoad={() => handleImageLoad(game.name)}
                     onError={() => handleImageError(game.name)}
                   />
-                  
+
                   {/* Overlay with name */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div className="absolute bottom-0 left-0 right-0 p-4">
@@ -199,7 +179,7 @@ export default function PersonalPage() {
             >
               <X size={32} />
             </button>
-            
+
             {/* Navigation Buttons */}
             <button
               onClick={prevImage}
@@ -207,14 +187,14 @@ export default function PersonalPage() {
             >
               <ArrowLeft size={24} />
             </button>
-            
+
             <button
               onClick={nextImage}
               className="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:text-zinc-300 bg-black/50 rounded-full p-2 backdrop-blur-sm z-10"
             >
               <ArrowRight size={24} />
             </button>
-            
+
             {/* Image */}
             <div className="relative max-h-[80vh] max-w-[90vw]">
               <Image
@@ -226,7 +206,7 @@ export default function PersonalPage() {
                 priority
               />
             </div>
-            
+
             {/* Caption */}
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
               <h3 className="text-white font-medium mb-1">
