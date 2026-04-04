@@ -150,21 +150,6 @@ export default function ItalyPost({ post }: ItalyPostProps) {
             ))}
           </div>
         </div>
-
-        {/* Footer CTA */}
-        <div className="mt-16 bg-gradient-to-r from-violet-600 to-purple-600 rounded-2xl p-8 text-center text-white">
-          <h3 className="text-2xl font-bold mb-4">More Travel Stories</h3>
-          <p className="text-violet-100 mb-6">
-            Continue exploring more adventures, cultures, and destinations from around the world!
-          </p>
-          <Link
-            href="/blog"
-            className="inline-flex items-center bg-white/20 hover:bg-white/30 px-6 py-3 rounded-full font-medium transition-colors backdrop-blur-sm"
-          >
-            Explore More Posts
-            <ArrowLeft className="ml-2 rotate-180" size={16} />
-          </Link>
-        </div>
       </div>
 
       {/* Lightbox Modal */}

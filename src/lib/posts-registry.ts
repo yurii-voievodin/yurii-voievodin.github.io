@@ -3,7 +3,6 @@ import { austriaPostMetadata } from './austria-2025-data';
 import { italyPostMetadata } from './italy-2025-data';
 import { norwayPostMetadata } from './norway-2025-data';
 import { landRoverPostMetadata } from './land-rover-data';
-import { featurePostMetadata } from './feature-data';
 
 // Central registry of all blog posts
 export const allPosts: Post[] = [
@@ -11,7 +10,6 @@ export const allPosts: Post[] = [
   italyPostMetadata,
   norwayPostMetadata,
   landRoverPostMetadata,
-  featurePostMetadata,
 ];
 
 // Helper function to get a post by slug
