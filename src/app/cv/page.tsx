@@ -1,4 +1,4 @@
-import { Mail, Download, Github, Linkedin, Phone } from 'lucide-react';
+import { Mail, Download, Github, Linkedin, Phone, Play } from 'lucide-react';
 import { siteConfig } from '@/lib/config';
 import type { Metadata } from 'next';
 
@@ -53,7 +53,8 @@ export default function CVPage() {
     </div>
     </div>
 
-    <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
+    <div className="flex flex-col gap-3 w-full md:w-auto">
+    <div className="flex flex-col sm:flex-row gap-3">
     <a href="/Yurii_Voievodin_CV.pdf" target='blank' className="flex items-center justify-center space-x-2 px-4 py-3 bg-gradient-to-r from-violet-600 to-purple-600 text-white rounded-lg hover:from-violet-500 hover:to-purple-500 transition-all shadow-lg hover:shadow-violet-500/20 cursor-pointer flex-1 sm:flex-none">
     <Download size={16} />
     <span>Download PDF</span>
@@ -62,8 +63,28 @@ export default function CVPage() {
     <span>View Projects</span>
     </a>
     </div>
+    <a
+      href="https://www.youtube.com/watch?v=rAGeM6KuwWE"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group flex items-center gap-3 px-3 py-2 rounded-lg border border-zinc-700/50 hover:border-violet-500/50 bg-zinc-800/50 hover:bg-zinc-800 transition-all w-full sm:w-fit"
+    >
+      <div className="relative flex-shrink-0 w-20 h-12 rounded overflow-hidden">
+        <img
+          src="https://img.youtube.com/vi/rAGeM6KuwWE/mqdefault.jpg"
+          alt="Watch my intro video on YouTube"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
+          <Play size={14} className="text-white ml-0.5" fill="white" />
+        </div>
+      </div>
+      <span className="text-sm text-zinc-400 group-hover:text-zinc-300 transition-colors">Watch my intro</span>
+    </a>
+    </div>
 
     </div>
+
     </header>
 
     {/* Professional Summary */}
