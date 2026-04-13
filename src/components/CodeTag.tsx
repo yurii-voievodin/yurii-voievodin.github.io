@@ -6,7 +6,7 @@ interface CodeTagProps {
 }
 
 export default function CodeTag({ children, className = '' }: CodeTagProps) {
-  const defaultClasses = 'bg-zinc-900 px-2 py-1 rounded';
+  const defaultClasses = 'bg-zinc-700 px-1 rounded text-xs';
   const combinedClasses = className ? `${defaultClasses} ${className}` : defaultClasses;
 
   return <code className={combinedClasses}>{children}</code>;

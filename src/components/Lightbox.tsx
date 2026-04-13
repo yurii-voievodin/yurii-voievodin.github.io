@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect } from 'react';
 import { X, ArrowLeft, ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 
@@ -19,6 +20,21 @@ interface LightboxProps {
 
 export default function Lightbox({ images, selectedIndex, caption, onClose, onNext, onPrev }: LightboxProps) {
   const image = images[selectedIndex];
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+      else if (e.key === 'ArrowLeft') onPrev();
+      else if (e.key === 'ArrowRight') onNext();
+    };
+
+    document.body.style.overflow = 'hidden';
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      document.body.style.overflow = '';
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [onClose, onNext, onPrev]);
 
   return (
     <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4">

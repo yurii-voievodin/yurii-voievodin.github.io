@@ -1,5 +1,6 @@
 import { Mail, Download, Github, Linkedin, Phone, Play } from 'lucide-react';
 import { siteConfig } from '@/lib/config';
+import CodeTag from '@/components/CodeTag';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -55,7 +56,7 @@ export default function CVPage() {
 
     <div className="flex flex-col gap-3 w-full md:w-auto">
     <div className="flex flex-col sm:flex-row gap-3">
-    <a href="/Yurii_Voievodin_CV.pdf" target='blank' className="flex items-center justify-center space-x-2 px-4 py-3 bg-gradient-to-r from-violet-600 to-purple-600 text-white rounded-lg hover:from-violet-500 hover:to-purple-500 transition-all shadow-lg hover:shadow-violet-500/20 cursor-pointer flex-1 sm:flex-none">
+    <a href="/Yurii_Voievodin_CV.pdf" target='_blank' className="flex items-center justify-center space-x-2 px-4 py-3 bg-gradient-to-r from-violet-600 to-purple-600 text-white rounded-lg hover:from-violet-500 hover:to-purple-500 transition-all shadow-lg hover:shadow-violet-500/20 cursor-pointer flex-1 sm:flex-none">
     <Download size={16} />
     <span>Download PDF</span>
     </a>
@@ -124,10 +125,10 @@ methodologies. Proven experience leading technical initiatives in large commerci
             AI-powered document management iOS app where users upload documents and interact with them through real-time AI chat for analysis, summarization, and Q&A.
           </p>
           <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
-            <li>Built iOS app with <code className="bg-zinc-700 px-1 rounded text-xs">Swift</code>, <code className="bg-zinc-700 px-1 rounded text-xs">UIKit</code> and <code className="bg-zinc-700 px-1 rounded text-xs">SwiftUI</code></li>
+            <li>Built iOS app with <CodeTag>Swift</CodeTag>, <CodeTag>UIKit</CodeTag> and <CodeTag>SwiftUI</CodeTag></li>
             <li>Implemented real-time AI chat</li>
-            <li>Set up subscriptions and paywalls with <code className="bg-zinc-700 px-1 rounded text-xs">RevenueCat</code></li>
-            <li>Implemented Auth0 OAuth 2.0 authentication and <code className="bg-zinc-700 px-1 rounded text-xs">CoreData</code> persistence</li>
+            <li>Set up subscriptions and paywalls with <CodeTag>RevenueCat</CodeTag></li>
+            <li>Implemented Auth0 OAuth 2.0 authentication and <CodeTag>CoreData</CodeTag> persistence</li>
             <li>Integrated analytics: PostHog (feature flags, session replay), AppsFlyer, TikTok Business SDK</li>
             <li>Set up Xcode Cloud CI/CD with Development, Staging, and Production targets</li>
           </ul>
@@ -149,12 +150,12 @@ methodologies. Proven experience leading technical initiatives in large commerci
             </a> <span className="text-zinc-400 mb-2">• 2022 - 2025</span>
           </p>
           <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
-            <li>Implemented modular architecture with <code className="bg-zinc-700 px-1 rounded text-xs">CocoaPods</code> modules for feature isolation</li>
-            <li>Built A/B testing experiments via <code className="bg-zinc-700 px-1 rounded text-xs">Firebase</code> that improved onboarding and retention metrics</li>
-            <li>Integrated analytics: <code className="bg-zinc-700 px-1 rounded text-xs">Firebase</code>, <code className="bg-zinc-700 px-1 rounded text-xs">AppsFlyer</code>, <code className="bg-zinc-700 px-1 rounded text-xs">Iterable</code>, <code className="bg-zinc-700 px-1 rounded text-xs">Segment</code></li>
+            <li>Implemented modular architecture with <CodeTag>CocoaPods</CodeTag> modules for feature isolation</li>
+            <li>Built A/B testing experiments via <CodeTag>Firebase</CodeTag> that improved onboarding and retention metrics</li>
+            <li>Integrated analytics: <CodeTag>Firebase</CodeTag>, <CodeTag>AppsFlyer</CodeTag>, <CodeTag>Iterable</CodeTag>, <CodeTag>Segment</CodeTag></li>
             <li>Developed product page UI, design editor image capabilities (cropping, filters, color extraction)</li>
-            <li>Increased unit test coverage with <code className="bg-zinc-700 px-1 rounded text-xs">XCTest</code> across core business logic modules</li>
-            <li>Built onboarding screens with pagination and paywall using <code className="bg-zinc-700 px-1 rounded text-xs">SwiftUI</code> components</li>
+            <li>Increased unit test coverage with <CodeTag>XCTest</CodeTag> across core business logic modules</li>
+            <li>Built onboarding screens with pagination and paywall using <CodeTag>SwiftUI</CodeTag> components</li>
           </ul>
         </div>
 
@@ -173,9 +174,9 @@ methodologies. Proven experience leading technical initiatives in large commerci
             <li>Customized and deployed iOS apps for 50+ organizations from a shared Core product</li>
             <li>Worked with MVVM + Interactor architecture across 16 internal frameworks</li>
             <li>Enabled/disabled product modules and configured custom fields per client</li>
-            <li>Maintained <code className="bg-zinc-700 px-1 rounded text-xs">GitFlow</code> discipline across a large multi-repo setup, resolving merge conflicts</li>
+            <li>Maintained <CodeTag>GitFlow</CodeTag> discipline across a large multi-repo setup, resolving merge conflicts</li>
             <li>Proposed and implemented changes to the Core product</li>
-            <li>Managed CI/CD pipeline with <code className="bg-zinc-700 px-1 rounded text-xs">GitLab CI</code>, <code className="bg-zinc-700 px-1 rounded text-xs">Fastlane</code>, and <code className="bg-zinc-700 px-1 rounded text-xs">AppCenter</code> distribution</li>
+            <li>Managed CI/CD pipeline with <CodeTag>GitLab CI</CodeTag>, <CodeTag>Fastlane</CodeTag>, and <CodeTag>AppCenter</CodeTag> distribution</li>
           </ul>
         </div>
 
@@ -192,9 +193,9 @@ methodologies. Proven experience leading technical initiatives in large commerci
             {' (part time)'} <span className="text-zinc-400 mb-2">• 2020 - 2021</span>
           </p>
           <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
-            <li>Supported and extended a legacy <code className="bg-zinc-700 px-1 rounded text-xs">Objective-C</code> + <code className="bg-zinc-700 px-1 rounded text-xs">Swift</code> hybrid codebase (~688 source files)</li>
-            <li>Rewrote legacy <code className="bg-zinc-700 px-1 rounded text-xs">Objective-C</code> code to <code className="bg-zinc-700 px-1 rounded text-xs">Swift</code> incrementally</li>
-            <li>Implemented screen recording with <code className="bg-zinc-700 px-1 rounded text-xs">ReplayKit</code> framework</li>
+            <li>Supported and extended a legacy <CodeTag>Objective-C</CodeTag> + <CodeTag>Swift</CodeTag> hybrid codebase (~688 source files)</li>
+            <li>Rewrote legacy <CodeTag>Objective-C</CodeTag> code to <CodeTag>Swift</CodeTag> incrementally</li>
+            <li>Implemented screen recording with <CodeTag>ReplayKit</CodeTag> framework</li>
             <li>Conducted code reviews and managed TestFlight / App Store releases</li>
           </ul>
         </div>
@@ -214,9 +215,9 @@ methodologies. Proven experience leading technical initiatives in large commerci
           <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
             <li>Create apps from scratch and design apps architecture</li>
             <li>Create user interface with Storyboards and XIB files</li>
-            <li>Use <code className="bg-zinc-700 px-1 rounded text-xs">UIKit</code> and create custom UI components</li>
-            <li>Design a database architecture and use <code className="bg-zinc-700 px-1 rounded text-xs">Core Data</code> framework</li>
-            <li>Write code on <code className="bg-zinc-700 px-1 rounded text-xs">Swift</code> programming language</li>
+            <li>Use <CodeTag>UIKit</CodeTag> and create custom UI components</li>
+            <li>Design a database architecture and use <CodeTag>Core Data</CodeTag> framework</li>
+            <li>Write code on <CodeTag>Swift</CodeTag> programming language</li>
             <li>Implement networking layer - REST API</li>
             <li>Integrate third-party dependencies</li>
           </ul>
@@ -236,11 +237,11 @@ methodologies. Proven experience leading technical initiatives in large commerci
             </a> <span className="text-zinc-400 mb-2">• 2012 - 2016</span>
           </p>
           <p className="text-zinc-300 mt-2">
-            I build websites on <code className="bg-zinc-700 px-1 rounded text-xs">PHP</code> programming language, using frameworks such as{' '}
-            <code className="bg-zinc-700 px-1 rounded text-xs">Laravel</code>, <code className="bg-zinc-700 px-1 rounded text-xs">Kohana</code>,{' '}
-            <code className="bg-zinc-700 px-1 rounded text-xs">Codeigniter</code>, <code className="bg-zinc-700 px-1 rounded text-xs">Yii</code>.
-            Also, I used <code className="bg-zinc-700 px-1 rounded text-xs">CSS3</code>, <code className="bg-zinc-700 px-1 rounded text-xs">HTML5</code>,{' '}
-            <code className="bg-zinc-700 px-1 rounded text-xs">jQuery</code>, and <code className="bg-zinc-700 px-1 rounded text-xs">Bootstrap</code> for the frontend.
+            I build websites on <CodeTag>PHP</CodeTag> programming language, using frameworks such as{' '}
+            <CodeTag>Laravel</CodeTag>, <CodeTag>Kohana</CodeTag>,{' '}
+            <CodeTag>Codeigniter</CodeTag>, <CodeTag>Yii</CodeTag>.
+            Also, I used <CodeTag>CSS3</CodeTag>, <CodeTag>HTML5</CodeTag>,{' '}
+            <CodeTag>jQuery</CodeTag>, and <CodeTag>Bootstrap</CodeTag> for the frontend.
             First experience of building and supporting commercial projects.
           </p>
         </div>
@@ -259,8 +260,8 @@ methodologies. Proven experience leading technical initiatives in large commerci
             </a> <span className="text-zinc-400 mb-2">• 2012 - 2013</span>
           </p>
           <p className="text-zinc-300 mt-2">
-            I worked on simple training apps for students on <code className="bg-zinc-700 px-1 rounded text-xs">Java</code> and an internal framework.
-            Also convert Microsoft Word documents to <code className="bg-zinc-700 px-1 rounded text-xs">HTML</code> pages as part of my job there.
+            I worked on simple training apps for students on <CodeTag>Java</CodeTag> and an internal framework.
+            Also convert Microsoft Word documents to <CodeTag>HTML</CodeTag> pages as part of my job there.
           </p>
         </div>
 
