@@ -21,8 +21,25 @@ export const metadata: Metadata = {
 };
 
 export default function CVPage() {
+  const personJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: siteConfig.author.name,
+    jobTitle: 'Senior iOS Engineer',
+    url: siteConfig.url,
+    email: siteConfig.author.email,
+    sameAs: [
+      siteConfig.social.github,
+      siteConfig.social.linkedin,
+    ],
+  };
+
   return (
     <div className="max-w-4xl mx-auto px-4">
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+    />
     {/* Header */}
     <header className="mb-12">
     <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-6">

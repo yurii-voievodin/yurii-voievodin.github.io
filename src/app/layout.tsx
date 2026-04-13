@@ -14,10 +14,20 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
   title: siteConfig.title,
   description: siteConfig.description,
   authors: [{ name: siteConfig.author.name }],
   creator: siteConfig.author.name,
+  manifest: '/manifest.json',
+  icons: {
+    apple: '/apple-touch-icon.png',
+  },
+  alternates: {
+    types: {
+      'application/rss+xml': '/feed.xml/',
+    },
+  },
   openGraph: {
     title: siteConfig.title,
     description: siteConfig.description,
@@ -28,6 +38,9 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: siteConfig.title,
     description: siteConfig.description,
+  },
+  other: {
+    'theme-color': '#7c3aed',
   },
 };
 
@@ -41,6 +54,18 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-[#0a0a0a] text-[#ededed]`}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'WebSite',
+              name: siteConfig.name,
+              url: siteConfig.url,
+              description: siteConfig.description,
+            }),
+          }}
+        />
         {children}
       </body>
     </html>
