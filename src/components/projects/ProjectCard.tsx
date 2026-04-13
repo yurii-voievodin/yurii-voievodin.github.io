@@ -1,17 +1,19 @@
 import { ReactNode } from 'react';
 import PhotoCarousel from '@/components/PhotoCarousel';
+import WidePhotoCarousel from '@/components/WidePhotoCarousel';
 import DomainTags from '@/components/projects/DomainTags';
 
 interface ProjectCardProps {
     date: string;
     tags: string[];
     images?: { src: string; alt: string }[];
+    wideImages?: { src: string; alt: string }[];
     children: ReactNode;
     footer?: ReactNode;
     showSeparator?: boolean;
 }
 
-export default function ProjectCard({ date, tags, images, children, footer, showSeparator = true }: ProjectCardProps) {
+export default function ProjectCard({ date, tags, images, wideImages, children, footer, showSeparator = true }: ProjectCardProps) {
     return (
         <>
             <div className="md:bg-zinc-800/90 md:backdrop-blur-sm md:rounded-3xl md:shadow-2xl md:overflow-hidden md:border md:border-zinc-700/50 md:hover:border-zinc-600/70 transition-all duration-300">
@@ -38,6 +40,11 @@ export default function ProjectCard({ date, tags, images, children, footer, show
                             <div className="space-y-3">
                                 {children}
                             </div>
+                        </div>
+                    )}
+                    {wideImages && wideImages.length > 0 && (
+                        <div className="mt-6">
+                            <WidePhotoCarousel images={wideImages} />
                         </div>
                     )}
                     {footer}
