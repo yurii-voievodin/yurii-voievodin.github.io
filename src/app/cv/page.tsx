@@ -1,5 +1,6 @@
-import { Mail, Download, Github, Linkedin, Phone, Play } from 'lucide-react';
+import { Mail, Download, Phone, Play } from 'lucide-react';
 import { siteConfig } from '@/lib/config';
+import { GithubIcon, LinkedinIcon } from '@/components/BrandIcons';
 import CodeTag from '@/components/CodeTag';
 import type { Metadata } from 'next';
 
@@ -36,11 +37,11 @@ export default function CVPage() {
     <span className="text-sm sm:text-base">{siteConfig.author.email}</span>
     </a>
     <a href="https://github.com/yurii-voievodin" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 hover:text-violet-400 transition-colors">
-    <Github size={16} />
+    <GithubIcon size={16} />
     <span className="text-sm sm:text-base">yurii-voievodin</span>
     </a>
     <a href="https://www.linkedin.com/in/yurivoevodin" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 hover:text-violet-400 transition-colors">
-    <Linkedin size={16} />
+    <LinkedinIcon size={16} />
     <span className="text-sm sm:text-base">yurivoevodin</span>
     </a>
     <a href="https://telegram.me/yurii_voievodin" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 hover:text-violet-400 transition-colors">

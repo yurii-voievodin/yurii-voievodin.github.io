@@ -1,4 +1,5 @@
-import { Github, Linkedin, Mail, Home, Clock, FileText, Heart, Shield, MessageCircleQuestion } from 'lucide-react';
+import { Mail, Home, Clock, FileText, Heart, Shield, MessageCircleQuestion } from 'lucide-react';
+import { GithubIcon, LinkedinIcon } from '@/components/BrandIcons';
 import Link from 'next/link';
 import { siteConfig } from '@/lib/config';
 
@@ -51,7 +52,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Github size={20} />
+                <GithubIcon size={20} />
               </a>
               <a 
                 href={siteConfig.social.linkedin}
@@ -60,7 +61,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Linkedin size={20} />
+                <LinkedinIcon size={20} />
               </a>
             </div>
           </div>
