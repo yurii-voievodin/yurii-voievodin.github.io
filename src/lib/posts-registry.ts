@@ -1,5 +1,6 @@
 import { Post } from '@/types/blog';
 import { bulgariaPostMetadata } from './bulgaria-2026-data';
+import { kyivPostMetadata } from './kyiv-2025-data';
 import { polandPostMetadata } from './poland-2025-data';
 import { austriaPostMetadata } from './austria-2025-data';
 import { italyPostMetadata } from './italy-2025-data';
@@ -13,6 +14,7 @@ export const allPosts: Post[] = [
   austriaPostMetadata,
   italyPostMetadata,
   norwayPostMetadata,
+  kyivPostMetadata,
   landRoverPostMetadata,
 ];
 
