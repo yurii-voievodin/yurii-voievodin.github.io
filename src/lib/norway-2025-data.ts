@@ -71,5 +71,41 @@ export const norwayPhotos: Photo[] = [
     src: "/norway-2025/IMG_7340.jpeg",
     alt: "Norway 2025 Trip - Photo 10",
     description: ""
+  },
+  {
+    id: 11,
+    src: "/norway-2025/IMG_5261.jpeg",
+    alt: "Norway 2025 Trip - Photo 11",
+    description: ""
+  },
+  {
+    id: 12,
+    src: "/norway-2025/IMG_5335.jpeg",
+    alt: "Norway 2025 Trip - Photo 12",
+    description: ""
+  },
+  {
+    id: 13,
+    src: "/norway-2025/IMG_5450.jpeg",
+    alt: "Norway 2025 Trip - Photo 13",
+    description: ""
+  },
+  {
+    id: 14,
+    src: "/norway-2025/IMG_5500.jpeg",
+    alt: "Norway 2025 Trip - Photo 14",
+    description: ""
+  },
+  {
+    id: 15,
+    src: "/norway-2025/IMG_7094.jpeg",
+    alt: "Norway 2025 Trip - Photo 15",
+    description: ""
+  },
+  {
+    id: 16,
+    src: "/norway-2025/IMG_7254.jpeg",
+    alt: "Norway 2025 Trip - Photo 16",
+    description: ""
   }
 ];

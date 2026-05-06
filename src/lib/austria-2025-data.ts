@@ -65,5 +65,17 @@ export const austriaPhotos: Photo[] = [
     src: "/austria-2025/IMG_7990.jpeg",
     alt: "Austria 2025 Trip - Reichenau an der Rax",
     description: "Reichenau an der Rax - Scenic alpine landscapes in Lower Austria"
+  },
+  {
+    id: 11,
+    src: "/austria-2025/IMG_6304.jpeg",
+    alt: "Austria 2025 Trip - Photo 11",
+    description: ""
+  },
+  {
+    id: 12,
+    src: "/austria-2025/IMG_6317.jpeg",
+    alt: "Austria 2025 Trip - Photo 12",
+    description: ""
   }
 ];

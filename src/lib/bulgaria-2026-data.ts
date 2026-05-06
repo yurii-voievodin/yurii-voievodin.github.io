@@ -21,4 +21,11 @@ export const bulgariaPhotos: Photo[] = [
   { id: 4, src: '/bulgaria-2026/04.jpeg', alt: 'Bulgaria 2026 Trip - Photo 4', description: 'View from a balcony in Bansko' },
   { id: 10, src: '/bulgaria-2026/10.jpeg', alt: 'Bulgaria 2026 Trip - Photo 10', description: 'Snow-covered forest in the mountains and rockfall near Sofia' },
   { id: 5, src: '/bulgaria-2026/05.jpeg', alt: 'Bulgaria 2026 Trip - Photo 5', description: 'Somewhere in the forest' },
+  { id: 11, src: '/bulgaria-2026/11.jpeg', alt: 'Bulgaria 2026 Trip - Photo 11', description: '' },
+  { id: 12, src: '/bulgaria-2026/12.jpeg', alt: 'Bulgaria 2026 Trip - Photo 12', description: '' },
+  { id: 13, src: '/bulgaria-2026/13.jpeg', alt: 'Bulgaria 2026 Trip - Photo 13', description: 'Hello, friends' },
+  { id: 14, src: '/bulgaria-2026/14.jpeg', alt: 'Bulgaria 2026 Trip - Photo 14', description: '' },
+  { id: 15, src: '/bulgaria-2026/15.jpeg', alt: 'Bulgaria 2026 Trip - Photo 15', description: '' },
+  { id: 16, src: '/bulgaria-2026/16.jpeg', alt: 'Bulgaria 2026 Trip - Photo 16', description: '' },
+  { id: 17, src: '/bulgaria-2026/17.jpeg', alt: 'Bulgaria 2026 Trip - Photo 17', description: '' },
 ];

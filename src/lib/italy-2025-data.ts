@@ -71,5 +71,29 @@ export const italyPhotos: Photo[] = [
     src: "/italy-2025/IMG_5357.jpeg",
     alt: "Italy 2025 Trip - Photo 10",
     description: ""
+  },
+  {
+    id: 11,
+    src: "/italy-2025/IMG_3508.jpeg",
+    alt: "Italy 2025 Trip - Photo 11",
+    description: ""
+  },
+  {
+    id: 12,
+    src: "/italy-2025/IMG_3852.jpeg",
+    alt: "Italy 2025 Trip - Photo 12",
+    description: ""
+  },
+  {
+    id: 13,
+    src: "/italy-2025/IMG_5155.jpeg",
+    alt: "Italy 2025 Trip - Photo 13",
+    description: ""
+  },
+  {
+    id: 14,
+    src: "/italy-2025/IMG_5816.jpeg",
+    alt: "Italy 2025 Trip - Photo 14",
+    description: ""
   }
 ];
