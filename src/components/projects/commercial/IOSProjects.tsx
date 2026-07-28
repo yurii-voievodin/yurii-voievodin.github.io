@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import GradientLink from '@/components/GradientLink';
 import CodeTag from '@/components/CodeTag';
 import ProjectCard from '@/components/projects/ProjectCard';
@@ -23,51 +22,39 @@ export default function CommercialIOSProjects() {
                         date="2025 - 2026"
                         tags={['AI', 'Productivity']}
                         images={hoohImages}
-                        footer={
-                            <div className="mt-6">
-                                <Image
-                                    src="/projects/Hooh/hooh-appstore.png"
-                                    alt="Hooh on the App Store"
-                                    width={1280}
-                                    height={800}
-                                    className="w-full rounded-2xl"
-                                />
-                            </div>
-                        }
                     >
                                 <p className="text-zinc-300">
-                                    <strong>Hooh</strong> — AI-powered document management iOS app. Users can upload documents and interact with them through a real-time AI chat interface for analysis, summarization, and Q&A.
+                                    <GradientLink href="https://hooh.ai" target="_blank">Hooh</GradientLink> — private AI workspace for documents, rewritten from scratch as a native SwiftUI app. Users upload PDFs, scans, photos, and Office files into an encrypted library, then chat with an AI assistant that reads, summarizes, fills, and signs them — with a full native PDF editor and a from-scratch PowerPoint (.pptx) viewer/editor built in.
                                 </p>
                                 <p className="text-zinc-300 font-semibold">Technical info:</p>
                                 <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
-                                    <li>Written in <strong>Swift</strong>, UIKit-based architecture with SwiftUI components</li>
-                                    <li><strong>MVP + Combine</strong> — presenters expose <CodeTag>@Published</CodeTag> state, views observe via Combine</li>
-                                    <li>Real-time streaming chat via custom <strong>SSEClient</strong> (Server-Sent Events) using <CodeTag>AsyncThrowingStream</CodeTag></li>
-                                    <li><strong>Moya + Alamofire</strong> networking with token refresh middleware and plugin-based interceptors</li>
-                                    <li><strong>CoreData</strong> for local persistence, document versioning, and search filters</li>
-                                    <li><strong>PDFKit</strong> and custom PDF editor Swift Package — annotations, form filling, signatures, page management</li>
-                                    <li>Voice input via <strong>AVAudioEngine</strong> with <strong>Deepgram API</strong> for speech-to-text transcription</li>
-                                    <li><strong>RevenueCat</strong> + <strong>StoreKit</strong> for subscriptions, paywalls, and upload quota enforcement</li>
-                                    <li><strong>Auth0</strong> (OAuth 2.0) for authentication</li>
-                                    <li>Analytics: <strong>PostHog</strong> (feature flags, session replay), <strong>AppsFlyer</strong> (attribution), <strong>TikTok Business SDK</strong></li>
-                                    <li>Localization via <strong>Lokalise</strong> with <CodeTag>.xcstrings</CodeTag> string catalogs</li>
-                                    <li>Deployment target: <strong>iOS 18.0+</strong></li>
+                                    <li>Written in <strong>Swift 6</strong>, fully <strong>SwiftUI</strong> — no UIKit/Storyboards; strict concurrency with <CodeTag>@MainActor</CodeTag> default isolation; deployment target <strong>iOS 18.6+</strong></li>
+                                    <li>Feature-module architecture (<CodeTag>App/Features/*</CodeTag>: Chat, Library, Auth, Paywall, Onboarding, SideMenu…) plus five local <strong>Swift Package</strong> modules — <CodeTag>Networking</CodeTag>, <CodeTag>PDFEditor</CodeTag>, <CodeTag>PresentationEditor</CodeTag>, <CodeTag>PresentationViewer</CodeTag>, <CodeTag>DesignSystem</CodeTag> (~520 Swift source files total, ~90 unit/integration test files)</li>
+                                    <li><strong>Networking</strong> package — dependency-free actor-based REST/SSE client; streams chat as <CodeTag>AsyncThrowingStream&lt;ChatEvent, Error&gt;</CodeTag> (tokens, tool-use, live widgets, inline DOCX generation), single-flight 401 token refresh, typed 402/429 billing errors</li>
+                                    <li><strong>Supabase</strong> for auth (Apple/Google/email), Postgres realtime channels (conversation sync), and shared-keychain session storage for the Share Extension</li>
+                                    <li>Custom <strong>PDFEditor</strong> Swift Package (PDFKit-based) — annotate, freehand draw, sticky notes, signature capture &amp; placement, page reorder/scan-import, form filling, merge/compress</li>
+                                    <li>Custom <strong>PresentationEditor</strong>/<strong>PresentationViewer</strong> packages — from-scratch OOXML (.pptx) parser and slide editor</li>
+                                    <li><strong>Adapty</strong> for paywall UI and subscription state, backed by a server-side entitlement service as the authoritative 402/429 gate — not client-trust</li>
+                                    <li>Native <strong>App Intents</strong>/Siri Shortcuts, deep-link routing, and a <strong>Share Extension</strong> for importing documents from other apps</li>
+                                    <li>Analytics: <strong>PostHog</strong> (product analytics), <strong>AppsFlyer</strong> (attribution, ATT-gated) — UUID-only identity, no PII in events</li>
+                                    <li>Push notifications, App Store server-driven force-update gate, and an engagement-based native review-prompt flow</li>
+                                    <li>Localization via <strong>Lokalise</strong> with <CodeTag>.xcstrings</CodeTag> string catalogs across 6 locales (EN, UK, DE, ES, FR, PT-PT)</li>
                                 </ul>
 
                                 <p className="text-zinc-300 font-semibold">CI/CD & Workflow:</p>
                                 <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
-                                    <li><strong>Xcode Cloud</strong> for continuous integration and delivery — separate workflows for <CodeTag>Development</CodeTag>, <CodeTag>Staging</CodeTag>, and <CodeTag>Production</CodeTag> targets</li>
-                                    <li>Code reviews and pull requests via <strong>GitHub</strong></li>
+                                    <li><strong>Xcode Cloud</strong> — post-clone hook injects Supabase/Adapty/AppsFlyer/PostHog credentials from workflow environment into gitignored xcconfig files</li>
+                                    <li><strong>Swift Testing</strong> framework across app and package test suites; <CodeTag>develop</CodeTag>/<CodeTag>main</CodeTag> branching with PR review on GitHub</li>
                                 </ul>
 
                                 <p className="text-zinc-300 font-semibold">AI-assisted development:</p>
                                 <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
-                                    <li>UI implemented directly from <strong>Figma</strong> designs using <strong>MCP</strong> and <strong>Claude Code</strong> — designs translated to production SwiftUI/UIKit code</li>
+                                    <li>Built end-to-end with <strong>Claude Code</strong> — a written <CodeTag>CLAUDE.md</CodeTag> encodes architecture rules and review heuristics, with living <CodeTag>Docs/Planning/</CodeTag> feature/architecture/decision logs and custom skills for build-and-test and bug-hunt passes</li>
                                 </ul>
 
                                 <div className="flex flex-wrap gap-3 pt-2">
-                                    <GradientLink href="https://apps.apple.com/us/app/documents-file-manager-hooh/id6751770725" target="_blank">App Store</GradientLink>
-                                    <GradientLink href="https://hooh.com" target="_blank">hooh.com</GradientLink>
+                                    <GradientLink href="https://apps.apple.com/us/app/hooh-ai-pdf-document-assistant/id6763233940" target="_blank">App Store</GradientLink>
+                                    <GradientLink href="https://hooh.ai" target="_blank">hooh.ai</GradientLink>
                                 </div>
                     </ProjectCard>
 

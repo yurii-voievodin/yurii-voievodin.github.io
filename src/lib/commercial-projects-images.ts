@@ -1,12 +1,7 @@
 export const hoohImages = [
-    { src: '/projects/Hooh/hooh-home.png', alt: 'Hooh Home' },
-    { src: '/projects/Hooh/hooh-paywall.png', alt: 'Hooh Paywall' },
-    { src: '/projects/Hooh/hooh-upload-merge.png', alt: 'Hooh Upload & Merge' },
-    { src: '/projects/Hooh/hooh-pdf-viewer.png', alt: 'Hooh PDF Viewer' },
-    { src: '/projects/Hooh/hooh-chat.png', alt: 'Hooh AI Chat' },
-    { src: '/projects/Hooh/hooh-documents.png', alt: 'Hooh Documents' },
-    { src: '/projects/Hooh/hooh-account.png', alt: 'Hooh Account' },
-    { src: '/projects/Hooh/hooh-security.png', alt: 'Hooh Security' },
+    { src: '/projects/Hooh/hooh-chat.png', alt: 'Hooh AI Chat — retrieving invoices' },
+    { src: '/projects/Hooh/hooh-pdf-signing.png', alt: 'Hooh PDF editor — signing a contract' },
+    { src: '/projects/Hooh/hooh-chat-dark.png', alt: 'Hooh AI Chat, dark mode' },
 ];
 
 export const vistaCreateImages = [
