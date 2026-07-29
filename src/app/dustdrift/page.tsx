@@ -7,10 +7,6 @@ import {
     Bot,
     DoorOpen,
     Shield,
-    Sun,
-    Snowflake,
-    Droplets,
-    Rocket,
 } from 'lucide-react';
 import { siteConfig } from '@/lib/config';
 import { dustdriftScreenshots } from '@/lib/dustdrift-images';
@@ -76,13 +72,6 @@ const features = [
     },
 ];
 
-const worlds = [
-    { icon: Sun, name: 'Desert', body: 'The wind-scoured home surface where your shuttle first touches down.' },
-    { icon: Droplets, name: 'Water', body: 'Flooded biomes threaded with lakes and hidden currents.' },
-    { icon: Snowflake, name: 'Ice', body: 'Frozen fields with their own resources and dangers.' },
-    { icon: Rocket, name: 'Ship Docks', body: 'Every world has its own docked ship — home base, crafting stations, and the 3D printer.' },
-];
-
 export default function DustDriftPage() {
     return (
         <div className="min-h-screen p-5">
@@ -144,26 +133,6 @@ export default function DustDriftPage() {
                 <div className="mb-12">
                     <h2 className="text-xl font-bold text-zinc-100 mb-4">Screenshots</h2>
                     <WidePhotoCarousel images={dustdriftScreenshots} />
-                </div>
-
-                {/* Worlds */}
-                <div className="mb-12">
-                    <h2 className="text-xl font-bold text-zinc-100 mb-4">Worlds to Explore</h2>
-                    <p className="text-zinc-400 mb-4 -mt-2">
-                        Desert, water, and ice biomes, each connected by portal to its own docked ship.
-                    </p>
-                    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                        {worlds.map(({ icon: Icon, name, body }) => (
-                            <div
-                                key={name}
-                                className="rounded-2xl bg-zinc-800/50 border border-zinc-700/50 p-5 backdrop-blur-sm"
-                            >
-                                <Icon className="w-6 h-6 text-violet-400 mb-3" />
-                                <h3 className="font-semibold text-zinc-100 mb-1.5">{name}</h3>
-                                <p className="text-sm text-zinc-400 leading-relaxed">{body}</p>
-                            </div>
-                        ))}
-                    </div>
                 </div>
 
                 {/* Footer CTA */}

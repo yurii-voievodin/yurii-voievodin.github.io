@@ -1,8 +1,8 @@
 import GradientLink from '@/components/GradientLink';
 import CodeTag from '@/components/CodeTag';
 import ProjectCard from '@/components/projects/ProjectCard';
-import { wiseBudgeterImages } from '@/lib/personal-projects-images';
 import { dustdriftScreenshots } from '@/lib/dustdrift-images';
+import { wisebudgetScreenshots } from '@/lib/wisebudget-images';
 
 export default function PersonalMacOSProjects() {
     return (
@@ -34,9 +34,9 @@ export default function PersonalMacOSProjects() {
                     </ProjectCard>
 
                     {/* WiseBudgeter */}
-                    <ProjectCard date="20 March 2025" tags={['Finance', 'macOS']} wideImages={wiseBudgeterImages}>
+                    <ProjectCard date="20 March 2025" tags={['Finance', 'macOS']} wideImages={wisebudgetScreenshots}>
                         <p className="text-zinc-300">
-                            <GradientLink href="https://apps.apple.com/us/app/wisebudgeter/id6760725900">WiseBudgeter</GradientLink> — macOS app for personal finance management. Track expenses and income across multiple currencies, sync transactions from <GradientLink href="https://wise.com">Wise</GradientLink> and <GradientLink href="https://www.monobank.ua">Monobank</GradientLink>, plan monthly budgets per category, and visualize spending with charts and analytics.
+                            <GradientLink href="/wisebudget">WiseBudgeter</GradientLink> — macOS app for personal finance management. Track expenses and income across multiple currencies, sync transactions from <GradientLink href="https://wise.com">Wise</GradientLink> and <GradientLink href="https://www.monobank.ua">Monobank</GradientLink>, plan monthly budgets per category, and visualize spending with charts and analytics.
                         </p>
 
                         <p className="text-zinc-300 font-semibold">Technical info:</p>
@@ -52,6 +52,11 @@ export default function PersonalMacOSProjects() {
                             <li><strong>Swift Testing</strong> framework with in-memory <CodeTag>ModelContainer</CodeTag> for isolated unit tests</li>
                             <li>Deployment target: <strong>macOS 15.2+</strong></li>
                         </ul>
+
+                        <div className="flex flex-wrap gap-3 pt-2">
+                            <GradientLink href="/wisebudget">Landing page</GradientLink>
+                            <GradientLink href="https://apps.apple.com/us/app/wisebudgeter/id6760725900" target="_blank">Mac App Store</GradientLink>
+                        </div>
                     </ProjectCard>
         </>
     );
