@@ -19,11 +19,11 @@ export default function HeadRecorderSupportPage() {
         <div className="min-h-screen p-5">
             <div className="max-w-3xl mx-auto">
                 <Link
-                    href="/"
+                    href="/headrecorder"
                     className="inline-flex items-center bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent hover:from-violet-300 hover:to-purple-300 mb-6 transition-all font-medium"
                 >
                     <ArrowLeft className="mr-2 text-violet-400 hover:text-violet-300 transition-colors" size={16} />
-                    Yurii Voievodin
+                    Head Recorder
                 </Link>
 
                 <div className="mb-12">
