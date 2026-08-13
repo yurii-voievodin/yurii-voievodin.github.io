@@ -42,6 +42,9 @@ export const metadata: Metadata = {
   other: {
     'theme-color': '#7c3aed',
   },
+  verification: {
+    google: 'cTGblQb-bn7Tw2ClzLhJfzgTQ94t8V54PnaOiXzZXJ4',
+  },
 };
 
 export default function RootLayout({
