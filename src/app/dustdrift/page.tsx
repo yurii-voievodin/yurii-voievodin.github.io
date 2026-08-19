@@ -17,7 +17,7 @@ import type { Metadata } from 'next';
 
 const title = 'DustDrift — Explore, Mine, Craft, Survive';
 const description =
-    "Stranded on an alien world, mine resources, craft gear, and fight back against hostile robots across four connected biomes. DustDrift is a procedurally rendered exploration and survival game, native on iPhone, iPad, and Mac. Pre-order now on the Mac App Store, arriving December 10, 2026.";
+    "Stranded on an alien world, mine resources, craft gear, and fight back against hostile robots across four connected biomes. DustDrift is a procedurally rendered exploration and survival game, native on iPhone, iPad, and Mac. Pre-order now on the App Store, arriving December 10, 2026.";
 
 export const metadata: Metadata = {
     title,
@@ -38,6 +38,7 @@ export const metadata: Metadata = {
 };
 
 const RELEASE_DATE = 'December 10, 2026';
+const PLATFORMS = ['iPhone', 'iPad', 'Mac'];
 
 const features = [
     {
@@ -101,7 +102,22 @@ export default function DustDriftPage() {
                 {/* CTAs */}
                 <div className="mb-12">
                     <AppStoreBadge />
-                    <p className="text-xs text-zinc-500 mt-1.5">Pre-order now — arriving {RELEASE_DATE}</p>
+                    <p className="text-xs text-zinc-500 mt-1.5">
+                        Pre-order now — arriving {RELEASE_DATE} on iPhone, iPad, and Mac
+                    </p>
+                    <div className="flex flex-wrap items-center gap-2 mt-4">
+                        {PLATFORMS.map((platform) => (
+                            <span
+                                key={platform}
+                                className="px-3 py-1 rounded-full text-xs font-medium bg-violet-500/10 text-violet-300 border border-violet-500/30"
+                            >
+                                {platform}
+                            </span>
+                        ))}
+                        <span className="text-xs text-zinc-500 ml-1">
+                            Requires iOS or iPadOS 16.0 or later, or macOS 13.0 or later
+                        </span>
+                    </div>
                 </div>
 
                 {/* Trailer */}
@@ -138,7 +154,7 @@ export default function DustDriftPage() {
                 {/* Footer CTA */}
                 <div className="rounded-3xl bg-zinc-800/90 border border-zinc-700/50 p-8 text-center backdrop-blur-sm mb-8">
                     <h2 className="text-2xl font-bold text-zinc-100 mb-2">Pre-order DustDrift</h2>
-                    <p className="text-zinc-400 mb-5">Arriving {RELEASE_DATE} on Mac.</p>
+                    <p className="text-zinc-400 mb-5">Arriving {RELEASE_DATE} on iPhone, iPad, and Mac.</p>
                     <div className="flex justify-center">
                         <AppStoreBadge />
                     </div>

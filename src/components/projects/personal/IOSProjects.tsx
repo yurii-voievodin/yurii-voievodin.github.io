@@ -2,10 +2,13 @@ import GradientLink from '@/components/GradientLink';
 import CodeTag from '@/components/CodeTag';
 import ProjectCard from '@/components/projects/ProjectCard';
 import { myUniversityImages } from '@/lib/personal-projects-images';
+import DustDriftProjectCard from '@/components/projects/personal/DustDriftCard';
 
-export default function PersonalIOSProjects() {
+export default function PersonalIOSProjects({ includeDustDrift = false }: { includeDustDrift?: boolean }) {
     return (
         <>
+                    {includeDustDrift && <DustDriftProjectCard />}
+
                     {/* My University */}
                     <ProjectCard date="24 December 2018" tags={['Productivity']} images={myUniversityImages}>
                         <p className="text-zinc-300">

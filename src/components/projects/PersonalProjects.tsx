@@ -30,7 +30,7 @@ export default function PersonalProjects() {
             </div>
 
             {show('macos') && <PersonalMacOSProjects />}
-            {show('ios') && <PersonalIOSProjects />}
+            {show('ios') && <PersonalIOSProjects includeDustDrift={!show('macos')} />}
             {show('backend') && <PersonalBackendProjects />}
         </>
     );
