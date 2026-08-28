@@ -1,4 +1,5 @@
 import { Post } from '@/types/blog';
+import { greecePostMetadata } from './greece-2026-data';
 import { bulgariaPostMetadata } from './bulgaria-2026-data';
 import { kyivPostMetadata } from './kyiv-2025-data';
 import { polandPostMetadata } from './poland-2025-data';
@@ -10,6 +11,7 @@ import { landRoverPostMetadata } from './land-rover-data';
 
 // Central registry of all blog posts
 export const allPosts: Post[] = [
+  greecePostMetadata,
   bulgariaPostMetadata,
   polandPostMetadata,
   praguePostMetadata,
