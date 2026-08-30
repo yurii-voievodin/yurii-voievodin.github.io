@@ -156,17 +156,17 @@ export const commercialProjects: Project[] = [
             discounts, and size/quantity/material variation pickers
           </li>
           <li>
-            Implemented image editing capabilities for the design editor —
+            Built image editing capabilities for the design editor —
             replacement, cropping, hue/saturation/lightness sliders, filters,
             color extraction
           </li>
           <li>
-            Built the account screen with web view integration and links to
+            Designed the account screen with web view integration and links to
             cart, orders, and support
           </li>
           <li>
-            Covered core modules with unit tests, added localization with String
-            Catalogs, and built a logging system
+            Covered core modules with unit tests, added localization with
+            string catalogs, and shipped a logging system
           </li>
         </ul>
 
@@ -199,9 +199,9 @@ export const commercialProjects: Project[] = [
         <p className="text-zinc-300 font-semibold">CI/CD & Workflow:</p>
         <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
           <li>
-            <strong>GitLab CI</strong> with parallel test stages — unit tests,
-            snapshot tests, UI tests, smoke tests, and full test suite on
-            release branches
+            <strong>GitLab CI</strong> with parallel test stages — unit,
+            snapshot, UI, and smoke tests on every branch, plus the full test
+            suite on release branches
           </li>
           <li>
             <strong>Fastlane</strong> for build automation, versioning,
