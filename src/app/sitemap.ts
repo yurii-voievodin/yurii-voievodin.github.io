@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next'
 import { getSortedPostsData } from '@/lib/blog'
+import { commercialProjects, personalProjects } from '@/lib/projects-data'
 
 export const dynamic = 'force-static'
 
@@ -40,6 +41,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/projects`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/projects/personal`,
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
       priority: 0.8,
@@ -113,6 +120,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }))
 
-  return [...staticPages, ...blogPages]
+  const projectPages = [
+    ...commercialProjects.map((p) => ({ category: 'commercial', slug: p.slug })),
+    ...personalProjects.map((p) => ({ category: 'personal', slug: p.slug })),
+  ].map(({ category, slug }) => ({
+    url: `${baseUrl}/projects/${category}/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.5,
+  }))
+
+  return [...staticPages, ...blogPages, ...projectPages]
 }
 
