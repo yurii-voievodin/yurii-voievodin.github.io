@@ -1,12 +1,30 @@
 import { MetadataRoute } from 'next'
 import { getSortedPostsData } from '@/lib/blog'
 import { commercialProjects, personalProjects } from '@/lib/projects-data'
+import { DUSTDRIFT_PATHS, LOCALES } from '@/lib/dustdrift-content'
 
 export const dynamic = 'force-static'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const posts = getSortedPostsData()
   const baseUrl = 'https://yurii-voievodin.github.io' // Updated to GitHub Pages domain
+
+  const dustdriftLanguages: Record<string, string> = {
+    'x-default': `${baseUrl}${DUSTDRIFT_PATHS.en}/`,
+  }
+  for (const locale of LOCALES) {
+    dustdriftLanguages[locale] = `${baseUrl}${DUSTDRIFT_PATHS[locale]}/`
+  }
+
+  const dustdriftPages = LOCALES.map((locale) => ({
+    url: `${baseUrl}${DUSTDRIFT_PATHS[locale]}/`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: locale === 'en' ? 0.8 : 0.7,
+    alternates: {
+      languages: dustdriftLanguages,
+    },
+  }))
 
   const staticPages = [
     {
@@ -62,12 +80,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
       priority: 0.6,
-    },
-    {
-      url: `${baseUrl}/dustdrift`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
-      priority: 0.8,
     },
     {
       url: `${baseUrl}/dustdrift-support`,
@@ -130,6 +142,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.5,
   }))
 
-  return [...staticPages, ...blogPages, ...projectPages]
+  return [...staticPages, ...dustdriftPages, ...blogPages, ...projectPages]
 }
 

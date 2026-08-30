@@ -3,7 +3,15 @@
 import { useState } from 'react';
 import { Play } from 'lucide-react';
 
-export default function TrailerPlayer() {
+interface TrailerPlayerProps {
+  ariaLabel?: string;
+  alt?: string;
+}
+
+export default function TrailerPlayer({
+  ariaLabel = 'Play DustDrift gameplay trailer',
+  alt = 'DustDrift gameplay — the astronaut beside the docked space shuttle',
+}: TrailerPlayerProps) {
   const [playing, setPlaying] = useState(false);
 
   return (
@@ -22,12 +30,12 @@ export default function TrailerPlayer() {
           type="button"
           onClick={() => setPlaying(true)}
           className="group absolute inset-0 w-full h-full"
-          aria-label="Play DustDrift gameplay trailer"
+          aria-label={ariaLabel}
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/dustdrift/trailer-poster.jpg"
-            alt="DustDrift gameplay — the astronaut beside the docked space shuttle"
+            alt={alt}
             className="absolute inset-0 w-full h-full object-contain"
           />
           <div className="absolute inset-0 bg-black/20 group-hover:bg-black/35 transition-colors flex items-center justify-center">
