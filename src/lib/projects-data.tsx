@@ -44,8 +44,7 @@ export const commercialProjects: Project[] = [
   {
     slug: "hooh",
     name: "Hooh",
-    summary:
-      "Private AI workspace for documents — native SwiftUI app with an on-device PDF editor.",
+    summary: "Private AI workspace for documents — native SwiftUI app",
     date: "2025 - 2026",
     tags: ["AI", "Productivity"],
     images: hoohImages,
@@ -59,6 +58,27 @@ export const commercialProjects: Project[] = [
           photos, and Office files, then chat with an AI assistant that reads,
           summarizes, fills, and signs them.
         </p>
+        <p className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent font-semibold">
+          My role:
+        </p>
+        <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
+          <li>
+            Designed and built the app's architecture from scratch — feature
+            modules, local Swift Package boundaries, and the data/auth layer
+          </li>
+          <li>
+            Set up the CI/CD pipeline with <strong>Xcode Cloud</strong> for
+            automated TestFlight builds and releases
+          </li>
+          <li>
+            Implemented the core business features, from AI-powered document
+            chat to onboarding and paywall
+          </li>
+          <li>
+            Took the app from first commit to App Store launch, and continued to
+            ship new releases
+          </li>
+        </ul>
         <p className="text-zinc-300 font-semibold">Technical info:</p>
         <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
           <li>
@@ -67,11 +87,10 @@ export const commercialProjects: Project[] = [
             isolation; deployment target <strong>iOS 18.6+</strong>
           </li>
           <li>
-            Feature-module architecture (<CodeTag>App/Features/*</CodeTag>:
-            Chat, Library, Auth, Paywall, Onboarding, SideMenu…) plus local{" "}
-            <strong>Swift Package</strong> modules —{" "}
-            <CodeTag>Networking</CodeTag>, <CodeTag>PDFEditor</CodeTag>,{" "}
-            <CodeTag>PresentationEditor</CodeTag>,{" "}
+            Feature-module architecture (Chat, Library, Auth, Paywall,
+            Onboarding, SideMenu…) plus local <strong>Swift Package</strong>{" "}
+            modules — <CodeTag>Networking</CodeTag>,{" "}
+            <CodeTag>PDFEditor</CodeTag>, <CodeTag>PresentationEditor</CodeTag>,{" "}
             <CodeTag>PresentationViewer</CodeTag>,{" "}
             <CodeTag>DesignSystem</CodeTag>
           </li>
@@ -81,12 +100,7 @@ export const commercialProjects: Project[] = [
             storage for the Share Extension
           </li>
           <li>
-            Custom <strong>PDFEditor</strong> Swift Package (PDFKit-based) —
-            annotate, freehand draw, sticky notes, signature capture &amp;
-            placement, page reorder/scan-import, form filling, merge/compress
-          </li>
-          <li>
-            Native <strong>App Intents</strong>/Siri Shortcuts, deep-link
+            Native <strong>App Intents/Siri Shortcuts</strong>, deep-link
             routing, and a <strong>Share Extension</strong> for importing
             documents from other apps
           </li>
@@ -96,16 +110,9 @@ export const commercialProjects: Project[] = [
           </li>
           <li>
             Localization via <strong>Lokalise</strong> with{" "}
-            <CodeTag>.xcstrings</CodeTag> string catalogs across 6 locales (EN,
-            UK, DE, ES, FR, PT-PT)
-          </li>
-        </ul>
-
-        <p className="text-zinc-300 font-semibold">CI/CD & Workflow:</p>
-        <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
-          <li>
-            <strong>Xcode Cloud</strong> — builds and publishes releases to
-            TestFlight
+            <CodeTag>.xcstrings</CodeTag> string catalogs across 6 locales
+            (English, Ukrainian, German, Spanish, French, and European
+            Portuguese)
           </li>
         </ul>
         <div className="flex flex-wrap gap-3 pt-2">
@@ -126,7 +133,7 @@ export const commercialProjects: Project[] = [
     slug: "vistaprint",
     name: "VistaPrint",
     summary:
-      "E-commerce iOS app for ordering custom printed products, with an integrated design editor",
+      "E-commerce iOS app for ordering custom printed products, with an integrated design editor.",
     date: "August 2023 - December 2025",
     tags: ["E-commerce", "Shopping"],
     images: vistaPrintImages,
@@ -145,20 +152,21 @@ export const commercialProjects: Project[] = [
         </p>
         <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
           <li>
-            Product page — preview images, pricing, discounts, color swatches,
-            size/quantity/material variations
+            Implemented the product page UI — preview image gallery, pricing and
+            discounts, and size/quantity/material variation pickers
           </li>
           <li>
-            Design editor image capabilities — replacement, cropping,
-            hue/saturation/lightness sliders, filters, color extraction
+            Implemented image editing capabilities for the design editor —
+            replacement, cropping, hue/saturation/lightness sliders, filters,
+            color extraction
           </li>
           <li>
-            Account screen with web view integration and links to cart, orders,
-            support
+            Built the account screen with web view integration and links to
+            cart, orders, and support
           </li>
           <li>
-            Unit test coverage for core modules, localization with string
-            catalogs, logging system
+            Covered core modules with unit tests, added localization with String
+            Catalogs, and built a logging system
           </li>
         </ul>
 
@@ -169,43 +177,19 @@ export const commercialProjects: Project[] = [
             components
           </li>
           <li>
-            <strong>MVP + DataProvider</strong> architecture — presenters manage
-            business logic, typed data providers handle fetching and caching
+            <strong>MVP + DataProvider</strong> architecture
           </li>
           <li>
             <strong>37 local CocoaPods modules</strong> for feature isolation
             (Editor, Gallery, ProductPage, VistaCart, Storage, Networking, etc.)
           </li>
           <li>
-            <strong>Moya + Alamofire</strong> networking with custom{" "}
-            <CodeTag>NetworkingProvider</CodeTag> and response caching layer
-          </li>
-          <li>
             <strong>CoreData</strong> + custom Storage module with{" "}
             <strong>EasyMapping</strong> for data persistence
           </li>
           <li>
-            Advanced design editor — SVG rendering, background removal, image
-            filters, color extraction, interactive zoom and transform gestures
-          </li>
-          <li>
-            <strong>Braintree</strong> + <strong>PayPal</strong> for payments,
-            cart and checkout flow
-          </li>
-          <li>
-            <strong>Auth0</strong> (AppAuth) for authentication
-          </li>
-          <li>
             <strong>Firebase</strong> Remote Config + A/B testing,{" "}
             <strong>Segment</strong> for analytics
-          </li>
-          <li>
-            <strong>SDWebImage</strong> for image loading/caching,{" "}
-            <strong>SkeletonView</strong> for loading states
-          </li>
-          <li>
-            <strong>SwiftLint</strong> with custom rule configuration across all
-            modules
           </li>
           <li>
             Deployment target: <strong>iOS 18.0+</strong>
@@ -223,7 +207,6 @@ export const commercialProjects: Project[] = [
             <strong>Fastlane</strong> for build automation, versioning,
             TestFlight distribution, and Slack notifications
           </li>
-          <li>S3 artifact storage with CloudFront invalidation on deploy</li>
         </ul>
 
         <hr className="border-zinc-700/50" />
