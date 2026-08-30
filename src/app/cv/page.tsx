@@ -188,13 +188,19 @@ export default function CVPage() {
               <li>
                 Designed and built the app&apos;s architecture from scratch{" "}
               </li>
+              <li>Implemented real-time AI chat</li>
               <li>
-                Set up the CI/CD pipeline with <strong>Xcode Cloud</strong> for
-                automated TestFlight builds and releases
+                Set up subscriptions and paywalls with{" "}
+                <strong>RevenueCat</strong>
               </li>
               <li>
-                Implemented business features from AI-powered document chat to
-                onboarding and paywall
+                Integrated analytics: <strong>PostHog</strong> (feature flags,
+                session replay), <strong>AppsFlyer</strong>,{" "}
+                <strong>TikTok Business SDK</strong>
+              </li>
+              <li>
+                Set up <strong>Xcode Cloud</strong> CI/CD with Development,
+                Staging, and Production targets
               </li>
               <li>
                 Took the app from first commit to App Store launch, and
@@ -229,15 +235,26 @@ export default function CVPage() {
                 the first experience with the app for new users and enabling
                 promotion of seasonal offers and discounts
               </li>
-              <li>Covered core modules with unit tests</li>
+              <li>
+                Implemented modular architecture with{" "}
+                <strong>CocoaPods</strong> modules for feature isolation
+              </li>
               <li>
                 Continuously iterated on the onboarding flow, testing different
                 variants with A/B tests to improve user conversion
               </li>
               <li>
-                Analytics event logging — <strong>Firebase</strong>,{" "}
+                Integrated analytics: <strong>Firebase</strong>,{" "}
                 <strong>AppsFlyer</strong>, <strong>Iterable</strong>,{" "}
                 <strong>Segment</strong>
+              </li>
+              <li>
+                Increased unit test coverage with <strong>XCTest</strong>{" "}
+                across core business logic modules
+              </li>
+              <li>
+                Collaborated with product, design, and analytics teams on
+                feature planning
               </li>
             </ul>
           </div>
@@ -257,25 +274,17 @@ export default function CVPage() {
             </p>
             <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
               <li>
-                Create clones of the Core product and customize them per client
-                (enable/disable modules, custom fields, branding)
+                Customized and deployed iOS apps for 50+ organizations from a
+                shared Core product
               </li>
               <li>
-                Support 50+ existing apps and update them to the latest Core
-                version
+                Maintained <strong>GitFlow</strong> across a large multi-repo
+                setup, resolving merge conflicts
               </li>
-              <li>Propose and implement changes to the Core product</li>
+              <li>Proposed and implemented changes to the Core product</li>
               <li>
-                Resolve merge conflicts and maintain <CodeTag>GitFlow</CodeTag>{" "}
-                discipline across a large multi-repo setup
-              </li>
-              <li>
-                Worked with <CodeTag>MVVM + Interactor</CodeTag> architecture
-                across 16 internal frameworks
-              </li>
-              <li>
-                Managed CI/CD pipeline with <CodeTag>GitLab CI</CodeTag>,{" "}
-                <CodeTag>Fastlane</CodeTag>, and <CodeTag>AppCenter</CodeTag>{" "}
+                Managed CI/CD pipeline with <strong>GitLab CI</strong>,{" "}
+                <strong>Fastlane</strong>, and <strong>AppCenter</strong>{" "}
                 distribution
               </li>
             </ul>
