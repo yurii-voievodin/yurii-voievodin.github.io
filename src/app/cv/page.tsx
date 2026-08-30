@@ -135,20 +135,18 @@ methodologies. Proven experience leading technical initiatives in large commerci
             iOS Developer
           </h3>
           <p className="text-violet-400 font-medium mb-1">
-            <a href="https://hooh.com" rel="nofollow" target="_blank" className="text-violet-400 hover:text-violet-300">
+            <a href="/projects/commercial/hooh" className="text-violet-400 hover:text-violet-300">
               Hooh
             </a> <span className="text-zinc-400 mb-2">• 2025 - 2026</span>
           </p>
           <p className="text-zinc-300 mt-2 mb-2">
-            AI-powered document management iOS app where users upload documents and interact with them through real-time AI chat for analysis, summarization, and Q&A.
+            Private AI workspace for documents. Users upload PDFs, scans, photos, and Office files, then chat with an AI assistant that reads, summarizes, fills, and signs them.
           </p>
           <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
-            <li>Built iOS app with <CodeTag>Swift</CodeTag>, <CodeTag>UIKit</CodeTag> and <CodeTag>SwiftUI</CodeTag></li>
-            <li>Implemented real-time AI chat</li>
-            <li>Set up subscriptions and paywalls with <CodeTag>RevenueCat</CodeTag></li>
-            <li>Implemented Auth0 OAuth 2.0 authentication and <CodeTag>CoreData</CodeTag> persistence</li>
-            <li>Integrated analytics: PostHog (feature flags, session replay), AppsFlyer, TikTok Business SDK</li>
-            <li>Set up Xcode Cloud CI/CD with Development, Staging, and Production targets</li>
+            <li>Designed and built the app&apos;s architecture from scratch — feature modules, local <CodeTag>Swift Package</CodeTag> boundaries, and the data/auth layer</li>
+            <li>Set up the CI/CD pipeline with <CodeTag>Xcode Cloud</CodeTag> for automated TestFlight builds and releases</li>
+            <li>Implemented the core business features, from AI-powered document chat to onboarding and paywall</li>
+            <li>Took the app from first commit to App Store launch, and continued to ship new releases</li>
           </ul>
         </div>
 
@@ -157,21 +155,26 @@ methodologies. Proven experience leading technical initiatives in large commerci
             Lead iOS Engineer
           </h3>
           <p className="text-violet-400 font-medium mb-1">
-            <a href="https://www.vistaprint.com" rel="nofollow" target="_blank" className="text-violet-400 hover:text-violet-300">
+            <a href="/projects/commercial/vistaprint" className="text-violet-400 hover:text-violet-300">
               VistaPrint
             </a>
             {' + '}
-            <a href="https://create.vista.com" rel="nofollow" target="_blank" className="text-violet-400 hover:text-violet-300">
+            <a href="/projects/commercial/vistacreate" className="text-violet-400 hover:text-violet-300">
               VistaCreate
             </a> <span className="text-zinc-400 mb-2">• 2022 - 2025</span>
           </p>
           <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
-            <li>Implemented modular architecture with <CodeTag>CocoaPods</CodeTag> modules for feature isolation</li>
-            <li>Built A/B testing experiments via <CodeTag>Firebase</CodeTag> that improved onboarding and retention metrics</li>
-            <li>Integrated analytics: <CodeTag>Firebase</CodeTag>, <CodeTag>AppsFlyer</CodeTag>, <CodeTag>Iterable</CodeTag>, <CodeTag>Segment</CodeTag></li>
-            <li>Developed product page UI, design editor image capabilities (cropping, filters, color extraction)</li>
-            <li>Increased unit test coverage with <CodeTag>XCTest</CodeTag> across core business logic modules</li>
-            <li>Built onboarding screens with pagination and paywall using <CodeTag>SwiftUI</CodeTag> components</li>
+            <li>Implemented the product page UI — preview image gallery, pricing and discounts, and size/quantity/material variation pickers</li>
+            <li>Built image editing capabilities for the design editor — replacement, cropping, hue/saturation/lightness sliders, filters, color extraction</li>
+            <li>Designed the account screen with web view integration and links to cart, orders, and support</li>
+            <li>Modular architecture using <CodeTag>Private Pods</CodeTag> and <CodeTag>Development Pods</CodeTag></li>
+            <li>Analytics event logging — <CodeTag>Firebase</CodeTag>, <CodeTag>AppsFlyer</CodeTag>, <CodeTag>Iterable</CodeTag>, <CodeTag>Segment</CodeTag></li>
+            <li>A/B tests via <CodeTag>Firebase</CodeTag> for onboarding and retention experiments</li>
+            <li>Home screen with caching and data loading via <CodeTag>Swift Concurrency</CodeTag></li>
+            <li>Onboarding screens with pagination and paywall</li>
+            <li><CodeTag>SwiftUI</CodeTag> slider component for background removal/restoration</li>
+            <li>Design export UI and logic across multiple formats</li>
+            <li>Covered core modules with unit tests (<CodeTag>XCTest</CodeTag>), added localization with string catalogs, and shipped a logging system</li>
           </ul>
         </div>
 
@@ -180,16 +183,16 @@ methodologies. Proven experience leading technical initiatives in large commerci
             Software Engineer (iOS, Swift)
           </h3>
           <p className="text-violet-400 font-medium mb-1">
-            <a href="https://www.clowder.com" rel="nofollow" target="_blank" className="text-violet-400 hover:text-violet-300">
+            <a href="/projects/commercial/clowder" className="text-violet-400 hover:text-violet-300">
               Clowder
             </a> <span className="text-zinc-400 mb-2">• 2020 - 2022</span>
           </p>
           <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
-            <li>Customized and deployed iOS apps for 50+ organizations from a shared Core product</li>
-            <li>Worked with MVVM + Interactor architecture across 16 internal frameworks</li>
-            <li>Enabled/disabled product modules and configured custom fields per client</li>
-            <li>Maintained <CodeTag>GitFlow</CodeTag> discipline across a large multi-repo setup, resolving merge conflicts</li>
-            <li>Proposed and implemented changes to the Core product</li>
+            <li>Create clones of the Core product and customize them per client (enable/disable modules, custom fields, branding)</li>
+            <li>Support 50+ existing apps and update them to the latest Core version</li>
+            <li>Propose and implement changes to the Core product</li>
+            <li>Resolve merge conflicts and maintain <CodeTag>GitFlow</CodeTag> discipline across a large multi-repo setup</li>
+            <li>Worked with <CodeTag>MVVM + Interactor</CodeTag> architecture across 16 internal frameworks</li>
             <li>Managed CI/CD pipeline with <CodeTag>GitLab CI</CodeTag>, <CodeTag>Fastlane</CodeTag>, and <CodeTag>AppCenter</CodeTag> distribution</li>
           </ul>
         </div>
@@ -199,16 +202,17 @@ methodologies. Proven experience leading technical initiatives in large commerci
             iOS Developer
           </h3>
           <p className="text-violet-400 font-medium mb-1">
-            <a href="https://coachnow.io" rel="nofollow" target="_blank" className="text-violet-400 hover:text-violet-300">
+            <a href="/projects/commercial/coachnow" className="text-violet-400 hover:text-violet-300">
               CoachNow
             </a>
             {' (part time)'} <span className="text-zinc-400 mb-2">• 2020 - 2021</span>
           </p>
           <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
-            <li>Supported and extended a legacy <CodeTag>Objective-C</CodeTag> + <CodeTag>Swift</CodeTag> hybrid codebase (~688 source files)</li>
-            <li>Rewrote legacy <CodeTag>Objective-C</CodeTag> code to <CodeTag>Swift</CodeTag> incrementally</li>
-            <li>Implemented screen recording with <CodeTag>ReplayKit</CodeTag> framework</li>
-            <li>Conducted code reviews and managed TestFlight / App Store releases</li>
+            <li>Support the app and add new features to the mixed <CodeTag>Objective-C</CodeTag> / <CodeTag>Swift</CodeTag> codebase</li>
+            <li>Rewrite legacy <CodeTag>Objective-C</CodeTag> code to <CodeTag>Swift</CodeTag></li>
+            <li>Make code reviews and publish releases to TestFlight and the App Store</li>
+            <li>Implement screen recording with <CodeTag>ReplayKit</CodeTag> framework</li>
+            <li>Maintain dependencies and manage the <CodeTag>CocoaPods</CodeTag> setup</li>
           </ul>
         </div>
 
