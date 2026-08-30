@@ -153,7 +153,7 @@ export default function CVPage() {
           and scaling production iOS applications. Proficient in Swift
           programming language, modern iOS frameworks, and agile methodologies.
           Proven experience leading technical initiatives in large commercial
-          products (VistaCreate, VistaPrint).
+          products.
         </p>
         <p className="text-violet-300 leading-relaxed">
           I&apos;m using AI-based development tools and implementing AI/ML
@@ -186,24 +186,17 @@ export default function CVPage() {
               </a>{" "}
               <span className="text-zinc-400 mb-2">• 2025 - 2026</span>
             </p>
-            <p className="text-zinc-300 mt-2 mb-2">
-              Private AI workspace for documents. Users upload PDFs, scans,
-              photos, and Office files, then chat with an AI assistant that
-              reads, summarizes, fills, and signs them.
-            </p>
             <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
               <li>
-                Designed and built the app&apos;s architecture from scratch —
-                feature modules, local <CodeTag>Swift Package</CodeTag>{" "}
-                boundaries, and the data/auth layer
+                Designed and built the app&apos;s architecture from scratch{" "}
               </li>
               <li>
                 Set up the CI/CD pipeline with <CodeTag>Xcode Cloud</CodeTag>{" "}
                 for automated TestFlight builds and releases
               </li>
               <li>
-                Implemented the core business features, from AI-powered document
-                chat to onboarding and paywall
+                Implemented business features from AI-powered document chat to
+                onboarding and paywall
               </li>
               <li>
                 Took the app from first commit to App Store launch, and
@@ -223,7 +216,7 @@ export default function CVPage() {
               >
                 VistaPrint
               </a>
-              {" + "}
+              {" & "}
               <a
                 href="/projects/commercial/vistacreate"
                 className="text-violet-400 hover:text-violet-300"
@@ -234,45 +227,19 @@ export default function CVPage() {
             </p>
             <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
               <li>
-                Implemented the product page UI — preview image gallery, pricing
-                and discounts, and size/quantity/material variation pickers
+                Implemented a new Home screen per the Figma design, improving
+                the first experience with the app for new users and enabling
+                promotion of seasonal offers and discounts
               </li>
+              <li>Covered core modules with unit tests</li>
               <li>
-                Built image editing capabilities for the design editor —
-                replacement, cropping, hue/saturation/lightness sliders,
-                filters, color extraction
-              </li>
-              <li>
-                Designed the account screen with web view integration and links
-                to cart, orders, and support
-              </li>
-              <li>
-                Modular architecture using <CodeTag>Private Pods</CodeTag> and{" "}
-                <CodeTag>Development Pods</CodeTag>
+                Continuously iterated on the onboarding flow, testing different
+                variants with A/B tests to improve user conversion
               </li>
               <li>
                 Analytics event logging — <CodeTag>Firebase</CodeTag>,{" "}
                 <CodeTag>AppsFlyer</CodeTag>, <CodeTag>Iterable</CodeTag>,{" "}
                 <CodeTag>Segment</CodeTag>
-              </li>
-              <li>
-                A/B tests via <CodeTag>Firebase</CodeTag> for onboarding and
-                retention experiments
-              </li>
-              <li>
-                Home screen with caching and data loading via{" "}
-                <CodeTag>Swift Concurrency</CodeTag>
-              </li>
-              <li>Onboarding screens with pagination and paywall</li>
-              <li>
-                <CodeTag>SwiftUI</CodeTag> slider component for background
-                removal/restoration
-              </li>
-              <li>Design export UI and logic across multiple formats</li>
-              <li>
-                Covered core modules with unit tests (<CodeTag>XCTest</CodeTag>
-                ), added localization with string catalogs, and shipped a
-                logging system
               </li>
             </ul>
           </div>
