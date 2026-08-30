@@ -154,9 +154,7 @@ methodologies. Proven experience leading technical initiatives in large commerci
 
         <div className="pl-0">
           <h3 className="text-lg font-semibold text-zinc-100">
-            <a href="/timeline/#16february2022" className="text-zinc-100 hover:text-violet-300 hover:underline">
-              Lead iOS Engineer
-            </a>
+            Lead iOS Engineer
           </h3>
           <p className="text-violet-400 font-medium mb-1">
             <a href="https://www.vistaprint.com" rel="nofollow" target="_blank" className="text-violet-400 hover:text-violet-300">
@@ -179,9 +177,7 @@ methodologies. Proven experience leading technical initiatives in large commerci
 
         <div className="pl-0">
           <h3 className="text-lg font-semibold text-zinc-100">
-            <a href="/timeline/#january2022" className="text-zinc-100 hover:text-violet-300 hover:underline">
-              Software Engineer (iOS, Swift)
-            </a>
+            Software Engineer (iOS, Swift)
           </h3>
           <p className="text-violet-400 font-medium mb-1">
             <a href="https://www.clowder.com" rel="nofollow" target="_blank" className="text-violet-400 hover:text-violet-300">
@@ -200,9 +196,7 @@ methodologies. Proven experience leading technical initiatives in large commerci
 
         <div className="pl-0">
           <h3 className="text-lg font-semibold text-zinc-100">
-            <a href="/timeline/#10february2021" className="text-zinc-100 hover:text-violet-300 hover:underline">
-              iOS Developer
-            </a>
+            iOS Developer
           </h3>
           <p className="text-violet-400 font-medium mb-1">
             <a href="https://coachnow.io" rel="nofollow" target="_blank" className="text-violet-400 hover:text-violet-300">
@@ -220,9 +214,7 @@ methodologies. Proven experience leading technical initiatives in large commerci
 
         <div className="pl-0">
           <h3 className="text-lg font-semibold text-zinc-100">
-            <a href="/timeline/#march2020" className="text-zinc-100 hover:text-violet-300 hover:underline">
-              iOS, iPadOS and macOS Apps Developer
-            </a>
+            iOS, iPadOS and macOS Apps Developer
           </h3>
           <p className="text-violet-400 font-medium mb-1">
             <a href="https://www.appdev.academy" rel="nofollow" target="_blank" className="text-violet-400 hover:text-violet-300">
@@ -245,9 +237,7 @@ methodologies. Proven experience leading technical initiatives in large commerci
 
         <div className="pl-0">
           <h3 className="text-lg font-semibold text-zinc-100">
-            <a href="/timeline/#january2016" className="text-zinc-100 hover:text-violet-300 hover:underline">
-              PHP Developer
-            </a>
+            PHP Developer
           </h3>
           <p className="text-violet-400 font-medium mb-1">
             <a href="https://soloway.tech" rel="nofollow" target="_blank" className="text-violet-400 hover:text-violet-300">
@@ -266,9 +256,7 @@ methodologies. Proven experience leading technical initiatives in large commerci
 
         <div className="pl-0">
           <h3 className="text-lg font-semibold text-zinc-100">
-            <a href="/timeline/#20112012" className="text-zinc-100 hover:text-violet-300 hover:underline">
-              Senior Laboratory
-            </a>
+            Senior Laboratory
           </h3>
           <p className="text-violet-400 font-medium mb-1">
             Laboratory of distance learning
@@ -285,9 +273,7 @@ methodologies. Proven experience leading technical initiatives in large commerci
 
         <div className="pl-0">
           <h3 className="text-lg font-semibold text-zinc-100">
-            <a href="/timeline/#20072008" className="text-zinc-100 hover:text-violet-300 hover:underline">
-              Laboratory Technician
-            </a>
+            Laboratory Technician
           </h3>
           <p className="text-violet-400 font-medium mb-1">
             <a href="https://kfk.sumdu.edu.ua" rel="nofollow" target="_blank" className="text-violet-400 hover:text-violet-300">
