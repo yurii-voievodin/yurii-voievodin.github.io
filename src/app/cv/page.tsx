@@ -7,11 +7,11 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "CV - Yurii Voievodin",
   description:
-    "Experienced software developer with 10+ years of expertise in web and mobile apps development. Proficient in Swift, modern iOS frameworks, AI-powered development tools, and implementing AI/ML features in applications.",
+    "Experienced software developer with 14+ years of expertise in web and mobile apps development. Proficient in Swift, modern iOS frameworks, AI-powered development tools, and implementing AI/ML features in applications.",
   openGraph: {
     title: "CV - Yurii Voievodin",
     description:
-      "Experienced software developer with 10+ years of expertise in web and mobile apps development. Proficient in Swift, modern iOS frameworks, AI-powered development tools, and implementing AI/ML features in applications.",
+      "Experienced software developer with 14+ years of expertise in web and mobile apps development. Proficient in Swift, modern iOS frameworks, AI-powered development tools, and implementing AI/ML features in applications.",
     url: `${siteConfig.url}/cv`,
     type: "profile",
   },
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     card: "summary",
     title: "CV - Yurii Voievodin",
     description:
-      "Experienced software developer with 10+ years of expertise in web and mobile apps development. Proficient in Swift, modern iOS frameworks, AI-powered development tools, and implementing AI/ML features in applications.",
+      "Experienced software developer with 14+ years of expertise in web and mobile apps development. Proficient in Swift, modern iOS frameworks, AI-powered development tools, and implementing AI/ML features in applications.",
   },
 };
 
@@ -149,11 +149,9 @@ export default function CVPage() {
           Professional Summary
         </h2>
         <p className="text-zinc-300 leading-relaxed">
-          Senior iOS / Lead iOS Engineer with 10+ years of experience building
-          and scaling production iOS applications. Proficient in Swift
-          programming language, modern iOS frameworks, and agile methodologies.
-          Proven experience leading technical initiatives in large commercial
-          products.
+          Senior iOS / Lead iOS Engineer with 14+ years of experience building
+          and scaling production iOS applications and websites. Proven
+          experience leading technical initiatives in large commercial products.
         </p>
         <p className="text-violet-300 leading-relaxed">
           I&apos;m using AI-based development tools and implementing AI/ML
