@@ -529,7 +529,7 @@ export const personalProjects: Project[] = [
         content: (
             <>
                 <p className="text-zinc-300">
-                    <GradientLink href="/dustdrift">DustDrift</GradientLink> — 2D top-down exploration and survival game. Stranded on an alien world, players mine resources from destructible rocks, craft gear and weapons, and fight off hostile robots across four connected biomes reached through portals. Pre-order live on the App Store for iPhone, iPad, and Mac, arriving December 10, 2026.
+                    <GradientLink href="/dustdrift">DustDrift</GradientLink> — 2D top-down exploration and survival game inspired by No Man&apos;s Sky, made for iPhone and iPad. Stranded on an alien world, players mine resources from destructible rocks, craft gear and weapons, and fight off hostile robots across four connected biomes reached through portals. Pre-order live on the App Store for iPhone, iPad, and Mac, arriving December 10, 2026.
                 </p>
 
                 <p className="text-zinc-300 font-semibold">Technical info:</p>

@@ -92,9 +92,9 @@ export default function DustDriftPage() {
                             Explore, Mine, Craft, Survive
                         </p>
                         <p className="text-zinc-300 leading-relaxed max-w-2xl">
-                            Stranded on an alien world, you&apos;re the last line between survival and the void. Mine
-                            resources, craft your way to better gear, and fight back — or make friends with the
-                            enemy.
+                            Inspired by No Man&apos;s Sky, made for iPhone and iPad. Stranded on an alien world,
+                            you&apos;re the last line between survival and the void. Mine resources, craft your way
+                            to better gear, and fight back — or make friends with the enemy.
                         </p>
                     </div>
                 </div>
