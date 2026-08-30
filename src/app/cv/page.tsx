@@ -189,8 +189,8 @@ export default function CVPage() {
                 Designed and built the app&apos;s architecture from scratch{" "}
               </li>
               <li>
-                Set up the CI/CD pipeline with <CodeTag>Xcode Cloud</CodeTag>{" "}
-                for automated TestFlight builds and releases
+                Set up the CI/CD pipeline with <strong>Xcode Cloud</strong> for
+                automated TestFlight builds and releases
               </li>
               <li>
                 Implemented business features from AI-powered document chat to
@@ -235,9 +235,9 @@ export default function CVPage() {
                 variants with A/B tests to improve user conversion
               </li>
               <li>
-                Analytics event logging — <CodeTag>Firebase</CodeTag>,{" "}
-                <CodeTag>AppsFlyer</CodeTag>, <CodeTag>Iterable</CodeTag>,{" "}
-                <CodeTag>Segment</CodeTag>
+                Analytics event logging — <strong>Firebase</strong>,{" "}
+                <strong>AppsFlyer</strong>, <strong>Iterable</strong>,{" "}
+                <strong>Segment</strong>
               </li>
             </ul>
           </div>
