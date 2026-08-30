@@ -165,8 +165,8 @@ export const commercialProjects: Project[] = [
             cart, orders, and support
           </li>
           <li>
-            Covered core modules with unit tests, added localization with
-            string catalogs, and shipped a logging system
+            Covered core modules with unit tests, added localization with string
+            catalogs, and shipped a logging system
           </li>
         </ul>
 
@@ -217,7 +217,7 @@ export const commercialProjects: Project[] = [
     slug: "vistacreate",
     name: "VistaCreate",
     summary:
-      "Professional design and creative content creation iOS app with thousands of templates and a full-featured editor.",
+      "Professional design and creative content creation iOS app with thousands of templates and a full-featured editor",
     date: "February 2022 - August 2023",
     tags: ["Design Tools"],
     images: vistaCreateImages,
@@ -231,6 +231,26 @@ export const commercialProjects: Project[] = [
           work with thousands of templates, add images, text, shapes and audio,
           and export designs in multiple formats.
         </p>
+        <p className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent font-semibold">
+          My role:
+        </p>
+        <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
+          <li>
+            Implemented a new Home screen per the Figma design, improving the
+            first experience with the app for new users and enabling promotion
+            of seasonal offers and discounts
+          </li>
+          <li>Covered core modules with unit tests</li>
+          <li>
+            Continuously iterated on the onboarding flow, testing different
+            variants with A/B tests to improve user conversion
+          </li>
+          <li>
+            Analytics event logging — <CodeTag>Firebase</CodeTag>,{" "}
+            <CodeTag>AppsFlyer</CodeTag>, <CodeTag>Iterable</CodeTag>,{" "}
+            <CodeTag>Segment</CodeTag>
+          </li>
+        </ul>
         <p className="text-zinc-300 font-semibold">Technical info:</p>
         <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
           <li>
@@ -243,25 +263,11 @@ export const commercialProjects: Project[] = [
             layer
           </li>
           <li>
-            <strong>21 development CocoaPods modules</strong> — HomeModule,
-            OnboardingModule, BillingService, CremUI, Music.TrimmablePlayer,
-            BlackBox, and more (177 pods total)
-          </li>
-          <li>
-            <strong>Moya + Alamofire</strong> networking with custom Networking
-            module and APICache for response caching
+            <strong>21 development CocoaPods modules</strong>{" "}
           </li>
           <li>
             <strong>CoreData</strong> for local persistence with custom context
             management and undo/redo support
-          </li>
-          <li>
-            Full-featured design editor — layers, text, SVG rendering, filters,
-            transparency, color editing, background removal
-          </li>
-          <li>
-            Audio editing via <strong>AVFoundation</strong> with custom{" "}
-            <CodeTag>TrimmablePlayer</CodeTag> and histogram visualization
           </li>
           <li>
             <strong>StoreKit</strong> + custom BillingService module for
@@ -277,10 +283,6 @@ export const commercialProjects: Project[] = [
             <strong>Facebook SDK</strong> for social
           </li>
           <li>
-            <strong>Auth0</strong> for authentication, <strong>R.swift</strong>{" "}
-            for type-safe resources
-          </li>
-          <li>
             <strong>Lokalise</strong> localization with 25 languages supported
           </li>
           <li>
@@ -292,8 +294,7 @@ export const commercialProjects: Project[] = [
         <p className="text-zinc-300 font-semibold">CI/CD & Workflow:</p>
         <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
           <li>
-            <strong>GitLab CI</strong> with Development and Full test plans,
-            JUnit reporting, IPA builds uploaded to S3 via CloudFront
+            <strong>GitLab CI</strong> with Development and Full test plans
           </li>
           <li>
             <strong>Fastlane</strong> for TestFlight releases, version
@@ -302,33 +303,6 @@ export const commercialProjects: Project[] = [
         </ul>
 
         <hr className="border-zinc-700/50" />
-        <p className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent font-semibold">
-          My role:
-        </p>
-        <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
-          <li>
-            Unit tests with <strong>XCTest</strong> to cover app business logic
-          </li>
-          <li>
-            Modular architecture using <strong>Private Pods</strong> and{" "}
-            <strong>Development Pods</strong>
-          </li>
-          <li>
-            Analytics event logging — <strong>Firebase</strong>,{" "}
-            <strong>AppsFlyer</strong>, <strong>Iterable</strong>
-          </li>
-          <li>
-            <strong>A/B tests</strong> via Firebase for onboarding and retention
-            experiments
-          </li>
-          <li>
-            Home screen with caching and data loading via{" "}
-            <strong>Swift Concurrency</strong>
-          </li>
-          <li>Onboarding screens with pagination and paywall</li>
-          <li>SwiftUI slider component for background removal/restoration</li>
-          <li>Design export UI and logic across multiple formats</li>
-        </ul>
       </>
     ),
   },
@@ -351,6 +325,24 @@ export const commercialProjects: Project[] = [
           management, community forums, real-time chat, news feeds, resource
           libraries, and QR-based networking.
         </p>
+        <p className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent font-semibold">
+          My role:
+        </p>
+        <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
+          <li>
+            Create clones of the Core product and customize them per client
+            (enable/disable modules, custom fields, branding)
+          </li>
+          <li>
+            Support 50+ existing apps and update them to the latest Core version
+          </li>
+          <li>Propose and implement changes to the Core product</li>
+          <li>
+            Resolve merge conflicts and maintain GitFlow discipline across a
+            large multi-repo setup
+          </li>
+        </ul>
+
         <p className="text-zinc-300 font-semibold">Technical info:</p>
         <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
           <li>
@@ -422,23 +414,6 @@ export const commercialProjects: Project[] = [
         </ul>
 
         <hr className="border-zinc-700/50" />
-        <p className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent font-semibold">
-          My role:
-        </p>
-        <ul className="list-disc pl-6 space-y-1 text-zinc-300 marker:text-zinc-300">
-          <li>
-            Create clones of the Core product and customize them per client
-            (enable/disable modules, custom fields, branding)
-          </li>
-          <li>
-            Support 50+ existing apps and update them to the latest Core version
-          </li>
-          <li>Propose and implement changes to the Core product</li>
-          <li>
-            Resolve merge conflicts and maintain GitFlow discipline across a
-            large multi-repo setup
-          </li>
-        </ul>
       </>
     ),
   },
