@@ -119,26 +119,6 @@ export default function CVPage() {
                 <span>View Projects</span>
               </a>
             </div>
-            <a
-              href="https://www.youtube.com/watch?v=rAGeM6KuwWE"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex items-center gap-3 px-3 py-2 rounded-lg border border-zinc-700/50 hover:border-violet-500/50 bg-zinc-800/50 hover:bg-zinc-800 transition-all w-full sm:w-fit"
-            >
-              <div className="relative flex-shrink-0 w-20 h-12 rounded overflow-hidden">
-                <img
-                  src="https://img.youtube.com/vi/rAGeM6KuwWE/mqdefault.jpg"
-                  alt="Watch my intro video on YouTube"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
-                  <Play size={14} className="text-white ml-0.5" fill="white" />
-                </div>
-              </div>
-              <span className="text-sm text-zinc-400 group-hover:text-zinc-300 transition-colors">
-                Watch my intro
-              </span>
-            </a>
           </div>
         </div>
       </header>
@@ -236,8 +216,8 @@ export default function CVPage() {
                 promotion of seasonal offers and discounts
               </li>
               <li>
-                Implemented modular architecture with{" "}
-                <strong>CocoaPods</strong> modules for feature isolation
+                Implemented modular architecture with <strong>CocoaPods</strong>{" "}
+                modules for feature isolation
               </li>
               <li>
                 Continuously iterated on the onboarding flow, testing different
@@ -249,8 +229,8 @@ export default function CVPage() {
                 <strong>Segment</strong>
               </li>
               <li>
-                Increased unit test coverage with <strong>XCTest</strong>{" "}
-                across core business logic modules
+                Increased unit test coverage with <strong>XCTest</strong> across
+                core business logic modules
               </li>
               <li>
                 Collaborated with product, design, and analytics teams on
