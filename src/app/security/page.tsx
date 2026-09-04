@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowLeft, Shield, Lock, KeyRound, Fingerprint, CreditCard } from 'lucide-react';
+import { ArrowLeft, Shield, Lock, KeyRound, Fingerprint, CreditCard } from '@/components/icons';
 import { siteConfig } from '@/lib/config';
 import type { Metadata } from 'next';
 

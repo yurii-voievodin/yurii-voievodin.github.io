@@ -1,20 +1,23 @@
 'use client';
 
-import * as icons from "lucide-react";
-import ReactMarkdown from "react-markdown";
-import { LucideIcon, Plus } from "lucide-react";
+import {
+    Apple, AtSign, Bird, Brush, CheckCircle, Circle, Cpu, Flower, Heart, HeartCrack,
+    Home, Keyboard, Laptop, Microscope, Plus, Rocket, Smartphone, Volleyball,
+} from "@/components/icons";
+import Markdown from "@/lib/markdown";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import TimelineHighlighter from '@/components/TimelineHighlighter';
 import DetailModal from '@/components/DetailModal';
 
+const timelineIcons = {
+    Apple, AtSign, Bird, Brush, CheckCircle, Cpu, Flower, Heart, HeartCrack,
+    Home, Keyboard, Laptop, Microscope, Rocket, Smartphone, Volleyball,
+};
+
 function getIcon(iconKey: string, color?: string) {
-    const IconComponent = icons[iconKey as keyof typeof icons] as LucideIcon;
-    return IconComponent ? (
-        <IconComponent className="w-4 h-4" color={color || "gray"} />
-    ) : (
-        <icons.Circle className="w-4 h-4" color={color || "gray"} />
-    );
+    const IconComponent = timelineIcons[iconKey as keyof typeof timelineIcons] ?? Circle;
+    return <IconComponent className="w-4 h-4" color={color || "gray"} />;
 }
 
 type TimelineItem = {
@@ -95,7 +98,7 @@ export default function TimelinePage() {
                                         <div className="w-[90%]">
                                             {event.comment ? (
                                                 <div className="prose prose-invert max-w-none [&_a]:bg-gradient-to-r [&_a]:from-violet-400 [&_a]:to-purple-400 [&_a]:bg-clip-text [&_a]:text-transparent [&_a]:underline [&_a]:decoration-violet-400/50 [&_a:hover]:from-violet-300 [&_a:hover]:to-purple-300 [&_a:hover]:decoration-violet-300">
-                                                    <ReactMarkdown>{event.comment}</ReactMarkdown>
+                                                    <Markdown>{event.comment}</Markdown>
                                                 </div>
                                             ) : (
                                                 <>
@@ -106,12 +109,12 @@ export default function TimelinePage() {
                                                     )}
                                                     {event.title && (
                                                         <div className="prose prose-invert max-w-none mb-3 [&_a]:bg-gradient-to-r [&_a]:from-violet-400 [&_a]:to-purple-400 [&_a]:bg-clip-text [&_a]:text-transparent [&_a]:underline [&_a]:decoration-violet-400/50 [&_a:hover]:from-violet-300 [&_a:hover]:to-purple-300 [&_a:hover]:decoration-violet-300">
-                                                            <ReactMarkdown>{event.title}</ReactMarkdown>
+                                                            <Markdown>{event.title}</Markdown>
                                                         </div>
                                                     )}
                                                     {event.description && (
                                                         <div className="prose prose-invert max-w-none [&_a]:bg-gradient-to-r [&_a]:from-violet-400 [&_a]:to-purple-400 [&_a]:bg-clip-text [&_a]:text-transparent [&_a]:underline [&_a]:decoration-violet-400/50 [&_a:hover]:from-violet-300 [&_a:hover]:to-purple-300 [&_a:hover]:decoration-violet-300 [&_ul]:list-disc [&_ul]:ps-5 [&_ul]:space-y-1 [&_li]:text-zinc-300">
-                                                            <ReactMarkdown>{event.description}</ReactMarkdown>
+                                                            <Markdown>{event.description}</Markdown>
                                                         </div>
                                                     )}
                                                     {event.data?.image && (
@@ -147,7 +150,7 @@ export default function TimelinePage() {
                                     <div className="w-full">
                                         {event.comment ? (
                                             <div className="prose prose-invert max-w-none [&_a]:bg-gradient-to-r [&_a]:from-violet-400 [&_a]:to-purple-400 [&_a]:bg-clip-text [&_a]:text-transparent [&_a]:underline [&_a]:decoration-violet-400/50 [&_a:hover]:from-violet-300 [&_a:hover]:to-purple-300 [&_a:hover]:decoration-violet-300">
-                                                <ReactMarkdown>{event.comment}</ReactMarkdown>
+                                                <Markdown>{event.comment}</Markdown>
                                             </div>
                                         ) : (
                                             <>
@@ -158,12 +161,12 @@ export default function TimelinePage() {
                                                 )}
                                                 {event.title && (
                                                     <div className="prose prose-invert max-w-none mb-3 [&_a]:bg-gradient-to-r [&_a]:from-violet-400 [&_a]:to-purple-400 [&_a]:bg-clip-text [&_a]:text-transparent [&_a]:underline [&_a]:decoration-violet-400/50 [&_a:hover]:from-violet-300 [&_a:hover]:to-purple-300 [&_a:hover]:decoration-violet-300">
-                                                        <ReactMarkdown>{event.title}</ReactMarkdown>
+                                                        <Markdown>{event.title}</Markdown>
                                                     </div>
                                                 )}
                                                 {event.description && (
                                                     <div className="prose prose-invert max-w-none [&_a]:bg-gradient-to-r [&_a]:from-violet-400 [&_a]:to-purple-400 [&_a]:bg-clip-text [&_a]:text-transparent [&_a]:underline [&_a]:decoration-violet-400/50 [&_a:hover]:from-violet-300 [&_a:hover]:to-purple-300 [&_a:hover]:decoration-violet-300 [&_ul]:list-disc [&_ul]:ps-5 [&_ul]:space-y-1 [&_li]:text-zinc-300">
-                                                        <ReactMarkdown>{event.description}</ReactMarkdown>
+                                                        <Markdown>{event.description}</Markdown>
                                                     </div>
                                                 )}
                                                 {event.data?.image && (

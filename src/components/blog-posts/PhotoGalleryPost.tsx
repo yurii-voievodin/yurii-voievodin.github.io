@@ -1,7 +1,7 @@
 'use client';
 
-import { Calendar, ArrowLeft, Camera } from 'lucide-react';
-import { format } from 'date-fns';
+import { Calendar, ArrowLeft, Camera } from '@/components/icons';
+import { formatPostDate, type PostDateStyle } from '@/lib/date';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Post, Photo } from '@/types/blog';
@@ -18,7 +18,7 @@ interface PhotoGalleryPostProps {
   heroTitle: string;
   heroSubtitle: string;
   heroBorderColor?: string;
-  dateFormat?: string;
+  dateFormat?: PostDateStyle;
   galleryHeading?: ReactNode;
   introSection?: ReactNode;
   afterGallery?: ReactNode;
@@ -32,7 +32,7 @@ export default function PhotoGalleryPost({
   heroTitle,
   heroSubtitle,
   heroBorderColor = 'border-violet-500/20',
-  dateFormat = 'MMMM, yyyy',
+  dateFormat = 'monthYear',
   galleryHeading,
   introSection,
   afterGallery,
@@ -86,7 +86,7 @@ export default function PhotoGalleryPost({
             <div className="flex items-center justify-center space-x-6 text-white/90 mt-8 drop-shadow-md">
               <div className="flex items-center space-x-2">
                 <Calendar size={18} />
-                <span>{format(new Date(post.date), dateFormat)}</span>
+                <span>{formatPostDate(post.date, dateFormat)}</span>
               </div>
 
               <div className="flex items-center space-x-2">

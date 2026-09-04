@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Play } from 'lucide-react';
+import { Play } from '@/components/icons';
 
 interface TrailerPlayerProps {
   ariaLabel?: string;

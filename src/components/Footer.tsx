@@ -1,4 +1,4 @@
-import { Mail, Home, Clock, FileText, Heart, Shield, MessageCircleQuestion } from 'lucide-react';
+import { Mail, Home, Clock, FileText, Heart, Shield, MessageCircleQuestion } from '@/components/icons';
 import { GithubIcon, LinkedinIcon } from '@/components/BrandIcons';
 import Link from 'next/link';
 import { siteConfig } from '@/lib/config';

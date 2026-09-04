@@ -1,6 +1,6 @@
 'use client';
 
-import { X } from 'lucide-react';
+import { X } from '@/components/icons';
 import { useEffect, useState, useCallback, useRef } from 'react';
 import VistaCreateDetails from './detail-pages/VistaCreateDetails';
 import WorkingPlacesDetails from './detail-pages/WorkingPlacesDetails';

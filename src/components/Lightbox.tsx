@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
-import { X, ArrowLeft, ArrowRight } from 'lucide-react';
+import { X, ArrowLeft, ArrowRight } from '@/components/icons';
 import Image from 'next/image';
 
 interface LightboxImage {

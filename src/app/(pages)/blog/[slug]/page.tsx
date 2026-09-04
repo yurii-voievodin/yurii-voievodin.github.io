@@ -1,6 +1,6 @@
 import { getAllPostSlugs, getPostData } from '@/lib/blog';
-import { Calendar, ArrowLeft } from 'lucide-react';
-import { format } from 'date-fns';
+import { Calendar, ArrowLeft } from '@/components/icons';
+import { formatPostDate } from '@/lib/date';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { siteConfig } from '@/lib/config';
@@ -79,7 +79,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         <div className="flex items-center space-x-6 text-zinc-400 mb-6">
           <div className="flex items-center space-x-2">
             <Calendar size={18} />
-            <span>{format(new Date(post.date), 'MMMM dd, yyyy')}</span>
+            <span>{formatPostDate(post.date, 'long')}</span>
           </div>
         </div>
 

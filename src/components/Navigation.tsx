@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Home } from 'lucide-react';
+import { Home } from '@/components/icons';
 
 export default function Navigation() {
   return (

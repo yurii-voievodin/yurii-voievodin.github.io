@@ -10,7 +10,7 @@ import {
     LayoutDashboard,
     ArrowLeftRight,
     Infinity as InfinityIcon,
-} from 'lucide-react';
+} from '@/components/icons';
 import { siteConfig } from '@/lib/config';
 import { wisebudgetScreenshots } from '@/lib/wisebudget-images';
 import WidePhotoCarousel from '@/components/WidePhotoCarousel';

@@ -1,4 +1,4 @@
-import { Smartphone, Pickaxe, Swords, Bot, DoorOpen, Shield, type LucideIcon } from 'lucide-react';
+import { Smartphone, Pickaxe, Swords, Bot, DoorOpen, Shield, type IconComponent } from '@/components/icons';
 
 export type Locale = 'en' | 'ko' | 'ja';
 
@@ -8,7 +8,7 @@ export const RELEASE_DATE_ISO = '2026-12-10';
 export const PLATFORMS = ['iPhone', 'iPad', 'Mac'];
 
 // Order matches the `features` array in each locale's content below.
-export const FEATURE_ICONS: LucideIcon[] = [Pickaxe, Swords, Bot, DoorOpen, Shield, Smartphone];
+export const FEATURE_ICONS: IconComponent[] = [Pickaxe, Swords, Bot, DoorOpen, Shield, Smartphone];
 
 export interface DustDriftFeature {
     title: string;

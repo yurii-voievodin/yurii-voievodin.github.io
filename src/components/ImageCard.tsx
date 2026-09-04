@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { Image as ImageIcon, Maximize2 } from 'lucide-react';
+import { Image as ImageIcon, Maximize2 } from '@/components/icons';
 import { ReactNode, ElementType } from 'react';
 
 interface ImageCardProps {

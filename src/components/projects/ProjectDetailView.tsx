@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft } from '@/components/icons';
 import ProjectCard from '@/components/projects/ProjectCard';
 import ProjectNav from '@/components/projects/ProjectNav';
 import type { AdjacentProjects, Project, ProjectCategory } from '@/lib/projects-data';

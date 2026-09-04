@@ -4,7 +4,7 @@ import {
   Camera,
   Film,
   Gamepad2
-} from 'lucide-react';
+} from '@/components/icons';
 import { personalPhotos, movies, games } from '@/lib/personal-data';
 import { useLightbox } from '@/hooks/useLightbox';
 import Lightbox from '@/components/Lightbox';

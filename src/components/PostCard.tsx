@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Calendar } from 'lucide-react';
+import { Calendar } from '@/components/icons';
 import { Post } from '@/types/blog';
-import { format } from 'date-fns';
+import { formatPostDate } from '@/lib/date';
 
 interface PostCardProps {
   post: Post;
@@ -37,7 +37,7 @@ export default function PostCard({ post }: PostCardProps) {
           <div className="flex items-center justify-between text-sm text-zinc-400">
             <div className="flex items-center space-x-1 whitespace-nowrap">
               <Calendar size={16} />
-              <span>{format(new Date(post.date), 'MMM, yyyy')}</span>
+              <span>{formatPostDate(post.date, 'shortMonthYear')}</span>
             </div>
 
             {post.tags && post.tags.length > 0 && (

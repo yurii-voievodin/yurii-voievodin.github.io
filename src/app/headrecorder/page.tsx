@@ -7,7 +7,7 @@ import {
     FlipHorizontal2,
     Mic,
     ShieldCheck,
-} from 'lucide-react';
+} from '@/components/icons';
 import { siteConfig } from '@/lib/config';
 import { headrecorderScreenshots } from '@/lib/headrecorder-images';
 import WidePhotoCarousel from '@/components/WidePhotoCarousel';

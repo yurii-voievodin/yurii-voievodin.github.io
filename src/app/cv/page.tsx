@@ -1,4 +1,4 @@
-import { Mail, Download, Phone, Play } from "lucide-react";
+import { Mail, Download, Phone, Play } from '@/components/icons';
 import { siteConfig } from "@/lib/config";
 import { GithubIcon, LinkedinIcon } from "@/components/BrandIcons";
 import CodeTag from "@/components/CodeTag";

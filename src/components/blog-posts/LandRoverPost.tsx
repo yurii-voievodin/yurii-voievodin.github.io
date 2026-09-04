@@ -1,6 +1,6 @@
 'use client';
 
-import { Camera, ArrowLeft } from 'lucide-react';
+import { Camera, ArrowLeft } from '@/components/icons';
 import Link from 'next/link';
 import { Post } from '@/types/blog';
 import { landRoverPhotos } from '@/lib/land-rover-data';
@@ -20,7 +20,7 @@ export default function LandRoverPost({ post }: LandRoverPostProps) {
       heroTitle="Land Rover Discovery Sport 2017"
       heroSubtitle="A collection of adventure photos with my Land Rover"
       heroBorderColor="border-green-500/20"
-      dateFormat="MMMM dd, yyyy"
+      dateFormat="long"
       introSection={
         <div className="bg-zinc-800/50 rounded-2xl p-8 shadow-lg border border-zinc-700/50 mb-12">
           <h2 className="text-2xl font-bold text-zinc-100 mb-4">About This Collection</h2>
