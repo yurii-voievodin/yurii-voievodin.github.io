@@ -1,6 +1,7 @@
 export type PostDateStyle = 'long' | 'monthYear' | 'shortMonthYear';
 
 const monthLong = new Intl.DateTimeFormat('en-US', { month: 'long', timeZone: 'UTC' });
+const monthDayLong = new Intl.DateTimeFormat('en-US', { month: 'long', day: '2-digit', timeZone: 'UTC' });
 const monthShort = new Intl.DateTimeFormat('en-US', { month: 'short', timeZone: 'UTC' });
 
 export function formatPostDate(value: string, style: PostDateStyle = 'monthYear'): string {
@@ -9,7 +10,7 @@ export function formatPostDate(value: string, style: PostDateStyle = 'monthYear'
 
     switch (style) {
         case 'long':
-            return `${monthLong.format(date)} ${String(date.getUTCDate()).padStart(2, '0')}, ${year}`;
+            return `${monthDayLong.format(date)}, ${year}`;
         case 'shortMonthYear':
             return `${monthShort.format(date)}, ${year}`;
         default:
