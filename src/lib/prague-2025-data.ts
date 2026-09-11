@@ -1,15 +1,4 @@
-import { Post, Photo } from '@/types/blog';
-import PraguePost from '@/components/blog-posts/PraguePost';
-
-export const praguePostMetadata: Post = {
-  slug: 'prague-2025',
-  title: 'Prague 2025',
-  date: '2025-11-01',
-  excerpt: 'A few trips to Prague in 2025',
-  tags: ['photography', 'prague', 'czechia'],
-  featuredImage: '/prague-2025/01.jpeg',
-  component: PraguePost,
-};
+import type { Photo, Post } from '@/types/blog';
 
 export const praguePhotos: Photo[] = [
   { id: 1, src: '/prague-2025/01.jpeg', alt: 'Prague 2025 - Photo 1', description: '' },
@@ -22,3 +11,22 @@ export const praguePhotos: Photo[] = [
   { id: 8, src: '/prague-2025/08.jpeg', alt: 'Prague 2025 - Photo 8', description: '' },
   { id: 9, src: '/prague-2025/09.jpeg', alt: 'Prague 2025 - Photo 9', description: '' },
 ];
+
+export const praguePostMetadata: Post = {
+  slug: 'prague-2025',
+  title: 'Prague 2025',
+  date: '2025-11-01',
+  excerpt: 'A few trips to Prague in 2025',
+  tags: ['photography', 'prague', 'czechia'],
+  featuredImage: '/prague-2025/01.jpeg',
+  gallery: {
+    photos: praguePhotos,
+    hero: {
+      image: '/prague-2025/01.jpeg',
+      alt: 'Prague',
+      title: 'Prague 2025',
+      subtitle:
+        'A few trips to Prague in 2025',
+    },
+  },
+};

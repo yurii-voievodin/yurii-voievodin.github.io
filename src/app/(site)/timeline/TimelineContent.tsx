@@ -1,0 +1,198 @@
+'use client';
+
+import {
+    Apple, AtSign, Bird, Brush, CheckCircle, Circle, Cpu, Flower, Heart, HeartCrack,
+    Home, Keyboard, Laptop, Microscope, Plus, Rocket, Smartphone, Volleyball,
+} from "@/components/icons";
+import Markdown from "@/lib/markdown";
+import Image from "next/image";
+import { useState, useEffect } from "react";
+import TimelineHighlighter from '@/components/TimelineHighlighter';
+import DetailModal from '@/components/DetailModal';
+import Panel from '@/components/ui/Panel';
+
+const timelineIcons = {
+    Apple, AtSign, Bird, Brush, CheckCircle, Cpu, Flower, Heart, HeartCrack,
+    Home, Keyboard, Laptop, Microscope, Rocket, Smartphone, Volleyball,
+};
+
+function getIcon(iconKey: string, color?: string) {
+    const IconComponent = timelineIcons[iconKey as keyof typeof timelineIcons] ?? Circle;
+    return <IconComponent className="w-4 h-4" color={color || "gray"} />;
+}
+
+type TimelineItem = {
+    date?: string;
+    title?: string;
+    description?: string;
+    comment?: string;
+    data?: {
+        image?: { path: string; id: string };
+        symbol?: { icon: string; color: string };
+        detailPage?: string;
+    };
+};
+
+function createIdFromDate(date?: string): string {
+    if (!date) return '';
+    return date.replace(/[\s,.-]/g, '').toLowerCase();
+}
+
+export default function TimelineContent() {
+    const [timeline, setTimeline] = useState<TimelineItem[]>([]);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [selectedDetailPage, setSelectedDetailPage] = useState<string>('');
+
+    useEffect(() => {
+        fetch('/data/timeline.json')
+            .then(response => response.json())
+            .then(data => {
+                setTimeline(data.timeline);
+                setTimeout(() => {
+                    window.dispatchEvent(new CustomEvent('timelineLoaded'));
+                }, 0);
+            })
+            .catch(error => console.error('Error loading timeline data:', error));
+    }, []);
+
+    const handleDetailClick = (detailPage: string) => {
+        setSelectedDetailPage(detailPage);
+        setIsModalOpen(true);
+    };
+
+    const handleCloseModal = () => {
+        setIsModalOpen(false);
+        setSelectedDetailPage('');
+    };
+    
+    return (
+        <div className="container mx-auto py-8 px-4">
+            <TimelineHighlighter />
+
+            <h1 className="text-3xl md:text-4xl font-bold text-zinc-100 mb-8">
+                Timeline
+            </h1>
+
+            <div className="relative">
+                <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-[var(--rail)]"></div>
+                
+                <div className="space-y-8">
+                    {timeline.map((event, i) => {
+                        const detailPage = event.data?.detailPage;
+                        return (
+                        <div key={i} className="relative flex items-start">
+                            <div className="relative z-10 flex items-center justify-center w-12 h-12 bg-[var(--card-bg-strong)] border-2 border-[var(--rail)] rounded-full mr-4">
+                                {event.data?.symbol?.icon ? (
+                                    getIcon(event.data.symbol.icon, event.data.symbol.color)
+                                ) : (
+                                    <div className="w-2 h-2 bg-[var(--rail)] rounded-full"></div>
+                                )}
+                            </div>
+                            
+                            <Panel id={createIdFromDate(event.date)} className="flex-1 p-6">
+                                {detailPage ? (
+                                    <div className="flex gap-0">
+                                        <div className="min-w-0 flex-1">
+                                            {event.comment ? (
+                                                <div className="prose prose-invert max-w-none [&_a]:bg-gradient-to-r [&_a]:from-violet-400 [&_a]:to-purple-400 [&_a]:bg-clip-text [&_a]:text-transparent [&_a]:underline [&_a]:decoration-violet-400/50 [&_a:hover]:from-violet-300 [&_a:hover]:to-purple-300 [&_a:hover]:decoration-violet-300">
+                                                    <Markdown>{event.comment}</Markdown>
+                                                </div>
+                                            ) : (
+                                                <>
+                                                    {event.date && (
+                                                        <div className="text-sm text-zinc-400 mb-2 font-medium">
+                                                            {event.date}
+                                                        </div>
+                                                    )}
+                                                    {event.title && (
+                                                        <div className="prose prose-invert max-w-none mb-3 [&_a]:bg-gradient-to-r [&_a]:from-violet-400 [&_a]:to-purple-400 [&_a]:bg-clip-text [&_a]:text-transparent [&_a]:underline [&_a]:decoration-violet-400/50 [&_a:hover]:from-violet-300 [&_a:hover]:to-purple-300 [&_a:hover]:decoration-violet-300">
+                                                            <Markdown>{event.title}</Markdown>
+                                                        </div>
+                                                    )}
+                                                    {event.description && (
+                                                        <div className="prose prose-invert max-w-none [&_a]:bg-gradient-to-r [&_a]:from-violet-400 [&_a]:to-purple-400 [&_a]:bg-clip-text [&_a]:text-transparent [&_a]:underline [&_a]:decoration-violet-400/50 [&_a:hover]:from-violet-300 [&_a:hover]:to-purple-300 [&_a:hover]:decoration-violet-300 [&_ul]:list-disc [&_ul]:ps-5 [&_ul]:space-y-1 [&_li]:text-zinc-300">
+                                                            <Markdown>{event.description}</Markdown>
+                                                        </div>
+                                                    )}
+                                                    {event.data?.image && (
+                                                        <div className="mt-4">
+                                                            <Image
+                                                                src={`/${event.data.image.path}`}
+                                                                alt=""
+                                                                width={320}
+                                                                height={240}
+                                                                className="rounded-lg w-full max-w-full sm:max-w-sm md:max-w-md shadow-md"
+                                                                sizes="(max-width: 640px) 100vw, (max-width: 768px) 384px, 448px"
+                                                                priority={false}
+                                                            />
+                                                        </div>
+                                                    )}
+                                                </>
+                                            )}
+                                        </div>
+                                        
+                                        <div className="flex shrink-0 items-end justify-center pl-4">
+                                            <button
+                                                onClick={() => handleDetailClick(detailPage)}
+                                                className="p-3 bg-[var(--surface-control)] hover:brightness-125 border-2 border-[var(--rail)] hover:border-violet-400/70 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105 group"
+                                                aria-label="View details"
+                                            >
+                                                <Plus className="w-5 h-5 text-zinc-300 group-hover:text-white transition-colors" />
+                                            </button>
+                                        </div>
+                                    </div>
+                                ) : (
+                                    <div className="w-full">
+                                        {event.comment ? (
+                                            <div className="prose prose-invert max-w-none [&_a]:bg-gradient-to-r [&_a]:from-violet-400 [&_a]:to-purple-400 [&_a]:bg-clip-text [&_a]:text-transparent [&_a]:underline [&_a]:decoration-violet-400/50 [&_a:hover]:from-violet-300 [&_a:hover]:to-purple-300 [&_a:hover]:decoration-violet-300">
+                                                <Markdown>{event.comment}</Markdown>
+                                            </div>
+                                        ) : (
+                                            <>
+                                                {event.date && (
+                                                    <div className="text-sm text-zinc-400 mb-2 font-medium">
+                                                        {event.date}
+                                                    </div>
+                                                )}
+                                                {event.title && (
+                                                    <div className="prose prose-invert max-w-none mb-3 [&_a]:bg-gradient-to-r [&_a]:from-violet-400 [&_a]:to-purple-400 [&_a]:bg-clip-text [&_a]:text-transparent [&_a]:underline [&_a]:decoration-violet-400/50 [&_a:hover]:from-violet-300 [&_a:hover]:to-purple-300 [&_a:hover]:decoration-violet-300">
+                                                        <Markdown>{event.title}</Markdown>
+                                                    </div>
+                                                )}
+                                                {event.description && (
+                                                    <div className="prose prose-invert max-w-none [&_a]:bg-gradient-to-r [&_a]:from-violet-400 [&_a]:to-purple-400 [&_a]:bg-clip-text [&_a]:text-transparent [&_a]:underline [&_a]:decoration-violet-400/50 [&_a:hover]:from-violet-300 [&_a:hover]:to-purple-300 [&_a:hover]:decoration-violet-300 [&_ul]:list-disc [&_ul]:ps-5 [&_ul]:space-y-1 [&_li]:text-zinc-300">
+                                                        <Markdown>{event.description}</Markdown>
+                                                    </div>
+                                                )}
+                                                {event.data?.image && (
+                                                    <div className="mt-4">
+                                                        <Image
+                                                            src={`/${event.data.image.path}`}
+                                                            alt=""
+                                                            width={320}
+                                                            height={240}
+                                                            className="rounded-lg w-full max-w-full sm:max-w-sm md:max-w-md shadow-md"
+                                                            sizes="(max-width: 640px) 100vw, (max-width: 768px) 384px, 448px"
+                                                            priority={false}
+                                                        />
+                                                    </div>
+                                                )}
+                                            </>
+                                        )}
+                                    </div>
+                                )}
+                            </Panel>
+                        </div>
+                        );
+                    })}
+                </div>
+            </div>
+
+            <DetailModal
+                isOpen={isModalOpen}
+                onClose={handleCloseModal}
+                detailPage={selectedDetailPage}
+            />
+        </div>
+    );
+}

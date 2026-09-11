@@ -1,15 +1,4 @@
-import { Post, Photo } from '@/types/blog';
-import NorwayPost from '@/components/blog-posts/NorwayPost';
-
-export const norwayPostMetadata: Post = {
-  slug: 'norway-2025',
-  title: 'Norway 2025',
-  date: '2025-09-20',
-  excerpt: 'A photographic journey through the stunning landscapes of Norway',
-  tags: ['travel', 'photography', 'norway', 'adventure'],
-  featuredImage: '/norway-2025/IMG_7111.jpeg',
-  component: NorwayPost,
-};
+import type { Photo, Post } from '@/types/blog';
 
 export const norwayPhotos: Photo[] = [
   {
@@ -109,3 +98,27 @@ export const norwayPhotos: Photo[] = [
     description: ""
   }
 ];
+
+export const norwayPostMetadata: Post = {
+  slug: 'norway-2025',
+  title: 'Norway 2025',
+  date: '2025-09-20',
+  excerpt: 'A photographic journey through the stunning landscapes of Norway',
+  tags: ['travel', 'photography', 'norway', 'adventure'],
+  featuredImage: '/norway-2025/IMG_7111.jpeg',
+  gallery: {
+    photos: norwayPhotos,
+    hero: {
+      image: '/norway-2025/IMG_7207.jpeg',
+      alt: 'Norway landscape',
+      title: 'Norway 2025',
+      subtitle:
+        'A photographic journey through the stunning landscapes of Norway',
+    },
+    intro: {
+      heading: 'About This Journey',
+      body:
+        'This collection captures the breathtaking beauty of Norway during my 2025 adventure. From dramatic fjords to mountains, each photograph tells a story of exploration and wonder. It\'s the most impressive country and nature I\'ve ever seen so far.',
+    },
+  },
+};

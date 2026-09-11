@@ -1,15 +1,4 @@
-import { Post, Photo } from '@/types/blog';
-import PolandPost from '@/components/blog-posts/PolandPost';
-
-export const polandPostMetadata: Post = {
-  slug: 'poland-2025',
-  title: 'Poland 2025',
-  date: '2025-12-01',
-  excerpt: 'Half a year living in Poland',
-  tags: ['photography', 'poland', 'life'],
-  featuredImage: '/poland-2025/01.jpeg',
-  component: PolandPost,
-};
+import type { Photo, Post } from '@/types/blog';
 
 export const polandPhotos: Photo[] = [
   { id: 1, src: '/poland-2025/01.jpeg', alt: 'Poland 2025 Trip - Photo 1', description: '' },
@@ -23,3 +12,22 @@ export const polandPhotos: Photo[] = [
   { id: 9, src: '/poland-2025/09.jpeg', alt: 'Poland 2025 Trip - Photo 9', description: '' },
   { id: 10, src: '/poland-2025/10.jpeg', alt: 'Poland 2025 Trip - Photo 10', description: '' },
 ];
+
+export const polandPostMetadata: Post = {
+  slug: 'poland-2025',
+  title: 'Poland 2025',
+  date: '2025-12-01',
+  excerpt: 'Half a year living in Poland',
+  tags: ['photography', 'poland', 'life'],
+  featuredImage: '/poland-2025/01.jpeg',
+  gallery: {
+    photos: polandPhotos,
+    hero: {
+      image: '/poland-2025/01.jpeg',
+      alt: 'Poland landscape',
+      title: 'Poland 2025',
+      subtitle:
+        'Half a year living in Poland',
+    },
+  },
+};

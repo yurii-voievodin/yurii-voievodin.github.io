@@ -1,15 +1,4 @@
-import { Post, Photo } from '@/types/blog';
-import GreecePost from '@/components/blog-posts/GreecePost';
-
-export const greecePostMetadata: Post = {
-  slug: 'greece-2026',
-  title: 'Greece 2026',
-  date: '2026-08-28',
-  excerpt: 'Two summer road trips — camping by turquoise coves and the monasteries of Meteora',
-  tags: ['travel', 'photography', 'greece', 'roadtrip'],
-  featuredImage: '/greece-2026/hero.jpeg',
-  component: GreecePost,
-};
+import type { Photo, Post } from '@/types/blog';
 
 export const greecePhotos: Photo[] = [
   { id: 1, src: '/greece-2026/01.jpeg', alt: 'Greece 2026 Trip - Photo 1', description: "Crossing over by car ferry, the ship's ancient trireme emblem watching over the deck" },
@@ -27,3 +16,27 @@ export const greecePhotos: Photo[] = [
   { id: 13, src: '/greece-2026/13.jpeg', alt: 'Greece 2026 Trip - Photo 13', description: 'Sunset walk on the beach' },
   { id: 14, src: '/greece-2026/14.jpeg', alt: 'Greece 2026 Trip - Photo 14', description: '' },
 ];
+
+export const greecePostMetadata: Post = {
+  slug: 'greece-2026',
+  title: 'Greece 2026',
+  date: '2026-08-28',
+  excerpt: 'Two summer road trips — camping by turquoise coves and the monasteries of Meteora',
+  tags: ['travel', 'photography', 'greece', 'roadtrip'],
+  featuredImage: '/greece-2026/hero.jpeg',
+  gallery: {
+    photos: greecePhotos,
+    hero: {
+      image: '/greece-2026/hero.jpeg',
+      alt: 'Meteora monasteries on the cliffs',
+      title: 'Greece 2026',
+      subtitle:
+        'Two summer road trips — camping by turquoise coves and the monasteries of Meteora',
+    },
+    intro: {
+      heading: 'About This Journey',
+      body:
+        'Two trips to Greece this summer — driving over by car ferry, camping along the coast, swimming in turquoise coves, and a climb up to the monasteries of Meteora. All photos taken on an iPhone.',
+    },
+  },
+};

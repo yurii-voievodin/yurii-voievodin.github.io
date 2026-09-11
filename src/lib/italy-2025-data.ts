@@ -1,15 +1,4 @@
-import { Post, Photo } from '@/types/blog';
-import ItalyPost from '@/components/blog-posts/ItalyPost';
-
-export const italyPostMetadata: Post = {
-  slug: 'italy-2025',
-  title: 'Italy 2025',
-  date: '2025-07-14',
-  excerpt: 'A cultural and visual journey through the heart of Italy',
-  tags: ['travel', 'photography', 'italy', 'adventure', 'culture'],
-  featuredImage: '/italy-2025/IMG_5133_SnapseedCopy.jpeg',
-  component: ItalyPost,
-};
+import type { Photo, Post } from '@/types/blog';
 
 export const italyPhotos: Photo[] = [
   {
@@ -97,3 +86,22 @@ export const italyPhotos: Photo[] = [
     description: ""
   }
 ];
+
+export const italyPostMetadata: Post = {
+  slug: 'italy-2025',
+  title: 'Italy 2025',
+  date: '2025-07-14',
+  excerpt: 'A cultural and visual journey through the heart of Italy',
+  tags: ['travel', 'photography', 'italy', 'adventure', 'culture'],
+  featuredImage: '/italy-2025/IMG_5133_SnapseedCopy.jpeg',
+  gallery: {
+    photos: italyPhotos,
+    hero: {
+      image: '/italy-2025/IMG_3420.jpeg',
+      alt: 'Italy landscape',
+      title: 'Italy 2025',
+      subtitle:
+        'A cultural and visual journey through the heart of Italy',
+    },
+  },
+};

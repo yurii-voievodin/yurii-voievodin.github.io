@@ -1,15 +1,4 @@
-import { Post, Photo } from '@/types/blog';
-import AustriaPost from '@/components/blog-posts/AustriaPost';
-
-export const austriaPostMetadata: Post = {
-  slug: 'austria-2025',
-  title: 'Austria 2025',
-  date: '2025-10-11',
-  excerpt: 'A journey through Austria\'s Alpine landscapes and historic Vienna',
-  tags: ['travel', 'photography', 'austria', 'adventure', 'alps'],
-  featuredImage: '/austria-2025/IMG_6445.jpeg',
-  component: AustriaPost,
-};
+import type { Photo, Post } from '@/types/blog';
 
 export const austriaPhotos: Photo[] = [
   {
@@ -79,3 +68,22 @@ export const austriaPhotos: Photo[] = [
     description: ""
   }
 ];
+
+export const austriaPostMetadata: Post = {
+  slug: 'austria-2025',
+  title: 'Austria 2025',
+  date: '2025-10-11',
+  excerpt: 'A journey through Austria\'s Alpine landscapes and historic Vienna',
+  tags: ['travel', 'photography', 'austria', 'adventure', 'alps'],
+  featuredImage: '/austria-2025/IMG_6445.jpeg',
+  gallery: {
+    photos: austriaPhotos,
+    hero: {
+      image: '/austria-2025/IMG_6445.jpeg',
+      alt: 'Austria landscape',
+      title: 'Austria 2025',
+      subtitle:
+        'A journey through Austria\'s Alpine landscapes and historic Vienna',
+    },
+  },
+};

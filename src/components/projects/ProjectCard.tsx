@@ -20,7 +20,6 @@ export default function ProjectCard({ date, tags, images, wideImages, children, 
             <Panel
                 frame="responsive"
                 radius="3xl"
-                emphasis
                 bodyClassName="px-0 py-4 md:p-10 text-zinc-100"
             >
                 <div className="mb-6 flex items-center gap-3 flex-wrap">

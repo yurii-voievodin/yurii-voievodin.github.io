@@ -1,15 +1,4 @@
-import { Post, Photo } from '@/types/blog';
-import KyivPost from '@/components/blog-posts/KyivPost';
-
-export const kyivPostMetadata: Post = {
-  slug: 'kyiv-2025',
-  title: 'Kyiv 2025',
-  date: '2025-01-01',
-  excerpt: 'Kyiv in 2025',
-  tags: ['photography', 'kyiv', 'ukraine'],
-  featuredImage: '/kyiv-2025/hero.jpeg',
-  component: KyivPost,
-};
+import type { Photo, Post } from '@/types/blog';
 
 export const kyivPhotos: Photo[] = [
 { id: 12, src: '/kyiv-2025/12.jpeg', alt: 'Kyiv 2025 - Photo 12', description: '' },
@@ -25,3 +14,22 @@ export const kyivPhotos: Photo[] = [
   { id: 9, src: '/kyiv-2025/09.jpeg', alt: 'Kyiv 2025 - Photo 9', description: '' },
   { id: 10, src: '/kyiv-2025/10.jpeg', alt: 'Kyiv 2025 - Photo 10', description: '' },
 ];
+
+export const kyivPostMetadata: Post = {
+  slug: 'kyiv-2025',
+  title: 'Kyiv 2025',
+  date: '2025-01-01',
+  excerpt: 'Kyiv in 2025',
+  tags: ['photography', 'kyiv', 'ukraine'],
+  featuredImage: '/kyiv-2025/hero.jpeg',
+  gallery: {
+    photos: kyivPhotos,
+    hero: {
+      image: '/kyiv-2025/hero.jpeg',
+      alt: 'Kyiv',
+      title: 'Kyiv 2025',
+      subtitle:
+        'Kyiv in 2025',
+    },
+  },
+};

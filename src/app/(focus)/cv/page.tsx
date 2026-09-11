@@ -1,0 +1,455 @@
+import { Mail, Download, Phone } from '@/components/icons';
+import { siteConfig } from "@/lib/config";
+import { GithubIcon, LinkedinIcon } from "@/components/BrandIcons";
+import CodeTag from "@/components/CodeTag";
+import Button from "@/components/ui/Button";
+import Panel from "@/components/ui/Panel";
+import Bullets from "@/components/ui/Bullets";
+import SectionHeading from "@/components/ui/SectionHeading";
+import type { Metadata } from "next";
+import { buildMetadata } from '@/lib/metadata';
+
+export const metadata: Metadata = buildMetadata({
+  title: "CV - Yurii Voievodin",
+  description:
+    "Experienced software developer with 14+ years of expertise in web and mobile apps development. Proficient in Swift, modern iOS frameworks, AI-powered development tools, and implementing AI/ML features in applications.",
+  path: "/cv",
+  type: "profile",
+});
+
+export default function CVPage() {
+  const personJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: siteConfig.author.name,
+    jobTitle: "Senior iOS Engineer",
+    url: siteConfig.url,
+    email: siteConfig.author.email,
+    sameAs: [siteConfig.social.github, siteConfig.social.linkedin],
+  };
+
+  return (
+    <div className="max-w-4xl mx-auto px-4">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+      />
+      <header className="mb-12">
+        <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-6">
+          <div className="flex-1">
+            <h1 className="text-4xl md:text-5xl font-bold text-zinc-100 mb-4">
+              {siteConfig.author.name}
+            </h1>
+
+            <div className="flex flex-col gap-2 text-zinc-300">
+              <a
+                href={`mailto:${siteConfig.author.email}`}
+                className="flex items-center space-x-2 hover:text-violet-400 transition-colors"
+              >
+                <Mail size={16} />
+                <span className="text-sm sm:text-base">
+                  {siteConfig.author.email}
+                </span>
+              </a>
+              <a
+                href="https://github.com/yurii-voievodin"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-2 hover:text-violet-400 transition-colors"
+              >
+                <GithubIcon size={16} />
+                <span className="text-sm sm:text-base">yurii-voievodin</span>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/yurivoevodin"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-2 hover:text-violet-400 transition-colors"
+              >
+                <LinkedinIcon size={16} />
+                <span className="text-sm sm:text-base">yurivoevodin</span>
+              </a>
+              <a
+                href="https://telegram.me/yurii_voievodin"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-2 hover:text-violet-400 transition-colors"
+              >
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
+                </svg>
+                <span className="text-sm sm:text-base">yurii_voievodin</span>
+              </a>
+              <a
+                href="tel:+359877185470"
+                className="flex items-center space-x-2 hover:text-violet-400 transition-colors"
+              >
+                <Phone size={16} />
+                <span className="text-sm sm:text-base">+359 87 7185470</span>
+              </a>
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-3 w-full md:w-auto">
+            <div className="flex flex-col sm:flex-row gap-3">
+              <Button href="/Yurii_Voievodin_CV.pdf" external className="flex-1 sm:flex-none">
+                <Download size={16} />
+                <span>Download PDF</span>
+              </Button>
+              <Button href="/projects" variant="secondary" className="flex-1 sm:flex-none">
+                <span>View Projects</span>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <Panel
+        as="section"
+        frame="responsive"
+        className="px-0 py-4 md:p-8 mb-4 md:mb-8 border-b border-[var(--border-subtle)] md:border-b-0 pb-6 md:pb-8"
+      >
+        <SectionHeading className="mb-4">
+          Professional Summary
+        </SectionHeading>
+        <p className="text-zinc-300 leading-relaxed">
+          Senior iOS / Lead iOS Engineer with 14+ years of experience building
+          and scaling production iOS applications and websites. Proven
+          experience leading technical initiatives in large commercial products.
+        </p>
+        <p className="text-violet-300 leading-relaxed">
+          I&apos;m using AI-based development tools and implementing AI/ML
+          features in production applications.
+        </p>
+        <p className="text-zinc-300 leading-relaxed mt-4">
+          <span className="font-semibold">Languages:</span>
+        </p>
+        <ul className="list-disc pl-6 text-zinc-300">
+          <li>English — Upper-Intermediate (B2)</li>
+          <li>Ukrainian — Native</li>
+        </ul>
+      </Panel>
+
+      <Panel
+        as="section"
+        frame="responsive"
+        className="px-0 py-4 md:p-8 mb-4 md:mb-8 border-b border-[var(--border-subtle)] md:border-b-0 pb-6 md:pb-8"
+      >
+        <SectionHeading className="mb-6">Experience</SectionHeading>
+
+        <div className="space-y-6">
+          <div className="pl-0">
+            <h3 className="text-lg font-semibold text-zinc-100">
+              iOS Developer
+            </h3>
+            <p className="text-violet-400 font-medium mb-1">
+              <a
+                href="/projects/commercial/hooh"
+                className="text-violet-400 hover:text-violet-300"
+              >
+                Hooh
+              </a>{" "}
+              <span className="text-zinc-400 mb-2">• 2025 - 2026</span>
+            </p>
+            <Bullets>
+              <li>
+                Designed and built the app&apos;s architecture from scratch{" "}
+              </li>
+              <li>Implemented real-time AI chat</li>
+              <li>
+                Set up subscriptions and paywalls with{" "}
+                <strong>RevenueCat</strong>
+              </li>
+              <li>
+                Integrated analytics: <strong>PostHog</strong> (feature flags,
+                session replay), <strong>AppsFlyer</strong>,{" "}
+                <strong>TikTok Business SDK</strong>
+              </li>
+              <li>
+                Set up <strong>Xcode Cloud</strong> CI/CD with Development,
+                Staging, and Production targets
+              </li>
+              <li>
+                Took the app from first commit to App Store launch, and
+                continued to ship new releases
+              </li>
+            </Bullets>
+          </div>
+
+          <div className="pl-0">
+            <h3 className="text-lg font-semibold text-zinc-100">
+              Lead iOS Engineer
+            </h3>
+            <p className="text-violet-400 font-medium mb-1">
+              <a
+                href="/projects/commercial/vistaprint"
+                className="text-violet-400 hover:text-violet-300"
+              >
+                VistaPrint
+              </a>
+              {" & "}
+              <a
+                href="/projects/commercial/vistacreate"
+                className="text-violet-400 hover:text-violet-300"
+              >
+                VistaCreate
+              </a>{" "}
+              <span className="text-zinc-400 mb-2">• 2022 - 2025</span>
+            </p>
+            <Bullets>
+              <li>
+                Implemented a new Home screen per the Figma design, improving
+                the first experience with the app for new users and enabling
+                promotion of seasonal offers and discounts
+              </li>
+              <li>
+                Implemented modular architecture with <strong>CocoaPods</strong>{" "}
+                modules for feature isolation
+              </li>
+              <li>
+                Continuously iterated on the onboarding flow, testing different
+                variants with A/B tests to improve user conversion
+              </li>
+              <li>
+                Integrated analytics: <strong>Firebase</strong>,{" "}
+                <strong>AppsFlyer</strong>, <strong>Iterable</strong>,{" "}
+                <strong>Segment</strong>
+              </li>
+              <li>
+                Increased unit test coverage with <strong>XCTest</strong> across
+                core business logic modules
+              </li>
+              <li>
+                Collaborated with product, design, and analytics teams on
+                feature planning
+              </li>
+            </Bullets>
+          </div>
+
+          <div className="pl-0">
+            <h3 className="text-lg font-semibold text-zinc-100">
+              Software Engineer (iOS, Swift)
+            </h3>
+            <p className="text-violet-400 font-medium mb-1">
+              <a
+                href="/projects/commercial/clowder"
+                className="text-violet-400 hover:text-violet-300"
+              >
+                Clowder
+              </a>{" "}
+              <span className="text-zinc-400 mb-2">• 2020 - 2022</span>
+            </p>
+            <Bullets>
+              <li>
+                Customized and deployed iOS apps for 50+ organizations from a
+                shared Core product
+              </li>
+              <li>
+                Maintained <strong>GitFlow</strong> across a large multi-repo
+                setup, resolving merge conflicts
+              </li>
+              <li>Proposed and implemented changes to the Core product</li>
+              <li>
+                Managed CI/CD pipeline with <strong>GitLab CI</strong>,{" "}
+                <strong>Fastlane</strong>, and <strong>AppCenter</strong>{" "}
+                distribution
+              </li>
+            </Bullets>
+          </div>
+
+          <div className="pl-0">
+            <h3 className="text-lg font-semibold text-zinc-100">
+              iOS Developer
+            </h3>
+            <p className="text-violet-400 font-medium mb-1">
+              <a
+                href="/projects/commercial/coachnow"
+                className="text-violet-400 hover:text-violet-300"
+              >
+                CoachNow
+              </a>
+              {" (part time)"}{" "}
+              <span className="text-zinc-400 mb-2">• 2020 - 2021</span>
+            </p>
+            <Bullets>
+              <li>
+                Support the app and add new features to the mixed{" "}
+                <CodeTag>Objective-C</CodeTag> / <CodeTag>Swift</CodeTag>{" "}
+                codebase
+              </li>
+              <li>
+                Rewrite legacy <CodeTag>Objective-C</CodeTag> code to{" "}
+                <CodeTag>Swift</CodeTag>
+              </li>
+              <li>
+                Make code reviews and publish releases to TestFlight and the App
+                Store
+              </li>
+              <li>
+                Implement screen recording with <CodeTag>ReplayKit</CodeTag>{" "}
+                framework
+              </li>
+              <li>
+                Maintain dependencies and manage the{" "}
+                <CodeTag>CocoaPods</CodeTag> setup
+              </li>
+            </Bullets>
+          </div>
+
+          <div className="pl-0">
+            <h3 className="text-lg font-semibold text-zinc-100">
+              iOS, iPadOS and macOS Apps Developer
+            </h3>
+            <p className="text-violet-400 font-medium mb-1">
+              <a
+                href="https://www.appdev.academy"
+                rel="nofollow"
+                target="_blank"
+                className="text-violet-400 hover:text-violet-300"
+              >
+                App Dev Academy
+              </a>{" "}
+              <span className="text-zinc-400 mb-2">• 2016 - 2020</span>
+            </p>
+            <p className="text-zinc-300 mt-2">
+              Participated in development, publication and support of 10+ iOS
+              apps and one macOS app.
+            </p>
+            <Bullets>
+              <li>Create apps from scratch and design apps architecture</li>
+              <li>Create user interface with Storyboards and XIB files</li>
+              <li>
+                Use <CodeTag>UIKit</CodeTag> and create custom UI components
+              </li>
+              <li>
+                Design a database architecture and use{" "}
+                <CodeTag>Core Data</CodeTag> framework
+              </li>
+              <li>
+                Write code on <CodeTag>Swift</CodeTag> programming language
+              </li>
+              <li>Implement networking layer - REST API</li>
+              <li>Integrate third-party dependencies</li>
+            </Bullets>
+          </div>
+
+          <hr className="border-[var(--border-strong)] my-8" />
+
+          <div className="pl-0">
+            <h3 className="text-lg font-semibold text-zinc-100">
+              PHP Developer
+            </h3>
+            <p className="text-violet-400 font-medium mb-1">
+              <a
+                href="https://soloway.tech"
+                rel="nofollow"
+                target="_blank"
+                className="text-violet-400 hover:text-violet-300"
+              >
+                bvblogic
+              </a>{" "}
+              <span className="text-zinc-400 mb-2">• 2012 - 2016</span>
+            </p>
+            <p className="text-zinc-300 mt-2">
+              I build websites on <CodeTag>PHP</CodeTag> programming language,
+              using frameworks such as <CodeTag>Laravel</CodeTag>,{" "}
+              <CodeTag>Kohana</CodeTag>, <CodeTag>Codeigniter</CodeTag>,{" "}
+              <CodeTag>Yii</CodeTag>. Also, I used <CodeTag>CSS3</CodeTag>,{" "}
+              <CodeTag>HTML5</CodeTag>, <CodeTag>jQuery</CodeTag>, and{" "}
+              <CodeTag>Bootstrap</CodeTag> for the frontend. First experience of
+              building and supporting commercial projects.
+            </p>
+          </div>
+
+          <div className="pl-0">
+            <h3 className="text-lg font-semibold text-zinc-100">
+              Senior Laboratory
+            </h3>
+            <p className="text-violet-400 font-medium mb-1">
+              Laboratory of distance learning
+              {" at "}
+              <a
+                href="https://int.sumdu.edu.ua/en/"
+                rel="nofollow"
+                target="_blank"
+                className="text-violet-400 hover:text-violet-300"
+              >
+                Sumy State University
+              </a>{" "}
+              <span className="text-zinc-400 mb-2">• 2012 - 2013</span>
+            </p>
+            <p className="text-zinc-300 mt-2">
+              I worked on simple training apps for students on{" "}
+              <CodeTag>Java</CodeTag> and an internal framework. Also convert
+              Microsoft Word documents to <CodeTag>HTML</CodeTag> pages as part
+              of my job there.
+            </p>
+          </div>
+
+          <div className="pl-0">
+            <h3 className="text-lg font-semibold text-zinc-100">
+              Laboratory Technician
+            </h3>
+            <p className="text-violet-400 font-medium mb-1">
+              <a
+                href="https://kfk.sumdu.edu.ua"
+                rel="nofollow"
+                target="_blank"
+                className="text-violet-400 hover:text-violet-300"
+              >
+                Polytechnic College of Konotop Institute of the SSU
+              </a>{" "}
+              <span className="text-zinc-400 mb-2">• 2007 - 2008</span>
+            </p>
+            <p className="text-zinc-300 mt-2">
+              At college, my job was to configure, maintain and update PCs on
+              Windows 98 and XP. Also, I helped students to make homework done.
+            </p>
+          </div>
+        </div>
+      </Panel>
+
+      <Panel
+        as="section"
+        frame="responsive"
+        className="px-0 py-4 md:p-8 mb-4 md:mb-8 border-b border-[var(--border-subtle)] md:border-b-0 pb-6 md:pb-8"
+      >
+        <SectionHeading className="mb-6">Education</SectionHeading>
+
+        <div className="space-y-6">
+          <div className="pl-0">
+            <h3 className="text-lg font-semibold text-zinc-100">
+              Bachelor of Computer Science
+            </h3>
+            <p className="text-violet-400 font-medium mb-1">
+              Sumy State University{" "}
+              <span className="text-zinc-400 mb-2">• 2009 - 2012</span>
+            </p>
+            <p className="text-zinc-300 mb-3">
+              Specialization: Software Engineering
+            </p>
+          </div>
+
+          <div className="pl-0">
+            <h3 className="text-lg font-semibold text-zinc-100">
+              Junior Specialist
+            </h3>
+            <p className="text-violet-400 font-medium mb-1">
+              Polytechnic College of Konotop Institute of the Sumy State
+              University{" "}
+              <span className="text-zinc-400 mb-2">• 2007 - 2008</span>
+            </p>
+            <p className="text-zinc-300 mb-3">
+              Field: Computer Maintenance, Intelligent Systems, and Networks
+            </p>
+          </div>
+        </div>
+      </Panel>
+    </div>
+  );
+}

@@ -1,8 +1,9 @@
 export const siteConfig = {
   name: "Yurii Voievodin",
   title: "Yurii Voievodin - Software Developer",
-  description: "A personal blog and CV website built with Next.js",
-  url: "https://yurii-voievodin.github.io", // Updated to GitHub Pages domain
+  description:
+    "Software developer with 14+ years of experience building iOS, macOS and web applications — CV, projects, and a travel photo blog.",
+  url: "https://yurii-voievodin.github.io",
   author: {
     name: "Yurii Voievodin",
     email: "yurii.voievodin@icloud.com",

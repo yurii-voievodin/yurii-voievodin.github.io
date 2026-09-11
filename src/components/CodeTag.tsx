@@ -1,13 +1,15 @@
-import React from 'react';
+import type { ReactNode } from 'react';
 
-interface CodeTagProps {
-  children: React.ReactNode;
+export default function CodeTag({
+  children,
+  className = '',
+}: {
+  children: ReactNode;
   className?: string;
-}
-
-export default function CodeTag({ children, className = '' }: CodeTagProps) {
-  const defaultClasses = 'bg-[var(--surface-code)] px-1 rounded text-xs';
-  const combinedClasses = className ? `${defaultClasses} ${className}` : defaultClasses;
-
-  return <code className={combinedClasses}>{children}</code>;
+}) {
+  return (
+    <code className={`bg-[var(--surface-code)] px-1.5 py-0.5 rounded text-sm ${className}`.trim()}>
+      {children}
+    </code>
+  );
 }

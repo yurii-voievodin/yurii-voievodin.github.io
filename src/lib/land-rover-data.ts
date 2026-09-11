@@ -1,15 +1,4 @@
-import { Post, Photo } from '@/types/blog';
-import LandRoverPost from '@/components/blog-posts/LandRoverPost';
-
-export const landRoverPostMetadata: Post = {
-  slug: 'land_rover',
-  title: 'Land Rover Discovery Sport 2017',
-  date: '2025-02-02',
-  excerpt: 'A collection of my photos with Land Rover in different locations',
-  tags: ['automotive', 'photography', 'ukraine', 'travel'],
-  featuredImage: '/land_rover/10.jpeg',
-  component: LandRoverPost,
-};
+import type { Photo, Post } from '@/types/blog';
 
 export const landRoverPhotos: Photo[] = [
   {
@@ -97,3 +86,43 @@ export const landRoverPhotos: Photo[] = [
     description: "Zhytomyr Region, Ukraine"
   }
 ];
+
+export const landRoverPostMetadata: Post = {
+  slug: 'land_rover',
+  title: 'Land Rover Discovery Sport 2017',
+  date: '2025-02-02',
+  excerpt: 'A collection of my photos with Land Rover in different locations',
+  tags: ['automotive', 'photography', 'ukraine', 'travel'],
+  featuredImage: '/land_rover/10.jpeg',
+  gallery: {
+    photos: landRoverPhotos,
+    hero: {
+      image: '/land_rover/mountain.jpg',
+      alt: 'Mountain landscape road',
+      title: 'Land Rover Discovery Sport 2017',
+      subtitle:
+        'A collection of adventure photos with my Land Rover',
+    },
+    dateFormat: 'long',
+    galleryHeading: 'Photo Gallery',
+    intro: {
+      heading: 'About This Collection',
+      body:
+        'These photos showcase my Land Rover Discovery Sport 2017 in various situations and locations. Each image captures a moment from different adventures and experiences throughout 2024-2025. From city streets to off-road terrain, this collection represents the versatility and character of this remarkable vehicle.',
+    },
+    outro: [
+      {
+        heading: 'The Adventure Continues',
+        body:
+          'The Land Rover Discovery Sport has been my trusted companion through various adventures and daily journeys. These photos represent not just moments in time, but memories of exploration, reliability, and the joy of driving. From urban environments to more challenging terrains, this vehicle has consistently delivered performance and comfort.',
+        note: 'The photos were taken in different situations and locations in 2024-2025.',
+      },
+      {
+        heading: 'More Stories to Tell',
+        body:
+          'Interested in more adventures and tech insights? Check out my other blog posts!',
+        cta: { label: 'Explore More Posts', href: '/blog' },
+      },
+    ],
+  },
+};

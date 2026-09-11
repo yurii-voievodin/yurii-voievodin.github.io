@@ -6,12 +6,10 @@ import Image from 'next/image';
 export default function VistaCreateDetails() {
     return (
         <div className="min-h-screen p-5">
-            <Panel radius="3xl" emphasis className="max-w-4xl mx-auto">
-                {/* Content */}
+            <Panel radius="3xl" className="max-w-4xl mx-auto">
                 <div className="p-5 md:p-10 text-zinc-100">
-                    {/* About Section */}
                     <div className="mb-10">
-                        <h2 className="text-2xl font-bold text-pink-400 mb-5 inline-block">
+                        <h2 className="text-2xl font-bold text-violet-400 mb-5 inline-block">
                             About the Role
                         </h2>
                         <p className="text-zinc-300 leading-relaxed">
@@ -19,13 +17,11 @@ export default function VistaCreateDetails() {
                         </p>
                     </div>
 
-                    {/* Key Achievements */}
                     <div className="mb-10">
-                        <h2 className="text-2xl font-bold text-pink-400 mb-2 inline-block">
+                        <h2 className="text-2xl font-bold text-violet-400 mb-2 inline-block">
                             Key Achievements
                         </h2>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 mt-2">
-                            {/* Featured Home Screen Redesign Card */}
                             <div className="bg-gradient-to-br from-[var(--surface-elevated)] to-[var(--card-bg-strong)] p-6 rounded-2xl shadow-lg border border-[var(--border-strong)] hover:transform hover:-translate-y-2 transition-all duration-300 hover:shadow-xl">
                                 <h3 className="text-xl font-semibold mb-3 text-zinc-100">
                                     🏠 Home Screen Redesign
@@ -47,7 +43,6 @@ export default function VistaCreateDetails() {
                                 </div>
                             </div>
                             
-                            {/* Modular Architecture Card */}
                             <div className="bg-gradient-to-br from-[var(--surface-elevated)] to-[var(--card-bg-strong)] p-6 rounded-2xl shadow-lg border border-[var(--border-strong)] hover:transform hover:-translate-y-2 transition-all duration-300 hover:shadow-xl">
                                 <h3 className="text-xl font-semibold mb-3 text-zinc-100">
                                     🏗️ Modular Architecture
@@ -68,7 +63,6 @@ export default function VistaCreateDetails() {
                                 </div>
                             </div>
                             
-                            {/* Remaining Achievement Cards */}
                             {[
                                 {
                                     icon: "🔬",
@@ -94,7 +88,6 @@ export default function VistaCreateDetails() {
                                 </div>
                             ))}
 
-                            {/* Testing Excellence Card */}
                             <div className="bg-gradient-to-br from-[var(--surface-elevated)] to-[var(--card-bg-strong)] p-6 rounded-2xl shadow-lg border border-[var(--border-strong)] hover:transform hover:-translate-y-2 transition-all duration-300 hover:shadow-xl">
                                 <h3 className="text-xl font-semibold mb-3 text-zinc-100">
                                     🧪 Testing
@@ -117,16 +110,15 @@ export default function VistaCreateDetails() {
                         </div>
                     </div>
 
-                    {/* Technical Highlights */}
                     <div className="mb-10">
-                        <h2 className="text-2xl font-bold text-pink-400 mb-2 inline-block">
+                        <h2 className="text-2xl font-bold text-violet-400 mb-2 inline-block">
                             Technical Highlights
                         </h2>
                         <div className="flex flex-wrap gap-2 mt-2">
                                 {['Swift', 'UIKit', 'Core Data', 'Firebase', 'AppsFlyer', 'Iterable', 'XCTest', 'MVVM', 'Combine'].map((tech) => (
                                     <span 
                                         key={tech}
-                                        className="bg-pink-600 text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-pink-500 transition-colors"
+                                        className="bg-violet-600 text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-violet-500 transition-colors"
                                     >
                                         {tech}
                                     </span>
@@ -134,9 +126,8 @@ export default function VistaCreateDetails() {
                             </div>
                     </div>
 
-                    {/* Impact & Growth */}
                     <div className="mb-6">
-                        <h2 className="text-2xl font-bold text-pink-400 mb-2 inline-block">
+                        <h2 className="text-2xl font-bold text-violet-400 mb-2 inline-block">
                             Impact & Growth
                         </h2>
                         <p className="text-zinc-300 mb-6 leading-relaxed">

@@ -1,35 +1,21 @@
 import { ArrowRight } from '@/components/icons';
 import Button from '@/components/ui/Button';
+import GradientText from '@/components/ui/GradientText';
 import type { Metadata } from "next";
-import { siteConfig } from "@/lib/config";
+import { buildMetadata } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Home - Yurii Voievodin",
   description:
     "Experienced software developer with 14+ years of expertise in web and mobile apps development. Proficient in Swift, modern iOS frameworks, AI-powered development tools, and implementing AI/ML features in applications.",
-  openGraph: {
-    title: "Home - Yurii Voievodin",
-    description:
-      "Experienced software developer with 14+ years of expertise in web and mobile apps development. Proficient in Swift, modern iOS frameworks, AI-powered development tools, and implementing AI/ML features in applications.",
-    url: siteConfig.url,
-    type: "website",
-  },
-  twitter: {
-    card: "summary",
-    title: "Home - Yurii Voievodin",
-    description:
-      "Experienced software developer with 14+ years of expertise in web and mobile apps development. Proficient in Swift, modern iOS frameworks, AI-powered development tools, and implementing AI/ML features in applications.",
-  },
-};
+});
 
 export default function Home() {
   return (
     <div className="flex flex-col justify-center min-h-screen py-16">
       <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold leading-tight mb-6">
         <span className="text-zinc-100">Yurii </span>
-        <span className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent">
-          Voievodin
-        </span>
+        <GradientText>Voievodin</GradientText>
       </h1>
 
       <p className="text-zinc-300 text-lg max-w-xl mb-10 leading-relaxed">

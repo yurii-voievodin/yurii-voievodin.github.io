@@ -1,15 +1,4 @@
-import { Post, Photo } from '@/types/blog';
-import BulgariaPost from '@/components/blog-posts/BulgariaPost';
-
-export const bulgariaPostMetadata: Post = {
-  slug: 'bulgaria-2026',
-  title: 'Bulgaria 2026',
-  date: '2026-05-06',
-  excerpt: "Black Sea coast, mountains, and ancient cities",
-  tags: ['travel', 'photography', 'bulgaria', 'adventure'],
-  featuredImage: '/bulgaria-2026/hero.jpeg',
-  component: BulgariaPost,
-};
+import type { Photo, Post } from '@/types/blog';
 
 export const bulgariaPhotos: Photo[] = [
   { id: 1, src: '/bulgaria-2026/01.jpeg', alt: 'Bulgaria 2026 Trip - Photo 1', description: 'We stopped in some little village in front of the mountains to take a break, enjoy the view and eat a sandwich' },
@@ -29,3 +18,27 @@ export const bulgariaPhotos: Photo[] = [
   { id: 16, src: '/bulgaria-2026/16.jpeg', alt: 'Bulgaria 2026 Trip - Photo 16', description: '' },
   { id: 17, src: '/bulgaria-2026/17.jpeg', alt: 'Bulgaria 2026 Trip - Photo 17', description: '' },
 ];
+
+export const bulgariaPostMetadata: Post = {
+  slug: 'bulgaria-2026',
+  title: 'Bulgaria 2026',
+  date: '2026-05-06',
+  excerpt: "Black Sea coast, mountains, and ancient cities",
+  tags: ['travel', 'photography', 'bulgaria', 'adventure'],
+  featuredImage: '/bulgaria-2026/hero.jpeg',
+  gallery: {
+    photos: bulgariaPhotos,
+    hero: {
+      image: '/bulgaria-2026/hero.jpeg',
+      alt: 'Bulgaria landscape',
+      title: 'Bulgaria 2026',
+      subtitle:
+        'Black Sea coast, mountains, and ancient cities',
+    },
+    intro: {
+      heading: 'About This Journey',
+      body:
+        'We visited Sofia and the Bansko ski resort in the mountains, walked along the seaside in Burgas, and made trips to Nessebar and Sunny Beach. All photos were taken on an iPhone 14 Pro.',
+    },
+  },
+};

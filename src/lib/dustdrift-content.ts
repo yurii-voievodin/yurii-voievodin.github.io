@@ -5,9 +5,9 @@ export type Locale = 'en' | 'ko' | 'ja';
 export const LOCALES: Locale[] = ['en', 'ko', 'ja'];
 
 export const RELEASE_DATE_ISO = '2026-12-10';
+export const APP_STORE_URL = 'https://apps.apple.com/app/id6758512309';
 export const PLATFORMS = ['iPhone', 'iPad', 'Mac'];
 
-// Order matches the `features` array in each locale's content below.
 export const FEATURE_ICONS: IconComponent[] = [Pickaxe, Swords, Bot, DoorOpen, Shield, Smartphone];
 
 export interface DustDriftFeature {

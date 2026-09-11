@@ -1,24 +1,15 @@
 import type { ElementType, ReactNode } from 'react';
 
-/**
- * The site's card surface. `responsive` panels are flat on mobile and become
- * cards from `md` up (how the CV, projects, Q&A and security pages read);
- * `always` panels are cards at every width.
- */
 interface PanelProps {
   children: ReactNode;
   frame?: 'always' | 'responsive';
   radius?: 'lg' | '2xl' | '3xl';
-  /** Stronger fill with a blur, plus a border highlight on hover. */
-  emphasis?: boolean;
   as?: ElementType;
   className?: string;
-  /** Inner padding wrapper; pass '' to lay the body out yourself. */
   bodyClassName?: string;
   id?: string;
 }
 
-// Written out in full rather than composed, so Tailwind can see every class.
 const SHELL = {
   always: {
     lg: 'border border-[var(--border-subtle)] rounded-lg shadow-lg',
@@ -33,26 +24,14 @@ const SHELL = {
 } as const;
 
 const FILL = {
-  always: {
-    soft: 'bg-[var(--card-bg)]',
-    strong: 'bg-[var(--card-bg-strong)] backdrop-blur-sm',
-  },
-  responsive: {
-    soft: 'md:bg-[var(--card-bg)]',
-    strong: 'md:bg-[var(--card-bg-strong)] md:backdrop-blur-sm',
-  },
-} as const;
-
-const HOVER = {
-  always: 'transition-all duration-300 hover:border-[var(--border-strong)]',
-  responsive: 'transition-all duration-300 md:hover:border-[var(--border-strong)]',
+  always: 'bg-[var(--card-bg)]',
+  responsive: 'md:bg-[var(--card-bg)]',
 } as const;
 
 export default function Panel({
   children,
   frame = 'always',
   radius = 'lg',
-  emphasis = false,
   as: Tag = 'div',
   className = '',
   bodyClassName = '',
@@ -60,8 +39,7 @@ export default function Panel({
 }: PanelProps) {
   const classes = [
     SHELL[frame][radius],
-    FILL[frame][emphasis ? 'strong' : 'soft'],
-    emphasis ? HOVER[frame] : '',
+    FILL[frame],
     className,
   ]
     .filter(Boolean)

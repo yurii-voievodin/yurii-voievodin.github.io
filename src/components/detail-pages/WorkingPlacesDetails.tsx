@@ -6,16 +6,13 @@ import Image from 'next/image';
 export default function WorkingPlacesDetails() {
     return (
         <div className="min-h-screen p-5">
-            <Panel radius="3xl" emphasis className="max-w-4xl mx-auto">
+            <Panel radius="3xl" className="max-w-4xl mx-auto">
 
-                {/* Content */}
                 <div className="p-5 md:p-10 text-zinc-100">
-                    {/* About Section */}
                     <div className="mb-10">
                         <p className="text-zinc-300 leading-relaxed">Each workspace represents a different chapter in my career, with unique equipment, locations, and memories.</p>
                     </div>
 
-                    {/* Current Setup */}
                     <div className="mb-10">
                         <h2 className="text-2xl font-bold text-violet-400 mb-5 inline-block">
                             Current Setup (2023-2025)
@@ -31,7 +28,7 @@ export default function WorkingPlacesDetails() {
                                         {['MacBook Pro', 'External Monitor', 'Magic Keyboard', 'Magic Trackpad', 'Studio Lighting'].map((item) => (
                                             <span 
                                                 key={item}
-                                                className="bg-teal-600/20 text-teal-300 px-3 py-1 rounded-full text-sm border border-teal-500/30"
+                                                className="bg-violet-500/10 text-violet-400 px-3 py-1 rounded-full text-sm border border-violet-500/20"
                                             >
                                                 {item}
                                             </span>
@@ -54,7 +51,6 @@ export default function WorkingPlacesDetails() {
                         </div>
                     </div>
 
-                    {/* Previous Remote Setup */}
                     <div className="mb-10">
                         <div className="bg-gradient-to-br from-[var(--surface-elevated)] to-[var(--card-bg-strong)] p-6 rounded-2xl shadow-lg border border-[var(--border-strong)]">
                             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
@@ -80,7 +76,7 @@ export default function WorkingPlacesDetails() {
                                         {['MacBook Air M1', 'iPad Air', 'Remote Work'].map((item) => (
                                             <span 
                                                 key={item}
-                                                className="bg-cyan-600/20 text-cyan-300 px-3 py-1 rounded-full text-sm border border-cyan-500/30"
+                                                className="bg-violet-500/10 text-violet-400 px-3 py-1 rounded-full text-sm border border-violet-500/20"
                                             >
                                                 {item}
                                             </span>
@@ -91,11 +87,9 @@ export default function WorkingPlacesDetails() {
                         </div>
                     </div>
 
-                    {/* Workspace Evolution Timeline */}
                     <div className="mb-10">
                         <div className="space-y-8">
 
-                            {/* 2017 Setup */}
                             <div className="bg-gradient-to-r from-[var(--card-bg-strong)] to-[var(--surface-elevated)] p-6 rounded-2xl border border-[var(--border-strong)]">
                                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-center">
                                     <div className="order-2 lg:order-1 flex justify-center">
@@ -111,7 +105,7 @@ export default function WorkingPlacesDetails() {
                                     </div>
                                     <div className="lg:col-span-2 order-1 lg:order-2">
                                         <div className="flex items-center gap-3 mb-3">
-                                            <span className="bg-cyan-600 text-white px-3 py-1 rounded-full text-sm font-medium">2017</span>
+                                            <span className="bg-violet-600 text-white px-3 py-1 rounded-full text-sm font-medium">2017</span>
                                             <h3 className="text-xl font-semibold text-zinc-100">
                                                 💻 Home Workspace
                                             </h3>
@@ -119,7 +113,7 @@ export default function WorkingPlacesDetails() {
                                         <p className="text-zinc-300 opacity-90 leading-relaxed mb-3">
                                             Home office setup during my App Dev Academy years.
                                         </p>
-                                        <div className="text-sm text-cyan-300">
+                                        <div className="text-sm text-violet-400">
                                             📍 Sumy, Ukraine
                                         </div>
                                     </div>
@@ -128,10 +122,8 @@ export default function WorkingPlacesDetails() {
                         </div>
                     </div>
 
-                    {/* Historic Workplaces */}
                     <div className="mb-10">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            {/* App Dev Academy Office */}
                             <div className="bg-gradient-to-br from-[var(--surface-elevated)] to-[var(--card-bg-strong)] p-6 rounded-2xl shadow-lg border border-[var(--border-strong)]">
                                 <h3 className="text-xl font-semibold mb-3 text-zinc-100">
                                     🏢 App Dev Academy Office
@@ -150,10 +142,9 @@ export default function WorkingPlacesDetails() {
                                         />
                                     </div>
                                 </div>
-                                <div className="text-sm text-teal-300">2016-2020 • Sumy, Ukraine</div>
+                                <div className="text-sm text-violet-400">2016-2020 • Sumy, Ukraine</div>
                             </div>
 
-                            {/* BVBLogic Office */}
                             <div className="bg-gradient-to-br from-[var(--surface-elevated)] to-[var(--card-bg-strong)] p-6 rounded-2xl shadow-lg border border-[var(--border-strong)]">
                                 <h3 className="text-xl font-semibold mb-3 text-zinc-100">
                                     💻 bvblogic Office
@@ -172,20 +163,18 @@ export default function WorkingPlacesDetails() {
                                         />
                                     </div>
                                 </div>
-                                <div className="text-sm text-teal-300">2012-2016 • Sumy, Ukraine</div>
+                                <div className="text-sm text-violet-400">2012-2016 • Sumy, Ukraine</div>
                             </div>
                         </div>
                     </div>
 
-                    {/* Workspace Evolution Timeline */}
                     <div className="mb-10">
                         <div className="space-y-8">
-                            {/* 2014 Apartments Setup */}
                             <div className="bg-gradient-to-r from-[var(--card-bg-strong)] to-[var(--surface-elevated)] p-6 rounded-2xl border border-[var(--border-strong)]">
                                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-center">
                                     <div className="lg:col-span-2">
                                         <div className="flex items-center gap-3 mb-3">
-                                            <span className="bg-teal-500 text-white px-3 py-1 rounded-full text-sm font-medium">2014</span>
+                                            <span className="bg-violet-600 text-white px-3 py-1 rounded-full text-sm font-medium">2014</span>
                                             <h3 className="text-xl font-semibold text-zinc-100">
                                                 🏠 Early Home Office Setup
                                             </h3>
@@ -193,7 +182,7 @@ export default function WorkingPlacesDetails() {
                                         <p className="text-zinc-300 opacity-90 leading-relaxed mb-3">
                                             My first dedicated home workspace in Sumy apartments. Simple but functional setup where I started transitioning from web to mobile development. This was around the time I got my first MacBook and began exploring iOS development.
                                         </p>
-                                        <div className="text-sm text-cyan-300">
+                                        <div className="text-sm text-violet-400">
                                             📍 Sumy, Ukraine • Web to mobile development transition
                                         </div>
                                     </div>
@@ -213,10 +202,8 @@ export default function WorkingPlacesDetails() {
                         </div>
                     </div>
 
-                    {/* Equipment Milestones */}
                     <div className="mb-10">
                         <div className="space-y-6">
-                            {/* First MacBook */}
                             <div className="bg-gradient-to-r from-[var(--card-bg-strong)] to-[var(--surface-elevated)] p-6 rounded-2xl border border-[var(--border-strong)]">
                                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-center">
                                     <div className="lg:col-span-2">
@@ -241,7 +228,6 @@ export default function WorkingPlacesDetails() {
                                 </div>
                             </div>
 
-                            {/* First Computer */}
                             <div className="bg-gradient-to-r from-[var(--card-bg-strong)] to-[var(--surface-elevated)] p-6 rounded-2xl border border-[var(--border-strong)]">
                                 <h3 className="text-xl font-semibold mb-3 text-zinc-100">
                                     💾 Intel 486 Notebook (2004) - Where It All Began
@@ -263,7 +249,6 @@ export default function WorkingPlacesDetails() {
                         </div>
                     </div>
 
-                    {/* Workspace Philosophy */}
                     <div className="mb-6">
                         <p className="text-zinc-300 mb-6 leading-relaxed">
                             My approach to workspace design has evolved from simply having a place to code to creating environments that inspire creativity and maintain focus. Each setup reflects the technology and work culture of its era - from shared office spaces to the flexibility of remote work.
