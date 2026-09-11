@@ -16,7 +16,7 @@ export default function ProjectNav({ category, prev, next }: ProjectNavProps) {
             {prev ? (
                 <Link
                     href={`/projects/${category}/${prev.slug}`}
-                    className="group flex items-center gap-4 rounded-2xl border border-violet-500/30 bg-gradient-to-r from-violet-600/15 to-purple-600/15 px-6 py-5 transition-all duration-300 hover:border-violet-400/60 hover:from-violet-600/25 hover:to-purple-600/25 hover:shadow-lg hover:shadow-violet-950/40"
+                    className="group flex items-center gap-4 rounded-2xl border border-[var(--border-subtle)] border-l-2 border-l-violet-500/50 bg-[var(--card-bg)] px-6 py-5 transition-all duration-300 hover:border-violet-400/60 hover:bg-[var(--card-bg-strong)] hover:shadow-lg hover:shadow-violet-950/40"
                 >
                     <ArrowLeft
                         className="shrink-0 text-violet-300 transition-transform duration-300 group-hover:-translate-x-1.5"
@@ -29,7 +29,7 @@ export default function ProjectNav({ category, prev, next }: ProjectNavProps) {
                         <div className="mt-1 truncate text-lg font-semibold text-zinc-100 transition-colors group-hover:text-violet-200">
                             {prev.name}
                         </div>
-                        <div className="mt-0.5 text-sm text-zinc-500">{prev.date}</div>
+                        <div className="mt-0.5 text-sm text-zinc-400">{prev.date}</div>
                     </div>
                 </Link>
             ) : (
@@ -39,7 +39,7 @@ export default function ProjectNav({ category, prev, next }: ProjectNavProps) {
             {next ? (
                 <Link
                     href={`/projects/${category}/${next.slug}`}
-                    className="group flex items-center justify-end gap-4 rounded-2xl border border-violet-500/30 bg-gradient-to-r from-purple-600/15 to-violet-600/15 px-6 py-5 text-right transition-all duration-300 hover:border-violet-400/60 hover:from-purple-600/25 hover:to-violet-600/25 hover:shadow-lg hover:shadow-violet-950/40"
+                    className="group flex items-center justify-end gap-4 rounded-2xl border border-[var(--border-subtle)] border-r-2 border-r-violet-500/50 bg-[var(--card-bg)] px-6 py-5 text-right transition-all duration-300 hover:border-violet-400/60 hover:bg-[var(--card-bg-strong)] hover:shadow-lg hover:shadow-violet-950/40"
                 >
                     <div className="min-w-0">
                         <div className="text-xs font-medium uppercase tracking-wider text-violet-300/80">
@@ -48,7 +48,7 @@ export default function ProjectNav({ category, prev, next }: ProjectNavProps) {
                         <div className="mt-1 truncate text-lg font-semibold text-zinc-100 transition-colors group-hover:text-violet-200">
                             {next.name}
                         </div>
-                        <div className="mt-0.5 text-sm text-zinc-500">{next.date}</div>
+                        <div className="mt-0.5 text-sm text-zinc-400">{next.date}</div>
                     </div>
                     <ArrowRight
                         className="shrink-0 text-violet-300 transition-transform duration-300 group-hover:translate-x-1.5"

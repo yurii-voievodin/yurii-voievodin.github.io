@@ -209,7 +209,7 @@ export const commercialProjects: Project[] = [
           </li>
         </ul>
 
-        <hr className="border-zinc-700/50" />
+        <hr className="border-[var(--border-subtle)]" />
       </>
     ),
   },
@@ -302,7 +302,7 @@ export const commercialProjects: Project[] = [
           </li>
         </ul>
 
-        <hr className="border-zinc-700/50" />
+        <hr className="border-[var(--border-subtle)]" />
       </>
     ),
   },
@@ -413,7 +413,7 @@ export const commercialProjects: Project[] = [
           </li>
         </ul>
 
-        <hr className="border-zinc-700/50" />
+        <hr className="border-[var(--border-subtle)]" />
       </>
     ),
   },
@@ -491,7 +491,7 @@ export const commercialProjects: Project[] = [
           </li>
         </ul>
 
-        <hr className="border-zinc-700/50" />
+        <hr className="border-[var(--border-subtle)]" />
         <p className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent font-semibold">
           My role:
         </p>
@@ -594,7 +594,7 @@ export const commercialProjects: Project[] = [
           </li>
         </ul>
 
-        <hr className="border-zinc-700/50" />
+        <hr className="border-[var(--border-subtle)]" />
         <p className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent font-semibold">
           My role:
         </p>
@@ -742,7 +742,7 @@ export const commercialProjects: Project[] = [
           <li>Apple Pay, Push Notifications, victory video recording</li>
         </ul>
 
-        <hr className="border-zinc-700/50" />
+        <hr className="border-[var(--border-subtle)]" />
         <p className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent font-semibold">
           My role:
         </p>
@@ -833,7 +833,7 @@ export const commercialProjects: Project[] = [
           </li>
         </ul>
 
-        <hr className="border-zinc-700/50" />
+        <hr className="border-[var(--border-subtle)]" />
         <p className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent font-semibold">
           My role:
         </p>
@@ -904,7 +904,7 @@ export const commercialProjects: Project[] = [
           </li>
         </ul>
 
-        <hr className="border-zinc-700/50" />
+        <hr className="border-[var(--border-subtle)]" />
         <p className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent font-semibold">
           My role:
         </p>
@@ -989,7 +989,7 @@ export const commercialProjects: Project[] = [
           </li>
         </ul>
 
-        <hr className="border-zinc-700/50" />
+        <hr className="border-[var(--border-subtle)]" />
         <p className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent font-semibold">
           My role:
         </p>

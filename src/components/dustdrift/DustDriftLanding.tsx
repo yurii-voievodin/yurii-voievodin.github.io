@@ -40,7 +40,7 @@ export default function DustDriftLanding({ locale }: { locale: Locale }) {
     };
 
     return (
-        <div className="min-h-screen p-5">
+        <div className="min-h-screen p-5" lang={content.htmlLang}>
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -53,10 +53,11 @@ export default function DustDriftLanding({ locale }: { locale: Locale }) {
                             key={l}
                             href={`${DUSTDRIFT_PATHS[l]}/`}
                             hrefLang={l}
+                            aria-current={l === locale ? 'page' : undefined}
                             className={
                                 l === locale
-                                    ? 'text-zinc-100 font-semibold'
-                                    : 'text-zinc-500 hover:text-zinc-300 transition-colors'
+                                    ? 'px-2 py-2 text-zinc-100 font-semibold underline underline-offset-4'
+                                    : 'px-2 py-2 text-zinc-400 hover:text-zinc-200 transition-colors'
                             }
                         >
                             {dustdriftContent[l].localeLabel}
@@ -85,7 +86,7 @@ export default function DustDriftLanding({ locale }: { locale: Locale }) {
                 {/* CTAs */}
                 <div className="mb-12">
                     <AppStoreBadge ariaLabel={content.appStoreAria} alt={content.appStoreAlt} />
-                    <p className="text-xs text-zinc-500 mt-1.5">{preOrderLine}</p>
+                    <p className="text-xs text-zinc-400 mt-1.5">{preOrderLine}</p>
                     <div className="flex flex-wrap items-center gap-2 mt-4">
                         {PLATFORMS.map((platform) => (
                             <span
@@ -95,7 +96,7 @@ export default function DustDriftLanding({ locale }: { locale: Locale }) {
                                 {platform}
                             </span>
                         ))}
-                        <span className="text-xs text-zinc-500 ml-1">{content.platformsNote}</span>
+                        <span className="text-xs text-zinc-400 ml-1">{content.platformsNote}</span>
                     </div>
                 </div>
 

@@ -1,7 +1,10 @@
-import { Mail, Download, Phone, Play } from '@/components/icons';
+import { Mail, Download, Phone } from '@/components/icons';
 import { siteConfig } from "@/lib/config";
 import { GithubIcon, LinkedinIcon } from "@/components/BrandIcons";
 import CodeTag from "@/components/CodeTag";
+import Button from "@/components/ui/Button";
+import Panel from "@/components/ui/Panel";
+import SectionHeading from "@/components/ui/SectionHeading";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -104,30 +107,27 @@ export default function CVPage() {
 
           <div className="flex flex-col gap-3 w-full md:w-auto">
             <div className="flex flex-col sm:flex-row gap-3">
-              <a
-                href="/Yurii_Voievodin_CV.pdf"
-                target="_blank"
-                className="flex items-center justify-center space-x-2 px-4 py-3 bg-gradient-to-r from-violet-600 to-purple-600 text-white rounded-lg hover:from-violet-500 hover:to-purple-500 transition-all shadow-lg hover:shadow-violet-500/20 cursor-pointer flex-1 sm:flex-none"
-              >
+              <Button href="/Yurii_Voievodin_CV.pdf" external className="flex-1 sm:flex-none">
                 <Download size={16} />
                 <span>Download PDF</span>
-              </a>
-              <a
-                href="/projects"
-                className="flex items-center justify-center space-x-2 px-4 py-3 bg-zinc-700/60 text-zinc-200 rounded-lg border border-zinc-600/50 hover:bg-zinc-700 hover:border-zinc-500/50 transition-all cursor-pointer flex-1 sm:flex-none"
-              >
+              </Button>
+              <Button href="/projects" variant="secondary" className="flex-1 sm:flex-none">
                 <span>View Projects</span>
-              </a>
+              </Button>
             </div>
           </div>
         </div>
       </header>
 
       {/* Professional Summary */}
-      <section className="md:bg-zinc-800/50 md:rounded-lg md:shadow-lg md:border md:border-zinc-700/50 px-0 py-4 md:p-8 mb-4 md:mb-8 border-b border-zinc-700/30 md:border-b-0 pb-6 md:pb-8">
-        <h2 className="text-2xl font-bold text-zinc-100 mb-4">
+      <Panel
+        as="section"
+        frame="responsive"
+        className="px-0 py-4 md:p-8 mb-4 md:mb-8 border-b border-[var(--border-subtle)] md:border-b-0 pb-6 md:pb-8"
+      >
+        <SectionHeading className="mb-4">
           Professional Summary
-        </h2>
+        </SectionHeading>
         <p className="text-zinc-300 leading-relaxed">
           Senior iOS / Lead iOS Engineer with 14+ years of experience building
           and scaling production iOS applications and websites. Proven
@@ -144,11 +144,15 @@ export default function CVPage() {
           <li>English — Upper-Intermediate (B2)</li>
           <li>Ukrainian — Native</li>
         </ul>
-      </section>
+      </Panel>
 
       {/* Experience Section */}
-      <section className="md:bg-zinc-800/50 md:rounded-lg md:shadow-lg md:border md:border-zinc-700/50 px-0 py-4 md:p-8 mb-4 md:mb-8 border-b border-zinc-700/30 md:border-b-0 pb-6 md:pb-8">
-        <h2 className="text-2xl font-bold text-zinc-100 mb-6">Experience</h2>
+      <Panel
+        as="section"
+        frame="responsive"
+        className="px-0 py-4 md:p-8 mb-4 md:mb-8 border-b border-[var(--border-subtle)] md:border-b-0 pb-6 md:pb-8"
+      >
+        <SectionHeading className="mb-6">Experience</SectionHeading>
 
         <div className="space-y-6">
           <div className="pl-0">
@@ -346,7 +350,7 @@ export default function CVPage() {
             </ul>
           </div>
 
-          <hr className="border-zinc-700 my-8" />
+          <hr className="border-[var(--border-strong)] my-8" />
 
           <div className="pl-0">
             <h3 className="text-lg font-semibold text-zinc-100">
@@ -420,11 +424,15 @@ export default function CVPage() {
             </p>
           </div>
         </div>
-      </section>
+      </Panel>
 
       {/* Education Section */}
-      <section className="md:bg-zinc-800/50 md:rounded-lg md:shadow-lg md:border md:border-zinc-700/50 px-0 py-4 md:p-8 mb-4 md:mb-8 border-b border-zinc-700/30 md:border-b-0 pb-6 md:pb-8">
-        <h2 className="text-2xl font-bold text-zinc-100 mb-6">Education</h2>
+      <Panel
+        as="section"
+        frame="responsive"
+        className="px-0 py-4 md:p-8 mb-4 md:mb-8 border-b border-[var(--border-subtle)] md:border-b-0 pb-6 md:pb-8"
+      >
+        <SectionHeading className="mb-6">Education</SectionHeading>
 
         <div className="space-y-6">
           <div className="pl-0">
@@ -454,7 +462,7 @@ export default function CVPage() {
             </p>
           </div>
         </div>
-      </section>
+      </Panel>
     </div>
   );
 }

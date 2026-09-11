@@ -8,6 +8,8 @@ import { Post, Photo } from '@/types/blog';
 import { ReactNode } from 'react';
 import { useLightbox } from '@/hooks/useLightbox';
 import Lightbox from '@/components/Lightbox';
+import BackLink from '@/components/ui/BackLink';
+import Tag from '@/components/ui/Tag';
 import ImageCard from '@/components/ImageCard';
 
 interface PhotoGalleryPostProps {
@@ -53,13 +55,7 @@ export default function PhotoGalleryPost({
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-8">
-          <Link
-            href="/blog"
-            className="inline-flex items-center bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent hover:from-violet-300 hover:to-purple-300 mb-6 transition-all font-medium"
-          >
-            <ArrowLeft className="mr-2 text-violet-400 hover:text-violet-300 transition-colors" size={16} />
-            Back to Blog
-          </Link>
+          <BackLink href="/blog">Back to Blog</BackLink>
         </div>
 
         {/* Hero Section */}
@@ -98,12 +94,9 @@ export default function PhotoGalleryPost({
             {post.tags && post.tags.length > 0 && (
               <div className="flex justify-center flex-wrap gap-3 mt-6">
                 {post.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="px-4 py-2 bg-white/30 text-white text-sm rounded-full border border-white/40 backdrop-blur-sm drop-shadow-sm"
-                  >
+                  <Tag key={tag} tone="onImage" size="md">
                     {tag}
-                  </span>
+                  </Tag>
                 ))}
               </div>
             )}

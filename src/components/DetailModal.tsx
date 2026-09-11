@@ -22,6 +22,8 @@ export default function DetailModal({ isOpen, onClose, detailPage }: DetailModal
     const [isVisible, setIsVisible] = useState(false);
     const [isExiting, setIsExiting] = useState(false);
     const closeTimerRef = useRef<NodeJS.Timeout | null>(null);
+    const closeButtonRef = useRef<HTMLButtonElement>(null);
+    const previouslyFocusedRef = useRef<HTMLElement | null>(null);
 
     // Handle close with animation
     const handleClose = useCallback(() => {
@@ -42,6 +44,17 @@ export default function DetailModal({ isOpen, onClose, detailPage }: DetailModal
             closeTimerRef.current = null;
         }, 300); // Match transition duration
     }, [onClose, isExiting]);
+
+    // Move focus into the modal on open, hand it back when it closes.
+    useEffect(() => {
+        if (!isOpen) return;
+        previouslyFocusedRef.current = document.activeElement as HTMLElement | null;
+        const timer = setTimeout(() => closeButtonRef.current?.focus(), 50);
+        return () => {
+            clearTimeout(timer);
+            previouslyFocusedRef.current?.focus();
+        };
+    }, [isOpen]);
 
     // Handle opening animation
     useEffect(() => {
@@ -98,7 +111,12 @@ export default function DetailModal({ isOpen, onClose, detailPage }: DetailModal
     }
 
     return (
-        <div className="fixed inset-0 z-50">
+        <div
+            className="fixed inset-0 z-50"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Details"
+        >
             {/* Backdrop with fade animation */}
             <div 
                 className={`absolute inset-0 bg-black/50 backdrop-blur-md transition-opacity duration-300 ${
@@ -114,10 +132,11 @@ export default function DetailModal({ isOpen, onClose, detailPage }: DetailModal
                 {/* Close Button */}
                 <button
                     onClick={handleClose}
+                    ref={closeButtonRef}
                     className="absolute top-6 right-6 z-20 p-3 bg-black/40 hover:bg-black/60 rounded-full transition-all duration-200 backdrop-blur-md border-2 border-white/30 shadow-lg"
                     aria-label="Close modal"
                 >
-                    <X className="w-6 h-6 text-white drop-shadow-sm" />
+                    <X className="w-5 h-5 text-white drop-shadow-sm" />
                 </button>
                 
                 {/* Detail Page Component - Internal scroll positioned to right edge */}

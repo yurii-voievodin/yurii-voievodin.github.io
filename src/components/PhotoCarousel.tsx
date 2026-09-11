@@ -42,19 +42,18 @@ export default function PhotoCarousel({
     );
   }, [images.length]);
 
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (selectedImage !== null) return;
-      if (e.key === 'ArrowLeft') {
-        goToPrevious();
-      } else if (e.key === 'ArrowRight') {
-        goToNext();
-      }
-    };
-
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [goToPrevious, goToNext, selectedImage]);
+  // Scoped to the carousel rather than the window: a project page can hold two
+  // carousels, and a window listener stepped both on one keypress.
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (selectedImage !== null) return;
+    if (e.key === 'ArrowLeft') {
+      e.preventDefault();
+      goToPrevious();
+    } else if (e.key === 'ArrowRight') {
+      e.preventDefault();
+      goToNext();
+    }
+  };
 
   const onTouchStart = (e: React.TouchEvent) => {
     setTouchEnd(null);
@@ -83,9 +82,16 @@ export default function PhotoCarousel({
 
   return (
     <>
-      <div className={`relative w-full ${className}`}>
+      <div
+        className={`relative w-full ${className}`}
+        role="group"
+        aria-roledescription="carousel"
+        aria-label="Photo carousel"
+        tabIndex={0}
+        onKeyDown={handleKeyDown}
+      >
         <div
-          className={`relative w-full ${aspectRatio} overflow-hidden rounded-2xl shadow-lg bg-zinc-900${enableLightbox ? ' cursor-pointer' : ''}`}
+          className={`relative w-full ${aspectRatio} overflow-hidden rounded-2xl shadow-lg bg-[var(--surface-chrome)]${enableLightbox ? ' cursor-pointer' : ''}`}
           onTouchStart={onTouchStart}
           onTouchMove={onTouchMove}
           onTouchEnd={onTouchEnd}
@@ -104,7 +110,7 @@ export default function PhotoCarousel({
           <>
             <button
               onClick={(e) => { e.stopPropagation(); goToPrevious(); }}
-              className="absolute left-2 top-1/2 -translate-y-1/2 p-2 bg-black/50 hover:bg-black/70 rounded-full transition-all duration-200 backdrop-blur-sm border border-white/20 hover:border-white/40 shadow-lg group"
+              className="absolute left-2 top-1/2 -translate-y-1/2 p-2.5 bg-black/50 hover:bg-black/70 rounded-full transition-all duration-200 backdrop-blur-sm border border-white/20 hover:border-white/40 shadow-lg group"
               aria-label="Previous image"
             >
               <ChevronLeft className="w-6 h-6 text-white group-hover:scale-110 transition-transform" />
@@ -112,7 +118,7 @@ export default function PhotoCarousel({
 
             <button
               onClick={(e) => { e.stopPropagation(); goToNext(); }}
-              className="absolute right-2 top-1/2 -translate-y-1/2 p-2 bg-black/50 hover:bg-black/70 rounded-full transition-all duration-200 backdrop-blur-sm border border-white/20 hover:border-white/40 shadow-lg group"
+              className="absolute right-2 top-1/2 -translate-y-1/2 p-2.5 bg-black/50 hover:bg-black/70 rounded-full transition-all duration-200 backdrop-blur-sm border border-white/20 hover:border-white/40 shadow-lg group"
               aria-label="Next image"
             >
               <ChevronRight className="w-6 h-6 text-white group-hover:scale-110 transition-transform" />

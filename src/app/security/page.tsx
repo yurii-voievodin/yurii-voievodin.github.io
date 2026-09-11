@@ -1,5 +1,8 @@
-import Link from 'next/link';
-import { ArrowLeft, Shield, Lock, KeyRound, Fingerprint, CreditCard } from '@/components/icons';
+import { Shield, Lock, KeyRound, Fingerprint, CreditCard } from '@/components/icons';
+import Panel from '@/components/ui/Panel';
+import Tag from '@/components/ui/Tag';
+import BackLink from '@/components/ui/BackLink';
+import SectionHeading from '@/components/ui/SectionHeading';
 import { siteConfig } from '@/lib/config';
 import type { Metadata } from 'next';
 
@@ -23,26 +26,26 @@ interface SecuritySectionProps {
 
 function SecuritySection({ icon, title, children, projects }: SecuritySectionProps) {
     return (
-        <div className="md:bg-zinc-800/90 md:backdrop-blur-sm md:rounded-3xl md:shadow-2xl md:overflow-hidden md:border md:border-zinc-700/50 md:hover:border-zinc-600/70 transition-all duration-300">
-            <div className="px-0 py-4 md:p-8 text-zinc-100">
-                <div className="flex items-center gap-3 mb-4">
-                    <div className="text-violet-400">
-                        {icon}
-                    </div>
-                    <h2 className="text-xl font-bold text-zinc-100">{title}</h2>
-                </div>
-                <div className="space-y-3 text-zinc-300 leading-relaxed">
-                    {children}
-                </div>
-                <div className="mt-4 flex flex-wrap gap-1.5">
-                    {projects.map((project) => (
-                        <span key={project} className="bg-zinc-700/50 text-zinc-400 px-2.5 py-0.5 text-xs rounded-full border border-zinc-600/30">
-                            {project}
-                        </span>
-                    ))}
-                </div>
+        <Panel
+            frame="responsive"
+            radius="3xl"
+            emphasis
+            bodyClassName="px-0 py-4 md:p-8 text-zinc-100"
+        >
+            <SectionHeading size="sm" icon={icon} className="mb-4">
+                {title}
+            </SectionHeading>
+            <div className="space-y-3 text-zinc-300 leading-relaxed">
+                {children}
             </div>
-        </div>
+            <div className="mt-4 flex flex-wrap gap-1.5">
+                {projects.map((project) => (
+                    <Tag key={project} tone="zinc">
+                        {project}
+                    </Tag>
+                ))}
+            </div>
+        </Panel>
     );
 }
 
@@ -50,13 +53,7 @@ export default function SecurityPage() {
     return (
         <div className="min-h-screen p-5">
             <div className="max-w-4xl mx-auto">
-                <Link
-                    href="/projects"
-                    className="inline-flex items-center bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent hover:from-violet-300 hover:to-purple-300 mb-6 transition-all font-medium"
-                >
-                    <ArrowLeft className="mr-2 text-violet-400 hover:text-violet-300 transition-colors" size={16} />
-                    Back to Projects
-                </Link>
+                <BackLink href="/projects">Back to Projects</BackLink>
 
                 <div className="mb-12">
                     <h1 className="text-4xl md:text-5xl font-bold text-zinc-100 mb-4">

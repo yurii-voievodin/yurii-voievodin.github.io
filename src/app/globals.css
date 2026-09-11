@@ -3,6 +3,22 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  /* Neutral ramp, tinted toward the violet accent (hue 257) so surfaces and
+     the accent read as one system instead of "violet dropped onto grey".
+     Saturation scales inversely with area — 10% on the big chrome surfaces,
+     up to 14% on hairlines. Every step is matched to the relative luminance
+     of the zinc grey it replaces, so nothing moves in the elevation order.
+     The zinc greys they map from are listed for an easy revert. */
+  --surface-chrome: #19171d;  /* zinc-900    — nav, footer, media wells */
+  --card-bg: #1b191f;         /* zinc-800/50 — cards */
+  --card-bg-strong: #262330;  /* zinc-800/90 — raised cards */
+  --surface-control: #2c2934; /* zinc-700/50 — secondary buttons, chips */
+  --surface-elevated: #3c3847;/* zinc-700/80 — detail-page tiles */
+  --surface-code: #423d4e;    /* zinc-700    — inline code */
+  --rail: #564f69;            /* zinc-600    — timeline rail */
+  --border-subtle: #26232f;   /* zinc-700/50 — default border */
+  --border-strong: #302c3b;   /* zinc-600/50 — hover border */
 }
 
 @theme inline {
@@ -21,6 +37,15 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* A single focus ring for the whole site. The UA default is tuned for light
+   backgrounds and disappears on #0a0a0a; gradient `bg-clip-text` links have no
+   painted box of their own, so the ring is what makes them visible at all. */
+:focus-visible {
+  outline: 2px solid #a78bfa;
+  outline-offset: 2px;
+  border-radius: 4px;
 }
 
 /* Timeline item gradient highlight */

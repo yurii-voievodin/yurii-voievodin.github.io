@@ -1,11 +1,12 @@
 'use client';
 
+import Panel from '@/components/ui/Panel';
 import Image from 'next/image';
 
 export default function VistaCreateDetails() {
     return (
         <div className="min-h-screen p-5">
-            <div className="max-w-4xl mx-auto bg-zinc-800/90 backdrop-blur-sm rounded-3xl shadow-2xl overflow-hidden border border-zinc-700/50">
+            <Panel radius="3xl" emphasis className="max-w-4xl mx-auto">
                 {/* Content */}
                 <div className="p-5 md:p-10 text-zinc-100">
                     {/* About Section */}
@@ -25,7 +26,7 @@ export default function VistaCreateDetails() {
                         </h2>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 mt-2">
                             {/* Featured Home Screen Redesign Card */}
-                            <div className="bg-gradient-to-br from-zinc-700/80 to-zinc-800/80 p-6 rounded-2xl shadow-lg border border-zinc-600/30 hover:transform hover:-translate-y-2 transition-all duration-300 hover:shadow-xl">
+                            <div className="bg-gradient-to-br from-[var(--surface-elevated)] to-[var(--card-bg-strong)] p-6 rounded-2xl shadow-lg border border-[var(--border-strong)] hover:transform hover:-translate-y-2 transition-all duration-300 hover:shadow-xl">
                                 <h3 className="text-xl font-semibold mb-3 text-zinc-100">
                                     🏠 Home Screen Redesign
                                 </h3>
@@ -39,7 +40,7 @@ export default function VistaCreateDetails() {
                                             alt="VistaCreate Home Screen Redesign"
                                             width={200}
                                             height={433}
-                                            className="rounded-xl shadow-lg border border-zinc-600/50"
+                                            className="rounded-xl shadow-lg border border-[var(--border-strong)]"
                                             priority
                                         />
                                     </div>
@@ -47,7 +48,7 @@ export default function VistaCreateDetails() {
                             </div>
                             
                             {/* Modular Architecture Card */}
-                            <div className="bg-gradient-to-br from-zinc-700/80 to-zinc-800/80 p-6 rounded-2xl shadow-lg border border-zinc-600/30 hover:transform hover:-translate-y-2 transition-all duration-300 hover:shadow-xl">
+                            <div className="bg-gradient-to-br from-[var(--surface-elevated)] to-[var(--card-bg-strong)] p-6 rounded-2xl shadow-lg border border-[var(--border-strong)] hover:transform hover:-translate-y-2 transition-all duration-300 hover:shadow-xl">
                                 <h3 className="text-xl font-semibold mb-3 text-zinc-100">
                                     🏗️ Modular Architecture
                                 </h3>
@@ -61,7 +62,7 @@ export default function VistaCreateDetails() {
                                             alt="VistaCreate Modular Architecture"
                                             width={300}
                                             height={300}
-                                            className="rounded-xl shadow-lg border border-zinc-600/50"
+                                            className="rounded-xl shadow-lg border border-[var(--border-strong)]"
                                         />
                                     </div>
                                 </div>
@@ -82,7 +83,7 @@ export default function VistaCreateDetails() {
                             ].map((achievement, index) => (
                                 <div 
                                     key={index}
-                                    className="bg-gradient-to-br from-zinc-700/80 to-zinc-800/80 p-6 rounded-2xl shadow-lg border border-zinc-600/30 hover:transform hover:-translate-y-2 transition-all duration-300 hover:shadow-xl"
+                                    className="bg-gradient-to-br from-[var(--surface-elevated)] to-[var(--card-bg-strong)] p-6 rounded-2xl shadow-lg border border-[var(--border-strong)] hover:transform hover:-translate-y-2 transition-all duration-300 hover:shadow-xl"
                                 >
                                     <h3 className="text-xl font-semibold mb-3 text-zinc-100">
                                         {achievement.icon} {achievement.title}
@@ -94,7 +95,7 @@ export default function VistaCreateDetails() {
                             ))}
 
                             {/* Testing Excellence Card */}
-                            <div className="bg-gradient-to-br from-zinc-700/80 to-zinc-800/80 p-6 rounded-2xl shadow-lg border border-zinc-600/30 hover:transform hover:-translate-y-2 transition-all duration-300 hover:shadow-xl">
+                            <div className="bg-gradient-to-br from-[var(--surface-elevated)] to-[var(--card-bg-strong)] p-6 rounded-2xl shadow-lg border border-[var(--border-strong)] hover:transform hover:-translate-y-2 transition-all duration-300 hover:shadow-xl">
                                 <h3 className="text-xl font-semibold mb-3 text-zinc-100">
                                     🧪 Testing
                                 </h3>
@@ -108,7 +109,7 @@ export default function VistaCreateDetails() {
                                             alt="VistaCreate Testing Suite"
                                             width={300}
                                             height={300}
-                                            className="rounded-xl shadow-lg border border-zinc-600/50"
+                                            className="rounded-xl shadow-lg border border-[var(--border-strong)]"
                                         />
                                     </div>
                                 </div>
@@ -146,7 +147,7 @@ export default function VistaCreateDetails() {
                             </p>
                     </div>
                 </div>
-            </div>
+            </Panel>
         </div>
     );
 }

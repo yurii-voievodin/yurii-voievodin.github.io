@@ -1,8 +1,11 @@
 'use client';
 
-import Link from 'next/link';
-import { ArrowLeft, ChevronDown } from '@/components/icons';
-import { useState } from 'react';
+import { ChevronDown } from '@/components/icons';
+import Panel from '@/components/ui/Panel';
+import Tag from '@/components/ui/Tag';
+import BackLink from '@/components/ui/BackLink';
+import SectionHeading from '@/components/ui/SectionHeading';
+import { useId, useState } from 'react';
 
 interface QAItem {
     question: string;
@@ -18,7 +21,7 @@ interface QASectionProps {
 function QASection({ title, items }: QASectionProps) {
     return (
         <div className="space-y-3">
-            <h2 className="text-xl font-bold text-zinc-100 mb-4">{title}</h2>
+            <SectionHeading size="sm" className="mb-4">{title}</SectionHeading>
             {items.map((item, index) => (
                 <QACard key={index} item={item} />
             ))}
@@ -28,11 +31,14 @@ function QASection({ title, items }: QASectionProps) {
 
 function QACard({ item }: { item: QAItem }) {
     const [isOpen, setIsOpen] = useState(false);
+    const panelId = useId();
 
     return (
-        <div className="md:bg-zinc-800/90 md:backdrop-blur-sm md:rounded-2xl md:overflow-hidden md:border md:border-zinc-700/50 md:hover:border-zinc-600/70 transition-all duration-300">
+        <Panel frame="responsive" radius="2xl" emphasis>
             <button
                 onClick={() => setIsOpen(!isOpen)}
+                aria-expanded={isOpen}
+                aria-controls={panelId}
                 className="w-full px-4 py-4 md:px-6 flex items-start justify-between gap-4 text-left"
             >
                 <span className="text-zinc-100 font-medium">{item.question}</span>
@@ -42,22 +48,22 @@ function QACard({ item }: { item: QAItem }) {
                 />
             </button>
             {isOpen && (
-                <div className="px-4 pb-4 md:px-6 md:pb-6">
+                <div id={panelId} className="px-4 pb-4 md:px-6 md:pb-6">
                     <div className="text-zinc-300 leading-relaxed space-y-3">
                         {item.answer}
                     </div>
                     {item.projects.length > 0 && (
                         <div className="mt-4 flex flex-wrap gap-1.5">
                             {item.projects.map((project) => (
-                                <span key={project} className="bg-zinc-700/50 text-zinc-400 px-2.5 py-0.5 text-xs rounded-full border border-zinc-600/30">
+                                <Tag key={project} tone="zinc">
                                     {project}
-                                </span>
+                                </Tag>
                             ))}
                         </div>
                     )}
                 </div>
             )}
-        </div>
+        </Panel>
     );
 }
 
@@ -67,7 +73,7 @@ const architectureQA: QAItem[] = [
         answer: (
             <>
                 <p>I have worked with <strong>MVC</strong>, <strong>MVP</strong>, <strong>MVVM</strong>, and <strong>VIPER</strong> hybrids depending on project complexity and team size.</p>
-                <p>For larger projects, I use <strong>MVP + Combine</strong> where presenters expose <code className="bg-zinc-900 px-1.5 py-0.5 rounded text-sm">@Published</code> state and views observe reactively. For apps with complex navigation, I've used <strong>VIPER hybrids</strong> with Router-based navigation and dedicated Presenter classes. Simpler projects use <strong>MVC with a service layer</strong> — dedicated DataControllers, LogicControllers, and DataSources to keep ViewControllers thin.</p>
+                <p>For larger projects, I use <strong>MVP + Combine</strong> where presenters expose <code className="bg-[var(--surface-chrome)] px-1.5 py-0.5 rounded text-sm">@Published</code> state and views observe reactively. For apps with complex navigation, I've used <strong>VIPER hybrids</strong> with Router-based navigation and dedicated Presenter classes. Simpler projects use <strong>MVC with a service layer</strong> — dedicated DataControllers, LogicControllers, and DataSources to keep ViewControllers thin.</p>
             </>
         ),
         projects: ['Hooh', 'VistaPrint', 'VistaCreate', 'Clowder', 'My University'],
@@ -99,8 +105,8 @@ const networkingQA: QAItem[] = [
         question: "How do you structure the networking layer in your iOS apps?",
         answer: (
             <>
-                <p>I typically use <strong>Moya + Alamofire</strong> with a Router enum pattern that defines all API endpoints as typed cases. This gives compile-time safety for URLs, HTTP methods, parameters, and headers. For simpler projects, I use <strong>URLSession</strong> with generic <code className="bg-zinc-900 px-1.5 py-0.5 rounded text-sm">{'NetworkClient<Model>'}</code> wrappers and Combine publishers.</p>
-                <p>I add <strong>token refresh middleware</strong> as an Alamofire interceptor plugin, response caching layers, and custom error mapping. For real-time features, I've built a custom <strong>SSE (Server-Sent Events) client</strong> using <code className="bg-zinc-900 px-1.5 py-0.5 rounded text-sm">AsyncThrowingStream</code> for streaming AI chat responses.</p>
+                <p>I typically use <strong>Moya + Alamofire</strong> with a Router enum pattern that defines all API endpoints as typed cases. This gives compile-time safety for URLs, HTTP methods, parameters, and headers. For simpler projects, I use <strong>URLSession</strong> with generic <code className="bg-[var(--surface-chrome)] px-1.5 py-0.5 rounded text-sm">{'NetworkClient<Model>'}</code> wrappers and Combine publishers.</p>
+                <p>I add <strong>token refresh middleware</strong> as an Alamofire interceptor plugin, response caching layers, and custom error mapping. For real-time features, I've built a custom <strong>SSE (Server-Sent Events) client</strong> using <code className="bg-[var(--surface-chrome)] px-1.5 py-0.5 rounded text-sm">AsyncThrowingStream</code> for streaming AI chat responses.</p>
             </>
         ),
         projects: ['Hooh', 'VistaPrint', 'VistaCreate', 'Clowder', 'My University'],
@@ -189,7 +195,7 @@ const dataQA: QAItem[] = [
         answer: (
             <>
                 <p>I design CoreData schemas with <strong>uniqueness constraints, fetch indexes</strong>, and migration support. Entities use soft deletion for sync compatibility, and I set up separate managed object contexts for background writes vs. main thread reads to avoid blocking the UI.</p>
-                <p>For complex apps, I build dedicated <strong>DataProvider</strong> classes that abstract CoreData operations behind typed protocols, so the rest of the app never touches <code className="bg-zinc-900 px-1.5 py-0.5 rounded text-sm">NSManagedObjectContext</code> directly. This also makes unit testing persistence logic straightforward with in-memory stores.</p>
+                <p>For complex apps, I build dedicated <strong>DataProvider</strong> classes that abstract CoreData operations behind typed protocols, so the rest of the app never touches <code className="bg-[var(--surface-chrome)] px-1.5 py-0.5 rounded text-sm">NSManagedObjectContext</code> directly. This also makes unit testing persistence logic straightforward with in-memory stores.</p>
             </>
         ),
         projects: ['My University', 'Hooh', 'VistaPrint', 'Chronograph', 'CoachNow'],
@@ -198,7 +204,7 @@ const dataQA: QAItem[] = [
         question: "How do you handle concurrency in Swift?",
         answer: (
             <>
-                <p>In modern projects, I use <strong>Swift Concurrency</strong> with async/await and <code className="bg-zinc-900 px-1.5 py-0.5 rounded text-sm">AsyncThrowingStream</code> for streaming data (e.g., SSE real-time chat). For reactive state management, I use <strong>Combine</strong> — presenters expose <code className="bg-zinc-900 px-1.5 py-0.5 rounded text-sm">@Published</code> properties and views subscribe to state changes.</p>
+                <p>In modern projects, I use <strong>Swift Concurrency</strong> with async/await and <code className="bg-[var(--surface-chrome)] px-1.5 py-0.5 rounded text-sm">AsyncThrowingStream</code> for streaming data (e.g., SSE real-time chat). For reactive state management, I use <strong>Combine</strong> — presenters expose <code className="bg-[var(--surface-chrome)] px-1.5 py-0.5 rounded text-sm">@Published</code> properties and views subscribe to state changes.</p>
                 <p>In older codebases, I've used <strong>PromiseKit</strong> for chained async operations and <strong>GCD</strong> for background processing. The choice depends on the project's minimum deployment target and existing patterns.</p>
             </>
         ),
@@ -210,13 +216,11 @@ export default function QAPage() {
     return (
         <div className="min-h-screen p-5">
             <div className="max-w-4xl mx-auto">
-                <Link
-                    href="/cv"
-                    className="inline-flex items-center bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent hover:from-violet-300 hover:to-purple-300 mb-6 transition-all font-medium"
-                >
-                    <ArrowLeft className="mr-2 text-violet-400 hover:text-violet-300 transition-colors" size={16} />
-                    Back to CV
-                </Link>
+                <BackLink href="/cv">Back to CV</BackLink>
+
+                <h1 className="text-3xl md:text-4xl font-bold text-zinc-100 mb-8">
+                    Questions &amp; Answers
+                </h1>
 
                 <div className="space-y-10">
                     <QASection title="Architecture & UI" items={architectureQA} />

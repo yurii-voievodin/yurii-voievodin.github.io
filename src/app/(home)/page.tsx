@@ -1,5 +1,5 @@
-import Link from "next/link";
 import { ArrowRight } from '@/components/icons';
+import Button from '@/components/ui/Button';
 import type { Metadata } from "next";
 import { siteConfig } from "@/lib/config";
 
@@ -39,20 +39,14 @@ export default function Home() {
       </p>
 
       <div className="flex flex-wrap items-center gap-4">
-        <Link
-          href="/cv"
-          className="inline-flex items-center gap-2 px-6 py-3 rounded-md bg-gradient-to-r from-violet-500 to-purple-500 text-white font-medium hover:from-violet-400 hover:to-purple-400 transition-all"
-        >
+        <Button href="/cv">
           explore my cv
           <ArrowRight size={16} />
-        </Link>
-        <Link
-          href="/projects"
-          className="inline-flex items-center gap-2 text-zinc-300 font-medium hover:text-zinc-100 transition-colors"
-        >
+        </Button>
+        <Button href="/projects" variant="secondary">
           view projects
           <ArrowRight size={16} />
-        </Link>
+        </Button>
       </div>
     </div>
   );

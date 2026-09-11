@@ -1,11 +1,12 @@
 'use client';
 
+import Panel from '@/components/ui/Panel';
 import Image from 'next/image';
 
 export default function WorkingPlacesDetails() {
     return (
         <div className="min-h-screen p-5">
-            <div className="max-w-4xl mx-auto bg-zinc-800/90 backdrop-blur-sm rounded-3xl shadow-2xl overflow-hidden border border-zinc-700/50">
+            <Panel radius="3xl" emphasis className="max-w-4xl mx-auto">
 
                 {/* Content */}
                 <div className="p-5 md:p-10 text-zinc-100">
@@ -19,7 +20,7 @@ export default function WorkingPlacesDetails() {
                         <h2 className="text-2xl font-bold text-violet-400 mb-5 inline-block">
                             Current Setup (2023-2025)
                         </h2>
-                        <div className="bg-gradient-to-br from-zinc-700/80 to-zinc-800/80 p-6 rounded-2xl shadow-lg border border-zinc-600/30">
+                        <div className="bg-gradient-to-br from-[var(--surface-elevated)] to-[var(--card-bg-strong)] p-6 rounded-2xl shadow-lg border border-[var(--border-strong)]">
                             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center mb-8">
                                 <div>
                                     <h3 className="text-xl font-semibold mb-3 text-zinc-100">
@@ -44,7 +45,7 @@ export default function WorkingPlacesDetails() {
                                             alt="Home Office Setup 2024"
                                             width={400}
                                             height={300}
-                                            className="rounded-xl shadow-lg border border-zinc-600/50"
+                                            className="rounded-xl shadow-lg border border-[var(--border-strong)]"
                                             priority
                                         />
                                     </div>
@@ -55,7 +56,7 @@ export default function WorkingPlacesDetails() {
 
                     {/* Previous Remote Setup */}
                     <div className="mb-10">
-                        <div className="bg-gradient-to-br from-zinc-700/80 to-zinc-800/80 p-6 rounded-2xl shadow-lg border border-zinc-600/30">
+                        <div className="bg-gradient-to-br from-[var(--surface-elevated)] to-[var(--card-bg-strong)] p-6 rounded-2xl shadow-lg border border-[var(--border-strong)]">
                             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
                                 <div className="order-2 lg:order-1 flex justify-center">
                                     <div className="relative max-w-md">
@@ -64,7 +65,7 @@ export default function WorkingPlacesDetails() {
                                             alt="Home Office Setup 2021"
                                             width={400}
                                             height={300}
-                                            className="rounded-xl shadow-lg border border-zinc-600/50"
+                                            className="rounded-xl shadow-lg border border-[var(--border-strong)]"
                                         />
                                     </div>
                                 </div>
@@ -95,7 +96,7 @@ export default function WorkingPlacesDetails() {
                         <div className="space-y-8">
 
                             {/* 2017 Setup */}
-                            <div className="bg-gradient-to-r from-zinc-800/80 to-zinc-700/80 p-6 rounded-2xl border border-zinc-600/30">
+                            <div className="bg-gradient-to-r from-[var(--card-bg-strong)] to-[var(--surface-elevated)] p-6 rounded-2xl border border-[var(--border-strong)]">
                                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-center">
                                     <div className="order-2 lg:order-1 flex justify-center">
                                         <div className="relative max-w-xs">
@@ -104,7 +105,7 @@ export default function WorkingPlacesDetails() {
                                                 alt="Sumy Workspace 2017"
                                                 width={250}
                                                 height={200}
-                                                className="rounded-xl shadow-lg border border-zinc-600/50 hover:scale-105 transition-transform duration-300"
+                                                className="rounded-xl shadow-lg border border-[var(--border-strong)] hover:scale-105 transition-transform duration-300"
                                             />
                                         </div>
                                     </div>
@@ -131,7 +132,7 @@ export default function WorkingPlacesDetails() {
                     <div className="mb-10">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             {/* App Dev Academy Office */}
-                            <div className="bg-gradient-to-br from-zinc-700/80 to-zinc-800/80 p-6 rounded-2xl shadow-lg border border-zinc-600/30">
+                            <div className="bg-gradient-to-br from-[var(--surface-elevated)] to-[var(--card-bg-strong)] p-6 rounded-2xl shadow-lg border border-[var(--border-strong)]">
                                 <h3 className="text-xl font-semibold mb-3 text-zinc-100">
                                     🏢 App Dev Academy Office
                                 </h3>
@@ -145,7 +146,7 @@ export default function WorkingPlacesDetails() {
                                             alt="App Dev Academy Office Sumy"
                                             width={300}
                                             height={200}
-                                            className="rounded-xl shadow-lg border border-zinc-600/50 hover:scale-105 transition-transform duration-300"
+                                            className="rounded-xl shadow-lg border border-[var(--border-strong)] hover:scale-105 transition-transform duration-300"
                                         />
                                     </div>
                                 </div>
@@ -153,7 +154,7 @@ export default function WorkingPlacesDetails() {
                             </div>
 
                             {/* BVBLogic Office */}
-                            <div className="bg-gradient-to-br from-zinc-700/80 to-zinc-800/80 p-6 rounded-2xl shadow-lg border border-zinc-600/30">
+                            <div className="bg-gradient-to-br from-[var(--surface-elevated)] to-[var(--card-bg-strong)] p-6 rounded-2xl shadow-lg border border-[var(--border-strong)]">
                                 <h3 className="text-xl font-semibold mb-3 text-zinc-100">
                                     💻 bvblogic Office
                                 </h3>
@@ -167,7 +168,7 @@ export default function WorkingPlacesDetails() {
                                             alt="bvblogic Office 2014"
                                             width={300}
                                             height={200}
-                                            className="rounded-xl shadow-lg border border-zinc-600/50 hover:scale-105 transition-transform duration-300"
+                                            className="rounded-xl shadow-lg border border-[var(--border-strong)] hover:scale-105 transition-transform duration-300"
                                         />
                                     </div>
                                 </div>
@@ -180,7 +181,7 @@ export default function WorkingPlacesDetails() {
                     <div className="mb-10">
                         <div className="space-y-8">
                             {/* 2014 Apartments Setup */}
-                            <div className="bg-gradient-to-r from-zinc-800/80 to-zinc-700/80 p-6 rounded-2xl border border-zinc-600/30">
+                            <div className="bg-gradient-to-r from-[var(--card-bg-strong)] to-[var(--surface-elevated)] p-6 rounded-2xl border border-[var(--border-strong)]">
                                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-center">
                                     <div className="lg:col-span-2">
                                         <div className="flex items-center gap-3 mb-3">
@@ -203,7 +204,7 @@ export default function WorkingPlacesDetails() {
                                                 alt="Sumy Apartments 2014"
                                                 width={250}
                                                 height={200}
-                                                className="rounded-xl shadow-lg border border-zinc-600/50 hover:scale-105 transition-transform duration-300"
+                                                className="rounded-xl shadow-lg border border-[var(--border-strong)] hover:scale-105 transition-transform duration-300"
                                             />
                                         </div>
                                     </div>
@@ -216,7 +217,7 @@ export default function WorkingPlacesDetails() {
                     <div className="mb-10">
                         <div className="space-y-6">
                             {/* First MacBook */}
-                            <div className="bg-gradient-to-r from-zinc-800/80 to-zinc-700/80 p-6 rounded-2xl border border-zinc-600/30">
+                            <div className="bg-gradient-to-r from-[var(--card-bg-strong)] to-[var(--surface-elevated)] p-6 rounded-2xl border border-[var(--border-strong)]">
                                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-center">
                                     <div className="lg:col-span-2">
                                         <h3 className="text-xl font-semibold mb-2 text-zinc-100">
@@ -233,7 +234,7 @@ export default function WorkingPlacesDetails() {
                                                 alt="First MacBook 2013"
                                                 width={250}
                                                 height={200}
-                                                className="rounded-xl shadow-lg border border-zinc-600/50"
+                                                className="rounded-xl shadow-lg border border-[var(--border-strong)]"
                                             />
                                         </div>
                                     </div>
@@ -241,7 +242,7 @@ export default function WorkingPlacesDetails() {
                             </div>
 
                             {/* First Computer */}
-                            <div className="bg-gradient-to-r from-zinc-800/80 to-zinc-700/80 p-6 rounded-2xl border border-zinc-600/30">
+                            <div className="bg-gradient-to-r from-[var(--card-bg-strong)] to-[var(--surface-elevated)] p-6 rounded-2xl border border-[var(--border-strong)]">
                                 <h3 className="text-xl font-semibold mb-3 text-zinc-100">
                                     💾 Intel 486 Notebook (2004) - Where It All Began
                                 </h3>
@@ -252,7 +253,7 @@ export default function WorkingPlacesDetails() {
                                     {['MS-DOS', 'Norton Commander', 'Intel 486', 'First Computer Experience'].map((item) => (
                                         <span 
                                             key={item}
-                                            className="bg-zinc-600/30 text-zinc-300 px-3 py-1 rounded-full text-sm border border-zinc-500/30"
+                                            className="bg-[var(--surface-control)] text-zinc-300 px-3 py-1 rounded-full text-sm border border-[var(--border-strong)] inline-block"
                                         >
                                             {item}
                                         </span>
@@ -269,7 +270,7 @@ export default function WorkingPlacesDetails() {
                         </p>
                     </div>
                 </div>
-            </div>
+            </Panel>
         </div>
     );
 }

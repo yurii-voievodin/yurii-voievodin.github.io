@@ -1,5 +1,6 @@
 import { getSortedPostsData } from '@/lib/blog';
 import PostCard from '@/components/PostCard';
+import Panel from '@/components/ui/Panel';
 import type { Metadata } from 'next';
 import { siteConfig } from '@/lib/config';
 
@@ -25,6 +26,9 @@ export default function BlogPage() {
   return (
     <div className="space-y-8">
       <div className="text-center">
+        <h1 className="text-3xl md:text-4xl font-bold text-zinc-100 mb-3">
+          Travel Blog
+        </h1>
         <p className="text-lg text-zinc-300 max-w-2xl mx-auto">
           Stories and adventures from my travels around the world.
         </p>
@@ -37,11 +41,11 @@ export default function BlogPage() {
             <PostCard key={post.slug} post={post} />
           ))
         ) : (
-          <div className="text-center py-12 bg-zinc-800/50 rounded-lg border border-zinc-700/50">
+          <Panel className="py-12 text-center">
             <p className="text-zinc-300 text-lg">
               No blog posts yet. Check back soon for new content!
             </p>
-          </div>
+          </Panel>
         )}
       </div>
     </div>

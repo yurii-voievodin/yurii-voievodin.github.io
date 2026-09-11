@@ -26,7 +26,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-zinc-900 border-t border-zinc-800 mt-20">
+    <footer className="bg-[var(--surface-chrome)] border-t border-[var(--border-subtle)] mt-20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid md:grid-cols-2 gap-8">
           <div>
@@ -87,7 +87,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-zinc-800 mt-8 pt-8 text-center">
+        <div className="border-t border-[var(--border-subtle)] mt-8 pt-8 text-center">
           <p className="text-zinc-400">
             © {currentYear} {siteConfig.name}
           </p>

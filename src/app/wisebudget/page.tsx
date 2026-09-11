@@ -108,7 +108,7 @@ export default function WiseBudgetPage() {
                 {/* CTAs */}
                 <div className="mb-12">
                     <AppStoreBadge />
-                    <p className="text-xs text-zinc-500 mt-1.5">Available now on the Mac App Store</p>
+                    <p className="text-xs text-zinc-400 mt-1.5">Available now on the Mac App Store</p>
                 </div>
 
                 {/* Views */}

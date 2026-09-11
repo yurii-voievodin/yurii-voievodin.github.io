@@ -9,6 +9,7 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import TimelineHighlighter from '@/components/TimelineHighlighter';
 import DetailModal from '@/components/DetailModal';
+import Panel from '@/components/ui/Panel';
 
 const timelineIcons = {
     Apple, AtSign, Bird, Brush, CheckCircle, Cpu, Flower, Heart, HeartCrack,
@@ -70,10 +71,14 @@ export default function TimelinePage() {
         <div className="container mx-auto py-8 px-4">
             {/* Mount the client highlighter early in the tree */}
             <TimelineHighlighter />
-            
+
+            <h1 className="text-3xl md:text-4xl font-bold text-zinc-100 mb-8">
+                Timeline
+            </h1>
+
             <div className="relative">
                 {/* Vertical timeline line */}
-                <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-zinc-600"></div>
+                <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-[var(--rail)]"></div>
                 
                 <div className="space-y-8">
                     {timeline.map((event, i) => {
@@ -81,21 +86,21 @@ export default function TimelinePage() {
                         return (
                         <div key={i} className="relative flex items-start">
                             {/* Icon container with background */}
-                            <div className="relative z-10 flex items-center justify-center w-12 h-12 bg-zinc-800 border-2 border-zinc-600 rounded-full mr-4">
+                            <div className="relative z-10 flex items-center justify-center w-12 h-12 bg-[var(--card-bg-strong)] border-2 border-[var(--rail)] rounded-full mr-4">
                                 {event.data?.symbol?.icon ? (
                                     getIcon(event.data.symbol.icon, event.data.symbol.color)
                                 ) : (
-                                    <div className="w-2 h-2 bg-zinc-500 rounded-full"></div>
+                                    <div className="w-2 h-2 bg-[var(--rail)] rounded-full"></div>
                                 )}
                             </div>
                             
                             {/* Content container with conditional layout */}
-                            <div id={createIdFromDate(event.date)} className="flex-1 bg-zinc-800/50 rounded-lg p-6 shadow-lg border border-zinc-700/50">
+                            <Panel id={createIdFromDate(event.date)} className="flex-1 p-6">
                                 {detailPage ? (
                                     /* Two-container layout: 90% text + 10% button when button exists */
                                     <div className="flex gap-0">
                                         {/* Text Container - 90% width */}
-                                        <div className="w-[90%]">
+                                        <div className="min-w-0 flex-1">
                                             {event.comment ? (
                                                 <div className="prose prose-invert max-w-none [&_a]:bg-gradient-to-r [&_a]:from-violet-400 [&_a]:to-purple-400 [&_a]:bg-clip-text [&_a]:text-transparent [&_a]:underline [&_a]:decoration-violet-400/50 [&_a:hover]:from-violet-300 [&_a:hover]:to-purple-300 [&_a:hover]:decoration-violet-300">
                                                     <Markdown>{event.comment}</Markdown>
@@ -135,10 +140,10 @@ export default function TimelinePage() {
                                         </div>
                                         
                                         {/* Button Container - 10% width */}
-                                        <div className="w-[10%] flex items-end justify-center pl-4">
+                                        <div className="flex shrink-0 items-end justify-center pl-4">
                                             <button
                                                 onClick={() => handleDetailClick(detailPage)}
-                                                className="p-3 bg-zinc-700/50 hover:bg-zinc-600/70 border-2 border-zinc-500/50 hover:border-zinc-400/70 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105 group"
+                                                className="p-3 bg-[var(--surface-control)] hover:brightness-125 border-2 border-[var(--rail)] hover:border-violet-400/70 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105 group"
                                                 aria-label="View details"
                                             >
                                                 <Plus className="w-5 h-5 text-zinc-300 group-hover:text-white transition-colors" />
@@ -186,7 +191,7 @@ export default function TimelinePage() {
                                         )}
                                     </div>
                                 )}
-                            </div>
+                            </Panel>
                         </div>
                         );
                     })}

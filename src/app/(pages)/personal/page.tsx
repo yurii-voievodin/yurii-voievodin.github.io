@@ -9,6 +9,7 @@ import { personalPhotos, movies, games } from '@/lib/personal-data';
 import { useLightbox } from '@/hooks/useLightbox';
 import Lightbox from '@/components/Lightbox';
 import ImageCard from '@/components/ImageCard';
+import SectionHeading from '@/components/ui/SectionHeading';
 
 function TitleOverlay({ name }: { name: string }) {
   return (
@@ -43,10 +44,9 @@ export default function PersonalPage() {
 
         {/* Photos Section */}
         <section className="mb-20">
-          <h2 className="text-3xl font-bold text-zinc-100 mb-8 flex items-center">
-            <Camera className="mr-3 text-violet-400" size={32} />
+          <SectionHeading size="lg" icon={<Camera size={32} />} className="mb-8">
             Some of my favorite photos
-          </h2>
+          </SectionHeading>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {personalPhotos.map((photo, index) => (
@@ -67,10 +67,9 @@ export default function PersonalPage() {
 
         {/* Movies Section */}
         <section className="mb-20">
-          <h2 className="text-3xl font-bold text-zinc-100 mb-8 flex items-center">
-            <Film className="mr-3 text-violet-400" size={32} />
+          <SectionHeading size="lg" icon={<Film size={32} />} className="mb-8">
             Favorite movies and series
-          </h2>
+          </SectionHeading>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {movies.map((movie) => (
@@ -92,10 +91,9 @@ export default function PersonalPage() {
 
         {/* Games Section */}
         <section className="mb-20">
-          <h2 className="text-3xl font-bold text-zinc-100 mb-8 flex items-center">
-            <Gamepad2 className="mr-3 text-violet-400" size={32} />
+          <SectionHeading size="lg" icon={<Gamepad2 size={32} />} className="mb-8">
             Favorite games
-          </h2>
+          </SectionHeading>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {games.map((game) => (
