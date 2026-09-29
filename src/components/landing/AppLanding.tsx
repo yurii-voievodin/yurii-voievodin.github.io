@@ -5,6 +5,7 @@ import type { IconComponent } from '@/components/icons';
 import WidePhotoCarousel from '@/components/WidePhotoCarousel';
 import GradientText from '@/components/ui/GradientText';
 import AppStoreBadge from './AppStoreBadge';
+import FeatureTour, { type TourItem } from './FeatureTour';
 
 export interface AppStoreLink {
   href: string;
@@ -29,6 +30,7 @@ export type LandingSection =
       iconStyle?: 'tile' | 'plain';
     }
   | { kind: 'screenshots'; heading: string; images: { src: string; alt: string }[] }
+  | { kind: 'tour'; heading: string; items: TourItem[]; perks?: string[] }
   | { kind: 'custom'; heading: string; children: ReactNode };
 
 export interface AppLandingProps {
@@ -61,6 +63,14 @@ function SectionBlock({ section }: { section: LandingSection }) {
       <h2 className="text-xl font-bold text-zinc-100 mb-4">{section.heading}</h2>
       {section.kind === 'screenshots' && <WidePhotoCarousel images={section.images} />}
       {section.kind === 'custom' && section.children}
+      {section.kind === 'tour' && (
+        <>
+          <FeatureTour items={section.items} />
+          {section.perks && (
+            <p className="mt-8 text-center text-sm text-zinc-400">{section.perks.join(' · ')}</p>
+          )}
+        </>
+      )}
       {section.kind === 'cards' && (
         <>
           {section.lead && <p className="text-zinc-400 mb-4 -mt-2">{section.lead}</p>}

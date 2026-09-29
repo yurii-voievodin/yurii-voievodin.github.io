@@ -10,12 +10,12 @@ interface TrailerPlayerProps {
 
 export default function TrailerPlayer({
   ariaLabel = 'Play DustDrift gameplay trailer',
-  alt = 'DustDrift gameplay — the astronaut beside the docked space shuttle',
+  alt = 'DustDrift gameplay — turn-based fight against a Sentinel in the dark',
 }: TrailerPlayerProps) {
   const [playing, setPlaying] = useState(false);
 
   return (
-    <div className="relative w-full aspect-[2326/1836] overflow-hidden rounded-2xl shadow-lg bg-zinc-900 border border-zinc-700/50">
+    <div className="relative w-full aspect-[1920/1172] overflow-hidden rounded-2xl shadow-lg bg-zinc-900 border border-zinc-700/50">
       {playing ? (
         <video
           src="/dustdrift/trailer.mp4"

@@ -1,14 +1,10 @@
-import { Smartphone, Pickaxe, Swords, Bot, DoorOpen, Shield, type IconComponent } from '@/components/icons';
+export type Locale = 'en' | 'uk' | 'ko' | 'ja';
 
-export type Locale = 'en' | 'ko' | 'ja';
-
-export const LOCALES: Locale[] = ['en', 'ko', 'ja'];
+export const LOCALES: Locale[] = ['en', 'uk', 'ko', 'ja'];
 
 export const RELEASE_DATE_ISO = '2026-12-10';
 export const APP_STORE_URL = 'https://apps.apple.com/app/id6758512309';
 export const PLATFORMS = ['iPhone', 'iPad', 'Mac'];
-
-export const FEATURE_ICONS: IconComponent[] = [Pickaxe, Swords, Bot, DoorOpen, Shield, Smartphone];
 
 export interface DustDriftFeature {
     title: string;
@@ -29,9 +25,9 @@ export interface DustDriftContent {
     trailerHeading: string;
     trailerAria: string;
     trailerAlt: string;
-    featuresHeading: string;
-    features: DustDriftFeature[];
-    screenshotsHeading: string;
+    tourHeading: string;
+    tour: DustDriftFeature[];
+    perks: string[];
     footerHeading: string;
     footerBody: string;
     supportLabel: string;
@@ -46,45 +42,49 @@ export const dustdriftContent: Record<Locale, DustDriftContent> = {
         htmlLang: 'en',
         ogLocale: 'en_US',
         localeLabel: 'English',
-        metaTitle: 'DustDrift — Explore, Mine, Craft, Survive',
+        metaTitle: 'DustDrift — Space Exploration & Turn-Based Tactical Combat',
         metaDescription:
-            "Stranded on an alien world, mine resources, craft gear, and fight back against hostile robots across four connected biomes. DustDrift is a procedurally rendered exploration and survival game, native on iPhone, iPad, and Mac. Pre-order now on the App Store, arriving December 10, 2026.",
-        heroTagline: 'Explore, Mine, Craft, Survive',
+            'Land on alien planets, explore them freely, and outthink hostile robots in classic turn-based tactical combat. Mine, craft and upgrade your gear across worlds linked by portals. Native on iPhone, iPad, and Mac. Pre-order now on the App Store, arriving December 10, 2026.',
+        heroTagline: 'Space Exploration · Turn-Based Tactical Combat',
         heroDescription:
-            "Inspired by No Man's Sky, made for iPhone and iPad. Stranded on an alien world, you're the last line between survival and the void. Mine resources, craft your way to better gear, and fight back — or make friends with the enemy.",
+            'Land on alien planets and explore them freely — deserts, caves, flooded worlds and more, linked by portals. When hostile robots find you, the game shifts into classic turn-based tactics: cover, flanking, high ground, and every shot planned.',
         preOrderLine: 'Pre-order now — arriving {date} on iPhone, iPad, and Mac',
         platformsNote: 'Requires iOS or iPadOS 16.0 or later, or macOS 13.0 or later',
         trailerHeading: 'Gameplay Trailer',
         trailerAria: 'Play DustDrift gameplay trailer',
-        trailerAlt: 'DustDrift gameplay — the astronaut beside the docked space shuttle',
-        featuresHeading: 'Key Features',
-        features: [
+        trailerAlt: 'DustDrift gameplay — turn-based fight against a Sentinel in the dark',
+        tourHeading: 'A Closer Look',
+        tour: [
             {
-                title: 'Mine & Craft',
-                body: 'Mine resources out of destructible rock formations and craft better tools, weapons, and upgrades at crafting stations and your 3D printer.',
+                title: 'Classic Turn-Based Tactics',
+                body: 'When a fight starts, the world snaps to a grid. You and the machines take turns: duck behind cover, flank enemies caught in the open and take the high ground. Every shot shows its hit chance, damage and crit odds up front.',
             },
             {
-                title: 'Four Combat Tools',
-                body: 'Arm yourself with a blaster, heavy rifle, gravity gun, or cutter — each with its own playstyle — and fight off hostile robots.',
+                title: 'Outthink Hostile Robots',
+                body: 'Skittering RoboSpiders, heavy Brawlers and watchful Sentinels patrol every world. Pick your weapon — blaster, heavy rifle, gravity grenades or the cutter — and make every move count.',
             },
             {
-                title: 'Hostile Robots',
-                body: 'Skittering RoboSpiders, heavy Brawlers, and watchful Sentinels patrol the surface — stay armed, or turn one into an ally.',
+                title: 'Land on Alien Worlds',
+                body: 'Step off your shuttle onto a wind-scoured desert and explore at your own pace. No turns, no timers — just you, the surface and whatever is waiting out there.',
+            },
+            {
+                title: 'Descend Into the Dark',
+                body: 'Beneath the desert lie lamp-lit caves full of ore, hazards and things that would rather not be found.',
             },
             {
                 title: 'Portals to New Worlds',
-                body: 'Step through portals to reach entirely different biomes, each with its own docked ship to call home.',
+                body: 'Walk through portals to frozen ice fields, flooded water worlds and the jagged Shardlands — each with its own docked ship to call home.',
             },
             {
-                title: 'Fully Offline',
-                body: 'No accounts, no ads, no in-app purchases — everything runs and saves locally on your device.',
+                title: 'Every World Is Different',
+                body: 'Each biome brings its own terrain, resources and dangers, from lush alien wetlands to barren rock.',
             },
             {
-                title: 'Native Everywhere',
-                body: 'Built from the ground up for touch and mouse alike — the same core game runs natively on iPhone, iPad, and Mac.',
+                title: 'Mine, Craft, Upgrade',
+                body: "Break ore out of rock, haul it aboard and turn it into better tools, weapons and upgrades at crafting stations and your ship's 3D printer.",
             },
         ],
-        screenshotsHeading: 'Screenshots',
+        perks: ['Fully offline', 'No accounts', 'No ads', 'No in-app purchases'],
         footerHeading: 'Pre-order DustDrift',
         footerBody: 'Arriving {date} on iPhone, iPad, and Mac.',
         supportLabel: 'Support',
@@ -92,50 +92,109 @@ export const dustdriftContent: Record<Locale, DustDriftContent> = {
         appStoreAria: 'Pre-order DustDrift on the App Store',
         appStoreAlt: 'Download on the App Store',
     },
+    uk: {
+        locale: 'uk',
+        htmlLang: 'uk',
+        ogLocale: 'uk_UA',
+        localeLabel: 'Українська',
+        metaTitle: 'DustDrift — дослідження космосу й покрокові тактичні бої',
+        metaDescription:
+            'Висаджуйся на чужі планети, вільно досліджуй їх і перехитри ворожих роботів у класичних покрокових тактичних боях. Видобувай, крафти й покращуй спорядження у світах, поєднаних порталами. Нативно на iPhone, iPad і Mac. Передзамовлення вже в App Store, реліз 10 грудня 2026 року.',
+        heroTagline: 'Дослідження космосу · Покрокові тактичні бої',
+        heroDescription:
+            'Висаджуйся на чужі планети й досліджуй їх вільно — пустелі, печери, затоплені світи та інші, поєднані порталами. Коли тебе помітять ворожі роботи, гра переходить у класичну покрокову тактику: укриття, фланги, висота й кожен продуманий постріл.',
+        preOrderLine: 'Передзамовлення відкрите — реліз {date} на iPhone, iPad і Mac',
+        platformsNote: 'Потрібна iOS або iPadOS 16.0 чи новіша, або macOS 13.0 чи новіша',
+        trailerHeading: 'Геймплейний трейлер',
+        trailerAria: 'Відтворити геймплейний трейлер DustDrift',
+        trailerAlt: 'Геймплей DustDrift — покроковий бій із Sentinel у темряві',
+        tourHeading: 'Детальніше',
+        tour: [
+            {
+                title: 'Класична покрокова тактика',
+                body: 'Щойно починається бій, світ перетворюється на сітку. Ви з машинами ходите по черзі: ховайся за укриття, заходь із флангу до ворогів на відкритому місці й займай висоту. Шанс влучання, шкоду й імовірність крита видно ще до пострілу.',
+            },
+            {
+                title: 'Перехитри ворожих роботів',
+                body: 'Прудкі RoboSpider, важкі Brawler і пильні Sentinel патрулюють кожен світ. Обирай зброю — бластер, важку гвинтівку, гравітаційні гранати чи різак — і нехай кожен хід має значення.',
+            },
+            {
+                title: 'Висадка на чужі світи',
+                body: 'Зійди з шатла на обвітрену пустелю й досліджуй у власному темпі. Жодних ходів і таймерів — лише ти, поверхня й те, що чекає десь там.',
+            },
+            {
+                title: 'Спуск у темряву',
+                body: 'Під пустелею ховаються печери, освітлені лампами, повні руди, небезпек і того, що не хоче, щоб його знайшли.',
+            },
+            {
+                title: 'Портали в нові світи',
+                body: 'Проходь крізь портали до крижаних полів, затоплених водних світів і гострих Уламкових земель — у кожному на тебе чекає пришвартований корабель.',
+            },
+            {
+                title: 'Кожен світ інший',
+                body: 'Кожен біом має власний рельєф, ресурси й небезпеки — від буйних інопланетних боліт до голих скель.',
+            },
+            {
+                title: 'Видобувай, крафти, покращуй',
+                body: 'Вибивай руду зі скель, неси її на борт і перетворюй на кращі інструменти, зброю та покращення на крафтових станціях і 3D-принтері корабля.',
+            },
+        ],
+        perks: ['Повністю офлайн', 'Без акаунтів', 'Без реклами', 'Без вбудованих покупок'],
+        footerHeading: 'Передзамов DustDrift',
+        footerBody: 'Реліз {date} на iPhone, iPad і Mac.',
+        supportLabel: 'Підтримка',
+        privacyLabel: 'Політика конфіденційності',
+        appStoreAria: 'Передзамовити DustDrift в App Store',
+        appStoreAlt: 'Завантажити в App Store',
+    },
     ko: {
         locale: 'ko',
         htmlLang: 'ko',
         ogLocale: 'ko_KR',
         localeLabel: '한국어',
-        metaTitle: 'DustDrift — 탐험, 채굴, 제작, 생존',
+        metaTitle: 'DustDrift — 우주 탐험 & 턴제 전술 전투',
         metaDescription:
-            '낯선 외계 행성에 홀로 남겨져 자원을 채굴하고 장비를 제작하며, 네 개로 연결된 바이옴에서 적대적인 로봇에 맞서 싸우세요. DustDrift는 절차적으로 렌더링된 탐험 및 생존 게임으로 iPhone, iPad, Mac에서 네이티브로 즐길 수 있습니다. 지금 App Store에서 사전 주문하세요, 2026년 12월 10일 출시.',
-        heroTagline: '탐험 · 채굴 · 제작 · 생존',
+            '외계 행성에 착륙해 자유롭게 탐험하고, 정통 턴제 전술 전투로 적대적인 로봇을 제압하세요. 포털로 연결된 세계에서 채굴하고 제작하며 장비를 강화하세요. iPhone, iPad, Mac에서 네이티브로 즐길 수 있습니다. 지금 App Store에서 사전 주문하세요, 2026년 12월 10일 출시.',
+        heroTagline: '우주 탐험 · 턴제 전술 전투',
         heroDescription:
-            "『노 맨즈 스카이』에서 영감을 받아 iPhone과 iPad를 위해 만든 게임. 낯선 외계 행성에 홀로 남겨진 당신은 생존과 공허 사이의 마지막 방어선입니다. 자원을 채굴하고 더 나은 장비를 제작하며 맞서 싸우세요 — 혹은 적과 친구가 되어보세요.",
+            '외계 행성에 착륙해 자유롭게 탐험하세요 — 사막, 동굴, 물에 잠긴 세계까지 포털로 연결되어 있습니다. 적대적인 로봇에게 발각되면 게임은 정통 턴제 전술로 전환됩니다: 엄폐, 측면 공격, 고지대, 그리고 계획된 한 발 한 발.',
         preOrderLine: '지금 사전 주문하세요 — {date} iPhone, iPad, Mac에 출시',
         platformsNote: 'iOS 또는 iPadOS 16.0 이상, 또는 macOS 13.0 이상 필요',
         trailerHeading: '게임플레이 트레일러',
         trailerAria: 'DustDrift 게임플레이 트레일러 재생',
-        trailerAlt: 'DustDrift 게임플레이 — 정박된 우주왕복선 옆에 선 우주비행사',
-        featuresHeading: '주요 기능',
-        features: [
+        trailerAlt: 'DustDrift 게임플레이 — 어둠 속 센티널과의 턴제 전투',
+        tourHeading: '자세히 살펴보기',
+        tour: [
             {
-                title: '채굴 & 제작',
-                body: '파괴 가능한 암석 지형에서 자원을 채굴하고, 제작대와 3D 프린터에서 더 나은 도구, 무기, 업그레이드를 만드세요.',
+                title: '정통 턴제 전술',
+                body: '전투가 시작되면 세계가 격자로 바뀝니다. 당신과 기계는 번갈아 움직입니다: 엄폐물 뒤에 숨고, 노출된 적의 측면을 찌르고, 고지대를 차지하세요. 모든 사격은 명중률, 피해량, 치명타 확률이 미리 표시됩니다.',
             },
             {
-                title: '네 가지 전투 도구',
-                body: '블래스터, 헤비 라이플, 중력총, 커터 — 저마다 다른 플레이 스타일을 지닌 무기로 무장하고 적대적인 로봇에 맞서세요.',
+                title: '적대적인 로봇을 제압하라',
+                body: '재빠른 로보스파이더, 육중한 브롤러, 감시하는 센티널이 모든 세계를 순찰합니다. 블래스터, 헤비 라이플, 중력 수류탄, 커터 중에서 무기를 고르고 모든 한 수를 의미 있게 만드세요.',
             },
             {
-                title: '적대적인 로봇',
-                body: '재빠른 로보스파이더, 육중한 브롤러, 감시하는 센티널이 지표면을 순찰합니다 — 무장을 갖추거나, 로봇을 아군으로 만드세요.',
+                title: '외계 세계에 착륙하라',
+                body: '셔틀에서 내려 바람에 깎인 사막을 원하는 속도로 탐험하세요. 턴도, 제한 시간도 없습니다 — 당신과 지표, 그리고 그곳에서 기다리는 무언가뿐입니다.',
+            },
+            {
+                title: '어둠 속으로',
+                body: '사막 아래에는 램프가 밝히는 동굴이 있습니다. 광석과 위험, 그리고 발견되고 싶지 않은 것들로 가득합니다.',
             },
             {
                 title: '새로운 세계로 통하는 포털',
-                body: '포털을 통과해 완전히 다른 바이옴으로 이동하세요. 각 바이옴에는 거점이 되어줄 정박된 우주선이 있습니다.',
+                body: '포털을 지나 얼어붙은 빙원, 물에 잠긴 수중 세계, 날카로운 샤드랜드로 향하세요. 각 세계에는 보금자리가 될 정박한 우주선이 있습니다.',
             },
             {
-                title: '완전 오프라인',
-                body: '계정도, 광고도, 인앱 구매도 없습니다 — 모든 것이 기기에서 로컬로 실행되고 저장됩니다.',
+                title: '세계마다 다른 풍경',
+                body: '무성한 외계 습지부터 황량한 바위 지대까지, 바이옴마다 고유한 지형, 자원, 위험이 있습니다.',
             },
             {
-                title: '모든 기기에서 네이티브로',
-                body: '터치와 마우스 모두를 위해 처음부터 설계되었습니다 — 동일한 핵심 게임이 iPhone, iPad, Mac에서 네이티브로 실행됩니다.',
+                title: '채굴, 제작, 강화',
+                body: '바위에서 광석을 캐내 우주선으로 옮기고, 제작 스테이션과 우주선의 3D 프린터에서 더 나은 도구, 무기, 업그레이드로 바꾸세요.',
             },
         ],
-        screenshotsHeading: '스크린샷',
+        perks: ['완전 오프라인', '계정 불필요', '광고 없음', '인앱 구매 없음'],
         footerHeading: 'DustDrift 사전 주문',
         footerBody: '{date} iPhone, iPad, Mac에 출시됩니다.',
         supportLabel: '지원',
@@ -148,45 +207,49 @@ export const dustdriftContent: Record<Locale, DustDriftContent> = {
         htmlLang: 'ja',
         ogLocale: 'ja_JP',
         localeLabel: '日本語',
-        metaTitle: 'DustDrift — 探索・採掘・製作・生存',
+        metaTitle: 'DustDrift — 宇宙探索 & ターン制タクティカルバトル',
         metaDescription:
-            '見知らぬ惑星に取り残され、資源を採掘し、装備を製作し、4つの連結したバイオームで敵対的なロボットと戦おう。DustDriftは手続き型レンダリングによる探索・サバイバルゲームで、iPhone、iPad、Macでネイティブに動作します。今すぐApp Storeで予約注文 — 2026年12月10日発売。',
-        heroTagline: '探索・採掘・製作・生存',
+            '異星に降り立って自由に探索し、王道のターン制タクティカルバトルで敵対ロボットを出し抜こう。ポータルでつながる世界で採掘・クラフト・装備強化。iPhone、iPad、Macでネイティブに動作します。今すぐApp Storeで予約注文 — 2026年12月10日発売。',
+        heroTagline: '宇宙探索 · ターン制タクティカルバトル',
         heroDescription:
-            "『ノーマンズスカイ』にインスパイアされた、iPhoneとiPad向けのゲーム。見知らぬ惑星に取り残されたあなたは、生存と虚無を隔てる最後の砦。資源を採掘し、より良い装備を製作して立ち向かおう — あるいは敵と友になろう。",
+            '異星に降り立ち、自由に探索しよう — 砂漠、洞窟、水没した世界まで、ポータルでつながっている。敵対ロボットに見つかれば、ゲームは王道のターン制タクティクスへ：遮蔽、側面攻撃、高所、そして計算された一発一発。',
         preOrderLine: '予約注文受付中 — {date}にiPhone、iPad、Macで発売',
         platformsNote: 'iOSまたはiPadOS 16.0以降、またはmacOS 13.0以降が必要です',
         trailerHeading: 'ゲームプレイトレーラー',
         trailerAria: 'DustDriftのゲームプレイトレーラーを再生',
-        trailerAlt: 'DustDriftのゲームプレイ — 停泊中のスペースシャトルのそばに立つ宇宙飛行士',
-        featuresHeading: '主な特徴',
-        features: [
+        trailerAlt: 'DustDriftのゲームプレイ — 暗闇でのセンチネルとのターン制バトル',
+        tourHeading: '詳しく見る',
+        tour: [
             {
-                title: '採掘 & 製作',
-                body: '破壊可能な岩石地形から資源を採掘し、製作ステーションや3Dプリンターでより良い道具、武器、アップグレードを作ろう。',
+                title: '王道のターン制タクティクス',
+                body: '戦闘が始まると世界はグリッドに切り替わる。あなたと機械は交互に行動：遮蔽物に身を隠し、無防備な敵の側面を突き、高所を取れ。すべての射撃は命中率、ダメージ、クリティカル率が事前に表示される。',
             },
             {
-                title: '4種類の戦闘装備',
-                body: 'ブラスター、ヘビーライフル、グラビティガン、カッター — それぞれ異なるプレイスタイルを持つ武器で武装し、敵対的なロボットと戦おう。',
+                title: '敵対ロボットを出し抜け',
+                body: 'すばしっこいロボスパイダー、重量級のブロウラー、監視するセンチネルがあらゆる世界を巡回している。ブラスター、ヘビーライフル、グラビティグレネード、カッターから武器を選び、一手一手を無駄にするな。',
             },
             {
-                title: '敵対的なロボット',
-                body: 'すばしっこいロボスパイダー、重量級のブロウラー、監視するセンチネルが地表を巡回している — 武装するか、仲間に引き入れよう。',
+                title: '異星に降り立つ',
+                body: 'シャトルを降りれば、風に削られた砂漠。自分のペースで探索しよう。ターンも制限時間もない — あるのはあなたと地表、そしてその先で待つ何かだけ。',
+            },
+            {
+                title: '闇の奥へ',
+                body: '砂漠の下には、ランプに照らされた洞窟が広がる。鉱石、危険、そして見つかりたくない何かで満ちている。',
             },
             {
                 title: '新たな世界へのポータル',
-                body: 'ポータルをくぐり抜け、まったく異なるバイオームへ。それぞれのバイオームには拠点となる停泊中の宇宙船がある。',
+                body: 'ポータルを抜けて、凍てつく氷原、水没した水の世界、鋭く暗いシャードランドへ。どの世界にも拠点となる停泊中の宇宙船がある。',
             },
             {
-                title: '完全オフライン',
-                body: 'アカウントも広告もアプリ内課金もなし — すべてがデバイス上でローカルに動作し、保存される。',
+                title: '世界ごとに違う景色',
+                body: '緑豊かな異星の湿地から荒涼とした岩場まで、バイオームごとに独自の地形、資源、危険がある。',
             },
             {
-                title: 'あらゆる端末でネイティブに',
-                body: 'タッチとマウスの両方に対応するよう一から設計 — 同じコアゲームがiPhone、iPad、Macでネイティブに動作する。',
+                title: '採掘・クラフト・強化',
+                body: '岩から鉱石を砕き出して船へ運び、クラフトステーションと船の3Dプリンターで、より良いツール、武器、アップグレードに変えよう。',
             },
         ],
-        screenshotsHeading: 'スクリーンショット',
+        perks: ['完全オフライン', 'アカウント不要', '広告なし', 'アプリ内課金なし'],
         footerHeading: 'DustDriftを予約注文',
         footerBody: '{date}にiPhone、iPad、Macで発売。',
         supportLabel: 'サポート',
@@ -198,6 +261,7 @@ export const dustdriftContent: Record<Locale, DustDriftContent> = {
 
 export const RELEASE_DATE_LABEL: Record<Locale, string> = {
     en: 'December 10, 2026',
+    uk: '10 грудня 2026 року',
     ko: '2026년 12월 10일',
     ja: '2026年12月10日',
 };
@@ -208,6 +272,7 @@ export function formatWithReleaseDate(template: string, locale: Locale): string 
 
 export const DUSTDRIFT_PATHS: Record<Locale, string> = {
     en: '/dustdrift',
+    uk: '/dustdrift/uk',
     ko: '/dustdrift/ko',
     ja: '/dustdrift/ja',
 };

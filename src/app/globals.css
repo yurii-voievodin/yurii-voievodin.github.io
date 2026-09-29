@@ -114,3 +114,13 @@ body {
   background: rgba(156, 163, 175, 0.7);
   background-clip: content-box;
 }
+@keyframes tour-progress {
+  from { height: 0%; }
+  to { height: 100%; }
+}
+
+.tour-progress {
+  animation-name: tour-progress;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}

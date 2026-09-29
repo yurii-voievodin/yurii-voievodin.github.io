@@ -1,12 +1,11 @@
 import Link from 'next/link';
 import { siteConfig } from '@/lib/config';
-import { dustdriftScreenshots } from '@/lib/dustdrift-images';
+import { DUSTDRIFT_TOUR_IMAGES } from '@/lib/dustdrift-images';
 import AppLanding from '@/components/landing/AppLanding';
 import TrailerPlayer from '@/components/dustdrift/TrailerPlayer';
 import {
     dustdriftContent,
     formatWithReleaseDate,
-    FEATURE_ICONS,
     PLATFORMS,
     LOCALES,
     DUSTDRIFT_PATHS,
@@ -63,14 +62,13 @@ export default function DustDriftLanding({ locale }: { locale: Locale }) {
                     children: <TrailerPlayer ariaLabel={content.trailerAria} alt={content.trailerAlt} />,
                 },
                 {
-                    kind: 'cards',
-                    heading: content.featuresHeading,
-                    cards: content.features.map((feature, i) => ({ ...feature, icon: FEATURE_ICONS[i] })),
-                },
-                {
-                    kind: 'screenshots',
-                    heading: content.screenshotsHeading,
-                    images: dustdriftScreenshots,
+                    kind: 'tour',
+                    heading: content.tourHeading,
+                    items: content.tour.map((item, i) => ({
+                        ...item,
+                        image: { src: DUSTDRIFT_TOUR_IMAGES[i], alt: item.title },
+                    })),
+                    perks: content.perks,
                 },
             ]}
             footer={{
