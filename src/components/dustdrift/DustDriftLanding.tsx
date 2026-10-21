@@ -76,6 +76,13 @@ export default function DustDriftLanding({ locale }: { locale: Locale }) {
                                     poster: `/dustdrift/trailer-ipad-poster-${locale}.jpg`,
                                     aspect: '1600 / 1200',
                                 },
+                                {
+                                    id: 'mac',
+                                    label: 'Mac',
+                                    src: '/dustdrift/trailer-mac.mp4',
+                                    poster: '/dustdrift/trailer-mac-poster.jpg',
+                                    aspect: '1920 / 1080',
+                                },
                             ]}
                             ariaLabel={content.trailerAria}
                             alt={content.trailerAlt}
