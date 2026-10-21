@@ -27,13 +27,13 @@ export function buildDustDriftMetadata(locale: Locale): Metadata {
             url,
             type: 'website',
             locale: content.ogLocale,
-            images: [{ url: `${siteConfig.url}/dustdrift/trailer-poster.jpg` }],
+            images: [{ url: `${siteConfig.url}/dustdrift/trailer-poster.jpg?v=2` }],
         },
         twitter: {
             card: 'summary_large_image',
             title: content.metaTitle,
             description: content.metaDescription,
-            images: [`${siteConfig.url}/dustdrift/trailer-poster.jpg`],
+            images: [`${siteConfig.url}/dustdrift/trailer-poster.jpg?v=2`],
         },
     };
 }
