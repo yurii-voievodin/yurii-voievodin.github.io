@@ -16,7 +16,7 @@ import {
 
 function LocaleSwitcher({ locale }: { locale: Locale }) {
     return (
-        <div className="flex justify-end gap-3 mb-4 text-xs">
+        <div className="flex flex-wrap justify-end gap-x-3 gap-y-1 mb-4 text-xs">
             {LOCALES.map((l) => (
                 <Link
                     key={l}
@@ -59,7 +59,28 @@ export default function DustDriftLanding({ locale }: { locale: Locale }) {
                 {
                     kind: 'custom',
                     heading: content.trailerHeading,
-                    children: <TrailerPlayer ariaLabel={content.trailerAria} alt={content.trailerAlt} />,
+                    children: (
+                        <TrailerPlayer
+                            variants={[
+                                {
+                                    id: 'iphone',
+                                    label: 'iPhone',
+                                    src: `/dustdrift/trailer-${locale}.mp4`,
+                                    poster: `/dustdrift/trailer-poster-${locale}.jpg`,
+                                    aspect: '1920 / 886',
+                                },
+                                {
+                                    id: 'ipad',
+                                    label: 'iPad',
+                                    src: `/dustdrift/trailer-ipad-${locale}.mp4`,
+                                    poster: `/dustdrift/trailer-ipad-poster-${locale}.jpg`,
+                                    aspect: '1600 / 1200',
+                                },
+                            ]}
+                            ariaLabel={content.trailerAria}
+                            alt={content.trailerAlt}
+                        />
+                    ),
                 },
                 {
                     kind: 'tour',

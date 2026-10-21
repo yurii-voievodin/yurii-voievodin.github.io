@@ -8,20 +8,21 @@ export const dustdrift: Project = {
   slug: "dustdrift",
   name: "DustDrift",
   summary:
-    "2D top-down exploration and survival game across four connected biomes, for iPhone, iPad, and Mac.",
+    "Hero defense game with turn-based tactical combat: waves of enemies on an arena, weapons crafted between waves, for iPhone, iPad, and Mac.",
   date: "25 September 2025",
   tags: ["Game", "iOS", "macOS"],
   wideImages: dustdriftScreenshots,
   content: (
     <>
       <p className="text-zinc-300">
-        <GradientLink href="/dustdrift">DustDrift</GradientLink> — 2D top-down
-        exploration and survival game inspired by No Man&apos;s Sky, made for
-        iPhone and iPad. Stranded on an alien world, players mine resources
-        from destructible rocks, craft gear and weapons, and fight off hostile
-        robots across four connected biomes reached through portals. Pre-order
-        live on the App Store for iPhone, iPad, and Mac, arriving December 10,
-        2026.
+        <GradientLink href="/dustdrift">DustDrift</GradientLink> — 2D hero
+        defense game with turn-based tactical combat. Waves of enemies attack
+        an arena and the player defends it: move, aim and shoot on your turn,
+        then the enemies take theirs. A timer runs between waves, so there is
+        time to craft better weapons and extra gear. Every round brings
+        stronger enemies, and after a set of rounds the game moves on to a new
+        map. Pre-order live on the App Store for iPhone, iPad, and Mac,
+        arriving December 10, 2026.
       </p>
 
       <p className="text-zinc-300 font-semibold">Technical info:</p>
@@ -41,14 +42,17 @@ export const dustdrift: Project = {
           (camera, UI, lighting, hints)
         </li>
         <li>
-          <strong>Four biomes</strong> (Desert, Water, Ice, Shardlands)
-          connected by portals, each with a JSON-authored map and its own
-          docked ship for crafting and storage
+          <strong>Arena mode</strong> — round-based waves driven by a JSON
+          config (<CodeTag>ArenaRounds.json</CodeTag>) across three
+          JSON-authored arena maps, with a timer between waves and a new map
+          after each set of rounds
         </li>
         <li>
-          <strong>Combat</strong> — four <CodeTag>HeldItem</CodeTag>/
-          <CodeTag>CombatTool</CodeTag> weapons (blaster, heavy rifle, gravity
-          gun, cutter) and grid-based enemy AI (RoboSpider, Brawler, Sentinel)
+          <strong>Turn-based combat</strong> on a grid — four{" "}
+          <CodeTag>HeldItem</CodeTag>/<CodeTag>CombatTool</CodeTag> weapons
+          (blaster, heavy rifle, gravity gun, cutter), shield and overwatch,
+          hit and crit rolls drawn from marble bags, and enemy AI (RoboSpider,
+          Sentinel)
         </li>
         <li>
           <strong>Crafting, inventory, and equipment</strong> systems with a
