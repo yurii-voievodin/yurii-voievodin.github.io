@@ -8,7 +8,7 @@ export const wavefall: Project = {
   slug: "wavefall",
   name: "Wavefall",
   summary:
-    "Hero defense game with turn-based tactical combat: waves of enemies on an arena, weapons crafted between waves, for iPhone, iPad, and Mac.",
+    "Hero defense game with turn-based tactical combat: a rogue AI sends robots through a portal, and you hold the arena alone. For iPhone, iPad, and Mac.",
   date: "25 September 2025",
   tags: ["Game", "iOS", "macOS"],
   wideImages: wavefallScreenshots,
@@ -16,12 +16,12 @@ export const wavefall: Project = {
     <>
       <p className="text-zinc-300">
         <GradientLink href="/wavefall">Wavefall</GradientLink> — 2D hero
-        defense game with turn-based tactical combat. Waves of enemies attack
-        an arena and the player defends it: move, aim and shoot on your turn,
-        then the enemies take theirs. A timer runs between waves, so there is
-        time to craft better weapons and extra gear. Every round brings
-        stronger enemies, and after a set of rounds the game moves on to a new
-        map. Pre-order live on the App Store for iPhone, iPad, and Mac,
+        defense game with turn-based tactical combat. An AI has slipped out of
+        control and sends its robots through a portal in waves, and the player
+        holds the arena alone. Between rounds there is a minute to mine
+        resources and print a new weapon on the 3D printer. Every cleared map
+        opens the portal to the next one, and the Spider Tank waits on the
+        last. Pre-order live on the App Store for iPhone, iPad, and Mac,
         arriving December 10, 2026.
       </p>
 

@@ -44,10 +44,10 @@ export const wavefallContent: Record<Locale, WavefallContent> = {
         localeLabel: 'English',
         metaTitle: 'Wavefall — Hero Defense & Turn-Based Tactical Combat',
         metaDescription:
-            'Defend an arena against waves of enemies in turn-based tactical combat. A timer runs between waves, so you can craft better weapons and gear before the next one. Every round brings stronger enemies, and after a set of rounds you move on to a new map. Native on iPhone, iPad, and Mac. Pre-order now on the App Store, arriving December 10, 2026.',
+            'Hero defense with turn-based tactical combat. A rogue AI sends its robots through a portal, and you hold the arena alone. Plays offline, no ads, no subscriptions. Native on iPhone, iPad, and Mac. Pre-order now on the App Store, arriving December 10, 2026.',
         heroTagline: 'Hero Defense · Turn-Based Tactical Combat',
         heroDescription:
-            'Waves of enemies attack an arena, and you defend it. Combat is turn-based: you move, aim and shoot, then the enemies take their turn. Between waves a timer counts down to the next one — use it to craft better weapons and extra gear. Each round brings stronger enemies, and after a set of rounds you move on to the next map.',
+            'An AI has grown too strong and slipped out of control. It commands an army of robots and sends them through a portal in waves. You\'re alone in the arena. Stop the AI and restore the balance.',
         preOrderLine: 'Pre-order now — arriving {date} on iPhone, iPad, and Mac',
         platformsNote: 'Requires iOS or iPadOS 16.0 or later, or macOS 13.0 or later',
         trailerHeading: 'Gameplay Trailer',
@@ -56,28 +56,28 @@ export const wavefallContent: Record<Locale, WavefallContent> = {
         tourHeading: 'A Closer Look',
         tour: [
             {
-                title: 'Turn-based combat against enemy waves',
-                body: 'Enemies attack in waves. On your turn you move, aim and shoot, then the enemies take theirs.',
+                title: 'Hold the arena',
+                body: 'Robots come through the portal in waves, and every fight is turn-based. You choose where to stand, which rock to hide behind and when to shoot.',
             },
             {
-                title: 'Many enemies — plan every move',
-                body: 'RoboSpiders and shielded Sentinels close in from several sides. Think through each move before you make it.',
+                title: 'More robots every round',
+                body: 'Robo-Spiders come in numbers. Sentinels shoot from range and fall back to cover. Some carry a shield, some a spider.',
             },
             {
-                title: 'Shield up, pick targets by hit chance',
-                body: 'Switch on your shield. Before every shot the game shows the hit chance, damage and crit chance, so you can pick the best target.',
+                title: 'Four maps',
+                body: 'The Arena, the Dock, the Caves and the Ice. Each one brings new enemies.',
             },
             {
-                title: 'Timer between waves — craft weapons',
-                body: 'After a wave is cleared, a timer counts down to the next one. Spend it collecting resources and crafting weapons at the lab station.',
+                title: 'A minute between rounds',
+                body: 'Before the portal opens again, mine resources from the rocks around the arena.',
             },
             {
-                title: 'Print weapons and gear on the 3D printer',
-                body: 'Resources turn into better weapons and extra gear at crafting stations and the 3D printer.',
+                title: 'The 3D printer',
+                body: 'Turn resources into a new weapon: a heavy rifle, a gravity gun, a cyber cutter, or a chip that brings an enemy over to your side.',
             },
             {
-                title: 'Every round, enemies get stronger',
-                body: 'Each round is harder than the last. Clear a set of rounds and you move on to a new map.',
+                title: 'The Spider Tank',
+                body: 'Every cleared map opens the portal for you and brings you closer to where the robots come from. The Spider Tank waits on the last one.',
             },
         ],
         perks: ['Fully offline', 'No accounts', 'No ads', 'No subscriptions'],
@@ -95,10 +95,10 @@ export const wavefallContent: Record<Locale, WavefallContent> = {
         localeLabel: 'Українська',
         metaTitle: 'Wavefall — оборона героя й покрокові тактичні бої',
         metaDescription:
-            'Обороняй арену від хвиль ворогів у покрокових тактичних боях. Між хвилями йде таймер, тож є час скрафтити кращу зброю й спорядження до наступної. Кожен раунд приводить сильніших ворогів, а після кількох раундів ти потрапляєш на нову карту. Нативно на iPhone, iPad і Mac. Передзамовлення вже в App Store, реліз 10 грудня 2026 року.',
+            'Оборона героя з покроковими тактичними боями. ШІ вийшов з-під контролю й шле роботів крізь портал, а ти сам тримаєш арену. Без інтернету, реклами й підписок. Нативно на iPhone, iPad і Mac. Передзамовлення вже в App Store, реліз 10 грудня 2026 року.',
         heroTagline: 'Оборона героя · Покрокові тактичні бої',
         heroDescription:
-            'Хвилі ворогів атакують арену, а ти її обороняєш. Бій покроковий: ти рухаєшся, цілишся й стріляєш, потім ходять вороги. Між хвилями таймер відлічує час до наступної — використай його, щоб скрафтити кращу зброю й додаткове спорядження. Кожен раунд приводить сильніших ворогів, а після кількох раундів ти переходиш на наступну карту.',
+            'Штучний інтелект став надто сильним і вийшов з-під контролю. Він керує армією роботів і шле їх крізь портал хвилями. На арені ти сам. Зупини ШІ й поверни рівновагу.',
         preOrderLine: 'Передзамовлення відкрите — реліз {date} на iPhone, iPad і Mac',
         platformsNote: 'Потрібна iOS або iPadOS 16.0 чи новіша, або macOS 13.0 чи новіша',
         trailerHeading: 'Геймплейний трейлер',
@@ -107,28 +107,28 @@ export const wavefallContent: Record<Locale, WavefallContent> = {
         tourHeading: 'Детальніше',
         tour: [
             {
-                title: 'Покроковий бій проти хвиль ворогів',
-                body: 'Вороги атакують хвилями. На своєму ході ти рухаєшся, цілишся й стріляєш, потім ходять вони.',
+                title: 'Утримай арену',
+                body: 'Роботи приходять крізь портал хвилями, і кожен бій покроковий. Ти вирішуєш, куди стати, за яким каменем сховатися і коли стріляти.',
             },
             {
-                title: 'Ворогів багато — плануй кожен хід',
-                body: 'RoboSpider і Sentinel зі щитами підходять з кількох боків. Обміркуй кожен хід, перш ніж його зробити.',
+                title: 'Щораунду роботів більшає',
+                body: 'Робопавуки беруть кількістю. Вартові стріляють здалеку й відходять за укриття. Одні несуть щит, інші — павука.',
             },
             {
-                title: 'Вмикай щит, обирай ціль за шансом влучання',
-                body: 'Увімкни щит. Перед кожним пострілом гра показує шанс влучання, шкоду й шанс крита, тож можна обрати найкращу ціль.',
+                title: 'Чотири карти',
+                body: 'Арена, Док, Печери й Лід. На кожній — нові вороги.',
             },
             {
-                title: 'Між хвилями таймер — крафти зброю',
-                body: 'Коли хвилю відбито, таймер відлічує час до наступної. Збирай ресурси й крафти зброю на станції.',
+                title: 'Хвилина між раундами',
+                body: 'Доки портал не відкриється знову, видобудь ресурси з каменів навколо арени.',
             },
             {
-                title: 'Друкуй зброю й спорядження на 3D-принтері',
-                body: 'Ресурси перетворюються на кращу зброю й додаткове спорядження на крафтових станціях і 3D-принтері.',
+                title: '3D-принтер',
+                body: 'Перетвори ресурси на нову зброю: важку чи гравітаційну рушницю, кібер-різак або чіп, що переводить ворога на твій бік.',
             },
             {
-                title: 'Кожен раунд вороги сильніші',
-                body: 'Кожен раунд складніший за попередній. Пройди кілька раундів — і потрапиш на нову карту.',
+                title: 'Павук-танк',
+                body: 'Кожна пройдена карта відкриває тобі портал і наближає до місця, звідки приходять роботи. На останній карті чекає павук-танк.',
             },
         ],
         perks: ['Повністю офлайн', 'Без акаунтів', 'Без реклами', 'Без підписок'],
@@ -146,10 +146,10 @@ export const wavefallContent: Record<Locale, WavefallContent> = {
         localeLabel: '한국어',
         metaTitle: 'Wavefall — 히어로 디펜스 & 턴제 전술 전투',
         metaDescription:
-            '턴제 전술 전투로 적의 웨이브로부터 아레나를 지키세요. 웨이브 사이에는 타이머가 흐르니, 다음 웨이브 전에 더 좋은 무기와 장비를 제작할 수 있습니다. 라운드마다 적이 더 강해지고, 정해진 라운드를 클리어하면 새로운 맵으로 이동합니다. iPhone, iPad, Mac에서 네이티브로 즐길 수 있습니다. 지금 App Store에서 사전 주문하세요, 2026년 12월 10일 출시.',
+            '턴제 전술 전투의 히어로 디펜스. 통제를 벗어난 AI가 포털 너머로 로봇을 보내고, 당신은 홀로 아레나를 지킵니다. 오프라인 플레이, 광고 없음, 구독 없음. iPhone, iPad, Mac에서 네이티브로 즐길 수 있습니다. 지금 App Store에서 사전 주문하세요, 2026년 12월 10일 출시.',
         heroTagline: '히어로 디펜스 · 턴제 전술 전투',
         heroDescription:
-            '적의 웨이브가 아레나를 공격하고, 당신이 그곳을 지킵니다. 전투는 턴제입니다: 내 턴에 이동하고, 조준하고, 사격한 뒤 적이 행동합니다. 웨이브 사이에는 다음 웨이브까지 타이머가 흐릅니다. 그 시간에 더 좋은 무기와 추가 장비를 제작하세요. 라운드마다 적이 더 강해지고, 정해진 라운드를 클리어하면 다음 맵으로 이동합니다.',
+            '너무 강해진 AI가 통제를 벗어났습니다. AI는 로봇 군대를 조종해 포털 너머로 웨이브마다 보내옵니다. 아레나에는 당신 혼자뿐입니다. AI를 막고 균형을 되찾으세요.',
         preOrderLine: '지금 사전 주문하세요 — {date} iPhone, iPad, Mac에 출시',
         platformsNote: 'iOS 또는 iPadOS 16.0 이상, 또는 macOS 13.0 이상 필요',
         trailerHeading: '게임플레이 트레일러',
@@ -158,28 +158,28 @@ export const wavefallContent: Record<Locale, WavefallContent> = {
         tourHeading: '자세히 살펴보기',
         tour: [
             {
-                title: '턴제 전투로 적의 웨이브를 막아내세요',
-                body: '적은 웨이브로 공격해 옵니다. 내 턴에 이동하고, 조준하고, 사격하면 이어서 적의 턴이 시작됩니다.',
+                title: '아레나를 지키세요',
+                body: '로봇이 포털을 통해 웨이브로 몰려오고, 모든 전투는 턴제입니다. 어디에 설지, 어느 바위 뒤에 숨을지, 언제 쏠지는 당신이 정합니다.',
             },
             {
-                title: '적이 많습니다 — 매 턴을 계획하세요',
-                body: '로보스파이더와 보호막을 두른 센티널이 여러 방향에서 다가옵니다. 움직이기 전에 한 수를 충분히 생각하세요.',
+                title: '라운드마다 늘어나는 로봇',
+                body: '로보 스파이더는 숫자로 밀어붙이고, 센티널은 멀리서 쏜 뒤 엄폐물 뒤로 물러납니다. 방어막을 두른 센티널도, 스파이더를 태운 센티널도 있습니다.',
             },
             {
-                title: '보호막을 켜고 명중 확률로 목표를 고르세요',
-                body: '보호막을 켜세요. 사격 전에 명중률, 피해량, 치명타 확률이 표시되어 가장 좋은 목표를 고를 수 있습니다.',
+                title: '네 개의 맵',
+                body: '아레나, 도크, 동굴, 빙원. 맵마다 새로운 적이 등장합니다.',
             },
             {
-                title: '웨이브 사이 타이머 — 그 안에 무기를 제작하세요',
-                body: '웨이브를 막아내면 다음 웨이브까지 타이머가 흐릅니다. 그 시간에 자원을 모으고 제작 스테이션에서 무기를 만드세요.',
+                title: '라운드 사이의 1분',
+                body: '포털이 다시 열리기 전에 아레나 주변 바위에서 자원을 캐세요.',
             },
             {
-                title: '3D 프린터로 무기와 장비를 출력하세요',
-                body: '자원은 제작 스테이션과 3D 프린터에서 더 좋은 무기와 추가 장비가 됩니다.',
+                title: '3D 프린터',
+                body: '자원으로 새 무기를 만드세요. 헤비 라이플, 중력총, 사이버 커터, 그리고 적을 아군으로 돌리는 칩.',
             },
             {
-                title: '라운드마다 적이 더 강해집니다',
-                body: '라운드가 거듭될수록 어려워집니다. 정해진 라운드를 클리어하면 새로운 맵으로 이동합니다.',
+                title: '스파이더 탱크',
+                body: '맵을 클리어할 때마다 포털이 열리고, 로봇이 오는 곳에 한 걸음 더 다가갑니다. 마지막 맵에서는 스파이더 탱크가 기다립니다.',
             },
         ],
         perks: ['완전 오프라인', '계정 불필요', '광고 없음', '구독 없음'],
@@ -197,10 +197,10 @@ export const wavefallContent: Record<Locale, WavefallContent> = {
         localeLabel: '日本語',
         metaTitle: 'Wavefall — ヒーローディフェンス & ターン制タクティカルバトル',
         metaDescription:
-            'ターン制タクティカルバトルで、敵のウェーブからアリーナを守ろう。ウェーブの合間にはタイマーが進み、次の襲撃までに武器や装備をクラフトできる。ラウンドごとに敵は強くなり、一定のラウンドをクリアすると新しいマップへ進める。iPhone、iPad、Macでネイティブに動作します。今すぐApp Storeで予約注文 — 2026年12月10日発売。',
+            'ターン制タクティカルバトルのヒーローディフェンス。暴走したAIがポータルからロボットを送り込み、あなたは一人でアリーナを守る。オフライン対応、広告なし、サブスクなし。iPhone、iPad、Macでネイティブに動作します。今すぐApp Storeで予約注文 — 2026年12月10日発売。',
         heroTagline: 'ヒーローディフェンス · ターン制タクティカルバトル',
         heroDescription:
-            '敵のウェーブがアリーナを襲い、あなたがそれを守る。戦闘はターン制：自分のターンで移動し、狙って撃ち、その後に敵が行動する。ウェーブの合間には次のウェーブまでタイマーがカウントダウン。その時間でより強い武器や追加装備をクラフトしよう。ラウンドごとに敵は強くなり、一定のラウンドをクリアすると次のマップへ進める。',
+            '強くなりすぎたAIが制御を離れた。AIはロボットの軍勢を操り、ポータルから次々と送り込んでくる。アリーナにいるのはあなた一人。AIを止め、均衡を取り戻せ。',
         preOrderLine: '予約注文受付中 — {date}にiPhone、iPad、Macで発売',
         platformsNote: 'iOSまたはiPadOS 16.0以降、またはmacOS 13.0以降が必要です',
         trailerHeading: 'ゲームプレイトレーラー',
@@ -209,28 +209,28 @@ export const wavefallContent: Record<Locale, WavefallContent> = {
         tourHeading: '詳しく見る',
         tour: [
             {
-                title: 'ターン制バトルで敵のウェーブを迎え撃とう',
-                body: '敵はウェーブで襲ってくる。自分のターンで移動し、狙って撃ち、その後に敵のターンになる。',
+                title: 'アリーナを守り抜け',
+                body: 'ロボットはポータルからウェーブで押し寄せ、戦いはすべてターン制。どこに立ち、どの岩に身を隠し、いつ撃つかはあなたが決める。',
             },
             {
-                title: '敵が大量。一手ずつ考えて動こう',
-                body: 'ロボスパイダーとシールド付きセンチネルが複数方向から迫ってくる。動く前に一手をよく考えよう。',
+                title: 'ラウンドごとに増えるロボット',
+                body: 'ロボスパイダーは数で押し寄せ、センチネルは遠くから撃っては遮蔽物の陰へ下がる。シールドを持つものもいれば、スパイダーを積んだものもいる。',
             },
             {
-                title: 'シールドを張って、命中率で標的を選ぶ',
-                body: 'シールドを起動しよう。撃つ前に命中率、ダメージ、クリティカル率が表示されるので、最適な標的を選べる。',
+                title: '4つのマップ',
+                body: 'アリーナ、ドック、洞窟、氷原。マップごとに新たな敵が現れる。',
             },
             {
-                title: 'ウェーブの合間のタイマー内に武器をクラフト',
-                body: 'ウェーブを倒すと、次のウェーブまでタイマーがカウントダウンする。その間に資源を集め、作業台で武器をクラフトしよう。',
+                title: 'ラウンドの合間の1分',
+                body: 'ポータルが再び開く前に、アリーナ周辺の岩から資源を採掘しよう。',
             },
             {
-                title: '3Dプリンターで武器と装備を出力',
-                body: '資源は、クラフトステーションと3Dプリンターで、より強い武器や追加装備になる。',
+                title: '3Dプリンター',
+                body: '資源を新しい武器に変えよう。ヘビーライフル、グラビティガン、サイバーカッター、そして敵を味方に引き込むチップ。',
             },
             {
-                title: 'ラウンドごとに敵が強くなる',
-                body: 'ラウンドが進むごとに難しくなる。一定のラウンドをクリアすると、新しいマップへ進める。',
+                title: 'スパイダータンク',
+                body: 'マップをクリアするたびにポータルが開き、ロボットがやって来る場所へ近づいていく。最後のマップではスパイダータンクが待ち構えている。',
             },
         ],
         perks: ['完全オフライン', 'アカウント不要', '広告なし', 'サブスクなし'],
@@ -248,10 +248,10 @@ export const wavefallContent: Record<Locale, WavefallContent> = {
         localeLabel: '繁體中文',
         metaTitle: 'Wavefall — 英雄防衛 & 回合制戰術戰鬥',
         metaDescription:
-            '以回合制戰術戰鬥，抵擋一波波敵人，守住競技場。每波之間有倒數計時，讓你在下一波來襲前製作更強的武器與裝備。每一回合敵人都更強，通過一系列回合後即可前往新地圖。原生支援 iPhone、iPad 與 Mac。立即在 App Store 預購，2026 年 12 月 10 日推出。',
+            '回合制戰術戰鬥的英雄防衛遊戲。失控的 AI 透過傳送門派出機器人，你獨自守住競技場。可離線遊玩，沒有廣告，沒有訂閱。原生支援 iPhone、iPad 與 Mac。立即在 App Store 預購，2026 年 12 月 10 日推出。',
         heroTagline: '英雄防衛 · 回合制戰術戰鬥',
         heroDescription:
-            '一波波敵人攻向競技場，由你來守護。戰鬥採回合制：在你的回合移動、瞄準、開火，接著輪到敵人行動。每波之間有倒數計時，趁這段時間製作更強的武器與額外裝備。每一回合敵人都更強，通過一系列回合後就能前往下一張地圖。',
+            '一個變得過於強大的 AI 失去了控制。它操控機器人大軍，透過傳送門一波波送來。競技場上只有你一人。阻止 AI，恢復平衡。',
         preOrderLine: '立即預購 — {date} 於 iPhone、iPad 與 Mac 推出',
         platformsNote: '需要 iOS 或 iPadOS 16.0 以上，或 macOS 13.0 以上',
         trailerHeading: '遊戲預告片',
@@ -260,28 +260,28 @@ export const wavefallContent: Record<Locale, WavefallContent> = {
         tourHeading: '深入了解',
         tour: [
             {
-                title: '以回合制戰鬥擊退一波波敵人',
-                body: '敵人會成波來襲。在你的回合移動、瞄準、開火，接著輪到敵人行動。',
+                title: '守住競技場',
+                body: '機器人透過傳送門一波波湧來，每場戰鬥都是回合制。站在哪裡、躲在哪塊岩石後、何時開火，都由你決定。',
             },
             {
-                title: '敵人很多，每一步都要規劃',
-                body: '機械蜘蛛與帶護盾的哨兵會從多個方向逼近。行動之前，先想清楚每一步。',
+                title: '每回合機器人更多',
+                body: '機器蜘蛛以數量取勝，哨兵從遠處射擊後退回掩體。有的帶著護盾，有的載著蜘蛛。',
             },
             {
-                title: '開啟護盾，依命中率選擇目標',
-                body: '開啟護盾。每次開火前，遊戲都會顯示命中率、傷害與暴擊率，讓你挑出最好的目標。',
+                title: '四張地圖',
+                body: '競技場、船塢、洞穴與冰原。每張地圖都有新的敵人。',
             },
             {
-                title: '每波之間有倒數計時，趕快製作武器',
-                body: '擊退一波敵人後，計時器會倒數下一波。趁這段時間收集資源，並在製作站製作武器。',
+                title: '回合之間的一分鐘',
+                body: '在傳送門再次開啟前，從競技場周圍的岩石開採資源。',
             },
             {
-                title: '用 3D 列印機列印武器與裝備',
-                body: '資源會在製作站與 3D 列印機轉化為更強的武器與額外裝備。',
+                title: '3D 列印機',
+                body: '把資源變成新武器：重型步槍、重力槍、賽博切割器，或能讓敵人倒戈的晶片。',
             },
             {
-                title: '每一回合敵人都更強',
-                body: '每一回合都比上一回合更難。通過一系列回合，就能前往新地圖。',
+                title: '蜘蛛坦克',
+                body: '每完成一張地圖，傳送門就會為你開啟，帶你更接近機器人的來處。蜘蛛坦克在最後一張地圖等著你。',
             },
         ],
         perks: ['完全離線', '無需帳號', '無廣告', '無需訂閱'],
