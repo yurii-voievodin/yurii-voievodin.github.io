@@ -2,20 +2,20 @@ import type { Project } from "@/types/project";
 import GradientLink from "@/components/GradientLink";
 import CodeTag from "@/components/CodeTag";
 import Bullets from "@/components/ui/Bullets";
-import { dustdriftScreenshots } from "@/lib/dustdrift-images";
+import { wavefallScreenshots } from "@/lib/wavefall-images";
 
-export const dustdrift: Project = {
-  slug: "dustdrift",
-  name: "DustDrift",
+export const wavefall: Project = {
+  slug: "wavefall",
+  name: "Wavefall",
   summary:
     "Hero defense game with turn-based tactical combat: waves of enemies on an arena, weapons crafted between waves, for iPhone, iPad, and Mac.",
   date: "25 September 2025",
   tags: ["Game", "iOS", "macOS"],
-  wideImages: dustdriftScreenshots,
+  wideImages: wavefallScreenshots,
   content: (
     <>
       <p className="text-zinc-300">
-        <GradientLink href="/dustdrift">DustDrift</GradientLink> — 2D hero
+        <GradientLink href="/wavefall">Wavefall</GradientLink> — 2D hero
         defense game with turn-based tactical combat. Waves of enemies attack
         an arena and the player defends it: move, aim and shoot on your turn,
         then the enemies take theirs. A timer runs between waves, so there is
@@ -85,7 +85,7 @@ export const dustdrift: Project = {
       </Bullets>
 
       <div className="flex flex-wrap gap-3 pt-2">
-        <GradientLink href="/dustdrift">Landing page</GradientLink>
+        <GradientLink href="/wavefall">Landing page</GradientLink>
         <GradientLink
           href="https://apps.apple.com/app/id6758512309"
           target="_blank"

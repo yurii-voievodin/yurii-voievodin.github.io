@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 import { getSortedPostsData } from '@/lib/blog'
 import { commercialProjects, personalProjects } from '@/lib/projects-data'
-import { DUSTDRIFT_PATHS, LOCALES } from '@/lib/dustdrift-content'
+import { WAVEFALL_PATHS, LOCALES } from '@/lib/wavefall-content'
 
 export const dynamic = 'force-static'
 
@@ -9,20 +9,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const posts = getSortedPostsData()
   const baseUrl = 'https://yurii-voievodin.github.io' // Updated to GitHub Pages domain
 
-  const dustdriftLanguages: Record<string, string> = {
-    'x-default': `${baseUrl}${DUSTDRIFT_PATHS.en}/`,
+  const wavefallLanguages: Record<string, string> = {
+    'x-default': `${baseUrl}${WAVEFALL_PATHS.en}/`,
   }
   for (const locale of LOCALES) {
-    dustdriftLanguages[locale] = `${baseUrl}${DUSTDRIFT_PATHS[locale]}/`
+    wavefallLanguages[locale] = `${baseUrl}${WAVEFALL_PATHS[locale]}/`
   }
 
-  const dustdriftPages = LOCALES.map((locale) => ({
-    url: `${baseUrl}${DUSTDRIFT_PATHS[locale]}/`,
+  const wavefallPages = LOCALES.map((locale) => ({
+    url: `${baseUrl}${WAVEFALL_PATHS[locale]}/`,
     lastModified: new Date(),
     changeFrequency: 'monthly' as const,
     priority: locale === 'en' ? 0.8 : 0.7,
     alternates: {
-      languages: dustdriftLanguages,
+      languages: wavefallLanguages,
     },
   }))
 
@@ -82,13 +82,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     },
     {
-      url: `${baseUrl}/dustdrift-support`,
+      url: `${baseUrl}/wavefall-support`,
       lastModified: new Date(),
       changeFrequency: 'yearly' as const,
       priority: 0.3,
     },
     {
-      url: `${baseUrl}/dustdrift-privacy`,
+      url: `${baseUrl}/wavefall-privacy`,
       lastModified: new Date(),
       changeFrequency: 'yearly' as const,
       priority: 0.3,
@@ -142,6 +142,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.5,
   }))
 
-  return [...staticPages, ...dustdriftPages, ...blogPages, ...projectPages]
+  return [...staticPages, ...wavefallPages, ...blogPages, ...projectPages]
 }
 

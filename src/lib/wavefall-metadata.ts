@@ -1,17 +1,17 @@
 import type { Metadata } from 'next';
 import { siteConfig } from '@/lib/config';
-import { dustdriftContent, DUSTDRIFT_PATHS, LOCALES, type Locale } from '@/lib/dustdrift-content';
+import { wavefallContent, WAVEFALL_PATHS, LOCALES, type Locale } from '@/lib/wavefall-content';
 
-export function buildDustDriftMetadata(locale: Locale): Metadata {
-    const content = dustdriftContent[locale];
-    const canonicalPath = `${DUSTDRIFT_PATHS[locale]}/`;
+export function buildWavefallMetadata(locale: Locale): Metadata {
+    const content = wavefallContent[locale];
+    const canonicalPath = `${WAVEFALL_PATHS[locale]}/`;
     const url = `${siteConfig.url}${canonicalPath}`;
 
     const languages: Record<string, string> = {
-        'x-default': `${siteConfig.url}${DUSTDRIFT_PATHS.en}/`,
+        'x-default': `${siteConfig.url}${WAVEFALL_PATHS.en}/`,
     };
     for (const l of LOCALES) {
-        languages[l] = `${siteConfig.url}${DUSTDRIFT_PATHS[l]}/`;
+        languages[l] = `${siteConfig.url}${WAVEFALL_PATHS[l]}/`;
     }
 
     return {
@@ -27,13 +27,13 @@ export function buildDustDriftMetadata(locale: Locale): Metadata {
             url,
             type: 'website',
             locale: content.ogLocale,
-            images: [{ url: `${siteConfig.url}/dustdrift/trailer-poster.jpg?v=2` }],
+            images: [{ url: `${siteConfig.url}/wavefall/trailer-poster.jpg?v=2` }],
         },
         twitter: {
             card: 'summary_large_image',
             title: content.metaTitle,
             description: content.metaDescription,
-            images: [`${siteConfig.url}/dustdrift/trailer-poster.jpg?v=2`],
+            images: [`${siteConfig.url}/wavefall/trailer-poster.jpg?v=2`],
         },
     };
 }

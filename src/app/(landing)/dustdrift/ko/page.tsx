@@ -1,9 +1,8 @@
-import DustDriftLanding from '@/components/dustdrift/DustDriftLanding';
-import { buildDustDriftMetadata } from '@/lib/dustdrift-metadata';
+import MovedPage, { movedMetadata } from '@/components/redirect/MovedPage';
 import type { Metadata } from 'next';
 
-export const metadata: Metadata = buildDustDriftMetadata('ko');
+export const metadata: Metadata = movedMetadata('/wavefall/ko/');
 
-export default function DustDriftKoPage() {
-    return <DustDriftLanding locale="ko" />;
+export default function Moved() {
+    return <MovedPage to="/wavefall/ko/" />;
 }

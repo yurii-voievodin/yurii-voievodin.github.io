@@ -6,12 +6,12 @@ export const RELEASE_DATE_ISO = '2026-12-10';
 export const APP_STORE_URL = 'https://apps.apple.com/app/id6758512309';
 export const PLATFORMS = ['iPhone', 'iPad', 'Mac'];
 
-export interface DustDriftFeature {
+export interface WavefallFeature {
     title: string;
     body: string;
 }
 
-export interface DustDriftContent {
+export interface WavefallContent {
     locale: Locale;
     htmlLang: string;
     ogLocale: string;
@@ -26,7 +26,7 @@ export interface DustDriftContent {
     trailerAria: string;
     trailerAlt: string;
     tourHeading: string;
-    tour: DustDriftFeature[];
+    tour: WavefallFeature[];
     perks: string[];
     footerHeading: string;
     footerBody: string;
@@ -36,13 +36,13 @@ export interface DustDriftContent {
     appStoreAlt: string;
 }
 
-export const dustdriftContent: Record<Locale, DustDriftContent> = {
+export const wavefallContent: Record<Locale, WavefallContent> = {
     en: {
         locale: 'en',
         htmlLang: 'en',
         ogLocale: 'en_US',
         localeLabel: 'English',
-        metaTitle: 'DustDrift — Hero Defense & Turn-Based Tactical Combat',
+        metaTitle: 'Wavefall — Hero Defense & Turn-Based Tactical Combat',
         metaDescription:
             'Defend an arena against waves of enemies in turn-based tactical combat. A timer runs between waves, so you can craft better weapons and gear before the next one. Every round brings stronger enemies, and after a set of rounds you move on to a new map. Native on iPhone, iPad, and Mac. Pre-order now on the App Store, arriving December 10, 2026.',
         heroTagline: 'Hero Defense · Turn-Based Tactical Combat',
@@ -51,8 +51,8 @@ export const dustdriftContent: Record<Locale, DustDriftContent> = {
         preOrderLine: 'Pre-order now — arriving {date} on iPhone, iPad, and Mac',
         platformsNote: 'Requires iOS or iPadOS 16.0 or later, or macOS 13.0 or later',
         trailerHeading: 'Gameplay Trailer',
-        trailerAria: 'Play DustDrift gameplay trailer',
-        trailerAlt: 'DustDrift gameplay — a turn-based fight against a shielded Sentinel in the arena',
+        trailerAria: 'Play Wavefall gameplay trailer',
+        trailerAlt: 'Wavefall gameplay — a turn-based fight against a shielded Sentinel in the arena',
         tourHeading: 'A Closer Look',
         tour: [
             {
@@ -80,12 +80,12 @@ export const dustdriftContent: Record<Locale, DustDriftContent> = {
                 body: 'Each round is harder than the last. Clear a set of rounds and you move on to a new map.',
             },
         ],
-        perks: ['Fully offline', 'No accounts', 'No ads', 'No in-app purchases'],
-        footerHeading: 'Pre-order DustDrift',
+        perks: ['Fully offline', 'No accounts', 'No ads', 'No subscriptions'],
+        footerHeading: 'Pre-order Wavefall',
         footerBody: 'Arriving {date} on iPhone, iPad, and Mac.',
         supportLabel: 'Support',
         privacyLabel: 'Privacy Policy',
-        appStoreAria: 'Pre-order DustDrift on the App Store',
+        appStoreAria: 'Pre-order Wavefall on the App Store',
         appStoreAlt: 'Download on the App Store',
     },
     uk: {
@@ -93,7 +93,7 @@ export const dustdriftContent: Record<Locale, DustDriftContent> = {
         htmlLang: 'uk',
         ogLocale: 'uk_UA',
         localeLabel: 'Українська',
-        metaTitle: 'DustDrift — оборона героя й покрокові тактичні бої',
+        metaTitle: 'Wavefall — оборона героя й покрокові тактичні бої',
         metaDescription:
             'Обороняй арену від хвиль ворогів у покрокових тактичних боях. Між хвилями йде таймер, тож є час скрафтити кращу зброю й спорядження до наступної. Кожен раунд приводить сильніших ворогів, а після кількох раундів ти потрапляєш на нову карту. Нативно на iPhone, iPad і Mac. Передзамовлення вже в App Store, реліз 10 грудня 2026 року.',
         heroTagline: 'Оборона героя · Покрокові тактичні бої',
@@ -102,8 +102,8 @@ export const dustdriftContent: Record<Locale, DustDriftContent> = {
         preOrderLine: 'Передзамовлення відкрите — реліз {date} на iPhone, iPad і Mac',
         platformsNote: 'Потрібна iOS або iPadOS 16.0 чи новіша, або macOS 13.0 чи новіша',
         trailerHeading: 'Геймплейний трейлер',
-        trailerAria: 'Відтворити геймплейний трейлер DustDrift',
-        trailerAlt: 'Геймплей DustDrift — покроковий бій із Sentinel у щиті на арені',
+        trailerAria: 'Відтворити геймплейний трейлер Wavefall',
+        trailerAlt: 'Геймплей Wavefall — покроковий бій із Sentinel у щиті на арені',
         tourHeading: 'Детальніше',
         tour: [
             {
@@ -131,12 +131,12 @@ export const dustdriftContent: Record<Locale, DustDriftContent> = {
                 body: 'Кожен раунд складніший за попередній. Пройди кілька раундів — і потрапиш на нову карту.',
             },
         ],
-        perks: ['Повністю офлайн', 'Без акаунтів', 'Без реклами', 'Без вбудованих покупок'],
-        footerHeading: 'Передзамов DustDrift',
+        perks: ['Повністю офлайн', 'Без акаунтів', 'Без реклами', 'Без підписок'],
+        footerHeading: 'Передзамов Wavefall',
         footerBody: 'Реліз {date} на iPhone, iPad і Mac.',
         supportLabel: 'Підтримка',
         privacyLabel: 'Політика конфіденційності',
-        appStoreAria: 'Передзамовити DustDrift в App Store',
+        appStoreAria: 'Передзамовити Wavefall в App Store',
         appStoreAlt: 'Завантажити в App Store',
     },
     ko: {
@@ -144,7 +144,7 @@ export const dustdriftContent: Record<Locale, DustDriftContent> = {
         htmlLang: 'ko',
         ogLocale: 'ko_KR',
         localeLabel: '한국어',
-        metaTitle: 'DustDrift — 히어로 디펜스 & 턴제 전술 전투',
+        metaTitle: 'Wavefall — 히어로 디펜스 & 턴제 전술 전투',
         metaDescription:
             '턴제 전술 전투로 적의 웨이브로부터 아레나를 지키세요. 웨이브 사이에는 타이머가 흐르니, 다음 웨이브 전에 더 좋은 무기와 장비를 제작할 수 있습니다. 라운드마다 적이 더 강해지고, 정해진 라운드를 클리어하면 새로운 맵으로 이동합니다. iPhone, iPad, Mac에서 네이티브로 즐길 수 있습니다. 지금 App Store에서 사전 주문하세요, 2026년 12월 10일 출시.',
         heroTagline: '히어로 디펜스 · 턴제 전술 전투',
@@ -153,8 +153,8 @@ export const dustdriftContent: Record<Locale, DustDriftContent> = {
         preOrderLine: '지금 사전 주문하세요 — {date} iPhone, iPad, Mac에 출시',
         platformsNote: 'iOS 또는 iPadOS 16.0 이상, 또는 macOS 13.0 이상 필요',
         trailerHeading: '게임플레이 트레일러',
-        trailerAria: 'DustDrift 게임플레이 트레일러 재생',
-        trailerAlt: 'DustDrift 게임플레이 — 아레나에서 보호막을 두른 센티널과의 턴제 전투',
+        trailerAria: 'Wavefall 게임플레이 트레일러 재생',
+        trailerAlt: 'Wavefall 게임플레이 — 아레나에서 보호막을 두른 센티널과의 턴제 전투',
         tourHeading: '자세히 살펴보기',
         tour: [
             {
@@ -182,12 +182,12 @@ export const dustdriftContent: Record<Locale, DustDriftContent> = {
                 body: '라운드가 거듭될수록 어려워집니다. 정해진 라운드를 클리어하면 새로운 맵으로 이동합니다.',
             },
         ],
-        perks: ['완전 오프라인', '계정 불필요', '광고 없음', '인앱 구매 없음'],
-        footerHeading: 'DustDrift 사전 주문',
+        perks: ['완전 오프라인', '계정 불필요', '광고 없음', '구독 없음'],
+        footerHeading: 'Wavefall 사전 주문',
         footerBody: '{date} iPhone, iPad, Mac에 출시됩니다.',
         supportLabel: '지원',
         privacyLabel: '개인정보 처리방침',
-        appStoreAria: 'App Store에서 DustDrift 사전 주문하기',
+        appStoreAria: 'App Store에서 Wavefall 사전 주문하기',
         appStoreAlt: 'App Store에서 다운로드',
     },
     ja: {
@@ -195,7 +195,7 @@ export const dustdriftContent: Record<Locale, DustDriftContent> = {
         htmlLang: 'ja',
         ogLocale: 'ja_JP',
         localeLabel: '日本語',
-        metaTitle: 'DustDrift — ヒーローディフェンス & ターン制タクティカルバトル',
+        metaTitle: 'Wavefall — ヒーローディフェンス & ターン制タクティカルバトル',
         metaDescription:
             'ターン制タクティカルバトルで、敵のウェーブからアリーナを守ろう。ウェーブの合間にはタイマーが進み、次の襲撃までに武器や装備をクラフトできる。ラウンドごとに敵は強くなり、一定のラウンドをクリアすると新しいマップへ進める。iPhone、iPad、Macでネイティブに動作します。今すぐApp Storeで予約注文 — 2026年12月10日発売。',
         heroTagline: 'ヒーローディフェンス · ターン制タクティカルバトル',
@@ -204,8 +204,8 @@ export const dustdriftContent: Record<Locale, DustDriftContent> = {
         preOrderLine: '予約注文受付中 — {date}にiPhone、iPad、Macで発売',
         platformsNote: 'iOSまたはiPadOS 16.0以降、またはmacOS 13.0以降が必要です',
         trailerHeading: 'ゲームプレイトレーラー',
-        trailerAria: 'DustDriftのゲームプレイトレーラーを再生',
-        trailerAlt: 'DustDriftのゲームプレイ — アリーナでシールド付きセンチネルとターン制バトル',
+        trailerAria: 'Wavefallのゲームプレイトレーラーを再生',
+        trailerAlt: 'Wavefallのゲームプレイ — アリーナでシールド付きセンチネルとターン制バトル',
         tourHeading: '詳しく見る',
         tour: [
             {
@@ -233,12 +233,12 @@ export const dustdriftContent: Record<Locale, DustDriftContent> = {
                 body: 'ラウンドが進むごとに難しくなる。一定のラウンドをクリアすると、新しいマップへ進める。',
             },
         ],
-        perks: ['完全オフライン', 'アカウント不要', '広告なし', 'アプリ内課金なし'],
-        footerHeading: 'DustDriftを予約注文',
+        perks: ['完全オフライン', 'アカウント不要', '広告なし', 'サブスクなし'],
+        footerHeading: 'Wavefallを予約注文',
         footerBody: '{date}にiPhone、iPad、Macで発売。',
         supportLabel: 'サポート',
         privacyLabel: 'プライバシーポリシー',
-        appStoreAria: 'App StoreでDustDriftを予約注文',
+        appStoreAria: 'App StoreでWavefallを予約注文',
         appStoreAlt: 'App Storeからダウンロード',
     },
     'zh-Hant': {
@@ -246,7 +246,7 @@ export const dustdriftContent: Record<Locale, DustDriftContent> = {
         htmlLang: 'zh-Hant',
         ogLocale: 'zh_TW',
         localeLabel: '繁體中文',
-        metaTitle: 'DustDrift — 英雄防衛 & 回合制戰術戰鬥',
+        metaTitle: 'Wavefall — 英雄防衛 & 回合制戰術戰鬥',
         metaDescription:
             '以回合制戰術戰鬥，抵擋一波波敵人，守住競技場。每波之間有倒數計時，讓你在下一波來襲前製作更強的武器與裝備。每一回合敵人都更強，通過一系列回合後即可前往新地圖。原生支援 iPhone、iPad 與 Mac。立即在 App Store 預購，2026 年 12 月 10 日推出。',
         heroTagline: '英雄防衛 · 回合制戰術戰鬥',
@@ -255,8 +255,8 @@ export const dustdriftContent: Record<Locale, DustDriftContent> = {
         preOrderLine: '立即預購 — {date} 於 iPhone、iPad 與 Mac 推出',
         platformsNote: '需要 iOS 或 iPadOS 16.0 以上，或 macOS 13.0 以上',
         trailerHeading: '遊戲預告片',
-        trailerAria: '播放 DustDrift 遊戲預告片',
-        trailerAlt: 'DustDrift 遊戲畫面 — 在競技場與帶護盾的哨兵進行回合制戰鬥',
+        trailerAria: '播放 Wavefall 遊戲預告片',
+        trailerAlt: 'Wavefall 遊戲畫面 — 在競技場與帶護盾的哨兵進行回合制戰鬥',
         tourHeading: '深入了解',
         tour: [
             {
@@ -284,12 +284,12 @@ export const dustdriftContent: Record<Locale, DustDriftContent> = {
                 body: '每一回合都比上一回合更難。通過一系列回合，就能前往新地圖。',
             },
         ],
-        perks: ['完全離線', '無需帳號', '無廣告', '無應用內購買'],
-        footerHeading: '預購 DustDrift',
+        perks: ['完全離線', '無需帳號', '無廣告', '無需訂閱'],
+        footerHeading: '預購 Wavefall',
         footerBody: '{date} 於 iPhone、iPad 與 Mac 推出。',
         supportLabel: '支援',
         privacyLabel: '隱私權政策',
-        appStoreAria: '在 App Store 預購 DustDrift',
+        appStoreAria: '在 App Store 預購 Wavefall',
         appStoreAlt: '在 App Store 下載',
     },
 };
@@ -306,10 +306,10 @@ export function formatWithReleaseDate(template: string, locale: Locale): string 
     return template.replace('{date}', RELEASE_DATE_LABEL[locale]);
 }
 
-export const DUSTDRIFT_PATHS: Record<Locale, string> = {
-    en: '/dustdrift',
-    uk: '/dustdrift/uk',
-    ko: '/dustdrift/ko',
-    ja: '/dustdrift/ja',
-    'zh-Hant': '/dustdrift/zh-Hant',
+export const WAVEFALL_PATHS: Record<Locale, string> = {
+    en: '/wavefall',
+    uk: '/wavefall/uk',
+    ko: '/wavefall/ko',
+    ja: '/wavefall/ja',
+    'zh-Hant': '/wavefall/zh-Hant',
 };
