@@ -15,22 +15,32 @@ export const wavefall: Project = {
   content: (
     <>
       <p className="text-zinc-300">
-        <GradientLink href="/wavefall">Wavefall</GradientLink> — 2D hero
-        defense game with turn-based tactical combat. An AI has slipped out of
-        control and sends its robots through a portal in waves, and the player
-        holds the arena alone. Between rounds there is a minute to mine
-        resources and print a new weapon on the 3D printer. Every cleared map
-        opens the portal to the next one, and the Spider Tank waits on the
-        last. Pre-order live on the App Store for iPhone, iPad, and Mac,
-        arriving December 10, 2026.
+        <GradientLink href="/wavefall">Wavefall</GradientLink> — hero defense
+        game with turn-based tactical combat, drawn in a dimetric view with
+        rigged 3D characters and Blender-modeled 3D environments. An AI has
+        slipped out of control and sends its robots through a portal in waves,
+        and the player holds the arena alone. Between rounds there is a minute
+        to mine resources and print a new weapon on the 3D printer. Every
+        cleared map opens the portal to the next one, and the Spider Tank
+        waits on the last. Pre-order live on the App Store for iPhone, iPad,
+        and Mac, arriving December 10, 2026.
       </p>
 
       <p className="text-zinc-300 font-semibold">Technical info:</p>
       <Bullets>
         <li>
-          Written in <strong>Swift</strong>, <strong>SpriteKit</strong> — no
-          SwiftUI, no <CodeTag>.sks</CodeTag> scene files (~330 source files
-          across the shared game code, iOS, and Mac targets)
+          Written in <strong>Swift</strong> on <strong>SpriteKit</strong> and{" "}
+          <strong>SceneKit</strong> — no SwiftUI, no{" "}
+          <CodeTag>.sks</CodeTag> scene files (~1,000 source files across the
+          shared core, the iOS and Mac app, and the Raylib port)
+        </li>
+        <li>
+          <strong>Hybrid 2D/3D rendering</strong> — rigged 3D characters
+          (Operative, Robo-Spider, Sentinel, Spider Tank) play 70+ USDZ
+          animation clips, rendered live through <CodeTag>SCNRenderer</CodeTag>{" "}
+          into Metal textures inside the SpriteKit scene; props, terrain, walls
+          and decorations are modeled in <strong>Blender</strong> and rendered
+          into dimetric sprites by Python scripts
         </li>
         <li>
           <strong>Single shared codebase</strong> for iPhone/iPad and native
@@ -38,39 +48,47 @@ export const wavefall: Project = {
           delegates to per-scene subsystems (<CodeTag>WorldStreamer</CodeTag>,{" "}
           <CodeTag>InputDispatcher</CodeTag>,{" "}
           <CodeTag>PortalCoordinator</CodeTag>,{" "}
-          <CodeTag>PhysicsContactRouter</CodeTag>) and manager classes
+          <CodeTag>GridMovementController</CodeTag>) and manager classes
           (camera, UI, lighting, hints)
         </li>
         <li>
-          <strong>Arena mode</strong> — round-based waves driven by a JSON
-          config (<CodeTag>ArenaRounds.json</CodeTag>) across three
-          JSON-authored arena maps, with a timer between waves and a new map
-          after each set of rounds
+          <strong>Arena mode</strong> — 15 rounds of multi-wave fights across
+          four JSON-authored maps, driven by{" "}
+          <CodeTag>ArenaRounds.json</CodeTag>, with a timed intermission
+          between rounds and a Spider Tank boss on the last map
         </li>
         <li>
-          <strong>Turn-based combat</strong> on a grid — four{" "}
-          <CodeTag>HeldItem</CodeTag>/<CodeTag>CombatTool</CodeTag> weapons
-          (blaster, heavy rifle, gravity gun, cutter), shield and overwatch,
-          hit and crit rolls drawn from marble bags, and enemy AI (RoboSpider,
-          Sentinel)
+          <strong>Turn-based combat</strong> on a grid — blaster, heavy rifle,
+          gravity gun, cyber cutter, grenades, energy shield and a reprogram
+          chip; cover, overwatch, destructible rocks and barrels; hit and crit
+          rolls drawn from marble bags; full-turn undo from state snapshots;
+          enemy AI that relocates and holds its best range
         </li>
         <li>
           <strong>Crafting, inventory, and equipment</strong> systems with a
-          3D-printer progression loop, plus destructible/mineable rock and ice
-          formations
+          3D-printer progression loop and mineable resource rocks
         </li>
         <li>
-          <strong>Procedural, asset-free audio</strong> — an{" "}
-          <strong>AVAudioEngine</strong> PCM synth engine with per-biome music
-          moods and a named melody pool, no bundled audio files
+          <strong>Dynamic lighting</strong> for dark maps, lamp shadows and an
+          optional post-processing pass (<CodeTag>ShaderLib</CodeTag>)
         </li>
         <li>
-          Procedural rock/terrain texture generation and shader-based ambient
-          overlays (<CodeTag>ShaderLib</CodeTag>)
+          <strong>AVAudioEngine</strong> audio — a licensed soundtrack plus
+          procedurally synthesized sound effects, no bundled effect files
         </li>
         <li>
-          Touch controls via <CodeTag>GCVirtualController</CodeTag>, plus
-          keyboard and game controller support
+          <strong>StoreKit 2</strong> free-to-start model with a Full Version
+          unlock, earlier buyers recognized through{" "}
+          <CodeTag>AppTransaction</CodeTag>; <strong>Game Center</strong>{" "}
+          achievements and leaderboards
+        </li>
+        <li>
+          English and Ukrainian localization from JSON string tables in the
+          shared core, switchable at runtime
+        </li>
+        <li>
+          Touch controls with tap-to-move, keyboard and full mouse control on
+          Mac, plus game controller support
         </li>
         <li>
           <strong>Framework-agnostic core</strong> (
@@ -78,9 +96,11 @@ export const wavefall: Project = {
           experimental SwiftPM + Raylib port that runs natively on Linux
         </li>
         <li>
-          <strong>Swift Testing</strong> framework for unit tests, plus an
-          RPC-driven regression suite exercising crafting/inventory/combat
-          end-to-end; <strong>Xcode Cloud</strong> CI
+          <strong>Swift Testing</strong> suite (~350 test files) and{" "}
+          <strong>Xcode Cloud</strong> CI; an agent channel and MCP server let
+          AI agents play the game, headless arena runs on parallel hosts
+          measure balance, and App Store screenshots and preview videos are
+          recorded from scripted scenes
         </li>
       </Bullets>
 
