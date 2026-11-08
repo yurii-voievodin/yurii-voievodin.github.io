@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { siteConfig } from '@/lib/config';
 import { WAVEFALL_TOUR_IMAGES } from '@/lib/wavefall-images';
 import AppLanding from '@/components/landing/AppLanding';
-import TrailerPlayer from '@/components/wavefall/TrailerPlayer';
+import TrailerPlayer, { type TrailerVariant } from '@/components/wavefall/TrailerPlayer';
 import {
     wavefallContent,
     formatWithReleaseDate,
@@ -36,6 +36,32 @@ function LocaleSwitcher({ locale }: { locale: Locale }) {
     );
 }
 
+function trailerVariants(locale: Locale): TrailerVariant[] {
+    return [
+        {
+            id: 'mac',
+            label: 'Mac',
+            src: '/wavefall/trailer-mac-dock.mp4',
+            poster: '/wavefall/trailer-mac-dock-poster.jpg',
+            aspect: '1920 / 1080',
+        },
+        {
+            id: 'iphone',
+            label: 'iPhone',
+            src: `/wavefall/trailer-dock-${locale}.mp4`,
+            poster: `/wavefall/trailer-dock-poster-${locale}.jpg`,
+            aspect: '1920 / 886',
+        },
+        {
+            id: 'ipad',
+            label: 'iPad',
+            src: `/wavefall/trailer-ipad-${locale}.mp4`,
+            poster: `/wavefall/trailer-ipad-poster-${locale}.jpg`,
+            aspect: '1600 / 1200',
+        },
+    ];
+}
+
 export default function WavefallLanding({ locale }: { locale: Locale }) {
     const content = wavefallContent[locale];
 
@@ -61,29 +87,7 @@ export default function WavefallLanding({ locale }: { locale: Locale }) {
                     heading: content.trailerHeading,
                     children: (
                         <TrailerPlayer
-                            variants={[
-                                {
-                                    id: 'iphone',
-                                    label: 'iPhone',
-                                    src: `/wavefall/trailer-${locale}.mp4`,
-                                    poster: `/wavefall/trailer-poster-${locale}.jpg`,
-                                    aspect: '1920 / 886',
-                                },
-                                {
-                                    id: 'ipad',
-                                    label: 'iPad',
-                                    src: `/wavefall/trailer-ipad-${locale}.mp4`,
-                                    poster: `/wavefall/trailer-ipad-poster-${locale}.jpg`,
-                                    aspect: '1600 / 1200',
-                                },
-                                {
-                                    id: 'mac',
-                                    label: 'Mac',
-                                    src: '/wavefall/trailer-mac.mp4',
-                                    poster: '/wavefall/trailer-mac-poster.jpg',
-                                    aspect: '1920 / 1080',
-                                },
-                            ]}
+                            variants={trailerVariants(locale)}
                             ariaLabel={content.trailerAria}
                             alt={content.trailerAlt}
                         />
