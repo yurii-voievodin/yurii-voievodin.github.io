@@ -27,13 +27,13 @@ export function buildWavefallMetadata(locale: Locale): Metadata {
             url,
             type: 'website',
             locale: content.ogLocale,
-            images: [{ url: `${siteConfig.url}/wavefall/trailer-poster.jpg?v=2` }],
+            images: [{ url: `${siteConfig.url}/wavefall/trailer-poster.jpg?v=3` }],
         },
         twitter: {
             card: 'summary_large_image',
             title: content.metaTitle,
             description: content.metaDescription,
-            images: [`${siteConfig.url}/wavefall/trailer-poster.jpg?v=2`],
+            images: [`${siteConfig.url}/wavefall/trailer-poster.jpg?v=3`],
         },
     };
 }
