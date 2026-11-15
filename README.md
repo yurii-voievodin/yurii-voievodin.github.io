@@ -1,68 +1,21 @@
-# Personal Blog & CV - Next.js Static Site
+# Yurii Voievodin — personal site
 
-Built with Next.js, TypeScript, and Tailwind CSS.
-
-## Screenshots
+CV, projects, travel blog and app landing pages, served from GitHub Pages as plain HTML and CSS. The browser receives no JavaScript.
 
 ![Blog Listing Page](public/Screenshot%202025-10-18%20at%2018.31.27.png)
-*Blog listing page showing travel adventures and tech articles*
 
-## Getting Started
+## Build
 
-### Development
+Python 3.10+ standard library only — nothing to install.
 
-1. Install dependencies:
 ```bash
-npm install
+python3 nojs/build.py           # writes nojs/dist
+python3 nojs/build.py --serve   # build, then serve on http://localhost:8000
+python3 nojs/check.py           # no <script>, every id, link and image resolves
 ```
 
-2. Run the development server:
-```bash
-npm run dev
-```
-
-3. Open [http://localhost:3000](http://localhost:3000) to view the site
-
-### Building for Production
-
-1. Build the project:
-```bash
-npm run build
-```
-
-2. The static files will be generated in the `out` directory
-
+Source layout, template markers and areas are described in [nojs/README.md](nojs/README.md). Images and other static files live in `public/` and are copied into the build as they are.
 
 ## Deployment
 
-### Static Hosting (Recommended)
-
-1. Build the static site:
-```bash
-npm run build
-```
-
-2. Deploy the `out` folder to any static hosting service:
-   - **GitHub Pages**: Upload to your repository
-
-
-## Technologies Used
-
-- **Next.js 15**: React framework with App Router
-- **TypeScript**: Type-safe JavaScript for blog data and components
-- **Tailwind CSS**: Utility-first CSS framework
-- **React Components**: Custom blog post layouts with full flexibility
-- **Lucide React**: Beautiful icons
-- **Date-fns**: Date formatting
-- **Static Site Generation**: Pre-rendered pages for optimal performance
-
-## Scripts
-
-- `npm run dev` - Start development server
-- `npm run build` - Build for production and export static files
-- `npm run start` - Start production server (not needed for static export)
-- `npm run lint` - Run ESLint
-
-## License
-
-This project is open source and available under the [MIT License](LICENSE).
+Every push to `main` runs `.github/workflows/deploy.yml`: it builds with Python, runs the checks and publishes `nojs/dist` to GitHub Pages.

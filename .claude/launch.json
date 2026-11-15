@@ -2,11 +2,10 @@
   "version": "0.0.1",
   "configurations": [
     {
-      "name": "Next.js dev",
+      "name": "Static site",
       "runtimeExecutable": "/bin/zsh",
-      "runtimeArgs": ["-l", "-c", "npm run dev"],
-      "port": 3000,
-      "autoPort": true
+      "runtimeArgs": ["-l", "-c", "python3 nojs/build.py --serve"],
+      "port": 8000
     }
   ]
 }
