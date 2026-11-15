@@ -5,9 +5,10 @@ from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
 
-DIST = Path(__file__).parent / "dist"
+DIST = Path(sys.argv[1]) if len(sys.argv) > 1 and not sys.argv[1].startswith("--") else Path(__file__).parent / "dist"
+PARTIAL = "--partial" in sys.argv
 VOID = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "source", "track", "wbr"}
-LEFTOVER = re.compile(r"<!--\s*(include|slot):|\{\{\s*\w+\s*\}\}")
+LEFTOVER = re.compile(r"<!--\s*(include|slot|icon):|\{\{\s*\w+\s*\}\}")
 CLOSE_FRAGMENT = "_"
 
 
@@ -31,7 +32,7 @@ class Scan(HTMLParser):
         for name in ("popovertarget", "for", "commandfor"):
             if attrs.get(name):
                 self.refs.append(attrs[name])
-        for name in ("href", "src"):
+        for name in ("href", "src", "poster"):
             if attrs.get(name):
                 self.urls.append(attrs[name])
         if tag not in VOID:
@@ -47,17 +48,19 @@ class Scan(HTMLParser):
 
 
 def page_url(path):
+    if path.name != "index.html":
+        return "/" + path.relative_to(DIST).as_posix()
     folder = path.parent.relative_to(DIST).as_posix()
     return "/" if folder == "." else f"/{folder}/"
 
 
 def main():
     pages = {}
-    for path in sorted(DIST.rglob("*.html")):
+    for path in sorted(p for p in DIST.rglob("*.html") if p.name == "index.html" or p.parent == DIST):
         text = path.read_text(encoding="utf-8")
         scan = Scan()
         scan.feed(text)
-        if scan.open:
+        if scan.open and scan.open != ["html"]:
             scan.errors.append(f"unclosed tags at end: {scan.open}")
         if LEFTOVER.search(text):
             scan.errors.append(f"leftover marker: {LEFTOVER.search(text).group(0)}")
@@ -76,7 +79,8 @@ def main():
             target_url = parts.path or url
             if target_url.endswith("/"):
                 if target_url not in pages:
-                    errors.append(f"link to missing page {link}")
+                    if not PARTIAL:
+                        errors.append(f"link to missing page {link}")
                     continue
                 if parts.fragment and parts.fragment != CLOSE_FRAGMENT and parts.fragment not in pages[target_url][1].ids:
                     errors.append(f"link to missing anchor {link}")

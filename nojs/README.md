@@ -1,39 +1,34 @@
-# No-JS prototype
+# Static site (no JavaScript)
 
-A few pages of the site rebuilt as plain HTML + CSS. The build is a Python script that uses only the standard library; the browser receives no JavaScript.
+The site rebuilt as plain HTML + CSS. The build is a Python script that uses only the standard library; the browser receives no JavaScript.
 
 ```bash
-python3 nojs/build.py           # writes nojs/dist
-python3 nojs/check.py           # no <script>, no leftover markers, every id / link / image resolves
-python3 nojs/build.py --serve   # build, then serve on http://localhost:8000
+python3 nojs/build.py                      # writes nojs/dist
+python3 nojs/build.py --serve              # build, then serve on http://localhost:8000
+python3 nojs/build.py --areas blog --out /tmp/site   # build core + one area into another folder
+python3 nojs/check.py [DIR] [--partial]    # no <script>, no leftover markers, every id / link / image resolves
 ```
 
 | Path | Role |
 |---|---|
-| `build.py` | page list, marker replacement, copying the images a page uses from `public/` |
-| `components.py` | Python functions that turn data into HTML (nav, timeline, gallery, tour) |
-| `mdlite.py` | port of `src/lib/markdown.tsx` |
-| `icons.py` | Lucide icon paths from `src/components/icons.tsx` |
-| `partials/` | layout, header, footer, timeline detail sheets |
-| `pages/` | page bodies |
-| `data/` | gallery and tour JSON; the timeline reads `public/data/timeline.json` |
-| `static/site.css` | all styles, plain CSS |
+| `build.py` | loads the areas, renders every page, copies `public/`, writes `site.css`, `sitemap.xml`, `robots.txt` |
+| `engine.py` | template markers and global slots |
+| `page.py` | the `Page` model and everything in `<head>` (meta, Open Graph, hreflang, JSON-LD) |
+| `config.py` | site URL, names, social links, footer navigation |
+| `components.py` | shared HTML helpers: icons, buttons, tags, links, carousel, lightbox |
+| `areas/*.py` | one module per part of the site; each returns its pages from `pages()` and may add `SLOTS` and `files()` |
+| `pages/<area>/` | page templates |
+| `partials/` | layouts, nav, footer |
+| `data/` | JSON content |
+| `static/css/` | `base.css` first, then every other file in name order, joined into `/static/site.css` |
 
 Template markers:
 
 ```html
-<!-- include: partials/header.html -->   another file
-<!-- slot: timeline -->                   HTML from a Python function (SLOTS in build.py)
-{{ title }}                               escaped text (Page.vars in build.py)
+<!-- include: partials/footer.html -->   another file
+<!-- slot: timeline -->                   HTML from a Python function (page.slots, then area SLOTS)
+<!-- icon: ArrowLeft 16 -->               an icon from icons.py, optional size
+{{ title }}                               escaped text (Page.text_vars)
 ```
 
-What replaces the React code:
-
-| Page | Was | Now |
-|---|---|---|
-| header | `Navigation.tsx` | `aria-current="page"` set by `build.py` |
-| Q&A | `useState` accordion | `<details>` / `<summary>` |
-| Timeline | `fetch` + `TimelineHighlighter` | rendered at build time, `:target` highlight |
-| Timeline details | `DetailModal` | `popover` + `popovertarget` |
-| Gallery | `PhotoCarousel` + `Lightbox` | `scroll-snap` carousel, `:target` lightbox |
-| Tour | `FeatureTour` | radio buttons + `:has(:checked)` |
+Layouts (`Page.layout`): `home` and `focus` (content + footer), `site` (nav + content + footer), `bare` (content only).

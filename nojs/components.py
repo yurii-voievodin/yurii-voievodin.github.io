@@ -1,118 +1,114 @@
-import re
 from html import escape
 
-from icons import ICONS
-from mdlite import markdown
+import config
+from icons import BRANDS, ICONS
 
 
-def icon(name, size=24, color="currentColor"):
+def icon(name, size=24, color="currentColor", cls=""):
     inner = ICONS.get(name, ICONS["Circle"])
+    class_attr = f"icon {cls}".strip()
     return (
-        f'<svg class="icon" width="{size}" height="{size}" viewBox="0 0 24 24" fill="none" '
+        f'<svg class="{class_attr}" width="{size}" height="{size}" viewBox="0 0 24 24" fill="none" '
         f'stroke="{escape(color)}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" '
         f'aria-hidden="true">{inner}</svg>'
     )
 
 
-def nav(items, current):
+def brand_icon(name, size=20):
+    return (
+        f'<svg class="icon" width="{size}" height="{size}" viewBox="0 0 24 24" fill="currentColor" '
+        f'aria-hidden="true">{BRANDS[name]}</svg>'
+    )
+
+
+def external_attrs(external):
+    return ' target="_blank" rel="noopener noreferrer"' if external else ""
+
+
+def button(href, label_html, variant="primary", external=False, cls=""):
+    class_attr = f"btn btn-{variant} {cls}".strip()
+    return f'<a class="{class_attr}" href="{escape(href)}"{external_attrs(external)}>{label_html}</a>'
+
+
+def back_link(href, label):
+    return f'<a class="back-link" href="{escape(href)}">{icon("ArrowLeft", 16)}{escape(label)}</a>'
+
+
+def tag(text, tone="violet", size="sm"):
+    return f'<span class="tag tag-{tone} tag-{size}">{escape(text)}</span>'
+
+
+def tag_row(items, tone="violet", size="sm", cls=""):
+    class_attr = f"tag-row {cls}".strip()
+    return f'<div class="{class_attr}">' + "".join(tag(t, tone, size) for t in items) + "</div>"
+
+
+def gradient_text(html, element="span", cls=""):
+    class_attr = f"gradient-text {cls}".strip()
+    return f'<{element} class="{class_attr}">{html}</{element}>'
+
+
+def gradient_link(href, html, external=False):
+    return f'<a class="gradient-link" href="{escape(href)}"{external_attrs(external)}>{html}</a>'
+
+
+def inline_link(href, html):
+    return f'<a class="inline-link" href="{escape(href)}">{html}</a>'
+
+
+def section_heading(html, size="md", icon_name=None, cls=""):
+    class_attr = f"section-heading section-heading-{size} {cls}".strip()
+    mark = f'<span class="section-heading-icon">{icon(icon_name, 24)}</span>' if icon_name else ""
+    return f'<h2 class="{class_attr}">{mark}{html}</h2>'
+
+
+def footer_links(current):
     links = []
-    for label, href in items:
+    for label, href, icon_name in config.NAVIGATION:
         mark = ' aria-current="page"' if href == current else ""
-        links.append(f'<a href="{href}"{mark}>{escape(label)}</a>')
+        links.append(f'<a href="{href}"{mark}>{icon(icon_name, 16)}{escape(label)}</a>')
     return "\n".join(links)
 
 
-def date_id(date):
-    return re.sub(r"[\s,.-]", "", date or "").lower()
-
-
-def timeline(events):
-    return '<ol class="timeline">\n' + "\n".join(timeline_event(e) for e in events) + "\n</ol>"
-
-
-def timeline_event(event):
-    data = event.get("data") or {}
-    symbol = data.get("symbol") or {}
-    marker = icon(symbol["icon"], 16, symbol.get("color") or "gray") if symbol.get("icon") else '<span class="timeline-pip"></span>'
-
-    detail = data.get("detailPage")
-    button = (
-        f'<button class="timeline-more" popovertarget="detail-{detail}" aria-label="View details">{icon("Plus", 20)}</button>'
-        if detail
-        else ""
-    )
-    anchor = date_id(event.get("date"))
-    id_attr = f' id="{anchor}"' if anchor else ""
-
-    return f"""<li class="timeline-event">
-  <span class="timeline-marker">{marker}</span>
-  <article class="panel timeline-card"{id_attr}>
-    <div class="timeline-text prose">
-{timeline_text(event, data)}
-    </div>
-    {button}
-  </article>
-</li>"""
-
-
-def timeline_text(event, data):
-    if event.get("comment"):
-        return markdown(event["comment"])
-
-    parts = []
-    if event.get("date"):
-        parts.append(f'<p class="timeline-date">{escape(event["date"])}</p>')
-    if event.get("title"):
-        parts.append(f'<div class="timeline-title">{markdown(event["title"])}</div>')
-    if event.get("description"):
-        parts.append(markdown(event["description"]))
-    if data.get("image"):
-        src = escape("/" + data["image"]["path"])
-        parts.append(f'<img class="timeline-image" src="{src}" alt="" width="320" height="240" loading="lazy">')
-    return "\n".join(parts)
-
-
-def gallery(name, photos):
+def carousel(name, photos, shape="tall", lightbox=False):
     total = len(photos)
-    slides, boxes = [], []
-
+    slides = []
     for i, photo in enumerate(photos, 1):
-        photo_id = f"{name}-photo-{i}"
+        src, alt = escape(photo["src"]), escape(photo["alt"])
+        loading = "eager" if i == 1 else "lazy"
+        counter = f'<span class="slide-counter">{i} / {total}</span>' if total > 1 else ""
+        inner = f'<img src="{src}" alt="{alt}" loading="{loading}">{counter}'
+        if lightbox:
+            slides.append(f'<a class="slide" href="#{name}-photo-{i}" aria-label="Open photo {i} of {total}">{inner}</a>')
+        else:
+            slides.append(f'<div class="slide">{inner}</div>')
+    html = (
+        f'<div class="carousel carousel-{shape}" id="{name}" tabindex="0" role="region" '
+        f'aria-roledescription="carousel" aria-label="Photo carousel">\n' + "\n".join(slides) + "\n</div>"
+    )
+    return html + ("\n" + lightboxes(name, photos) if lightbox else "")
+
+
+def lightboxes(name, photos, caption_key=None):
+    total = len(photos)
+    boxes = []
+    for i, photo in enumerate(photos, 1):
         prev_id = f"{name}-photo-{(i - 2) % total + 1}"
         next_id = f"{name}-photo-{i % total + 1}"
-        src, alt, caption = escape(photo["src"]), escape(photo["alt"]), escape(photo["caption"])
-
-        slides.append(f"""<a class="slide" href="#{photo_id}" aria-label="Open photo {i} of {total}">
-  <img src="{src}" alt="{alt}" loading="{'eager' if i == 1 else 'lazy'}">
-  <span class="slide-counter">{i} / {total}</span>
-</a>""")
-
-        boxes.append(f"""<div class="lightbox" id="{photo_id}" role="dialog" aria-label="Photo {i} of {total}">
+        src, alt = escape(photo["src"]), escape(photo["alt"])
+        caption = photo.get(caption_key) if caption_key else None
+        caption_html = f'<span class="lightbox-text">{escape(caption)}</span>' if caption else ""
+        arrows = (
+            f'<a class="lightbox-prev" href="#{prev_id}" aria-label="Previous image">{icon("ArrowLeft", 20)}</a>\n'
+            f'  <a class="lightbox-next" href="#{next_id}" aria-label="Next image">{icon("ArrowRight", 20)}</a>\n'
+            if total > 1
+            else ""
+        )
+        boxes.append(f"""<div class="lightbox" id="{name}-photo-{i}" role="dialog" aria-label="Photo {i} of {total}">
   <a class="lightbox-close" href="#_" aria-label="Close image viewer">{icon("X", 20)}</a>
-  <a class="lightbox-prev" href="#{prev_id}" aria-label="Previous image">{icon("ArrowLeft", 20)}</a>
-  <a class="lightbox-next" href="#{next_id}" aria-label="Next image">{icon("ArrowRight", 20)}</a>
-  <img src="{src}" alt="{alt}" loading="lazy">
-  <p class="lightbox-caption"><strong>Photo {i} of {total}</strong> {caption}</p>
+  {arrows}<figure>
+    <img src="{src}" alt="{alt}" loading="lazy">
+    <figcaption><strong>Photo {i} of {total}</strong>{caption_html}</figcaption>
+  </figure>
 </div>""")
-
-    return (
-        f'<div class="carousel" id="{name}" tabindex="0" role="region" aria-label="Photo carousel">\n'
-        + "\n".join(slides)
-        + "\n</div>\n"
-        + "\n".join(boxes)
-    )
-
-
-def feature_tour(name, items):
-    out = []
-    for i, item in enumerate(items):
-        checked = " checked" if i == 0 else ""
-        out.append(f"""<label class="tour-item">
-  <input class="visually-hidden" type="radio" name="tour-{name}"{checked}>
-  <img class="tour-shot" src="{escape(item["image"])}" alt="" loading="{'eager' if i == 0 else 'lazy'}">
-  <span class="tour-text">
-    <span class="tour-title">{escape(item["title"])}</span>
-    <span class="tour-body"><span>{escape(item["body"])}</span></span>
-  </span>
-</label>""")
-    return f'<div class="tour" style="--n: {len(items)}">\n' + "\n".join(out) + "\n</div>"
+    return "\n".join(boxes)

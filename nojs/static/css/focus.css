@@ -1,0 +1,12 @@
+.page-intro { margin-bottom: 3rem; }
+.page-title { margin-bottom: 1rem; color: var(--zinc-100); font-size: 2.25rem; line-height: 2.5rem; font-weight: 700; }
+@media (min-width: 768px) { .page-title { font-size: 3rem; line-height: 1; } }
+.page-lead { color: var(--zinc-300); font-size: 1.125rem; line-height: 1.625; }
+
+.security-list { display: grid; gap: 1.5rem; }
+.security-section { padding-block: 1rem; color: var(--zinc-100); }
+@media (min-width: 768px) { .security-section { padding: 2rem; } }
+.security-section .section-heading { margin-bottom: 1rem; }
+.security-body { color: var(--zinc-300); line-height: 1.625; }
+.security-body > * + * { margin-top: 0.75rem; }
+.security-section .tag-row { margin-top: 1rem; }
