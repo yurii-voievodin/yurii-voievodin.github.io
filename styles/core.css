@@ -1,0 +1,12 @@
+.home-hero { padding-top: 4rem; }
+@media (min-width: 768px) { .home-hero { padding-top: 6rem; } }
+.home-title { margin-bottom: 1rem; font-size: 2.5rem; line-height: 1.15; font-weight: 700; }
+@media (min-width: 640px) { .home-title { font-size: 3rem; } }
+@media (min-width: 768px) { .home-title { font-size: 3.5rem; } }
+.home-title-first { color: var(--zinc-100); }
+.home-lead { max-width: 36rem; margin-bottom: 2rem; color: var(--zinc-300); font-size: 1.125rem; line-height: 1.625; }
+.home-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; }
+
+.not-found { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; padding-inline: 1rem; }
+.not-found h1 { margin-bottom: 0.5rem; color: var(--zinc-100); font-size: 4.5rem; line-height: 1; font-weight: 700; }
+.not-found p { margin-bottom: 2rem; color: var(--zinc-400); font-size: 1.25rem; line-height: 1.75rem; }

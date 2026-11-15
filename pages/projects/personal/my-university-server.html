@@ -1,0 +1,36 @@
+<title>My University Server — Projects — Yurii Voievodin</title>
+<meta name="description" content="Ruby on Rails backend aggregating class schedules from 34+ Ukrainian universities.">
+<meta name="sitemap" content="0.5 monthly">
+
+<div class="width-4xl">
+  <!-- include: layouts/parts/project-header-personal.html -->
+  <div class="project-intro">
+    <a class="project-eyebrow" href="/projects/">Projects</a>
+    <h1 class="page-title project-title">My University Server</h1>
+    <p class="accent-text project-summary">Ruby on Rails backend aggregating class schedules from 34+ Ukrainian universities.</p>
+  </div>
+  <nav class="project-pager" aria-label="Project navigation"><a href="/projects/personal/my-university/"><!-- icon: ArrowLeft 18 --><span><small>Newer</small>My University</span></a></nav>
+  <article class="panel panel-clip panel-responsive project-card">
+    <div class="project-meta">
+      <span class="project-date">24 December 2018</span>
+      <div class="tag-row"><span class="tag tag-accent tag-sm">Backend</span></div>
+    </div>
+<div class="project-body">
+<p><a class="accent-link" href="https://github.com/university-my/server-rails">My University Server</a> — backend for the My University iOS app powered by <a class="accent-link" href="https://rubyonrails.org">Ruby on Rails</a>. Aggregates class schedules from 34+ Ukrainian universities via university-specific import services, exposes a REST API for the mobile app, and provides an admin dashboard for data management.</p>
+<p class="project-label">Technical info:</p>
+<ul class="bullets">
+  <li><strong>Ruby on Rails 7.0</strong> with <strong>Ruby 3.1</strong>, MVC architecture (~256 Ruby source files)</li>
+  <li><strong>PostgreSQL</strong> database with 10+ models — <code>University</code>, <code>Teacher</code>, <code>Group</code>, <code>Lesson</code>, <code>Auditorium</code>, <code>Discipline</code>, <code>Building</code>, <code>Department</code>, <code>Faculty</code>, <code>Speciality</code></li>
+  <li><strong>REST API</strong> (<code>/api/v1/</code>) with <strong>JBuilder</strong> JSON responses — endpoints for universities, teachers, groups, auditoriums, buildings, and lessons</li>
+  <li><strong>37 service classes</strong> for university-specific schedule import and parsing from external APIs</li>
+  <li><strong>37 background jobs</strong> with <strong>Whenever</strong> cron scheduling for automated data imports</li>
+  <li><strong>ActiveAdmin</strong> dashboard with role-based access control (admin, reader, editor)</li>
+  <li><strong>Devise</strong> for authentication, <strong>Pundit</strong> for authorization policies</li>
+  <li><strong>Ahoy</strong> for event tracking and analytics, <strong>Blazer</strong> for SQL query dashboard</li>
+  <li><strong>FriendlyID</strong> for SEO-friendly URL slugs, <strong>Sitemap Generator</strong> for XML sitemaps</li>
+  <li><strong>Hotwire</strong> (Turbo + Stimulus) for frontend, <strong>Import Maps</strong> for JavaScript</li>
+</ul>
+</div>
+<img class="project-footer-image" src="/projects/MyUniversity/landing.png" alt="My University landing page" width="1280" height="800" loading="lazy">
+  </article>
+</div>

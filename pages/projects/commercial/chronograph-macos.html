@@ -1,0 +1,49 @@
+<title>Chronograph (macOS) — Projects — Yurii Voievodin</title>
+<meta name="description" content="macOS counterpart of the Pomodoro timer app, sharing a codebase and Core Data schema with the iOS version.">
+<meta name="sitemap" content="0.5 monthly">
+
+<div class="width-4xl">
+  <!-- include: layouts/parts/project-header-commercial.html -->
+  <div class="project-intro">
+    <a class="project-eyebrow" href="/projects/">Projects</a>
+    <h1 class="page-title project-title">Chronograph (macOS)</h1>
+    <p class="accent-text project-summary">macOS counterpart of the Pomodoro timer app, sharing a codebase and Core Data schema with the iOS version.</p>
+  </div>
+  <nav class="project-pager" aria-label="Project navigation"><a href="/projects/commercial/chronograph-ios/"><!-- icon: ArrowLeft 18 --><span><small>Newer</small>Chronograph (iOS)</span></a><a class="project-pager-older" href="/projects/commercial/sumdu/"><span><small>Older</small>SumDU</span><!-- icon: ArrowRight 18 --></a></nav>
+  <article class="panel panel-clip panel-responsive project-card">
+    <div class="project-meta">
+      <span class="project-date">March 2016</span>
+      <div class="tag-row"><span class="tag tag-accent tag-sm">Productivity</span></div>
+    </div>
+<div class="project-columns">
+<div class="project-body">
+<p><a class="accent-link" href="https://apps.apple.com/ua/app/chronograph-my-productivity/id1316023026?mt=12">Chronograph</a> — macOS counterpart of the iOS Pomodoro timer app (App Dev Academy). Native Cocoa/AppKit interface with window-based navigation, custom analog and digital clock views, and shared business logic with the iOS version.</p>
+<p class="project-label">Technical info:</p>
+<ul class="bullets">
+  <li>Written in <strong>Swift</strong>, Cocoa/AppKit with <code>NSWindowController</code>-based navigation and Storyboards</li>
+  <li><strong>Shared codebase</strong> with iOS — all models, networking, Core Data, state machines, managers, and helpers via <code class="project-code-plain">#if os(macOS)</code> guards</li>
+  <li>Custom <code>MacAnalogClockView</code> and <code>MacDigitalClockView</code> — native AppKit timer rendering</li>
+  <li>Statistics screen built with <strong>SwiftUI</strong> — embedded in the Cocoa app</li>
+  <li>Same <strong>Core Data</strong> schema and <strong>SynchronizationManager</strong> as iOS for cross-device sync</li>
+  <li><strong>In-App Subscriptions</strong> (StoreKit) + <strong>Firebase</strong> analytics + <strong>Crashlytics</strong></li>
+  <li>Deployment target: <strong>macOS 10.14+</strong></li>
+</ul>
+<hr>
+<p class="accent-text project-label">My role:</p>
+<ul class="bullets">
+  <li>Design app architecture and build from scratch</li>
+  <li>Design Core Data schema and implement background sync with REST API</li>
+  <li>Implement statistics screen in SwiftUI</li>
+  <li>Manage shared Swift codebase and third-party dependencies across platforms</li>
+  <li>Integration of analytics and In-App Subscriptions</li>
+</ul>
+</div>
+<div class="project-shots">
+<!-- gallery: chronograph-macos-shots carousel-tall -->
+<img src="/projects/Chronograph-macOS/ch-timer.png" alt="Chronograph Timer" width="680" height="980">
+<img src="/projects/Chronograph-macOS/ch-pomodoro.png" alt="Chronograph Pomodoro" width="680" height="980">
+<!-- /gallery -->
+</div>
+</div>
+  </article>
+</div>

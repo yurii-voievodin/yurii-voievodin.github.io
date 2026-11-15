@@ -1,68 +1,72 @@
-# Personal Blog & CV - Next.js Static Site
+# Yurii Voievodin — personal site
 
-Built with Next.js, TypeScript, and Tailwind CSS.
+CV, projects, travel blog and app landing pages, served from GitHub Pages as plain HTML and CSS. The browser receives no JavaScript.
 
-## Screenshots
+![Blog listing page](docs/blog-listing.png)
 
-![Blog Listing Page](public/Screenshot%202025-10-18%20at%2018.31.27.png)
-*Blog listing page showing travel adventures and tech articles*
+## Build
 
-## Getting Started
+Python 3.10+ standard library only — nothing to install.
 
-### Development
-
-1. Install dependencies:
 ```bash
-npm install
+python3 scripts/build.py           # writes dist/ and checks it
+python3 scripts/build.py --serve   # the same, then serves it on http://localhost:8000
 ```
 
-2. Run the development server:
-```bash
-npm run dev
+After every build the output is checked: no `<script>` other than JSON-LD, no leftover markers, every id, link and image resolves (canonical, `hreflang` and `og:image` included). Any problem fails the build.
+
+## Structure
+
+| Folder | What lives there |
+|---|---|
+| `pages/` | one HTML file per page; the path is the URL: `pages/cv.html` → `/cv/`, `pages/blog/index.html` → `/blog/`, `pages/wavefall/uk.html` → `/wavefall/uk/` |
+| `layouts/` | the page frame: `base.html` plus `default`, `nav`, `blank`, and shared parts in `layouts/parts/` (footer, project headers, screenshot galleries) |
+| `styles/` | CSS; `base.css` first, then the rest in name order, joined into `/static/site.css` |
+| `public/` | images, videos, the CV PDF, icons — copied into the site as they are |
+| `scripts/` | `build.py` (the whole build), `check.py` (output checks it runs), `icons.py` (icon shapes) |
+| `docs/` | images for this README |
+
+A page starts with its head data, then its HTML:
+
+```html
+<title>CV - Yurii Voievodin</title>
+<meta name="description" content="…">
+<meta name="layout" content="nav">
+<meta name="sitemap" content="0.8 monthly">
+
+<div class="…">…</div>
 ```
 
-3. Open [http://localhost:3000](http://localhost:3000) to view the site
+`layout` is `default` (content and footer) when omitted, or `nav` (with the top bar) or `blank` (content only). A page without `sitemap` stays out of `sitemap.xml`. Other head fields: `type` (`article` puts the page in the RSS feed and on `/blog/`), `published`, `image`, `keywords`, `lang`, `locale`, `robots`, `<link rel="canonical">` and `<link rel="alternate" hreflang>`. Open Graph, Twitter and the rest of `<head>` are generated from these. An `article` needs `image` and `published` (`YYYY-MM-DD`).
 
-### Building for Production
+A page whose canonical is another page takes that page's title and description when it has none of its own; give it no `sitemap`, since only canonical URLs belong there. A page that includes another page must have that page as its canonical, so the two lines below always change together. `pages/projects/index.html` shows the latest project this way:
 
-1. Build the project:
-```bash
-npm run build
+```html
+<link rel="canonical" href="/projects/commercial/hooh/">
+
+<!-- include: pages/projects/commercial/hooh.html -->
 ```
 
-2. The static files will be generated in the `out` directory
+Markers inside HTML:
 
+```html
+<!-- include: layouts/parts/footer.html -->   insert another file
+<!-- icon: ArrowLeft 16 -->                   an icon from scripts/icons.py, optional size
+<!-- slot: posts -->                          the blog tiles, built from the posts' head data
+{{ email }}                                   site values from scripts/build.py: email, github, linkedin, year, lang
+```
+
+A gallery is one `<img>` per photo between two markers; the build writes the carousel or grid and a full-size viewer for each photo, with previous/next links in list order:
+
+```html
+<!-- gallery: hooh-shots carousel-tall -->
+<img src="/projects/Hooh/hooh-chat.png" alt="Hooh AI Chat — retrieving invoices" width="922" height="2000">
+<img src="/projects/Hooh/hooh-pdf-signing.png" alt="Hooh PDF editor — signing a contract" width="922" height="2000">
+<!-- /gallery -->
+```
+
+The first word is the gallery id (viewer ids are `<id>-photo-1`, `-2`, …), the second its kind: `carousel-tall`, `carousel-wide`, `post-grid` (blog) or `personal-grid`. In carousels `alt` describes the screenshot; in grids it is the caption shown in the viewer, and a photo without one gets none.
 
 ## Deployment
 
-### Static Hosting (Recommended)
-
-1. Build the static site:
-```bash
-npm run build
-```
-
-2. Deploy the `out` folder to any static hosting service:
-   - **GitHub Pages**: Upload to your repository
-
-
-## Technologies Used
-
-- **Next.js 15**: React framework with App Router
-- **TypeScript**: Type-safe JavaScript for blog data and components
-- **Tailwind CSS**: Utility-first CSS framework
-- **React Components**: Custom blog post layouts with full flexibility
-- **Lucide React**: Beautiful icons
-- **Date-fns**: Date formatting
-- **Static Site Generation**: Pre-rendered pages for optimal performance
-
-## Scripts
-
-- `npm run dev` - Start development server
-- `npm run build` - Build for production and export static files
-- `npm run start` - Start production server (not needed for static export)
-- `npm run lint` - Run ESLint
-
-## License
-
-This project is open source and available under the [MIT License](LICENSE).
+Every push to `main` runs `.github/workflows/deploy.yml`: it builds and checks with Python and publishes `dist/` to GitHub Pages.
