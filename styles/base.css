@@ -1,5 +1,5 @@
 :root {
-  color-scheme: dark;
+  color-scheme: light dark;
   interpolate-size: allow-keywords;
 
   --bg: #0a0a0a;
@@ -41,6 +41,38 @@
   --ease: cubic-bezier(0.4, 0, 0.2, 1);
   --font-sans: Arial, Helvetica, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #ffffff;
+    --fg: #18181b;
+    --surface-chrome: #f6f5f8;
+    --card-bg: #faf9fb;
+    --card-bg-strong: #f1eff5;
+    --surface-control: #ece9f1;
+    --surface-elevated: #e9e6ef;
+    --surface-code: #ebe8f0;
+    --rail: #c4bdd3;
+    --border-subtle: #e4e1ea;
+    --border-strong: #d6d1df;
+
+    --zinc-100: #18181b;
+    --zinc-200: #27272a;
+    --zinc-300: #3f3f46;
+    --zinc-400: #52525c;
+    --zinc-500: #71717b;
+    --zinc-600: #9f9fa9;
+    --zinc-700: #d4d4d8;
+    --zinc-800: #e4e4e7;
+    --zinc-900: #f4f4f5;
+    --violet-200: #5b21b6;
+    --violet-300: #6d28d9;
+    --violet-400: #7c3aed;
+    --purple-300: #7e22ce;
+    --purple-400: #9333ea;
+  }
+  .btn-secondary:hover { filter: brightness(0.97); }
 }
 
 *, ::before, ::after, ::backdrop {
