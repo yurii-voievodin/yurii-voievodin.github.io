@@ -60,7 +60,7 @@ A gallery is one `<img>` per photo between `{{ gallery id kind }}` and `{{ end }
 
 Viewer ids are `<id>-photo-1`, `-2`, …; the kind is `tall` or `wide` (carousels), `grid` (blog photos) or `personal` (the photos on /personal/). In carousels `alt` describes the screenshot; in grids it is the caption shown in the viewer, and a photo without one gets none.
 
-A project page under `pages/projects/commercial/` or `personal/` also needs `<meta name="image">` (its tile picture) and `<meta name="date">` (shown on the tile and through `{{ date }}` on the page). The tiles on `/projects/` and `/projects/personal/` follow the pages' Older links, newest first, so one chain sets both the grid and the Newer/Older navigation; a broken chain fails the build.
+A project page under `pages/projects/commercial/` or `personal/` also needs `<meta name="image">` (its tile picture, cropped to 4:3) and `<meta name="date">` (shown on the tile and through `{{ date }}` on the page). The tiles on `/projects/` and `/projects/personal/` follow the pages' Older links, newest first, so one chain sets both the grid and the Newer/Older navigation; a broken chain fails the build.
 
 ## Deployment
 
