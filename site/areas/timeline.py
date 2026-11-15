@@ -26,12 +26,6 @@ def timeline_event(event):
         if symbol.get("icon")
         else '<span class="timeline-pip"></span>'
     )
-    detail = data.get("detailPage")
-    button = (
-        f'<button class="timeline-more" popovertarget="detail-{detail}" aria-label="View details">{c.icon("Plus", 20)}</button>'
-        if detail
-        else ""
-    )
     anchor = date_id(event.get("date"))
     id_attr = f' id="{anchor}"' if anchor else ""
     return f"""<li class="timeline-event">
@@ -40,7 +34,6 @@ def timeline_event(event):
     <div class="timeline-text">
 {timeline_text(event, data)}
     </div>
-    {button}
   </article>
 </li>"""
 
