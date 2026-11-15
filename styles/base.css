@@ -72,6 +72,8 @@
 html { line-height: 1.5; -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
 
 body {
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
   background: var(--bg);
   color: var(--fg);
@@ -79,6 +81,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+body > main { flex-grow: 1; }
 
 h1, h2, h3, h4, h5, h6 { font-size: inherit; font-weight: inherit; }
 ol, ul, menu { list-style: none; }
