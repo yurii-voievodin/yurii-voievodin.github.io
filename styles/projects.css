@@ -64,3 +64,18 @@
 .project-pager span { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .project-pager small { display: block; color: var(--zinc-500); font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; }
 .project-pager-older { margin-left: auto; text-align: right; }
+
+.archive-group { margin-bottom: 3rem; }
+.archive-heading { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 0.5rem; margin-bottom: 1rem; }
+.archive-list { display: grid; gap: 1rem; }
+@media (min-width: 768px) { .archive-list { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.archive-card { padding: 1.5rem; color: var(--zinc-300); }
+.archive-card > * + * { margin-top: 0.5rem; }
+.archive-card .project-meta { margin-bottom: 0.75rem; }
+.archive-title { color: var(--zinc-100); font-size: 1.125rem; line-height: 1.75rem; font-weight: 600; }
+.archive-tech { color: var(--zinc-400); font-size: 0.875rem; line-height: 1.25rem; }
+.archive-card .carousel { gap: 0.5rem; max-width: 16rem; margin-top: 1rem; }
+.archive-card .slide { flex-basis: calc(50% - 0.25rem); }
+.archive-card .carousel-tall .slide img { border-radius: 0.5rem; }
+.archive-card .carousel::scroll-button(*) { content: none; }
+.archive-note { color: var(--zinc-500); font-size: 0.875rem; line-height: 1.25rem; }
