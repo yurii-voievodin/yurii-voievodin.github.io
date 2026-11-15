@@ -24,7 +24,6 @@
   --zinc-900: #18181b;
   --accent: #e4e4e7;
   --accent-hover: #ffffff;
-  --accent-strong: #f4f4f5;
   --accent-fill: #f4f4f5;
 
   --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
@@ -58,7 +57,6 @@
     --zinc-900: #f4f4f5;
     --accent: #18181b;
     --accent-hover: #000000;
-    --accent-strong: #27272a;
     --accent-fill: #18181b;
     --hover-brightness: 0.97;
   }
@@ -199,8 +197,7 @@ main :is(p, li) a:not([class]):hover { text-decoration-color: currentColor; }
 .btn-secondary:hover { border-color: var(--rail); filter: brightness(var(--hover-brightness)); }
 
 .panel { background: var(--card-bg); border: 1px solid var(--border-subtle); border-radius: 1rem; box-shadow: var(--shadow-lg); }
-.panel-2xl { overflow: hidden; }
-.panel-3xl { overflow: hidden; }
+.panel-clip { overflow: hidden; }
 @media (max-width: 767px) {
   .panel-responsive { background: none; border: 0; border-radius: 0; box-shadow: none; overflow: visible; }
 }

@@ -20,7 +20,7 @@ After every build the output is checked: no `<script>` other than JSON-LD, no le
 | Folder | What lives there |
 |---|---|
 | `pages/` | one HTML file per page; the path is the URL: `pages/cv.html` → `/cv/`, `pages/blog/index.html` → `/blog/`, `pages/wavefall/uk.html` → `/wavefall/uk/` |
-| `layouts/` | the page frame: `base.html` plus `default`, `nav`, `blank`, and shared parts (nav, footer) |
+| `layouts/` | the page frame: `base.html` plus `default`, `nav`, `blank`, and shared parts in `layouts/parts/` (footer, project headers, screenshot galleries) |
 | `styles/` | CSS; `base.css` first, then the rest in name order, joined into `/static/site.css` |
 | `public/` | images, videos, the CV PDF, icons — copied into the site as they are |
 | `scripts/` | `build.py` (the whole build), `check.py` (output checks it runs), `icons.py` (icon shapes) |
@@ -37,13 +37,14 @@ A page starts with its head data, then its HTML:
 <div class="…">…</div>
 ```
 
-`layout` is `default` (content and footer) when omitted, or `nav` (with the top bar) or `blank` (content only). A page without `sitemap` stays out of `sitemap.xml`. Other head fields: `type` (`article` puts the page in the RSS feed), `published`, `image`, `keywords`, `lang`, `locale`, `robots`, `<link rel="canonical">` and `<link rel="alternate" hreflang>`. Open Graph, Twitter and the rest of `<head>` are generated from these.
+`layout` is `default` (content and footer) when omitted, or `nav` (with the top bar) or `blank` (content only). A page without `sitemap` stays out of `sitemap.xml`. Other head fields: `type` (`article` puts the page in the RSS feed and on `/blog/`), `published`, `image`, `keywords`, `lang`, `locale`, `robots`, `<link rel="canonical">` and `<link rel="alternate" hreflang>`. Open Graph, Twitter and the rest of `<head>` are generated from these.
 
 Markers inside HTML:
 
 ```html
 <!-- include: layouts/parts/footer.html -->   insert another file
 <!-- icon: ArrowLeft 16 -->                   an icon from scripts/icons.py, optional size
+<!-- slot: posts -->                          the blog tiles, built from the posts' head data
 {{ email }}                                   site values from scripts/build.py: email, github, linkedin, year, lang
 ```
 

@@ -1,4 +1,5 @@
 import argparse
+import json
 import os
 import re
 import shutil
@@ -9,7 +10,6 @@ from functools import partial
 from html import escape, unescape
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
-from xml.sax.saxutils import escape as xml_escape
 
 from check import check
 from icons import BRANDS, ICONS
@@ -27,6 +27,10 @@ TITLE = "Yurii Voievodin - Software Developer"
 DESCRIPTION = (
     "Software developer with 14+ years of experience building iOS, macOS and web applications"
     " — CV, projects, and a travel photo blog."
+)
+WEBSITE_LD = json.dumps(
+    {"@context": "https://schema.org", "@type": "WebSite", "name": NAME, "url": URL, "description": DESCRIPTION},
+    ensure_ascii=False,
 )
 GOOGLE_VERIFICATION = "cTGblQb-bn7Tw2ClzLhJfzgTQ94t8V54PnaOiXzZXJ4"
 VARS = {
@@ -98,26 +102,23 @@ class Page:
 
 
 def icon(name, size=24):
-    if name not in BRANDS and name not in ICONS:
-        sys.exit(f"unknown icon '{name}'")
     if name in BRANDS:
-        return (
-            f'<svg class="icon" width="{size}" height="{size}" viewBox="0 0 24 24" fill="currentColor" '
-            f'aria-hidden="true">{BRANDS[name]}</svg>'
-        )
-    return (
-        f'<svg class="icon" width="{size}" height="{size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" '
-        f'stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
-        f"{ICONS[name]}</svg>"
-    )
+        paint, body = 'fill="currentColor"', BRANDS[name]
+    elif name in ICONS:
+        paint = 'fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"'
+        body = ICONS[name]
+    else:
+        sys.exit(f"unknown icon '{name}'")
+    return f'<svg class="icon" width="{size}" height="{size}" viewBox="0 0 24 24" {paint} aria-hidden="true">{body}</svg>'
 
 
-def render(text, page, source):
+def render(text, page, source, posts):
     values = page.vars()
     slots = {
         "head": lambda: head(page),
-        "layout": lambda: render(read(LAYOUTS / f"{page.get('layout', 'default')}.html"), page, "layout"),
-        "content": lambda: render(page.body, page, page.path),
+        "layout": lambda: render(read(LAYOUTS / f"{page.get('layout', 'default')}.html"), page, "layout", posts),
+        "content": lambda: render(page.body, page, page.path, posts),
+        "posts": lambda: tiles(posts),
     }
 
     def replace(match):
@@ -133,7 +134,7 @@ def render(text, page, source):
             text = read(path)
             if PAGES in path.parents:
                 text = split_head(text)[1]
-            return render(text, page, path)
+            return render(text, page, path, posts)
         if name not in slots:
             sys.exit(f"{source}: unknown slot '{name}'")
         return slots[name]()
@@ -205,6 +206,7 @@ def head(page):
         link("icon", "/favicon.ico", type="image/x-icon"),
         link("apple-touch-icon", "/apple-touch-icon.png"),
         link("stylesheet", "/static/site.css"),
+        f'<script type="application/ld+json">{WEBSITE_LD}</script>',
     ]
     return "\n  ".join(tags)
 
@@ -217,11 +219,11 @@ def sitemap(pages):
         priority, changefreq = page.get("sitemap").split()
         lastmod = page.get("published") or date.today().isoformat()
         alternates = "".join(
-            f'\n    <xhtml:link rel="alternate" hreflang="{lang}" href="{xml_escape(absolute(href))}"/>'
+            f'\n    <xhtml:link rel="alternate" hreflang="{lang}" href="{escape(absolute(href))}"/>'
             for lang, href in page.alternates.items()
         )
         entries.append(
-            f"  <url>\n    <loc>{xml_escape(absolute(page.url))}</loc>{alternates}\n"
+            f"  <url>\n    <loc>{escape(absolute(page.url))}</loc>{alternates}\n"
             f"    <lastmod>{lastmod}</lastmod>\n    <changefreq>{changefreq}</changefreq>\n"
             f"    <priority>{priority}</priority>\n  </url>"
         )
@@ -233,27 +235,40 @@ def sitemap(pages):
     )
 
 
-def xml(text):
-    return xml_escape(text, {'"': "&quot;", "'": "&apos;"})
+def headline(post):
+    return post.title.removesuffix(" - " + NAME)
 
 
-def feed(pages):
-    posts = sorted((p for p in pages if p.get("type") == "article"), key=lambda p: p.get("published"), reverse=True)
+def tiles(posts):
+    html = []
+    for i, post in enumerate(posts):
+        lazy = ' loading="lazy"' if i else ""
+        published = date.fromisoformat(post.get("published"))
+        html.append(
+            f'<article class="blog-tile">\n  <img src="{escape(post.get("image"))}" alt=""{lazy}>\n'
+            f'  <div class="blog-tile-body">\n'
+            f'    <a class="blog-tile-link" href="{post.url}"><h2 class="blog-tile-title">{escape(headline(post))}</h2></a>\n'
+            f'    <p class="blog-tile-date">{icon("Calendar", 16)}{published:%b, %Y}</p>\n  </div>\n</article>'
+        )
+    return "\n".join(html)
+
+
+def feed(posts):
     items = []
     for post in posts:
         url = absolute(post.url)
         published = format_datetime(datetime.fromisoformat(post.get("published")).replace(tzinfo=timezone.utc), usegmt=True)
         items.append(
-            f"    <item>\n      <title>{xml(post.title.removesuffix(' - ' + NAME))}</title>\n"
+            f"    <item>\n      <title>{escape(headline(post))}</title>\n"
             f"      <link>{url}</link>\n      <guid>{url}</guid>\n      <pubDate>{published}</pubDate>\n"
-            f"      <description>{xml(post.description)}</description>\n    </item>"
+            f"      <description>{escape(post.description)}</description>\n    </item>"
         )
     return f"""<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>{xml(TITLE)}</title>
+    <title>{escape(TITLE)}</title>
     <link>{URL}</link>
-    <description>{xml(DESCRIPTION)}</description>
+    <description>{escape(DESCRIPTION)}</description>
     <language>en</language>
     <atom:link href="{URL}/feed.xml" rel="self" type="application/rss+xml"/>
 {chr(10).join(items)}
@@ -267,32 +282,28 @@ def write(path, text):
     path.write_text(text, encoding="utf-8")
 
 
-def copy_public(out):
-    for path in PUBLIC.rglob("*"):
-        if path.is_dir() or path.name == ".DS_Store":
-            continue
-        target = out / path.relative_to(PUBLIC)
-        target.parent.mkdir(parents=True, exist_ok=True)
-        try:
-            os.link(path, target)
-        except OSError:
-            shutil.copy2(path, target)
+def hardlink(src, dst):
+    try:
+        os.link(src, dst)
+    except OSError:
+        shutil.copy2(src, dst)
 
 
 def build(out):
     shutil.rmtree(out, ignore_errors=True)
-    copy_public(out)
+    shutil.copytree(PUBLIC, out, ignore=shutil.ignore_patterns(".DS_Store"), copy_function=hardlink)
     styles = [STYLES / "base.css"] + sorted(p for p in STYLES.glob("*.css") if p.name != "base.css")
     write(out / "static/site.css", "\n".join(read(p) for p in styles))
     pages = [Page(path) for path in sorted(PAGES.rglob("*.html"))]
+    posts = sorted((p for p in pages if p.get("type") == "article"), key=lambda p: p.get("published"), reverse=True)
     base = read(LAYOUTS / "base.html")
     for page in pages:
-        write(out / page.output, render(base, page, "layouts/base.html"))
+        write(out / page.output, render(base, page, "layouts/base.html", posts))
     write(out / "sitemap.xml", sitemap(pages))
-    write(out / "feed.xml", feed(pages))
+    write(out / "feed.xml", feed(posts))
     write(out / "robots.txt", f"User-Agent: *\nAllow: /\n\nSitemap: {URL}/sitemap.xml\n")
     print(f"Built {len(pages)} pages into {out}")
-    if check(out):
+    if check(out, {page.url: out / page.output for page in pages}):
         sys.exit(1)
 
 

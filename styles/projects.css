@@ -32,8 +32,7 @@
   transition: color 0.15s var(--ease);
 }
 .project-eyebrow:hover { color: var(--accent-hover); }
-.project-title { margin: 0.5rem 0 0.75rem; color: var(--zinc-100); font-size: 2.25rem; line-height: 2.5rem; font-weight: 700; }
-@media (min-width: 768px) { .project-title { font-size: 3rem; line-height: 1; } }
+.project-title { margin: 0.5rem 0 0.75rem; }
 .project-summary { font-size: 1.125rem; line-height: 1.75rem; font-weight: 500; }
 
 .project-card { padding-block: 1rem; color: var(--zinc-100); }

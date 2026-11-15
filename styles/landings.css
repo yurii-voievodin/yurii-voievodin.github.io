@@ -1,7 +1,6 @@
-.legal { min-height: 100vh; padding: 1.25rem; }
+.legal, .landing { min-height: 100vh; padding: 1.25rem; }
 .legal-head { margin-bottom: 3rem; }
-.legal-head h1 { margin-bottom: 0.5rem; color: var(--zinc-100); font-size: 2.25rem; line-height: 2.5rem; font-weight: 700; }
-@media (min-width: 768px) { .legal-head h1 { font-size: 3rem; line-height: 1; } }
+.legal-head .page-title { margin-bottom: 0.5rem; }
 .legal-kind { color: var(--zinc-400); font-size: 1.125rem; line-height: 1.75rem; font-weight: 500; }
 .legal-updated { margin-top: 0.5rem; color: var(--zinc-500); font-size: 0.875rem; line-height: 1.25rem; }
 .legal-body { color: var(--zinc-300); line-height: 1.625; }
@@ -16,8 +15,6 @@
 .legal-list > li + li { margin-top: 0.5rem; }
 .legal-list strong { color: var(--zinc-100); }
 
-.landing { min-height: 100vh; padding: 1.25rem; }
-
 .wf-locales { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 0.25rem 0.75rem; margin-bottom: 1rem; font-size: 0.75rem; line-height: 1rem; }
 .wf-locale { padding: 0.5rem; color: var(--zinc-400); transition: color 0.15s var(--ease); }
 .wf-locale:hover { color: var(--zinc-200); }
@@ -28,11 +25,10 @@
 @media (min-width: 768px) { .landing-hero { flex-direction: row; align-items: center; } }
 .landing-icon { flex-shrink: 0; width: 112px; height: 112px; border: 1px solid var(--border-strong); border-radius: 1rem; box-shadow: var(--shadow-lg); }
 .landing-icon-bare { border: 0; box-shadow: none; }
-.landing-name { margin-bottom: 0.5rem; color: var(--zinc-100); font-size: 2.25rem; line-height: 2.5rem; font-weight: 700; }
+.landing-name { margin-bottom: 0.5rem; }
 .landing-tagline { margin-bottom: 0.75rem; font-size: 1.125rem; line-height: 1.75rem; font-weight: 600; }
 .landing-intro { max-width: 42rem; color: var(--zinc-300); line-height: 1.625; }
 @media (min-width: 768px) {
-  .landing-name { font-size: 3rem; line-height: 1; }
   .landing-tagline { font-size: 1.25rem; }
 }
 
@@ -169,4 +165,7 @@
 .wf-trailer:has(.wf-trailer-tab-mac :checked) .wf-trailer-frame-mac,
 .wf-trailer:has(.wf-trailer-tab-iphone :checked) .wf-trailer-frame-iphone,
 .wf-trailer:has(.wf-trailer-tab-ipad :checked) .wf-trailer-frame-ipad { display: block; }
+.wf-trailer-frame-mac { aspect-ratio: 1920 / 1080; }
+.wf-trailer-frame-iphone { aspect-ratio: 1920 / 886; }
+.wf-trailer-frame-ipad { aspect-ratio: 1600 / 1200; }
 .wf-trailer-frame video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }

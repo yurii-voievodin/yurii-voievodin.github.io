@@ -1,7 +1,6 @@
 import re
 from collections import Counter
 from html.parser import HTMLParser
-from pathlib import Path
 from urllib.parse import unquote, urlsplit
 
 VOID = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "source", "track", "wbr"}
@@ -44,24 +43,17 @@ class Scan(HTMLParser):
         self.open.pop()
 
 
-def page_url(dist, path):
-    if path.name != "index.html":
-        return "/" + path.relative_to(dist).as_posix()
-    folder = path.parent.relative_to(dist).as_posix()
-    return "/" if folder == "." else f"/{folder}/"
-
-
-def check(dist):
+def check(dist, paths):
     pages = {}
-    for path in sorted(p for p in dist.rglob("*.html") if p.name == "index.html" or p.parent == dist):
+    for url, path in paths.items():
         text = path.read_text(encoding="utf-8")
         scan = Scan()
         scan.feed(text)
-        if scan.open and scan.open != ["html"]:
+        if scan.open:
             scan.errors.append(f"unclosed tags at end: {scan.open}")
-        if LEFTOVER.search(text):
-            scan.errors.append(f"leftover marker: {LEFTOVER.search(text).group(0)}")
-        pages[page_url(dist, path)] = (path, scan)
+        if leftover := LEFTOVER.search(text):
+            scan.errors.append(f"leftover marker: {leftover.group(0)}")
+        pages[url] = (path, scan)
 
     problems = 0
     for url, (path, scan) in pages.items():
