@@ -3,10 +3,10 @@
 The site rebuilt as plain HTML + CSS. The build is a Python script that uses only the standard library; the browser receives no JavaScript.
 
 ```bash
-python3 nojs/build.py                      # writes nojs/dist
-python3 nojs/build.py --serve              # build, then serve on http://localhost:8000
-python3 nojs/build.py --areas blog --out /tmp/site   # build core + one area into another folder
-python3 nojs/check.py [DIR] [--partial]    # no <script>, no leftover markers, every id / link / image resolves
+python3 site/build.py                      # writes site/dist
+python3 site/build.py --serve              # build, then serve on http://localhost:8000
+python3 site/build.py --areas blog --out /tmp/site-preview   # build core + one area into another folder
+python3 site/check.py [DIR] [--partial]    # no <script>, no leftover markers, every id / link / image resolves
 ```
 
 | Path | Role |

@@ -9,13 +9,13 @@ CV, projects, travel blog and app landing pages, served from GitHub Pages as pla
 Python 3.10+ standard library only — nothing to install.
 
 ```bash
-python3 nojs/build.py           # writes nojs/dist
-python3 nojs/build.py --serve   # build, then serve on http://localhost:8000
-python3 nojs/check.py           # no <script>, every id, link and image resolves
+python3 site/build.py           # writes site/dist
+python3 site/build.py --serve   # build, then serve on http://localhost:8000
+python3 site/check.py           # no <script>, every id, link and image resolves
 ```
 
-Source layout, template markers and areas are described in [nojs/README.md](nojs/README.md). Images and other static files live in `public/` and are copied into the build as they are.
+Source layout, template markers and areas are described in [site/README.md](site/README.md). Images and other static files live in `public/` and are copied into the build as they are.
 
 ## Deployment
 
-Every push to `main` runs `.github/workflows/deploy.yml`: it builds with Python, runs the checks and publishes `nojs/dist` to GitHub Pages.
+Every push to `main` runs `.github/workflows/deploy.yml`: it builds with Python, runs the checks and publishes `site/dist` to GitHub Pages.

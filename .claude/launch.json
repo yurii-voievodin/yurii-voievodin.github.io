@@ -4,7 +4,7 @@
     {
       "name": "Static site",
       "runtimeExecutable": "/bin/zsh",
-      "runtimeArgs": ["-l", "-c", "python3 nojs/build.py --serve"],
+      "runtimeArgs": ["-l", "-c", "python3 site/build.py --serve"],
       "port": 8000
     }
   ]

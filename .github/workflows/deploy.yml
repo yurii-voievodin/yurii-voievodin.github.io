@@ -27,10 +27,10 @@ jobs:
           python-version: "3.12"
 
       - name: Build
-        run: python3 nojs/build.py
+        run: python3 site/build.py
 
       - name: Check
-        run: python3 nojs/check.py
+        run: python3 site/check.py
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -38,7 +38,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./nojs/dist
+          path: ./site/dist
 
   deploy:
     environment:
