@@ -5,13 +5,13 @@
 <meta name="sitemap" content="0.5 monthly">
 
 <div class="width-4xl">
-  <!-- include: layouts/parts/project-header-commercial.html -->
+  {{ include project-header-commercial }}
   <div class="project-intro">
     <a class="project-eyebrow" href="/projects/">Projects</a>
     <h1 class="page-title project-title">Look Up</h1>
     <p class="accent-text project-summary">iOS shopping assistant for price comparison, receipt tracking, and shared shopping lists, built for the Saudi market.</p>
   </div>
-  <nav class="project-pager" aria-label="Project navigation"><a href="/projects/commercial/solitaire/"><!-- icon: ArrowLeft 18 --><span><small>Newer</small>Solitaire (Classic)</span></a><a class="project-pager-older" href="/projects/commercial/proveit/"><span><small>Older</small>PROVEIT</span><!-- icon: ArrowRight 18 --></a></nav>
+  <nav class="project-pager" aria-label="Project navigation"><a href="/projects/commercial/solitaire/">{{ icon ArrowLeft 18 }}<span><small>Newer</small>Solitaire (Classic)</span></a><a class="project-pager-older" href="/projects/commercial/proveit/"><span><small>Older</small>PROVEIT</span>{{ icon ArrowRight 18 }}</a></nav>
   <article class="panel panel-clip panel-responsive project-card">
     <div class="project-meta">
       <span class="project-date">{{ date }}</span>
@@ -35,12 +35,12 @@
 </ul>
 </div>
 <div class="project-shots">
-<!-- gallery: look-up-shots carousel-tall -->
+{{ gallery look-up-shots tall }}
 <img src="/projects/LookUp/lk-search-results.png" alt="Look Up Search Results" width="882" height="1528">
 <img src="/projects/LookUp/lk-menu.png" alt="Look Up Menu" width="882" height="1528">
 <img src="/projects/LookUp/lk-cart.png" alt="Look Up Cart" width="882" height="1528">
 <img src="/projects/LookUp/lk-login.png" alt="Look Up Login" width="882" height="1528">
-<!-- /gallery -->
+{{ end }}
 </div>
 </div>
   </article>

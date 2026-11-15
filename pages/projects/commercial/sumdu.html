@@ -5,13 +5,13 @@
 <meta name="sitemap" content="0.5 monthly">
 
 <div class="width-4xl">
-  <!-- include: layouts/parts/project-header-commercial.html -->
+  {{ include project-header-commercial }}
   <div class="project-intro">
     <a class="project-eyebrow" href="/projects/">Projects</a>
     <h1 class="page-title project-title">SumDU</h1>
     <p class="accent-text project-summary">Schedule viewer for Sumy State University — my first published App Store app.</p>
   </div>
-  <nav class="project-pager" aria-label="Project navigation"><a href="/projects/commercial/chronograph-macos/"><!-- icon: ArrowLeft 18 --><span><small>Newer</small>Chronograph (macOS)</span></a></nav>
+  <nav class="project-pager" aria-label="Project navigation"><a href="/projects/commercial/chronograph-macos/">{{ icon ArrowLeft 18 }}<span><small>Newer</small>Chronograph (macOS)</span></a></nav>
   <article class="panel panel-clip panel-responsive project-card">
     <div class="project-meta">
       <span class="project-date">{{ date }}</span>
@@ -41,11 +41,11 @@
 </ul>
 </div>
 <div class="project-shots">
-<!-- gallery: sumdu-shots carousel-tall -->
+{{ gallery sumdu-shots tall }}
 <img src="/projects/SumDU/sumdu-day.png" alt="SumDU Day Schedule" width="342" height="709">
 <img src="/projects/SumDU/sumdu-recent.png" alt="SumDU Recent" width="342" height="709">
 <img src="/projects/SumDU/sumdu-search.png" alt="SumDU Search" width="342" height="709">
-<!-- /gallery -->
+{{ end }}
 </div>
 </div>
   </article>

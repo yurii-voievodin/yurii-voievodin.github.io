@@ -3,7 +3,7 @@
 <meta name="sitemap" content="0.4 yearly">
 
 <div class="width-4xl">
-  <!-- include: layouts/parts/project-header-archive.html -->
+  {{ include project-header-archive }}
   <div class="project-intro">
     <a class="project-eyebrow" href="/projects/">Projects</a>
     <h1 class="page-title project-title">Archive</h1>
@@ -18,20 +18,20 @@
         <h3 class="archive-title">Infantio</h3>
         <p>High-contrast animated videos for infant development, with tips for parents and calming background music. I started the app and built the video player with swipes between clips, session and daily viewing timers, the pull-out settings menu, downloads of new clips over Wi-Fi and the premium upgrade.</p>
         <p class="archive-tech">Swift · UIKit · REST API · In-App Purchases</p>
-        <!-- gallery: archive-infantio carousel-tall -->
+        {{ gallery archive-infantio tall }}
         <img src="/projects/Infantio/infantio-menu.jpg" alt="Infantio — animation categories" width="600" height="1299">
         <img src="/projects/Infantio/infantio-hourglass.jpg" alt="Infantio — an hourglass animation" width="600" height="1299">
-        <!-- /gallery -->
+        {{ end }}
       </article>
       <article class="panel archive-card">
         <div class="project-meta"><span class="project-date">January – April 2020</span><div class="tag-row"><span class="tag tag-accent tag-sm">iOS</span></div></div>
         <h3 class="archive-title">Roadio</h3>
         <p>Trivia game for car passengers: questions about the places along the route, stories and the music on the radio. I started the app from scratch: the map that loads questions by location, the quiz with scoring and answer animations, story and video questions, local and remote push notifications, and Hebrew localization.</p>
         <p class="archive-tech">Swift · Google Maps · Core Location · Firebase · Segment</p>
-        <!-- gallery: archive-roadio carousel-tall -->
+        {{ gallery archive-roadio tall }}
         <img src="/projects/Roadio/roadio-map.jpg" alt="Roadio — questions on the map" width="600" height="1299">
         <img src="/projects/Roadio/roadio-quiz.jpg" alt="Roadio — a quiz question" width="600" height="1299">
-        <!-- /gallery -->
+        {{ end }}
       </article>
       <article class="panel archive-card">
         <div class="project-meta"><span class="project-date">August – September 2019</span><div class="tag-row"><span class="tag tag-accent tag-sm">iOS</span><span class="tag tag-zinc tag-sm">Not released</span></div></div>
@@ -51,10 +51,10 @@
         <p>Vocabulary trainer: add the words you want to learn, sort them into lists and practise with animated flashcards and quizzes.</p>
         <p class="archive-tech">Swift · Core Data · AdMob · In-App Purchases</p>
         <p><a class="accent-link" href="https://apps.apple.com/app/my-words-learn-new-words/id1425005444">App Store</a></p>
-        <!-- gallery: archive-mywords carousel-tall -->
+        {{ gallery archive-mywords tall }}
         <img src="/projects/MyWords/mywords-list.jpg" alt="My Words — the word list" width="600" height="1300">
         <img src="/projects/MyWords/mywords-card.jpg" alt="My Words — studying with flashcards" width="600" height="1300">
-        <!-- /gallery -->
+        {{ end }}
       </article>
       <article class="panel archive-card">
         <div class="project-meta"><span class="project-date">Released May 2017</span><div class="tag-row"><span class="tag tag-accent tag-sm">iOS</span></div></div>
@@ -62,30 +62,30 @@
         <p>Companion app for the CoreCoach abdominal trainer: progressive training videos and instructions for the device.</p>
         <p class="archive-tech">Swift · Video streaming</p>
         <p><a class="accent-link" href="https://apps.apple.com/app/corecoach-tva-trainer-abdominal-core-fitness/id1231067968">App Store</a></p>
-        <!-- gallery: archive-corecoach carousel-tall -->
+        {{ gallery archive-corecoach tall }}
         <img src="/projects/CoreCoach/corecoach-intro.jpg" alt="CoreCoach — introduction" width="392" height="696">
         <img src="/projects/CoreCoach/corecoach-history.jpg" alt="CoreCoach — training history" width="392" height="696">
-        <!-- /gallery -->
+        {{ end }}
       </article>
       <article class="panel archive-card">
         <div class="project-meta"><span class="project-date">June 2016</span><div class="tag-row"><span class="tag tag-accent tag-sm">iOS</span><span class="tag tag-accent tag-sm">iPadOS</span></div></div>
         <h3 class="archive-title">Cashbox</h3>
         <p>Personal finance diary for iPhone and iPad: income, expenses, cash flow and net worth. The main challenges were syncing with a remote API while keeping records in Core Data for offline use, and charts with an iPad layout.</p>
         <p class="archive-tech">Swift · Core Data · Charts · In-App Purchases · Firebase · AdMob</p>
-        <!-- gallery: archive-cashbox carousel-tall -->
+        {{ gallery archive-cashbox tall }}
         <img src="/projects/Cashbox/cashbox-analysis.jpg" alt="Cashbox — spending analysis" width="750" height="1334">
         <img src="/projects/Cashbox/cashbox-accounts.jpg" alt="Cashbox — accounts" width="750" height="1334">
-        <!-- /gallery -->
+        {{ end }}
       </article>
       <article class="panel archive-card">
         <div class="project-meta"><span class="project-date">2016</span><div class="tag-row"><span class="tag tag-accent tag-sm">iOS</span></div></div>
         <h3 class="archive-title">PlusOne</h3>
         <p>Social app for finding people nearby who want to do the same things, somewhere between dating and meeting friends: Facebook login, chat, push notifications and a custom calendar.</p>
         <p class="archive-tech">Swift · Facebook Login · Push notifications</p>
-        <!-- gallery: archive-plusone carousel-tall -->
+        {{ gallery archive-plusone tall }}
         <img src="/projects/PlusOne/plusone-event.jpg" alt="PlusOne — an event" width="750" height="1334">
         <img src="/projects/PlusOne/plusone-calendar.jpg" alt="PlusOne — the events calendar" width="750" height="1334">
-        <!-- /gallery -->
+        {{ end }}
       </article>
       <article class="panel archive-card">
         <div class="project-meta"><span class="project-date">2016 – 2019</span><div class="tag-row"><span class="tag tag-accent tag-sm">CocoaPods</span></div></div>

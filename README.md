@@ -39,33 +39,28 @@ A page starts with its head data, then its HTML:
 
 `layout` is `default` (content and footer) when omitted, or `nav` (with the top bar) or `blank` (content only). A page without `sitemap` stays out of `sitemap.xml`. Other head fields: `type` (`article` puts the page in the RSS feed and on `/blog/`), `published`, `image`, `keywords`, `lang`, `locale`, `robots`, `<link rel="canonical">` and `<link rel="alternate" hreflang>`. Open Graph, Twitter and the rest of `<head>` are generated from these. An `article` needs `image` and `published` (`YYYY-MM-DD`).
 
-A page whose canonical is another page takes that page's title and description when it has none of its own; give it no `sitemap`, since only canonical URLs belong there. A page that includes another page must have that page as its canonical, so the two lines below always change together. `pages/projects/index.html` shows the latest project this way:
+Markers inside HTML, all in `{{ }}`:
 
 ```html
-<link rel="canonical" href="/projects/commercial/hooh/">
-
-<!-- include: pages/projects/commercial/hooh.html -->
+{{ include footer }}        insert layouts/parts/footer.html (or a layout such as {{ include default }})
+{{ icon ArrowLeft 16 }}     an icon from scripts/icons.py, optional size
+{{ email }}                 a value: email, github, linkedin, year, lang, and date on project pages
+{{ posts }}                 the blog tiles, built from the posts' head data
+{{ commercial }}            the project tiles of pages/projects/commercial/ ({{ personal }} for personal/)
 ```
 
-Markers inside HTML:
+A gallery is one `<img>` per photo between `{{ gallery id kind }}` and `{{ end }}`; the build writes the carousel or grid and a full-size viewer for each photo, with previous/next links in list order:
 
 ```html
-<!-- include: layouts/parts/footer.html -->   insert another file
-<!-- icon: ArrowLeft 16 -->                   an icon from scripts/icons.py, optional size
-<!-- slot: posts -->                          the blog tiles, built from the posts' head data
-{{ email }}                                   site values from scripts/build.py: email, github, linkedin, year, lang
-```
-
-A gallery is one `<img>` per photo between two markers; the build writes the carousel or grid and a full-size viewer for each photo, with previous/next links in list order:
-
-```html
-<!-- gallery: hooh-shots carousel-tall -->
+{{ gallery hooh-shots tall }}
 <img src="/projects/Hooh/hooh-chat.png" alt="Hooh AI Chat — retrieving invoices" width="922" height="2000">
 <img src="/projects/Hooh/hooh-pdf-signing.png" alt="Hooh PDF editor — signing a contract" width="922" height="2000">
-<!-- /gallery -->
+{{ end }}
 ```
 
-The first word is the gallery id (viewer ids are `<id>-photo-1`, `-2`, …), the second its kind: `carousel-tall`, `carousel-wide`, `post-grid` (blog) or `personal-grid`. In carousels `alt` describes the screenshot; in grids it is the caption shown in the viewer, and a photo without one gets none.
+Viewer ids are `<id>-photo-1`, `-2`, …; the kind is `tall` or `wide` (carousels), `grid` (blog photos) or `personal` (the photos on /personal/). In carousels `alt` describes the screenshot; in grids it is the caption shown in the viewer, and a photo without one gets none.
+
+A project page under `pages/projects/commercial/` or `personal/` also needs `<meta name="image">` (its tile picture) and `<meta name="date">` (shown on the tile and through `{{ date }}` on the page). The tiles on `/projects/` and `/projects/personal/` follow the pages' Older links, newest first, so one chain sets both the grid and the Newer/Older navigation; a broken chain fails the build.
 
 ## Deployment
 

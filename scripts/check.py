@@ -4,7 +4,7 @@ from html.parser import HTMLParser
 from urllib.parse import unquote, urlsplit
 
 VOID = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "source", "track", "wbr"}
-LEFTOVER = re.compile(r"<!--\s*(include|slot|icon|gallery):|<!--\s*/gallery\b|\{\{\s*\w+\s*\}\}")
+LEFTOVER = re.compile(r"<!--\s*(include|slot|icon|gallery):|<!--\s*/gallery\b|\{\{[^{}]*\}\}")
 CLOSE_FRAGMENT = "_"
 
 

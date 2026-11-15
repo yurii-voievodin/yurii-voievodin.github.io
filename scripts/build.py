@@ -43,12 +43,12 @@ VARS = {
 
 HEAD_TAG = re.compile(r'\s*(<title>.*?</title>|<(?:meta|link)\s(?:[^>"]|"[^"]*")*>)', re.S)
 ATTR = re.compile(r'([\w:-]+)="([^"]*)"')
-GALLERY = re.compile(r"<!--\s*gallery:\s*(\S+)\s+(\S+)\s*-->(.*?)<!--\s*/gallery\s*-->", re.S)
-GALLERY_KINDS = ("carousel-tall", "carousel-wide", "post-grid", "personal-grid")
+GALLERY = re.compile(r"\{\{\s*gallery\s+(\S+)\s+(\S+)\s*\}\}(.*?)\{\{\s*end\s*\}\}", re.S)
+GALLERY_KINDS = {"tall": "carousel-tall", "wide": "carousel-wide", "grid": "post-grid", "personal": "personal-grid"}
 PAGER_OLDER = re.compile(r'<a class="project-pager-older" href="([^"]+)"')
 PAGER_NEWER = re.compile(r'<nav class="project-pager"[^>]*><a href="([^"]+)"')
 IMG = re.compile(r'<img\s(?:[^>"]|"[^"]*")*>')
-MARKER = re.compile(r"<!--\s*(include|slot|icon):\s*(\S+?)(?:\s+(\d+))?\s*-->|\{\{\s*(\w+)\s*\}\}")
+MARKER = re.compile(r"\{\{\s*([\w-]+)((?:\s+[^\s{}]+)*)\s*\}\}")
 
 
 def absolute(path):
@@ -151,10 +151,11 @@ def enter(stack, path):
     return stack + (path,)
 
 
-def gallery(gid, kind, body, source):
+def gallery(gid, short, body, source):
     photos = [{k: unescape(v) for k, v in ATTR.findall(tag)} for tag in IMG.findall(body)]
-    if kind not in GALLERY_KINDS:
-        sys.exit(f"{source}: gallery '{gid}' has unknown kind '{kind}', expected one of {', '.join(GALLERY_KINDS)}")
+    if short not in GALLERY_KINDS:
+        sys.exit(f"{source}: gallery '{gid}' has unknown kind '{short}', expected one of {', '.join(GALLERY_KINDS)}")
+    kind = GALLERY_KINDS[short]
     if not photos or IMG.sub("", body).strip() or any("src" not in photo for photo in photos):
         sys.exit(f"{source}: gallery '{gid}' must hold only <img src=…> lines")
     carousel = kind.startswith("carousel")
@@ -217,22 +218,21 @@ def render(text, page, stack, site):
     }
 
     def replace(match):
-        kind, name, size, var = match.groups()
-        if var:
-            if var not in values:
-                sys.exit(f"{source}: unknown variable {{{{ {var} }}}}")
-            return escape(values[var])
-        if kind == "icon":
-            return icon(name, int(size or 24))
-        if kind == "include":
-            path = ROOT / name
-            text = read(path)
-            if PAGES in path.parents:
-                text = split_head(text)[1]
-            return render(text, page, enter(stack, path), site)
-        if name not in slots:
-            sys.exit(f"{source}: unknown slot '{name}'")
-        return slots[name]()
+        word, args = match.group(1), match.group(2).split()
+        if word == "icon" and len(args) in (1, 2) and (len(args) == 1 or args[1].isdigit()):
+            return icon(args[0], int(args[1]) if len(args) == 2 else 24)
+        if word == "include" and len(args) == 1:
+            path = next((p for p in (LAYOUTS / "parts" / f"{args[0]}.html", LAYOUTS / f"{args[0]}.html") if p.exists()), None)
+            if path is None:
+                sys.exit(f"{source}: {{{{ include {args[0]} }}}} finds neither layouts/parts/{args[0]}.html nor layouts/{args[0]}.html")
+            return render(read(path), page, enter(stack, path), site)
+        if word == "gallery":
+            sys.exit(f"{source}: {match.group(0)} has no {{{{ end }}}}")
+        if not args and word in values:
+            return escape(values[word])
+        if not args and word in slots:
+            return slots[word]()
+        sys.exit(f"{source}: unknown {match.group(0)}")
 
     text = GALLERY.sub(lambda match: gallery(*match.groups(), source), text)
     return MARKER.sub(replace, text)

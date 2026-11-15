@@ -5,13 +5,13 @@
 <meta name="sitemap" content="0.5 monthly">
 
 <div class="width-4xl">
-  <!-- include: layouts/parts/project-header-commercial.html -->
+  {{ include project-header-commercial }}
   <div class="project-intro">
     <a class="project-eyebrow" href="/projects/">Projects</a>
     <h1 class="page-title project-title">VistaPrint</h1>
     <p class="accent-text project-summary">E-commerce iOS app for ordering custom printed products, with an integrated design editor.</p>
   </div>
-  <nav class="project-pager" aria-label="Project navigation"><a href="/projects/commercial/hooh/"><!-- icon: ArrowLeft 18 --><span><small>Newer</small>Hooh</span></a><a class="project-pager-older" href="/projects/commercial/vistacreate/"><span><small>Older</small>VistaCreate</span><!-- icon: ArrowRight 18 --></a></nav>
+  <nav class="project-pager" aria-label="Project navigation"><a href="/projects/commercial/hooh/">{{ icon ArrowLeft 18 }}<span><small>Newer</small>Hooh</span></a><a class="project-pager-older" href="/projects/commercial/vistacreate/"><span><small>Older</small>VistaCreate</span>{{ icon ArrowRight 18 }}</a></nav>
   <article class="panel panel-clip panel-responsive project-card">
     <div class="project-meta">
       <span class="project-date">{{ date }}</span>
@@ -44,11 +44,11 @@
 <hr>
 </div>
 <div class="project-shots">
-<!-- gallery: vistaprint-shots carousel-tall -->
+{{ gallery vistaprint-shots tall }}
 <img src="/projects/VistaPrint/vp-product.png" alt="VistaPrint Product Page" width="920" height="2000">
 <img src="/projects/VistaPrint/vp-editor.png" alt="VistaPrint Design Editor" width="920" height="2000">
 <img src="/projects/VistaPrint/vp-account.png" alt="VistaPrint Account Screen" width="920" height="2000">
-<!-- /gallery -->
+{{ end }}
 </div>
 </div>
   </article>
