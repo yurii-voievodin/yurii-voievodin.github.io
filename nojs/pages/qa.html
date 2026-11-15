@@ -1,0 +1,55 @@
+<h1>Q&amp;A</h1>
+<p class="lead">Each card is a native <code>&lt;details&gt;</code> element: click, Enter or Space toggles it, and Ctrl/Cmd+F finds text inside closed answers.</p>
+
+<section class="qa-section">
+  <h2>Architecture &amp; Design</h2>
+
+  <details class="panel qa-card">
+    <summary>What architecture patterns have you used in iOS development?</summary>
+    <div class="qa-answer">
+      <p>I have worked with <strong>MVC</strong>, <strong>MVP</strong>, <strong>MVVM</strong>, and <strong>VIPER</strong> hybrids depending on project complexity and team size.</p>
+      <p>For larger projects, I use <strong>MVP + Combine</strong> where presenters expose <code>@Published</code> state and views observe reactively. For apps with complex navigation, I've used <strong>VIPER hybrids</strong> with Router-based navigation and dedicated Presenter classes. Simpler projects use <strong>MVC with a service layer</strong> — dedicated DataControllers, LogicControllers, and DataSources to keep ViewControllers thin.</p>
+      <p class="tags"><span class="tag">Hooh</span> <span class="tag">VistaPrint</span> <span class="tag">VistaCreate</span> <span class="tag">Clowder</span> <span class="tag">My University</span></p>
+    </div>
+  </details>
+
+  <details class="panel qa-card">
+    <summary>How do you handle modular architecture in large iOS codebases?</summary>
+    <div class="qa-answer">
+      <p>I break monolithic apps into <strong>isolated CocoaPods modules</strong> — each feature or service becomes its own pod with clear API boundaries. This enables parallel development, faster compile times, and independent testing.</p>
+      <p>I've managed projects with up to <strong>37 local modules</strong> (Editor, Gallery, ProductPage, Cart, Storage, Networking) and <strong>177 total pods</strong>. Each module has its own SwiftLint configuration, and shared utilities are extracted into foundation frameworks.</p>
+      <p class="tags"><span class="tag">VistaPrint</span> <span class="tag">VistaCreate</span> <span class="tag">Clowder</span></p>
+    </div>
+  </details>
+
+  <details class="panel qa-card">
+    <summary>UIKit or SwiftUI — which do you prefer and when?</summary>
+    <div class="qa-answer">
+      <p>I use <strong>UIKit as the primary framework</strong> for complex production apps that require fine-grained control over navigation, animations, and legacy compatibility. I integrate <strong>SwiftUI components via UIHostingController</strong> for new screens where declarative UI makes sense — settings, statistics dashboards, onboarding flows.</p>
+      <p>For Metal-based rendering or custom design editors, UIKit is essential. For simpler views with reactive state, SwiftUI is more productive. The key is choosing the right tool per screen rather than committing to one framework entirely.</p>
+      <p class="tags"><span class="tag">Hooh</span> <span class="tag">VistaPrint</span> <span class="tag">VistaCreate</span> <span class="tag">My University</span> <span class="tag">Chronograph</span></p>
+    </div>
+  </details>
+</section>
+
+<section class="qa-section">
+  <h2>Security</h2>
+
+  <details class="panel qa-card">
+    <summary>How do you securely store credentials and tokens on iOS?</summary>
+    <div class="qa-answer">
+      <p>I use Apple <strong>Keychain Services</strong> through libraries like <strong>SAMKeychain</strong> and <strong>KeychainAccess</strong>. Authentication tokens, API keys, and user credentials are stored with appropriate access control flags — never in UserDefaults, plist files, or plain text.</p>
+      <p>For device-bound authentication, I generate unique <strong>X-Device-Token</strong> identifiers stored in the Keychain, which are sent as HTTP headers to prevent token reuse across devices.</p>
+      <p class="tags"><span class="tag">PROVEIT</span> <span class="tag">Solitaire</span> <span class="tag">Clowder</span> <span class="tag">Look Up</span> <span class="tag">Chronograph</span></p>
+    </div>
+  </details>
+
+  <details class="panel qa-card">
+    <summary>Have you implemented API encryption beyond HTTPS?</summary>
+    <div class="qa-answer">
+      <p>Yes. For real-money gaming apps that required additional protection, I implemented <strong>AES encryption</strong> using <strong>RNCryptor</strong> on top of HTTPS. Every request payload and response body is encrypted/decrypted through a custom <strong>Decrypter middleware</strong> in the Alamofire pipeline, making traffic unreadable even if TLS is compromised.</p>
+      <p>I also implemented <strong>token refresh middleware</strong> with plugin-based interceptors to ensure tokens are rotated securely without exposing credentials during renewal.</p>
+      <p class="tags"><span class="tag">PROVEIT</span> <span class="tag">Solitaire</span> <span class="tag">Hooh</span></p>
+    </div>
+  </details>
+</section>
