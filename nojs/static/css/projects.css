@@ -59,9 +59,6 @@
 .project-wide { margin-top: 1.5rem; }
 .project-footer-image { width: 100%; margin-top: 1.5rem; border-radius: 1rem; }
 
-@supports selector(::scroll-button(*)) {
-  .project-card .carousel:has(> .slide:only-child)::scroll-button(*) { content: none; }
-}
 
 .project-nav { display: grid; gap: 1rem; margin-top: 2.5rem; }
 .project-nav-gap { display: none; }

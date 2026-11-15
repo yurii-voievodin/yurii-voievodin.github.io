@@ -293,6 +293,7 @@ button { cursor: pointer; }
   }
   .carousel::scroll-button(*):hover { background: rgb(0 0 0 / 0.7); border-color: rgb(255 255 255 / 0.4); }
   .carousel::scroll-button(*):disabled { opacity: 0.3; cursor: default; }
+  .carousel:not(:has(> .slide + .slide))::scroll-button(*) { content: none; }
   .carousel::scroll-button(left) { content: "‹" / "Previous image"; left: calc(anchor(left) + 0.5rem); }
   .carousel::scroll-button(right) { content: "›" / "Next image"; right: calc(anchor(right) + 0.5rem); }
 }

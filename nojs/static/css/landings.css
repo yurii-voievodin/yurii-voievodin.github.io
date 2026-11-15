@@ -171,7 +171,3 @@
 .wf-trailer:has(.wf-trailer-tab-iphone :checked) .wf-trailer-frame-iphone,
 .wf-trailer:has(.wf-trailer-tab-ipad :checked) .wf-trailer-frame-ipad { display: block; }
 .wf-trailer-frame video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
-
-@supports selector(::scroll-button(*)) {
-  .landing-section .carousel:not(:has(.slide + .slide))::scroll-button(*) { content: none; }
-}
