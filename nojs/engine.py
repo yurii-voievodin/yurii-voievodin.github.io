@@ -33,7 +33,7 @@ def render(path, page):
             return render(name, page)
         if kind == "icon":
             return c.icon(name, int(size or 24))
-        slot = page.slots.get(name) or SLOTS.get(name)
+        slot = page.slots[name] if name in page.slots else SLOTS.get(name)
         if slot is None:
             sys.exit(f"{path}: unknown slot '{name}' on {page.url}")
         return slot(page) if callable(slot) else slot
