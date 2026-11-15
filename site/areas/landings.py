@@ -1,12 +1,7 @@
-import json
 from html import escape
 
-import components as c
-import config
-from engine import ROOT, render
+from engine import render
 from page import Page
-
-DATA = ROOT / "data/landings"
 
 SLOTS = {
     "legal-updated": lambda page: (
@@ -14,13 +9,36 @@ SLOTS = {
     ),
 }
 
+WAVEFALL_LOCALES = {
+    "x-default": "/wavefall/",
+    "en": "/wavefall/",
+    "uk": "/wavefall/uk/",
+    "ko": "/wavefall/ko/",
+    "ja": "/wavefall/ja/",
+    "zh-Hant": "/wavefall/zh-Hant/",
+}
 
-def load(name):
-    return json.loads((DATA / f"{name}.json").read_text(encoding="utf-8"))
+
+def wavefall(lang, og_locale, title, description):
+    url = WAVEFALL_LOCALES[lang]
+    template = "pages/landings/wavefall.html" if lang == "en" else f"pages/landings/wavefall-{lang}.html"
+    return Page(
+        url,
+        title,
+        description,
+        layout="bare",
+        template=template,
+        lang=lang,
+        og_locale=og_locale,
+        image="/wavefall/trailer-poster.jpg?v=3",
+        canonical=url,
+        alternates=WAVEFALL_LOCALES,
+        sitemap=(0.8 if lang == "en" else 0.7, "monthly"),
+    )
 
 
-def fixed(html):
-    return lambda page: html
+def landing(url, title, description, template, image):
+    return Page(url, title, description, layout="bare", template=template, image=image, sitemap=(0.8, "monthly"))
 
 
 def legal_page(url, title, description, app, app_href, kind, body, updated=None, sitemap=(0.3, "yearly")):
@@ -36,217 +54,66 @@ def legal_page(url, title, description, app, app_href, kind, body, updated=None,
     )
 
 
-def badge(store):
-    return (
-        f'<a class="landing-badge" href="{escape(store["href"])}"{c.external_attrs(True)} '
-        f'aria-label="{escape(store["aria"])}"><img src="{escape(store["badge"])}" alt="{escape(store["alt"])}"></a>'
-    )
-
-
-def platforms(items, note):
-    chips = "".join(f'<span class="landing-chip">{escape(item)}</span>' for item in items)
-    return f'<div class="landing-platforms">{chips}<span class="landing-platforms-note">{escape(note)}</span></div>'
-
-
-def outro_links(links):
-    dot = '<span class="landing-dot" aria-hidden="true">·</span>'
-    return dot.join(f'<a class="inline-link" href="{escape(link["href"])}">{escape(link["label"])}</a>' for link in links)
-
-
-def section(heading, inner):
-    return f'<section class="landing-section">\n<h2 class="landing-heading">{escape(heading)}</h2>\n{inner}\n</section>'
-
-
-def card(item, plain):
-    mark = (
-        c.icon(item["icon"], 24, cls="landing-card-icon")
-        if plain
-        else f'<span class="landing-card-tile">{c.icon(item["icon"], 20)}</span>'
-    )
-    return f'<div class="landing-card">{mark}<h3>{escape(item["title"])}</h3><p>{escape(item["body"])}</p></div>'
-
-
-def cards(block):
-    plain = block.get("icon_style") == "plain"
-    lead = f'<p class="landing-lead">{escape(block["lead"])}</p>\n' if block.get("lead") else ""
-    items = "\n".join(card(item, plain) for item in block["cards"])
-    return f'{lead}<div class="landing-cards landing-cards-{block.get("columns", 3)}">\n{items}\n</div>'
-
-
-def tour(name, items):
-    out = []
-    for i, item in enumerate(items, 1):
-        checked = " checked" if i == 1 else ""
-        loading = "eager" if i == 1 else "lazy"
-        out.append(f"""<div class="landing-tour-item">
-  <input class="visually-hidden" type="radio" name="{name}" id="{name}-{i}"{checked}>
-  <img class="landing-tour-shot" src="{escape(item["image"])}" alt="{escape(item["title"])}" width="1600" height="1024" loading="{loading}">
-  <label class="landing-tour-text" for="{name}-{i}">
-    <span class="landing-tour-title">{escape(item["title"])}</span>
-    <span class="landing-tour-body"><span>{escape(item["body"])}</span></span>
-  </label>
-</div>""")
-    return f'<div class="landing-tour" style="--n: {len(items)}">\n' + "\n".join(out) + "\n</div>"
-
-
-def trailer(variants, locale, aria, alt):
-    tabs, frames = [], []
-    for i, variant in enumerate(variants):
-        key = variant["id"]
-        src = escape(variant["src"].replace("{locale}", locale))
-        poster = escape(variant["poster"].replace("{locale}", locale))
-        checked = " checked" if i == 0 else ""
-        tabs.append(
-            f'<label class="wf-trailer-tab wf-trailer-tab-{key}">'
-            f'<input class="visually-hidden" type="radio" name="wf-trailer"{checked}>{escape(variant["label"])}</label>'
-        )
-        frames.append(
-            f'<div class="wf-trailer-frame wf-trailer-frame-{key}" style="aspect-ratio: {variant["aspect"]}">'
-            f'<video src="{src}" poster="{poster}" controls preload="none" playsinline aria-label="{escape(alt)}">'
-            f'<a class="inline-link" href="{src}">{escape(aria)}</a></video></div>'
-        )
-    return (
-        '<div class="wf-trailer">\n<div class="wf-trailer-tabs">'
-        + "".join(tabs)
-        + "</div>\n"
-        + "\n".join(frames)
-        + "\n</div>"
-    )
-
-
-def screenshots(name, images):
-    return c.carousel(name, images, shape="wide", lightbox=True)
-
-
-def landing(url, title, description, app, store, outro_links_html, sections_html, header="", platforms_html="", **fields):
-    return Page(
-        url,
-        title,
-        description,
-        layout="bare",
-        template="pages/landings/landing.html",
-        vars={
-            "app": app["name"],
-            "icon": app["icon"],
-            "tagline": app["tagline"],
-            "intro": app["intro"],
-            "cta_note": app["cta_note"],
-            "outro_heading": app["outro_heading"],
-            "outro_body": app["outro_body"],
-        },
-        slots={
-            "landing-header": fixed(header),
-            "landing-badge": fixed(badge(store)),
-            "landing-platforms": fixed(platforms_html),
-            "landing-sections": fixed("\n".join(sections_html)),
-            "landing-links": fixed(outro_links_html),
-        },
-        **fields,
-    )
-
-
-def app_landing(name):
-    data = load(name)
-    blocks = []
-    for block in data["sections"]:
-        inner = screenshots(f"{name}-screenshots", block["images"]) if block["kind"] == "screenshots" else cards(block)
-        blocks.append(section(block["heading"], inner))
-    app = {
-        **data,
-        "outro_heading": data["footer"]["heading"],
-        "outro_body": data["footer"]["body"],
-    }
-    return landing(
-        data["url"],
-        data["title"],
-        data["description"],
-        app,
-        data["app_store"],
-        outro_links(data["footer"]["links"]),
-        blocks,
-        image=data["image"],
-        sitemap=(0.8, "monthly"),
-    )
-
-
-def locale_switcher(locales, current):
-    links = []
-    for code, loc in locales.items():
-        mark = ' aria-current="page"' if code == current else ""
-        links.append(
-            f'<a class="wf-locale" href="{loc["path"]}" hreflang="{code}" lang="{loc["lang"]}"{mark}>{escape(loc["label"])}</a>'
-        )
-    return '<div class="wf-locales">' + "".join(links) + "</div>"
-
-
-def wavefall_pages():
-    data = load("wavefall")
-    locales = data["locales"]
-    alternates = {"x-default": locales["en"]["path"], **{code: loc["path"] for code, loc in locales.items()}}
-    store = {"href": data["app_store_url"], "badge": "/wavefall/app-store-badge.svg"}
-    pages = []
-    for code, loc in locales.items():
-        date = loc["release_date"]
-        items = [{**item, "image": image} for item, image in zip(loc["tour"], data["tour_images"])]
-        perks = f'<p class="landing-perks">{escape(" · ".join(loc["perks"]))}</p>'
-        blocks = [
-            section(loc["trailer_heading"], trailer(data["trailers"], code, loc["trailer_aria"], loc["trailer_alt"])),
-            section(loc["tour_heading"], tour("wf-tour", items) + "\n" + perks),
-        ]
-        app = {
-            "name": "Wavefall",
-            "icon": "/wavefall/icon.png",
-            "tagline": loc["tagline"],
-            "intro": loc["intro"],
-            "cta_note": loc["cta_note"].replace("{date}", date),
-            "outro_heading": loc["footer_heading"],
-            "outro_body": loc["footer_body"].replace("{date}", date),
-        }
-        links = [
-            {"label": loc["support_label"], "href": "/wavefall-support/"},
-            {"label": loc["privacy_label"], "href": "/wavefall-privacy/"},
-        ]
-        jsonld = {
-            "@context": "https://schema.org",
-            "@type": "SoftwareApplication",
-            "name": "Wavefall",
-            "applicationCategory": "Game",
-            "operatingSystem": "iOS, iPadOS, macOS",
-            "description": loc["description"],
-            "image": config.absolute(data["ld_image"]),
-            "url": config.absolute(loc["path"]),
-            "inLanguage": loc["lang"],
-            "releaseDate": data["release_date_iso"],
-            "offers": {"@type": "Offer", "availability": "https://schema.org/PreOrder", "url": data["app_store_url"]},
-        }
-        pages.append(
-            landing(
-                loc["path"],
-                loc["title"],
-                loc["description"],
-                app,
-                {**store, "aria": loc["app_store_aria"], "alt": loc["app_store_alt"]},
-                outro_links(links),
-                blocks,
-                header=locale_switcher(locales, code),
-                platforms_html=platforms(data["platforms"], loc["platforms_note"]),
-                lang=loc["lang"],
-                og_locale=loc["og_locale"],
-                image=data["og_image"],
-                canonical=loc["path"],
-                alternates=alternates,
-                jsonld=[jsonld],
-                sitemap=(0.8 if code == "en" else 0.7, "monthly"),
-            )
-        )
-    return pages
-
-
 def pages():
     return [
-        *wavefall_pages(),
-        app_landing("wisebudget"),
-        app_landing("headrecorder"),
+        wavefall(
+            "en",
+            "en_US",
+            "Wavefall — Hero Defense & Turn-Based Tactical Combat",
+            "Hero defense with turn-based tactical combat. A rogue AI sends its robots through a portal,"
+            " and you hold the arena alone. Plays offline, no ads, no subscriptions. Native on iPhone, iPad, and Mac."
+            " Pre-order now on the App Store, arriving December 10, 2026.",
+        ),
+        wavefall(
+            "uk",
+            "uk_UA",
+            "Wavefall — оборона героя й покрокові тактичні бої",
+            "Оборона героя з покроковими тактичними боями. ШІ вийшов з-під контролю й шле роботів крізь портал,"
+            " а ти сам тримаєш арену. Без інтернету, реклами й підписок. Нативно на iPhone, iPad і Mac."
+            " Передзамовлення вже в App Store, реліз 10 грудня 2026 року.",
+        ),
+        wavefall(
+            "ko",
+            "ko_KR",
+            "Wavefall — 히어로 디펜스 & 턴제 전술 전투",
+            "턴제 전술 전투의 히어로 디펜스. 통제를 벗어난 AI가 포털 너머로 로봇을 보내고, 당신은 홀로 아레나를 지킵니다."
+            " 오프라인 플레이, 광고 없음, 구독 없음. iPhone, iPad, Mac에서 네이티브로 즐길 수 있습니다."
+            " 지금 App Store에서 사전 주문하세요, 2026년 12월 10일 출시.",
+        ),
+        wavefall(
+            "ja",
+            "ja_JP",
+            "Wavefall — ヒーローディフェンス & ターン制タクティカルバトル",
+            "ターン制タクティカルバトルのヒーローディフェンス。暴走したAIがポータルからロボットを送り込み、あなたは一人でアリーナを守る。"
+            "オフライン対応、広告なし、サブスクなし。iPhone、iPad、Macでネイティブに動作します。"
+            "今すぐApp Storeで予約注文 — 2026年12月10日発売。",
+        ),
+        wavefall(
+            "zh-Hant",
+            "zh_TW",
+            "Wavefall — 英雄防衛 & 回合制戰術戰鬥",
+            "回合制戰術戰鬥的英雄防衛遊戲。失控的 AI 透過傳送門派出機器人，你獨自守住競技場。"
+            "可離線遊玩，沒有廣告，沒有訂閱。原生支援 iPhone、iPad 與 Mac。"
+            "立即在 App Store 預購，2026 年 12 月 10 日推出。",
+        ),
+        landing(
+            "/wisebudget/",
+            "WiseBudget — Your Financial Dashboard for Mac",
+            "Track expenses and income across multiple currencies, sync transactions from Wise and Monobank,"
+            " plan monthly budgets per category, and visualize spending with charts and analytics."
+            " Your data stays on your device.",
+            "pages/landings/wisebudget.html",
+            "/wisebudget/screenshots/dashboard.png",
+        ),
+        landing(
+            "/headrecorder/",
+            "Head Recorder — Screen + Webcam, Recorded Together",
+            "Record your screen and webcam together in one take. Head Recorder composites your camera"
+            " as a customizable bubble over your screen recording — resize it, move it to any corner, mirror it,"
+            " pick circle or rectangle — and saves a single video, entirely on your Mac.",
+            "pages/landings/headrecorder.html",
+            "/headrecorder/screenshots/mac-screen-webcam.png",
+        ),
         legal_page(
             "/wavefall-privacy/",
             "Wavefall — Privacy Policy",

@@ -1,145 +1,123 @@
-import json
-from datetime import date, datetime, timezone
+from datetime import datetime, timezone
 from email.utils import format_datetime
-from html import escape
 from xml.sax.saxutils import escape as xml_escape
 
-import components as c
 import config
-from engine import ROOT
 from page import Page
 
-DATA = ROOT / "data/blog"
-GALLERY = "gallery"
-MONTHS = [
-    "January", "February", "March", "April", "May", "June",
-    "July", "August", "September", "October", "November", "December",
-]
 
-
-def load_posts():
-    posts = [json.loads(path.read_text(encoding="utf-8")) for path in DATA.glob("*.json")]
-    return sorted(posts, key=lambda post: post["date"], reverse=True)
-
-
-def format_date(value, style="monthYear"):
-    day = date.fromisoformat(value)
-    month = MONTHS[day.month - 1]
-    if style == "long":
-        return f"{month} {day.day:02d}, {day.year}"
-    if style == "shortMonthYear":
-        return f"{month[:3]}, {day.year}"
-    return f"{month}, {day.year}"
-
-
-def photo_card(href, src, alt, overlay=None, external=False, cls=""):
-    label = ""
-    if overlay is None:
-        overlay = f'<span class="post-photo-zoom"><span>{c.icon("Maximize2", 20)}</span></span>'
-        label = f' aria-label="Open {escape(alt)} full size"'
-    class_attr = f"post-photo {cls}".strip()
-    return (
-        f'<a class="{class_attr}" href="{escape(href)}"{label}{c.external_attrs(external)}>'
-        f'<img src="{escape(src)}" alt="{escape(alt)}" loading="lazy">{overlay}</a>'
-    )
-
-
-def post_card(post):
-    href = f"/blog/{post['slug']}/"
-    image = escape(post["featuredImage"])
-    shown = format_date(post["date"], "shortMonthYear")
-    return f"""<article class="panel blog-entry">
-  <div class="blog-entry-row">
-    <div class="blog-entry-media"><img src="{image}" alt="" loading="lazy"></div>
-    <div class="blog-entry-body">
-      <a class="blog-entry-link" href="{href}"><h2 class="blog-entry-title">{escape(post['title'])}</h2></a>
-      <p class="blog-entry-excerpt">{escape(post['excerpt'])}</p>
-      <div class="blog-entry-meta">
-        <span class="blog-entry-date">{c.icon("Calendar", 16)}<span>{shown}</span></span>
-        {c.tag_row(post["tags"][:2], cls="blog-entry-tags")}
-      </div>
-    </div>
-  </div>
-</article>"""
-
-
-def gallery_panel(panel, cls):
-    cta = panel.get("cta")
-    note = f'\n  <p class="post-panel-note">{escape(panel["note"])}</p>' if panel.get("note") else ""
-    action = ""
-    if cta:
-        button = c.button(cta["href"], escape(cta["label"]) + c.icon("ArrowRight", 16))
-        action = f'\n  <div class="post-panel-action">{button}</div>'
-        cls += " post-panel-cta"
-    return f"""<section class="panel panel-2xl post-panel {cls}">
-  <h2>{escape(panel['heading'])}</h2>
-  <p>{escape(panel['body'])}</p>{note}{action}
-</section>"""
-
-
-def gallery_heading(text):
-    if not text:
-        return ""
-    mark = f'<span class="section-heading-icon">{c.icon("Camera", 32)}</span>'
-    return f'<h2 class="section-heading section-heading-lg post-gallery-heading">{mark}{escape(text)}</h2>'
-
-
-def post_page(post):
-    photos = post["photos"]
-    hero = post["hero"]
-    intro = post.get("intro")
+def post(slug, title, published, excerpt, tags, image):
     return Page(
-        f"/blog/{post['slug']}/",
-        f"{post['title']} - {config.NAME}",
-        post["excerpt"],
-        template="pages/blog/post.html",
-        vars={
-            "hero_image": hero["image"],
-            "hero_alt": hero["alt"],
-            "hero_title": hero["title"],
-            "hero_subtitle": hero["subtitle"],
-            "post_date": format_date(post["date"], post.get("dateFormat", "monthYear")),
-            "photo_count": str(len(photos)),
-        },
-        slots={
-            "post-tags": lambda page: c.tag_row(post["tags"], tone="onImage", size="md", cls="post-hero-tags"),
-            "post-intro": lambda page: gallery_panel(intro, "post-intro") if intro else "",
-            "post-gallery-heading": lambda page: gallery_heading(post.get("galleryHeading")),
-            "post-photos": lambda page: "\n".join(
-                photo_card(f"#{GALLERY}-photo-{i}", photo["src"], photo["alt"]) for i, photo in enumerate(photos, 1)
-            ),
-            "post-outro": lambda page: "\n".join(gallery_panel(panel, "post-outro") for panel in post.get("outro", [])),
-            "post-lightboxes": lambda page: c.lightboxes(GALLERY, photos, "description"),
-        },
+        f"/blog/{slug}/",
+        f"{title} - {config.NAME}",
+        excerpt,
+        template=f"pages/blog/{slug}.html",
+        vars={"heading": title},
         og_type="article",
-        image=post["featuredImage"],
-        keywords=post["tags"],
-        published=post["date"],
-        tags=post["tags"],
+        image=image,
+        keywords=tags,
+        published=published,
+        tags=tags,
         sitemap=(0.6, "monthly"),
-        lastmod=post["date"],
+        lastmod=published,
     )
+
+
+POSTS = [
+    post(
+        "greece-2026",
+        "Greece 2026",
+        "2026-08-28",
+        "Two summer road trips — camping by turquoise coves and the monasteries of Meteora",
+        ["travel", "photography", "greece", "roadtrip"],
+        "/greece-2026/hero.jpeg",
+    ),
+    post(
+        "bulgaria-2026",
+        "Bulgaria 2026",
+        "2026-05-06",
+        "Black Sea coast, mountains, and ancient cities",
+        ["travel", "photography", "bulgaria", "adventure"],
+        "/bulgaria-2026/hero.jpeg",
+    ),
+    post(
+        "poland-2025",
+        "Poland 2025",
+        "2025-12-01",
+        "Half a year living in Poland",
+        ["photography", "poland", "life"],
+        "/poland-2025/01.jpeg",
+    ),
+    post(
+        "prague-2025",
+        "Prague 2025",
+        "2025-11-01",
+        "A few trips to Prague in 2025",
+        ["photography", "prague", "czechia"],
+        "/prague-2025/01.jpeg",
+    ),
+    post(
+        "austria-2025",
+        "Austria 2025",
+        "2025-10-11",
+        "A journey through Austria's Alpine landscapes and historic Vienna",
+        ["travel", "photography", "austria", "adventure", "alps"],
+        "/austria-2025/IMG_6445.jpeg",
+    ),
+    post(
+        "norway-2025",
+        "Norway 2025",
+        "2025-09-20",
+        "A photographic journey through the stunning landscapes of Norway",
+        ["travel", "photography", "norway", "adventure"],
+        "/norway-2025/IMG_7111.jpeg",
+    ),
+    post(
+        "italy-2025",
+        "Italy 2025",
+        "2025-07-14",
+        "A cultural and visual journey through the heart of Italy",
+        ["travel", "photography", "italy", "adventure", "culture"],
+        "/italy-2025/IMG_5133_SnapseedCopy.jpeg",
+    ),
+    post(
+        "land_rover",
+        "Land Rover Discovery Sport 2017",
+        "2025-02-02",
+        "A collection of my photos with Land Rover in different locations",
+        ["automotive", "photography", "ukraine", "travel"],
+        "/land_rover/10.jpeg",
+    ),
+    post(
+        "kyiv-2025",
+        "Kyiv 2025",
+        "2025-01-01",
+        "Kyiv in 2025",
+        ["photography", "kyiv", "ukraine"],
+        "/kyiv-2025/hero.jpeg",
+    ),
+]
 
 
 def xml(text):
     return xml_escape(text, {'"': "&quot;", "'": "&apos;"})
 
 
-def feed_item(post):
-    url = f"{config.URL}/blog/{post['slug']}/"
-    published = format_datetime(datetime.fromisoformat(post["date"]).replace(tzinfo=timezone.utc), usegmt=True)
+def feed_item(page):
+    url = config.absolute(page.url)
+    published = format_datetime(datetime.fromisoformat(page.published).replace(tzinfo=timezone.utc), usegmt=True)
     return f"""    <item>
-      <title>{xml(post['title'])}</title>
+      <title>{xml(page.vars['heading'])}</title>
       <link>{url}</link>
       <guid>{url}</guid>
       <pubDate>{published}</pubDate>
-      <description>{xml(post['excerpt'])}</description>
+      <description>{xml(page.description)}</description>
     </item>"""
 
 
-def feed(posts):
-    items = "\n".join(feed_item(post) for post in posts)
-    return f"""<?xml version="1.0" encoding="UTF-8"?>
+def files():
+    items = "\n".join(feed_item(page) for page in POSTS)
+    feed = f"""<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>{xml(config.TITLE)}</title>
@@ -150,21 +128,16 @@ def feed(posts):
 {items}
   </channel>
 </rss>"""
-
-
-def files():
-    return {"feed.xml": feed(load_posts())}
+    return {"feed.xml": feed}
 
 
 def pages():
-    posts = load_posts()
     index = Page(
         "/blog/",
         "Travel Blog - Yurii Voievodin",
         "Stories and adventures from my travels around the world. Exploring new places, capturing memories,"
         " and sharing experiences.",
         template="pages/blog/index.html",
-        slots={"blog-entries": "\n".join(post_card(post) for post in posts)},
         sitemap=(0.8, "weekly"),
     )
-    return [index, *(post_page(post) for post in posts)]
+    return [index, *POSTS]

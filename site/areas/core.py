@@ -1,4 +1,3 @@
-import components as c
 from page import Page
 
 HOME_DESCRIPTION = (
@@ -17,13 +16,6 @@ MOVED = {
     "/dustdrift-support/": "/wavefall-support/",
     "/projects/personal/dustdrift/": "/projects/personal/wavefall/",
 }
-
-SLOTS = {
-    "home-actions": lambda page: c.button("/cv/", "explore my cv" + c.icon("ArrowRight", 16))
-    + "\n"
-    + c.button("/projects/", "view projects" + c.icon("ArrowRight", 16), "secondary"),
-}
-
 
 def moved(source, target):
     return Page(

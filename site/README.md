@@ -15,11 +15,10 @@ python3 site/check.py [DIR] [--partial]    # no <script>, no leftover markers, e
 | `engine.py` | template markers and global slots |
 | `page.py` | the `Page` model and everything in `<head>` (meta, Open Graph, hreflang, JSON-LD) |
 | `config.py` | site URL, names, social links, footer navigation |
-| `components.py` | shared HTML helpers: icons, buttons, tags, links, carousel, lightbox |
-| `areas/*.py` | one module per part of the site; each returns its pages from `pages()` and may add `SLOTS` and `files()` |
-| `pages/<area>/` | page templates |
+| `components.py` | icon SVGs and the footer links |
+| `areas/*.py` | one module per part of the site: the list of its pages with their head metadata (`pages()`), plus optional `SLOTS` and generated `files()` such as the RSS feed |
+| `pages/<area>/` | the content of every page as plain HTML |
 | `partials/` | layouts, nav, footer |
-| `data/` | JSON content |
 | `static/css/` | `base.css` first, then every other file in name order, joined into `/static/site.css` |
 
 Template markers:
