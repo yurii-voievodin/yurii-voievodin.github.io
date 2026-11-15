@@ -45,12 +45,17 @@ def link_tree(source, target):
             shutil.copy2(path, dest)
 
 
+def write(path, text):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.unlink(missing_ok=True)
+    path.write_text(text, encoding="utf-8")
+
+
 def write_css(out):
     folder = ROOT / "static/css"
     names = CSS_FIRST + sorted(p.stem for p in folder.glob("*.css") if p.stem not in CSS_FIRST)
     css = "\n".join((folder / f"{name}.css").read_text(encoding="utf-8") for name in names)
-    (out / "static").mkdir(parents=True, exist_ok=True)
-    (out / "static/site.css").write_text(css, encoding="utf-8")
+    write(out / "static/site.css", css)
 
 
 def sitemap(pages):
@@ -84,6 +89,7 @@ def build(out, only=None):
     modules = load_areas(only)
     shutil.rmtree(out, ignore_errors=True)
     link_tree(PUBLIC, out)
+    (out / "favicon.ico").unlink(missing_ok=True)
     shutil.copy2(ROOT / "static/favicon.ico", out / "favicon.ico")
     write_css(out)
 
@@ -93,15 +99,13 @@ def build(out, only=None):
         if page.url in seen:
             sys.exit(f"duplicate page {page.url}")
         seen.add(page.url)
-        target = out / page.output
-        target.parent.mkdir(parents=True, exist_ok=True)
-        target.write_text(render("partials/layouts/base.html", page), encoding="utf-8")
+        write(out / page.output, render("partials/layouts/base.html", page))
 
     files = {"sitemap.xml": sitemap(pages), "robots.txt": ROBOTS}
     for module in modules:
         files.update(getattr(module, "files", dict)())
     for name, text in files.items():
-        (out / name).write_text(text, encoding="utf-8")
+        write(out / name, text)
     print(f"Built {len(pages)} pages into {out}")
 
 

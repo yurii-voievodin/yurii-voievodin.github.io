@@ -244,14 +244,14 @@ button { cursor: pointer; }
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   overscroll-behavior-x: contain;
-  scrollbar-width: none;
+  scrollbar-width: thin;
+  scrollbar-color: var(--rail) transparent;
   border-radius: 1rem;
   background: var(--surface-chrome);
   box-shadow: var(--shadow-lg);
   anchor-name: --carousel;
   anchor-scope: --carousel;
 }
-.carousel::-webkit-scrollbar { display: none; }
 .slide { position: relative; flex: 0 0 100%; scroll-snap-align: center; scroll-snap-stop: always; }
 .carousel-tall .slide { aspect-ratio: 1 / 2; }
 .carousel-wide .slide { aspect-ratio: 16 / 10; }
@@ -274,6 +274,8 @@ button { cursor: pointer; }
 }
 
 @supports selector(::scroll-button(*)) {
+  .carousel { scrollbar-width: none; }
+  .carousel::-webkit-scrollbar { display: none; }
   .carousel::scroll-button(*) {
     position: fixed;
     position-anchor: --carousel;
