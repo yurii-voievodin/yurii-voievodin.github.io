@@ -1,0 +1,24 @@
+<div class="post">
+  <div class="post-back"><a class="back-link" href="/blog/"><!-- icon: ArrowLeft 16 -->Back to Blog</a></div>
+  <header class="post-hero">
+    <div class="post-hero-backdrop"><img src="{{ hero_image }}" alt="{{ hero_alt }}" fetchpriority="high"></div>
+    <div class="post-hero-body">
+      <h1 class="post-hero-title">{{ hero_title }}</h1>
+      <p class="post-hero-subtitle">{{ hero_subtitle }}</p>
+      <div class="post-hero-meta">
+        <span><!-- icon: Calendar 18 --><span>{{ post_date }}</span></span>
+        <span><!-- icon: Camera 18 --><span>{{ photo_count }} Photos</span></span>
+      </div>
+      <!-- slot: post-tags -->
+    </div>
+  </header>
+  <!-- slot: post-intro -->
+  <section class="post-gallery">
+    <!-- slot: post-gallery-heading -->
+    <div class="post-grid">
+<!-- slot: post-photos -->
+    </div>
+  </section>
+  <!-- slot: post-outro -->
+</div>
+<!-- slot: post-lightboxes -->

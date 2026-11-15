@@ -1,0 +1,31 @@
+.personal { min-height: 100vh; padding: 2rem 1rem; }
+.personal-header { margin-bottom: 4rem; text-align: center; }
+.personal-title { margin-bottom: 1.5rem; font-size: 2.25rem; line-height: 2.5rem; font-weight: 700; }
+@media (min-width: 768px) { .personal-title { font-size: 3.75rem; line-height: 1; } }
+.personal-lead { max-width: 42rem; margin-inline: auto; color: var(--zinc-300); font-size: 1.25rem; line-height: 1.625; }
+
+.personal-section { margin-bottom: 5rem; }
+.personal-heading { margin-bottom: 2rem; }
+.personal-grid { display: grid; gap: 1.5rem; }
+@media (min-width: 768px) { .personal-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1024px) { .personal-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+.personal-card:hover { border-color: color-mix(in srgb, var(--violet-500) 30%, transparent); }
+.personal-card-caption {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(to top, rgb(0 0 0 / 0.8), transparent, transparent);
+  opacity: 0;
+  transition: opacity 0.3s var(--ease);
+}
+.personal-card:hover .personal-card-caption,
+.personal-card:focus-visible .personal-card-caption { opacity: 1; }
+.personal-card-caption h3 {
+  position: absolute;
+  inset: auto 0 0;
+  padding: 1rem;
+  color: white;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 500;
+}

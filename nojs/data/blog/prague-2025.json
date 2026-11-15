@@ -1,0 +1,65 @@
+{
+  "slug": "prague-2025",
+  "title": "Prague 2025",
+  "date": "2025-11-01",
+  "excerpt": "A few trips to Prague in 2025",
+  "tags": [
+    "photography",
+    "prague",
+    "czechia"
+  ],
+  "featuredImage": "/prague-2025/01.jpeg",
+  "hero": {
+    "image": "/prague-2025/01.jpeg",
+    "alt": "Prague",
+    "title": "Prague 2025",
+    "subtitle": "A few trips to Prague in 2025"
+  },
+  "photos": [
+    {
+      "src": "/prague-2025/01.jpeg",
+      "alt": "Prague 2025 - Photo 1",
+      "description": ""
+    },
+    {
+      "src": "/prague-2025/02.jpeg",
+      "alt": "Prague 2025 - Photo 2",
+      "description": ""
+    },
+    {
+      "src": "/prague-2025/03.jpeg",
+      "alt": "Prague 2025 - Photo 3",
+      "description": ""
+    },
+    {
+      "src": "/prague-2025/04.jpeg",
+      "alt": "Prague 2025 - Photo 4",
+      "description": ""
+    },
+    {
+      "src": "/prague-2025/05.jpeg",
+      "alt": "Prague 2025 - Photo 5",
+      "description": ""
+    },
+    {
+      "src": "/prague-2025/06.jpeg",
+      "alt": "Prague 2025 - Photo 6",
+      "description": ""
+    },
+    {
+      "src": "/prague-2025/07.jpeg",
+      "alt": "Prague 2025 - Photo 7",
+      "description": ""
+    },
+    {
+      "src": "/prague-2025/08.jpeg",
+      "alt": "Prague 2025 - Photo 8",
+      "description": ""
+    },
+    {
+      "src": "/prague-2025/09.jpeg",
+      "alt": "Prague 2025 - Photo 9",
+      "description": ""
+    }
+  ]
+}

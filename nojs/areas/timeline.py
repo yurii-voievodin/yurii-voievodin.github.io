@@ -47,14 +47,14 @@ def timeline_event(event):
 
 def timeline_text(event, data):
     if event.get("comment"):
-        return f'<div class="prose">{markdown(event["comment"])}</div>'
+        return f'<div class="timeline-md">{markdown(event["comment"])}</div>'
     parts = []
     if event.get("date"):
         parts.append(f'<div class="timeline-date">{escape(event["date"])}</div>')
     if event.get("title"):
-        parts.append(f'<div class="prose timeline-title">{markdown(event["title"])}</div>')
+        parts.append(f'<div class="timeline-md timeline-title">{markdown(event["title"])}</div>')
     if event.get("description"):
-        parts.append(f'<div class="prose">{markdown(event["description"])}</div>')
+        parts.append(f'<div class="timeline-md">{markdown(event["description"])}</div>')
     if data.get("image"):
         src = escape("/" + data["image"]["path"])
         parts.append(f'<img class="timeline-image" src="{src}" alt="" width="320" height="240" loading="lazy">')

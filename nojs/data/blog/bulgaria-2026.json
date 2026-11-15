@@ -1,0 +1,105 @@
+{
+  "slug": "bulgaria-2026",
+  "title": "Bulgaria 2026",
+  "date": "2026-05-06",
+  "excerpt": "Black Sea coast, mountains, and ancient cities",
+  "tags": [
+    "travel",
+    "photography",
+    "bulgaria",
+    "adventure"
+  ],
+  "featuredImage": "/bulgaria-2026/hero.jpeg",
+  "hero": {
+    "image": "/bulgaria-2026/hero.jpeg",
+    "alt": "Bulgaria landscape",
+    "title": "Bulgaria 2026",
+    "subtitle": "Black Sea coast, mountains, and ancient cities"
+  },
+  "intro": {
+    "heading": "About This Journey",
+    "body": "We visited Sofia and the Bansko ski resort in the mountains, walked along the seaside in Burgas, and made trips to Nessebar and Sunny Beach. All photos were taken on an iPhone 14 Pro."
+  },
+  "photos": [
+    {
+      "src": "/bulgaria-2026/01.jpeg",
+      "alt": "Bulgaria 2026 Trip - Photo 1",
+      "description": "We stopped in some little village in front of the mountains to take a break, enjoy the view and eat a sandwich"
+    },
+    {
+      "src": "/bulgaria-2026/08.jpeg",
+      "alt": "Bulgaria 2026 Trip - Photo 8",
+      "description": "A favorite place for peace and thoughts"
+    },
+    {
+      "src": "/bulgaria-2026/03.jpeg",
+      "alt": "Bulgaria 2026 Trip - Photo 2",
+      "description": "Central street of the resort town of Bansko with many cafes and restaurants serving local cuisine."
+    },
+    {
+      "src": "/bulgaria-2026/09.jpeg",
+      "alt": "Bulgaria 2026 Trip - Photo 9",
+      "description": "Just pure beauty"
+    },
+    {
+      "src": "/bulgaria-2026/06.jpeg",
+      "alt": "Bulgaria 2026 Trip - Photo 6",
+      "description": "Turkish coffee in the morning with nice views"
+    },
+    {
+      "src": "/bulgaria-2026/07.jpeg",
+      "alt": "Bulgaria 2026 Trip - Photo 7",
+      "description": "Two Toyota Hilux campers by the sea "
+    },
+    {
+      "src": "/bulgaria-2026/04.jpeg",
+      "alt": "Bulgaria 2026 Trip - Photo 4",
+      "description": "View from a balcony in Bansko"
+    },
+    {
+      "src": "/bulgaria-2026/10.jpeg",
+      "alt": "Bulgaria 2026 Trip - Photo 10",
+      "description": "Snow-covered forest in the mountains and rockfall near Sofia"
+    },
+    {
+      "src": "/bulgaria-2026/05.jpeg",
+      "alt": "Bulgaria 2026 Trip - Photo 5",
+      "description": "Somewhere in the forest"
+    },
+    {
+      "src": "/bulgaria-2026/11.jpeg",
+      "alt": "Bulgaria 2026 Trip - Photo 11",
+      "description": ""
+    },
+    {
+      "src": "/bulgaria-2026/12.jpeg",
+      "alt": "Bulgaria 2026 Trip - Photo 12",
+      "description": ""
+    },
+    {
+      "src": "/bulgaria-2026/13.jpeg",
+      "alt": "Bulgaria 2026 Trip - Photo 13",
+      "description": "Hello, friends"
+    },
+    {
+      "src": "/bulgaria-2026/14.jpeg",
+      "alt": "Bulgaria 2026 Trip - Photo 14",
+      "description": ""
+    },
+    {
+      "src": "/bulgaria-2026/15.jpeg",
+      "alt": "Bulgaria 2026 Trip - Photo 15",
+      "description": ""
+    },
+    {
+      "src": "/bulgaria-2026/16.jpeg",
+      "alt": "Bulgaria 2026 Trip - Photo 16",
+      "description": ""
+    },
+    {
+      "src": "/bulgaria-2026/17.jpeg",
+      "alt": "Bulgaria 2026 Trip - Photo 17",
+      "description": ""
+    }
+  ]
+}
