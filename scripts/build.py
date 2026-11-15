@@ -28,7 +28,6 @@ DESCRIPTION = (
     "Software developer with 14+ years of experience building iOS, macOS and web applications"
     " — CV, projects, and a travel photo blog."
 )
-THEME_COLOR = "#7c3aed"
 GOOGLE_VERIFICATION = "cTGblQb-bn7Tw2ClzLhJfzgTQ94t8V54PnaOiXzZXJ4"
 VARS = {
     "email": "yurii.voievodin@icloud.com",
@@ -172,7 +171,10 @@ def head(page):
     tags.append(meta("creator", NAME))
     if page.get("robots"):
         tags.append(meta("robots", page.get("robots")))
-    tags.append(meta("theme-color", THEME_COLOR))
+    tags += [
+        '<meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)">',
+        '<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">',
+    ]
     if page.canonical:
         tags.append(link("canonical", absolute(page.canonical)))
     tags += [link("alternate", absolute(href), hreflang=lang) for lang, href in page.alternates.items()]
