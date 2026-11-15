@@ -6,7 +6,7 @@ import shutil
 import sys
 from datetime import date, datetime, timezone
 from email.utils import format_datetime
-from functools import partial
+from functools import cache, partial
 from html import escape, unescape
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
@@ -40,8 +40,11 @@ VARS = {
     "year": str(date.today().year),
 }
 
-HEAD_TAG = re.compile(r"\s*(<title>.*?</title>|<meta\s[^>]*>|<link\s[^>]*>)", re.S)
+HEAD_TAG = re.compile(r'\s*(<title>.*?</title>|<(?:meta|link)\s(?:[^>"]|"[^"]*")*>)', re.S)
 ATTR = re.compile(r'([\w:-]+)="([^"]*)"')
+GALLERY = re.compile(r"<!--\s*gallery:\s*(\S+)\s+(\S+)\s*-->(.*?)<!--\s*/gallery\s*-->", re.S)
+GALLERY_KINDS = ("carousel-tall", "carousel-wide", "post-grid", "personal-grid")
+IMG = re.compile(r'<img\s(?:[^>"]|"[^"]*")*>')
 MARKER = re.compile(r"<!--\s*(include|slot|icon):\s*(\S+?)(?:\s+(\d+))?\s*-->|\{\{\s*(\w+)\s*\}\}")
 
 
@@ -59,32 +62,51 @@ def split_head(text):
         pos = match.end()
 
 
+def rel(path):
+    return path.relative_to(ROOT).as_posix()
+
+
 class Page:
     def __init__(self, path):
         self.path = path
-        tags, self.body = split_head(path.read_text(encoding="utf-8"))
-        self.title = TITLE
+        tags, self.body = split_head(read(path))
+        self.title = None
         self.meta, self.canonical, self.alternates = {}, None, {}
         for tag in tags:
             if tag.startswith("<title>"):
                 self.title = unescape(tag[7:-8])
                 continue
             attrs = {k: unescape(v) for k, v in ATTR.findall(tag)}
+            needs = (
+                ("name", "content") if tag.startswith("<meta")
+                else ("href",) if attrs.get("rel") == "canonical"
+                else ("hreflang", "href") if attrs.get("rel") == "alternate"
+                else None
+            )
+            if needs is None or any(name not in attrs for name in needs):
+                sys.exit(f"{rel(path)}: unsupported head tag {tag}")
             if tag.startswith("<meta"):
                 self.meta[attrs["name"]] = attrs["content"]
-            elif attrs.get("rel") == "canonical":
+            elif attrs["rel"] == "canonical":
                 self.canonical = attrs["href"]
-            elif attrs.get("rel") == "alternate":
+            else:
                 self.alternates[attrs["hreflang"]] = attrs["href"]
-        rel = path.relative_to(PAGES).as_posix()
-        if rel == "404.html":
+        if self.get("type") == "article":
+            if not self.get("image"):
+                sys.exit(f'{rel(path)}: article without <meta name="image">')
+            try:
+                date.fromisoformat(self.get("published"))
+            except ValueError:
+                sys.exit(f'{rel(path)}: article needs <meta name="published" content="YYYY-MM-DD">')
+        rel_page = path.relative_to(PAGES).as_posix()
+        if rel_page == "404.html":
             self.url = "/404.html"
-        elif rel == "index.html":
+        elif rel_page == "index.html":
             self.url = "/"
-        elif rel.endswith("/index.html"):
-            self.url = "/" + rel[: -len("index.html")]
+        elif rel_page.endswith("/index.html"):
+            self.url = "/" + rel_page[: -len("index.html")]
         else:
-            self.url = "/" + rel[: -len(".html")] + "/"
+            self.url = "/" + rel_page[: -len(".html")] + "/"
 
     def get(self, name, default=""):
         return self.meta.get(name, default)
@@ -100,6 +122,10 @@ class Page:
     def vars(self):
         return {"lang": self.get("lang", "en"), **VARS}
 
+    @property
+    def keywords(self):
+        return [word.strip() for word in self.get("keywords").split(",") if word.strip()]
+
 
 def icon(name, size=24):
     if name in BRANDS:
@@ -112,12 +138,73 @@ def icon(name, size=24):
     return f'<svg class="icon" width="{size}" height="{size}" viewBox="0 0 24 24" {paint} aria-hidden="true">{body}</svg>'
 
 
-def render(text, page, source, posts):
+def enter(stack, path):
+    if path in stack:
+        chain = stack[stack.index(path) :] + (path,)
+        sys.exit("include cycle: " + " -> ".join(rel(p) for p in chain))
+    return stack + (path,)
+
+
+def gallery(gid, kind, body, source):
+    photos = [{k: unescape(v) for k, v in ATTR.findall(tag)} for tag in IMG.findall(body)]
+    if kind not in GALLERY_KINDS:
+        sys.exit(f"{source}: gallery '{gid}' has unknown kind '{kind}', expected one of {', '.join(GALLERY_KINDS)}")
+    if not photos or IMG.sub("", body).strip() or any("src" not in photo for photo in photos):
+        sys.exit(f"{source}: gallery '{gid}' must hold only <img src=…> lines")
+    carousel = kind.startswith("carousel")
+    ids = [f"{gid}-photo-{n}" for n in range(1, len(photos) + 1)]
+    zoom = f'<span class="post-photo-zoom"><span>{icon("Maximize2", 20)}</span></span>'
+    if carousel:
+        html = [
+            f'<div class="carousel {kind}" id="{gid}" tabindex="0" role="region"'
+            ' aria-roledescription="carousel" aria-label="Photo carousel">'
+        ]
+    else:
+        html = [f'<div class="{kind}">']
+    for i, (photo, pid) in enumerate(zip(photos, ids)):
+        src, text = escape(photo["src"]), escape(photo.get("alt", ""))
+        if carousel:
+            size = "".join(f' {k}="{escape(photo[k])}"' for k in ("width", "height") if k in photo)
+            lazy = ' loading="lazy"' if i else ""
+            html.append(f'<a class="slide" href="#{pid}" aria-label="Open full size"><img src="{src}" alt="{text}"{size}{lazy}></a>')
+        elif kind == "personal-grid":
+            html.append(f'<a class="post-photo personal-card" href="#{pid}"><img src="{src}" alt="{text}" loading="lazy">{zoom}</a>')
+        else:
+            html.append(f'<a class="post-photo" href="#{pid}" aria-label="Open photo"><img src="{src}" alt="" loading="lazy">{zoom}</a>')
+    html.append("</div>")
+    for i, (photo, pid) in enumerate(zip(photos, ids)):
+        src, text = escape(photo["src"]), escape(photo.get("alt", ""))
+        alt, caption = text, ""
+        if not carousel:
+            alt = "" if text else "Photo"
+            if text:
+                caption = f'\n    <figcaption><span class="lightbox-text">{text}</span></figcaption>'
+        nav = ""
+        if len(ids) > 1:
+            nav = (
+                f'\n  <a class="lightbox-prev" href="#{ids[i - 1]}" aria-label="Previous image">{icon("ArrowLeft", 20)}</a>'
+                f'\n  <a class="lightbox-next" href="#{ids[(i + 1) % len(ids)]}" aria-label="Next image">{icon("ArrowRight", 20)}</a>'
+            )
+        html.append(
+            f'<div class="lightbox" id="{pid}" role="dialog" aria-label="Image viewer">\n'
+            f'  <a class="lightbox-close" href="#_" aria-label="Close image viewer">{icon("X", 20)}</a>{nav}\n'
+            f'  <figure>\n    <img src="{src}" alt="{alt}" loading="lazy">{caption}\n  </figure>\n</div>'
+        )
+    return "\n".join(html)
+
+
+def render(text, page, stack, posts):
+    source = rel(stack[-1])
     values = page.vars()
+
+    def layout():
+        path = LAYOUTS / f"{page.get('layout', 'default')}.html"
+        return render(read(path), page, enter(stack, path), posts)
+
     slots = {
         "head": lambda: head(page),
-        "layout": lambda: render(read(LAYOUTS / f"{page.get('layout', 'default')}.html"), page, "layout", posts),
-        "content": lambda: render(page.body, page, page.path, posts),
+        "layout": layout,
+        "content": lambda: render(page.body, page, enter(stack, page.path), posts),
         "posts": lambda: tiles(posts),
     }
 
@@ -134,14 +221,16 @@ def render(text, page, source, posts):
             text = read(path)
             if PAGES in path.parents:
                 text = split_head(text)[1]
-            return render(text, page, path, posts)
+            return render(text, page, enter(stack, path), posts)
         if name not in slots:
             sys.exit(f"{source}: unknown slot '{name}'")
         return slots[name]()
 
+    text = GALLERY.sub(lambda match: gallery(*match.groups(), source), text)
     return MARKER.sub(replace, text)
 
 
+@cache
 def read(path):
     if not path.exists():
         sys.exit(f"missing file {path.relative_to(ROOT)}")
@@ -194,7 +283,7 @@ def head(page):
     if kind == "article":
         tags.append(meta("article:published_time", page.get("published"), "property"))
         tags.append(meta("article:author", NAME, "property"))
-        tags += [meta("article:tag", tag, "property") for tag in page.get("keywords").split(", ")]
+        tags += [meta("article:tag", tag, "property") for tag in page.keywords]
     tags += [
         meta("twitter:card", "summary_large_image" if image else "summary"),
         meta("twitter:title", page.title),
@@ -295,15 +384,34 @@ def build(out):
     styles = [STYLES / "base.css"] + sorted(p for p in STYLES.glob("*.css") if p.name != "base.css")
     write(out / "static/site.css", "\n".join(read(p) for p in styles))
     pages = [Page(path) for path in sorted(PAGES.rglob("*.html"))]
-    posts = sorted((p for p in pages if p.get("type") == "article"), key=lambda p: p.get("published"), reverse=True)
-    base = read(LAYOUTS / "base.html")
+    urls = {}
     for page in pages:
-        write(out / page.output, render(base, page, "layouts/base.html", posts))
+        if page.url in urls:
+            sys.exit(f"{rel(urls[page.url].path)} and {rel(page.path)} are both {page.url}")
+        urls[page.url] = page
+    paths = {page.path: page for page in pages}
+    for page in pages:
+        for kind, name, *_ in MARKER.findall(page.body):
+            included = paths.get(ROOT / name) if kind == "include" else None
+            if included and page.canonical != included.url:
+                sys.exit(f'{rel(page.path)} includes {name}, so it needs <link rel="canonical" href="{included.url}">')
+    for page in pages:
+        original = urls.get(page.canonical)
+        if original and original is not page:
+            page.title = page.title or original.title
+            if "description" in original.meta:
+                page.meta.setdefault("description", original.meta["description"])
+    for page in pages:
+        page.title = page.title or TITLE
+    posts = sorted((p for p in pages if p.get("type") == "article"), key=lambda p: p.get("published"), reverse=True)
+    base = LAYOUTS / "base.html"
+    for page in pages:
+        write(out / page.output, render(read(base), page, (base,), posts))
     write(out / "sitemap.xml", sitemap(pages))
     write(out / "feed.xml", feed(posts))
     write(out / "robots.txt", f"User-Agent: *\nAllow: /\n\nSitemap: {URL}/sitemap.xml\n")
     print(f"Built {len(pages)} pages into {out}")
-    if check(out, {page.url: out / page.output for page in pages}):
+    if check(out, {url: out / page.output for url, page in urls.items()}, URL):
         sys.exit(1)
 
 

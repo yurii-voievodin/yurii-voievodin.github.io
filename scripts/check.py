@@ -4,7 +4,7 @@ from html.parser import HTMLParser
 from urllib.parse import unquote, urlsplit
 
 VOID = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "source", "track", "wbr"}
-LEFTOVER = re.compile(r"<!--\s*(include|slot|icon):|\{\{\s*\w+\s*\}\}")
+LEFTOVER = re.compile(r"<!--\s*(include|slot|icon|gallery):|<!--\s*/gallery\b|\{\{\s*\w+\s*\}\}")
 CLOSE_FRAGMENT = "_"
 
 
@@ -31,6 +31,8 @@ class Scan(HTMLParser):
         for name in ("href", "src", "poster"):
             if attrs.get(name):
                 self.urls.append(attrs[name])
+        if tag == "meta" and attrs.get("property") == "og:image":
+            self.urls.append(attrs["content"])
         if tag not in VOID:
             self.open.append(tag)
 
@@ -43,7 +45,7 @@ class Scan(HTMLParser):
         self.open.pop()
 
 
-def check(dist, paths):
+def check(dist, paths, origin):
     pages = {}
     for url, path in paths.items():
         text = path.read_text(encoding="utf-8")
@@ -64,8 +66,11 @@ def check(dist, paths):
         for link in scan.urls:
             parts = urlsplit(link)
             if parts.scheme or parts.netloc:
-                continue
-            target_url = parts.path or url
+                if f"{parts.scheme}://{parts.netloc}" != origin:
+                    continue
+                target_url = parts.path or "/"
+            else:
+                target_url = parts.path or url
             if target_url.endswith("/"):
                 if target_url not in pages:
                     errors.append(f"link to missing page {link}")
