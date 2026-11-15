@@ -1,4 +1,4 @@
-site/dist/
+dist/
 __pycache__/
 .DS_Store
 .claude/

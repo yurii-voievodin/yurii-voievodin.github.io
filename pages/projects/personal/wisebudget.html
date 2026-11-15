@@ -1,0 +1,132 @@
+<title>WiseBudgeter — Projects — Yurii Voievodin</title>
+<meta name="description" content="macOS app for personal finance management, syncing transactions from Wise and Monobank.">
+<meta name="sitemap" content="0.5 monthly">
+
+<div class="width-4xl">
+  <div class="project-header">
+    <a class="back-link" href="/cv/"><!-- icon: ArrowLeft 16 -->Back to CV</a>
+    <nav class="project-switch" aria-label="Project category">
+<a href="/projects/">Commercial</a>
+<a href="/projects/personal/" aria-current="page">Personal</a>
+    </nav>
+  </div>
+  <div class="project-intro">
+    <a class="project-eyebrow" href="/projects/">Projects</a>
+    <h1 class="project-title">WiseBudgeter</h1>
+    <p class="gradient-text project-summary">macOS app for personal finance management, syncing transactions from Wise and Monobank.</p>
+  </div>
+  <article class="panel panel-3xl panel-responsive project-card">
+    <div class="project-meta">
+      <span class="project-date">20 March 2025</span>
+      <div class="tag-row"><span class="tag tag-violet tag-sm">Finance</span><span class="tag tag-violet tag-sm">macOS</span></div>
+    </div>
+<div class="project-body">
+<p><a class="gradient-link" href="/wisebudget/">WiseBudgeter</a> — macOS app for personal finance management. Track expenses and income across multiple currencies, sync transactions from <a class="gradient-link" href="https://wise.com">Wise</a> and <a class="gradient-link" href="https://www.monobank.ua">Monobank</a>, plan monthly budgets per category, and visualize spending with charts and analytics.</p>
+<p class="project-label">Technical info:</p>
+<ul class="bullets">
+  <li>Written in <strong>Swift</strong>, <strong>SwiftUI</strong> with <code>NavigationSplitView</code> three-column layout (~64 source files)</li>
+  <li><strong>SwiftData</strong> persistence — 6 models (<code>Expense</code>, <code>Income</code>, <code>ExpenseCategory</code>, <code>IncomeCategory</code>, <code>BudgetPlan</code>, <code>BudgetPlanItem</code>) with relationship cascades and predicate-based filtering</li>
+  <li><strong>Dual bank integration</strong> — <strong>Wise</strong> and <strong>Monobank</strong> API clients with OAuth tokens stored in <strong>Keychain</strong>, automatic transaction import with deduplication via <code>externalId</code></li>
+  <li><strong>Multi-currency support</strong> — foreign exchange tracking with base currency conversion, rate caching via <code>ExchangeRateService</code> with 24-hour TTL</li>
+  <li><strong>Charts</strong> framework for category-based spending visualization and budget vs. actual progress tracking</li>
+  <li><strong>CSV import/export</strong> — parsers for Wise, Monobank, and generic formats with MCC code mapping and merchant keyword auto-categorization</li>
+  <li><strong>Observable</strong> pattern with <code>@Observable</code> macro for reactive services, <strong>async/await</strong> concurrency, <strong>OSLog</strong> structured logging</li>
+  <li><strong>Zero third-party dependencies</strong> — built entirely with native Apple frameworks</li>
+  <li><strong>Swift Testing</strong> framework with in-memory <code>ModelContainer</code> for isolated unit tests</li>
+  <li>Deployment target: <strong>macOS 15.2+</strong></li>
+</ul>
+<div class="project-links">
+  <a class="gradient-link" href="/wisebudget/">Landing page</a>
+  <a class="gradient-link" href="https://apps.apple.com/us/app/wisebudgeter/id6760725900" target="_blank" rel="noopener noreferrer">Mac App Store</a>
+</div>
+</div>
+<div class="project-wide">
+<div class="carousel carousel-wide" id="wisebudget-gallery" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Photo carousel">
+<a class="slide" href="#wisebudget-gallery-photo-1" aria-label="Open full size"><img src="/wisebudget/screenshots/dashboard.png" alt="WiseBudget on Mac — your financial dashboard" loading="eager"></a>
+<a class="slide" href="#wisebudget-gallery-photo-2" aria-label="Open full size"><img src="/wisebudget/screenshots/budget-pacing.png" alt="WiseBudget on Mac — budget pacing by category" loading="lazy"></a>
+<a class="slide" href="#wisebudget-gallery-photo-3" aria-label="Open full size"><img src="/wisebudget/screenshots/expenses-table.png" alt="WiseBudget on Mac — expenses table view" loading="lazy"></a>
+<a class="slide" href="#wisebudget-gallery-photo-4" aria-label="Open full size"><img src="/wisebudget/screenshots/spending-calendar.png" alt="WiseBudget on Mac — daily spending calendar" loading="lazy"></a>
+<a class="slide" href="#wisebudget-gallery-photo-5" aria-label="Open full size"><img src="/wisebudget/screenshots/category-breakdown.png" alt="WiseBudget on Mac — spending by category" loading="lazy"></a>
+<a class="slide" href="#wisebudget-gallery-photo-6" aria-label="Open full size"><img src="/wisebudget/screenshots/cashflow.png" alt="WiseBudget on Mac — cashflow, month by month" loading="lazy"></a>
+<a class="slide" href="#wisebudget-gallery-photo-7" aria-label="Open full size"><img src="/wisebudget/screenshots/spending-trends.png" alt="WiseBudget on Mac — a year of spending trends" loading="lazy"></a>
+<a class="slide" href="#wisebudget-gallery-photo-8" aria-label="Open full size"><img src="/wisebudget/screenshots/lifetime.png" alt="WiseBudget on Mac — every year at a glance" loading="lazy"></a>
+</div>
+<div class="lightbox" id="wisebudget-gallery-photo-1" role="dialog" aria-label="Image viewer">
+  <a class="lightbox-close" href="#_" aria-label="Close image viewer"><!-- icon: X 20 --></a>
+  <a class="lightbox-prev" href="#wisebudget-gallery-photo-8" aria-label="Previous image"><!-- icon: ArrowLeft 20 --></a>
+  <a class="lightbox-next" href="#wisebudget-gallery-photo-2" aria-label="Next image"><!-- icon: ArrowRight 20 --></a>
+<figure>
+    <img src="/wisebudget/screenshots/dashboard.png" alt="WiseBudget on Mac — your financial dashboard" loading="lazy">
+
+  </figure>
+</div>
+<div class="lightbox" id="wisebudget-gallery-photo-2" role="dialog" aria-label="Image viewer">
+  <a class="lightbox-close" href="#_" aria-label="Close image viewer"><!-- icon: X 20 --></a>
+  <a class="lightbox-prev" href="#wisebudget-gallery-photo-1" aria-label="Previous image"><!-- icon: ArrowLeft 20 --></a>
+  <a class="lightbox-next" href="#wisebudget-gallery-photo-3" aria-label="Next image"><!-- icon: ArrowRight 20 --></a>
+<figure>
+    <img src="/wisebudget/screenshots/budget-pacing.png" alt="WiseBudget on Mac — budget pacing by category" loading="lazy">
+
+  </figure>
+</div>
+<div class="lightbox" id="wisebudget-gallery-photo-3" role="dialog" aria-label="Image viewer">
+  <a class="lightbox-close" href="#_" aria-label="Close image viewer"><!-- icon: X 20 --></a>
+  <a class="lightbox-prev" href="#wisebudget-gallery-photo-2" aria-label="Previous image"><!-- icon: ArrowLeft 20 --></a>
+  <a class="lightbox-next" href="#wisebudget-gallery-photo-4" aria-label="Next image"><!-- icon: ArrowRight 20 --></a>
+<figure>
+    <img src="/wisebudget/screenshots/expenses-table.png" alt="WiseBudget on Mac — expenses table view" loading="lazy">
+
+  </figure>
+</div>
+<div class="lightbox" id="wisebudget-gallery-photo-4" role="dialog" aria-label="Image viewer">
+  <a class="lightbox-close" href="#_" aria-label="Close image viewer"><!-- icon: X 20 --></a>
+  <a class="lightbox-prev" href="#wisebudget-gallery-photo-3" aria-label="Previous image"><!-- icon: ArrowLeft 20 --></a>
+  <a class="lightbox-next" href="#wisebudget-gallery-photo-5" aria-label="Next image"><!-- icon: ArrowRight 20 --></a>
+<figure>
+    <img src="/wisebudget/screenshots/spending-calendar.png" alt="WiseBudget on Mac — daily spending calendar" loading="lazy">
+
+  </figure>
+</div>
+<div class="lightbox" id="wisebudget-gallery-photo-5" role="dialog" aria-label="Image viewer">
+  <a class="lightbox-close" href="#_" aria-label="Close image viewer"><!-- icon: X 20 --></a>
+  <a class="lightbox-prev" href="#wisebudget-gallery-photo-4" aria-label="Previous image"><!-- icon: ArrowLeft 20 --></a>
+  <a class="lightbox-next" href="#wisebudget-gallery-photo-6" aria-label="Next image"><!-- icon: ArrowRight 20 --></a>
+<figure>
+    <img src="/wisebudget/screenshots/category-breakdown.png" alt="WiseBudget on Mac — spending by category" loading="lazy">
+
+  </figure>
+</div>
+<div class="lightbox" id="wisebudget-gallery-photo-6" role="dialog" aria-label="Image viewer">
+  <a class="lightbox-close" href="#_" aria-label="Close image viewer"><!-- icon: X 20 --></a>
+  <a class="lightbox-prev" href="#wisebudget-gallery-photo-5" aria-label="Previous image"><!-- icon: ArrowLeft 20 --></a>
+  <a class="lightbox-next" href="#wisebudget-gallery-photo-7" aria-label="Next image"><!-- icon: ArrowRight 20 --></a>
+<figure>
+    <img src="/wisebudget/screenshots/cashflow.png" alt="WiseBudget on Mac — cashflow, month by month" loading="lazy">
+
+  </figure>
+</div>
+<div class="lightbox" id="wisebudget-gallery-photo-7" role="dialog" aria-label="Image viewer">
+  <a class="lightbox-close" href="#_" aria-label="Close image viewer"><!-- icon: X 20 --></a>
+  <a class="lightbox-prev" href="#wisebudget-gallery-photo-6" aria-label="Previous image"><!-- icon: ArrowLeft 20 --></a>
+  <a class="lightbox-next" href="#wisebudget-gallery-photo-8" aria-label="Next image"><!-- icon: ArrowRight 20 --></a>
+<figure>
+    <img src="/wisebudget/screenshots/spending-trends.png" alt="WiseBudget on Mac — a year of spending trends" loading="lazy">
+
+  </figure>
+</div>
+<div class="lightbox" id="wisebudget-gallery-photo-8" role="dialog" aria-label="Image viewer">
+  <a class="lightbox-close" href="#_" aria-label="Close image viewer"><!-- icon: X 20 --></a>
+  <a class="lightbox-prev" href="#wisebudget-gallery-photo-7" aria-label="Previous image"><!-- icon: ArrowLeft 20 --></a>
+  <a class="lightbox-next" href="#wisebudget-gallery-photo-1" aria-label="Next image"><!-- icon: ArrowRight 20 --></a>
+<figure>
+    <img src="/wisebudget/screenshots/lifetime.png" alt="WiseBudget on Mac — every year at a glance" loading="lazy">
+
+  </figure>
+</div>
+</div>
+  </article>
+<nav class="project-nav" aria-label="More projects">
+<a class="project-nav-card project-nav-newer" href="/projects/personal/head-recorder/"><!-- icon: ArrowLeft 26 --><span class="project-nav-text"><span class="project-nav-label">Next project</span><span class="project-nav-name">Head Recorder</span><span class="project-nav-date">30 July 2026</span></span></a>
+<a class="project-nav-card project-nav-older" href="/projects/personal/my-university/"><span class="project-nav-text"><span class="project-nav-label">Previous project</span><span class="project-nav-name">My University</span><span class="project-nav-date">24 December 2018</span></span><!-- icon: ArrowRight 26 --></a>
+</nav>
+</div>
