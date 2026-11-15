@@ -1,18 +1,19 @@
 <title>Head Recorder — Projects — Yurii Voievodin</title>
 <meta name="description" content="macOS app that records your screen and webcam together as a single video, entirely on-device.">
+<meta name="image" content="/projects/HeadRecorder/tile.jpg">
+<meta name="date" content="30 July 2026">
 <meta name="sitemap" content="0.5 monthly">
 
 <div class="width-4xl">
-  <!-- include: layouts/parts/project-header-personal.html -->
+  {{ include project-header-personal }}
   <div class="project-intro">
-    <a class="project-eyebrow" href="/projects/">Projects</a>
     <h1 class="page-title project-title">Head Recorder</h1>
     <p class="accent-text project-summary">macOS app that records your screen and webcam together as a single video, entirely on-device.</p>
   </div>
-  <nav class="project-pager" aria-label="Project navigation"><a href="/projects/personal/wavefall/"><!-- icon: ArrowLeft 18 --><span><small>Newer</small>Wavefall</span></a><a class="project-pager-older" href="/projects/personal/wisebudget/"><span><small>Older</small>WiseBudget</span><!-- icon: ArrowRight 18 --></a></nav>
+  <nav class="project-pager" aria-label="Project navigation"><a href="/projects/personal/wavefall/">{{ icon ArrowLeft 18 }}<span><small>Newer</small>Wavefall</span></a><a class="project-pager-older" href="/projects/personal/wisebudget/"><span><small>Older</small>WiseBudget</span>{{ icon ArrowRight 18 }}</a></nav>
   <article class="panel panel-clip panel-responsive project-card">
     <div class="project-meta">
-      <span class="project-date">30 July 2026</span>
+      <span class="project-date">{{ date }}</span>
       <div class="tag-row"><span class="tag tag-accent tag-sm">Video</span><span class="tag tag-accent tag-sm">macOS</span></div>
     </div>
 <div class="project-body">
@@ -34,7 +35,7 @@
 </div>
 </div>
 <div class="project-wide">
-<!-- include: layouts/parts/headrecorder-screenshots.html -->
+{{ include headrecorder-screenshots }}
 </div>
   </article>
 </div>

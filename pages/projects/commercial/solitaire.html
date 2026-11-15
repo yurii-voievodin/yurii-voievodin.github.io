@@ -1,18 +1,19 @@
 <title>Solitaire (Classic) — Projects — Yurii Voievodin</title>
 <meta name="description" content="Competitive solitaire card game with cash-prize tournaments, head-to-head matches, and daily challenges.">
+<meta name="image" content="/projects/Solitaire/tile.jpg">
+<meta name="date" content="March 2019">
 <meta name="sitemap" content="0.5 monthly">
 
 <div class="width-4xl">
-  <!-- include: layouts/parts/project-header-commercial.html -->
+  {{ include project-header-commercial }}
   <div class="project-intro">
-    <a class="project-eyebrow" href="/projects/">Projects</a>
     <h1 class="page-title project-title">Solitaire (Classic)</h1>
     <p class="accent-text project-summary">Competitive solitaire card game with cash-prize tournaments, head-to-head matches, and daily challenges.</p>
   </div>
-  <nav class="project-pager" aria-label="Project navigation"><a href="/projects/commercial/coachnow/"><!-- icon: ArrowLeft 18 --><span><small>Newer</small>CoachNow</span></a><a class="project-pager-older" href="/projects/commercial/look-up/"><span><small>Older</small>Look Up</span><!-- icon: ArrowRight 18 --></a></nav>
+  <nav class="project-pager" aria-label="Project navigation"><a href="/projects/commercial/coachnow/">{{ icon ArrowLeft 18 }}<span><small>Newer</small>CoachNow</span></a><a class="project-pager-older" href="/projects/commercial/look-up/"><span><small>Older</small>Look Up</span>{{ icon ArrowRight 18 }}</a></nav>
   <article class="panel panel-clip panel-responsive project-card">
     <div class="project-meta">
-      <span class="project-date">November 2019</span>
+      <span class="project-date">{{ date }}</span>
       <div class="tag-row"><span class="tag tag-accent tag-sm">Game</span></div>
     </div>
 <div class="project-columns">
@@ -42,12 +43,12 @@
 </ul>
 </div>
 <div class="project-shots">
-<!-- gallery: solitaire-shots carousel-tall -->
+{{ gallery solitaire-shots tall }}
 <img src="/projects/Solitaire/solitaire-1.png" alt="Solitaire Game" width="900" height="1564">
 <img src="/projects/Solitaire/solitaire-2.png" alt="Solitaire Gameplay" width="900" height="1564">
 <img src="/projects/Solitaire/solitaire-3.png" alt="Solitaire Menu" width="900" height="1564">
 <img src="/projects/Solitaire/solitaire-4.png" alt="Solitaire Screen" width="900" height="1564">
-<!-- /gallery -->
+{{ end }}
 </div>
 </div>
   </article>

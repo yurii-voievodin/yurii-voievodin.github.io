@@ -24,6 +24,7 @@ DIST = ROOT / "dist"
 URL = "https://yurii-voievodin.github.io"
 NAME = "Yurii Voievodin"
 TITLE = "Yurii Voievodin - Software Developer"
+PROJECT_SUFFIX = " — Projects — " + NAME
 DESCRIPTION = (
     "Software developer with 14+ years of experience building iOS, macOS and web applications"
     " — CV, projects, and a travel photo blog."
@@ -42,10 +43,12 @@ VARS = {
 
 HEAD_TAG = re.compile(r'\s*(<title>.*?</title>|<(?:meta|link)\s(?:[^>"]|"[^"]*")*>)', re.S)
 ATTR = re.compile(r'([\w:-]+)="([^"]*)"')
-GALLERY = re.compile(r"<!--\s*gallery:\s*(\S+)\s+(\S+)\s*-->(.*?)<!--\s*/gallery\s*-->", re.S)
-GALLERY_KINDS = ("carousel-tall", "carousel-wide", "post-grid", "personal-grid")
+GALLERY = re.compile(r"\{\{\s*gallery\s+(\S+)\s+(\S+)\s*\}\}(.*?)\{\{\s*end\s*\}\}", re.S)
+GALLERY_KINDS = {"tall": "carousel-tall", "wide": "carousel-wide", "grid": "post-grid", "personal": "personal-grid"}
+PAGER_OLDER = re.compile(r'<a class="project-pager-older" href="([^"]+)"')
+PAGER_NEWER = re.compile(r'<nav class="project-pager"[^>]*><a href="([^"]+)"')
 IMG = re.compile(r'<img\s(?:[^>"]|"[^"]*")*>')
-MARKER = re.compile(r"<!--\s*(include|slot|icon):\s*(\S+?)(?:\s+(\d+))?\s*-->|\{\{\s*(\w+)\s*\}\}")
+MARKER = re.compile(r"\{\{\s*([\w-]+)((?:\s+[^\s{}]+)*)\s*\}\}")
 
 
 def absolute(path):
@@ -70,7 +73,7 @@ class Page:
     def __init__(self, path):
         self.path = path
         tags, self.body = split_head(read(path))
-        self.title = None
+        self.title = TITLE
         self.meta, self.canonical, self.alternates = {}, None, {}
         for tag in tags:
             if tag.startswith("<title>"):
@@ -120,7 +123,10 @@ class Page:
         return self.url.lstrip("/") + ("index.html" if self.url.endswith("/") else "")
 
     def vars(self):
-        return {"lang": self.get("lang", "en"), **VARS}
+        values = {"lang": self.get("lang", "en"), **VARS}
+        if "date" in self.meta:
+            values["date"] = self.meta["date"]
+        return values
 
     @property
     def keywords(self):
@@ -145,10 +151,11 @@ def enter(stack, path):
     return stack + (path,)
 
 
-def gallery(gid, kind, body, source):
+def gallery(gid, short, body, source):
     photos = [{k: unescape(v) for k, v in ATTR.findall(tag)} for tag in IMG.findall(body)]
-    if kind not in GALLERY_KINDS:
-        sys.exit(f"{source}: gallery '{gid}' has unknown kind '{kind}', expected one of {', '.join(GALLERY_KINDS)}")
+    if short not in GALLERY_KINDS:
+        sys.exit(f"{source}: gallery '{gid}' has unknown kind '{short}', expected one of {', '.join(GALLERY_KINDS)}")
+    kind = GALLERY_KINDS[short]
     if not photos or IMG.sub("", body).strip() or any("src" not in photo for photo in photos):
         sys.exit(f"{source}: gallery '{gid}' must hold only <img src=…> lines")
     carousel = kind.startswith("carousel")
@@ -193,38 +200,39 @@ def gallery(gid, kind, body, source):
     return "\n".join(html)
 
 
-def render(text, page, stack, posts):
+def render(text, page, stack, site):
     source = rel(stack[-1])
     values = page.vars()
 
     def layout():
         path = LAYOUTS / f"{page.get('layout', 'default')}.html"
-        return render(read(path), page, enter(stack, path), posts)
+        return render(read(path), page, enter(stack, path), site)
 
     slots = {
         "head": lambda: head(page),
         "layout": layout,
-        "content": lambda: render(page.body, page, enter(stack, page.path), posts),
-        "posts": lambda: tiles(posts),
+        "content": lambda: render(page.body, page, enter(stack, page.path), site),
+        "posts": lambda: tiles(site["posts"]),
+        "commercial": lambda: project_tiles(site["commercial"]),
+        "personal": lambda: project_tiles(site["personal"]),
     }
 
     def replace(match):
-        kind, name, size, var = match.groups()
-        if var:
-            if var not in values:
-                sys.exit(f"{source}: unknown variable {{{{ {var} }}}}")
-            return escape(values[var])
-        if kind == "icon":
-            return icon(name, int(size or 24))
-        if kind == "include":
-            path = ROOT / name
-            text = read(path)
-            if PAGES in path.parents:
-                text = split_head(text)[1]
-            return render(text, page, enter(stack, path), posts)
-        if name not in slots:
-            sys.exit(f"{source}: unknown slot '{name}'")
-        return slots[name]()
+        word, args = match.group(1), match.group(2).split()
+        if word == "icon" and len(args) in (1, 2) and (len(args) == 1 or args[1].isdigit()):
+            return icon(args[0], int(args[1]) if len(args) == 2 else 24)
+        if word == "include" and len(args) == 1:
+            path = next((p for p in (LAYOUTS / "parts" / f"{args[0]}.html", LAYOUTS / f"{args[0]}.html") if p.exists()), None)
+            if path is None:
+                sys.exit(f"{source}: {{{{ include {args[0]} }}}} finds neither layouts/parts/{args[0]}.html nor layouts/{args[0]}.html")
+            return render(read(path), page, enter(stack, path), site)
+        if word == "gallery":
+            sys.exit(f"{source}: {match.group(0)} has no {{{{ end }}}}")
+        if not args and word in values:
+            return escape(values[word])
+        if not args and word in slots:
+            return slots[word]()
+        sys.exit(f"{source}: unknown {match.group(0)}")
 
     text = GALLERY.sub(lambda match: gallery(*match.groups(), source), text)
     return MARKER.sub(replace, text)
@@ -342,6 +350,50 @@ def tiles(posts):
     return "\n".join(html)
 
 
+def projects(pages, folder):
+    members = {p.url: p for p in pages if p.path.parent == PAGES / "projects" / folder and p.path.name != "index.html"}
+    older = {}
+    for url, page in members.items():
+        match = PAGER_OLDER.search(page.body)
+        older[url] = match.group(1) if match else None
+    newest = [url for url in members if url not in older.values()]
+    if len(newest) != 1:
+        sys.exit(f"pages/projects/{folder}: expected one project nothing links to as Older, found {', '.join(sorted(newest)) or 'none'}")
+    order, url = [], newest[0]
+    while url:
+        if url in order or url not in members:
+            sys.exit(f"pages/projects/{folder}: the Older links break at {url}")
+        order.append(url)
+        url = older[url]
+    if len(order) != len(members):
+        sys.exit(f"pages/projects/{folder}: the Older links skip {', '.join(sorted(set(members) - set(order)))}")
+    for newer, url in zip(order, order[1:]):
+        match = PAGER_NEWER.search(members[url].body)
+        if not match or match.group(1) != newer:
+            sys.exit(f"{rel(members[url].path)}: its Newer link should be {newer}")
+    for url in order:
+        for name in ("image", "date"):
+            if not members[url].get(name):
+                sys.exit(f'{rel(members[url].path)}: project without <meta name="{name}">')
+    return [members[url] for url in order]
+
+
+def project_tiles(projects):
+    html = []
+    for i, project in enumerate(projects):
+        lazy = ' loading="lazy"' if i else ""
+        html.append(
+            f'<a class="project-tile" href="{project.url}">\n'
+            f'  <img src="{escape(project.get("image"))}" alt=""{lazy}>\n'
+            f'  <div class="project-tile-body">\n'
+            f'    <h2 class="project-tile-title">{escape(project.title.removesuffix(PROJECT_SUFFIX))}</h2>\n'
+            f'    <p class="project-date">{escape(project.get("date"))}</p>\n'
+            f'    <p class="project-tile-summary">{escape(project.description)}</p>\n'
+            f'  </div>\n</a>'
+        )
+    return "\n".join(html)
+
+
 def feed(posts):
     items = []
     for post in posts:
@@ -389,24 +441,11 @@ def build(out):
         if page.url in urls:
             sys.exit(f"{rel(urls[page.url].path)} and {rel(page.path)} are both {page.url}")
         urls[page.url] = page
-    paths = {page.path: page for page in pages}
-    for page in pages:
-        for kind, name, *_ in MARKER.findall(page.body):
-            included = paths.get(ROOT / name) if kind == "include" else None
-            if included and page.canonical != included.url:
-                sys.exit(f'{rel(page.path)} includes {name}, so it needs <link rel="canonical" href="{included.url}">')
-    for page in pages:
-        original = urls.get(page.canonical)
-        if original and original is not page:
-            page.title = page.title or original.title
-            if "description" in original.meta:
-                page.meta.setdefault("description", original.meta["description"])
-    for page in pages:
-        page.title = page.title or TITLE
     posts = sorted((p for p in pages if p.get("type") == "article"), key=lambda p: p.get("published"), reverse=True)
+    site = {"posts": posts, "commercial": projects(pages, "commercial"), "personal": projects(pages, "personal")}
     base = LAYOUTS / "base.html"
     for page in pages:
-        write(out / page.output, render(read(base), page, (base,), posts))
+        write(out / page.output, render(read(base), page, (base,), site))
     write(out / "sitemap.xml", sitemap(pages))
     write(out / "feed.xml", feed(posts))
     write(out / "robots.txt", f"User-Agent: *\nAllow: /\n\nSitemap: {URL}/sitemap.xml\n")

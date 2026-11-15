@@ -1,18 +1,19 @@
 <title>VistaCreate — Projects — Yurii Voievodin</title>
 <meta name="description" content="Professional design and creative content creation iOS app with thousands of templates and a full-featured editor">
+<meta name="image" content="/projects/VistaCreate/tile.jpg">
+<meta name="date" content="February 2022 - August 2023">
 <meta name="sitemap" content="0.5 monthly">
 
 <div class="width-4xl">
-  <!-- include: layouts/parts/project-header-commercial.html -->
+  {{ include project-header-commercial }}
   <div class="project-intro">
-    <a class="project-eyebrow" href="/projects/">Projects</a>
     <h1 class="page-title project-title">VistaCreate</h1>
     <p class="accent-text project-summary">Professional design and creative content creation iOS app with thousands of templates and a full-featured editor</p>
   </div>
-  <nav class="project-pager" aria-label="Project navigation"><a href="/projects/commercial/vistaprint/"><!-- icon: ArrowLeft 18 --><span><small>Newer</small>VistaPrint</span></a><a class="project-pager-older" href="/projects/commercial/clowder/"><span><small>Older</small>Clowder</span><!-- icon: ArrowRight 18 --></a></nav>
+  <nav class="project-pager" aria-label="Project navigation"><a href="/projects/commercial/vistaprint/">{{ icon ArrowLeft 18 }}<span><small>Newer</small>VistaPrint</span></a><a class="project-pager-older" href="/projects/commercial/clowder/"><span><small>Older</small>Clowder</span>{{ icon ArrowRight 18 }}</a></nav>
   <article class="panel panel-clip panel-responsive project-card">
     <div class="project-meta">
-      <span class="project-date">February 2022 - August 2023</span>
+      <span class="project-date">{{ date }}</span>
       <div class="tag-row"><span class="tag tag-accent tag-sm">Design Tools</span></div>
     </div>
 <div class="project-columns">
@@ -45,14 +46,14 @@
 <hr>
 </div>
 <div class="project-shots">
-<!-- gallery: vistacreate-shots carousel-tall -->
+{{ gallery vistacreate-shots tall }}
 <img src="/projects/VistaCreate/vc-home.png" alt="VistaCreate Home Screen" width="920" height="2000">
 <img src="/projects/VistaCreate/vc-slider.png" alt="VistaCreate Slider" width="920" height="2000">
 <img src="/projects/VistaCreate/vc-onboarding.png" alt="VistaCreate Onboarding" width="920" height="2000">
 <img src="/projects/VistaCreate/vc-export.png" alt="VistaCreate Export" width="1206" height="2622">
 <img src="/projects/VistaCreate/vc-paywall-1.png" alt="VistaCreate Paywall 1" width="920" height="2000">
 <img src="/projects/VistaCreate/vc-paywall-2.png" alt="VistaCreate Paywall 2" width="920" height="2000">
-<!-- /gallery -->
+{{ end }}
 </div>
 </div>
   </article>

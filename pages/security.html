@@ -4,14 +4,14 @@
 <meta name="sitemap" content="0.6 monthly">
 
 <div class="width-4xl">
-  <a class="back-link" href="/projects/"><!-- icon: ArrowLeft 16 -->Back to Projects</a>
+  <a class="back-link" href="/projects/">{{ icon ArrowLeft 16 }}Back to Projects</a>
   <div class="page-intro">
     <h1 class="page-title">Security &amp; Privacy</h1>
     <p class="page-lead">Throughout my iOS and macOS apps development, I have implemented security and privacy measures across multiple commercial applications handling sensitive user data, financial transactions, and real-money operations.</p>
   </div>
   <div class="security-list">
     <section class="panel panel-clip panel-responsive security-section">
-      <h2 class="section-heading section-heading-sm"><span class="section-heading-icon"><!-- icon: Lock --></span>Encryption &amp; Data Protection</h2>
+      <h2 class="section-heading section-heading-sm"><span class="section-heading-icon">{{ icon Lock }}</span>Encryption &amp; Data Protection</h2>
       <div class="security-body">
         <p>Implemented <strong>AES encryption</strong> for API communication using <strong>RNCryptor</strong>, wrapping both request payloads and response bodies in an encrypted layer to prevent man-in-the-middle interception. Built a custom <strong>Decrypter</strong> middleware that transparently encrypts/decrypts all JSON traffic between the app and backend.</p>
         <p>Designed <strong>token refresh middleware</strong> with plugin-based interceptors using Moya/Alamofire, ensuring that authentication tokens are rotated securely without exposing credentials during renewal. Applied secure transport configurations and certificate pinning where required.</p>
@@ -19,7 +19,7 @@
       <div class="tag-row"><span class="tag tag-zinc tag-sm">Solitaire</span><span class="tag tag-zinc tag-sm">PROVEIT</span><span class="tag tag-zinc tag-sm">Hooh</span><span class="tag tag-zinc tag-sm">Look Up</span></div>
     </section>
     <section class="panel panel-clip panel-responsive security-section">
-      <h2 class="section-heading section-heading-sm"><span class="section-heading-icon"><!-- icon: KeyRound --></span>Keychain &amp; Credential Management</h2>
+      <h2 class="section-heading section-heading-sm"><span class="section-heading-icon">{{ icon KeyRound }}</span>Keychain &amp; Credential Management</h2>
       <div class="security-body">
         <p>Used Apple <strong>Keychain Services</strong> through <strong>SAMKeychain</strong> and <strong>KeychainAccess</strong> libraries to securely store authentication tokens, API keys, and user credentials. Keychain items are stored with appropriate access control flags, ensuring data remains encrypted at rest and accessible only to the owning application.</p>
         <p>Implemented device-bound token storage using <strong>X-Device-Token</strong> headers tied to Keychain-stored identifiers, preventing token reuse across devices. Credentials are never stored in UserDefaults, plist files, or other insecure locations.</p>
@@ -27,7 +27,7 @@
       <div class="tag-row"><span class="tag tag-zinc tag-sm">PROVEIT</span><span class="tag tag-zinc tag-sm">Chronograph</span><span class="tag tag-zinc tag-sm">Solitaire</span><span class="tag tag-zinc tag-sm">Clowder</span><span class="tag tag-zinc tag-sm">Look Up</span></div>
     </section>
     <section class="panel panel-clip panel-responsive security-section">
-      <h2 class="section-heading section-heading-sm"><span class="section-heading-icon"><!-- icon: Shield --></span>Authentication &amp; Authorization</h2>
+      <h2 class="section-heading section-heading-sm"><span class="section-heading-icon">{{ icon Shield }}</span>Authentication &amp; Authorization</h2>
       <div class="security-body">
         <p>Integrated <strong>Auth0</strong> with <strong>OAuth 2.0</strong> / <strong>AppAuth</strong> flows for secure authentication with PKCE (Proof Key for Code Exchange), ensuring authorization codes cannot be intercepted. Implemented token lifecycle management including secure storage, automatic refresh, and session expiration handling.</p>
         <p>Built multi-factor authentication flows including <strong>OTP phone verification</strong>, social login via <strong>Facebook SDK</strong>, and email/password authentication with secure credential transmission. Applied proper session management with server-side validation for each authentication method.</p>
@@ -35,7 +35,7 @@
       <div class="tag-row"><span class="tag tag-zinc tag-sm">Hooh</span><span class="tag tag-zinc tag-sm">VistaPrint</span><span class="tag tag-zinc tag-sm">VistaCreate</span><span class="tag tag-zinc tag-sm">CoachNow</span><span class="tag tag-zinc tag-sm">Solitaire</span><span class="tag tag-zinc tag-sm">PROVEIT</span><span class="tag tag-zinc tag-sm">Chronograph</span></div>
     </section>
     <section class="panel panel-clip panel-responsive security-section">
-      <h2 class="section-heading section-heading-sm"><span class="section-heading-icon"><!-- icon: Fingerprint --></span>Device Integrity &amp; Fraud Prevention</h2>
+      <h2 class="section-heading section-heading-sm"><span class="section-heading-icon">{{ icon Fingerprint }}</span>Device Integrity &amp; Fraud Prevention</h2>
       <div class="security-body">
         <p>Implemented <strong>jailbreak detection</strong> to identify compromised devices that could manipulate app behavior or bypass security controls. Detection checks include file system analysis, sandbox integrity verification, and dynamic library inspection to identify common jailbreak artifacts.</p>
         <p>Built <strong>device fingerprinting</strong> systems that create unique device identifiers for fraud prevention, ensuring users cannot create multiple accounts or exploit promotional offers. Combined with <strong>location-based compliance</strong> verification using CoreLocation to enforce state-level restrictions for real-money gaming operations, ensuring regulatory compliance across jurisdictions.</p>
@@ -43,7 +43,7 @@
       <div class="tag-row"><span class="tag tag-zinc tag-sm">Solitaire</span><span class="tag tag-zinc tag-sm">PROVEIT</span></div>
     </section>
     <section class="panel panel-clip panel-responsive security-section">
-      <h2 class="section-heading section-heading-sm"><span class="section-heading-icon"><!-- icon: CreditCard --></span>Payment Security</h2>
+      <h2 class="section-heading section-heading-sm"><span class="section-heading-icon">{{ icon CreditCard }}</span>Payment Security</h2>
       <div class="security-body">
         <p>Implemented <strong>StoreKit</strong> in-app purchases with <strong>server-side receipt validation</strong> to verify transaction authenticity, preventing receipt forgery and unauthorized access to premium content. Built <strong>duplicate order detection</strong> to identify and reject replayed transaction receipts.</p>
         <p>Integrated <strong>RevenueCat</strong> for subscription lifecycle management with server-side entitlement verification and upload quota enforcement. Implemented <strong>Braintree</strong> and <strong>PayPal</strong> payment SDKs with tokenized card processing, ensuring that raw payment credentials never touch the application layer. Applied <strong>Apple Pay</strong> for secure biometric-authenticated transactions.</p>
