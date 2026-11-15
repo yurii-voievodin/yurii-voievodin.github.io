@@ -14,9 +14,9 @@
 }
 .project-switch a:not([aria-current]):hover { border-color: var(--border-strong); color: var(--zinc-300); }
 .project-switch a[aria-current="page"] {
-  border-color: color-mix(in srgb, var(--accent) 60%, transparent);
-  background: color-mix(in srgb, var(--accent-fill) 35%, transparent);
-  color: var(--accent-strong);
+  border-color: var(--accent-fill);
+  background: var(--accent-fill);
+  color: var(--bg);
 }
 
 .project-intro { margin-bottom: 1.5rem; }

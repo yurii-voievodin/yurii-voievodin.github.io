@@ -1,6 +1,5 @@
-.timeline-page { padding: 2rem 1rem; }
-.timeline-heading { margin-bottom: 2rem; color: var(--zinc-100); font-size: 1.875rem; line-height: 2.25rem; font-weight: 700; }
-@media (min-width: 768px) { .timeline-heading { font-size: 2.25rem; line-height: 2.5rem; } }
+.timeline-page { max-width: 56rem; margin-inline: auto; }
+.timeline-page .page-title { margin-bottom: 2rem; }
 
 .timeline { position: relative; display: grid; gap: 2rem; }
 .timeline::before { content: ""; position: absolute; top: 0; bottom: 0; left: 1.5rem; width: 2px; background: var(--rail); }
@@ -34,7 +33,6 @@
 .timeline-md ul { padding-inline-start: 1.25rem; list-style: disc; }
 .timeline-md li { color: var(--zinc-300); }
 .timeline-md li + li { margin-top: 0.25rem; }
-.timeline-md code { padding: 0; border-radius: 0; background: none; font-size: inherit; line-height: inherit; }
 .timeline-image { width: 100%; margin-top: 1rem; border-radius: 0.5rem; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); }
 @media (min-width: 640px) { .timeline-image { max-width: 24rem; } }
 @media (min-width: 768px) { .timeline-image { max-width: 28rem; } }
