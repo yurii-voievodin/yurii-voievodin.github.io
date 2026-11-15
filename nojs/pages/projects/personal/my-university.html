@@ -1,0 +1,13 @@
+<p><a class="gradient-link" href="https://github.com/university-my/ios">My University</a> — personal project for browsing university schedules. Students and teachers search for groups, teachers, or classrooms and view class schedules with favorites, sharing, and offline support.</p>
+<p class="project-label">Technical info:</p>
+<ul class="bullets">
+  <li>Written in <strong>Swift</strong>, UIKit with 13 Storyboards and <strong>SwiftUI</strong> integration via <code>UIHostingController</code> (~131 source files)</li>
+  <li><strong>MVC hybrid</strong> with dedicated <strong>DataControllers</strong>, <strong>LogicControllers</strong>, and <strong>DataSources</strong> — protocol-driven design with <code>ModelProtocol</code>, <code>EntityRepresentable</code>, and <code>CoreDataEntityProtocol</code> abstractions</li>
+  <li><strong>URLSession</strong> networking — custom generic <code>NetworkClient&lt;Model&gt;</code> with <strong>Combine</strong>, JSON decoding, and Result-based error handling</li>
+  <li><strong>CoreData</strong> persistence — 5 entities (<code>UniversityEntity</code>, <code>GroupEntity</code>, <code>TeacherEntity</code>, <code>ClassroomEntity</code>, <code>RecordEntity</code>) with uniqueness constraints and fetch indexes</li>
+  <li><strong>Zero third-party dependencies</strong> — built entirely with native iOS frameworks</li>
+  <li><strong>MetricKit</strong> for crash and performance diagnostics monitoring</li>
+  <li>Localization: <strong>English</strong> and <strong>Ukrainian</strong> with localized storyboards and string files</li>
+  <li>Favorites, search, share URLs, date/time schedule filtering, and "What's New" feature</li>
+  <li>Deployment target: <strong>iOS 16.0+</strong></li>
+</ul>
