@@ -26,7 +26,7 @@ class Scan(HTMLParser):
                 self.error_at(f"inline handler {name}=")
         if attrs.get("id"):
             self.ids.append(attrs["id"])
-        for name in ("popovertarget", "for", "commandfor"):
+        for name in ("popovertarget", "for"):
             if attrs.get(name):
                 self.refs.append(attrs[name])
         for name in ("href", "src", "poster"):

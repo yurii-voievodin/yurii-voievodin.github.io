@@ -7,6 +7,7 @@
 .timeline-event { position: relative; display: flex; align-items: flex-start; }
 .timeline-marker {
   position: relative;
+  color: var(--zinc-300);
   z-index: 10;
   flex: none;
   display: flex;
