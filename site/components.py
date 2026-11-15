@@ -1,12 +1,17 @@
 from html import escape
 
 import config
-from icons import ICONS
+from icons import BRANDS, ICONS
 
 
 def icon(name, size=24, color="currentColor", cls=""):
-    inner = ICONS.get(name, ICONS["Circle"])
     class_attr = f"icon {cls}".strip()
+    if name in BRANDS:
+        return (
+            f'<svg class="{class_attr}" width="{size}" height="{size}" viewBox="0 0 24 24" fill="{escape(color)}" '
+            f'aria-hidden="true">{BRANDS[name]}</svg>'
+        )
+    inner = ICONS.get(name, ICONS["Circle"])
     return (
         f'<svg class="{class_attr}" width="{size}" height="{size}" viewBox="0 0 24 24" fill="none" '
         f'stroke="{escape(color)}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" '

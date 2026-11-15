@@ -43,6 +43,9 @@ class Page:
             "description": self.description,
             "lang": self.lang,
             "year": str(date.today().year),
+            "email": config.EMAIL,
+            "github": config.GITHUB,
+            "linkedin": config.LINKEDIN,
             **self.vars,
         }
 
