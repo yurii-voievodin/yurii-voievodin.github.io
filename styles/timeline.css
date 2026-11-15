@@ -19,7 +19,6 @@
   border-radius: 50%;
   background: var(--card-bg-strong);
 }
-.timeline-pip { width: 0.5rem; height: 0.5rem; border-radius: 50%; background: var(--rail); }
 
 .timeline-card { position: relative; flex: 1; min-width: 0; display: flex; padding: 1.5rem; scroll-margin-block: 30vh; }
 .timeline-text { flex: 1; min-width: 0; }

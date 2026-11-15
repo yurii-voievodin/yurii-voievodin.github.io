@@ -1,12 +1,9 @@
 import re
-import sys
 from collections import Counter
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
 
-DIST = Path(sys.argv[1]) if len(sys.argv) > 1 and not sys.argv[1].startswith("--") else Path(__file__).resolve().parent.parent / "dist"
-PARTIAL = "--partial" in sys.argv
 VOID = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "source", "track", "wbr"}
 LEFTOVER = re.compile(r"<!--\s*(include|slot|icon):|\{\{\s*\w+\s*\}\}")
 CLOSE_FRAGMENT = "_"
@@ -47,16 +44,16 @@ class Scan(HTMLParser):
         self.open.pop()
 
 
-def page_url(path):
+def page_url(dist, path):
     if path.name != "index.html":
-        return "/" + path.relative_to(DIST).as_posix()
-    folder = path.parent.relative_to(DIST).as_posix()
+        return "/" + path.relative_to(dist).as_posix()
+    folder = path.parent.relative_to(dist).as_posix()
     return "/" if folder == "." else f"/{folder}/"
 
 
-def main():
+def check(dist):
     pages = {}
-    for path in sorted(p for p in DIST.rglob("*.html") if p.name == "index.html" or p.parent == DIST):
+    for path in sorted(p for p in dist.rglob("*.html") if p.name == "index.html" or p.parent == dist):
         text = path.read_text(encoding="utf-8")
         scan = Scan()
         scan.feed(text)
@@ -64,7 +61,7 @@ def main():
             scan.errors.append(f"unclosed tags at end: {scan.open}")
         if LEFTOVER.search(text):
             scan.errors.append(f"leftover marker: {LEFTOVER.search(text).group(0)}")
-        pages[page_url(path)] = (path, scan)
+        pages[page_url(dist, path)] = (path, scan)
 
     problems = 0
     for url, (path, scan) in pages.items():
@@ -79,22 +76,17 @@ def main():
             target_url = parts.path or url
             if target_url.endswith("/"):
                 if target_url not in pages:
-                    if not PARTIAL:
-                        errors.append(f"link to missing page {link}")
+                    errors.append(f"link to missing page {link}")
                     continue
                 if parts.fragment and parts.fragment != CLOSE_FRAGMENT and parts.fragment not in pages[target_url][1].ids:
                     errors.append(f"link to missing anchor {link}")
-            elif not (DIST / unquote(target_url).lstrip("/")).is_file():
+            elif not (dist / unquote(target_url).lstrip("/")).is_file():
                 errors.append(f"missing file {link}")
 
-        rel = path.relative_to(DIST)
+        rel = path.relative_to(dist)
         for error in errors:
             print(f"{rel}: {error}")
         problems += len(errors)
 
     print(f"Checked {len(pages)} pages: {problems} problem(s)")
-    sys.exit(1 if problems else 0)
-
-
-if __name__ == "__main__":
-    main()
+    return problems

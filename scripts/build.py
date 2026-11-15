@@ -11,6 +11,7 @@ from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from xml.sax.saxutils import escape as xml_escape
 
+from check import check
 from icons import BRANDS, ICONS
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -60,15 +61,13 @@ class Page:
         self.path = path
         tags, self.body = split_head(path.read_text(encoding="utf-8"))
         self.title = TITLE
-        self.meta, self.refresh, self.canonical, self.alternates = {}, None, None, {}
+        self.meta, self.canonical, self.alternates = {}, None, {}
         for tag in tags:
             if tag.startswith("<title>"):
                 self.title = unescape(tag[7:-8])
                 continue
             attrs = {k: unescape(v) for k, v in ATTR.findall(tag)}
-            if tag.startswith("<meta") and attrs.get("http-equiv") == "refresh":
-                self.refresh = attrs["content"].split("url=", 1)[1]
-            elif tag.startswith("<meta"):
+            if tag.startswith("<meta"):
                 self.meta[attrs["name"]] = attrs["content"]
             elif attrs.get("rel") == "canonical":
                 self.canonical = attrs["href"]
@@ -96,10 +95,12 @@ class Page:
         return self.url.lstrip("/") + ("index.html" if self.url.endswith("/") else "")
 
     def vars(self):
-        return {"title": self.title, "description": self.description, "lang": self.get("lang", "en"), **VARS}
+        return {"lang": self.get("lang", "en"), **VARS}
 
 
 def icon(name, size=24):
+    if name not in BRANDS and name not in ICONS:
+        sys.exit(f"unknown icon '{name}'")
     if name in BRANDS:
         return (
             f'<svg class="icon" width="{size}" height="{size}" viewBox="0 0 24 24" fill="currentColor" '
@@ -108,7 +109,7 @@ def icon(name, size=24):
     return (
         f'<svg class="icon" width="{size}" height="{size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" '
         f'stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
-        f"{ICONS.get(name, ICONS['Circle'])}</svg>"
+        f"{ICONS[name]}</svg>"
     )
 
 
@@ -160,8 +161,6 @@ def head(page):
     image = page.get("image")
     kind = page.get("type", "website")
     tags = ['<meta charset="utf-8">', meta("viewport", "width=device-width, initial-scale=1")]
-    if page.refresh:
-        tags.append(meta("refresh", f"0; url={page.refresh}", "http-equiv"))
     tags += [
         f"<title>{escape(page.title)}</title>",
         meta("description", page.description),
@@ -291,6 +290,8 @@ def build(out):
     write(out / "feed.xml", feed(pages))
     write(out / "robots.txt", f"User-Agent: *\nAllow: /\n\nSitemap: {URL}/sitemap.xml\n")
     print(f"Built {len(pages)} pages into {out}")
+    if check(out):
+        sys.exit(1)
 
 
 if __name__ == "__main__":

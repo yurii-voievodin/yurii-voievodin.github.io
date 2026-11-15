@@ -29,9 +29,6 @@ jobs:
       - name: Build
         run: python3 scripts/build.py
 
-      - name: Check
-        run: python3 scripts/check.py
-
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
